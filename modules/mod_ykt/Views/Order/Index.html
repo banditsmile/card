@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>³äÖµ½á¹û</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>å……å€¼ç»“æœ</title>
 </head>
 <style>
 body {
@@ -105,7 +105,7 @@ border-bottom:none;
 .titlefont{
 FONT-SIZE: 18px; 
 COLOR: #333; 
-FONT-FAMILY: ºÚÌå,ËÎÌå,Arial, Helvetica, sans-serif;
+FONT-FAMILY: é»‘ä½“,å®‹ä½“,Arial, Helvetica, sans-serif;
 padding-top:10px;
 }
 
@@ -130,71 +130,71 @@ CURSOR:pointer;
 </div>
 <!--if($item['ptype'] > 0){-->
 <div class="headbg">
-  <div class="titlefont" align="center">Ò»¿¨Í¨»»¹ºÉÌÆ·ÏêÏ¸¶©µ¥</div>
+  <div class="titlefont" align="center">ä¸€å¡é€šæ¢è´­å•†å“è¯¦ç»†è®¢å•</div>
 </div>
 <table id="orderTable" class="tbody">
   <tr>
-    <td class="buylt">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="buylt">å•†å“åç§°ï¼š</td>
     <td class="buyrt">{$item['pname']}</td>
   </tr>
   <tr>
-    <td class="buylt">ÉÌÆ·ÀàĞÍ£º</td>
+    <td class="buylt">å•†å“ç±»å‹ï¼š</td>
     <td class="buyrt">{#ProductType($item['ptype'])}</td>
   </tr>
   <tr>
-    <td class="buylt">³äÖµÊıÁ¿£º</td>
+    <td class="buylt">å……å€¼æ•°é‡ï¼š</td>
     <td class="buyrt">{$item['qty']}</td>
   </tr>
   <tr>
-    <td class="buylt">³äÖµÕÊºÅ£º</td>
+    <td class="buylt">å……å€¼å¸å·ï¼š</td>
     <td class="buyrt">{$item['czaccount']}</td>
   </tr>
   <!--if($item['czarea1'] != ''){-->
   <tr>
-    <td class="buylt">³äÖµÇøÓò£º</td>
+    <td class="buylt">å……å€¼åŒºåŸŸï¼š</td>
     <td class="buyrt">{#CzText($item['czarea1'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czarea2'] != ''){-->
   <tr>
-    <td class="buylt">³äÖµ·şÎñÆ÷£º</td>
+    <td class="buylt">å……å€¼æœåŠ¡å™¨ï¼š</td>
     <td class="buyrt">{#CzText($item['czarea2'])}</td>
   </tr>
   <!--}-->
   <!--if($item['cztype'] != ''){-->
   <tr>
-    <td class="buylt">¼Æ·Ñ·½Ê½£º</td>
+    <td class="buylt">è®¡è´¹æ–¹å¼ï¼š</td>
     <td class="buyrt">{#CzText($item['cztype'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czother'] != ''){-->
   <tr>
-    <td class="buylt">ÕÊ»§ÀàĞÍ£º</td>
+    <td class="buylt">å¸æˆ·ç±»å‹ï¼š</td>
     <td class="buyrt">{#CzText($item['czother'])}</td>
   </tr>
   <!--}-->
   <tr>
-    <td class="buylt" height="30px;">³äÖµ·´À¡ĞÅÏ¢£º</td>
+    <td class="buylt" height="30px;">å……å€¼åé¦ˆä¿¡æ¯ï¼š</td>
     <td class="buyrt">
     </td>
   </tr>
   <tr>
     <td class="buylt" colspan="2">
       <div id="result" align="center">
-      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈ£¡ÏµÍ³ÔòÕıÔÚÎªÄú<b>³äÖµ</b>ÖĞ)...</font></div>
+      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> è¯·ç¨ç­‰ï¼ç³»ç»Ÿåˆ™æ­£åœ¨ä¸ºæ‚¨<b>å……å€¼</b>ä¸­)...</font></div>
       </div>
     </td>
   </tr>
   <tr>
-    <td class="buylt">¸´ÖÆµØÖ·ÒÔºó²éÑ¯£º</td>
-    <td class="buyrt"><input id="pagehref" type="text" size="65" class="Index_font3"  readonly value="" onMouseMove="this.select()"/>  <font color="#6c6c6c">ÓÒ»÷->¸´ÖÆ->¼ÇÊÂ±¾±£´æ</font></td>
+    <td class="buylt">å¤åˆ¶åœ°å€ä»¥åæŸ¥è¯¢ï¼š</td>
+    <td class="buyrt"><input id="pagehref" type="text" size="65" class="Index_font3"  readonly value="" onMouseMove="this.select()"/>  <font color="#6c6c6c">å³å‡»->å¤åˆ¶->è®°äº‹æœ¬ä¿å­˜</font></td>
   </tr>
   <tr>
     <td class="buylt" colspan="2" align="center" style="border-top:1px #ccc dashed;height:50px;">
-      <input type="button" value="Í¶Ëß±¾¶©µ¥" onclick="view();" class="button">
-      <input type="button" value="»Øµ½Ê×Ò³" onclick="window.location='index.html'" class="button">
-      <input type="button" value="³äÖµ½á¹û" onClick="window.location.reload()" class="button">
-      <input type="button" value="¹Ø±ÕÒ³Ãæ" onclick="window.close();" class="button">
+      <input type="button" value="æŠ•è¯‰æœ¬è®¢å•" onclick="view();" class="button">
+      <input type="button" value="å›åˆ°é¦–é¡µ" onclick="window.location='index.html'" class="button">
+      <input type="button" value="å……å€¼ç»“æœ" onClick="window.location.reload()" class="button">
+      <input type="button" value="å…³é—­é¡µé¢" onclick="window.close();" class="button">
     </td>
   </tr>
   <tr>
@@ -202,16 +202,16 @@ CURSOR:pointer;
       <form action="index.php?m=mod_ykt&c=order&a=complaint" method="post" target="_blank">
         <table id="complainttable" width="100%" style="display:none">
           <tr>
-            <td class="buylt">±êÌâ£º</td>
-            <td class="buyrt"><input type="text" name="title" value="Í¶Ëß¶©µ¥{$item['ordno']}"/></td>
+            <td class="buylt">æ ‡é¢˜ï¼š</td>
+            <td class="buyrt"><input type="text" name="title" value="æŠ•è¯‰è®¢å•{$item['ordno']}"/></td>
           </tr>
           <tr>
-            <td class="buylt">ÄÚÈİ£º</td>
-            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">ÇëÔÚÍ¶ËßÄÚÈİÀï±ß¸½ÉÏÁªÏµ·½Ê½</font></td>
+            <td class="buylt">å†…å®¹ï¼š</td>
+            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">è¯·åœ¨æŠ•è¯‰å†…å®¹é‡Œè¾¹é™„ä¸Šè”ç³»æ–¹å¼</font></td>
           </tr>
           <tr>
-            <td class="buylt">ÄÚÈİ£º</td>
-            <td class="buyrt"><input type="submit" value="Ìá½»Í¶ËßÄÚÈİ"  class="button"></td>
+            <td class="buylt">å†…å®¹ï¼š</td>
+            <td class="buyrt"><input type="submit" value="æäº¤æŠ•è¯‰å†…å®¹"  class="button"></td>
           </tr>
         </table>
       </form>
@@ -220,19 +220,19 @@ CURSOR:pointer;
 </table>
 <!--}else{-->
 <div class="headbg">
-  <div class="titlefont" align="center">Ò»¿¨Í¨»»¹º¿¨ÃÜÉÌÆ·ÏêÏ¸¶©µ¥</div>
+  <div class="titlefont" align="center">ä¸€å¡é€šæ¢è´­å¡å¯†å•†å“è¯¦ç»†è®¢å•</div>
 </div>
 <table id="orderTable" class="tbody">
   <tr>
-    <td class="buylt">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="buylt">å•†å“åç§°ï¼š</td>
     <td class="buyrt">{$item['pname']}</td>
   </tr>
   <tr>
-    <td class="buylt">ÉÌÆ·ÀàĞÍ£º</td>
+    <td class="buylt">å•†å“ç±»å‹ï¼š</td>
     <td class="buyrt">{#ProductType($item['ptype'])}</td>
   </tr>
   <tr>
-    <td class="buylt">»»¹ºÊıÁ¿£º</td>
+    <td class="buylt">æ¢è´­æ•°é‡ï¼š</td>
     <td class="buyrt">{$item['qty']}</td>
   </tr>
   <tr>
@@ -243,19 +243,19 @@ CURSOR:pointer;
   <tr>
     <td class="buylt" colspan="2">
       <div id="result" align="center">
-      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈ£¡ÏµÍ³ÔòÕıÔÚÎªÄú<b>Ìá¿¨</b>ÖĞ)...</font></div>
+      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> è¯·ç¨ç­‰ï¼ç³»ç»Ÿåˆ™æ­£åœ¨ä¸ºæ‚¨<b>æå¡</b>ä¸­)...</font></div>
       </div>
     </td>
   </tr>
   <tr>
-    <td class="buylt">¸´ÖÆµØÖ·ÒÔºó²éÑ¯£º</td>
+    <td class="buylt">å¤åˆ¶åœ°å€ä»¥åæŸ¥è¯¢ï¼š</td>
     <td class="buyrt"><input id="pagehref" type="text" size="65" class="Index_font3"  readonly value="" onMouseMove="this.select()"/>  </td>
   </tr>
   <tr>
     <td class="buylt" colspan="2" align="center" style="border-top:1px #ccc dashed;height:50px;">
-      <input type="button" value="Í¶Ëß±¾¶©µ¥" onclick="view();" class="button">
-      <input type="button" value="»Øµ½Ê×Ò³" onclick="window.location='index.html'" class="button">
-      <input type="button" value="¹Ø±ÕÒ³Ãæ" onclick="window.close();" class="button">
+      <input type="button" value="æŠ•è¯‰æœ¬è®¢å•" onclick="view();" class="button">
+      <input type="button" value="å›åˆ°é¦–é¡µ" onclick="window.location='index.html'" class="button">
+      <input type="button" value="å…³é—­é¡µé¢" onclick="window.close();" class="button">
     </td>
   </tr>
   <tr>
@@ -263,16 +263,16 @@ CURSOR:pointer;
       <form action="index.php?m=mod_ykt&c=order&a=complaint" method="post" target="_blank">
         <table id="complainttable" width="100%" style="display:none">
           <tr>
-            <td class="buylt">±êÌâ£º</td>
-            <td class="buyrt"><input type="text" name="title" value="Í¶Ëß¶©µ¥{$item['ordno']}"/></td>
+            <td class="buylt">æ ‡é¢˜ï¼š</td>
+            <td class="buyrt"><input type="text" name="title" value="æŠ•è¯‰è®¢å•{$item['ordno']}"/></td>
           </tr>
           <tr>
-            <td class="buylt">ÄÚÈİ£º</td>
-            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">ÇëÔÚÍ¶ËßÄÚÈİÀï±ß¸½ÉÏÁªÏµ·½Ê½</font></td>
+            <td class="buylt">å†…å®¹ï¼š</td>
+            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">è¯·åœ¨æŠ•è¯‰å†…å®¹é‡Œè¾¹é™„ä¸Šè”ç³»æ–¹å¼</font></td>
           </tr>
           <tr>
-            <td class="buylt">ÄÚÈİ£º</td>
-            <td class="buyrt"><input type="submit" value="Ìá½»Í¶ËßÄÚÈİ"  class="button"></td>
+            <td class="buylt">å†…å®¹ï¼š</td>
+            <td class="buyrt"><input type="submit" value="æäº¤æŠ•è¯‰å†…å®¹"  class="button"></td>
           </tr>
         </table>
       </form>
@@ -282,7 +282,7 @@ CURSOR:pointer;
 <!--}-->
 <!--}else{-->
 <div id="result" align="center">
-<div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈÕıÔÚ<b>Ìá¿¨</b>ÖĞ(Èç¹ûÊÇ³äÖµÉÌÆ·£¬ÏµÍ³ÔòÕıÔÚÎªÄú<b>³äÖµ</b>ÖĞ)...</font></div>
+<div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> è¯·ç¨ç­‰æ­£åœ¨<b>æå¡</b>ä¸­(å¦‚æœæ˜¯å……å€¼å•†å“ï¼Œç³»ç»Ÿåˆ™æ­£åœ¨ä¸ºæ‚¨<b>å……å€¼</b>ä¸­)...</font></div>
 </div>
 <!--}-->
 <script type="text/javascript">
@@ -302,12 +302,12 @@ function loadXMLDoc()
   url=url+"&Succ="+escape("{$vd['url']['Succ']}");
   url=url+"&BuyerIP="+escape("{$vd['url']['BuyerIP']}");
 
-  // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+  // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
   if (window.XMLHttpRequest)
   {
     xmlhttp=new XMLHttpRequest();
   }
-  // Õë¶Ô IE µÄ´úÂë£º
+  // é’ˆå¯¹ IE çš„ä»£ç ï¼š
   else if (window.ActiveXObject)
   {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -322,33 +322,33 @@ function loadXMLDoc()
   }
   else
   {
-    alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+    alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")
   }
 }
 
 function state_Change()
 {
-  // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+  // å¦‚æœ xmlhttp æ˜¾ç¤ºä¸º "loaded"
   if (xmlhttp.readyState==4)
   {
-    // Èç¹ûÎª "OK"
+    // å¦‚æœä¸º "OK"
     if (xmlhttp.status==200)
     {
-      // ÆäËû´úÂë..
+      // å…¶ä»–ä»£ç ..
       var ackdata=xmlhttp.responseText;
       ackparase(ackdata);
     }
     else
     {
       window.location.reload();
-      document.getElementById("result").innerHTML="<div class='col'>Í¨Ñ¶Ê§°Ü,Äú¿ÉÒÔË¢ĞÂ±¾Ò³¼ÌĞøµÈ´ı½á¹û»òÕßÖ±½ÓÁªÏµ¹ÜÀíÔ±</div>";
+      document.getElementById("result").innerHTML="<div class='col'>é€šè®¯å¤±è´¥,æ‚¨å¯ä»¥åˆ·æ–°æœ¬é¡µç»§ç»­ç­‰å¾…ç»“æœæˆ–è€…ç›´æ¥è”ç³»ç®¡ç†å‘˜</div>";
     }
   }
 }
 
 function ackparase(ackdata)
 {
-  //½âÎö·şÎñÆ÷·µ»ØµÄÊı¾İ
+  //è§£ææœåŠ¡å™¨è¿”å›çš„æ•°æ®
   if (ackdata == 18)
   {
     setTimeout("loadXMLDoc()",1500);

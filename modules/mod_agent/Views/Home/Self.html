@@ -1,116 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>¸öĞÔ»¯ÉèÖÃ</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> ¸öĞÔ»¯ÉèÖÃ</h2>
-  </div>
-  <ul>
-     <li><a href="index.php?m=mod_agent&amp;c=Home">ÕËºÅĞÅÏ¢</a></li>
-    <li><a href="" class="on">ÕË»§¼ä×ª¿î</a></li>
-    <li><a href="index.php?m=mod_agent&amp;c=Home&amp;a=Bank">ÒøĞĞÕËºÅ</a></li>
-  </ul>
-</div>
-<div class="main5" id="main5">
-	
-	<form name="modify2" method="post" action="index.php?m=mod_agent&c=Home&a=SelfSave">
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<!--$temp = explode('|', $vd['data']['websetting']);$cout=count($temp);-->
-	<input type="hidden" id="websetting" name="websetting" value="{$vd['data']['websetting']}"/>
-	<td class="tableleft">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td width="22%" rowspan="9" align="right" class="table1_left">¸öĞÔÉèÖÃ£º</td>
-		<td width="78%" class="tableright1"><div align="left"><input type="checkbox" value="0" 
-		  
-		    <!--if($cout > 0){ToggleCheck($temp[0]);}-->
-		    onclick="set(this)"/>
-		    ¹ºÂòµã¿¨µÄÊ±ºòÏÔÊ¾½ø»õ¼Û¸ñ</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="1" 
-      
-        <!--if($cout > 1){ToggleCheck($temp[1]);}-->
-        onclick="set(this)"/>
-        ÏÔÊ¾ÕË»§Óà¶î</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="9" 
-      
-        <!--if($cout > 9){ToggleCheck($temp[9]);}-->
-        onclick="set(this)"/>
-        ÏÔÊ¾µ±Ç°Ç·¿î</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="10" 
-      
-        <!--if($cout > 10){ToggleCheck($temp[10]);}-->
-        onclick="set(this)"/>
-        ÏÔÊ¾ĞÅÓÃ¶î¶È</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="2" 
-      
-        <!--if($cout > 2){ToggleCheck($temp[2]);}-->
-        onclick="set(this)"/>
-        ÏÔÊ¾ÎÒµÄÉÏ¼¶¾­ÏúÉÌ</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="3" 
-      
-        <!--if($cout > 3){ToggleCheck($temp[3]);}-->
-        onclick="set(this)"/>
-        ÔÊĞí½¨Á¢Ô±¹¤ÏúÊÛÕËºÅ</td></tr>
-    
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="6" 
-      
-        <!--if($cout > 6){ToggleCheck($temp[6]);}-->
-        onclick="set(this)"/>
-        ÔÊĞíÊ¹ÓÃµÇÂ¼Æ÷µÇÂ¼</td></tr>
-    
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="8" 
-      
-        <!--if($cout > 8){ToggleCheck($temp[8]);}-->
-        onclick="set(this)"/>
-        ¹º¿¨Ê±ºòÊäÈë½»Ò×ÃÜÂë</td></tr>
-    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="11" 
-      
-        <!--if($cout > 11){ToggleCheck($temp[11]);}-->
-        onclick="set(this)"/>
-        ÔÊĞí×ÜÕÊºÅÊÛ¿¨Ê±ĞŞ¸ÄÁãÊÛ¼Û¸ñ</td></tr>
-
-		<tr>
-		<td class="table1_left">ÊäÈë³¬¼¶ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" name="superpwd" size="30" class='input0'/>
-		  </div></td>
-		</tr>
-		
-		<tr>
-		<td class="table1_left"></td>
-		<td class="tableright1"><div align="left">
-		  <input type="submit" name="submit" value="Íê³ÉĞŞ¸Ä" class="tijiao_input"> 
-		  <input type="reset" name="reset" value="ÖØĞÂÌîĞ´" class="fanhui_input" tabindex="10">
-		  </div></td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-	</form>
-</div>
-	<script type="text/javascript">
-	function implode(str, myarray)
-  {
-  	var thisstr = "";
-  	for(i=0;i<myarray.length;i++)
-  	{
-  		thisstr = thisstr + myarray[i] + "|";
-  	}
-  	return thisstr;
-  }
-	var mywebsetting = new Array(<!--array_pop($temp);echo implode(',', $temp);if(count($temp)==0){echo '0,0,0,0,0,0,0,0,0,0,0,0';} if(count($temp)<12){-->,0,0,0,0,0,0<!--}-->);
-	function set(obj)
-  {
-  	mywebsetting[obj.value] = obj.checked ? 1 : 0;
-  	document.getElementById("websetting").value = implode("|", mywebsetting);
-  }
-	</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>ä¸ªæ€§åŒ–è®¾ç½®</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> ä¸ªæ€§åŒ–è®¾ç½®</h2>  </div>  <ul>     <li><a href="index.php?m=mod_agent&amp;c=Home">è´¦å·ä¿¡æ¯</a></li>    <li><a href="" class="on">è´¦æˆ·é—´è½¬æ¬¾</a></li>    <li><a href="index.php?m=mod_agent&amp;c=Home&amp;a=Bank">é“¶è¡Œè´¦å·</a></li>  </ul></div><div class="main5" id="main5">		<form name="modify2" method="post" action="index.php?m=mod_agent&c=Home&a=SelfSave">	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<!--$temp = explode('|', $vd['data']['websetting']);$cout=count($temp);-->	<input type="hidden" id="websetting" name="websetting" value="{$vd['data']['websetting']}"/>	<td class="tableleft"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td width="22%" rowspan="9" align="right" class="table1_left">ä¸ªæ€§è®¾ç½®ï¼š</td>		<td width="78%" class="tableright1"><div align="left"><input type="checkbox" value="0" 		  		    <!--if($cout > 0){ToggleCheck($temp[0]);}-->		    onclick="set(this)"/>		    è´­ä¹°ç‚¹å¡çš„æ—¶å€™æ˜¾ç¤ºè¿›è´§ä»·æ ¼</td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="1"               <!--if($cout > 1){ToggleCheck($temp[1]);}-->        onclick="set(this)"/>        æ˜¾ç¤ºè´¦æˆ·ä½™é¢</td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="9"               <!--if($cout > 9){ToggleCheck($temp[9]);}-->        onclick="set(this)"/>        æ˜¾ç¤ºå½“å‰æ¬ æ¬¾</td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="10"               <!--if($cout > 10){ToggleCheck($temp[10]);}-->        onclick="set(this)"/>        æ˜¾ç¤ºä¿¡ç”¨é¢åº¦</td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="2"               <!--if($cout > 2){ToggleCheck($temp[2]);}-->        onclick="set(this)"/>        æ˜¾ç¤ºæˆ‘çš„ä¸Šçº§ç»é”€å•†</td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="3"               <!--if($cout > 3){ToggleCheck($temp[3]);}-->        onclick="set(this)"/>        å…è®¸å»ºç«‹å‘˜å·¥é”€å”®è´¦å·</td></tr>        <tr><td class="tableright1"><div align="left"><input type="checkbox" value="6"               <!--if($cout > 6){ToggleCheck($temp[6]);}-->        onclick="set(this)"/>        å…è®¸ä½¿ç”¨ç™»å½•å™¨ç™»å½•</td></tr>        <tr><td class="tableright1"><div align="left"><input type="checkbox" value="8"               <!--if($cout > 8){ToggleCheck($temp[8]);}-->        onclick="set(this)"/>        è´­å¡æ—¶å€™è¾“å…¥äº¤æ˜“å¯†ç </td></tr>    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="11"               <!--if($cout > 11){ToggleCheck($temp[11]);}-->        onclick="set(this)"/>        å…è®¸æ€»å¸å·å”®å¡æ—¶ä¿®æ”¹é›¶å”®ä»·æ ¼</td></tr>		<tr>		<td class="table1_left">è¾“å…¥è¶…çº§å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" name="superpwd" size="30" class='input0'/>		  </div></td>		</tr>				<tr>		<td class="table1_left"></td>		<td class="tableright1"><div align="left">		  <input type="submit" name="submit" value="å®Œæˆä¿®æ”¹" class="tijiao_input"> 		  <input type="reset" name="reset" value="é‡æ–°å¡«å†™" class="fanhui_input" tabindex="10">		  </div></td>		</tr>		</table>	</td>	</tr>	</table>	</form></div>	<script type="text/javascript">	function implode(str, myarray)  {  	var thisstr = "";  	for(i=0;i<myarray.length;i++)  	{  		thisstr = thisstr + myarray[i] + "|";  	}  	return thisstr;  }	var mywebsetting = new Array(<!--array_pop($temp);echo implode(',', $temp);if(count($temp)==0){echo '0,0,0,0,0,0,0,0,0,0,0,0';} if(count($temp)<12){-->,0,0,0,0,0,0<!--}-->);	function set(obj)  {  	mywebsetting[obj.value] = obj.checked ? 1 : 0;  	document.getElementById("websetting").value = implode("|", mywebsetting);  }	</script></body></html>

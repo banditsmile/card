@@ -1,338 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css">
-<style type="text/css">
-td{height:30px}
-</style>
-</head>
-<body>
-<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
-  <tr>
-    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">¾²Ì¬Ò³ÃæÉú³É³ÌÐò</td>
-  </tr>
-  <tr>
-    <td width="25%" align="center">ÎÄÕÂÏµÍ³Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="ÎÄÕÂ¾²Ì¬Ò³" class="button"/></td>
-  </tr>
-  <?php if(UB_B2C){ ?>
-  <tr>
-    <td width="25%" align="center">ÁãÊÛÆ½Ì¨Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid;">
-      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="Ê×Ò³¾²Ì¬Ò³" class="button"/>
-      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="ÉÌÆ·×ÜÀà¾²Ì¬Ò³" class="button"/>
-      <input type="button" onclick="setdata(1, 'plist', 'b2c')" value="ÉÌÆ·ÁÐ±í¾²Ì¬Ò³" class="button"/>
-      <input type="button" onclick="setdata(1, 'product', 'b2c')" value="ÉÌÆ·¾²Ì¬Ò³" class="button"/>
-    </td>
-  </tr>
-  <?php } ?>
-  <?php if(UB_B2B){ ?>
-  <tr>
-    <td width="25%" align="center">Åú·¢Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid;">
-      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="Ê×Ò³¾²Ì¬Ò³" class="button"/>
-    </td>
-  </tr>
-  <?php } ?>
-  <?php if(UB_YKT){ ?>
-  <tr>
-    <td width="25%" align="center">Ò»¿¨Í¨Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid">
-      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="Ê×Ò³¾²Ì¬Ò³" class="button"/>
-      <input type="button" onclick="setdata(1, 'product', 'ykt')" value="ÉÌÆ·¾²Ì¬Ò³" class="button"/>
-    </td>
-  </tr>
-  <?php } ?>
-  <tr>
-    <td width="25%" align="center" style="border-bottom:1px #ccc solid">Òýµ¼Ò³Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-bottom:1px #ccc solid;border-right:1px #ccc solid">
-      <input type="button" onclick="setdata(1, 'index', 'index')" value="Ê×Ò³¾²Ì¬Ò³" class="button"/>
-    </td>
-  </tr>
-</table>
-<br/>
-<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">
-  <tr>
-    <td style="border:1px #ccc solid;"><div id="result" style="font-size:15px;color:#ff0000;font-weight:bold"></div><div id="tmp"></div></td>
-  </tr>
-</table>
-</body>
-</html>
-<script type="text/javascript">
-  var cat = new Array();
-  var pid = new Array();
-  var art = new Array();
-  <?php $i = 0; ?>
-  <?php foreach($vd['cat'] as $cat) { ?>
-    cat[<?php echo $i; ?>] = <?php echo $cat['id']; ?>;
-  <?php $i++;} ?>
-  catcount = <?php echo $i; ?>;
-  
-  <?php $i = 0; ?>
-  <?php foreach($vd['article'] as $art) { ?>
-    art[<?php echo $i; ?>] = <?php echo $art['id']; ?>;
-  <?php $i++;} ?>
-  artcount = <?php echo $i; ?> + 1;
-  
-  <?php $i = 0; ?>
-  <?php foreach($vd['pid'] as $pid) { ?>
-    pid[<?php echo $i; ?>] = <?php echo $pid['pid']; ?>;
-  <?php $i++;} ?>
-  pidcount = <?php echo $i; ?>;
-  
-  pinyin = Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AZ","09");
-  
-  pycount  = 28;
-  var thismod = "b2c"
-  var m  = "mod_b2b";
-  var c  = "html";
-  var a  = 'index';
-  var id = 0;
-  var modname = "ÁãÊÛÏµÍ³";
-  var moddir  = "b2c";
-  
-  var thisid = 0;
-  
-  var single = 1; // Èç¹ûµ¥ÏîÔòÎª1
-  var thiscount = 0;
-  
-  var other = "";
-  
-  // Ë³Ðò Ê×Ò³->ÀàÄ¿->ÉÌÆ·->ÁÐ±í->ÎÄÕÂ
-  
-  function loadXMLDoc()
-  {
-    xmlhttp=null;
-    var url=null;
-    
-    if(a == "pinyin")
-    {
-      keywords = thisid;
-      if(thisid == "AZ")
-      {
-        keywords = "";
-      }
-      
-      url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod + "&keywords=" + keywords + "&stype=pinyin";
-    }
-    else
-    {
-      url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod;
-    }
-
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
-    if (window.XMLHttpRequest)
-    {
-      xmlhttp=new XMLHttpRequest();
-    }
-    // Õë¶Ô IE µÄ´úÂë£º
-    else if (window.ActiveXObject)
-    {
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    
-    if (xmlhttp!=null)
-    {
-      xmlhttp.onreadystatechange=state_Change;
-      xmlhttp.open("post", "index.php", true);
-      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      xmlhttp.send(url);
-    }
-    else
-    {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
-    }
-  }
-  
-  function state_Change()
-  {
-    var result = document.getElementById("result");
-    // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
-    if (xmlhttp.readyState==4)
-    {
-      // Èç¹ûÎª "OK"
-      if (xmlhttp.status==200)
-      {
-        if(a == "index")
-        {
-          result.innerHTML = modname + "Ê×Ò³Éú³ÉÍê±Ï  => index.html";
-          if(single == 1)
-          {
-            return;
-          }
-          
-          a = "cat";
-          loadXMLDoc();
-          return;
-        }
-        
-        if(a == "cat")
-        {
-          result.innerHTML = modname + "ÀàÄ¿Éú³ÉÍê±Ï  => cat.html";
-          if(single == 1)
-          {
-            return;
-          }
-          
-          a = "product";
-          thisid = pid[0];
-          thiscount = 1;
-          loadXMLDoc();
-          return;
-        }
-        
-        if(a == "product")
-        {
-          result.innerHTML = modname + "±àºÅÎª" + thisid + "ÉÌÆ·Éú³ÉÍê±Ï  => " + thismod + "/p" + thisid + ".html";
-          
-          if((single == 1) &&(thiscount == pidcount))
-          {
-            result.innerHTML = modname + "ËùÓÐÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            return;
-          }
-
-          if(thiscount == pidcount)
-          {
-            a = "plist";
-            thisid = cat[0];
-            thiscount = 1;
-            result.innerHTML = modname + "ËùÓÐÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            if(single == 1)
-            {
-              return;
-            }
-          }
-          thisid = pid[thiscount];
-          thiscount++;
-          loadXMLDoc();
-          return;
-        }
-        
-        if(a == "plist")
-        {
-          result.innerHTML = modname + "±àºÅÎª" + thisid + "µÄÉÌÆ··ÖÀàÉú³ÉÍê±Ï  => " + thismod + "/list-" + thisid + ".html";
-          
-          if((single == 1) &&(thiscount == catcount))
-          {
-            result.innerHTML = modname + "ËùÓÐÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            return;
-          }
-
-          if(thiscount == catcount)
-          {
-            a = "article";
-            thisid = art[0];
-            thiscount = 1;
-            result.innerHTML = modname + "ËùÓÐÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            if(single == 1)
-            {
-              return;
-            }
-          }
-          thisid = cat[thiscount];
-          thiscount++;
-          loadXMLDoc();
-          return;
-        }
-        
-        if(a == "article")
-        {
-          result.innerHTML = modname + "±àºÅÎª" + thisid + "µÄÎÄÕÂÉú³ÉÍê±Ï  => article/" + thisid + ".html";
-          
-          if((single == 1) &&(thiscount == artcount))
-          {
-            result.innerHTML = modname + "ËùÓÐÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            return;
-          }
-          
-          if(thiscount == artcount)
-          {
-            result.innerHTML = modname + "ËùÓÐÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            if(single == 1)
-            {
-              return;
-            }
-          }
-          thisid = art[thiscount];
-          thiscount++;
-          loadXMLDoc();
-          return;
-        }
-        
-        if(a == "pinyin")
-        {
-          result.innerHTML = modname + "Æ´ÒôÎª" + thisid + "µÄÉÌÆ·ÁÐ±íÉú³ÉÍê±Ï  => " + thismod + "/list-" + thisid + ".html";
-          if((single == 1) &&(thiscount == pycount))
-          {
-            result.innerHTML = modname + "ËùÓÐÆ´ÒôÉÌÆ·ÁÐ±í¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            return;
-          }
-          
-          if(thiscount == pycount)
-          {
-            result.innerHTML = modname + "ËùÓÐÆ´ÒôÉÌÆ·ÁÐ±í¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
-            if(single == 1)
-            {
-              return;
-            }
-          }
-          
-          thisid = pinyin[thiscount];
-          thiscount++;
-          loadXMLDoc();
-          return;
-        }
-      }
-      else
-      {
-        result.innerHTML = modname + "Ê×Ò³Éú³ÉÊ§°Ü";
-      }
-    }
-  }
-  
-  function setdata(sgl, act, mod)
-  {
-    if(act == "product")
-    {
-      thisid = pid[0];
-      
-    }
-    if(act == "cat")
-    {
-      thisid = cat[0];
-      
-    }
-    if(act == "article")
-    {
-      thisid = art[0];
-      
-    }
-    
-    thismod = mod;
-    
-    switch(mod)
-    {
-      case "b2b":
-        modname = "Åú·¢";
-        break;
-      case "ykt":
-        modname = "Ò»¿¨Í¨";
-        break;
-      case "b2c":
-        modname = "ÁãÊÛ";
-        break;
-      case "article":
-        modname = "ÎÄÕÂ";
-        break;
-      case "index":
-        modname = "Òýµ¼Ò³";
-        break;
-    }
-    
-    thiscount = 0;
-    a = act;
-    single = sgl;
-    loadXMLDoc();
-  }
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css"><style type="text/css">td{height:30px}</style></head><body><table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">  <tr>    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½É³ï¿½ï¿½ï¿½</td>  </tr>  <tr>    <td width="25%" align="center">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="ï¿½ï¿½ï¿½Â¾ï¿½Ì¬Ò³" class="button"/></td>  </tr>  <?php if(UB_B2C){ ?>  <tr>    <td width="25%" align="center">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>    <td width="75%" align="left" style="border-right:1px #ccc solid;">      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³" class="button"/>      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³" class="button"/>      <input type="button" onclick="setdata(1, 'plist', 'b2c')" value="ï¿½ï¿½Æ·ï¿½Ð±ï¿½Ì¬Ò³" class="button"/>      <input type="button" onclick="setdata(1, 'product', 'b2c')" value="ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³" class="button"/>    </td>  </tr>  <?php } ?>  <?php if(UB_B2B){ ?>  <tr>    <td width="25%" align="center">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>    <td width="75%" align="left" style="border-right:1px #ccc solid;">      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³" class="button"/>    </td>  </tr>  <?php } ?>  <?php if(UB_YKT){ ?>  <tr>    <td width="25%" align="center">Ò»ï¿½ï¿½Í¨Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>    <td width="75%" align="left" style="border-right:1px #ccc solid">      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³" class="button"/>      <input type="button" onclick="setdata(1, 'product', 'ykt')" value="ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³" class="button"/>    </td>  </tr>  <?php } ?>  <tr>    <td width="25%" align="center" style="border-bottom:1px #ccc solid">ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>    <td width="75%" align="left" style="border-bottom:1px #ccc solid;border-right:1px #ccc solid">      <input type="button" onclick="setdata(1, 'index', 'index')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³" class="button"/>    </td>  </tr></table><br/><table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">  <tr>    <td style="border:1px #ccc solid;"><div id="result" style="font-size:15px;color:#ff0000;font-weight:bold"></div><div id="tmp"></div></td>  </tr></table></body></html><script type="text/javascript">  var cat = new Array();  var pid = new Array();  var art = new Array();  <?php $i = 0; ?>  <?php foreach($vd['cat'] as $cat) { ?>    cat[<?php echo $i; ?>] = <?php echo $cat['id']; ?>;  <?php $i++;} ?>  catcount = <?php echo $i; ?>;    <?php $i = 0; ?>  <?php foreach($vd['article'] as $art) { ?>    art[<?php echo $i; ?>] = <?php echo $art['id']; ?>;  <?php $i++;} ?>  artcount = <?php echo $i; ?> + 1;    <?php $i = 0; ?>  <?php foreach($vd['pid'] as $pid) { ?>    pid[<?php echo $i; ?>] = <?php echo $pid['pid']; ?>;  <?php $i++;} ?>  pidcount = <?php echo $i; ?>;    pinyin = Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","AZ","09");    pycount  = 28;  var thismod = "b2c"  var m  = "mod_b2b";  var c  = "html";  var a  = 'index';  var id = 0;  var modname = "ï¿½ï¿½ï¿½ï¿½ÏµÍ³";  var moddir  = "b2c";    var thisid = 0;    var single = 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª1  var thiscount = 0;    var other = "";    // Ë³ï¿½ï¿½ ï¿½ï¿½Ò³->ï¿½ï¿½Ä¿->ï¿½ï¿½Æ·->ï¿½Ð±ï¿½->ï¿½ï¿½ï¿½ï¿½    function loadXMLDoc()  {    xmlhttp=null;    var url=null;        if(a == "pinyin")    {      keywords = thisid;      if(thisid == "AZ")      {        keywords = "";      }            url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod + "&keywords=" + keywords + "&stype=pinyin";    }    else    {      url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod;    }    // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º    if (window.XMLHttpRequest)    {      xmlhttp=new XMLHttpRequest();    }    // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º    else if (window.ActiveXObject)    {      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");    }        if (xmlhttp!=null)    {      xmlhttp.onreadystatechange=state_Change;      xmlhttp.open("post", "index.php", true);      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');      xmlhttp.send(url);    }    else    {      alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTP")    }  }    function state_Change()  {    var result = document.getElementById("result");    // ï¿½ï¿½ï¿½ xmlhttp ï¿½ï¿½Ê¾Îª "loaded"    if (xmlhttp.readyState==4)    {      // ï¿½ï¿½ï¿½Îª "OK"      if (xmlhttp.status==200)      {        if(a == "index")        {          result.innerHTML = modname + "ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => index.html";          if(single == 1)          {            return;          }                    a = "cat";          loadXMLDoc();          return;        }                if(a == "cat")        {          result.innerHTML = modname + "ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => cat.html";          if(single == 1)          {            return;          }                    a = "product";          thisid = pid[0];          thiscount = 1;          loadXMLDoc();          return;        }                if(a == "product")        {          result.innerHTML = modname + "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => " + thismod + "/p" + thisid + ".html";                    if((single == 1) &&(thiscount == pidcount))          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            return;          }          if(thiscount == pidcount)          {            a = "plist";            thisid = cat[0];            thiscount = 1;            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            if(single == 1)            {              return;            }          }          thisid = pid[thiscount];          thiscount++;          loadXMLDoc();          return;        }                if(a == "plist")        {          result.innerHTML = modname + "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => " + thismod + "/list-" + thisid + ".html";                    if((single == 1) &&(thiscount == catcount))          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            return;          }          if(thiscount == catcount)          {            a = "article";            thisid = art[0];            thiscount = 1;            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            if(single == 1)            {              return;            }          }          thisid = cat[thiscount];          thiscount++;          loadXMLDoc();          return;        }                if(a == "article")        {          result.innerHTML = modname + "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => article/" + thisid + ".html";                    if((single == 1) &&(thiscount == artcount))          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¾ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            return;          }                    if(thiscount == artcount)          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¾ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            if(single == 1)            {              return;            }          }          thisid = art[thiscount];          thiscount++;          loadXMLDoc();          return;        }                if(a == "pinyin")        {          result.innerHTML = modname + "Æ´ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => " + thismod + "/list-" + thisid + ".html";          if((single == 1) &&(thiscount == pycount))          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ð±ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            return;          }                    if(thiscount == pycount)          {            result.innerHTML = modname + "ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ð±ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";            if(single == 1)            {              return;            }          }                    thisid = pinyin[thiscount];          thiscount++;          loadXMLDoc();          return;        }      }      else      {        result.innerHTML = modname + "ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½";      }    }  }    function setdata(sgl, act, mod)  {    if(act == "product")    {      thisid = pid[0];          }    if(act == "cat")    {      thisid = cat[0];          }    if(act == "article")    {      thisid = art[0];          }        thismod = mod;        switch(mod)    {      case "b2b":        modname = "ï¿½ï¿½ï¿½ï¿½";        break;      case "ykt":        modname = "Ò»ï¿½ï¿½Í¨";        break;      case "b2c":        modname = "ï¿½ï¿½ï¿½ï¿½";        break;      case "article":        modname = "ï¿½ï¿½ï¿½ï¿½";        break;      case "index":        modname = "ï¿½ï¿½ï¿½ï¿½Ò³";        break;    }        thiscount = 0;    a = act;    single = sgl;    loadXMLDoc();  }</script>

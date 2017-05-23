@@ -52,15 +52,15 @@ class YktController extends Controller
 								}
 								$R4e420efcc3 = $this->hander->ICard_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "cardnumber" => "¿¨ºÅ", "cardpwd" => "¿¨ÃÜÂë", "bindaid" => "´úÀíÉÌ±àºÅ", "cardgroup" => "Åú´Î" );
+								$R00be52aa45 = array( "cardnumber" => "ï¿½ï¿½ï¿½ï¿½", "cardpwd" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "bindaid" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ï¿½", "cardgroup" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
-								$R793c7fe26b = array( "-1" => "ËùÓÐ", "0" => "¿¨ÎÞÐ§", "1" => "¿¨ÓÐÐ§", "2" => "Î´ÉúÐ§", "3" => "Ê¹ÓÃÖÐ" );
+								$R793c7fe26b = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "0" => "ï¿½ï¿½ï¿½ï¿½Ð§", "1" => "ï¿½ï¿½ï¿½ï¿½Ð§", "2" => "Î´ï¿½ï¿½Ð§", "3" => "Ê¹ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "scardstate", $R793c7fe26b );
 								$this->Assign( "cardstate", getvar( "cardok", "-1" ) );
-								$R5026051cf5 = array( "-1" => "ËùÓÐ", "f" => "ÒÑÊÛ³ö", "s" => "Î´ÊÛ³ö" );
+								$R5026051cf5 = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "f" => "ï¿½ï¿½ï¿½Û³ï¿½", "s" => "Î´ï¿½Û³ï¿½" );
 								$this->Assign( "ssellstate", $R5026051cf5 );
 								$this->Assign( "sellstate", getvar( "optype", "-1" ) );
-								$R209524ad64 = array( "-1" => "ËùÓÐ", "100" => "¶Ò»»Àà", "101" => "³äÖµÀà" );
+								$R209524ad64 = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "100" => "ï¿½Ò»ï¿½ï¿½ï¿½", "101" => "ï¿½ï¿½Öµï¿½ï¿½" );
 								$this->Assign( "sptype", $R209524ad64 );
 								$this->Assign( "ptype", getvar( "ptype", "-1" ) );
 						
@@ -87,7 +87,7 @@ class YktController extends Controller
 				{
 								$Rb47e0fcf5c = factory::getinstance( "yktproducts" );
 								$Rb47e0fcf5c->IYktProduct_Del( intval( getvar( "id" ) ) );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=ykt&a=product" );
 				}
 
@@ -96,7 +96,7 @@ class YktController extends Controller
 								$R4939d208ed = intval( getvar( "id" ) );
 								if ( $R4939d208ed == 0 )
 								{
-												$this->Alert( "²úÆ·ÓÐÎó£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R422f9a4efb = factory::getinstance( "products" );
@@ -114,14 +114,14 @@ class YktController extends Controller
 								$R4939d208ed = intval( getvar( "id" ) );
 								if ( $R4939d208ed == 0 )
 								{
-												$this->Alert( "²úÆ·ÓÐÎó£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rb47e0fcf5c = factory::getinstance( "yktproducts" );
 								$Rd017e8e06f = $Rb47e0fcf5c->IYktProduct_GetById( $R4939d208ed, "yktpname" );
 								if ( !isset( $Rd017e8e06f['yktpname'] ) )
 								{
-												$this->Alert( "²úÆ·ÓÐÎó£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R422f9a4efb = factory::getinstance( "products" );
@@ -151,7 +151,7 @@ class YktController extends Controller
 								{
 												$R4939d208ed = $Rc6f67e578e;
 								}
-								$this->go( $R808b89ba0e, "²Ù×÷³É¹¦", "²Ù×÷Ê§°Ü", "index.php?m=mod_b2b&c=ykt&a=childs&id=".$R4939d208ed );
+								$this->go( $R808b89ba0e, "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½", "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=ykt&a=childs&id=".$R4939d208ed );
 				}
 
 				public function ProductSave( )
@@ -172,15 +172,15 @@ class YktController extends Controller
 								$Rb47e0fcf5c = factory::getinstance( "yktproducts" );
 								if ( $R3584859062 == 0 )
 								{
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $Rb47e0fcf5c->IYktProduct_Create( $data );
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $Rb47e0fcf5c->IYktProduct_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=ykt&a=product" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=ykt&a=product" );
 				}
 
 				public function SetYktCreateCache( )
@@ -269,7 +269,7 @@ class YktController extends Controller
 								$R460313ab13 = intval( request( "ckcardok" ) );
 								if ( $R55f933c773 <= 0 )
 								{
-												$this->Alert( "ÄúºÃ,Ò»¿¨Í¨ÃæÖµ±ØÐë´óÓÚ0" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0" );
 												$this->HistoryGo( );
 								}
 								if ( 0 < $R30c230ef2f )
@@ -277,13 +277,13 @@ class YktController extends Controller
 												$agent = $this->GetAgentCache( $R30c230ef2f );
 												if ( !isset( $agent['forykt'] ) || $agent['forykt'] == 0 )
 												{
-																$this->Alert( "ÄúºÃ,¸ÃÓÃ»§²¢·ÇÒ»¿¨Í¨´úÀíÉÌ,ÎÞ·¨°ó¶¨" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Þ·ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
 								if ( $R460313ab13 == 1 && $R30c230ef2f == 0 )
 								{
-												$this->Alert( "ÄúºÃ,Äú¹´Ñ¡ÁË°ó¶¨´úÀíÉÌ,ÇëÊäÈë´úÀíÉÌµÄ±àºÅ" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ë°ó¶¨´ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌµÄ±ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								include_once( UPATH_HELPER."YktHelper.php" );
@@ -291,7 +291,7 @@ class YktController extends Controller
 								$R51c716b966 = $this->SetLang( 1 );
 								$R4fe6545da8 = $_SESSION['adminname'];
 								$R30c230ef2f = $R1b69c92460 == 100 ? $R30c230ef2f : 0;
-								$R65edce27dd = $R1b69c92460 == 100 ? "Ò»¿¨Í¨¶Ò»»×¨ÓÃ¿¨" : "Ò»¿¨Í¨³äÖµ×¨ÓÃ¿¨";
+								$R65edce27dd = $R1b69c92460 == 100 ? "Ò»ï¿½ï¿½Í¨ï¿½Ò»ï¿½×¨ï¿½Ã¿ï¿½" : "Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ×¨ï¿½Ã¿ï¿½";
 								$R65edce27dd = $R65edce27dd."_".$R55f933c773.$R51c716b966['moneyunit'];
 								$Rea7da29f55 = 0;
 								if ( 0 < $Rc918c9e179 )
@@ -302,17 +302,17 @@ class YktController extends Controller
 																$R3db8f5c8bc = $R422f9a4efb->IProduct_Get( $R670974c812, -1, "pname,ptype,listprice" );
 																if ( !isset( $R3db8f5c8bc['pname'] ) )
 																{
-																				$this->Alert( "Òªµ¼ÈëµÄÉÌÆ·²»´æÔÚ£¬ÇëÖØÐÂÑ¡Ôñ" );
+																				$this->Alert( "Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 																				$this->HistoryGo( );
 																}
 																if ( $R3db8f5c8bc['listprice'] != $R55f933c773 )
 																{
-																				$this->Alert( "Òªµ¼ÈëµÄÉÌÆ·ºÍÄúÄ¿Ç°ÊäÈëµÄÃæÖµ²»Ò»ÖÂ£¬ÇëÖØÐÂÊäÈë" );
+																				$this->Alert( "Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ä¿Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																				$this->HistoryGo( );
 																}
 																if ( $R3db8f5c8bc['ptype'] != $R1b69c92460 )
 																{
-																				$this->Alert( "Òªµ¼ÈëµÄÉÌÆ·ºÍÄúÄ¿Ç°Ñ¡ÔñµÄÒ»¿¨Í¨ÀàÐÍ²»Ò»ÖÂ£¬ÇëÖØÐÂÊäÈë" );
+																				$this->Alert( "Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ä¿Ç°Ñ¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Í²ï¿½Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																				$this->HistoryGo( );
 																}
 																$R65edce27dd = $R3db8f5c8bc['pname'];
@@ -340,7 +340,7 @@ class YktController extends Controller
 																				{
 																								if ( $R9165cb97fd == 0 )
 																								{
-																												$this->Alert( "Äúµ±Ç°Ã»ÓÐ°ó¶¨ÈÎºÎÉÌÆ·£¬ÎÞ·¨ÕÒµ½Ä¬ÈÏÀà±ð£¬ÇëÄúÑ¡ÔñÒ»ÏÂ" );
+																												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ç°Ã»ï¿½Ð°ï¿½ï¿½Îºï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Þ·ï¿½ï¿½Òµï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½" );
 																												$this->HistoryGo( );
 																								}
 																								else
@@ -564,20 +564,20 @@ class YktController extends Controller
 												$R808b89ba0e = $R79583fa24b->IBuyRights_Create( $data );
 												if ( !$R808b89ba0e )
 												{
-																$this->Alert( "°ó¶¨Ê§°Ü£¬Çë½øÈë Ò»¿¨Í¨ºÍÉÌÆ·¶Ò»»¹ØÏµ±í ½øÐÐ°ó¶¨£¬ÉèÖÃ¶ÔÏóÑ¡ÔñÒ»¿¨Í¨Åú´Î£¬±¾Åú´ÎÎª".$R7661e907a4 );
+																$this->Alert( "ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Ïµï¿½ï¿½ ï¿½ï¿½ï¿½Ð°ó¶¨£ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª".$R7661e907a4 );
 												}
 								}
 								if ( $Rc918c9e179 < 3 )
 								{
 												global $path_cache;
 												global $cache;
-												$R3656889a44 = date( "m" )."ÔÂ".date( "d" )."ÈÕÒ»¿¨Í¨Éú³É_".$R55f933c773.$R51c716b966['moneyunit'];
+												$R3656889a44 = date( "m" )."ï¿½ï¿½".date( "d" )."ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½_".$R55f933c773.$R51c716b966['moneyunit'];
 												$R762df0f9ab = $path_cache.DS.$R3656889a44.".txt";
 												$this->WriteFile( $R762df0f9ab, $R7afcde8999 );
 												$this->Assign( "filename", "content".DS.$cache.DS."template".DS.$R3656889a44 );
 												$this->Assign( "href", "content".DS.$cache.DS."template".DS.urlencode( $R3656889a44 ) );
 								}
-								$this->Alert( "Íê³É²Ù×÷£¡" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "iswrite", $Rc918c9e179 );
 								$this->Assign( "yktprice", $R55f933c773 );
 								$this->Assign( "succ", $R51b4178493 );
@@ -613,11 +613,11 @@ class YktController extends Controller
 								if ( file_exists( $R762df0f9ab ) )
 								{
 												unlink( $R762df0f9ab );
-												$this->Alert( "ÎÄ¼þÒÑ¾­³É¹¦É¾³ý" );
+												$this->Alert( "ï¿½Ä¼ï¿½ï¿½Ñ¾ï¿½ï¿½É¹ï¿½É¾ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "ÎÄ¼þ²»´æÔÚ£¡É¾³ýÊ§°Ü" );
+												$this->Alert( "ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½É¾ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=ykt&a=create" );
 				}
@@ -660,16 +660,16 @@ class YktController extends Controller
 								}
 								$R4e420efcc3 = $this->hander->ICard_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "cardnumber" => "¿¨ºÅ", "cardpwd" => "¿¨ÃÜÂë", "ordno" => "¶©µ¥ºÅ", "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ", "cardgroup" => "Åú´Î" );
+								$R00be52aa45 = array( "cardnumber" => "ï¿½ï¿½ï¿½ï¿½", "cardpwd" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "cardgroup" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Recycle( "cards", "ptype>99" );
 								$this->Assign( "sarray", $R00be52aa45 );
-								$R793c7fe26b = array( "-1" => "ËùÓÐ", "0" => "¿¨ÎÞÐ§", "1" => "¿¨ÓÐÐ§", "2" => "Î´ÉúÐ§", "3" => "Ê¹ÓÃÖÐ" );
+								$R793c7fe26b = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "0" => "ï¿½ï¿½ï¿½ï¿½Ð§", "1" => "ï¿½ï¿½ï¿½ï¿½Ð§", "2" => "Î´ï¿½ï¿½Ð§", "3" => "Ê¹ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "scardstate", $R793c7fe26b );
 								$this->Assign( "cardstate", getvar( "cardok", "-1" ) );
-								$R5026051cf5 = array( "-1" => "ËùÓÐ", "f" => "ÒÑÊÛ³ö", "s" => "Î´ÊÛ³ö" );
+								$R5026051cf5 = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "f" => "ï¿½ï¿½ï¿½Û³ï¿½", "s" => "Î´ï¿½Û³ï¿½" );
 								$this->Assign( "ssellstate", $R5026051cf5 );
 								$this->Assign( "sellstate", getvar( "optype", "-1" ) );
-								$R209524ad64 = array( "-1" => "ËùÓÐ", "100" => "¶Ò»»Àà", "101" => "³äÖµÀà" );
+								$R209524ad64 = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "100" => "ï¿½Ò»ï¿½ï¿½ï¿½", "101" => "ï¿½ï¿½Öµï¿½ï¿½" );
 								$this->Assign( "sptype", $R209524ad64 );
 								$this->Assign( "ptype", getvar( "ptype", "-1" ) );
 						
@@ -679,7 +679,7 @@ class YktController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -695,7 +695,7 @@ class YktController extends Controller
 								$R4e420efcc3 = $this->hander->ICard_GroupPage( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
 								include_once( UPATH_HELPER."YktHelper.php" );
-								$R00be52aa45 = array( "pname" => "Ãû³Æ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -732,7 +732,7 @@ class YktController extends Controller
 												"action" => $this->action[2]
 								);
 								$R3db8f5c8bc = $this->hander->ICard_Save( $data );
-								$this->Alert( "²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->View( "index" );
 				}
 
@@ -799,7 +799,7 @@ class YktController extends Controller
 								$this->Assign( "succ", $R51b4178493 );
 								$this->Assign( "fail", $R94927a2851 );
 								$this->Assign( "pname", $R65edce27dd );
-								$this->Alert( "²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 						
 												$this->View( );
 						
@@ -812,7 +812,7 @@ class YktController extends Controller
 												"action" => $this->action[1]
 								);
 								$this->hander->ICard_Save( $data );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->View( "Index" );
 				}
 
@@ -823,7 +823,7 @@ class YktController extends Controller
 												"cardok" => intval( getvar( "cardok" ) )
 								);
 								$this->hander->ICard_UpdateByGroup( $data, $R7661e907a4 );
-								$this->Alert( "²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=ykt&a=group" );
 				}
 
@@ -836,11 +836,11 @@ class YktController extends Controller
 								$R808b89ba0e = $this->hander->ICard_UpdateByGroup( $data, $R7661e907a4 );
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "ÐÞ¸Ä³É¹¦£¡" );
+												$this->Alert( "ï¿½Þ¸Ä³É¹ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "ÐÞ¸ÄÊ§°Ü£¡" );
+												$this->Alert( "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=ykt&by=1" );
 				}
@@ -880,7 +880,7 @@ class YktController extends Controller
 								$this->Assign( "ykt", $R026f0167b4 );
 								$this->FillPage( $data, $R4e420efcc3 );
 								include_once( UPATH_HELPER."ProductHelper.php" );
-								$R00be52aa45 = array( "listprice" => "ÃæÖµ", "pname" => "Ãû³Æ" );
+								$R00be52aa45 = array( "listprice" => "ï¿½ï¿½Öµ", "pname" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -912,7 +912,7 @@ class YktController extends Controller
 												}
 												$R422f9a4efb->IProduct_Update( $data, $R8e8b5578f7[$Ra16d228039] );
 								}
-								$this->Alert( "¸üÐÂÍê±Ï" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=ykt&a=rights&exchange=".$R31b5ab4330 );
 				}
 
@@ -924,7 +924,7 @@ class YktController extends Controller
 								$R4e420efcc3 = $this->hander->ICard_PageByPrice( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
 								include_once( UPATH_HELPER."YktHelper.php" );
-								$R00be52aa45 = array( "pname" => "Ãû³Æ", "pid" => "±àºÅ", "listprice" => "ÃæÖµ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½ï¿½", "listprice" => "ï¿½ï¿½Öµ" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -981,7 +981,7 @@ class YktController extends Controller
 								$R2a51483b14 = getvar( "aid" );
 								$this->Assign( "aid", $R2a51483b14 );
 								include_once( UPATH_HELPER."CardHelper.php" );
-								$R00be52aa45 = array( "listprice" => "ÃæÖµ", "pname" => "Ãû³Æ" );
+								$R00be52aa45 = array( "listprice" => "ï¿½ï¿½Öµ", "pname" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -996,7 +996,7 @@ class YktController extends Controller
 												"bind" => $R2a51483b14
 								);
 								$R808b89ba0e = $this->hander->ICard_UpdateMany( $data, implode( ",", $R3584859062 ) );
-								$this->go( $R808b89ba0e, "°ó¶¨³É¹¦£¡", "°ó¶¨Ê§°Ü£¡", "index.php?m=mod_b2b&c=ykt&a=bind&aid=".$R2a51483b14 );
+								$this->go( $R808b89ba0e, "ï¿½ó¶¨³É¹ï¿½ï¿½ï¿½", "ï¿½ï¿½Ê§ï¿½Ü£ï¿½", "index.php?m=mod_b2b&c=ykt&a=bind&aid=".$R2a51483b14 );
 				}
 
 				public function Trans( )
@@ -1013,7 +1013,7 @@ class YktController extends Controller
 								$R4aa7d6198d = factory::getinstance( "ykttrans" );
 								$R4e420efcc3 = $R4aa7d6198d->IYktTrans_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "listprice" => "ÃæÖµ", "pname" => "Ãû³Æ" );
+								$R00be52aa45 = array( "listprice" => "ï¿½ï¿½Öµ", "pname" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -1033,15 +1033,15 @@ class YktController extends Controller
 								$R4aa7d6198d = factory::getinstance( "ykttrans" );
 								if ( $R3584859062 == 0 )
 								{
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $R4aa7d6198d->IYktTrans_Create( $data );
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $R4aa7d6198d->IYktTrans_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=ykt&a=trans" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=ykt&a=trans" );
 				}
 
 				public function TranDel( )
@@ -1049,7 +1049,7 @@ class YktController extends Controller
 								$R3584859062 = intval( getvar( "id" ) );
 								$R4aa7d6198d = factory::getinstance( "ykttrans" );
 								$R808b89ba0e = $R4aa7d6198d->IYktTrans_Del( $R3584859062 );
-								$this->go( $R808b89ba0e, "É¾³ý³É¹¦", "É¾³ýÊ§°Ü", "index.php?m=mod_b2b&c=ykt&a=trans" );
+								$this->go( $R808b89ba0e, "É¾ï¿½ï¿½ï¿½É¹ï¿½", "É¾ï¿½ï¿½Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=ykt&a=trans" );
 				}
 
 				public function AddFunds( )
@@ -1076,12 +1076,12 @@ class YktController extends Controller
 												$Rf958605ae8 = getvar( "retradepwd" );
 												if ( $R48aa85bc4e != $Rf958605ae8 )
 												{
-																$this->Alert( "Á½´ÎÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»Ò»ÖÂ£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 												if ( md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 												{
-																$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 								}
@@ -1089,7 +1089,7 @@ class YktController extends Controller
 								$Re0f5b440e2 = doubleval( request( "ubzczvalue" ) );
 								if ( $Re0f5b440e2 == 0 )
 								{
-												$this->Alert( "½ð¶îÄÜ²»Îª 0" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ü²ï¿½Îª 0" );
 												$this->HistoryGo( );
 								}
 								$R3db8f5c8bc = $this->hander->ICard_GetById( $R3584859062 );
@@ -1097,7 +1097,7 @@ class YktController extends Controller
 								$Rc0c42883ee = $R3db8f5c8bc['money'] + $Re0f5b440e2;
 								if ( $Rc0c42883ee < 0 )
 								{
-												$this->Alert( "Ò»¿¨Í¨µÄÓà¶îÐ¡ÓÚÄúÊäÈëµÄ½ð¶î£¬¿Û¿îÊ§°Ü£¡" );
+												$this->Alert( "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½î£¬ï¿½Û¿ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R72852f08e6 = round( $Rc0c42883ee, 2 );
@@ -1111,28 +1111,28 @@ class YktController extends Controller
 								$R3db8f5c8bc = $this->hander->ICard_Update( $data, $R3584859062 );
 								if ( $R3db8f5c8bc )
 								{
-												$this->OrderCreate( 0, $Re0f5b440e2, $Rc0c42883ee, $R3ab1f9eb35, 99, $R5d899a20a5, "¹ÜÀíÔ±Ò»¿¨Í¨²¹Óà¶î", $Ra236db885f );
+												$this->OrderCreate( 0, $Re0f5b440e2, $Rc0c42883ee, $R3ab1f9eb35, 99, $R5d899a20a5, "ï¿½ï¿½ï¿½ï¿½Ô±Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½", $Ra236db885f );
 												if ( 0 < $Re0f5b440e2 )
 												{
-																$this->Alert( "³äÖµ³É¹¦" );
+																$this->Alert( "ï¿½ï¿½Öµï¿½É¹ï¿½" );
 												}
 												else
 												{
-																$this->Alert( "¿Û¿î³É¹¦" );
+																$this->Alert( "ï¿½Û¿ï¿½É¹ï¿½" );
 												}
 								}
 								else if ( 0 < $Re0f5b440e2 )
 								{
-												$this->Alert( "³äÖµÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ÖµÊ§ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "¿Û¿îÊ§°Ü" );
+												$this->Alert( "ï¿½Û¿ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Ykt&a=AddFunds&ubzid=".$R3584859062 );
 				}
 
-				public function OrderCreate( $R2a51483b14, $R9b252bf0a7, $Rc0c42883ee, $R3ab1f9eb35, $Rb60574d852 = 99, $R45074ab3da = "", $Re82ee9b121 = "¹ÜÀíÔ±Ò»¿¨Í¨²¹Óà¶î", $Ra236db885f = "" )
+				public function OrderCreate( $R2a51483b14, $R9b252bf0a7, $Rc0c42883ee, $R3ab1f9eb35, $Rb60574d852 = 99, $R45074ab3da = "", $Re82ee9b121 = "ï¿½ï¿½ï¿½ï¿½Ô±Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½", $Ra236db885f = "" )
 				{
 								include_once( UPATH_HELPER."OrderHelper.php" );
 								$Rdcd9105806 = createfundsordno( );
@@ -1198,7 +1198,7 @@ class YktController extends Controller
 								$R48aa85bc4e = getvar( "mytradepwd" );
 								if ( trim( $R48aa85bc4e ) == "" || md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 								{
-												$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 												$this->HistoryGo( );
 								}
 				}

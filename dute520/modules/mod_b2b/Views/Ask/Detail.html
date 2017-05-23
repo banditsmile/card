@@ -1,50 +1,50 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="{$vd['sc']}css/main.css" type="text/css">
-<title>ºóÌ¨¹ÜÀí</title>
+<title>åå°ç®¡ç†</title>
 </head>
 <body>
 <!--$item=$vd['item'];-->
 <form name="addNEWS" method="post" action="index.php?m=mod_b2b&c=ask&a=save">
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
-    <td align="center" colspan="2" class="listhead texttle">ÓÃ»§ÁôÑÔ</td>
+    <td align="center" colspan="2" class="listhead texttle">ç”¨æˆ·ç•™è¨€</td>
   </tr>
   <tr> 
     <td height="40" width="80" align="right">
-      ÁôÑÔÓÃ»§£º
+      ç•™è¨€ç”¨æˆ·ï¼š
     </td>
     <td height="40" align="left">{$item['author']}
     </td>
   </tr>
   <tr> 
     <td height="40" width="80" align="right">
-      ÁôÑÔÖ÷Ìâ£º
+      ç•™è¨€ä¸»é¢˜ï¼š
     </td>
     <td height="40" align="left">{$item['title']}
     </td>
   </tr>
   <tr bgcolor="#FFFFFF"> 
     <td height="40" width="80" align="right">
-      ÁôÑÔÄÚÈİ£º
+      ç•™è¨€å†…å®¹ï¼š
     </td>
     <td height="25" valign="top"  bgcolor="#F5FBFF"> {$item['content']}
-¡¡  </td>
+ã€€  </td>
   </tr>
   <tr bgcolor="#FFFFFF"> 
     <td height="40" width="80" align="right">
-      »Ø¸´ÁôÑÔ£º
+      å›å¤ç•™è¨€ï¼š
     </td>
     <td height="25" valign="top"  bgcolor="#F5FBFF"> 
       <textarea name="reply" cols="67" rows="5" >{$item['reply']}</textarea>
-¡¡  </td>
+ã€€  </td>
   </tr>
   <tr bgcolor="#FFFFFF"> 
     <td height="30" align="center" colspan="2" bgcolor="#F5FBFF"> 
       <input type="hidden" name="id" value="{$item['id']}">
-      <input type="submit" name="Submit" value=" Ìá ½» " class="input">¡¡ 
-      <input type="reset" name="Submit2" value=" ÖØ ÖÃ " class="input"> 
+      <input type="submit" name="Submit" value=" æ äº¤ " class="input">ã€€ 
+      <input type="reset" name="Submit2" value=" é‡ ç½® " class="input"> 
     </td>
   </tr>
 </table>
@@ -55,7 +55,7 @@
 function CheckForm()
 {
   if (document.addNEWS.bt.value.length == 0) {
-    alert("ÁôÑÔÖ÷ÌâÃ»ÓĞÌîĞ´.");
+    alert("ç•™è¨€ä¸»é¢˜æ²¡æœ‰å¡«å†™.");
     document.addNEWS.title.focus();
     return false;
   }

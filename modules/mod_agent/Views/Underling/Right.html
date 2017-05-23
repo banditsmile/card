@@ -1,78 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Éè¶¨ÏÂÊô¿Í»§¹º¿¨È¨ÏŞ</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<link href="../index/css/common.css" type="text/css" rel="stylesheet">
-<link href="../index/css/page.css" type="text/css" rel="stylesheet">
-</head>
-		<form name="query" method="get" action="index.php">
-<body>
-    <div class="new_qie">
-        <div class="new_qie2">
-            <h2>
-                ÏÂÊô¿Í»§¹º¿¨È¨ÏŞ(°´Ö¸¶¨¿Í»§)</h2>
-        </div>
-</div>
-    <table width="100%" cellpadding="2" cellspacing="1" class="table5">
- 		<tr>
- 		  <td width="15%" class="td_left"> ¹Ø¼ü×Ö£º </td>
-		<td width="78%" align="left" class="tableright1"><div align="left">
-		  <input type="text" size="30" name="keywords" class='input0' value="">
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="td_left"> ²éÑ¯ÀàĞÍ£º </td>
-		<td align="left" class="tableright1">
-		  <div align="left">
-		    <select name="stype">
-		        <option value="aid" >¿Í»§±àºÅ</option>
-		        <option value="aname" >ÓÃ»§Ãû</option>
-		        <option value="company" >ÉÌ»§Ãû³Æ</option>
-		        <option value="arealname" >ÁªÏµÈË</option>
-            </select>
-	      </div></td>
-		</tr>
-		<tr>
-		  <td class="td_left"></td>
-		<td align="left" class="tableright1">
-			<div align="left">
-			  <input type="hidden" name="m" value="mod_agent">
-			  <input type="hidden" name="c" value="Underling">
-			  <input type="hidden" name="a" value="Right">
-			    <span class="tdleft">
-			      <input name="Submit" type="submit" class="input_s" value=" " />
-	        </span></div></td>
-		</tr>
-</table>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-        <tr>
-            <th width="8%"><span class="heardertop1">±àºÅ</span></th>
-		<th width="10%"><span class="heardertop1">ÓÃ»§Ãû</span></th>
-		<th width="30%"><span class="heardertop1">ÉÌ»§Ãû³Æ</span></th>
-		<th width="10%"><span class="heardertop1">ÓÃ»§¼¶±ğ</span></th>
-		<th width="10%"><span class="heardertop1">ÁªÏµÈË</span></th>
-		<th width="6%"><span class="heardertop1">×´Ì¬</span></th>
-		<th width="10%"><span class="heardertop1">Óà¶î</span></th>
-		<th width="10%"><span class="heardertop1">Ïû·Ñ</span></th>
-		<th width="6%"><span class="heardertop1">È¨ÏŞ</span></th>
-		<!--foreach($vd['items'] as $item) {-->
-      <tr class="trd">
-		<td>{$item['aid']}</td>
-		<td>{$item['aname']}</td>
-		<td align=left>{$item['company']}</td>
-		<td>{$item['rank']}</td>
-		<td>{$item['arealname']}</td>
-		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">¶³½á</font> <!--}else{--> <font color="#008800">Æô¶¯</font> <!--}--></td>
-		<td>{$item['aremain']}</td>
-		<td>{$item['acsmp']}</td>
-		<td><a href="index.php?m=mod_agent&c=Right&a=Right&param=aid&idx={$item['aid']}&isok=-1"><u>¹ÜÀí</u></a></td>
-	  </tr>
-		<!--}-->
-</table>
-		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-                <div align="right">{load(fpage)}
-                </div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <title>è®¾å®šä¸‹å±å®¢æˆ·è´­å¡æƒé™</title>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link href="../index/css/common.css" type="text/css" rel="stylesheet"><link href="../index/css/page.css" type="text/css" rel="stylesheet"></head>		<form name="query" method="get" action="index.php"><body>    <div class="new_qie">        <div class="new_qie2">            <h2>                ä¸‹å±å®¢æˆ·è´­å¡æƒé™(æŒ‰æŒ‡å®šå®¢æˆ·)</h2>        </div></div>    <table width="100%" cellpadding="2" cellspacing="1" class="table5"> 		<tr> 		  <td width="15%" class="td_left"> å…³é”®å­—ï¼š </td>		<td width="78%" align="left" class="tableright1"><div align="left">		  <input type="text" size="30" name="keywords" class='input0' value="">		  </div></td>		</tr>		<tr>		  <td class="td_left"> æŸ¥è¯¢ç±»å‹ï¼š </td>		<td align="left" class="tableright1">		  <div align="left">		    <select name="stype">		        <option value="aid" >å®¢æˆ·ç¼–å·</option>		        <option value="aname" >ç”¨æˆ·å</option>		        <option value="company" >å•†æˆ·åç§°</option>		        <option value="arealname" >è”ç³»äºº</option>            </select>	      </div></td>		</tr>		<tr>		  <td class="td_left"></td>		<td align="left" class="tableright1">			<div align="left">			  <input type="hidden" name="m" value="mod_agent">			  <input type="hidden" name="c" value="Underling">			  <input type="hidden" name="a" value="Right">			    <span class="tdleft">			      <input name="Submit" type="submit" class="input_s" value=" " />	        </span></div></td>		</tr></table>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">        <tr>            <th width="8%"><span class="heardertop1">ç¼–å·</span></th>		<th width="10%"><span class="heardertop1">ç”¨æˆ·å</span></th>		<th width="30%"><span class="heardertop1">å•†æˆ·åç§°</span></th>		<th width="10%"><span class="heardertop1">ç”¨æˆ·çº§åˆ«</span></th>		<th width="10%"><span class="heardertop1">è”ç³»äºº</span></th>		<th width="6%"><span class="heardertop1">çŠ¶æ€</span></th>		<th width="10%"><span class="heardertop1">ä½™é¢</span></th>		<th width="10%"><span class="heardertop1">æ¶ˆè´¹</span></th>		<th width="6%"><span class="heardertop1">æƒé™</span></th>		<!--foreach($vd['items'] as $item) {-->      <tr class="trd">		<td>{$item['aid']}</td>		<td>{$item['aname']}</td>		<td align=left>{$item['company']}</td>		<td>{$item['rank']}</td>		<td>{$item['arealname']}</td>		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">å†»ç»“</font> <!--}else{--> <font color="#008800">å¯åŠ¨</font> <!--}--></td>		<td>{$item['aremain']}</td>		<td>{$item['acsmp']}</td>		<td><a href="index.php?m=mod_agent&c=Right&a=Right&param=aid&idx={$item['aid']}&isok=-1"><u>ç®¡ç†</u></a></td>	  </tr>		<!--}--></table>		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>                <div align="right">{load(fpage)}                </div></body></html>

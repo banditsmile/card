@@ -71,7 +71,7 @@ class ProductController extends Controller
   			$R71a6fd054f = 1;
   		}
  
-  		//¿´¿´»º´æÊÇ·ñ´æÔÚ
+  		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
   		$R09a3346376 = BCKCACHE.DS.'product'.DS.'p_'.$Rfff462d8f8.'_'.$R71a6fd054f.'.php';
   		
   		if(!file_exists($R09a3346376) || $R4c6d6471cd > filemtime($R09a3346376))
@@ -85,7 +85,7 @@ class ProductController extends Controller
   				$R4e420efcc3['item'][$Ra16d228039]['pdesc'] = '';
   			}
   			
-  			//Ð´ÈëÎÄ¼þ
+  			//Ð´ï¿½ï¿½ï¿½Ä¼ï¿½
   			$R63bede6b19 = '$R4e420efcc3=unserialize(gzinflate(base64_decode(\''.base64_encode(gzdeflate(serialize($R4e420efcc3))).'\')))';
   			$Re82ee9b121 = '<?php '.chr(10).$R63bede6b19.';'.chr(10).'?>';
   	    file_put_contents($R09a3346376, $Re82ee9b121);
@@ -106,7 +106,7 @@ class ProductController extends Controller
   		$R63bede6b19 = $Rfff462d8f8 == 1 ? 'aid > 0' : 'aid < 1';
   		$Rd1e9e1cb5b = factory::GetInstance('recycle');
   		$Rb749275e94   = $Rd1e9e1cb5b->IRecycle('products', $R63bede6b19);
-  		//Ð´ÈëÎÄ¼þ
+  		//Ð´ï¿½ï¿½ï¿½Ä¼ï¿½
   		$R63bede6b19 = '$Rb749275e94='.$Rb749275e94;
   		$Re82ee9b121 = '<?php '.chr(10).$R63bede6b19.';'.chr(10).'?>';
   	  file_put_contents($R09a3346376, $Re82ee9b121);
@@ -117,21 +117,21 @@ class ProductController extends Controller
     $this->Assign('recycle_num', $Rb749275e94);
 
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R60d44bd111 = array( "pname" => "ÉÌÆ·Ãû³Æ", "pids" => "ÉÌÆ·±àºÅ" );
+								$R60d44bd111 = array( "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pids" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½" );
 								if ( $Rfff462d8f8 == 1 )
 								{
-												$R60d44bd111['aid'] = "ËùÊô¾­ÏúÉÌ";
+												$R60d44bd111['aid'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 								}
 								$this->Assign( "carray", $R60d44bd111 );
 								$this->Assign( "stype", request( "stype", "pname" ) );
-								$R00be52aa45 = array( "0" => "¿¨ÃÜÉÌÆ·", "1" => "×Ô¶¯³äÖµ", "2" => "´ú³äÉÌÆ·", "3" => "ºÅÂëÀà" );
+								$R00be52aa45 = array( "0" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "1" => "ï¿½Ô¶ï¿½ï¿½ï¿½Öµ", "2" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "3" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								if ( UB_YKT )
 								{
-												$R00be52aa45[] = "¶Ò»»ÀàÒ»¿¨Í¨";
+												$R00be52aa45[] = "ï¿½Ò»ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨";
 								}
 								if ( UB_B2C || UB_B2B )
 								{
-												$R00be52aa45[] = "³äÖµÀàÒ»¿¨Í¨";
+												$R00be52aa45[] = "ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½Í¨";
 								}
 								$this->Assign( "ptype", getvar( "ptype", -1 ) );
 								$this->Assign( "sarray", $R00be52aa45 );
@@ -187,12 +187,12 @@ class ProductController extends Controller
 								$Re484ed591e = $Rdeabc7f106->IOrder_QueryRows( " ordstate =1 and pid=".$R8e8b5578f7 );
 								if ( 0 < $Re484ed591e )
 								{
-												$this->Alert( "ÄúºÃ£¬ÇëÏÈ´¦ÀíºÃ¶©µ¥ÔÙ½øÐÐ¼Û¸ñÐÞ¸ÄÒÔÃâ³ö´í£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ù½ï¿½ï¿½Ð¼Û¸ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=orders" );
 								}
 								if ( count( $R3584859062 ) == 0 )
 								{
-												$this->Alert( "Äú»¹Ã»ÓÐÌí¼Ó¼¶±ðÌåÏµ£¬ÇëÌí¼ÓºóÔÙ¶¨ÖÆ¼Û¸ñ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óºï¿½ï¿½Ù¶ï¿½ï¿½Æ¼Û¸ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=rank" );
 								}
 								foreach ( $R3584859062 as $R0f8134fb60 )
@@ -200,7 +200,7 @@ class ProductController extends Controller
 												$R4c97fa9810 = doubleval( getvar( "price_".$R0f8134fb60 ) );
 												if ( $R4c97fa9810 < $R63d0786ecc )
 												{
-																$this->Alert( "¿÷±¾ÁË°¡£¬ÏúÊÛ¼Û±È½ø»õ¼Û»¹µÍ£¬ÖØÐÂÉèÖÃ°É£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¼Û±È½ï¿½ï¿½ï¿½ï¿½Û»ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°É£ï¿½" );
 																$this->HistoryGo( );
 												}
 												$data["price_".$R0f8134fb60] = $R4c97fa9810;
@@ -218,12 +218,12 @@ class ProductController extends Controller
 								{
 												$R808b89ba0e = $R5ff3ab27b8->IPrice_Update( $data, $R399677c4c7 );
 								}
-								$this->go( $R808b89ba0e, "²Ù×÷³É¹¦£¡", "²Ù×÷Ê§°Ü£¡", "index.php?m=mod_b2b&c=product&a=price&pid=".$R8e8b5578f7 );
+								$this->go( $R808b89ba0e, "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½", "index.php?m=mod_b2b&c=product&a=price&pid=".$R8e8b5578f7 );
 				}
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -232,7 +232,7 @@ class ProductController extends Controller
 								$R8e8b5578f7 = intval( request( "pid" ) );
 								if ( $R8e8b5578f7 == 0 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R65edce27dd = getvar( "pname" );
@@ -249,7 +249,7 @@ class ProductController extends Controller
 								$R55c494bb27 = $R422f9a4efb->IProduct_Get( $R8e8b5578f7 );
 								if ( !isset( $R55c494bb27['sell'] ) )
 								{
-												$this->Alert( "ÉÌÆ·ÒÑ¾­²»´æÔÚ" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R3a8b307327 = $this->GetDec( );
@@ -277,7 +277,7 @@ class ProductController extends Controller
 												$R888e816784[$R0f8134fb60['aid']] = $R0f8134fb60['price'];
 								}
 								$this->Assign( "parray", $R888e816784 );
-								$R00be52aa45 = array( "aname" => "ÓÃ»§Ãû", "arealname" => "ÕæÊµÐÕÃû", "cqq" => "QQ", "cmail" => "ÓÊÏä", "ctel" => "µç»°", "caddr" => "×¡Ö·", "cremain" => "×îµÍÓà¶î", "ccsmp" => "×îµÍÏû·Ñ", "prv" => "Ê¡", "city" => "ÊÐ", "zip" => "ÓÊ±à", "remarks" => "±¸×¢" );
+								$R00be52aa45 = array( "aname" => "ï¿½Ã»ï¿½ï¿½ï¿½", "arealname" => "ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½", "cqq" => "QQ", "cmail" => "ï¿½ï¿½ï¿½ï¿½", "ctel" => "ï¿½ç»°", "caddr" => "×¡Ö·", "cremain" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ccsmp" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "prv" => "Ê¡", "city" => "ï¿½ï¿½", "zip" => "ï¿½Ê±ï¿½", "remarks" => "ï¿½ï¿½×¢" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "pid", $R8e8b5578f7 );
 								$this->Assign( "pname", $R65edce27dd );
@@ -377,12 +377,12 @@ class ProductController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "²Ù×÷³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=product&a=Rights&aid=".$R2a51483b14."&gid=".$Re9231b441d."&zoneid=".$R401d4a2648 );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -416,20 +416,20 @@ class ProductController extends Controller
 																}
 												}
 								}
-								$this->Alert( "¸üÐÂÍê±Ï" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Product&a=PP&pid=".$R8e8b5578f7 );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
 
 				public function ClearPP( )
 				{
-								echo "ÔÝ²»Ö§³Ö´Ë²Ù×÷£¡";
+								echo "ï¿½Ý²ï¿½Ö§ï¿½Ö´Ë²ï¿½ï¿½ï¿½ï¿½ï¿½";
 								exit( );
 								$R8e8b5578f7 = intval( request( "pid" ) );
 								$data = array(
@@ -444,7 +444,7 @@ class ProductController extends Controller
 								}
 								else
 								{
-												echo "Çå³ýÊ§°Ü£¡";
+												echo "ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -503,7 +503,7 @@ class ProductController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "aid in (".$R3456919727.")";

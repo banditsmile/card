@@ -1,87 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>价格模板列表</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>价格模板列表</h2>
-  </div>
-  <ul>
-    <li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">添加价格模板</span></a></li>
-    <li><a href="" class="on" >价格模板列表</span></a></li>
-    <li><a href="index.php?m=mod_b2b&c=price&a=Agent">单级别价格模板</a></li>
-  </ul>
-</div>
-    <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<th width="6%" class="heardertop1">编号</td>
-		<th width="25%" class="heardertop1">模板名称</td>
-		<th width="13%" class="heardertop1">适用级别</td>
-		<th width="20%" class="heardertop1">模板价格设定</td>
-		<th width="20%" class="heardertop1">套用客户</td>
-		<th width="8%" class="heardertop1">清除价格</td>
-		<th width="4%" class="heardertop1">修改</td>
-		<th width="4%" class="heardertop1">删除</td>
-		<!--foreach($vd['items'] as $item) {-->
-		  	  	    <tr class="trd">
-		<td align="center">{$item['id']}</td>
-		<td align="left">{$item['name']}</td>
-		<td align="center">{#TxtByOption($vd['rank'], $item['rankid'], 'name', 'id')}</td>
-		<td align="center"><a href="index.php?m=mod_b2b&c=product&a=RankTplPrice&pricetpl={$item['id']}&name=<!--echo urlencode($item['name']);-->"><font color=#0000ff><u>模板价格设定</u></font></a></td>
-		<td align="center"><a href="index.php?m=mod_b2b&c=Price&a=Agent&pricetpl={$item['id']}"><font color=#0000ff><u>套用该模板客户</u></a></td>
-		<td align="center"><a href="index.php?m=mod_b2b&c=price&a=TplDel&id={$item['id']}" onclick="{if(confirm('确认要清除价格模板{$item['name']}的定价吗？')){return true;}return false;}"><u><font color=#ff0000>清除定价</font></u></td>
-		<td><a href="index.php?m=mod_b2b&c=price&a=DetailRankTpl&id={$item['id']}"><img src="{$vd['content']}images/icon_xg.gif" border="0"></a></td>
-		<td><a href="index.php?m=mod_b2b&c=price&a=TplDel&id={$item['id']}" onClick="{if(confirm('确认要删除价格模板{$item['name']}吗？')){return true;}return false;}"><img src="{$vd['content']}images/icon_del.gif" border="0"></a></td>
-		</tr>
-		<!--}-->
-</table>
-		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-	<div id="page">
-		<div align="right">{load(fpage)}
-	    </div>
-	</div>
-	
-</body>
-</html>
-
-<script type="text/javascript">
-	var $=function(id){
-		return document.getElementById(id);
-	}
-	
-	function disp(idx,val1,val2,val3,val4,val5)
-	{
-		$("name").value = val1;
-		
-		len = $("rankid").length;
-
-		for(i=0; i<len; i++)
-		{
-			val = $("rankid").options[i].value;
-			if(val2 == val)
-			{
-				$("rankid").options[i].selected = true;
-			}
-		}
-		
-		len = $("parentid").length;
-		
-		for(i=0; i<len; i++)
-		{
-			val = $("parentid").options[i].value;
-			if(val3 == val)
-			{
-				$("parentid").options[i].selected = true;
-			}
-		}
-		
-		$("oldparentid").value = val4;
-		$("id").value = val5;
-		
-		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
-	}
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>浠锋牸妯℃澘鍒楄〃</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><div class="new_qie">  <div class="new_qie2">    <h2>浠锋牸妯℃澘鍒楄〃</h2>  </div>  <ul>    <li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">娣诲姞浠锋牸妯℃澘</span></a></li>    <li><a href="" class="on" >浠锋牸妯℃澘鍒楄〃</span></a></li>    <li><a href="index.php?m=mod_b2b&c=price&a=Agent">鍗曠骇鍒环鏍兼ā鏉�</a></li>  </ul></div>    <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">		<tr>		<th width="6%" class="heardertop1">缂栧彿</td>		<th width="25%" class="heardertop1">妯℃澘鍚嶇О</td>		<th width="13%" class="heardertop1">閫傜敤绾у埆</td>		<th width="20%" class="heardertop1">妯℃澘浠锋牸璁惧畾</td>		<th width="20%" class="heardertop1">濂楃敤瀹㈡埛</td>		<th width="8%" class="heardertop1">娓呴櫎浠锋牸</td>		<th width="4%" class="heardertop1">淇敼</td>		<th width="4%" class="heardertop1">鍒犻櫎</td>		<!--foreach($vd['items'] as $item) {-->		  	  	    <tr class="trd">		<td align="center">{$item['id']}</td>		<td align="left">{$item['name']}</td>		<td align="center">{#TxtByOption($vd['rank'], $item['rankid'], 'name', 'id')}</td>		<td align="center"><a href="index.php?m=mod_b2b&c=product&a=RankTplPrice&pricetpl={$item['id']}&name=<!--echo urlencode($item['name']);-->"><font color=#0000ff><u>妯℃澘浠锋牸璁惧畾</u></font></a></td>		<td align="center"><a href="index.php?m=mod_b2b&c=Price&a=Agent&pricetpl={$item['id']}"><font color=#0000ff><u>濂楃敤璇ユā鏉垮鎴�</u></a></td>		<td align="center"><a href="index.php?m=mod_b2b&c=price&a=TplDel&id={$item['id']}" onclick="{if(confirm('纭瑕佹竻闄や环鏍兼ā鏉縶$item['name']}鐨勫畾浠峰悧锛�')){return true;}return false;}"><u><font color=#ff0000>娓呴櫎瀹氫环</font></u></td>		<td><a href="index.php?m=mod_b2b&c=price&a=DetailRankTpl&id={$item['id']}"><img src="{$vd['content']}images/icon_xg.gif" border="0"></a></td>		<td><a href="index.php?m=mod_b2b&c=price&a=TplDel&id={$item['id']}" onClick="{if(confirm('纭瑕佸垹闄や环鏍兼ā鏉縶$item['name']}鍚楋紵')){return true;}return false;}"><img src="{$vd['content']}images/icon_del.gif" border="0"></a></td>		</tr>		<!--}--></table>		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>	<div id="page">		<div align="right">{load(fpage)}	    </div>	</div>	</body></html><script type="text/javascript">	var $=function(id){		return document.getElementById(id);	}		function disp(idx,val1,val2,val3,val4,val5)	{		$("name").value = val1;				len = $("rankid").length;		for(i=0; i<len; i++)		{			val = $("rankid").options[i].value;			if(val2 == val)			{				$("rankid").options[i].selected = true;			}		}				len = $("parentid").length;				for(i=0; i<len; i++)		{			val = $("parentid").options[i].value;			if(val3 == val)			{				$("parentid").options[i].selected = true;			}		}				$("oldparentid").value = val4;		$("id").value = val5;				$(idx).style.display = ($(idx).style.display == "") ? "none" : "";	}</script>

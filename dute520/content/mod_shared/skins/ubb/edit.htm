@@ -1,468 +1,1 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>UBB±à¼­Æ÷</title>
-<meta name="description" content="UBB±à¼­Æ÷">
-<meta name="generator" content="UBB±à¼­Æ÷">
-<meta name="MSSmartTagsPreventParsing" content="TRUE">
-<meta http-equiv="MSThemeCompatible" content="Yes">
-<link rel="stylesheet" type="text/css" id="css" href="images/ubb.css">
-<script type="text/javascript" src="images/common.js"></script>
-<script type="text/javascript" src="images/menu.js"></script>
-</head>
-<body onkeydown="if(event.keyCode==27) return false;" style="text-align: center" topmargin="0" bottommargin="0">
-<script type="text/javascript">
-var postminchars = parseInt('0');
-var postmaxchars = parseInt('100000');
-var disablepostctrl = parseInt('0');
-var typerequired = parseInt('');
-var bbinsert = parseInt('0');
-function checklength() {
-	var message = bbinsert && wysiwyg ? html2bbcode(getEditorContents()) : $("message").value;
-	var showmessage = postmaxchars != 0 ? 'ÏµÍ³ÏŞÖÆ: ' + postminchars + ' µ½ ' + postmaxchars + ' ×Ö½Ú' : '';
-	alert('\nµ±Ç°³¤¶È: ' + message.length + ' ×Ö½Ú\n\n' + showmessage);
-}
-
-var webdir  = window.parent.document.getElementById("webdir").value;
-var website = window.parent.document.getElementById("website").value;
-var connecter = window.parent.document.getElementById("connecter").value;
-</script>
-<div class="spaceborder" style="width: 100%; height:100%" >
-<table cellspacing="0" cellpadding="0" width="100%">
-<tr class="bottom">
-<td align="left" class="altbg2" valign="top">
-<div id="posteditor">
-<script type="text/javascript">
-var editorid = 'posteditor';
-var wysiwyg = (is_ie || is_moz || (is_opera && opera.version() >= 9)) && parseInt('1') && bbinsert == 1 ? 1 : 0;
-var allowswitcheditor = parseInt('1');
-var allowhtml = parseInt('0');
-var forumallowhtml = parseInt('0');
-var allowsmilies = parseInt('1');
-var allowbbcode = parseInt('1');
-var allowimgcode = parseInt('1');
-var smilies = new Array();
-smilies[1]= {'code' : ':)', 'url' : 'em01.gif'};
-smilies[2]= {'code' : ':(', 'url' : 'em02.gif'};
-smilies[3]= {'code' : ':D', 'url' : 'em03.gif'};
-smilies[4]= {'code' : ':\'(', 'url' : 'em04.gif'};
-smilies[5]= {'code' : ':@', 'url' : 'em05.gif'};
-smilies[6]= {'code' : ':o', 'url' : 'em06.gif'};
-smilies[7]= {'code' : ':P', 'url' : 'em07.gif'};
-smilies[8]= {'code' : ':$', 'url' : 'em08.gif'};
-smilies[9]= {'code' : ';P', 'url' : 'em09.gif'};
-smilies[10]= {'code' : ':L', 'url' : 'em10.gif'};
-smilies[11]= {'code' : ':Q', 'url' : 'em11.gif'};
-smilies[12]= {'code' : ':lol', 'url' : 'em12.gif'};
-smilies[13]= {'code' : ':hug:', 'url' : 'em13.gif'};
-smilies[14]= {'code' : ':victory:', 'url' : 'em14.gif'};
-smilies[15]= {'code' : ':time:', 'url' : 'em15.gif'};
-smilies[16]= {'code' : ':kiss:', 'url' : 'em16.gif'};
-smilies[17]= {'code' : ':handshake', 'url' : 'em17.gif'};
-smilies[18]= {'code' : ':call:', 'url' : 'em18.gif'};
-smilies[33]= {'code' : ':calld:', 'url' : 'em24.gif'};
-smilies[32]= {'code' : ':callc:', 'url' : 'em23.gif'};
-smilies[31]= {'code' : ':callb:', 'url' : 'em22.gif'};
-smilies[30]= {'code' : ':calla:', 'url' : 'em21.gif'};
-smilies[28]= {'code' : ':loveliness:', 'url' : 'em19.gif'};
-smilies[29]= {'code' : ':funk:', 'url' : 'em20.gif'};
-smilies[34]= {'code' : ':calle:', 'url' : 'em25.gif'};
-var BORDERCOLOR = "#7AC4EA";
-var ALTBG2 = "#FFFFFF";
-
-
-function clearcontent() {
-	if(wysiwyg && bbinsert) {
-		editdoc.body.innerHTML = is_moz ? '<br />' : '';
-	} else {
-		textobj.value = '';
-	}
-}
-
-function resizeEditor(change) {
-	var editorbox = bbinsert ? editbox : textobj;
-	var newheight = parseInt(editorbox.style.height, 10) + change;
-	if(newheight >= 100) {
-		editorbox.style.height = newheight + 'px';
-	  var oldparheight = parseInt(window.parent.document.getElementById("Editor").style.height, 10);
-	  window.parent.document.getElementById("Editor").style.height = oldparheight + change + "px"; 
-	}
-}
-
-
-var oURL = location.href;
-var offset = oURL.lastIndexOf("id=");
-if (offset == -1)
-{
-	alert("Çë´«Èëµ÷ÓÃ²ÎÊıID£¬¼´Òş²ØµÄÄÚÈİ±íµ¥ÏîID£¡");
-} else {
-	offset = offset + 3
-}
-var sLinkFieldName = oURL.substring(offset)
-var oLinkField = parent.document.getElementsByName(sLinkFieldName)[0];
-var oForm = oLinkField.form ;
-// ÉèÖÃËùÊô±íµ¥µÄÌá½»»òresetÊÂ¼ş
-function setLinkedField() {
-	if (! oLinkField) return ;
-	var oForm = oLinkField.form ;
-	if (!oForm) return ;
-	if(oForm.addEventListener){
-		oForm.addEventListener("onsubmit", AttachSubmit);
-		oForm.addEventListener("onreset", AttachReset);
-	}else{
-		oForm.attachEvent("onsubmit", AttachSubmit);
-		oForm.attachEvent("onreset", AttachReset);
-	}
-	AttachReset();
-}
-
-// Ìá½»±íµ¥
-function AttachSubmit() { 
-    if(wysiwyg==0)oLinkField.value=$("posteditor_textarea").value;
-	else oLinkField.value=html2bbcode(getEditorContents());
-} 
-// ¸½¼ÓResetÊÂ¼ş
-function AttachReset() {
-     if(wysiwyg==0)$("posteditor_textarea").value="";
-	 else editdoc.body.innerHTML="";
-	 if (oLinkField.value!=""){
-		if(wysiwyg==0)$("posteditor_textarea").value=oLinkField.value;
-		else editdoc.body.innerHTML=bbcode2html(oLinkField.value);
-	 }
-}
-
-window.onload=setLinkedField;
-</script>
-<script type="text/javascript" src="images/bbcode.js"></script>
-<script type="text/javascript" src="images/editor.js"></script>
-<script type="text/javascript">
-var lang	= new Array();
-lang["enter_tag_option"]= "ÇëÊäÈë %1 ±êÇ©µÄÑ¡Ïî:";
-lang["enter_list_item"]= "ÊäÈëÒ»¸öÁĞ±íÏîÄ¿.\r\nÁô¿Õ»òÕßµã»÷È¡ÏûÍê³É´ËÁĞ±í.";
-lang["enter_link_url"]= "ÇëÊäÈëÁ´½ÓµÄµØÖ·:";
-lang["enter_image_url"]= "ÇëÊäÈëÍ¼Æ¬Á´½ÓµØÖ·:";
-lang["enter_email_link"]= "ÇëÊäÈë´ËÁ´½ÓµÄÓÊÏäµØÖ·:";
-lang['enter_table_rows']= "ÇëÊäÈëĞĞÊı£¬×î¶à 30 ĞĞ:";
-lang['enter_table_columns']= "ÇëÊäÈëÁĞÊı£¬×î¶à 30 ÁĞ:";
-lang['fontname']= "×ÖÌå";
-lang['fontsize']= "´óĞ¡";
-var custombbcodes = new Array();
-custombbcodes["qq"] = "[qq=8]qq[/qq]";
-custombbcodes["flash"] = "Flash Movie";
-custombbcodes["rm"] = "[rm]rtsp://your.com/example.rm[/rm]";
-custombbcodes["wmv"] = "[wmv]mms://your.com/example.wmv[/wmv]";
-custombbcodes["page"] = "[/page]";
-var fontoptions = new Array("·ÂËÎ_GB2312", "ºÚÌå", "¿¬Ìå_GB2312", "ËÎÌå", "ĞÂËÎÌå", "Tahoma", "Arial", "Impact", "Verdana", "Times New Roman");
-
-function BuildBaseUrl( command )
-{
-	var sUrl =
-		document.getElementById('cmbConnector').value +
-		'?Command=' + command +
-		'&Type=' + document.getElementById('cmbType').value +
-		'&CurrentFolder=' + encodeURIComponent(document.getElementById('txtFolder').value) ;
-
-	return sUrl ;
-}
-
-function SetFrameUrl( url )
-{
-	document.getElementById('eRunningFrame').src = url ;
-
-	document.getElementById('eUrl').innerHTML = url ;
-}
-
-function GetFolders()
-{
-	SetFrameUrl( BuildBaseUrl( 'GetFolders' ) ) ;
-	return false ;
-}
-
-function GetFoldersAndFiles()
-{
-	SetFrameUrl( BuildBaseUrl( 'GetFoldersAndFiles' ) ) ;
-	return false ;
-}
-
-function CreateFolder()
-{
-	var sFolder = prompt( 'Type the folder name:', 'Test Folder' ) ;
-
-	if ( ! sFolder )
-		return false ;
-
-	var sUrl = BuildBaseUrl( 'CreateFolder' ) ;
-	sUrl += '&NewFolderName=' + encodeURIComponent( sFolder ) ;
-
-	SetFrameUrl( sUrl ) ;
-	return false ;
-}
-
-function OnUploadCompleted( errorNumber, fileName )
-{
-	var cmbType = document.getElementById('cmbType').value;
-	switch ( errorNumber )
-	{
-		case 0 :
-  		var fName = website + fileName;
-  		
-  		addSnapshot(getEditorContents());
-	    checkFocus();
-  		if(cmbType == "File")
-  		{
-  		  applyFormat('createlink', false, fName);
-		    addSnapshot(getEditorContents());
-	      if(wysiwyg) {
-		       setContext('createlink');
-	      }
-  		}
-  	  else
-  		{
-  		  applyFormat('insertimage', false, fName);
-  		  if(wysiwyg) {
-		      setContext('insertimage');
-	      }
-  		}
-  		checkFocus();
-			//alert( 'File uploaded with no errors' ) ;
-			break ;
-		case 201 :
-			GetFoldersAndFiles() ;
-			var fName = website + fileName;
-			addSnapshot(getEditorContents());
-	    checkFocus();
-  		if(cmbType == "File")
-  		{
-  		  applyFormat('createlink', false, fName);
-		    addSnapshot(getEditorContents());
-	      if(wysiwyg) {
-		       setContext('createlink');
-	      }
-  		}
-  	  else
-  		{
-  		  applyFormat('insertimage', false, fName);
-  		  if(wysiwyg) {
-		      setContext('insertimage');
-	      }
-  		}
-  		checkFocus();
-			//alert( 'A file with the same name is already available. The uploaded file has been renamed to "' + fileName + '"' ) ;
-			break ;
-		case 202 :
-			alert( 'Invalid file' ) ;
-			break ;
-		default :
-			alert( 'Error on file upload. Error number: ' + errorNumber ) ;
-			break ;
-	}
-}
-
-this.frames.frmUpload = this ;
-
-function SetAction()
-{
-	var sUrl = BuildBaseUrl( 'FileUpload' ) ;
-	document.getElementById('eUrl').innerHTML = sUrl ;
-	document.getElementById('frmUpload').action = sUrl ;
-}
-</script>
-<table width="100%" cellpadding="0" cellspacing="0" border="0" class="editor">
-<tr>
-<td id="posteditor_controls" class="editor_controlbar" colspan="2" style="padding-top:3px;">
-<table cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_removeformat" onClick="ubzcode('removeformat')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_removeformat.gif" width="21" height="20" title="Çå³ıÎÄ±¾¸ñÊ½" alt="Çå³ıÎÄ±¾¸ñÊ½" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_undo" onClick="ubzcode('undo')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_undo.gif" width="21" height="20" title="³·Ïú" alt="³·Ïú" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_redo" onClick="ubzcode('redo')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_redo.gif" width="21" height="20" title="ÖØ×ö" alt="ÖØ×ö" /></div></td>
-
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>
-
-<td><div class="editor_buttonnormal" id="posteditor_cmd_bold" onClick="ubzcode('bold')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_bold.gif" width="21" height="20" title="´ÖÌå" alt="´ÖÌå" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_italic" onClick="ubzcode('italic')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_italic.gif" width="21" height="20" title="Ğ±Ìå" alt="Ğ±Ìå" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_underline" onClick="ubzcode('underline')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_underline.gif" width="21" height="20" title="ÏÂ»®Ïß" alt="ÏÂ»®Ïß" /></div></td>
-
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>
-
-<td id="posteditor_popup_fontname" title="×ÖÌå"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')">
-<table cellpadding="0" cellspacing="0" border="0" unselectable="on">
-<tr>
-<td class="editor_menunormal" unselectable="on" id="posteditor_menu"><div id="posteditor_font_out" style="width:50px;" unselectable="on">×ÖÌå</div></td>
-<td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt=""/></td>
-</tr>
-</table>
-<script type="text/javascript">menuregister(true, "posteditor_popup_fontname")</script></div></td>
-
-<td id="posteditor_popup_fontsize" title="´óĞ¡"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')">
-<table cellpadding="0" cellspacing="0" border="0" unselectable="on">
-<tr>
-<td class="editor_menunormal" unselectable="on" id="posteditor_menu"><div id="posteditor_size_out" style="width:25px" unselectable="on">´óĞ¡</div></td>
-<td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt="" /></td>
-</tr>
-</table>
-<script type="text/javascript">menuregister(true, "posteditor_popup_fontsize")</script></div></td>
-
-<td id="posteditor_popup_forecolor" title="ÑÕÉ«"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')">
-<table cellpadding="0" cellspacing="0" border="0" unselectable="on">
-<tr>
-<td class="editor_colormenunormal" unselectable="on" id="posteditor_colormenu"><img src="images/bb_color.gif" width="21" height="16" alt="" /><br><img src="images/bb_clear.gif" id="posteditor_color_bar" alt="" style="background-color:black" width="21" height="4" /></td>
-<td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt="" /></td>
-</tr>
-</table>
-<script type="text/javascript">menuregister(true, "posteditor_popup_forecolor")</script></div></td>
-
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>
-
-<td><div class="editor_buttonnormal" id="posteditor_cmd_justifyleft" onClick="ubzcode('justifyleft')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_left.gif" width="21" height="20" title="¾Ó×ó" alt="¾Ó×ó" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_justifycenter" onClick="ubzcode('justifycenter')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_center.gif" width="21" height="20" title="¾ÓÖĞ" alt="¾ÓÖĞ" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_justifyright" onClick="ubzcode('justifyright')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_right.gif" width="21" height="20" title="¾ÓÓÒ" alt="¾ÓÓÒ" /></div></td>
-
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>
-
-<td><div class="editor_buttonnormal" id="posteditor_cmd_insertorderedlist" onClick="ubzcode('insertorderedlist')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_orderedlist.gif" width="21" height="20" title="ÅÅĞòµÄÁĞ±í" alt="ÅÅĞòµÄÁĞ±í" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_insertunorderedlist" onClick="ubzcode('insertunorderedlist')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_unorderedlist.gif" width="21" height="20" title="Î´ÅÅĞòÁĞ±í" alt="Î´ÅÅĞòÁĞ±í" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_outdent" onClick="ubzcode('outdent')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_outdent.gif" width="21" height="20" title="¼õÉÙËõ½ø" alt="¼õÉÙËõ½ø" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_indent" onClick="ubzcode('indent')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_indent.gif" width="21" height="20" title="Ôö¼ÓËõ½ø" alt="Ôö¼ÓËõ½ø" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_createlink" onClick="ubzcode('createlink')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_url.gif" width="21" height="20" title="²åÈëÁ´½Ó" alt="²åÈëÁ´½Ó" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_unlink" onClick="ubzcode('unlink')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_unlink.gif" width="21" height="20" title="ÒÆ³ıÁ´½Ó" alt="ÒÆ³ıÁ´½Ó" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_email" onClick="ubzcode('email')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_email.gif" width="21" height="20" title="²åÈëÓÊÏäÁ´½Ó" alt="²åÈëÓÊÏäÁ´½Ó" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_insertimage" onClick="ubzcode('insertimage')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_image.gif" width="21" height="20" title="²åÈëÍ¼Æ¬" alt="²åÈëÍ¼Æ¬" /></div></td>
-
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>
-
-<td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_qq" onMouseOver="buttonContext(this, 'mouseover')" onClick="ubzcode('custom1_qq')" onMouseOut="buttonContext(this, 'mouseout')"><IMG title="²åÈëQQÔÚÏß×´Ì¬°´Å¥" height="20" alt=qq src="images/bb_qq.gif" 
-width=21></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_flash" onClick="ubzcode('custom1_flash')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_flash.gif" width="21" height="20" title="Ç¶Èë Flash ¶¯»­" alt="flash" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_rm" onClick="ubzcode('custom1_rm')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_rm.gif" width="21" height="20" title="Ç¶Èë Real ÒôÆµ»òÊÓÆµ" alt="rm" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_wmv" onClick="ubzcode('custom1_wmv')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_wmv.gif" width="21" height="20" title="Ç¶Èë Windows media ÒôÆµ»òÊÓÆµ" alt="wmv" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_wmv" onClick="ubzcode('custom1_page')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><IMG title="Ç¶Èë·ÖÒ³±êÇ©" height="20" alt="±êÇ©" src="images/bb_look.gif" width="21"></div></td>
-<td>
-<td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>	
-<td><div class="editor_buttonnormal" id="posteditor_cmd_wrap0_quote" onClick="ubzcode('quote')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_quote.gif" width="21" height="20" title="²åÈëÒıÓÃ" alt="²åÈëÒıÓÃ" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_wrap0_code" onClick="ubzcode('code')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_code.gif" width="21" height="20" title="²åÈë´úÂë" alt="²åÈë´úÂë" /></div></td>
-<td><div class="editor_buttonnormal" id="posteditor_cmd_table" onClick="ubzcode('table')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_table.gif" width="21" height="20" title="²åÈë±í¸ñ" alt="²åÈë±í¸ñ" /></div></td>
-</div>
-</td>
-</tr>
-</table>
-<div id="posteditor_switcher">
-<input type="button" id="bbcodemode" value="UBB ´úÂëÄ£Ê½" onClick="switchEditor(0)" class="editor_switcher_highlight" onFocus="this.blur()"/>
-<input type="button" id="wysiwygmode" value="Ëù¼û¼´ËùµÃÄ£Ê½" onClick="switchEditor(1)" class="editor_switcher" onFocus="this.blur()"/>
-</div>
-<div class="popupmenu_popup" id="posteditor_popup_fontname_menu" style="display: none">
-<table cellpadding="4" cellspacing="0" border="0" unselectable="on">
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', '·ÂËÎ_GB2312')" unselectable="on"><font face="·ÂËÎ_GB2312" unselectable="on">·ÂËÎ_GB2312</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'ºÚÌå')" unselectable="on"><font face="ºÚÌå" unselectable="on">ºÚÌå</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', '¿¬Ìå_GB2312')" unselectable="on"><font face="¿¬Ìå_GB2312" unselectable="on">¿¬Ìå_GB2312</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'ËÎÌå')" unselectable="on"><font face="ËÎÌå" unselectable="on">ËÎÌå</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'ĞÂËÎÌå')" unselectable="on"><font face="ĞÂËÎÌå" unselectable="on">ĞÂËÎÌå</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Tahoma')" unselectable="on"><font face="Tahoma" unselectable="on">Tahoma</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Arial')" unselectable="on"><font face="Arial" unselectable="on">Arial</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Impact')" unselectable="on"><font face="Impact" unselectable="on">Impact</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Verdana')" unselectable="on"><font face="Verdana" unselectable="on">Verdana</font></td></tr>
-<tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Times New Roman')" unselectable="on"><font face="Times New Roman" unselectable="on">Times New Roman</font></td></tr>
-</table></div>
-<div class="popupmenu_popup" id="posteditor_popup_fontsize_menu" style="display: none">
-<table cellpadding="4" cellspacing="0" border="0" unselectable="on">
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 1)" unselectable="on"><font size="1" unselectable="on">1</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 2)" unselectable="on"><font size="2" unselectable="on">2</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 3)" unselectable="on"><font size="3" unselectable="on">3</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 4)" unselectable="on"><font size="4" unselectable="on">4</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 5)" unselectable="on"><font size="5" unselectable="on">5</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 6)" unselectable="on"><font size="6" unselectable="on">6</font></td></tr>
-<tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 7)" unselectable="on"><font size="7" unselectable="on">7</font></td></tr>
-</table></div>
-<div class="popupmenu_popup" id="posteditor_popup_forecolor_menu" style="display: none">
-<table cellpadding="4" cellspacing="0" border="0" unselectable="on"><tr>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Black')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Black" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Sienna')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Sienna" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOliveGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOliveGreen" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkGreen" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkSlateBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkSlateBlue" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Navy')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Navy" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Indigo')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Indigo" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkSlateGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkSlateGray" unselectable="on"></div></td>
-</tr><tr>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkRed')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkRed" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOrange')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOrange" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Olive')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Olive" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Green')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Green" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Teal')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Teal" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Blue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Blue" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'SlateGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SlateGray" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DimGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DimGray" unselectable="on"></div></td>
-</tr><tr>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Red')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Red" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'SandyBrown')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SandyBrown" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'YellowGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: YellowGreen" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'SeaGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SeaGreen" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'MediumTurquoise')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: MediumTurquoise" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'RoyalBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: RoyalBlue" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Purple')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Purple" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Gray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Gray" unselectable="on"></div></td>
-</tr><tr>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Magenta')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Magenta" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Orange')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Orange" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Yellow')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Yellow" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Lime')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Lime" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Cyan')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Cyan" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DeepSkyBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DeepSkyBlue" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOrchid')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOrchid" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Silver')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Silver" unselectable="on"></div></td>
-</tr><tr>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Pink')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Pink" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Wheat')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Wheat" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'LemonChiffon')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: LemonChiffon" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'PaleGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: PaleGreen" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'PaleTurquoise')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: PaleTurquoise" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'LightBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: LightBlue" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'Plum')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Plum" unselectable="on"></div></td>
-<td class="editor_colornormal" onClick="ubzcode('forecolor', 'White')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: White" unselectable="on"></div></td>
-</tr><tr>
-</tr>
-</table>
-</div>
-</table>
-<div class="editor_text" id="editor_text">
-<textarea name="message" rows="10" cols="60" style="width:99%; height:291px;" tabindex="100" id="posteditor_textarea" onSelect="javascript: storeCaret(this);" onClick="javascript: storeCaret(this);" onKeyUp="javascript:storeCaret(this);" ></textarea>
-</div>
-<table width="100%" cellpadding="4" cellspacing="0" class="editor_button">
-<tr>
-<td width="30px">
-<div class="editor_textexpand"><img src="images/bb_contract.gif" width="11" height="21" title="ÊÕËõ±à¼­¿ò" alt="ÊÕËõ±à¼­¿ò" onClick="resizeEditor(-100)" /><img src="images/bb_expand.gif" width="12" height="21" title="À©Õ¹±à¼­¿ò" alt="À©Õ¹±à¼­¿ò" onClick="resizeEditor(100)" />
-</div>
-</td>
-<td align="right">
-	<form id="frmUpload" action="" target="eRunningFrame" method="post" enctype="multipart/form-data" style="padding-top:10px;">
-		Ä¿Â¼£º<input id="txtFolder" type="text" value="" name="txtFolder" />
-		&nbsp;ÀàĞÍ£º
-	  <select id="cmbType" name="cmbType">
-	  	<option value="Image" selected="selected">Image</option>
-	  	<option value="File">File</option>
-	  	<option value="Flash">Flash</option>
-	  	<option value="Media">Media</option>
-	  </select>
-		Ñ¡ÔñÎÄ¼ş£º
-		<input id="txtFileUpload" type="file" name="NewFile" />
-		<input type="submit" value="ÉÏ´«" onClick="SetAction();" />
-		<input type="button" class="lightbutton" value="×ÖÊı¼ì²é" onClick="checklength()" style="width:65px">
-		<input type="button" class="lightbutton" value="Çå¿ÕÄÚÈİ" tabindex="103" onClick="clearcontent()" style="width:65px">
-    <br/>
-	</form>
-</td>
-</tr>
-</table>
-<span id="eUrl" style="display:none"></span>
-<iframe id="eRunningFrame" src="javascript:void(0)" name="eRunningFrame" width="100%" height="100%" style="display:none"></iframe>
-<span id="eUrl" style="display:none"></span>
-<input type="hidden" id="cmbConnector" name="cmbConnector" value="" />
-<input type="hidden" name="wysiwyg" id="posteditor_mode" value="1">
-<script type="text/javascript">
-document.getElementById("cmbConnector").value = connecter;
-document.getElementById("txtFolder").value =  "/mod_shared/skins/upload";
-var textobj = $(editorid + '_textarea');
-newEditor(wysiwyg);
-</script>
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>UBBç¼–è¾‘å™¨</title><meta name="description" content="UBBç¼–è¾‘å™¨"><meta name="generator" content="UBBç¼–è¾‘å™¨"><meta name="MSSmartTagsPreventParsing" content="TRUE"><meta http-equiv="MSThemeCompatible" content="Yes"><link rel="stylesheet" type="text/css" id="css" href="images/ubb.css"><script type="text/javascript" src="images/common.js"></script><script type="text/javascript" src="images/menu.js"></script></head><body onkeydown="if(event.keyCode==27) return false;" style="text-align: center" topmargin="0" bottommargin="0"><script type="text/javascript">var postminchars = parseInt('0');var postmaxchars = parseInt('100000');var disablepostctrl = parseInt('0');var typerequired = parseInt('');var bbinsert = parseInt('0');function checklength() {	var message = bbinsert && wysiwyg ? html2bbcode(getEditorContents()) : $("message").value;	var showmessage = postmaxchars != 0 ? 'ç³»ç»Ÿé™åˆ¶: ' + postminchars + ' åˆ° ' + postmaxchars + ' å­—èŠ‚' : '';	alert('\nå½“å‰é•¿åº¦: ' + message.length + ' å­—èŠ‚\n\n' + showmessage);}var webdir  = window.parent.document.getElementById("webdir").value;var website = window.parent.document.getElementById("website").value;var connecter = window.parent.document.getElementById("connecter").value;</script><div class="spaceborder" style="width: 100%; height:100%" ><table cellspacing="0" cellpadding="0" width="100%"><tr class="bottom"><td align="left" class="altbg2" valign="top"><div id="posteditor"><script type="text/javascript">var editorid = 'posteditor';var wysiwyg = (is_ie || is_moz || (is_opera && opera.version() >= 9)) && parseInt('1') && bbinsert == 1 ? 1 : 0;var allowswitcheditor = parseInt('1');var allowhtml = parseInt('0');var forumallowhtml = parseInt('0');var allowsmilies = parseInt('1');var allowbbcode = parseInt('1');var allowimgcode = parseInt('1');var smilies = new Array();smilies[1]= {'code' : ':)', 'url' : 'em01.gif'};smilies[2]= {'code' : ':(', 'url' : 'em02.gif'};smilies[3]= {'code' : ':D', 'url' : 'em03.gif'};smilies[4]= {'code' : ':\'(', 'url' : 'em04.gif'};smilies[5]= {'code' : ':@', 'url' : 'em05.gif'};smilies[6]= {'code' : ':o', 'url' : 'em06.gif'};smilies[7]= {'code' : ':P', 'url' : 'em07.gif'};smilies[8]= {'code' : ':$', 'url' : 'em08.gif'};smilies[9]= {'code' : ';P', 'url' : 'em09.gif'};smilies[10]= {'code' : ':L', 'url' : 'em10.gif'};smilies[11]= {'code' : ':Q', 'url' : 'em11.gif'};smilies[12]= {'code' : ':lol', 'url' : 'em12.gif'};smilies[13]= {'code' : ':hug:', 'url' : 'em13.gif'};smilies[14]= {'code' : ':victory:', 'url' : 'em14.gif'};smilies[15]= {'code' : ':time:', 'url' : 'em15.gif'};smilies[16]= {'code' : ':kiss:', 'url' : 'em16.gif'};smilies[17]= {'code' : ':handshake', 'url' : 'em17.gif'};smilies[18]= {'code' : ':call:', 'url' : 'em18.gif'};smilies[33]= {'code' : ':calld:', 'url' : 'em24.gif'};smilies[32]= {'code' : ':callc:', 'url' : 'em23.gif'};smilies[31]= {'code' : ':callb:', 'url' : 'em22.gif'};smilies[30]= {'code' : ':calla:', 'url' : 'em21.gif'};smilies[28]= {'code' : ':loveliness:', 'url' : 'em19.gif'};smilies[29]= {'code' : ':funk:', 'url' : 'em20.gif'};smilies[34]= {'code' : ':calle:', 'url' : 'em25.gif'};var BORDERCOLOR = "#7AC4EA";var ALTBG2 = "#FFFFFF";function clearcontent() {	if(wysiwyg && bbinsert) {		editdoc.body.innerHTML = is_moz ? '<br />' : '';	} else {		textobj.value = '';	}}function resizeEditor(change) {	var editorbox = bbinsert ? editbox : textobj;	var newheight = parseInt(editorbox.style.height, 10) + change;	if(newheight >= 100) {		editorbox.style.height = newheight + 'px';	  var oldparheight = parseInt(window.parent.document.getElementById("Editor").style.height, 10);	  window.parent.document.getElementById("Editor").style.height = oldparheight + change + "px"; 	}}var oURL = location.href;var offset = oURL.lastIndexOf("id=");if (offset == -1){	alert("è¯·ä¼ å…¥è°ƒç”¨å‚æ•°IDï¼Œå³éšè—çš„å†…å®¹è¡¨å•é¡¹IDï¼");} else {	offset = offset + 3}var sLinkFieldName = oURL.substring(offset)var oLinkField = parent.document.getElementsByName(sLinkFieldName)[0];var oForm = oLinkField.form ;// è®¾ç½®æ‰€å±è¡¨å•çš„æäº¤æˆ–resetäº‹ä»¶function setLinkedField() {	if (! oLinkField) return ;	var oForm = oLinkField.form ;	if (!oForm) return ;	if(oForm.addEventListener){		oForm.addEventListener("onsubmit", AttachSubmit);		oForm.addEventListener("onreset", AttachReset);	}else{		oForm.attachEvent("onsubmit", AttachSubmit);		oForm.attachEvent("onreset", AttachReset);	}	AttachReset();}// æäº¤è¡¨å•function AttachSubmit() {     if(wysiwyg==0)oLinkField.value=$("posteditor_textarea").value;	else oLinkField.value=html2bbcode(getEditorContents());} // é™„åŠ Resetäº‹ä»¶function AttachReset() {     if(wysiwyg==0)$("posteditor_textarea").value="";	 else editdoc.body.innerHTML="";	 if (oLinkField.value!=""){		if(wysiwyg==0)$("posteditor_textarea").value=oLinkField.value;		else editdoc.body.innerHTML=bbcode2html(oLinkField.value);	 }}window.onload=setLinkedField;</script><script type="text/javascript" src="images/bbcode.js"></script><script type="text/javascript" src="images/editor.js"></script><script type="text/javascript">var lang	= new Array();lang["enter_tag_option"]= "è¯·è¾“å…¥ %1 æ ‡ç­¾çš„é€‰é¡¹:";lang["enter_list_item"]= "è¾“å…¥ä¸€ä¸ªåˆ—è¡¨é¡¹ç›®.\r\nç•™ç©ºæˆ–è€…ç‚¹å‡»å–æ¶ˆå®Œæˆæ­¤åˆ—è¡¨.";lang["enter_link_url"]= "è¯·è¾“å…¥é“¾æ¥çš„åœ°å€:";lang["enter_image_url"]= "è¯·è¾“å…¥å›¾ç‰‡é“¾æ¥åœ°å€:";lang["enter_email_link"]= "è¯·è¾“å…¥æ­¤é“¾æ¥çš„é‚®ç®±åœ°å€:";lang['enter_table_rows']= "è¯·è¾“å…¥è¡Œæ•°ï¼Œæœ€å¤š 30 è¡Œ:";lang['enter_table_columns']= "è¯·è¾“å…¥åˆ—æ•°ï¼Œæœ€å¤š 30 åˆ—:";lang['fontname']= "å­—ä½“";lang['fontsize']= "å¤§å°";var custombbcodes = new Array();custombbcodes["qq"] = "[qq=8]qq[/qq]";custombbcodes["flash"] = "Flash Movie";custombbcodes["rm"] = "[rm]rtsp://your.com/example.rm[/rm]";custombbcodes["wmv"] = "[wmv]mms://your.com/example.wmv[/wmv]";custombbcodes["page"] = "[/page]";var fontoptions = new Array("ä»¿å®‹_utf-8", "é»‘ä½“", "æ¥·ä½“_utf-8", "å®‹ä½“", "æ–°å®‹ä½“", "Tahoma", "Arial", "Impact", "Verdana", "Times New Roman");function BuildBaseUrl( command ){	var sUrl =		document.getElementById('cmbConnector').value +		'?Command=' + command +		'&Type=' + document.getElementById('cmbType').value +		'&CurrentFolder=' + encodeURIComponent(document.getElementById('txtFolder').value) ;	return sUrl ;}function SetFrameUrl( url ){	document.getElementById('eRunningFrame').src = url ;	document.getElementById('eUrl').innerHTML = url ;}function GetFolders(){	SetFrameUrl( BuildBaseUrl( 'GetFolders' ) ) ;	return false ;}function GetFoldersAndFiles(){	SetFrameUrl( BuildBaseUrl( 'GetFoldersAndFiles' ) ) ;	return false ;}function CreateFolder(){	var sFolder = prompt( 'Type the folder name:', 'Test Folder' ) ;	if ( ! sFolder )		return false ;	var sUrl = BuildBaseUrl( 'CreateFolder' ) ;	sUrl += '&NewFolderName=' + encodeURIComponent( sFolder ) ;	SetFrameUrl( sUrl ) ;	return false ;}function OnUploadCompleted( errorNumber, fileName ){	var cmbType = document.getElementById('cmbType').value;	switch ( errorNumber )	{		case 0 :  		var fName = website + fileName;  		  		addSnapshot(getEditorContents());	    checkFocus();  		if(cmbType == "File")  		{  		  applyFormat('createlink', false, fName);		    addSnapshot(getEditorContents());	      if(wysiwyg) {		       setContext('createlink');	      }  		}  	  else  		{  		  applyFormat('insertimage', false, fName);  		  if(wysiwyg) {		      setContext('insertimage');	      }  		}  		checkFocus();			//alert( 'File uploaded with no errors' ) ;			break ;		case 201 :			GetFoldersAndFiles() ;			var fName = website + fileName;			addSnapshot(getEditorContents());	    checkFocus();  		if(cmbType == "File")  		{  		  applyFormat('createlink', false, fName);		    addSnapshot(getEditorContents());	      if(wysiwyg) {		       setContext('createlink');	      }  		}  	  else  		{  		  applyFormat('insertimage', false, fName);  		  if(wysiwyg) {		      setContext('insertimage');	      }  		}  		checkFocus();			//alert( 'A file with the same name is already available. The uploaded file has been renamed to "' + fileName + '"' ) ;			break ;		case 202 :			alert( 'Invalid file' ) ;			break ;		default :			alert( 'Error on file upload. Error number: ' + errorNumber ) ;			break ;	}}this.frames.frmUpload = this ;function SetAction(){	var sUrl = BuildBaseUrl( 'FileUpload' ) ;	document.getElementById('eUrl').innerHTML = sUrl ;	document.getElementById('frmUpload').action = sUrl ;}</script><table width="100%" cellpadding="0" cellspacing="0" border="0" class="editor"><tr><td id="posteditor_controls" class="editor_controlbar" colspan="2" style="padding-top:3px;"><table cellpadding="0" cellspacing="0" border="0"><tr><td><div class="editor_buttonnormal" id="posteditor_cmd_removeformat" onClick="ubzcode('removeformat')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_removeformat.gif" width="21" height="20" title="æ¸…é™¤æ–‡æœ¬æ ¼å¼" alt="æ¸…é™¤æ–‡æœ¬æ ¼å¼" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_undo" onClick="ubzcode('undo')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_undo.gif" width="21" height="20" title="æ’¤é”€" alt="æ’¤é”€" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_redo" onClick="ubzcode('redo')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_redo.gif" width="21" height="20" title="é‡åš" alt="é‡åš" /></div></td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td><td><div class="editor_buttonnormal" id="posteditor_cmd_bold" onClick="ubzcode('bold')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_bold.gif" width="21" height="20" title="ç²—ä½“" alt="ç²—ä½“" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_italic" onClick="ubzcode('italic')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_italic.gif" width="21" height="20" title="æ–œä½“" alt="æ–œä½“" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_underline" onClick="ubzcode('underline')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_underline.gif" width="21" height="20" title="ä¸‹åˆ’çº¿" alt="ä¸‹åˆ’çº¿" /></div></td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td><td id="posteditor_popup_fontname" title="å­—ä½“"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')"><table cellpadding="0" cellspacing="0" border="0" unselectable="on"><tr><td class="editor_menunormal" unselectable="on" id="posteditor_menu"><div id="posteditor_font_out" style="width:50px;" unselectable="on">å­—ä½“</div></td><td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt=""/></td></tr></table><script type="text/javascript">menuregister(true, "posteditor_popup_fontname")</script></div></td><td id="posteditor_popup_fontsize" title="å¤§å°"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')"><table cellpadding="0" cellspacing="0" border="0" unselectable="on"><tr><td class="editor_menunormal" unselectable="on" id="posteditor_menu"><div id="posteditor_size_out" style="width:25px" unselectable="on">å¤§å°</div></td><td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt="" /></td></tr></table><script type="text/javascript">menuregister(true, "posteditor_popup_fontsize")</script></div></td><td id="posteditor_popup_forecolor" title="é¢œè‰²"><div class="editor_buttonnormal" onMouseOver="menuContext(this, 'mouseover')" onMouseOut="menuContext(this, 'mouseout')"><table cellpadding="0" cellspacing="0" border="0" unselectable="on"><tr><td class="editor_colormenunormal" unselectable="on" id="posteditor_colormenu"><img src="images/bb_color.gif" width="21" height="16" alt="" /><br><img src="images/bb_clear.gif" id="posteditor_color_bar" alt="" style="background-color:black" width="21" height="4" /></td><td unselectable="on"><img src="images/bb_menupop.gif" width="7" height="4" alt="" /></td></tr></table><script type="text/javascript">menuregister(true, "posteditor_popup_forecolor")</script></div></td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td><td><div class="editor_buttonnormal" id="posteditor_cmd_justifyleft" onClick="ubzcode('justifyleft')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_left.gif" width="21" height="20" title="å±…å·¦" alt="å±…å·¦" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_justifycenter" onClick="ubzcode('justifycenter')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_center.gif" width="21" height="20" title="å±…ä¸­" alt="å±…ä¸­" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_justifyright" onClick="ubzcode('justifyright')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_right.gif" width="21" height="20" title="å±…å³" alt="å±…å³" /></div></td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td><td><div class="editor_buttonnormal" id="posteditor_cmd_insertorderedlist" onClick="ubzcode('insertorderedlist')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_orderedlist.gif" width="21" height="20" title="æ’åºçš„åˆ—è¡¨" alt="æ’åºçš„åˆ—è¡¨" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_insertunorderedlist" onClick="ubzcode('insertunorderedlist')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_unorderedlist.gif" width="21" height="20" title="æœªæ’åºåˆ—è¡¨" alt="æœªæ’åºåˆ—è¡¨" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_outdent" onClick="ubzcode('outdent')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_outdent.gif" width="21" height="20" title="å‡å°‘ç¼©è¿›" alt="å‡å°‘ç¼©è¿›" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_indent" onClick="ubzcode('indent')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_indent.gif" width="21" height="20" title="å¢åŠ ç¼©è¿›" alt="å¢åŠ ç¼©è¿›" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_createlink" onClick="ubzcode('createlink')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_url.gif" width="21" height="20" title="æ’å…¥é“¾æ¥" alt="æ’å…¥é“¾æ¥" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_unlink" onClick="ubzcode('unlink')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_unlink.gif" width="21" height="20" title="ç§»é™¤é“¾æ¥" alt="ç§»é™¤é“¾æ¥" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_email" onClick="ubzcode('email')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_email.gif" width="21" height="20" title="æ’å…¥é‚®ç®±é“¾æ¥" alt="æ’å…¥é‚®ç®±é“¾æ¥" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_insertimage" onClick="ubzcode('insertimage')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_image.gif" width="21" height="20" title="æ’å…¥å›¾ç‰‡" alt="æ’å…¥å›¾ç‰‡" /></div></td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td><td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_qq" onMouseOver="buttonContext(this, 'mouseover')" onClick="ubzcode('custom1_qq')" onMouseOut="buttonContext(this, 'mouseout')"><IMG title="æ’å…¥QQåœ¨çº¿çŠ¶æ€æŒ‰é’®" height="20" alt=qq src="images/bb_qq.gif" width=21></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_flash" onClick="ubzcode('custom1_flash')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_flash.gif" width="21" height="20" title="åµŒå…¥ Flash åŠ¨ç”»" alt="flash" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_rm" onClick="ubzcode('custom1_rm')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_rm.gif" width="21" height="20" title="åµŒå…¥ Real éŸ³é¢‘æˆ–è§†é¢‘" alt="rm" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_wmv" onClick="ubzcode('custom1_wmv')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_wmv.gif" width="21" height="20" title="åµŒå…¥ Windows media éŸ³é¢‘æˆ–è§†é¢‘" alt="wmv" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_custom1_wmv" onClick="ubzcode('custom1_page')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><IMG title="åµŒå…¥åˆ†é¡µæ ‡ç­¾" height="20" alt="æ ‡ç­¾" src="images/bb_look.gif" width="21"></div></td><td><td><img src="images/bb_separator.gif" width="6" height="20" alt="" /></td>	<td><div class="editor_buttonnormal" id="posteditor_cmd_wrap0_quote" onClick="ubzcode('quote')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_quote.gif" width="21" height="20" title="æ’å…¥å¼•ç”¨" alt="æ’å…¥å¼•ç”¨" /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_wrap0_code" onClick="ubzcode('code')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_code.gif" width="21" height="20" title="æ’å…¥ä»£ç " alt="æ’å…¥ä»£ç " /></div></td><td><div class="editor_buttonnormal" id="posteditor_cmd_table" onClick="ubzcode('table')" onMouseOver="buttonContext(this, 'mouseover')" onMouseOut="buttonContext(this, 'mouseout')"><img src="images/bb_table.gif" width="21" height="20" title="æ’å…¥è¡¨æ ¼" alt="æ’å…¥è¡¨æ ¼" /></div></td></div></td></tr></table><div id="posteditor_switcher"><input type="button" id="bbcodemode" value="UBB ä»£ç æ¨¡å¼" onClick="switchEditor(0)" class="editor_switcher_highlight" onFocus="this.blur()"/><input type="button" id="wysiwygmode" value="æ‰€è§å³æ‰€å¾—æ¨¡å¼" onClick="switchEditor(1)" class="editor_switcher" onFocus="this.blur()"/></div><div class="popupmenu_popup" id="posteditor_popup_fontname_menu" style="display: none"><table cellpadding="4" cellspacing="0" border="0" unselectable="on"><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'ä»¿å®‹_utf-8')" unselectable="on"><font face="ä»¿å®‹_utf-8" unselectable="on">ä»¿å®‹_utf-8</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'é»‘ä½“')" unselectable="on"><font face="é»‘ä½“" unselectable="on">é»‘ä½“</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'æ¥·ä½“_utf-8')" unselectable="on"><font face="æ¥·ä½“_utf-8" unselectable="on">æ¥·ä½“_utf-8</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'å®‹ä½“')" unselectable="on"><font face="å®‹ä½“" unselectable="on">å®‹ä½“</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'æ–°å®‹ä½“')" unselectable="on"><font face="æ–°å®‹ä½“" unselectable="on">æ–°å®‹ä½“</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Tahoma')" unselectable="on"><font face="Tahoma" unselectable="on">Tahoma</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Arial')" unselectable="on"><font face="Arial" unselectable="on">Arial</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Impact')" unselectable="on"><font face="Impact" unselectable="on">Impact</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Verdana')" unselectable="on"><font face="Verdana" unselectable="on">Verdana</font></td></tr><tr><td class="popupmenu_option" onClick="ubzcode('fontname', 'Times New Roman')" unselectable="on"><font face="Times New Roman" unselectable="on">Times New Roman</font></td></tr></table></div><div class="popupmenu_popup" id="posteditor_popup_fontsize_menu" style="display: none"><table cellpadding="4" cellspacing="0" border="0" unselectable="on"><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 1)" unselectable="on"><font size="1" unselectable="on">1</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 2)" unselectable="on"><font size="2" unselectable="on">2</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 3)" unselectable="on"><font size="3" unselectable="on">3</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 4)" unselectable="on"><font size="4" unselectable="on">4</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 5)" unselectable="on"><font size="5" unselectable="on">5</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 6)" unselectable="on"><font size="6" unselectable="on">6</font></td></tr><tr align="center"><td class="popupmenu_option" onClick="ubzcode('fontsize', 7)" unselectable="on"><font size="7" unselectable="on">7</font></td></tr></table></div><div class="popupmenu_popup" id="posteditor_popup_forecolor_menu" style="display: none"><table cellpadding="4" cellspacing="0" border="0" unselectable="on"><tr><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Black')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Black" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Sienna')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Sienna" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOliveGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOliveGreen" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkGreen" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkSlateBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkSlateBlue" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Navy')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Navy" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Indigo')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Indigo" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkSlateGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkSlateGray" unselectable="on"></div></td></tr><tr><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkRed')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkRed" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOrange')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOrange" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Olive')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Olive" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Green')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Green" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Teal')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Teal" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Blue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Blue" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'SlateGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SlateGray" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DimGray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DimGray" unselectable="on"></div></td></tr><tr><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Red')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Red" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'SandyBrown')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SandyBrown" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'YellowGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: YellowGreen" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'SeaGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: SeaGreen" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'MediumTurquoise')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: MediumTurquoise" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'RoyalBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: RoyalBlue" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Purple')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Purple" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Gray')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Gray" unselectable="on"></div></td></tr><tr><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Magenta')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Magenta" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Orange')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Orange" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Yellow')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Yellow" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Lime')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Lime" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Cyan')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Cyan" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DeepSkyBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DeepSkyBlue" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'DarkOrchid')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: DarkOrchid" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Silver')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Silver" unselectable="on"></div></td></tr><tr><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Pink')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Pink" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Wheat')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Wheat" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'LemonChiffon')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: LemonChiffon" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'PaleGreen')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: PaleGreen" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'PaleTurquoise')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: PaleTurquoise" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'LightBlue')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: LightBlue" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'Plum')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: Plum" unselectable="on"></div></td><td class="editor_colornormal" onClick="ubzcode('forecolor', 'White')" unselectable="on" onMouseOver="colorContext(this, 'mouseover')" onMouseOut="colorContext(this, 'mouseout')"><div style="background-color: White" unselectable="on"></div></td></tr><tr></tr></table></div></table><div class="editor_text" id="editor_text"><textarea name="message" rows="10" cols="60" style="width:99%; height:291px;" tabindex="100" id="posteditor_textarea" onSelect="javascript: storeCaret(this);" onClick="javascript: storeCaret(this);" onKeyUp="javascript:storeCaret(this);" ></textarea></div><table width="100%" cellpadding="4" cellspacing="0" class="editor_button"><tr><td width="30px"><div class="editor_textexpand"><img src="images/bb_contract.gif" width="11" height="21" title="æ”¶ç¼©ç¼–è¾‘æ¡†" alt="æ”¶ç¼©ç¼–è¾‘æ¡†" onClick="resizeEditor(-100)" /><img src="images/bb_expand.gif" width="12" height="21" title="æ‰©å±•ç¼–è¾‘æ¡†" alt="æ‰©å±•ç¼–è¾‘æ¡†" onClick="resizeEditor(100)" /></div></td><td align="right">	<form id="frmUpload" action="" target="eRunningFrame" method="post" enctype="multipart/form-data" style="padding-top:10px;">		ç›®å½•ï¼š<input id="txtFolder" type="text" value="" name="txtFolder" />		&nbsp;ç±»å‹ï¼š	  <select id="cmbType" name="cmbType">	  	<option value="Image" selected="selected">Image</option>	  	<option value="File">File</option>	  	<option value="Flash">Flash</option>	  	<option value="Media">Media</option>	  </select>		é€‰æ‹©æ–‡ä»¶ï¼š		<input id="txtFileUpload" type="file" name="NewFile" />		<input type="submit" value="ä¸Šä¼ " onClick="SetAction();" />		<input type="button" class="lightbutton" value="å­—æ•°æ£€æŸ¥" onClick="checklength()" style="width:65px">		<input type="button" class="lightbutton" value="æ¸…ç©ºå†…å®¹" tabindex="103" onClick="clearcontent()" style="width:65px">    <br/>	</form></td></tr></table><span id="eUrl" style="display:none"></span><iframe id="eRunningFrame" src="javascript:void(0)" name="eRunningFrame" width="100%" height="100%" style="display:none"></iframe><span id="eUrl" style="display:none"></span><input type="hidden" id="cmbConnector" name="cmbConnector" value="" /><input type="hidden" name="wysiwyg" id="posteditor_mode" value="1"><script type="text/javascript">document.getElementById("cmbConnector").value = connecter;document.getElementById("txtFolder").value =  "/mod_shared/skins/upload";var textobj = $(editorid + '_textarea');newEditor(wysiwyg);</script></body></html>

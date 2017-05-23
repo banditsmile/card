@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>新云卡-后台登录首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锟斤拷锟狡匡拷-锟斤拷台锟斤拷录锟斤拷页</title>
     <style media="all" type="text/css">
         body, h1, button, input, select, textarea, fieldset, td
         {
@@ -136,8 +136,8 @@
 <tr>
 
     <td width="53%" height="30" class="listhead">
-      <div align="left">| <a href="/b2b/" target="_blank">批发系统</a> | <a href="/ykt/" target="_blank">一卡通系统</a></div    >
-    <td width="47%" class="listhead"><div align="left">官方重要通知：欢迎使用新云卡系统，详情联系蓝主QQ：936992497</div></td>
+      <div align="left">| <a href="/b2b/" target="_blank">锟斤拷锟斤拷系统</a> | <a href="/ykt/" target="_blank">一锟斤拷通系统</a></div    >
+    <td width="47%" class="listhead"><div align="left">锟劫凤拷锟斤拷要通知锟斤拷锟斤拷迎使锟斤拷锟斤拷锟狡匡拷系统锟斤拷锟斤拷锟斤拷锟斤拷系锟斤拷锟斤拷QQ锟斤拷936992497</div></td>
 </script>
 <br /><?php $item=$vd['sysinfo']; ?>
     <table width="100%" cellspacing="5" cellpadding="0">
@@ -146,34 +146,34 @@
                 <div class="kuang">
                     <h1>
 
-                        <span>待处理事务</span></h1>
+                        <span>锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷</span></h1>
                     <div>
                         <ul>
-                          <li>未处理账单：<a href="index.php?m=mod_b2b&c=Order&optype=w&by=1&aid=-2" onclick="loadDisp(1)"><?php echo $item['order_todeal']; ?>个</a></li>
-                          <li>未处理投诉：<a href="index.php?m=mod_b2b&c=Complaint&msgto=0&mstate=1&by=1" onclick="loadDisp(1)"><?php echo $item['pm_complaint']; ?>条</a></li>
-                          <li>未处理汇款：<a href="index.php?m=mod_b2b&c=Remit&msgto=0&mstate=1&by=1" onclick="loadDisp(1)"><?php echo $item['pm_addfunds']; ?>条</a></li>
+                          <li>未锟斤拷锟斤拷锟剿碉拷锟斤拷<a href="index.php?m=mod_b2b&c=Order&optype=w&by=1&aid=-2" onclick="loadDisp(1)"><?php echo $item['order_todeal']; ?>锟斤拷</a></li>
+                          <li>未锟斤拷锟斤拷投锟竭ｏ拷<a href="index.php?m=mod_b2b&c=Complaint&msgto=0&mstate=1&by=1" onclick="loadDisp(1)"><?php echo $item['pm_complaint']; ?>锟斤拷</a></li>
+                          <li>未锟斤拷锟斤拷锟筋：<a href="index.php?m=mod_b2b&c=Remit&msgto=0&mstate=1&by=1" onclick="loadDisp(1)"><?php echo $item['pm_addfunds']; ?>锟斤拷</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="kuang">
                     <h1>
-                        <span>今日业务量</span></h1>
+                        <span>锟斤拷锟斤拷业锟斤拷锟斤拷</span></h1>
                     <div>
                         <ul>
-                          <li>今日订单数：<a href="index.php?m=mod_b2b&c=order&aid=-2&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['order_num']; ?>个</a></li>
-                          <li>今日预付款订单数：<a href="index.php?m=mod_b2b&c=funds&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['today_funds']; ?>个</a></li>
-                          <li>今日新增用户：<a href="index.php?m=mod_b2b&c=agent&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['today_agent']; ?>个</a></li>
+                          <li>锟斤拷锟秸讹拷锟斤拷锟斤拷锟斤拷<a href="index.php?m=mod_b2b&c=order&aid=-2&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['order_num']; ?>锟斤拷</a></li>
+                          <li>锟斤拷锟斤拷预锟斤拷锟筋订锟斤拷锟斤拷锟斤拷<a href="index.php?m=mod_b2b&c=funds&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['today_funds']; ?>锟斤拷</a></li>
+                          <li>锟斤拷锟斤拷锟斤拷锟斤拷锟矫伙拷锟斤拷<a href="index.php?m=mod_b2b&c=agent&startdate=<?php echo $startdate; ?>"  onclick="loadDisp(1)"><?php echo $item['today_agent']; ?>锟斤拷</a></li>
                         </ul>
                     </div>
                 </div>
 <div class="kuang">
                     <h1>
-                        <span>技术支持：</span></h1>
+                        <span>锟斤拷锟斤拷支锟街ｏ拷</span></h1>
                     <div>
                         <ul>
-                          <li>新云数卡：<a href="http://www.xybss.com.cn">新云数卡销售系统</a></li>
-                          <li>高速主机：<a href="http://www.meiis.com/">美易互联虚拟主机</a></li>
-                          <li>技术QQ：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=936992497&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:936992497:51" alt="点击联系蓝主" title="点击联系蓝主"/></a></li>
+                          <li>锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷<a href="http://www.xybss.com.cn">锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷系统</a></li>
+                          <li>锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷<a href="http://www.meiis.com/">锟斤拷锟阶伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷</a></li>
+                          <li>锟斤拷锟斤拷QQ锟斤拷<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=936992497&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:936992497:51" alt="锟斤拷锟斤拷锟较碉拷锟斤拷锟�" title="锟斤拷锟斤拷锟较碉拷锟斤拷锟�"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -184,12 +184,12 @@
                     <table id="mytable" cellspacing="0">
                         <tr>
                             <th colspan="2" style="border-top: 1px solid #fff">
-                                平台基本信息
+                                平台锟斤拷锟斤拷锟斤拷息
                             </th>
                         </tr>
                         <tr>
                             <td width="35%" class="left">
-                                授权域名：
+                                锟斤拷权锟斤拷锟斤拷锟斤拷
                             </td>
                             <td width="65%" align="left">
                                 <strong><font color="#ff0000">
@@ -198,44 +198,44 @@
                         </tr>
                         <tr>
                             <td class="left">
-                                系统版本：
+                                系统锟芥本锟斤拷
                             </td>
                             <td align="left">
-                                <strong><font color="#FF0000">新云卡</font></strong>
+                                <strong><font color="#FF0000">锟斤拷锟狡匡拷</font></strong>
                             </td>
                         </tr>
                         <tr>
                             <th colspan="2" style="border-top: 1px solid #fff">
-                                增值服务额度
+                                锟斤拷值锟斤拷锟斤拷锟斤拷
                             </th>
                         </tr>
                         <tr>
                             <td class="left">
-                                下级子站额度：
+                                锟铰硷拷锟斤拷站锟斤拷龋锟�
                             </td>
                             <td align="left">
                                 <a href="index.php?m=mod_b2b&c=EShop"><span style="color: #0a0; font-weight: bold; text-decoration: underline;">
-                                    0</span></a> 个可用
+                                    0</span></a> 锟斤拷锟斤拷锟斤拷
                             </td>
                         </tr>
                         <tr>
                             <td class="left">
-                                淘宝对接额度：
+                                锟皆憋拷锟皆接讹拷龋锟�
                             </td>
                             <td align="left">
                                 <a href="#"><span style="color: #0a0; font-weight: bold;
                                     text-decoration: underline;">
-                                    0</span></a> 个可用
+                                    0</span></a> 锟斤拷锟斤拷锟斤拷
                             </td>
                         </tr>
                         
                                                     </td>
 							</tr>
-                               <td width="49%" style="border-right:0px #fff solid"><div align="center">搭建时间：</div></td>
+                               <td width="49%" style="border-right:0px #fff solid"><div align="center">锟筋建时锟戒：</div></td>
           <td width="51%" style="border-right:1px #ccc solid;text-align:right"><div align="left">2013-12-09</div></td>
         </tr>
                 <tr>
-          <td width="49%" style="border-right:0px #fff solid"><div align="center">到期时间：</div></td>
+          <td width="49%" style="border-right:0px #fff solid"><div align="center">锟斤拷锟斤拷时锟戒：</div></td>
           <td width="51%" style="border-right:1px #ccc solid;text-align:right"><div align="left">2114-12-09</div><script language=JavaScript> 
 var startDate = new Date("12/09/2013") 
 function GetServerTime() 
@@ -252,20 +252,20 @@ minutes   = (urodz - now) / 1000 /60 - (24 * 60 * daysRound) - (60 * hoursRound)
 minutesRound  = Math.floor(minutes); 
 seconds   = (urodz - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound); 
 secondsRound  = Math.round(seconds); 
-document.getElementById("havedays").innerHTML   = daysRound + " 天 "; 
-document.getElementById("daycount").innerHTML   = daysRound_1 + " 天 "; 
-//document.getElementById("time").innerHTML   = hoursRound + " 小时 " + minutesRound + " 分 " + secondsRound + " 秒"; 
+document.getElementById("havedays").innerHTML   = daysRound + " 锟斤拷 "; 
+document.getElementById("daycount").innerHTML   = daysRound_1 + " 锟斤拷 "; 
+//document.getElementById("time").innerHTML   = hoursRound + " 小时 " + minutesRound + " 锟斤拷 " + secondsRound + " 锟斤拷"; 
   
 } 
 setInterval("GetServerTime()",250); 
 </script></td>
         </tr>
         <tr>
-          <td style="border-right:0px #fff solid;border-bottom:1px #ccc solid"><div align="center">运营天数：</div></td>
+          <td style="border-right:0px #fff solid;border-bottom:1px #ccc solid"><div align="center">锟斤拷营锟斤拷锟斤拷锟斤拷</div></td>
           <td style="border-right:1px #ccc solid;border-bottom:1px #ccc solid;text-align:right"><div align="left" class="STYLE6"><span id="daycount"></span></div></td>
         </tr>
         <tr>
-          <td style="border-right:0px #fff solid;border-bottom:1px #ccc solid"><div align="center">还剩天数：</div></td>
+          <td style="border-right:0px #fff solid;border-bottom:1px #ccc solid"><div align="center">锟斤拷剩锟斤拷锟斤拷锟斤拷</div></td>
           <td style="border-right:1px #ccc solid;border-bottom:1px #ccc solid;text-align:right"><div align="left"><span class="STYLE6" style="border-bottom:1px #ccc solid;"><span id="havedays"></span><span id="time"></span></div></td>
         </tr>
                             </td>
@@ -275,9 +275,9 @@ setInterval("GetServerTime()",250);
             </td>
         </tr>
     </table>
-    <div class="di">　</div>
+    <div class="di">锟斤拷</div>
 <div id="load" style="display:none">
-  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>页面加载中请稍等...</div>
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>页锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷缘锟�...</div>
 </div>
 <script type="text/javascript">
 var $ = function(id){
@@ -340,7 +340,7 @@ function setOnclick()
 
 function setSearchTxt()
 {
-  setLoad("数据搜索中请稍等...");
+  setLoad("锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟皆碉拷...");
   loadDisp(1);
 }
 
@@ -376,7 +376,7 @@ function GetBiz()
 GetBiz();
 <?php } ?>
 
-//setLoad("页面加载中请稍等...");
+//setLoad("页锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷缘锟�...");
 //setOnclick();
 </script>
 </body>

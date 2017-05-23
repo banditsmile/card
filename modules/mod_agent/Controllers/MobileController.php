@@ -61,13 +61,13 @@ class MobileController extends Controller
 								$agent = $R2097a8fddf->IAgent_Get( $R2a51483b14, "istest,tradepwd", 0 );
 								if ( $agent['istest'] == 1 )
 								{
-												$this->Alert( "ÄúºÃ£¡Äúµ±Ç°Ê¹ÓÃµÄÊÇ²âÊÔºÅ£¬²âÊÔºÅÊÇÎÞ·¨ÐÞ¸ÄÏà¹ØÐÅÏ¢µÄ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ê¹ï¿½Ãµï¿½ï¿½Ç²ï¿½ï¿½ÔºÅ£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ä£ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R48aa85bc4e = getvar( "tradepwd" );
 								if ( $R48aa85bc4e != $agent['tradepwd'] )
 								{
-												$this->Alert( "ÄúÊäÈëµÄ½»Ò×ÃÜÂëÓÐ´í£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -111,11 +111,11 @@ class MobileController extends Controller
 																"arg1" => $R2a51483b14,
 																"arg2" => $R94e0136c8a
 												) );
-												$this->Alert( "ÉèÖÃ³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã³É¹ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "ÉèÖÃÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_agent&c=Mobile&a=".$action );
 				}
@@ -136,8 +136,8 @@ class MobileController extends Controller
 												session_start( );
 								}
 								$_SESSION['mobilecode'] = $Rd19ae93b31;
-								$Rbb3e87fa4e = "ÑéÖ¤ÂëÎª:".$Rd19ae93b31." ÊäÈëºóÌá½»¼´¿É°ó¶¨ÊÖ»úÁîÅÆ";
-								$Rbb3e87fa4e = iconv( "gb2312", "UTF-8", $Rbb3e87fa4e );
+								$Rbb3e87fa4e = "ï¿½ï¿½Ö¤ï¿½ï¿½Îª:".$Rd19ae93b31." ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½É°ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½";
+								$Rbb3e87fa4e = iconv( "utf-8", "UTF-8", $Rbb3e87fa4e );
 								$R244f38266c = intval( request( "val" ) );
 								if ( $R244f38266c )
 								{
@@ -178,7 +178,7 @@ class MobileController extends Controller
 								$Rd19ae93b31 = getvar( "verifycode", "", "POST" );
 								if ( $Rd19ae93b31 == "" || $Rb7da52a305 != $Rd19ae93b31 )
 								{
-												$this->Alert( "ÑéÖ¤Âë³ö´í" );
+												$this->Alert( "ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 												exit( );
 								}
@@ -190,7 +190,7 @@ class MobileController extends Controller
 								$agent = $R2097a8fddf->IAgent_Get( $R2a51483b14, "istest", 0 );
 								if ( $agent['istest'] == 1 )
 								{
-												$this->Alert( "ÄúºÃ£¡Äúµ±Ç°Ê¹ÓÃµÄÊÇ²âÊÔºÅ£¬²âÊÔºÅÊÇÎÞ·¨×ö½â³ý»òÉêÇëÊÖ»úÁîÅÆµÄ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ê¹ï¿½Ãµï¿½ï¿½Ç²ï¿½ï¿½ÔºÅ£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ÆµÄ£ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R244f38266c )
@@ -200,12 +200,12 @@ class MobileController extends Controller
 												{
 																$R3584859062 = $R679e9b9234['id'];
 																$data = array( "mobilecheck" => 0 );
-																$R63bede6b19 = "½â³ý°ó¶¨";
+																$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½ï¿½";
 																$R808b89ba0e = $this->hander->ISecurity_Update( $data, $R3584859062 );
 												}
 												else
 												{
-																$this->Alert( "ÄúÖ®Ç°Ã»ÓÐÊÖ»úÁîÅÆ°ó¶¨¼ÇÂ¼£¬ÎÞÐè½â³ý" );
+																$this->Alert( "ï¿½ï¿½Ö®Ç°Ã»ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Æ°ó¶¨¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->ScriptRedirect( "index.php?m=mod_agent&c=Mobile&a=Apply" );
 												}
 								}
@@ -217,7 +217,7 @@ class MobileController extends Controller
 																"aid" => $R2a51483b14,
 																"staffid" => $R94e0136c8a
 												);
-												$R63bede6b19 = "ÉêÇë°ó¶¨";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½ï¿½";
 												$R679e9b9234 = $this->GetSecCache( $R2a51483b14, $R94e0136c8a );
 												if ( isset( $R679e9b9234['id'] ) )
 												{
@@ -229,7 +229,7 @@ class MobileController extends Controller
 																$R808b89ba0e = $this->hander->ISecurity_Create( $data );
 												}
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_agent&c=Mobile&a=Apply" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_agent&c=Mobile&a=Apply" );
 				}
 
 }

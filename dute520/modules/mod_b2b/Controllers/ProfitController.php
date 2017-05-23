@@ -58,8 +58,8 @@ class ProfitController extends Controller
 								$this->Assign( "allaid", $Rfff462d8f8 );
 								$this->Assign( "aid", $R2a51483b14 );
 								$this->Assign( "s", intval( request( "s" ) ) );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ", "aid" => "ËùÊôÓÃ»§±àºÅ", "aname" => "ÏÂµ¥Õß", "cname" => "²Ù×÷Õß", "pname" => "ÉÌÆ·Ãû", "cqq" => "QQºÅ", "ctel" => "µç»°", "cmail" => "ÓÊÏä", "czaccount" => "³äÖµºÅ", "cip" => "IP" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "aid" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "aname" => "ï¿½Âµï¿½ï¿½ï¿½", "cname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½", "cqq" => "QQï¿½ï¿½", "ctel" => "ï¿½ç»°", "cmail" => "ï¿½ï¿½ï¿½ï¿½", "czaccount" => "ï¿½ï¿½Öµï¿½ï¿½", "cip" => "IP" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "cfarray", $R8dc7d3eb73 );
 								$this->Assign( "comefrom", intval( getvar( "comefrom", 0 ) ) );
@@ -70,7 +70,7 @@ class ProfitController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 

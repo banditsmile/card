@@ -44,8 +44,8 @@ class FundsController extends Controller
 								$data = array_merge( $R58bca74885, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IFunds_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ", "cname" => "ÓÃ»§Ãû", "cqq" => "QQºÅ", "ctel" => "µç»°", "cmail" => "ÓÊÏä", "cip" => "³äÖµIP", "admname" => "¹ÜÀíÔ±²Ù×÷Õß" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "cname" => "ï¿½Ã»ï¿½ï¿½ï¿½", "cqq" => "QQï¿½ï¿½", "ctel" => "ï¿½ç»°", "cmail" => "ï¿½ï¿½ï¿½ï¿½", "cip" => "ï¿½ï¿½ÖµIP", "admname" => "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
 								$this->FillPage( $data, $R4e420efcc3 );
 								$R63bede6b19 = intval( request( "payment" ) ) == 101 ? "payment = 101" : "";
 								$this->Recycle( "funds", $R63bede6b19 );
@@ -59,13 +59,13 @@ class FundsController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -77,10 +77,10 @@ class FundsController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -91,7 +91,7 @@ class FundsController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -106,7 +106,7 @@ class FundsController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -130,7 +130,7 @@ class FundsController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -169,7 +169,7 @@ class FundsController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -197,7 +197,7 @@ class FundsController extends Controller
 								$R808b89ba0e = $this->hander->IFunds_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

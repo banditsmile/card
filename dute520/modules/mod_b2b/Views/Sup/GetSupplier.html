@@ -1,69 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>ÁªÏµĞÅÏ¢</title>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-<style type="text/css">
-body{padding:5px;}
-td{height:22px;}
-</style>
-</head>
-<body>
-<!--$item=$vd['item'];-->
-<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">
-  <tr>
-    <td height="35"  colspan="2" class="listhead texttle">ÉÌ»§Ïà¹Ø×ÊÁÏ</td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌ»§±àºÅ£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzuid']}</td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌ»§×Ü¹©»õ±£Ö¤½ğ£º</td>
-    <td width="68%" style="padding: 5px">
-    <span class="dollars">{$item['ubzsupmoney']} Ôª </span> 
-    ±£Ö¤½ğ¼¶±ğ£º<span class="dollars">{$item['ubzsuplv']}</span>¼¶
-    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">Ê²Ã´ÊÇ¹©»õ±£Ö¤½ğ?</font></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">¹«Ë¾£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzcompany']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">QQ£º</td>
-    <td style="padding: 5px">{$item['ubzqq']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">ÓÊÏä£º</td>
-    <td style="padding: 5px">{$item['ubzemail']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">µç»°£º</td>
-    <td style="padding: 5px">{$item['ubztel']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">ÊÖ»ú£º</td>
-    <td style="padding: 5px">{$item['ubzmobile']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">¹©»õÉÌÇşµÀÈÏÖ¤£º</td>
-    <td style="padding: 5px">
-    <font color="#ff0000">{$item['ubzqual']}</font>
-    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">¸øÉÌ»§ÁôÑÔ</font></a> /
-    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom=10086&ubzmtitle=Í¶Ëß¹©»õÉÌ{$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">ÏòÏµÍ³¾Ù±¨</font></a>
-    </td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">ÉÌ»§ËµÃ÷£º</td>
-    <td style="padding: 5px">{$item['ubzudcrp']}</td>
-  </tr>
-  <tr>
-    <td align="right" style="padding: 5px">²Ù×÷£º</td>
-    <td style="padding: 5px"><a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">¸øÉÌ»§ÁôÑÔ</font></a>
-    </td>
-  </tr>
-</table>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>è”ç³»ä¿¡æ¯</title><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/><style type="text/css">body{padding:5px;}td{height:22px;}</style></head><body><!--$item=$vd['item'];--><table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">  <tr>    <td height="35"  colspan="2" class="listhead texttle">å•†æˆ·ç›¸å…³èµ„æ–™</td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†æˆ·ç¼–å·ï¼š</td>    <td width="68%" style="padding: 5px">{$item['ubzuid']}</td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†æˆ·æ€»ä¾›è´§ä¿è¯é‡‘ï¼š</td>    <td width="68%" style="padding: 5px">    <span class="dollars">{$item['ubzsupmoney']} å…ƒ </span>     ä¿è¯é‡‘çº§åˆ«ï¼š<span class="dollars">{$item['ubzsuplv']}</span>çº§    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">ä»€ä¹ˆæ˜¯ä¾›è´§ä¿è¯é‡‘?</font></a>    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å…¬å¸ï¼š</td>    <td width="68%" style="padding: 5px">{$item['ubzcompany']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">QQï¼š</td>    <td style="padding: 5px">{$item['ubzqq']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">é‚®ç®±ï¼š</td>    <td style="padding: 5px">{$item['ubzemail']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">ç”µè¯ï¼š</td>    <td style="padding: 5px">{$item['ubztel']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">æ‰‹æœºï¼š</td>    <td style="padding: 5px">{$item['ubzmobile']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">ä¾›è´§å•†æ¸ é“è®¤è¯ï¼š</td>    <td style="padding: 5px">    <font color="#ff0000">{$item['ubzqual']}</font>    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">ç»™å•†æˆ·ç•™è¨€</font></a> /    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom=10086&ubzmtitle=æŠ•è¯‰ä¾›è´§å•†{$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">å‘ç³»ç»Ÿä¸¾æŠ¥</font></a>    </td>  </tr>  <tr>    <td align="right" style="padding: 5px">å•†æˆ·è¯´æ˜ï¼š</td>    <td style="padding: 5px">{$item['ubzudcrp']}</td>  </tr>  <tr>    <td align="right" style="padding: 5px">æ“ä½œï¼š</td>    <td style="padding: 5px"><a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}&ordno={$vd['ordno']}"><font color="#00875A">ç»™å•†æˆ·ç•™è¨€</font></a>    </td>  </tr></table></body></html>

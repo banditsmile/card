@@ -1,38 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a>  <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Mini&a=Home" title="Miniֱ����ҳ"><font color="#000">Miniֱ����ҳ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Suggest" title="������ʾ�ؼ����б�"><font color="#000">������ʾ�ؼ����б�</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['words']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="�鿴������ʾ�ؼ�����ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a>  <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Mini&a=Home" title="Mini直销首页"><font color="#000">Mini直销首页</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Suggest" title="智能提示关键词列表"><font color="#000">智能提示关键词列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['words']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="查看智能提示关键词相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Suggest&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">������ʾ�ؼ�����Ϣ�޸�</div>
+<div class="ctitle">智能提示关键词信息修改</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">�ؼ���</td>
+    <td class="tablelt">关键词</td>
     <td class="tablert"><input type="text" name="words" size="25" value="{$item['words']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">�������</td>
+    <td class="tablelt">排列序号</td>
     <td class="tablert"><input type="text" name="ordering" size="25" value="{$item['ordering']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">��ǩ</td>
-    <td class="tablert"><textarea rows="3" name="tags" cols="28" style="width:400px;">{$item['tags']}</textarea><br/>�����ǩ�Ļ������ð�Ƕ��Ÿ���</td>
+    <td class="tablelt">标签</td>
+    <td class="tablert"><textarea rows="3" name="tags" cols="28" style="width:400px;">{$item['tags']}</textarea><br/>多个标签的话，请用半角逗号隔开</td>
   </tr>
   <tr>
     <td class="tablelt""></td>
     <td class="tablert">
-      <input type="submit" value="�� ��" class="button"/>
-      <input type="button" value="ȡ ��" onclick="disp('adddiv')" class="button"/>
+      <input type="submit" value="修 改" class="button"/>
+      <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
     </td>
   </tr>
 </table>

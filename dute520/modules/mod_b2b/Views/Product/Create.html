@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -20,14 +20,14 @@ PADDING:0 3px;
 <body>
 <form method="post" action="index.php?m=mod_b2b&c=product&a=save" name="cform" id="cform"> 
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="╤╘╣╔ап╠М"><font color="#000">╤╘╣╔ап╠М</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">╤╘╣╔оЙо╦пео╒</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="╡И©╢╤╘╣╔оЮ╧ь╟ОжЗ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="О©╫О©╫О©╫О©╫О©╫п╠О©╫"><font color="#000">О©╫О©╫О©╫О©╫О©╫п╠О©╫</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">О©╫О©╫О©╫О©╫О©╫О©╫о╦О©╫О©╫о╒</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="О©╫И©╢О©╫О©╫О©╫О©╫О©╫О©╫ь╟О©╫О©╫О©╫"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">лНп╢╩Ы╠╬пео╒ </div>
+<div class="ctitle">О©╫О©╫п╢О©╫О©╫О©╫О©╫О©╫О©╫о╒ </div>
 <div>
 <table border="0" id="ctable1" class="ctable" style="border:0px;background:none">
   <tr>
@@ -45,17 +45,17 @@ PADDING:0 3px;
     <td valign="top">
       <table border="1" width="100%" class="ctable2" bordercolor="#ededed">
         <tr>
-          <td class="tablelt2">р╩╪╤╥жюЮё╨</td>
+          <td class="tablelt2">р╩О©╫О©╫О©╫О©╫О©╫Юё╨</td>
           <td class="tablert2">
             <select name="ubzdid1" size="1" onChange="changelocation(this.options[this.selectedIndex].value)" class="wenbenkuang">
-              <option select="selected" value="0">гКя║тЯр╩╪╤╥жюЮ</option>
+              <option select="selected" value="0">О©╫О©╫я║О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫</option>
               {#Option($vd['cat'], $vd['parentid'], 'catname', 'catid')}
             </select>
             <font color="#FF0000">*</font>
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">╤Ч╪╤╥жюЮё╨</td>
+          <td class="tablelt2">О©╫О©╫О©╫О©╫О©╫О©╫О©╫Юё╨</td>
           <td class="tablert2">
             <select name="catid" class="wenbenkuang">
                   {#Option($vd['subcat'], 0, 'catname', 'catid')}
@@ -64,7 +64,7 @@ PADDING:0 3px;
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">илф╥цШЁфё╨</td>
+          <td class="tablelt2">О©╫О©╫ф╥О©╫О©╫О©╫фёО©╫</td>
           <td class="tablert2">
             <input type="text" name="ubzpname" size="28" value=""/><font color="#FF0000"> *</font>
             <input type="text" id="namecolor" name="namecolor" value="" size="10" onkeyup="setcolor(this)"/> 
@@ -73,26 +73,26 @@ PADDING:0 3px;
           </td>
         </tr>
         <tr>
-          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>оЮ╤тилф╥цШЁфр╙╤лё╛жВр╙сцсзйврЁотй╬ё╛я╦кыхцбР╪р©╢╣╫</p>илф╥╠Йг╘ё╨</td>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫р╙О©╫лёО©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫О©╫рЁО©╫О©╫й╬О©╫О©╫я╦О©╫О©╫О©╫О©╫О©╫О©╫р©О©╫О©╫О©╫</p>О©╫О©╫ф╥О©╫О©╫г╘О©╫О©╫</td>
           <td class="tablert2"><input type="text" name="ubzptagname" size="20" value=""/></td>
         </tr>
         <tr>
-          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>иХжц╫Ь╩У╧ь╪Э╢йё╛╥╫╠Цо╣мЁ╟ОдЗя╟ур╨ойй╣д╩Ут╢</p>╫Ь╩У╧ь╪Э╢йё╨</td>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ц╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫я╟О©╫р╨О©╫О©╫й╣д╩О©╫т╢</p>О©╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫</td>
           <td class="tablert2"><input type="text" name="sup_keywords" size="20" value=""/></td>
         </tr>
       </table>
       <table border="0" width="100%" class="ctable2" style="margin-top:10px">
         <tr> 
-          <td class="tablelt2"><span class="name">╩Ы╠╬╪шг╝ё╨</span></td>
+          <td class="tablelt2"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫г╝О©╫О©╫</span></td>
           <td class="tablelr2">
-            <input type="text" name="ubzlistprice" size="10" class="priceinput" value=""/><font color="#FF0000"> * </font><span class="tip">йпЁ║╪ш(илф╥╣дцФж╣)</span><br/> 
-            <input type="text" name="ubzprice" size="10" class="priceinput" value=""/><font color="#FF0000"> * </font><span class="tip">╫Ь╪ш(илф╥╣д╫Ь╩У╪ш)</span><br/>
+            <input type="text" name="ubzlistprice" size="10" class="priceinput" value=""/><font color="#FF0000"> * </font><span class="tip">О©╫пЁО©╫О©╫О©╫(О©╫О©╫ф╥О©╫О©╫О©╫О©╫ж╣)</span><br/> 
+            <input type="text" name="ubzprice" size="10" class="priceinput" value=""/><font color="#FF0000"> * </font><span class="tip">О©╫О©╫О©╫О©╫(О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫О©╫)</span><br/>
           </td>
         </tr>
       </table>
       <table border="0" width="100%" class="ctable2" style="margin-top:10px">
         <tr> 
-          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©╗цэилф╥ж╦сп©╗╨е╨мцэбК╣дилф╥,я║╨еилф╥ж╦хГQQ╨ебК║╒йж╩З╨ебКж╝юЮя║╨еоЗйш╣дилф╥</p>илф╥юЮпмё╨</td>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫ф╥ж╦О©╫п©О©╫О©╫е╨О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥,я║О©╫О©╫О©╫О©╫ф╥ж╦О©╫О©╫QQО©╫О©╫О©╫К║╒О©╫ж╩О©╫О©╫О©╫О©╫О©╫ж╝О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫ш╣О©╫О©╫О©╫ф╥</p>О©╫О©╫ф╥О©╫О©╫О©╫мёО©╫</td>
           <td class="tablert2">
             <select size="1" id="ubzptype" name="ubzptype" onChange="showtpl(this)">
               {#Option(ProductTypeList())}
@@ -100,69 +100,69 @@ PADDING:0 3px;
           </td>
         </tr>
         <tr id="tpl" style="display:none"> 
-          <td class="tablelt2">ЁДж╣дё╟Её╨</td>
+          <td class="tablelt2">О©╫О©╫ж╣дёО©╫Её╨</td>
           <td class="tablert2">
             <span id="tpllist"></span><font color="#FF0000"> *</font>
           </td>
         </tr>
         <tr>
           <td class="tablelt2">
-            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╥г©╗цэюЮспп╖ё╛хГ╧Шм╛й╠я║тЯс╠ох©╗╧╨ЁДж╣дё╟Е,тРртс╠ох©╗╧╨дё╟Ен╙жВ</p>
-            вт╤╗рЕЁДж╣дё╟Её╨
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫г©О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫О©╫О©╫О©╫м╛й╠я║О©╫О©╫с╠О©╫х©О©╫О©╫О©╫О©╫О©╫ж╣дёО©╫О©╫,О©╫О©╫О©╫О©╫с╠О©╫х©О©╫О©╫О©╫дёО©╫О©╫н╙О©╫О©╫</p>
+            О©╫т╤О©╫О©╫О©╫О©╫ж╣дёО©╫Её╨
             </td>
           <td class="tablert2">
           <select size="1" id="ubzsyscztpl" name="ubzsyscztpl" style="width:130px;">
-            <option value="0" selected>нчвт╤╗рЕЁДж╣дё╟Е</option>
+            <option value="0" selected>О©╫О©╫О©╫т╤О©╫О©╫О©╫О©╫ж╣дёО©╫О©╫</option>
             {#Option($vd['customtpl'], 0, 'name', 'id')}
-          </select>[<a href="index.php?m=mod_b2b&c=game&a=tpladd"><font color="#ff0000">лМ╪с</font></a>]
+          </select>[<a href="index.php?m=mod_b2b&c=game&a=tpladd"><font color="#ff0000">О©╫О©╫О©╫</font></a>]
           </td>
         </tr>
         <tr id="czidname" style="display:none">
           <td class="tablelt2">
-            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p><span class="tip" id="tipidlable">мФ╪рсц╩╖цШ╣д╫п╥╗,╠ххГЁДQ╠рй╠╫пQQ╨е,ЁДсно╥й╠╫пуй╨е,хГ╧Шйг╫П╠рюЮ╩Руъв╟╠╦,©иртп╢╫ги╚цШ</span></p>
-            <span class="name" id="spanidlable">ЁДж╣IDцШЁфё╨</span>
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p><span class="tip" id="tipidlable">О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫д╫п╥О©╫,О©╫О©╫О©╫О©╫О©╫QО©╫О©╫й╠О©╫О©╫QQО©╫О©╫,О©╫О©╫О©╫О©╫о╥й╠О©╫О©╫О©╫й╨О©╫,О©╫О©╫О©╫О©╫г╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫в╟О©╫О©╫,О©╫О©╫О©╫О©╫п╢О©╫О©╫и╚О©╫О©╫</span></p>
+            <span class="name" id="spanidlable">О©╫О©╫ж╣IDО©╫О©╫О©╫фёО©╫</span>
           </td>
           <td class="tablert2">
-          <input type="text" id="ubzidlable" name="ubzidlable" size="10" value="уй╨е"/>
+          <input type="text" id="ubzidlable" name="ubzidlable" size="10" value="О©╫й╨О©╫"/>
           </td>
         </tr>
         <tr id="areaserv" style="display:none">
-          <td class="tablelt2"><span class="name" id="spanareaserv" >гЬ╥Чотй╬ё╨</span></td>
+          <td class="tablelt2"><span class="name" id="spanareaserv" >О©╫О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫</span></td>
           <td class="tablert2">
-            <span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>отй╬гЬсР
-            <input type="checkbox" value="1" name="ubzdispserv" class="checkbox"/>отй╬╥ЧнЯфВ</span>
+            <span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>О©╫О©╫й╬О©╫О©╫О©╫О©╫
+            <input type="checkbox" value="1" name="ubzdispserv" class="checkbox"/>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫</span>
             <span id="spanareaserv2" style="display:none">
-              <input type='radio' value='1' name='ubzdisparea' class='checkbox' checked onFocus="this.blur()"/>тйпМя║╨е╧╨бР(╧╨бРй╠отй╬╨ебКё╛тйпМя║тЯ╧╨бР) <br/>
-              <input type='radio' value='0' name='ubzdisparea' class='checkbox' onFocus="this.blur()"/>кФ╩З╨ебК(╧╨бРй╠╡╩отй╬╨ебКё╛кФ╩ЗлАх║©Б╢Ф╨ебК)
+              <input type='radio' value='1' name='ubzdisparea' class='checkbox' checked onFocus="this.blur()"/>О©╫О©╫О©╫О©╫я║О©╫е╧О©╫О©╫О©╫(О©╫О©╫О©╫О©╫й╠О©╫О©╫й╬О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫я║О©╫О©╫О©╫О©╫) <br/>
+              <input type='radio' value='0' name='ubzdisparea' class='checkbox' onFocus="this.blur()"/>О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫О©╫х║О©╫О©╫О©╫О©╫О©╫О©╫)
             </span>
           </td>
         </tr>
         <tr id="tradeterm" style="display:none">
           <td class="tablelt2">
-            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>лАй╬бР╪рхГ╨н╫╩рв╢кюЮилф╥(хГсно╥в╟╠╦тз╨н╢╕╫╩рвё╛╫П╠р╨м╨н╢╕╫╩рв)</p>
-            <span id="spanareaserv" >╫╩рв╥╫й╫ё╨</span>
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫н╫О©╫О©╫в╢О©╫О©╫О©╫О©╫О©╫ф╥(О©╫О©╫О©╫О©╫о╥в╟О©╫О©╫О©╫з╨н╢О©╫О©╫О©╫О©╫вёО©╫О©╫О©╫р╨м╨н╢О©╫О©╫О©╫О©╫О©╫)</p>
+            <span id="spanareaserv" >О©╫О©╫О©╫в╥О©╫й╫О©╫О©╫</span>
           </td>
           <td class="tablert2">
             <textarea name="ubztradeterm" cols="28" style="width:208px;" rows="3"></textarea>
           </td>
         </tr>
         <tr id="disponshow" style="display:none">
-          <td class="tablelt2"><span class="name" id="spanareaserv" >╫╩рв╥╫й╫отй╬й╠╪Дё╨</span></td>
+          <td class="tablelt2"><span class="name" id="spanareaserv" >О©╫О©╫О©╫в╥О©╫й╫О©╫О©╫й╬й╠О©╫Дё╨</span></td>
           <td class="tablert2">
-            <input type="radio" value="0" name="ubzdisponshow" class="checkbox"/>Ёи╧╕╧╨бР╨Сотй╬
-            <input type="radio" value="1" name="ubzdisponshow" class="checkbox"/>╧╨бРг╟отй╬
+            <input type="radio" value="0" name="ubzdisponshow" class="checkbox"/>О©╫и╧О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╬
+            <input type="radio" value="1" name="ubzdisponshow" class="checkbox"/>О©╫О©╫О©╫О©╫г╟О©╫О©╫й╬
           </td>
         </tr>
         <tr id="stocks" style="display:none">
-          <td class="tablelt2"><span class="name">©Б╢Фё╨</span></td>
+          <td class="tablelt2"><span class="name">О©╫О©╫Фё╨</span></td>
           <td class="tablert2">
-            <input type="text" value="1" name="ubzstocks" size="10" /> (тщн╢©╙╥е╧╕дэё╛нчпКлНп╢)
+            <input type="text" value="1" name="ubzstocks" size="10" /> (О©╫О©╫н╢О©╫О©╫О©╫е╧О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢)
           </td>
         </tr>
         <tr id="unit" style="display:none">
-          <td class="tablelt2"><span class="name">©Б╢Ф╣╔н╩ё╨</span></td>
+          <td class="tablelt2"><span class="name">О©╫О©╫Ф╣╔н╩О©╫О©╫</span></td>
           <td class="tablert2">
-            <input type="text" size="10" name="ubzunit" /> (тщн╢©╙╥е╧╕дэё╛нчпКлНп╢)
+            <input type="text" size="10" name="ubzunit" /> (О©╫О©╫н╢О©╫О©╫О©╫е╧О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢)
           </td>
         </tr>
       </table>
@@ -173,23 +173,23 @@ PADDING:0 3px;
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">╤тсп©╗╧╨о╣мЁ╧╘╩У</div>
+<div class="ctitle">О©╫О©╫О©╫п©О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("╢Р╧╢"╠Мй╬тйпМа╙йшо╣мЁ╣дфДкШил╩╖я║тЯдЗ╣дилф╥вВн╙вт╪╨╣д╩Ут╢,╤ЬдЗ©ирт╢сжп╩Ях║юШхС)</p>
-        ╤тмБ╧╘╩Уё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("О©╫О©╫"О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫л╩О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫н╙О©╫т╪О©╫О©╫д╩О©╫т╢,О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╢О©╫О©╫п╩О©╫х║О©╫О©╫О©╫О©╫)</p>
+        О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzsup"  class="checkbox" onclick="showsupinfo(this.checked)" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr id="ubzsupprice" style="display:none"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╤тмБ╧╘╩У╣д╪ш╦Я(хГ╧Шилф╥сп╤тмБ╧╘╩У╧╕дэё╛гКвпо╦лНп╢╤тс╕╣д╧╘╩У╪шг╝ё╛╫╗рИ╡╩р╙╣мсздЗ╣д╫Ь╩У╪ш)</p>
-        ╤тмБ╧╘╩У╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫д╪ш╦О©╫(О©╫О©╫О©╫О©╫О©╫ф╥О©╫п╤О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫о╦О©╫О©╫п╢О©╫О©╫с╕О©╫д╧О©╫О©╫О©╫О©╫О©╫г╝О©╫О©╫О©╫О©╫О©╫И╡╩р╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╫О©╫О©╫О©╫О©╫О©╫)</p>
+        О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫шёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzsupprice" value="" size="10"/>
@@ -197,28 +197,28 @@ PADDING:0 3px;
     </tr>
     <tr id="ubzsupcheck" style="display:none"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>"╢Р╧╢"╠Мй╬пХр╙иС╨к╡е©ирт╤т╫сдЗ╣дилф╥,╥ЯтР╡╩пХр╙</p>
-        ╤т╫сиС╨кё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>"О©╫О©╫"О©╫О©╫й╬О©╫О©╫р╙О©╫О©╫к╡е©О©╫О©╫т╤т╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥,О©╫О©╫О©╫О©╫О©╫О©╫р╙</p>
+        О©╫т╫О©╫О©╫О©╫кёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzsupcheck" class="checkbox" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("╢Р╧╢"╠Мй╬©ьжф╢килф╥╦В╫Ь╩Уил╣даЦйш╪шё╛хГ╧Ш╣мсзвН╣маЦйш╪шЁЖйшилф╥ё╛о╣мЁ╩Авт╤╞мёж╧╤тфД╧╘╩У)</p>
-        йг╥Я©ьжфаЦйш╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("О©╫О©╫"О©╫О©╫й╬О©╫О©╫О©╫ф╢О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╣О©╫О©╫О©╫О©╫ш╪шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шЁО©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫о╣мЁО©╫О©╫О©╫т╤О©╫мёж╧О©╫О©╫О©╫Д╧╘О©╫О©╫)</p>
+        О©╫г╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzctrl" class="checkbox" onclick="showctrlinfo(this.checked)" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr id="ubzctrlprice" style="display:none"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╤тмБ╧╘╩У╣двН╣маЦйш╪ш╦Я(хГ╧Ш╧╘с╕илпХр╙╤тилф╥©ьжфвН╣маЦйш╪шё╛гКвпо╦лНп╢)</p>
-        вН╣маЦйш╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪ш╦О©╫(О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫О©╫О©╫О©╫О©╫о╦О©╫О©╫п╢)</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzctrlprice" size="10" value=""/>
@@ -229,29 +229,29 @@ PADDING:0 3px;
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">кякВсе╩╞</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫е╩О©╫</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        илф╥рЁцФ╠ЙлБё╨
+        О©╫О©╫ф╥рЁО©╫О©╫О©╫О©╫Бё╨
       </td> 
-      <td class="tablert"><input type="text" name="webtitle" value="" size="34"/> <span class="spantip">(аТ©утРд╛хоотй╬илф╥цШЁф)</span></td>
+      <td class="tablert"><input type="text" name="webtitle" value="" size="34"/> <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫О©╫О©╫О©╫й╬О©╫О©╫ф╥О©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        META_KEYWORDS(рЁцФ╧ь╪Э╢й)
+        META_KEYWORDS(рЁО©╫О©╫ь╪О©╫О©╫О©╫)
       </td>
       <td class="tablert">
         <textarea rows="3" name="meta_keywords" cols="28" style="width:208px;"></textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дKEYWORDSдзхщ)</span></td>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫KEYWORDSО©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
-      <td class="tablelt">META_DESCRIPTION(рЁцФцХйЖ)
+      <td class="tablelt">META_DESCRIPTION(рЁО©╫О©╫О©╫О©╫О©╫О©╫)
       </td>
       <td class="tablert">
         <textarea rows="3" name="meta_description" cols="28" style="width:208px;"></textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дDESCRIPTIONдзхщ)</span>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫DESCRIPTIONО©╫О©╫О©╫О©╫)</span>
       </td>
     </tr>
   </table>
@@ -259,62 +259,62 @@ PADDING:0 3px;
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">╧╨бРоЮ╧ьиХжц</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        ╧╨бРйЩа©©ьжф(╥╫й╫р╩)ё╨
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫й╫р╩)О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="ubzqtymin" size="5" value="1"/> <span class="tip">фП╧╨а©(╦Ж)</span><br/>  
-        <input type="text" name="ubzqtymax" size="5" value="10"/> <span class="tip">╫ьж╧а©(╦Ж)</span> 
+        <input type="text" name="ubzqtymin" size="5" value="1"/> <span class="tip">О©╫О©╫О©╫О©╫(О©╫О©╫)</span><br/>  
+        <input type="text" name="ubzqtymax" size="5" value="10"/> <span class="tip">О©╫О©╫ж╧О©╫О©╫(О©╫О©╫)</span> 
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>а╫жж╥╫й╫хня║р╩жжё╛хГ╧ШпХр╙й╧сц╥╫й╫╤Чё╛╪╢иХжц╥╫й╫╤Ч╪╢©иё╛╥╫й╫р╩вт╤╞й╖п╖</p>
-        ╧╨бРйЩа©©ьжф(╥╫й╫╤Ч)ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ж╥О©╫й╫О©╫О©╫я║р╩О©╫жёО©╫О©╫О©╫О©╫О©╫О©╫р╙й╧О©╫ц╥О©╫й╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╥О©╫й╫О©╫О©╫О©╫О©╫О©╫иёО©╫О©╫О©╫й╫р╩О©╫т╤О©╫й╖п╖</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫й╫О©╫О©╫)О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="ubzqtylist" size="22" value=""/> <span class="spantip">вт╤╗рЕ╥╫й╫,гКй╧сцй╧сц╟К╫г╤╨╨е╦Т©╙оЮс╕йЩа©</span>
-      </td>
-    </tr>
-    <tr>
-      <td class="tablelt"><span class="name">╫Ь╩УсеохкЁпРё╨</span></td>
-      <td class="tablert">
-        <input type="radio" name="supfirst" value="0" class="checkbox" checked onFocus="this.blur()"/>╠╬╣ьсеох 
-        <input type="radio" name="supfirst" value="1" class="checkbox" onFocus="this.blur()"/>а╙йш╧╘╩Уо╣мЁсеох 
+        <input type="text" name="ubzqtylist" size="22" value=""/> <span class="spantip">О©╫т╤О©╫О©╫Е╥╫й╫,О©╫О©╫й╧О©╫О©╫й╧О©╫ц╟О©╫г╤О©╫О©╫е╦О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫О©╫</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>ио╪эя║оН╧╢я║╨Сё╛╤тс╕ф╫л╗р╡пХр╙╧╢я║ё╛╢килф╥╥╫©и╠╩тз╤тс╕╣дг╟л╗©╢╣╫</p>
-        ╧╨бРх╗очё╨</td>
+      <td class="tablelt"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫кЁО©╫О©╫</span></td>
       <td class="tablert">
-        <input type="checkbox" name="forshop" value="1" class="checkbox" onFocus="this.blur()"/>аЦйшо╣мЁ©и╧╨бР 
-        <input type="checkbox" name="forb2b" value="1" class="checkbox" onFocus="this.blur()"/>еЗ╥╒о╣мЁ©и╧╨бР 
-        <input type="checkbox" name="forykt" value="1" class="checkbox" onFocus="this.blur()" onclick="setykt(this)"/>р╩©╗м╗о╣мЁ©и╧╨бР
+        <input type="radio" name="supfirst" value="0" class="checkbox" checked onFocus="this.blur()"/>О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
+        <input type="radio" name="supfirst" value="1" class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫ш╧О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫ 
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>д©г╟╣д╟Ф╠╬ё╛ЁЩио╪э╤ткЫспф╫л╗спп╖мБё╛фДкЭя║оНж╩уК╤таЦйшф╫л╗иЗп╖</p>
-        илф╥╡ывВё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫о╪О©╫я║О©╫Н╧╢я║О©╫Сё╛╤О©╫с╕ф╫л╗р╡О©╫О©╫р╙О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫и╠О©╫О©╫з╤О©╫с╕О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫х╗О©╫чёО©╫</td>
+      <td class="tablert">
+        <input type="checkbox" name="forshop" value="1" class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫О©╫о╣мЁО©╫и╧О©╫О©╫О©╫ 
+        <input type="checkbox" name="forb2b" value="1" class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫О©╫о╣мЁО©╫и╧О©╫О©╫О©╫ 
+        <input type="checkbox" name="forykt" value="1" class="checkbox" onFocus="this.blur()" onclick="setykt(this)"/>р╩О©╫О©╫м╗о╣мЁО©╫и╧О©╫О©╫О©╫
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>д©г╟О©╫д╟Ф╠╬О©╫О©╫О©╫О©╫О©╫о╪э╤О©╫О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫п╖О©╫Бё╛О©╫О©╫О©╫О©╫я║О©╫О©╫ж╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫п╖</p>
+        О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫
       </td> 
       <td class="tablert">
-        <input type="checkbox" value="1" name="ubznew"  class="checkbox" onFocus="this.blur()"/>пбф╥
-        <input type="checkbox" value="1" name="ubzsell"  class="checkbox" onFocus="this.blur()"/>ио╪э<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>ио╪эя║оН╧╢я║╨Сё╛╤тс╕ф╫л╗р╡пХр╙╧╢я║ё╛╢килф╥╥╫©и╠╩тз╤тс╕╣дг╟л╗©╢╣╫</p>
-        <input type="checkbox" value="1" name="ubztag"  class="checkbox" onFocus="this.blur()"/>пбйж
-        <input type="checkbox" value="1" name="ubzremd"  class="checkbox" onFocus="this.blur()"/>мф╪Ж
-        <input type="checkbox" value="1" name="ubzhot" class="checkbox" onFocus="this.blur()"/>ххбТ
-        <input type="checkbox" value="1" name="ubzsale" class="checkbox" onFocus="this.blur()"/>╢ыоЗ
+        <input type="checkbox" value="1" name="ubznew"  class="checkbox" onFocus="this.blur()"/>О©╫О©╫ф╥
+        <input type="checkbox" value="1" name="ubzsell"  class="checkbox" onFocus="this.blur()"/>О©╫о╪О©╫<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫о╪О©╫я║О©╫Н╧╢я║О©╫Сё╛╤О©╫с╕ф╫л╗р╡О©╫О©╫р╙О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫и╠О©╫О©╫з╤О©╫с╕О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫</p>
+        <input type="checkbox" value="1" name="ubztag"  class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫О©╫
+        <input type="checkbox" value="1" name="ubzremd"  class="checkbox" onFocus="this.blur()"/>О©╫ф╪О©╫
+        <input type="checkbox" value="1" name="ubzhot" class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫О©╫
+        <input type="checkbox" value="1" name="ubzsale" class="checkbox" onFocus="this.blur()"/>О©╫О©╫О©╫О©╫
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>йЩвжт╫п║ё╛т╫©©г╟еепРё╛хГ╧Шц╩спльйБр╙гСё╛лН0╪╢©иё╛д╛хо╟╢лМ╪сй╠╪Д╣╧пРееап</p>
-        илф╥ееапкЁпРё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫т╫п║О©╫О©╫т╫О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫0О©╫О©╫О©╫иёО©╫д╛О©╫о╟О©╫О©╫О©╫О©╫й╠О©╫Д╣╧О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫ф╥О©╫О©╫О©╫О©╫кЁО©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="ordering" size="10" value="0"/>
@@ -322,8 +322,8 @@ PADDING:0 3px;
     </tr> 
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╥╫╠Ц╟╢ф╢рТйввжд╦╫ЬппкякВё╛╠ххГд╖йчйю╫Гё╛дЗ©иртп╢Ёиm╩Руъ╩Руъms╩Руъmssjё╛╢Сп║п╢гЬ╥жё╛гКмЁр╩кЫспилф╥╣д╢Сп║п╢ё╛хГ╧ШдЗиХ╣дп║п╢ё╛дгц╢гКтзкЫспилф╥жп╤╪п╢Ёип║п╢</p>
-        илф╥йввжд╦╢╝ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Ц╟╢ф╢О©╫О©╫О©╫О©╫О©╫О©╫д╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╖О©╫О©╫О©╫О©╫О©╫Гё╛О©╫О©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫mО©╫О©╫О©╫ъ╩О©╫О©╫О©╫msО©╫О©╫О©╫О©╫mssjО©╫О©╫О©╫О©╫п║п╢О©╫О©╫О©╫жёО©╫О©╫О©╫мЁр╩О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫д╢О©╫п║п╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п║п╢О©╫О©╫О©╫О©╫ц╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫п╤О©╫п╢О©╫О©╫п║п╢</p>
+        О©╫О©╫ф╥О©╫О©╫О©╫О©╫д╦О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="initial_letter" size="10" value=""/>
@@ -335,31 +335,31 @@ PADDING:0 3px;
 
 <div class="cwarpper1" id="ykt" style="display:none">
 <div class="ctitle">
-  р╩©╗м╗оЮ╧ьиХжц
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">хГ╧ШдЗр╙╠╬╣ьио╢╚м╪ф╛ё╛гК╠ёж╓╧Б╠Й╥ежцсз╡ЕхКн╩жцё╛ты╣Ц╩Вио╢╚╟╢е╔</p>
+  р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫о╢О©╫м╪ф╛О©╫О©╫О©╫К╠ёж╓О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╡О©╫О©╫О©╫н╩О©╫цёО©╫О©╫ы╣О©╫О©╫О©╫о╢О©╫О©╫О©╫е╔</p>
 </div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧ШаТ©у╣д╩╟ё╛р╩©╗м╗ф╫л╗╫╚отй╬мЙуШ╣дилф╥цШЁф</p>
-        р╩©╗м╗ф╫л╗отй╬╣дцШЁфё╨</td>
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫у╣д╩О©╫О©╫О©╫р╩О©╫О©╫м╗ф╫л╗О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫</p>
+        р╩О©╫О©╫м╗ф╫л╗О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫фёО©╫</td>
       <td class="tablert">
         <input type="text" name="ykttag" size="34"/>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>1{$vd['lang']['moneyunit']} = 100╣Ц</p>
-        кЫпХ╣др╩©╗м╗╤р╩╩╣ЦйЩё╨</td>
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>1{$vd['lang']['moneyunit']} = 100О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>
       <td class="tablert">
-        <input type="text" name="yktpoints" size="34"/> 1{$vd['lang']['moneyunit']} = 100╣Ц
+        <input type="text" name="yktpoints" size="34"/> 1{$vd['lang']['moneyunit']} = 100О©╫О©╫
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧Ш©иртй╧сцр╩©╗м╗╤р╩╩ё╛гр╨мдЁжжр╩©╗м╗╟С╤╗ё╛©иртп╢иофДльуВбКё╛╥ЯтРаТ©у╪╢©и<br/>╠ххГр╩©╗мЁ©╗╨ейгsd3©╙м╥ё╛©иртп╢Ёиsd3ё╛╤Ю╦ЖльуВбК╟К╫г╤╨╨егЬ╥жё╛хГsd3,MY200</p>
-        ╟С╤╗р╩©╗м╗льуВбКё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫р╩О©╫О©╫м╗О©╫р╩О©╫О©╫О©╫О©╫р╨О©╫дЁО©╫О©╫р╩О©╫О©╫м╗О©╫С╤╗ёО©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫у╪О©╫О©╫О©╫<br/>О©╫О©╫О©╫О©╫р╩О©╫О©╫мЁО©╫О©╫О©╫О©╫О©╫О©╫sd3О©╫О©╫м╥О©╫О©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫sd3О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╤О©╫О©╫О©╫О©╫О©╫О©╫жёО©╫О©╫О©╫sd3,MY200</p>
+        О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫Кё╨
       </td>
       <td class="tablert">
         <input type="text" name="yktcard" size="34" value=""/> 
@@ -371,8 +371,8 @@ PADDING:0 3px;
 
 <div class="cwarpper1">
 <div class="ctitle">
-  илф╥╫Ииэ
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">хГ╧ШдЗр╙╠╬╣ьио╢╚м╪ф╛ё╛гК╠ёж╓╧Б╠Й╥ежцсз╡ЕхКн╩жцё╛ты╣Ц╩Вио╢╚╟╢е╔</p>
+  О©╫О©╫ф╥О©╫О©╫О©╫О©╫
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫о╢О©╫м╪ф╛О©╫О©╫О©╫К╠ёж╓О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╡О©╫О©╫О©╫н╩О©╫цёО©╫О©╫ы╣О©╫О©╫О©╫о╢О©╫О©╫О©╫е╔</p>
 </div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed" style="border:0px">
@@ -388,29 +388,29 @@ PADDING:0 3px;
 
 
 <div class="cwarpper1">
-<div class="ctitle">оЮ╧ьмЬж╥</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫ж╥</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒ё╨мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        ╧ы╥╫мЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫ы╥О©╫О©╫О©╫ж╥О©╫О©╫
       </td> 
       <td class="tablert"><input type="text" name="ubzweb" value="" size="34"/></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒ё╨мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        ЁДж╣мЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫О©╫ж╣О©╫О©╫ж╥О©╫О©╫
       </td>
       <td class="tablert"><input type="text" name="ubzczweb" value="" size="34"/></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╦Яй╫ё╨отй╬╣дцШЁф+╟К╫г╤╨╨е+мЬж╥ё╛╤Ю╤тмЬж╥ё╛гКрт"|"╥жвИё╛хГё╨"цШЁф1,мЬж╥1|цШЁф2,мЬж╥2"ё╛мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        фДкШмЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╫О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫+О©╫О©╫г╤О©╫О©╫О©╫+О©╫О©╫ж╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫О©╫О©╫О©╫О©╫О©╫"|"О©╫О©╫О©╫Иё╛О©╫Гё╨"О©╫О©╫О©╫О©╫1,О©╫О©╫ж╥1|О©╫О©╫О©╫О©╫2,О©╫О©╫ж╥2"О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫О©╫
       </td>
-      <td class="tablert"><input type="text" name="ubzotherweb" value="х╔бшлЁ╧Д╧Д,http://www.gf.htkam.com" size="34"/> 
+      <td class="tablert"><input type="text" name="ubzotherweb" value="х╔О©╫О©╫лЁО©╫О©╫О©╫,http://www.gf.htkam.com" size="34"/> 
       </td>
     </tr>
   </table>
@@ -423,8 +423,8 @@ PADDING:0 3px;
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="submit" value="лМ╪силф╥" class="btn"/>
-    <input type="reset" value="жьжц" class="btn"/>
+    <input type="submit" value="О©╫О©╫О©╫О©╫О©╫ф╥" class="btn"/>
+    <input type="reset" value="О©╫О©╫О©╫О©╫" class="btn"/>
   </div>
 </div>
 </form>

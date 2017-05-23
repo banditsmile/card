@@ -1,31 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['order']['item'];-->  
 
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&by=1" title="¶©µ¥ÁÐ±í"><font color="#000">¶©µ¥ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">¶©µ¥ÏêÏ¸ÐÅÏ¢</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´¶©µ¥Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&by=1" title="ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 
 <div id="cdiv" style="position:absolute;top:30px;left:30px;;width:580px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">×¢£º»Ø³µ±íÊ¾ÁíÍâÒ»¸ö´íÎó</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">×¢ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
     <form action="index.php?m=mod_b2b&c=order&a=EctSave&ordno={$item['ordno']}" method="post">
       <table id="checktable" width="100%" style="border-collapse: collapse;">
         <tr>
-          <td width="25%">Ê§°ÜÔ­Òò£º</td>
+          <td width="25%">Ê§ï¿½ï¿½Ô­ï¿½ï¿½</td>
           <td width="75%">
             <textarea rows="5" name="ordererrcontent" cols="50"><!--echo implode("\n",$vd['ect']);--></textarea>
           </td>
         </tr>
         <tr>
           <td width="25%" style="height:50px;"></td>
-          <td width="75%"><input type="submit" value="Ìá½»±£´æ" class="button" onclick="return confirm('ÄúÈ·ÈÏ±£´æÃ´')"/> <input type="reset" value="ÖØÖÃ" class="button"/> <input type="button" value="È¡Ïû" class="button" onclick="disp('cdiv')"/></td>
+          <td width="75%"><input type="submit" value="ï¿½á½»ï¿½ï¿½ï¿½ï¿½" class="button" onclick="return confirm('ï¿½ï¿½È·ï¿½Ï±ï¿½ï¿½ï¿½Ã´')"/> <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="button"/> <input type="button" value="È¡ï¿½ï¿½" class="button" onclick="disp('cdiv')"/></td>
         </tr>
       </table>
     </form>
@@ -36,38 +36,38 @@
 <div class="cbodyHead"></div>
 <form action="index.php?m=mod_b2b&c=order&a=check&ubzordno={$item['ordno']}&ref=czlist" method="post">
 <div class="cwarpper1">
-<div class="ctitle">»ù±¾ÐÅÏ¢ ¶©µ¥ºÅ£º{$item['ordno']} ({#OrderState($item['ordstate'], $item['ptype'])})</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½{$item['ordno']} ({#OrderState($item['ordstate'], $item['ptype'])})</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="tablert"><b>{$item['pname']}</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶©¹ºÊýÁ¿£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['qty']}</td>
   </tr>
   
   <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->
   <tr>
-    <td class="tablelt" height="50px">ÓÎÏ·ÓÃ»§Ãû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ï·ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <!--if(isset($item['thisgame']) && $item['thisgame'] != ''){-->
   <tr>
-    <td class="tablelt"><!--if($item['namehide']=='thisgame'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ²úÆ·<!--}-->£º</td>
+    <td class="tablelt"><!--if($item['namehide']=='thisgame'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½ï¿½Öµï¿½ï¿½Æ·<!--}-->ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['thisgame'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czarea1'] != ''){-->
   <tr>
-    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµÇøÓò<!--}-->£º</td>
+    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½<!--}-->ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea1'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czarea2'] != ''){-->
   <tr>
-    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ·þÎñÆ÷<!--}-->£º</td>
+    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<!--}-->ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea2'])}</td>
   </tr>
   <!--}-->
@@ -76,10 +76,10 @@
     <td class="tablelt">
     	<!--if(strpos($item['cztype'], '::') > 0){-->
         <!--$mytemp = explode('::', $item['cztype']);$item['cztype']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¿½ï¿½
       <!--}else{-->
       
-      <!--if($item['namehide']=='cztype'){-->µÇÂ½ÃÜÂë<!--}else{-->¼Æ·Ñ·½Ê½<!--}-->£º
+      <!--if($item['namehide']=='cztype'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½Æ·Ñ·ï¿½Ê½<!--}-->ï¿½ï¿½
       
       <!--}-->
     </td>
@@ -91,10 +91,10 @@
     <td class="tablelt">
     	<!--if(strpos($item['czother'], '::') > 0){-->
         <!--$mytemp = explode('::', $item['czother']);$item['czother']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¿½ï¿½
       <!--}else{-->
       
-      <!--if($item['namehide']=='czother'){-->µÇÂ½ÃÜÂë<!--}else{-->ÕÊºÅÀàÐÍ<!--}-->£º
+      <!--if($item['namehide']=='czother'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½Êºï¿½ï¿½ï¿½ï¿½ï¿½<!--}-->ï¿½ï¿½
       
       <!--}-->
     </td>
@@ -106,10 +106,10 @@
     <td class="tablelt">
     	<!--if(strpos($item['acountpwd'], '::') > 0){-->
         <!--$mytemp = explode('::', $item['acountpwd']);$item['acountpwd']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¿½ï¿½
       <!--}else{-->
       
-      <!--if($item['namehide']=='acountpwd'){-->µÇÂ½ÃÜÂë<!--}else{-->ÆäËûÐÅÏ¢<!--}-->£º
+      <!--if($item['namehide']=='acountpwd'){-->ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½<!--}else{-->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢<!--}-->ï¿½ï¿½
       
       <!--}-->
     </td>
@@ -119,36 +119,36 @@
   <!--}-->
   <!--if($item['others'] != '') {-->
   <tr>
-    <td class="tablelt" height="50px">¹º¿¨±¸×¢£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½</td>
     <td class="tablert"><textarea rows="5" cols="50">{$item['others']}</textarea></td>
   </tr>
   <!--}-->
   <!--if($item['remarks'] != '') {-->
   <tr>
-    <td class="tablelt" height="50px">¶©µ¥±¸×¢£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½</td>
     <td class="tablert">{$item['remarks']}</td>
   </tr>
   <!--}-->
 	<tr>
-    <td class="tablelt" ><input type="radio" value="2" name="ordstate" class="checkbox" checked />³äÖµ³É¹¦£º</td>
+    <td class="tablelt" ><input type="radio" value="2" name="ordstate" class="checkbox" checked />ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½</td>
     <td class="tablert">
-      ±íÊ¾³äÖµ³É¹¦£¬Çë½«³§¼ÒµÄ³äÖµ¼ÇÂ¼¸´ÖÆÈëÏÂ±ß·½¿ò
+      ï¿½ï¿½Ê¾ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½ï¿½ë½«ï¿½ï¿½ï¿½ÒµÄ³ï¿½Öµï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ß·ï¿½ï¿½ï¿½
     </td>
   </tr>
   <tr>
-    <td class="tablelt" ><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡Ïû³äÖµ£º</td>
+    <td class="tablelt" ><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½</td>
     <td class="tablert" style="font-size:12px">
       <!--foreach($vd['ect'] as $ectitem){-->
       <div style="height:22px;"><input type="radio" value="{$ectitem}" name="failreason" class="checkbox" />{$ectitem}</div>
       <!--}-->
-      <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/>×ÔÐÐÊäÈë
+      <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" style="vertical-align:middle"/></div>
-      <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><font color="#ff0000">È¡Ïû¶©µ¥ºóÊ±ºò»Ö¸´¼ÇÂ¼(ÈçÒ»¿¨Í¨»Ö¸´Ô­À´Óà¶î£¡¿Í»§»Ö¸´Óà¶î)£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû³äµ¥²ÅÉúÐ§</font></div>
-      <div style="height:22px;display:none" id="tradepwd">ÇëÊäÈëºóÌ¨³äÖµÃÜÂë£º<input type="password" name="tradepwd" />
+      <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><font color="#ff0000">È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â¼(ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½î£¡ï¿½Í»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Í¬Ê±Ñ¡ï¿½ï¿½È¡ï¿½ï¿½ï¿½äµ¥ï¿½ï¿½ï¿½ï¿½Ð§</font></div>
+      <div style="height:22px;display:none" id="tradepwd">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë£º<input type="password" name="tradepwd" />
     </td>
   </tr>
   <tr>
-    <td class="tablelt" >³§ÉÌ³äÖµ¼ÇÂ¼£º</td>
+    <td class="tablelt" >ï¿½ï¿½ï¿½Ì³ï¿½Öµï¿½ï¿½Â¼ï¿½ï¿½</td>
     <td class="tablert">
       <textarea rows="5" name="factoryreturn" cols="50"></textarea>
     </td>
@@ -156,10 +156,10 @@
   <tr>
     <td class="tablelt" style="height:50px;"></td>
     <td class="tablert">
-    	<input type="submit" value="±£´æ³äÖµ½á¹û" class="btn" onclick="return confirm('È·ÈÏ¸üÐÂ¶©µ¥×´Ì¬Ã´£¿Èç¹ûÈ¡Ïû¶©µ¥£¬ÇëÈ·ÈÏÊÇ·ñÐèÒª²¹»ØÓà¶î')"/> 
-    	<input type="button" value="ÒÑÌá½»´ý´¦Àí" class="btn" onclick="window.location='?m=mod_b2b&c=Order&a=CzList&optype=w&by=1&aid=-2'"/>
-    	<input type="reset" value="ÖØÖÃ" class="btn"/>
-    	<input type="button" value="±à¼­Ä¬ÈÏÊ§°ÜÔ­Òò" class="btn" onclick="disp('cdiv')"/>
+    	<input type="submit" value="ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½" class="btn" onclick="return confirm('È·ï¿½Ï¸ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬Ã´ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')"/> 
+    	<input type="button" value="ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="btn" onclick="window.location='?m=mod_b2b&c=Order&a=CzList&optype=w&by=1&aid=-2'"/>
+    	<input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="btn"/>
+    	<input type="button" value="ï¿½à¼­Ä¬ï¿½ï¿½Ê§ï¿½ï¿½Ô­ï¿½ï¿½" class="btn" onclick="disp('cdiv')"/>
     </td>
   </tr>
 </table>
@@ -167,35 +167,35 @@
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">Âò¼ÒÐÅÏ¢£º</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">À´×ÔÆ½Ì¨£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½</td>
     <td class="tablert"><b>{#ComeFrom($item['comefrom'])}Æ½Ì¨</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÓÃ»§Ãû£º</td>
+    <td class="tablelt" height="50px">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['aname']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">²Ù×÷Ô±£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½</td>
     <td class="tablert">{$item['cname']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">µç»°£º</td>
+    <td class="tablelt" height="50px">ï¿½ç»°ï¿½ï¿½</td>
     <td class="tablert">{$item['ctel']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÓÊÏä£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ä£º</td>
     <td class="tablert">{$item['cmail']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÐÕÃû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['crealname']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">À´Ô´IP£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ô´IPï¿½ï¿½</td>
     <td class="tablert">{$item['cip']}</td>
   </tr>
 </table>
@@ -203,26 +203,26 @@
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">Ö§¸¶ÐÅÏ¢£º</div>
+<div class="ctitle">Ö§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable4" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">Ö§¸¶·½Ê½£º</td>
+    <td class="tablelt" height="50px">Ö§ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#GetPayment($item['payment'],$item['ordno'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">Ö§¸¶×´Ì¬£º</td>
+    <td class="tablelt" height="50px">Ö§ï¿½ï¿½×´Ì¬ï¿½ï¿½</td>
     <td class="tablert"><b>{#OrderState($item['ordstate'], $item['ptype'])}</b></td>
   </tr>
   <!--if($item['scored'] > 0 && $item['payment'] != 96){-->
   <tr>
-    <td class="tablelt">ÔùËÍ»ý·Ö£º</td>
-    <td class="tablert">{$item['scored']} µã</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ö£ï¿½</td>
+    <td class="tablert">{$item['scored']} ï¿½ï¿½</td>
   </tr>
   <!--}-->
   <!--if($item['admname'] != ''){-->
   <tr>
-    <td class="tablelt">´ú³ä¹ÜÀíÔ±£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½</td>
     <td class="tablert"><b>{$item['admname']}</b></td>
   </tr>
   <!--}-->
@@ -239,17 +239,17 @@
 <div id="opcontent" style="display:none">
   
   <div class="optxt">
-    <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3 ) {--><input type="button" onclick="disp('adddiv')" value="´¦Àí´Ë¶©µ¥" class="btn"/><!--}else{-->
+    <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3 ) {--><input type="button" onclick="disp('adddiv')" value="ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½" class="btn"/><!--}else{-->
     <!--if( ($item['ordstate'] == 2) || ($item['ordstate'] == 3) || ($item['ordstate'] == 1 && $item['sup'] == 0) ) {-->
-    <input type="button" onclick="disp('canceldiv')" value="È¡Ïû¶©µ¥²¢ÍË¿î" class="btn"/>
+    <input type="button" onclick="disp('canceldiv')" value="È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½" class="btn"/>
     <!--}-->
     <!--}-->
-    <!--if($item['ordstate'] == 1 || ($item['comefrom']==2 && $item['ordstate'] < 2 && $item['ordstate'] > -1)) {--><input type="button" onclick="ReOrder()" value="¶©µ¥²¹µ¥" class="btn"/><!--}-->
-    <!--if($item['sup'] == 1 && $item['ordstate'] == 2) {--><input type="button" onclick="javascript:loadDisp(1);window.location.href='index.php?m=mod_b2b&c=Msg&a=Create&ordno={$item['ordno']}&mtype=3'" value="Ïò¹©»õÉÌÍ¶Ëß´Ë¶©µ¥" class="btn"/><!--}-->
+    <!--if($item['ordstate'] == 1 || ($item['comefrom']==2 && $item['ordstate'] < 2 && $item['ordstate'] > -1)) {--><input type="button" onclick="ReOrder()" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="btn"/><!--}-->
+    <!--if($item['sup'] == 1 && $item['ordstate'] == 2) {--><input type="button" onclick="javascript:loadDisp(1);window.location.href='index.php?m=mod_b2b&c=Msg&a=Create&ordno={$item['ordno']}&mtype=3'" value="ï¿½ò¹©»ï¿½ï¿½ï¿½Í¶ï¿½ß´Ë¶ï¿½ï¿½ï¿½" class="btn"/><!--}-->
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >ÕýÔÚ²¹µ¥ÖÐ...</div>
+  <div id="loadcontent" >ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 4;
@@ -274,7 +274,7 @@
     $("tradepwd").style.display = $("rollback").checked ? "" : "none";
   }
   
-  //¶©µ¥²¹µ¥
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   var xmlhttp2;
   
   function loadXMLDoc()
@@ -284,12 +284,12 @@
     
     url = "ordno="+escape("{$item['ordno']}");
     
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º
     if (window.XMLHttpRequest)
     {
       xmlhttp2=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º
     else if (window.ActiveXObject)
     {
       xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
@@ -300,12 +300,12 @@
       xmlhttp2.onreadystatechange=function(){
         if (xmlhttp2.readyState==4)
         {
-          // Èç¹ûÎª "OK"
+          // ï¿½ï¿½ï¿½Îª "OK"
           if (xmlhttp2.status==200)
           {
-            // ÆäËû´úÂë..
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..
             var ackdata=xmlhttp2.responseText;
-            //½âÎö·þÎñÆ÷·µ»ØµÄÊý¾Ý
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
             if (ackdata == "1")
             {
               setTimeout("loadXMLDoc()",1500);
@@ -313,11 +313,11 @@
             else if(ackdata == "-2")
             {
               loadDisp(0);
-              alert("¶©µ¥²»´æÔÚ£¡");
+              alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½");
             }
             else
             {
-              setLoad("²¹µ¥Íê³É£¡");
+              setLoad("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½");
               loadDisp(1);
               window.location.reload();
             }
@@ -330,14 +330,14 @@
     }
     else
     {
-      setLoad("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP");
+      setLoad("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTP");
       loadDisp(1);
     }
   }
   
   function ReOrder()
   {
-    setLoad("<img src='{$vd['sc']}images/loading.gif'/> ÕýÔÚ²¹µ¥ÖÐ...");
+    setLoad("<img src='{$vd['sc']}images/loading.gif'/> ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½...");
     loadDisp(1);
         
     xmlhttp2=null;
@@ -345,12 +345,12 @@
     
     url = "ordno="+escape("{$item['ordno']}");
     
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º
     if (window.XMLHttpRequest)
     {
       xmlhttp2=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º
     else if (window.ActiveXObject)
     {
       xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
@@ -361,12 +361,12 @@
       xmlhttp2.onreadystatechange=function(){
         if (xmlhttp2.readyState==4)
         {
-          // Èç¹ûÎª "OK"
+          // ï¿½ï¿½ï¿½Îª "OK"
           if (xmlhttp2.status==200)
           {
-            // ÆäËû´úÂë..
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..
             var ackdata=xmlhttp2.responseText;
-            //½âÎö·þÎñÆ÷·µ»ØµÄÊý¾Ý
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
             if (ackdata == "0")
             {
               loadXMLDoc();
@@ -374,27 +374,27 @@
             else if(ackdata == "-1")
             {
               loadDisp(0);
-              alert("¶©µ¥²»´æÔÚ£¡");
+              alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½");
             }
             else if(ackdata == "2")
             {
               loadDisp(0);
-              alert("¶©µ¥ÒÑ¾­´¦Àí£¬ÎÞÐèÔÙ²¹µ¥£¡");
+              alert("ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½");
             }
             else if(ackdata == "-4")
             {
               loadDisp(0);
-              alert("ÉÌÆ·¿â´æ²»×ã£¡");
+              alert("ï¿½ï¿½Æ·ï¿½ï¿½æ²»ï¿½ã£¡");
             }
             else if(ackdata == "-2")
             {
               loadDisp(0);
-              alert("ÍøÕ¾Î´ÖªÔ­Òòµ¼ÖÂÊý¾Ý¸üÐÂÊ§°Ü£¡ÇëÖØÐÂµã²¹µ¥");
+              alert("ï¿½ï¿½Õ¾Î´ÖªÔ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµã²¹ï¿½ï¿½");
             }
             else
             {
               loadDisp(0);
-              alert("·Ç·¨¶©µ¥£¡");
+              alert("ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             }
           }
         }
@@ -406,7 +406,7 @@
     else
     {
       loadDisp(0);
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP");
+      alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTP");
     }
   }
 </script>

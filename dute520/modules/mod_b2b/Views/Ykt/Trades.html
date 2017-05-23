@@ -1,14 +1,14 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
-    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;"><h3>��Ʒ�б�</h3>��<a href="?m=mod_b2b&c=category">һ������</a> / <a href="?m=mod_b2b&c=category">��������</a> / <a href="?m=mod_b2b&c=catalog">��ҳ��Ŀ</a> / <a href="?m=mod_b2b&c=product">������Ʒ</a> ����<strong>����¼�ܼ� <font color="#ff0000">{$vd['totlerow']}</font> ��</strong>��
-      <input type="button" value="��һҳ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['prepage']}&{$vd['op']}'"/>
-      <input type="button" value="��һҳ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['nextpage']}&{$vd['op']}'"/>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;"><h3>商品列表</h3>『<a href="?m=mod_b2b&c=category">一级分类</a> / <a href="?m=mod_b2b&c=category">二级分类</a> / <a href="?m=mod_b2b&c=catalog">首页类目</a> / <a href="?m=mod_b2b&c=product">所有商品</a> 』『<strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条</strong>』
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['nextpage']}&{$vd['op']}'"/>
     </td>
   </tr>
 </table>
@@ -16,27 +16,27 @@
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
   <tr>
     <td width="15%" align="center" height="35" class="listhead">
-      <b>һ��ͨ��ֵ</b></td>
+      <b>一卡通面值</b></td>
     <td width="10%" align="center" height="35" class="listhead">
-      <b>һ��ͨ����</b></td>
+      <b>一卡通卡号</b></td>
     <td width="15%" align="center" height="35" class="listhead">
-      <b>��Ʒ����</b></td>
+      <b>商品名称</b></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>��Ʒ����</b></td>
+      <b>商品类型</b></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>����</b></td>
+      <b>数量</b></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>���</b></td>
+      <b>金额</b></td>
     <td width="13%" align="center" height="35" class="listhead">
-      <b>����ǰ�����</b></td>
+      <b>交易前卡余额</b></td>
     <td width="13%" align="center" height="35" class="listhead">
-      <b>���׺����</b></td>
+      <b>交易后卡余额</b></td>
     <td width="13%" align="center" height="35" class="listhead">
-      <b>����ʱ��</b></td>
+      <b>交易时间</b></td>
   </tr>
   <!--if($vd['totlerow'] == 0) {-->
   <tr>
-    <td align="right" height="35" colspan="20">���������κο���</td>
+    <td align="right" height="35" colspan="20">您还添加任何卡密</td>
   </tr>
   <!--}-->
   <!--foreach($vd['items'] as $item) {-->
@@ -54,15 +54,15 @@
   <!--}-->
   <tr>
     <td align="right" height="35" colspan="20">
-    <strong>����¼�ܼ� <font color="#ff0000">{$vd['totlerow']}</font> ��  �� {$vd['thispage']} ҳ</strong>/ �� {$vd['totlepage']} ҳ</strong>
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
     </td>
   </tr>
   <tr>
     <td align="right" height="35" colspan="19">
     <form method="post" action="index.php?m=mod_b2b&c=ykt&a=trades&{$vd['op']}">
-      <input type="button" value="��һҳ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['prepage']}&{$vd['op']}'"/>
-      <input type="button" value="��һҳ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['nextpage']}&{$vd['op']}'"/>
-      ����<input type="text" name="page" size="2" value="" class="txt"/>ҳ<input type="submit" value=" ȷ �� &gt;&gt;"/>
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ykt&a=trades&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
     </form>
     </td>
   </tr>

@@ -1,25 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ϵͳ���ع���</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sysnet_index" onFocus="this.blur()" title="�鿴ϵͳ���ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">系统网关管理</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sysnet_index" onFocus="this.blur()" title="查看系统网关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
 <div class="ctitle">
-  ϵͳ���ع���
+  系统网关管理
   <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-    ϵͳ���أ���ָӱ�ȿ���ϵͳ����<br/>
-    �������ϵͳ������д����ȷ�����޷���ѯ��Դ�ʹ�ӱ�ȿ���ϵͳ������ֻҪ��ӱ�ȿ�������ͨ�ŵĹ��ܶ��п���ʧ��<br/>
-    <font color="#ff0000">��ʾ</font><br/>
-    �������������������Դ��������ϵͳ�����ͱ�ʾ��������ȷ��<br/>
+    系统网关：是指颖先卡购系统网关<br/>
+    如果您的系统网关填写不正确，将无法查询货源和从颖先卡购系统进货，只要和颖先卡购发生通信的功能都有可能失败<br/>
+    <font color="#ff0000">提示</font><br/>
+    如果您可以正常搜索货源，正常从系统进货就表示设置是正确的<br/>
   </p>
 </div>
 
@@ -29,42 +29,42 @@
     <td align="center" height="35" colspan="2" class="listhead" ></td>
   </tr>
   <tr>
-    <td width="18%" align="right">�̻���ţ�</td>
-    <td style="padding: 5px" height="35"><input type="text" name="uid" size="30" value="{$vd['item']['uid']}"/> ����ͨ���̻�����ȡ���̻���ţ�<a href="http://www.yingxkg.tk" target="_blank">��¼ӱ�ȿ����鿴�̻����</a></td>
+    <td width="18%" align="right">商户编号：</td>
+    <td style="padding: 5px" height="35"><input type="text" name="uid" size="30" value="{$vd['item']['uid']}"/> 可以通过商户名获取到商户编号，<a href="http://www.yingxkg.tk" target="_blank">登录颖先卡购查看商户编号</a></td>
   </tr>
   <tr>
-    <td width="18%" align="right">�̻�����</td>
-    <td style="padding: 5px"><input type="text" name="uname" size="30" value="{$vd['item']['uname']}"/> ����ӱ�ȿ���ע����̻���</td>
+    <td width="18%" align="right">商户名：</td>
+    <td style="padding: 5px"><input type="text" name="uname" size="30" value="{$vd['item']['uname']}"/> 您在颖先卡购注册的商户名</td>
   </tr>
   <tr>
-    <td width="18%" align="right">�̻����룺</td>
+    <td width="18%" align="right">商户密码：</td>
     <td style="padding: 5px">
       <input type="password" name="upwd" size="33" value="{$vd['item']['upwd']}" style="width:177px;"/> 
       <input type="hidden" name="oldupwd" size="33" value="{$vd['item']['upwd']}"/> 
-    ����ע��ӱ�ȿ����̻�ʱ����д���̻�����</td>
+    您在注册颖先卡购商户时候填写的商户密码</td>
   </tr>
   <tr>
     <td width="18%" align="right">
       <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-        �ڴ�ϵͳ������ʱ����Ҫ������Կ�������������ݱ�߬�ĵĴ���
+        在从系统进货的时候，需要您的密钥，否则会出现数据被攥改的错误
       </p>
-      �̻���Կ��
+      商户密钥：
     </td>
-    <td style="padding: 5px" height="35"><input type="text" name="usign" size="30" value="{$vd['item']['usign']}"/> ����ע��ӱ�ȿ����̻�ʱ����д���̻���Կ</td>
+    <td style="padding: 5px" height="35"><input type="text" name="usign" size="30" value="{$vd['item']['usign']}"/> 您在注册颖先卡购商户时候填写的商户密钥</td>
   </tr>
   <tr>
     <td width="18%" align="right"></td>
-    <td style="padding: 5px" height="35"><input type="submit" value=" �� �� &gt;&gt;" name="B1" class="button"></td>
+    <td style="padding: 5px" height="35"><input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"></td>
   </tr>
 </table>
 
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td width="18%" align="right">�޸�˵����</td>
+    <td width="18%" align="right">修改说明：</td>
     <td style="padding: 5px;padding-top:10px;padding-bottom:10px;font-size:12px;color:#ff0000" height="35">
-    	1.��֤��ǰҳ��򿪵ģ�һ����Ҫ�ر�<br/><br/>
-      2.��½<a href="http://www.yingxkg.tk" target="_blank">http://www.yingxkg.tk</a> �޸������Ϣ,��������<br/><br/>
-      3.��ǰҳ��������д������Ϣ��Ȼ���ύ
+    	1.保证当前页面打开的，一定不要关闭<br/><br/>
+      2.登陆<a href="http://www.yingxkg.tk" target="_blank">http://www.yingxkg.tk</a> 修改相关信息,比如密码<br/><br/>
+      3.当前页面重新填写您的信息，然后提交
     </td>
   </tr>
 </table>

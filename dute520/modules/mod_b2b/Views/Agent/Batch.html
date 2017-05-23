@@ -1,21 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=customer&a=index" title="客户列表"><font color="#000">客户列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">客户信息修改</span>(<a href="index.php?m=mod_b2b&c=customer&a=detail&ubzcid={$item['cid']}">刷新</a>)</div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看客户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=customer&a=index" title="锟酵伙拷锟叫憋拷"><font color="#000">锟酵伙拷锟叫憋拷</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">锟酵伙拷锟斤拷息锟睫革拷</span>(<a href="index.php?m=mod_b2b&c=customer&a=detail&ubzcid={$item['cid']}">刷锟斤拷</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="锟介看锟酵伙拷锟斤拷匕锟斤拷锟�"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Agent&a=BatchSave&{$vd['op']}">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">客户信息修改</div>
+<div class="ctitle">锟酵伙拷锟斤拷息锟睫革拷</div>
 <table border="1" id="ctable" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">真实姓名:</td>
+    <td class="tablelt">锟斤拷实锟斤拷锟斤拷:</td>
     <td class="tablert">
     <input type="checkbox" id="arealname_chk" name="id[]" class="checkbox" value="arealname" onFocus="this.blur()"/>
     <input type="text" name="arealname" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
@@ -29,21 +29,21 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">邮编:</td>
+    <td class="tablelt">锟绞憋拷:</td>
     <td class="tablert">
     <input type="checkbox" id="zip_chk" name="id[]" class="checkbox" value="zip" onFocus="this.blur()"/>
     <input type="text" name="zip" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">邮箱:</td>
+    <td class="tablelt">锟斤拷锟斤拷:</td>
     <td class="tablert">
     <input type="checkbox" id="amail_chk" name="id[]" class="checkbox" value="amail" onFocus="this.blur()"/>
     <input type="text" name="amail" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">电话:</td>
+    <td class="tablelt">锟界话:</td>
     <td class="tablert">
     <input type="checkbox" id="atel_chk" name="id[]" class="checkbox" value="atel" onFocus="this.blur()"/>
     <input type="text" name="atel" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
@@ -64,25 +64,25 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">市:</td>
+    <td class="tablelt">锟斤拷:</td>
     <td class="tablert">
     <input type="checkbox" id="city_chk" name="id[]" class="checkbox" value="city" onFocus="this.blur()"/>
     <input type="text" name="city" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">备注:</td>
+    <td class="tablelt">锟斤拷注:</td>
     <td class="tablert">
     <input type="checkbox" id="remarks_chk" name="id[]" class="checkbox" value="remarks" onFocus="this.blur()"/>
     <input type="text" name="remarks" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">会员级别:</td>
+    <td class="tablelt">锟斤拷员锟斤拷锟斤拷:</td>
     <td class="tablert">
     <input type="checkbox" id="alv_chk" name="id[]" class="checkbox" value="alv" onFocus="this.blur()"/>
     <select name="alv"  size="1" onchange="keyevent(this)" style="vertical-align:middle" >
-      <option value="-1">请选择级别</option>
+      <option value="-1">锟斤拷选锟今级憋拷</option>
       {#option($vd['rank'], 0 , 'name', 'id')}
     </select>
     </td>
@@ -96,8 +96,8 @@
 </div>
 <div id="opcontent">
   <div class="optxt">
-    <input type="submit" value="修 改 &gt;&gt;" name="b1" class="btn"/>
-    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+    <input type="submit" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
   </div>
 </div>
 </form>

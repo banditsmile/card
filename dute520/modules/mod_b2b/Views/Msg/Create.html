@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -20,29 +20,29 @@ PADDING:0 3px;
 <body>
 <form name="addnews" method="post" action="index.php?m=mod_b2b&c=msg&a=save" id="cform" onSubmit="return form1_onsubmit()">
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Msg&a=Index&optype=r&ubzisreaded=2" title="·ïÏèÉÌ¼Ò¶ÌÐÅÁÐ±í" onclick="loadDisp(1)"><font color="#000">·ïÏèÉÌ¼Ò¶ÌÐÅÁÐ±í</font></a> <span style="font-size:7px;">>></span> ·¢ËÍ·ïÏè¶ÌÐÅÏ¢</div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_msg_create" onFocus="this.blur()" title="²é¿´·ïÏèÉÌ¼ÒÐÅÏ¢Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Msg&a=Index&optype=r&ubzisreaded=2" title="ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼Ò¶ï¿½ï¿½ï¿½ï¿½Ð±ï¿½" onclick="loadDisp(1)"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼Ò¶ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_msg_create" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">·¢ËÍÓ±ÏÈ¿¨¹º¶ÌÐÅÏ¢</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Ó±ï¿½È¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
-      <td class="tablelt"> ÏûÏ¢±êÌâ£º</td>
+      <td class="tablelt"> ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½â£º</td>
       <td class="tablert"><input type="text" size="25" id="ubzmtitle" name="ubzmtitle" value="{$vd['ubzmtitle']}"/></td>
     </tr>
     <tr> 
-      <td class="tablelt"> ÊÕÐÅÈË£º</td>
+      <td class="tablelt"> ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½</td>
       <td class="tablert">
       <input type="text" size="25" id="ubzmto" name="ubzmto" value="{$vd['ubzmto']}" onclick="settext(3);" style="color:#6c6c6c"/>
-      <input type="radio" name="ubzmsgtype" checked="checked" value="1" class="checkbox" onclick="settext(1);"/>¸øÆäËûÉÌ»§·¢ÐÅ <input type="radio" name="ubzmsgtype" value="2" class="checkbox" onclick="settext(2);" />¸ø·ïÏè·¢ÐÅ
+      <input type="radio" name="ubzmsgtype" checked="checked" value="1" class="checkbox" onclick="settext(1);"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ <input type="radio" name="ubzmsgtype" value="2" class="checkbox" onclick="settext(2);" />ï¿½ï¿½ï¿½ï¿½ï¿½è·¢ï¿½ï¿½
       </td>
     </tr>
     <tr> 
-      <td class="tablelt"> ÏûÏ¢ÀàÐÍ£º</td>
+      <td class="tablelt"> ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Í£ï¿½</td>
       <td class="tablert">
         <select name="mtype" onchange="setts(this)">
         {#Option($vd['tarray'], $vd['msgtype'])}
@@ -50,13 +50,13 @@ PADDING:0 3px;
       </td>
     </tr>
     <tr id="tr_1" style="display:none"> 
-      <td class="tablelt"> ¶©µ¥ºÅ£º</td>
+      <td class="tablelt"> ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½</td>
       <td class="tablert">
-        <input type="text" size="25" id="ordno" name="ordno" value="{$vd['ordno']}"/> <input type="button" value="ÏêÏ¸" onclick="GetOrder()" class="button"/>
+        <input type="text" size="25" id="ordno" name="ordno" value="{$vd['ordno']}"/> <input type="button" value="ï¿½ï¿½Ï¸" onclick="GetOrder()" class="button"/>
       </td>
     </tr>
     <tr id="tr_2" style="display:none"> 
-      <td class="tablelt"> Í¶ËßÀàÐÍ£º</td>
+      <td class="tablelt"> Í¶ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
       <td class="tablert">
         <select name="other">
         <!--foreach($vd['carray'] as $item){-->
@@ -66,7 +66,7 @@ PADDING:0 3px;
       </td>
     </tr>
     <tr id="tr_3" style="display:none"> 
-      <td class="tablelt"> Ï£Íû´¦Àí·½Ê½£º</td>
+      <td class="tablelt"> Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½</td>
       <td class="tablert">
         <!--$i=0;foreach($vd['hope'] as $item){-->
         <input type="radio" name="hope" <!--echo $i==0?'checked':''--> value="{$item}" class="checkbox"/> {$item}
@@ -74,15 +74,15 @@ PADDING:0 3px;
       </td>
     </tr>
     <tr> 
-      <td class="tablelt"> ÏûÏ¢ÄÚÈÝ£º</td>
+      <td class="tablelt"> ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ý£ï¿½</td>
       <td class="tablert"> 
-        <textarea name="ubzmcontent" id="ubzmcontent" value="aaa" cols="<!--if($vd['frm']==1){-->50<!--}else{-->70<!--}-->" rows="10" class='input1' require="false" dataType="LimitB" max="1000" msg="Í¶ËßÄÚÈÝ±ØÐëÐ¡ÓÚ100¸öºº×Ö"></textarea><br/>×î¶àÖ§³Ö200¸ö×Ö
+        <textarea name="ubzmcontent" id="ubzmcontent" value="aaa" cols="<!--if($vd['frm']==1){-->50<!--}else{-->70<!--}-->" rows="10" class='input1' require="false" dataType="LimitB" max="1000" msg="Í¶ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"></textarea><br/>ï¿½ï¿½ï¿½Ö§ï¿½ï¿½200ï¿½ï¿½ï¿½ï¿½
       </td>
     </tr>
     <tr > 
-      <td class="tablelt" style="height:50px"> ×¢ÒâÊÂÏî£º</td>
+      <td class="tablelt" style="height:50px"> ×¢ï¿½ï¿½ï¿½ï¿½ï¿½î£º</td>
       <td class="tablert" style="color:#ff0000;font-size:12px;font-weight:bold">
-        ¶ÌÐÅÏ¢ÖÐ²»ÔÊÐíÁôÏÂÈÎºÎË½ÈËÁªÏµ·½Ê½£¬°üÀ¨Æ½Ì¨µØÖ·£¬ÊÖ»ú£¬QQ£¬µç»°£¬ÓÊ¼þ£¬MSNµÈ£¬Èç¹û·¢ÏÖ½«°´ÕÕÁªÊÛÏµÍ³µÄ¹æÔò¶ÔÎ¥¹æÕß½øÐÐÑÏ³Í
+        ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½Ë½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½QQï¿½ï¿½ï¿½ç»°ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½MSNï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½Î¥ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½
       </td>
     </tr>
   </table>
@@ -95,8 +95,8 @@ PADDING:0 3px;
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="submit" value="·¢ËÍ¶ÌÐÅÏ¢" class="btn"/>
-    <input type="reset" value="ÖØÖÃ" class="btn"/>
+    <input type="submit" value="ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½Ï¢" class="btn"/>
+    <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="btn"/>
   </div>
 </div>
 </form>
@@ -107,7 +107,7 @@ PADDING:0 3px;
 <script type="text/javascript">
 function isNum(num) 
 { 
-  if(num.match(/[^0-9]/)) return false;//ÕÒµ½Êý×ÖÒÔÍâµÄ×Ö·û¾Í·µ»Ø¼Ù£¬ 
+  if(num.match(/[^0-9]/)) return false;//ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Í·ï¿½ï¿½Ø¼Ù£ï¿½ 
   return true; 
 }
 
@@ -137,7 +137,7 @@ function settext(msgtype)
 {
   if(msgtype == 1)
   {
-    document.addnews.ubzmto.value = "ÇëÊäÈë½ÓÊÕÉÌ»§µÄ±àºÅ"
+    document.addnews.ubzmto.value = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½ï¿½Ä±ï¿½ï¿½"
   }
   else if(msgtype == 2)
   {
@@ -158,19 +158,19 @@ function form1_onsubmit()
   
   if (document.addnews.ubzmtitle.value=="")
   {
-    alert("ÏûÏ¢±êÌâÎ´Ìî")
+    alert("ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½")
     document.addnews.ubzmtitle.focus()
     return false
   }  
   else if(!qrid.test(document.addnews.ubzmto.value))
   { 
-    alert("½ÓÊÕÉÌ»§Î´Ìî»òÕßÌîÐ´µÄ²»ÊÇÊý×Ö")
+    alert("ï¿½ï¿½ï¿½ï¿½ï¿½Ì»ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
     document.addnews.ubzmto.focus()
     return false
   }   
   else if(document.addnews.ubzmcontent.value=="")
   { 
-    alert("ÏûÏ¢ÄÚÈÝ²»ÄÜÎª¿Õ")
+    alert("ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½Îªï¿½ï¿½")
     document.addnews.ubzmcontent.focus()
     return false
   }
@@ -181,7 +181,7 @@ function GetOrder()
   o = $("ordno").value;
   if(o == "")
   {
-    alert('ÇëÏÈÊäÈë¶©µ¥ºÅ');
+    alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¶©ï¿½ï¿½ï¿½ï¿½');
   }
   else
   {

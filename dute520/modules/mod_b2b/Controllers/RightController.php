@@ -35,7 +35,7 @@ class RightController extends Controller
 								$R321f3a96ea = intval( request( "isok" ) );
 								if ( trim( $R5b92e56774 ) == "" )
 								{
-												$this->Alert( "²ÎÊýÓÐÎó£¬ÖØÐÂÑ¡Ôñ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$data = array(
@@ -123,12 +123,12 @@ class RightController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "²Ù×÷³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=Right&a=Right&param=".$param."&idx=".$R5b92e56774."&isok=".$R321f3a96ea );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -141,8 +141,8 @@ class RightController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->IBuyRights_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "idx" => "²ÎÊýÖµ", "pids" => "ÉÌÆ·±àºÅ" );
-								$Rc2d2567438 = array( "aid" => "ÓÃ»§±àºÅ", "alv" => "ÓÃ»§ËùÔÚ¼¶±ð", "gid" => "ÓÃ»§ËùÔÚ×é", "yktprice" => "Ò»¿¨Í¨ÃæÖµ", "yktgroup" => "Ò»¿¨Í¨Åú´Î", "yktid" => "Ò»¿¨Í¨±àºÅ", "yktcode" => "Ò»¿¨Í¨ÌØÕ÷Âë" );
+								$R00be52aa45 = array( "idx" => "ï¿½ï¿½ï¿½ï¿½Öµ", "pids" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½" );
+								$Rc2d2567438 = array( "aid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "alv" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½", "gid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "yktprice" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ", "yktgroup" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "yktid" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½", "yktcode" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "params", $Rc2d2567438 );
 						
@@ -152,7 +152,7 @@ class RightController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -164,10 +164,10 @@ class RightController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -178,7 +178,7 @@ class RightController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -193,7 +193,7 @@ class RightController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -213,7 +213,7 @@ class RightController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -252,7 +252,7 @@ class RightController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -276,7 +276,7 @@ class RightController extends Controller
 								$R808b89ba0e = $this->instance->IBuyRights_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

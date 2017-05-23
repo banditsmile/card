@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -9,57 +9,57 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <body>
 <form method="post" action="index.php?m=mod_b2b&c=PM&a=Save" name="cform" id="cform">
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">·¢ËÍÕ¾ÄÚ¶ÌÐÅ</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_add" onFocus="this.blur()" title="²é¿´Õ¾ÄÚ¶ÌÐÅÌí¼ÓÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Ú¶ï¿½ï¿½ï¿½</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_add" onFocus="this.blur()" title="ï¿½é¿´Õ¾ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">·¢ËÍÕ¾ÄÚ¶ÌÐÅÏ¢</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Ú¶ï¿½ï¿½ï¿½Ï¢</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">Ö÷Ìâ£º</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½â£º</td>
       <td class="tablert"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title"/></td>
     </tr>
     <tr id="tr_1">
-      <td class="tablelt">ÊÕÐÅÈË£º</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½</td>
       <td class="tablert">
-        <input type="radio" value="0" id="msgto0" name="msgto" onclick="setval(this)" class="checkbox"/>ËùÓÐÈË
-        <input type="radio" value="1" id="msgto1" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']>0){-->checked<!--}--> />Ö¸¶¨ÓÃ»§
-        <input type="radio" value="2" id="msgto2" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']==0){-->checked<!--}-->/>ÏµÍ³Ö±ÊôÏÂ¼¶
+        <input type="radio" value="0" id="msgto0" name="msgto" onclick="setval(this)" class="checkbox"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        <input type="radio" value="1" id="msgto1" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']>0){-->checked<!--}--> />Ö¸ï¿½ï¿½ï¿½Ã»ï¿½
+        <input type="radio" value="2" id="msgto2" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']==0){-->checked<!--}-->/>ÏµÍ³Ö±ï¿½ï¿½ï¿½Â¼ï¿½
       </td>
     </tr>
     <tr id="tr_2" style="display:none">
-      <td class="tablelt">ÊÕÐÅÈË£º</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½</td>
       <td class="tablert">
-        <input type="radio" value="4" id="msgto4" name="msgto" onclick="setval(this)" class="checkbox"/>ËùÓÐÈË
-        <input type="radio" value="5" id="msgto5" name="msgto" onclick="setval(this)" class="checkbox"/>Ö¸¶¨ÓÃ»§
+        <input type="radio" value="4" id="msgto4" name="msgto" onclick="setval(this)" class="checkbox"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        <input type="radio" value="5" id="msgto5" name="msgto" onclick="setval(this)" class="checkbox"/>Ö¸ï¿½ï¿½ï¿½Ã»ï¿½
       </td>
     </tr>
     <tr id="tr_3" style="display:none">
-      <td class="tablelt">ÓÃ»§±àºÅ£º</td>
+      <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½Å£ï¿½</td>
       <td class="tablert">
         <input type="text" class="myinput" style="font-weight:normal" id="cid" name="cid"/>
       </td>
     </tr>
     <tr id="underling" style="display:none">
-      <td class="tablelt">ÏÂ¼¶±àºÅ£º</td>
+      <td class="tablelt">ï¿½Â¼ï¿½ï¿½ï¿½Å£ï¿½</td>
       <td class="tablert">
         <select name="underlingid">
-        <option value="0">ÇëÑ¡ÔñÄúµÄÏÂ¼¶±àºÅ</option>
+        <option value="0">ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½</option>
         </select>
       </td>
     </tr>
     <tr id="specialunderling"<!--if($vd['aid']==0){--> style="display:none"<!--}-->>
-      <td class="tablelt">ÓÃ»§±àºÅ£º</td>
+      <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½Å£ï¿½</td>
       <td class="tablert">
         <input type="text" class="myinput" style="font-weight:normal" id="msgto" name="specialunderling" <!--if($vd['aid']>0){-->value="{$vd['aid']}"<!--}-->/>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÏûÏ¢ÄÚÈÝ£º</td>
+      <td class="tablelt">ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ý£ï¿½</td>
       <td class="tablert">
       <textarea name="content" wrap="VIRTUAL" cols="80" rows="8" scrolling="yes" class="mytextarea"></textarea>
       <span id="spanstaffpwd"></span></td>
@@ -76,8 +76,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
   
   <div class="optxt">
     <input type="hidden" value="1" name="comefrom"/>
-    <input type="submit" value="·¢ËÍ¶ÌÐÅÏ¢" class="btn"/>
-    <input type="reset" value="ÖØÖÃ" class="btn"/>
+    <input type="submit" value="ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½Ï¢" class="btn"/>
+    <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="btn"/>
   </div>
 </div>
 </form>

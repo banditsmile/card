@@ -1,49 +1,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div class="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=category" title="µã»÷ÖØÐÂ»ñÈ¡¿¨ÃÜÁÐ±í×ÊÁÏ" onclick="loadDisp(1)"><font color="#000">¿¨ÃÜÁÐ±í</font></a></span></div>
-<div style="float:right"><a href="index.php" onFocus="this.blur()" title="²é¿´¿¨ÃÜÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="å›žåˆ°åŽå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=category" title="ç‚¹å‡»é‡æ–°èŽ·å–å¡å¯†åˆ—è¡¨èµ„æ–™" onclick="loadDisp(1)"><font color="#000">å¡å¯†åˆ—è¡¨</font></a></span></div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="æŸ¥çœ‹å¡å¯†ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div class="mytitle">
-  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="µã»÷Ë¢ÐÂ±¾Ò³Ë¢ÐÂÊý¾Ý,²¢±£³ÖÔ­À´¹´Ñ¡×´Ì¬">
-    <div style="padding-top:10px;padding-left:9px;"><img src="{$vd['sc']}images/add.gif" style="vertical-align:middle"/> Ìí¼Ó</div></samp>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="ç‚¹å‡»åˆ·æ–°æœ¬é¡µåˆ·æ–°æ•°æ®,å¹¶ä¿æŒåŽŸæ¥å‹¾é€‰çŠ¶æ€">
+    <div style="padding-top:10px;padding-left:9px;"><img src="{$vd['sc']}images/add.gif" style="vertical-align:middle"/> æ·»åŠ </div></samp>
   </div>  
   <div style="float:right;padding-top:4px;">
-    ÉÏ¼¶·ÖÀàÁÐ±í£º
+    ä¸Šçº§åˆ†ç±»åˆ—è¡¨ï¼š
     <select name="cat" onchange="javascript:location.href='index.php?m=mod_b2b&c=category&a=cat&grandfatherid={$vd['grandfatherid']}&parentid=' + this.options[selectedIndex].value;" style="vertical-align:middle;font-size:14px;width:200px;">
-    <option value="">Ñ¡ÔñÄúÒª½øÈëÉÏ¼¶·ÖÀà</option>
+    <option value="">é€‰æ‹©æ‚¨è¦è¿›å…¥ä¸Šçº§åˆ†ç±»</option>
     {#option($vd['cat'], $vd['parentid'], 'catname', 'catid')}
     </select>
   </div>
 </div>
 <div id="adddiv" style="position:absolute;top:120px;left:230px;width:320px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ÔÚµ±Ç°·ÖÀàÏÂÌí¼Ó×ÓÀà</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">åœ¨å½“å‰åˆ†ç±»ä¸‹æ·»åŠ å­ç±»</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
   <form name="form1" method="post" action="index.php?m=mod_b2b&c=category&a=save&optype=1" id="cform">
   <table border="0" cellspacing="0" cellpadding="0" width="100%">
     <tr>
-      <td width="25%">·ÖÀàÃû³Æ</td>
+      <td width="25%">åˆ†ç±»åç§°</td>
       <td width="75%"><input type="text" name="catname" size="25"/></td>
     </tr>
     <tr>
-      <td width="25%">·ÖÀàÑÕÉ«</td>
+      <td width="25%">åˆ†ç±»é¢œè‰²</td>
       <td width="75%">
         <div style="float:left"><input type="text" name="catcolor" size="25" value="#000000"/></div>
         <div style="float:left;cursor:pointer;height:22px;margin-left:5px;margin-top:1px;width:16px;border:0px #fff solid;background:#000000"/></div>
       </td>
     </tr>
     <tr>
-      <td width="25%">ÅÅÁÐÐòºÅ</td>
+      <td width="25%">æŽ’åˆ—åºå·</td>
       <td width="75%"><input type="text" name="catorder" size="25"/></td>
     </tr>
     <tr>
-      <td width="25%">Ê××ÖÄ¸</td>
+      <td width="25%">é¦–å­—æ¯</td>
       <td width="75%"><input type="text" name="initialletter" size="25"/></td>
     </tr>
     <tr>
@@ -51,8 +51,8 @@
       <td width="75%">
         <input type="hidden" name="grandfatherid" value="{$vd['grandfatherid']}" />
         <input type="hidden" name="parentid" size="16" value="{$vd['parentid']}"/>
-        <input type="submit" name="Submit" value="Ìí ¼Ó" class="button"/>
-        <input type="button" name="Submit" value="È¡ Ïû" onclick="disp('adddiv')" class="button"/>
+        <input type="submit" name="Submit" value="æ·» åŠ " class="button"/>
+        <input type="button" name="Submit" value="å– æ¶ˆ" onclick="disp('adddiv')" class="button"/>
       </td>
     </tr>
   </table>
@@ -61,10 +61,10 @@
 </div>
 <table id="thead" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="35px"><b>ÅÅÐò</b></td>
+    <td width="35px"><b>æŽ’åº</b></td>
     <td width="30px"><img src="{$vd['sc']}images/16.gif" align="absmiddle"/></td>
-    <td width="200px"><b>·ÖÀàÃû³Æ</b></td>
-    <td width="50px"><b>Ê××ÖÄ¸</b></td>
+    <td width="200px"><b>åˆ†ç±»åç§°</b></td>
+    <td width="50px"><b>é¦–å­—æ¯</b></td>
     <td width="250px"><b></b></td>
     <td class="endtd"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div></td>
   </tr>
@@ -81,14 +81,14 @@
     <td width="200px"><font color="{$item['catcolor']}">{$item['catname']}</font></td>
     <td width="50px">{$item['initialletter']}</td>
     <td width="250px">
-      <a href="index.php?m=mod_b2b&c=category&a=del&optype=2&catid={$item['catid']}&parentid={$item['parentid']}" onclick="return confirm('Èç¹ûÉ¾³ýÁË¶þ¼¶·ÖÀà,ºÍ¶þ¼¶¼¶·ÖÀà¹ØÁªµÄÉÌÆ·/ÉÌÆ·½ø»õÐÅÏ¢Ò²¶¼»á±»É¾³ý,ÄúÈ·¶¨½øÐÐÉ¾³ý²Ù×÷Âð£¿')">
-      É¾³ý
+      <a href="index.php?m=mod_b2b&c=category&a=del&optype=2&catid={$item['catid']}&parentid={$item['parentid']}" onclick="return confirm('å¦‚æžœåˆ é™¤äº†äºŒçº§åˆ†ç±»,å’ŒäºŒçº§çº§åˆ†ç±»å…³è”çš„å•†å“/å•†å“è¿›è´§ä¿¡æ¯ä¹Ÿéƒ½ä¼šè¢«åˆ é™¤,æ‚¨ç¡®å®šè¿›è¡Œåˆ é™¤æ“ä½œå—ï¼Ÿ')">
+      åˆ é™¤
       </a>
       <a href="index.php?m=mod_b2b&c=category&a=cat&optype=2&grandfatherid={$item['parentid']}&parentid={$item['catid']}">
-      ¹ÜÀíÏÂ¼¶·ÖÀà
+      ç®¡ç†ä¸‹çº§åˆ†ç±»
       </a>
       <a href="index.php?m=mod_b2b&c=category&a=cat&optype=2&grandfatherid={$item['parentid']}&parentid={$vd['grandfatherid']}">
-      ¹ÜÀíÉÏ¼¶·ÖÀà
+      ç®¡ç†ä¸Šçº§åˆ†ç±»
       </a>
     </td>
     <td class="endtd"></td>
@@ -110,7 +110,7 @@
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >é¡µé¢åŠ è½½ä¸­è¯·ç¨ç­‰...</div>
 </div>
 <script type="text/javascript">
   var resizeidx = 2;

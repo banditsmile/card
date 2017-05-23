@@ -105,23 +105,23 @@ class HomeController extends Controller
 								$this->Assign( "version", "ubphp 1.0.1" );
 								$leftinfo = array(
 												array(
-																"name" => "ÏµÍ³×ÀÃæ",
+																"name" => "ÏµÍ³ï¿½ï¿½ï¿½ï¿½",
 																"cls" => "jh",
 																"id" => array( 0, 0, 0 ),
 																"val" => array(
-																				array( "id" => 99999, "txt" => "ÏµÍ³×ÀÃæ", "url" => "?c=Home&a=Home", "nobr" => 1 ),
-																				array( "id" => 0, "txt" => "Æ½Ì¨»ù±¾ÉèÖÃ", "url" => "?m=mod_b2b&c=Sys" ),
-																				array( "id" => 30, "txt" => "Ìí¼ÓÐÂÎÅ", "url" => "?m=mod_b2b&c=Article&a=Add" ),
-																				array( "id" => 34, "txt" => "×îÐÂ¶©µ¥", "url" => "?m=mod_b2b&c=Order&aid=-2" ),
-																				array( "id" => 16, "txt" => "ÉÌÆ·ÁÐ±í", "url" => "?m=mod_b2b&c=Product&ptype=-1&aid=-1" ),
-																				array( "id" => 16, "txt" => "Ìí¼ÓÉÌÆ·", "url" => "?m=mod_b2b&c=PS&a=create" ),
-																				array( "id" => 24, "txt" => "ÅúÁ¿¼Ó¿¨", "url" => "?m=mod_b2b&c=Card&a=Add" ),
-																				array( "id" => 26, "txt" => "×îÐÂÓÃ»§", "url" => "?m=mod_b2b&c=Agent" ),
-																				array( "id" => 35, "txt" => "ÓÃ»§³äÖµ¼ÇÂ¼", "url" => "?m=mod_b2b&c=Funds" ),
-																				array( "id" => 32, "txt" => "Î´¶ÁÕ¾ÄÚÐÅ", "url" => "?m=mod_b2b&c=PM&msgto=0&isreaded=-1&msgtype=1&by=1" ),
-																				array( "id" => 33, "txt" => "·ïÏèÎ´¶Á¶ÌÐÅÏ¢", "url" => "?m=mod_b2b&c=Msg&optype=r&ubzisreaded=0" ),
-																				array( "id" => 35, "txt" => "Æ½Ì¨ÀûÈó±¨±í", "url" => "?m=mod_b2b&c=Profit&aid=-1&s=1" ),
-																				array( "id" => 99999, "txt" => "ÍË³ö", "url" => "?c=Home&a=Logout" )
+																				array( "id" => 99999, "txt" => "ÏµÍ³ï¿½ï¿½ï¿½ï¿½", "url" => "?c=Home&a=Home", "nobr" => 1 ),
+																				array( "id" => 0, "txt" => "Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "url" => "?m=mod_b2b&c=Sys" ),
+																				array( "id" => 30, "txt" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "url" => "?m=mod_b2b&c=Article&a=Add" ),
+																				array( "id" => 34, "txt" => "ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½", "url" => "?m=mod_b2b&c=Order&aid=-2" ),
+																				array( "id" => 16, "txt" => "ï¿½ï¿½Æ·ï¿½Ð±ï¿½", "url" => "?m=mod_b2b&c=Product&ptype=-1&aid=-1" ),
+																				array( "id" => 16, "txt" => "ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "url" => "?m=mod_b2b&c=PS&a=create" ),
+																				array( "id" => 24, "txt" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½", "url" => "?m=mod_b2b&c=Card&a=Add" ),
+																				array( "id" => 26, "txt" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½", "url" => "?m=mod_b2b&c=Agent" ),
+																				array( "id" => 35, "txt" => "ï¿½Ã»ï¿½ï¿½ï¿½Öµï¿½ï¿½Â¼", "url" => "?m=mod_b2b&c=Funds" ),
+																				array( "id" => 32, "txt" => "Î´ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½", "url" => "?m=mod_b2b&c=PM&msgto=0&isreaded=-1&msgtype=1&by=1" ),
+																				array( "id" => 33, "txt" => "ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢", "url" => "?m=mod_b2b&c=Msg&optype=r&ubzisreaded=0" ),
+																				array( "id" => 35, "txt" => "Æ½Ì¨ï¿½ï¿½ï¿½ó±¨±ï¿½", "url" => "?m=mod_b2b&c=Profit&aid=-1&s=1" ),
+																				array( "id" => 99999, "txt" => "ï¿½Ë³ï¿½", "url" => "?c=Home&a=Logout" )
 																)
 												)
 								);
@@ -296,7 +296,7 @@ class HomeController extends Controller
 								$Rd19ae93b31 = trim( request( "VerifyCode", "", "POST" ) );
 								if ( $Rd19ae93b31 == "" || strtolower( $Rb7da52a305 ) != strtolower( $Rd19ae93b31 ) )
 								{
-												$this->Alert( "ÑéÖ¤Âë³ö´í" );
+												$this->Alert( "ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->View( "Login" );
 												exit( );
 								}
@@ -320,14 +320,14 @@ class HomeController extends Controller
 								$R808b89ba0e = $Rfc5c48c798->IMaster_Login( $data, $Re9e4225a22 );		
 								if ( $this->CheckMiBaoKa( $Re8bade8a5f ) == 0 )
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ÃÜ±£ÊäÈë´íÎó£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "ÃÜ±£ÊäÈë´íÎó£¬ÇëÖØÐÂÊäÈë£¡" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 												$this->HistoryGo( );
 								}
 								if ( $this->VerifyMobile( $Re8bade8a5f ) == 0 )
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ÁîÅÆÊäÈë´íÎó£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "ÁîÅÆÊäÈë´íÎó£¬ÇëÖØÐÂÊäÈë£¡" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 												$this->HistoryGo( );
 								}
 								if ( !$R808b89ba0e )
@@ -346,7 +346,7 @@ class HomeController extends Controller
 																}
 																$R3db8f5c8bc['rights'] = $R3db8f5c8bc['rights'].$R63bede6b19;
 												}
-												$this->AddLogin( $R3db8f5c8bc['id'], 0, $Re8bade8a5f, 0, 0, "³É¹¦µÇÂ½", 1 );
+												$this->AddLogin( $R3db8f5c8bc['id'], 0, $Re8bade8a5f, 0, 0, "ï¿½É¹ï¿½ï¿½ï¿½Â½", 1 );
 												$this->session->set( "adminrank", $adminrank );
 												$this->session->set( "adminrights", $R3db8f5c8bc['rights'] );
 												$this->session->set( "adminname", $Re8bade8a5f );
@@ -356,26 +356,26 @@ class HomeController extends Controller
 								}
 								else if ( 1 < $R808b89ba0e )
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "·Ç±¾»úµÇÂ¼£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "·Ç±¾»úµÇÂ¼£¡" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½" );
 												$this->View( "Login" );
 								}
 								else if ( $R808b89ba0e == -1 )
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ÃÜÂëÊäÈë´íÎó£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "ÃÜÂëÊäÈë´íÎó" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->View( "Login" );
 								}
 								else if ( $R808b89ba0e == -2 )
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "¼¶±ðÊäÈë´íÎó£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "¼¶±ðÊäÈë´íÎó" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->View( "Login" );
 								}
 								else
 								{
-												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ÕËºÅÊäÈë´íÎó£¬µÇÂ½Ê§°Ü", 0 );
-												$this->Alert( "¹ÜÀíÔ±²»´æÔÚ" );
+												$this->AddLogin( 0, 0, $Re8bade8a5f, 0, 0, "ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬µï¿½Â½Ê§ï¿½ï¿½", 0 );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->View( "Login" );
 								}
 				}
@@ -437,7 +437,7 @@ class HomeController extends Controller
 																}
 																else
 																{
-																				$this->Alert( "ÄúµÄÃÜ±£¿¨ÒÑ¾­É¾³ý" );
+																				$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½É¾ï¿½ï¿½" );
 																				$this->HistoryGo( );
 																}
 												}
@@ -485,8 +485,8 @@ class HomeController extends Controller
 
 				public function GetText( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
-								$R63bede6b19 = "<a href=\"index.php?m=mod_b2b&c=PM&msgto=0&isreaded=-1&msgtype=1&by=1\" target=\"frmright\">ÐÅÏ¢<font color=\"#ff0000\"><span id=\"newpm\">".$this->newpm( 1 )."</span></font>Ìõ</a>"." <a href=\"index.php?m=mod_b2b&c=Remit&msgto=0&mstate=1&by=1\" target=\"frmright\">»ã¿î<font color=\"#ff0000\"><span id=\"newhk\">".$this->newpm( 2 )."</span></font>Ìõ</a>"." <a href=\"index.php?m=mod_b2b&c=Complaint&msgto=0&mstate=1&by=1\" target=\"frmright\">Í¶Ëß<font color=\"#ff0000\"><span id=\"newts\">".$this->newpm( 3 )."</span></font>Ìõ</a>"." <a href=\"index.php?m=mod_b2b&c=Order&a=CzList&optype=sd|w&by=1&aid=-2\" target=\"frmright\">ÊÖ¶¯<font color=\"#ff0000\"><span id=\"notdealorder\">".$this->getnotdealorderbystr( " ptype=2 and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>¸ö</a>"." <a href=\"index.php?m=mod_b2b&c=Order&optype=zd|w&by=1&aid=-2\" target=\"frmright\">×Ô¶¯<font color=\"#ff0000\"><span id=\"notdealorder1\">".$this->getnotdealorderbystr( " ptype=1 and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>¸ö</a>"." <a href=\"index.php?m=mod_b2b&c=Order&optype=km|w&by=1&aid=-2\" target=\"frmright\">¿¨Àà<font color=\"#ff0000\"><span id=\"notdealorder2\">".$this->getnotdealorderbystr( " (ptype=0 or ptype=3 or ptype>99) and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>¸ö</a>";
+								header( "Content-type: text/html;charset=utf-8" );
+								$R63bede6b19 = "<a href=\"index.php?m=mod_b2b&c=PM&msgto=0&isreaded=-1&msgtype=1&by=1\" target=\"frmright\">ï¿½ï¿½Ï¢<font color=\"#ff0000\"><span id=\"newpm\">".$this->newpm( 1 )."</span></font>ï¿½ï¿½</a>"." <a href=\"index.php?m=mod_b2b&c=Remit&msgto=0&mstate=1&by=1\" target=\"frmright\">ï¿½ï¿½ï¿½<font color=\"#ff0000\"><span id=\"newhk\">".$this->newpm( 2 )."</span></font>ï¿½ï¿½</a>"." <a href=\"index.php?m=mod_b2b&c=Complaint&msgto=0&mstate=1&by=1\" target=\"frmright\">Í¶ï¿½ï¿½<font color=\"#ff0000\"><span id=\"newts\">".$this->newpm( 3 )."</span></font>ï¿½ï¿½</a>"." <a href=\"index.php?m=mod_b2b&c=Order&a=CzList&optype=sd|w&by=1&aid=-2\" target=\"frmright\">ï¿½Ö¶ï¿½<font color=\"#ff0000\"><span id=\"notdealorder\">".$this->getnotdealorderbystr( " ptype=2 and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>ï¿½ï¿½</a>"." <a href=\"index.php?m=mod_b2b&c=Order&optype=zd|w&by=1&aid=-2\" target=\"frmright\">ï¿½Ô¶ï¿½<font color=\"#ff0000\"><span id=\"notdealorder1\">".$this->getnotdealorderbystr( " ptype=1 and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>ï¿½ï¿½</a>"." <a href=\"index.php?m=mod_b2b&c=Order&optype=km|w&by=1&aid=-2\" target=\"frmright\">ï¿½ï¿½ï¿½ï¿½<font color=\"#ff0000\"><span id=\"notdealorder2\">".$this->getnotdealorderbystr( " (ptype=0 or ptype=3 or ptype>99) and aid < 1 and inrecycle = 0 and ordstate=1 " )."</span></font>ï¿½ï¿½</a>";
 								echo $R63bede6b19;
 				}
 
@@ -600,7 +600,7 @@ class HomeController extends Controller
 
 				public function AnnGet( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$Re50b8c3cbe = factory::getservice( "sann" );
 								echo $Re50b8c3cbe->IAnn_Get( );
 				}
@@ -631,8 +631,8 @@ class HomeController extends Controller
 												$R7e43ed30df = $R3db8f5c8bc['mobile'];
 												$Rd19ae93b31 = rand( 100000, 999999 );
 												$R20916143ed = factory::getinstance( "fetion" );
-												$Rbb3e87fa4e = "ÄúµÄÁîÅÆÎª".$Rd19ae93b31;
-												$Rbb3e87fa4e = iconv( "gb2312", "UTF-8", $Rbb3e87fa4e );
+												$Rbb3e87fa4e = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª".$Rd19ae93b31;
+												$Rbb3e87fa4e = iconv( "utf-8", "UTF-8", $Rbb3e87fa4e );
 												$R7adfab20b6 = array(
 																"sendto" => $R7e43ed30df,
 																"nor" => 1,

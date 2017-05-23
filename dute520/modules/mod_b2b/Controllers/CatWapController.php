@@ -37,7 +37,7 @@ class CatWapController extends Controller
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "capus" ) ) ) );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "name" => "Ãû³Æ", "pinyin" => "Ê××ÖÄ¸", "ordering" => "ÅÅÐò" );
+								$R00be52aa45 = array( "name" => "ï¿½ï¿½ï¿½ï¿½", "pinyin" => "ï¿½ï¿½ï¿½ï¿½Ä¸", "ordering" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "parentid", $Rac9b8532b8 );
 								$this->Assign( "parent", $R3db8f5c8bc );
@@ -102,7 +102,7 @@ class CatWapController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "²Ù×÷³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								}
 								$R36b9ff2e13 = intval( request( "coupon" ) );
 								if ( 0 < $Rac9b8532b8 )
@@ -117,7 +117,7 @@ class CatWapController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -129,10 +129,10 @@ class CatWapController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -143,7 +143,7 @@ class CatWapController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -158,7 +158,7 @@ class CatWapController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -178,7 +178,7 @@ class CatWapController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -217,7 +217,7 @@ class CatWapController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -241,7 +241,7 @@ class CatWapController extends Controller
 								$R808b89ba0e = $this->instance->ICatWap_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

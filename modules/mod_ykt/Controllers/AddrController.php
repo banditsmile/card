@@ -24,8 +24,8 @@ class AddrController extends Controller
 				{
 								$R8d392f6832 = getvar( "prv" );
 								$Rf286064093 = getvar( "city" );
-								$R8d392f6832 = iconv( "UTF-8", "gb2312//IGNORE", $R8d392f6832 );
-								$Rf286064093 = iconv( "UTF-8", "gb2312//IGNORE", $Rf286064093 );
+								$R8d392f6832 = iconv( "UTF-8", "utf-8//IGNORE", $R8d392f6832 );
+								$Rf286064093 = iconv( "UTF-8", "utf-8//IGNORE", $Rf286064093 );
 								if ( $R8d392f6832 != "" )
 								{
 												$data = array(
@@ -41,7 +41,7 @@ class AddrController extends Controller
 								{
 												$this->Assign( "items", array( ) );
 								}
-								$this->YktInit( "¾­ÏúÉÌÃûµ¥" );
+								$this->YktInit( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 						
 												$this->Assign( "prv", $R8d392f6832 );
 												$this->Assign( "city", $Rf286064093 );

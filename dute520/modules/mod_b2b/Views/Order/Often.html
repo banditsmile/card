@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
   #ctable1 td{text-align:center}
@@ -9,32 +9,32 @@
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> ¿Í»§³£¹ºÉÌÆ·Í³¼Æ</div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ps_index" onFocus="this.blur()" title="³£¹»ÉÌÆ·°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> å®¢æˆ·å¸¸è´­å•†å“ç»Ÿè®¡</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ps_index" onFocus="this.blur()" title="å¸¸å¤Ÿå•†å“å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
 <div class="ctitle">
-  ³£¹»ÉÌÆ·Í³¼Æ
+  å¸¸å¤Ÿå•†å“ç»Ÿè®¡
 </div>
 <div>
 	<form action="index.php?m=mod_b2b&c=Order&a=Often" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
   <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÉÌÆ·Ãû³Æ</td>
+    <td class="tablelt">å•†å“åç§°</td>
     <td class="tablert" style="text-align:left">
-    	<input type="text" name="pname" size="25" value="<!--echo request('pname');-->" style="vertical-align:middle;"  /> <font color="#cccccc">¿Õ±íÊ¾Í³¼ÆËùÓĞÉÌÆ·</font>
+    	<input type="text" name="pname" size="25" value="<!--echo request('pname');-->" style="vertical-align:middle;"  /> <font color="#cccccc">ç©ºè¡¨ç¤ºç»Ÿè®¡æ‰€æœ‰å•†å“</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¿Í»§Ãû³Æ</td>
+    <td class="tablelt">å®¢æˆ·åç§°</td>
     <td class="tablert" style="text-align:left">
-    	<input type="text" name="aname" size="25" value="<!--echo request('aname');-->" style="vertical-align:middle;"  /> <font color="#cccccc">¿Õ±íÊ¾Í³¼ÆËùÓĞÉÌÆ·</font>
+    	<input type="text" name="aname" size="25" value="<!--echo request('aname');-->" style="vertical-align:middle;"  /> <font color="#cccccc">ç©ºè¡¨ç¤ºç»Ÿè®¡æ‰€æœ‰å•†å“</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¹Ø¼ü´Ê</td>
+    <td class="tablelt">å…³é”®è¯</td>
     <td class="tablert" style="text-align:left">
     	<input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch"  />
       <select name="stype" style="vertical-align:middle;font-size:14px;">
@@ -43,7 +43,7 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¶©µ¥×´Ì¬</td>
+    <td class="tablelt">è®¢å•çŠ¶æ€</td>
     <td class="tablert" style="text-align:left">
     <select name="state" style="vertical-align:middle;font-size:14px;">
       {#Option($vd['oarray'], $vd['otype'])}
@@ -51,18 +51,18 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ê±¼ä¶Î</td>
+    <td class="tablelt">æ—¶é—´æ®µ</td>
     <td class="tablert" style="text-align:left">
     <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
     <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
-    µ½ <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    åˆ° <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
     <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
     <td class="tablelt"></td>
     <td class="tablert" style="text-align:left;height:50px">
-    <input type="submit" value="ËÑË÷ &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    <input type="submit" value="æœç´¢ &gt;&gt;" style="vertical-align:middle;" class="button"/>
     </td>
   </tr>
   </table>  
@@ -72,38 +72,38 @@
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr class="listhead">
-    <td width="32%" height="35" style="padding-left:3px;text-align:left">ÉÌÆ·Ãû³Æ</td>
-    <td width="8%">¹ºÂò´ÎÊı</td>
-    <td width="8%">×ÜÊıÁ¿</td>
-    <td width="8%">×Ü½ğ¶î</td>
-    <td width="8%">ÃæÖµ</td>
-    <td width="8%">½ø»õ¼Û</td>
-    <td width="8%">¿â´æ×´Ì¬</td>
+    <td width="32%" height="35" style="padding-left:3px;text-align:left">å•†å“åç§°</td>
+    <td width="8%">è´­ä¹°æ¬¡æ•°</td>
+    <td width="8%">æ€»æ•°é‡</td>
+    <td width="8%">æ€»é‡‘é¢</td>
+    <td width="8%">é¢å€¼</td>
+    <td width="8%">è¿›è´§ä»·</td>
+    <td width="8%">åº“å­˜çŠ¶æ€</td>
     <td width="5%"><img src="{$vd['sc']}images/icon_edit.gif"/></td>
-    <td width="8%">½ø»õ</td>
+    <td width="8%">è¿›è´§</td>
   </tr>
   <!--$t_count=0;$t_qty=0;$t_dollars=0;foreach($vd['items'] as $item) {-->
   <tr>
     <td height="35" style="padding-left:3px;text-align:left">{$item['pname']}</td>
-    <td>{$item['count']} ´Î</td>
+    <td>{$item['count']} æ¬¡</td>
     <td>{$item['sumqty']}</td>
     <td>{$item['sumdollar']}</td>
     <td>{$item['listprice']}</td>
     <td>{$item['price']}</td>
     <td>{$item['stocks']}</td>
     <td>
-      <a href="index.php?m=mod_b2b&c=PS&a=detail&ubzpid={$item['pid']}" title="±à¼­ÉÌÆ·" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+      <a href="index.php?m=mod_b2b&c=PS&a=detail&ubzpid={$item['pid']}" title="ç¼–è¾‘å•†å“" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
     </td>
     <td>
       <a href="?m=mod_b2b&c=sup&a=sup&ubzpid={$item['pid']}">
-      <font color="#00875A">¹ÜÀí</font>
+      <font color="#00875A">ç®¡ç†</font>
       </a> 
     </td>
   </tr>
   <!--$t_count+=$item['count'];$t_qty+=$item['sumqty'];$t_dollars+=$item['sumdollar'];}-->
   <tr>
-  	<td height="35">²éÑ¯Í³¼Æ</td>
-    <td><b>{$t_count}</b> ´Î</td>
+  	<td height="35">æŸ¥è¯¢ç»Ÿè®¡</td>
+    <td><b>{$t_count}</b> æ¬¡</td>
     <td><b>{$t_qty}</b></td>
     <td><b>{$t_dollars}</b></td>
     <td></td>

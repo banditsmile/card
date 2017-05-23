@@ -1,57 +1,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <!--$temp = explode('|', $vd['sys']['pwdconfig']);$cout=count($temp);-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Agent&a=index" title="сц╩╖ап╠М"><font color="#000">сц╩╖ап╠М</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">сц╩╖ЁДж╣/╫АкЦ</span>(<a href="index.php?m=mod_b2b&c=Agent&a=AddFunds&aid={$item['aid']}">к╒пб</a>)</div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="╡И©╢сц╩╖оЮ╧ь╟ОжЗ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Agent&a=index" title="О©╫ц╩О©╫О©╫п╠О©╫"><font color="#000">О©╫ц╩О©╫О©╫п╠О©╫</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">О©╫ц╩О©╫О©╫О©╫ж╣/О©╫О©╫О©╫О©╫</span>(<a href="index.php?m=mod_b2b&c=Agent&a=AddFunds&aid={$item['aid']}">к╒О©╫О©╫</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="О©╫И©╢О©╫ц╩О©╫О©╫О©╫ь╟О©╫О©╫О©╫"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=agent&a=FundsSave">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">сц╩╖ЁДж╣/╫АкЦ</div>
+<div class="ctitle">О©╫ц╩О©╫О©╫О©╫ж╣/О©╫О©╫О©╫О©╫</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">сц╩╖цШё╨</td>
+    <td class="tablelt">О©╫ц╩О©╫О©╫О©╫О©╫О©╫</td>
     <td class="tablert">{$item['aname']}</td>
   </tr>
   <tr>
-    <td class="tablelt">╣╠г╟уйиосЮ╤Нё╨</td>
+    <td class="tablelt">О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫Нё╨</td>
     <td class="tablert">{$item['aremain']}{$vd['lang']['moneyunit']}</td>
   </tr>
   <tr>
-    <td class="tablelt">ЁДж╣/╫АкЦ ╫П╤Нё╨</td>
+    <td class="tablelt">О©╫О©╫ж╣/О©╫О©╫О©╫О©╫ О©╫О©╫Нё╨</td>
     <td class="tablert">
-      <input type="text" name="ubzczvalue" size="20"/> <span class="spantip">©ш©Н╩Руъ╫АкЦ╣д╩╟ё╛уБюОлНио╤тс╕╦╨йЩ╪╢©иё╛хГ -10 ╠Мй╬©ш©Н 10 {$vd['lang']['moneyunit']}</span>
+      <input type="text" name="ubzczvalue" size="20"/> <span class="spantip">О©╫ш©О©╫О©╫О©╫ъ╫О©╫О©╫О©╫д╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╤О©╫с╕О©╫О©╫О©╫О©╫О©╫О©╫О©╫иёО©╫О©╫О©╫ -10 О©╫О©╫й╬О©╫ш©О©╫ 10 {$vd['lang']['moneyunit']}</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ЁДж╣╠╦в╒ё╨</td>
+    <td class="tablelt">О©╫О©╫ж╣О©╫О©╫в╒О©╫О©╫</td>
     <td class="tablert">
       <div id="reason" style="padding:10px 0px;line-height:20px">
-        <input type="radio" name="remarks" value="фум╗ЁДж╣" class="checkbox" style="vertical-align:top" onclick="setCustom(0)" checked/> фум╗ЁДж╣<br/>
-        <input type="radio" name="remarks" value="ук╩╖╩Ц©Н" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> ук╩╖╩Ц©Н<br/>
-        <input type="radio" name="remarks" value="╤╘╣╔й╖╟эйж╧╓мк©Н" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> ╤╘╣╔й╖╟эйж╧╓мк©Н<br/>
-        <input type="radio" name="remarks" value="ук╩╖╫АкЦ" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> ук╩╖╫АкЦ<br/>
-        <input type="radio" name="remarks" value="custom" class="checkbox" style="vertical-align:top" onclick="setCustom(1)"/> втппйДхК<br/>
-        <textarea rows="3" name="remarks_custom" cols="28" id="remarks_custom" style="width:208px;display:none;color:#5c5c5c" onblur="setBlur(this)" onclick="setArea(this)">гКйДхКт╜рР</textarea>
+        <input type="radio" name="remarks" value="О©╫О©╫м╗О©╫О©╫ж╣" class="checkbox" style="vertical-align:top" onclick="setCustom(0)" checked/> О©╫О©╫м╗О©╫О©╫ж╣<br/>
+        <input type="radio" name="remarks" value="О©╫к╩О©╫О©╫О©╫О©╫" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> О©╫к╩О©╫О©╫О©╫О©╫<br/>
+        <input type="radio" name="remarks" value="О©╫О©╫О©╫О©╫й╖О©╫О©╫О©╫ж╧О©╫О©╫к©О©╫" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> О©╫О©╫О©╫О©╫й╖О©╫О©╫О©╫ж╧О©╫О©╫к©О©╫<br/>
+        <input type="radio" name="remarks" value="О©╫к╩О©╫О©╫О©╫О©╫О©╫" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> О©╫к╩О©╫О©╫О©╫О©╫О©╫<br/>
+        <input type="radio" name="remarks" value="custom" class="checkbox" style="vertical-align:top" onclick="setCustom(1)"/> О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫<br/>
+        <textarea rows="3" name="remarks_custom" cols="28" id="remarks_custom" style="width:208px;display:none;color:#5c5c5c" onblur="setBlur(this)" onclick="setArea(this)">О©╫О©╫О©╫О©╫О©╫О©╫т╜О©╫О©╫</textarea>
       </div>
     </td>
   </tr>
   <!--if($temp[0] == 1){-->
   <tr>
-    <td class="tablelt">╨Сл╗ЁДж╣цэбКё╨</td>
+    <td class="tablelt">О©╫О©╫л╗О©╫О©╫ж╣О©╫О©╫О©╫Кё╨</td>
     <td class="tablert">
-      <input type="password" name="tradepwd" value=""> <span class="spantip">хГ╧ШдЗ╡╩пХр╙уБп╘╟╡х╚╢Кй╘ё╛дЗ©ирттзЁё╧Ф╧эюМжп╟якШх╔╣Т</span>
+      <input type="password" name="tradepwd" value=""> <span class="spantip">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫п╘О©╫О©╫х╚О©╫О©╫й╘О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫зЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╟О©╫О©╫О©╫х╔О©╫О©╫</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">х╥хо╨Сл╗ЁДж╣цэбКё╨</td>
+    <td class="tablelt">х╥О©╫о╨О©╫л╗О©╫О©╫ж╣О©╫О©╫О©╫Кё╨</td>
     <td class="tablert">
       <input type="password" name="retradepwd" value=""> <span class="spantip"></span>
     </td>
@@ -65,13 +65,13 @@
 </div>
 <div id="opcontent">
   <div class="optxt">
-    <input type="submit" value="ЁДж╣/╫АкЦ &gt;&gt;" name="b1" class="btn"/>
-    <input type="reset" value="жь жц &gt;&gt;" name="b1" class="btn"/>
+    <input type="submit" value="О©╫О©╫ж╣/О©╫О©╫О©╫О©╫ &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="О©╫О©╫ О©╫О©╫ &gt;&gt;" name="b1" class="btn"/>
   </div>
 </div>
 </form>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >рЁцФ╪стьжпгКит╣х...</div>
+  <div id="loadcontent" >рЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╣О©╫...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 1;
@@ -111,7 +111,7 @@
   
   function setArea(obj)
   {
-    if(obj.innerHTML == "гКйДхКт╜рР")
+    if(obj.innerHTML == "О©╫О©╫О©╫О©╫О©╫О©╫т╜О©╫О©╫")
     {
       obj.innerHTML = "";
     }
@@ -121,7 +121,7 @@
   {
     if(obj.innerHTML == "")
     {
-      obj.innerHTML = "гКйДхКт╜рР";
+      obj.innerHTML = "О©╫О©╫О©╫О©╫О©╫О©╫т╜О©╫О©╫";
     }
   }
 </script>

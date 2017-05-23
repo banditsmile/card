@@ -55,7 +55,7 @@ class AgentController extends Controller
 								}
 								$this->FillPage( $data, $R4e420efcc3 );
 								$this->Assign( "isselect", $R136f072284 );
-								$R00be52aa45 = array( "aname" => "ÓÃ»§Ãû", "aid" => "ÓÃ»§±àºÅ", "rankname" => "¼¶±ðÃû³Æ", "alv" => "¼¶±ð±àºÅ", "company" => "¹«Ë¾Ãû³Æ", "parentid" => "ÉÏ¼¶±àºÅ", "arealname" => "ÕæÊµÐÕÃû", "aqq" => "QQ", "amail" => "ÓÊÏä", "atel" => "µç»°", "mobile" => "ÊÖ»ú", "aaddr" => "×¡Ö·", "aremain" => "×îµÍÓà¶î", "acsmp" => "×îµÍÏû·Ñ", "income" => "×îµÍ´úÀíÀûÈó", "aremainrange" => "Óà¶î·¶Î§", "acsmprange" => "Ïû·Ñ·¶Î§", "incomerange" => "´úÀíÀûÈó·¶Î§", "prv" => "Ê¡", "city" => "ÊÐ", "zip" => "ÓÊ±à", "remarks" => "±¸×¢", "eshop" => "ÍøµêµØÖ·" );
+								$R00be52aa45 = array( "aname" => "ï¿½Ã»ï¿½ï¿½ï¿½", "aid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "rankname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "alv" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "company" => "ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½", "parentid" => "ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½", "arealname" => "ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½", "aqq" => "QQ", "amail" => "ï¿½ï¿½ï¿½ï¿½", "atel" => "ï¿½ç»°", "mobile" => "ï¿½Ö»ï¿½", "aaddr" => "×¡Ö·", "aremain" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "acsmp" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "income" => "ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "aremainrange" => "ï¿½ï¿½î·¶Î§", "acsmprange" => "ï¿½ï¿½ï¿½Ñ·ï¿½Î§", "incomerange" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§", "prv" => "Ê¡", "city" => "ï¿½ï¿½", "zip" => "ï¿½Ê±ï¿½", "remarks" => "ï¿½ï¿½×¢", "eshop" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ö·" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -64,7 +64,7 @@ class AgentController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -74,11 +74,11 @@ class AgentController extends Controller
 								$R808b89ba0e = $this->hander->IAgent_Delete( $R2a51483b14 );
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "É¾³ý³É¹¦" );
+												$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "É¾³ýÊ§°Ü" );
+												$this->Alert( "É¾ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->View( "Index" );
 				}
@@ -88,7 +88,7 @@ class AgentController extends Controller
 								$R1d47c61d5b = $this->GetAdmRight( 47 );
 								if ( $R1d47c61d5b == 0 )
 								{
-												$this->Alert( "ÄúºÃ£¬ÄúµÄÈ¨ÏÞ²»×ã£¬ÎÞ·¨¼Ó¿î£¬ÇëÁªÏµ³¬¼¶¹ÜÀíÔ±£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ²ï¿½ï¿½ã£¬ï¿½Þ·ï¿½ï¿½Ó¿î£¬ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R2a51483b14 = intval( request( "aid" ) );
@@ -110,7 +110,7 @@ class AgentController extends Controller
 								eval( $o00OO( $ooOO00o( $this->comget( "exkli" ) ) ) );
 								if ( $R1d47c61d5b == 0 )
 								{
-												$this->Alert( "ÄúºÃ£¬ÄúµÄÈ¨ÏÞ²»×ã£¬ÎÞ·¨¼Ó¿î£¬ÇëÁªÏµ³¬¼¶¹ÜÀíÔ±£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ²ï¿½ï¿½ã£¬ï¿½Þ·ï¿½ï¿½Ó¿î£¬ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R2a51483b14 = intval( request( "aid" ) );
@@ -123,12 +123,12 @@ class AgentController extends Controller
 												$Rf958605ae8 = getvar( "retradepwd" );
 												if ( $R48aa85bc4e != $Rf958605ae8 )
 												{
-																$this->Alert( "Á½´ÎÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»Ò»ÖÂ£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 												if ( md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 												{
-																$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 								}
@@ -136,7 +136,7 @@ class AgentController extends Controller
 								$Re0f5b440e2 = doubleval( request( "ubzczvalue" ) );
 								if ( $Re0f5b440e2 == 0 )
 								{
-												$this->Alert( "½ð¶îÄÜ²»Îª 0" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ü²ï¿½Îª 0" );
 												$this->HistoryGo( );
 								}
 								$R3db8f5c8bc = $this->hander->IAgent_Get( $R2a51483b14, "aremain,aname" );
@@ -153,30 +153,30 @@ class AgentController extends Controller
 								$R3db8f5c8bc = $this->hander->IAgent_Update( $data, $R2a51483b14 );
 								if ( $R3db8f5c8bc )
 								{
-												$this->OrderCreate( $R2a51483b14, $Re0f5b440e2, $Rc0c42883ee, $R3ab1f9eb35, 99, $R5d899a20a5, "¹ÜÀíÔ±³äÖµ", $Ra236db885f );
+												$this->OrderCreate( $R2a51483b14, $Re0f5b440e2, $Rc0c42883ee, $R3ab1f9eb35, 99, $R5d899a20a5, "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Öµ", $Ra236db885f );
 												if ( 0 < $Re0f5b440e2 )
 												{
-																$this->Alert( "³äÖµ³É¹¦" );
+																$this->Alert( "ï¿½ï¿½Öµï¿½É¹ï¿½" );
 												}
 												else
 												{
-																$this->Alert( "¿Û¿î³É¹¦" );
+																$this->Alert( "ï¿½Û¿ï¿½É¹ï¿½" );
 												}
 								}
 								else if ( 0 < $Re0f5b440e2 )
 								{
-												$this->Alert( "³äÖµÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ÖµÊ§ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "¿Û¿îÊ§°Ü" );
+												$this->Alert( "ï¿½Û¿ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=agent&a=AddFunds&aid=".$R2a51483b14 );
 				}
 
 				public function Detail( $R3584859062 = 0 )
 				{
-								$R89cd0a3912 = array( "ÒÑ½â¶³", "¶³½áÖÐ" );
+								$R89cd0a3912 = array( "ï¿½Ñ½â¶³", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R063e6693e5 = factory::getinstance( "ranks" );
 								$R046b4585a2 = $R063e6693e5->IRank_Get( );
 								$R2a51483b14 = intval( request( "aid" ) );
@@ -209,7 +209,7 @@ class AgentController extends Controller
 								$R48aa85bc4e = getvar( "mytradepwd" );
 								if ( trim( $R48aa85bc4e ) == "" || md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 								{
-												$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 												$this->HistoryGo( );
 								}
 				}
@@ -281,7 +281,7 @@ class AgentController extends Controller
 												}
 												else
 												{
-																$this->Alert( "Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ£¡ÇëÖØÐÂÊäÈë" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -299,7 +299,7 @@ class AgentController extends Controller
 												}
 												else
 												{
-																$this->Alert( "Á½´ÎÇ¿»¯ÃÜÂëÊäÈë²»Ò»ÖÂ£¡ÇëÖØÐÂÊäÈë" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -313,7 +313,7 @@ class AgentController extends Controller
 												}
 												else
 												{
-																$this->Alert( "Á½´Î½»Ò×ÃÜÂëÊäÈë²»Ò»ÖÂ£¡ÇëÖØÐÂÊäÈë" );
+																$this->Alert( "ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -328,11 +328,11 @@ class AgentController extends Controller
 																"arg1" => $R2a51483b14
 												) );
 												$this->Acluster( 5, $R2a51483b14 );
-												$this->Alert( "¸üÐÂ³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "¸üÐÂÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=agent&a=detail&aid=".$R2a51483b14 );
 				}
@@ -424,16 +424,16 @@ class AgentController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "×ª»¯³É¹¦£¡" );
+												$this->Alert( "×ªï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "×ª»¯Ê§°Ü£¡" );
+												$this->Alert( "×ªï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Agent&a=Relation" );
 				}
 
-				public function OrderCreate( $R2a51483b14, $R9b252bf0a7, $Rc0c42883ee, $R3ab1f9eb35, $Rb60574d852 = 99, $R45074ab3da = "", $Re82ee9b121 = "¹ÜÀíÔ±³äÖµ", $Ra236db885f = "" )
+				public function OrderCreate( $R2a51483b14, $R9b252bf0a7, $Rc0c42883ee, $R3ab1f9eb35, $Rb60574d852 = 99, $R45074ab3da = "", $Re82ee9b121 = "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Öµ", $Ra236db885f = "" )
 				{
 								include_once( UPATH_HELPER."OrderHelper.php" );
 								$Rdcd9105806 = createfundsordno( );
@@ -496,7 +496,7 @@ class AgentController extends Controller
 
 				public function Lock( )
 				{
-								$Rd8fb5ae7df = array( "aremain" => "ÕÊ»§¿ÉÓÃÓà¶î", "selffrozenfunds" => "×Ô¼º¶³½á×Ê½ð", "tradefrozenfunds" => "½»Ò×¶³½á×Ê½ð", "sysfrozenfunds" => "ÏµÍ³¶³½á×Ê½ð", "bossfrozenfunds" => "ÉÏ¼¶¶³½á×Ê½ð", "income" => "´úÀíËùµÃÀûÈó", "funds" => "¹©»õËùµÃÊÕÈë" );
+								$Rd8fb5ae7df = array( "aremain" => "ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "selffrozenfunds" => "ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "tradefrozenfunds" => "ï¿½ï¿½ï¿½×¶ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "sysfrozenfunds" => "ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "bossfrozenfunds" => "ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "income" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "funds" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R2a51483b14 = intval( request( "aid" ) );
 								$R9a5ea0f101 = $this->hander->IAgent_Get( $R2a51483b14, "aid,income,aname,company,aremain,arrears,selffrozenfunds,tradefrozenfunds,sysfrozenfunds,bossfrozenfunds,funds" );
 								$R25791b03ad = factory::getinstance( "sys" );
@@ -531,32 +531,32 @@ class AgentController extends Controller
 												$R48aa85bc4e = getvar( "tradepwd" );
 												if ( md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 												{
-																$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 								}
-								$Rd8fb5ae7df = array( "aremain" => "ÕÊ»§¿ÉÓÃÓà¶î", "selffrozenfunds" => "×Ô¼º¶³½á×Ê½ð", "tradefrozenfunds" => "½»Ò×¶³½á×Ê½ð", "sysfrozenfunds" => "ÏµÍ³¶³½á×Ê½ð", "bossfrozenfunds" => "ÉÏ¼¶¶³½á×Ê½ð", "income" => "´úÀíËùµÃÀûÈó", "funds" => "¹©»õËùµÃÊÕÈë" );
+								$Rd8fb5ae7df = array( "aremain" => "ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "selffrozenfunds" => "ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "tradefrozenfunds" => "ï¿½ï¿½ï¿½×¶ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "sysfrozenfunds" => "ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "bossfrozenfunds" => "ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½", "income" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "funds" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R9b252bf0a7 = doubleval( getvar( "dollars" ) );
 								if ( $R9b252bf0a7 <= 0 )
 								{
-												$this->Alert( "²Ù×÷½ð¶îÓ¦¸Ã´óÓÚÁã£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ã£¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rd4d7350af1 = getvar( "fromobject" );
 								$R6c0fcd4a5d = getvar( "toobject" );
 								if ( $Rd4d7350af1 == $R6c0fcd4a5d )
 								{
-												$this->Alert( "²Ù×÷¶ÔÏóºÍ×ª»¯¶ÔÏó²»ÄÜÒ»ÖÂ£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R6c0fcd4a5d == "income" )
 								{
-												$this->Alert( "²»ÄÜ°Ñ½ð¶î×ª»¯Îª´úÀíËùµÃÀûÈó£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ü°Ñ½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R6c0fcd4a5d == "funds" )
 								{
-												$this->Alert( "²»ÄÜ°Ñ½ð¶î×ª»¯Îª¹©»õËùµÃÊÕÈë£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ü°Ñ½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R2a51483b14 = intval( request( "aid" ) );
@@ -564,7 +564,7 @@ class AgentController extends Controller
 								$R5a2591f9d4 = $R9a5ea0f101[$Rd4d7350af1] - $R9b252bf0a7;
 								if ( $R5a2591f9d4 < 0 )
 								{
-												$this->Alert( "²Ù×÷½ð¶î¹ý´ó£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rbf00159d3b = $R9a5ea0f101[$R6c0fcd4a5d] + $R9b252bf0a7;
@@ -577,7 +577,7 @@ class AgentController extends Controller
 								if ( $R808b89ba0e )
 								{
 												$Rfb0c285961 = htmlspecialchars( getvar( "reason" ) );
-												$Re82ee9b121 = sprintf( "ÏµÍ³£º%s ×ª»¯Îª %s£¡×ª»¯½ð¶î£º%s Ô­Òò£º".$Rfb0c285961, $Rd8fb5ae7df[$Rd4d7350af1], $Rd8fb5ae7df[$R6c0fcd4a5d], $R9b252bf0a7 );
+												$Re82ee9b121 = sprintf( "ÏµÍ³ï¿½ï¿½%s ×ªï¿½ï¿½Îª %sï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½î£º%s Ô­ï¿½ï¿½".$Rfb0c285961, $Rd8fb5ae7df[$Rd4d7350af1], $Rd8fb5ae7df[$R6c0fcd4a5d], $R9b252bf0a7 );
 												if ( $Rd4d7350af1 == "aremain" || $R6c0fcd4a5d == "aremain" )
 												{
 																if ( $Rd4d7350af1 == "aremain" )
@@ -586,7 +586,7 @@ class AgentController extends Controller
 																				$Rd7a133b20f = 0;
 																				$Rc0c42883ee = $R3ab1f9eb35 - $R9b252bf0a7;
 																				$R9fe57edfd7 = 2;
-																				$R63bede6b19 = "¶³½á";
+																				$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 																}
 																else
 																{
@@ -594,7 +594,7 @@ class AgentController extends Controller
 																				$Rd7a133b20f = $R9b252bf0a7;
 																				$Rc0c42883ee = $R3ab1f9eb35 + $R9b252bf0a7;
 																				$R9fe57edfd7 = 1;
-																				$R63bede6b19 = "½â¶³";
+																				$R63bede6b19 = "ï¿½â¶³";
 																}
 																$R3ab1f9eb35 = round( $R3ab1f9eb35, 2 );
 																$R62388bedf2 = $this->GetLockType( $Rd4d7350af1, $R6c0fcd4a5d );
@@ -613,7 +613,7 @@ class AgentController extends Controller
 																				$R808b89ba0e = $R5db5e87ef9->ILock_Create( $data );
 																				if ( !$R808b89ba0e )
 																				{
-																								$this->Alert( "²Ù×÷Òì³££¡Ëø¶¨¼ÍÂ¼ÎÞ·¨Éú³É,´íÎóÂë1003" );
+																								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1003" );
 																				}
 																}
 																$sess = factory::getinstance( "session" );
@@ -639,7 +639,7 @@ class AgentController extends Controller
 																$R808b89ba0e = $Race6ab87b1->ITrade_Create( $data );
 																if ( !$R808b89ba0e )
 																{
-																				$this->Alert( "²Ù×÷Òì³££¡Ïà¹Ø¼ÍÂ¼ÎÞ·¨Éú³É,´íÎóÂë1001" );
+																				$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½Â¼ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1001" );
 																}
 																if ( $Rd4d7350af1 == "income" )
 																{
@@ -658,16 +658,16 @@ class AgentController extends Controller
 																				$R808b89ba0e = $Race6ab87b1->ITrade_Create( $data );
 																				if ( !$R808b89ba0e )
 																				{
-																								$this->Alert( "²Ù×÷Òì³££¡Ïà¹Ø¼ÍÂ¼ÎÞ·¨Éú³É,´íÎóÂë1002" );
+																								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½Â¼ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1002" );
 																				}
 																}
 												}
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Òì³££¡Ïà¹Ø¼ÍÂ¼ÎÞ·¨Éú³É,´íÎóÂë1004" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½Â¼ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1004" );
 								}
-								$this->go( $R808b89ba0e, "²Ù×÷³É¹¦", "²Ù×÷Ê§°Ü", "index.php?m=mod_b2b&c=agent&a=lock&aid=".$R2a51483b14 );
+								$this->go( $R808b89ba0e, "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½", "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=agent&a=lock&aid=".$R2a51483b14 );
 				}
 
 				public function GetLockType( $Rd4d7350af1, $R6c0fcd4a5d )
@@ -741,19 +741,19 @@ class AgentController extends Controller
 								$R808b89ba0e = $this->hander->IAgent_UpdateByStr( $data, $Rb7492a73f7 );
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "ÅúÁ¿ÐÞ¸Ä³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä³É¹ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=agent&a=index" );
 								}
 								else
 								{
-												$this->Alert( "ÅúÁ¿ÐÞ¸ÄÊ§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->Historygo( );
 								}
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -765,10 +765,10 @@ class AgentController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -782,7 +782,7 @@ class AgentController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -797,7 +797,7 @@ class AgentController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -819,7 +819,7 @@ class AgentController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -858,7 +858,7 @@ class AgentController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "aid in (".$R3456919727.")";
@@ -884,7 +884,7 @@ class AgentController extends Controller
 								$R808b89ba0e = $this->hander->IAgent_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

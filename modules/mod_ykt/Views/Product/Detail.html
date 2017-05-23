@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="{$vd['web']['keywords']}" />
 <meta http-equiv="Description" content="{$vd['web']['description']}" />
 <link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub-buy.css" />
@@ -22,15 +22,15 @@
   <div id="headertab">
     <span style="float:right">
       <script src="{$vd['content']}js/cust.js"></script>
-      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">¿¨×´Ì¬²éÑ¯</a> &nbsp;
-      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">¿¨Óà¶î»¥×ª</a> &nbsp;
-      <img src="{$vd['content']}images/icon_kt.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=Show" target="_blank">¿¨Í¼Õ¹Ê¾</a> &nbsp;
-      <img src="{$vd['content']}images/icon_bz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">¿Í»§·şÎñ</a> &nbsp;
-      <img src="{$vd['content']}images/icon_jxs.gif" align="absmiddle"> <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">¾­ÏúÉÌ</a>
+      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">å¡çŠ¶æ€æŸ¥è¯¢</a> &nbsp;
+      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">å¡ä½™é¢äº’è½¬</a> &nbsp;
+      <img src="{$vd['content']}images/icon_kt.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=Show" target="_blank">å¡å›¾å±•ç¤º</a> &nbsp;
+      <img src="{$vd['content']}images/icon_bz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">å®¢æˆ·æœåŠ¡</a> &nbsp;
+      <img src="{$vd['content']}images/icon_jxs.gif" align="absmiddle"> <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">ç»é”€å•†</a>
     </span>
     <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{$vd['web']['website']}');" class="top"> 
-      ÉèÎªÊ×Ò³</a> |
-      <a href=javascript:window.external.AddFavorite('{$vd['web']['website']}','{$vd['web']['webname']}') class="top">Ìí¼Óµ½ÊÕ²Ø</a>
+      è®¾ä¸ºé¦–é¡µ</a> |
+      <a href=javascript:window.external.AddFavorite('{$vd['web']['website']}','{$vd['web']['webname']}') class="top">æ·»åŠ åˆ°æ”¶è—</a>
   </div>
 </div>
 <div id="ubtop">
@@ -41,9 +41,9 @@
     <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;height:60px;">
         <tr>
             <td align="right" class="black">
-                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">·µ»ØÊ×Ò³</a> |
-                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">ÖØĞÂÑ¡¿¨</a> |
-                <a href="javascript:window.location.reload();">Ë¢ĞÂ±¾Ò³</a>
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">è¿”å›é¦–é¡µ</a> |
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">é‡æ–°é€‰å¡</a> |
+                <a href="javascript:window.location.reload();">åˆ·æ–°æœ¬é¡µ</a>
             </td>
         </tr>
     </table>
@@ -83,7 +83,7 @@
 <!--$proptmp=array();if(isset($item['prop']) && $item['prop'] != '' && $item['prop'] != 'NULL'){;$proptmp = unserialize($item['prop']);}-->
 <table id="orderTable" class="tbody">
   <tr>
-    <td class="buylt">µã¿¨ÀàĞÍ£º</td>
+    <td class="buylt">ç‚¹å¡ç±»å‹ï¼š</td>
     <td class="buyrt">
      <select id="pname" onchange="setpoints(this)" style="VERTICAL-ALIGN: middle;font-size:12px;width:185px;">
      <!--if(isset($proptmp['yktnoothers']) && $proptmp['yktnoothers'] == 1){-->
@@ -92,43 +92,43 @@
      {#Option($vd['relateitem'],$vd['defaultval'],'text','value')}
      <!--}-->
      </select>
-     Ğè <span id="pointneed" class="redbold"><!--if( $item['ptype'] == 3 && $item['disparea'] == 1 ){-->{$item['listprice']}<!--}else{-->--<!--}--></span> {$vd['lang']['moneyunit']}
+     éœ€ <span id="pointneed" class="redbold"><!--if( $item['ptype'] == 3 && $item['disparea'] == 1 ){-->{$item['listprice']}<!--}else{-->--<!--}--></span> {$vd['lang']['moneyunit']}
   </tr>
   
   <tr>
-    <td class="buylt">¿â´æ×´Ì¬£º</td>
-    <td class="buyrt"><span id="thisstock">¶ÁÈ¡ÖĞ..</span></td>
+    <td class="buylt">åº“å­˜çŠ¶æ€ï¼š</td>
+    <td class="buyrt"><span id="thisstock">è¯»å–ä¸­..</span></td>
   </tr>
   <tr>
-    <td class="buylt">ÉÌÆ·ÀàĞÍ£º</td>
-    <td class="buyrt">{#ProductType($item['ptype'])} &nbsp;<!--if($item['quickuse']==1 && $item['quickusetime'] > 0){--><font color="#ff0000"><b>Çë¹ºÂòºó{$item['quickusetime']}Ğ¡Ê±ÄÚÊ¹ÓÃ</b></font><!--}--></td>
+    <td class="buylt">å•†å“ç±»å‹ï¼š</td>
+    <td class="buyrt">{#ProductType($item['ptype'])} &nbsp;<!--if($item['quickuse']==1 && $item['quickusetime'] > 0){--><font color="#ff0000"><b>è¯·è´­ä¹°å{$item['quickusetime']}å°æ—¶å†…ä½¿ç”¨</b></font><!--}--></td>
   </tr>
   <!--if( $item['buylit'] == 1 ){-->
   <!--$proptmp=array();if(isset($item['prop']) && $item['prop'] != ''){;$proptmp = unserialize($item['prop']);}-->
   <tr>
-    <td class="buylt"><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->½ûÖ¹¹ºÂò<!--}else{-->¿ª·Å¹ºÂò<!--}-->£º</td>
+    <td class="buylt"><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->ç¦æ­¢è´­ä¹°<!--}else{-->å¼€æ”¾è´­ä¹°<!--}-->ï¼š</td>
     <td class="buyrt">
-      <font color="#ff0000"><b>Ã¿Ìì{$item['buylitstardate']}Ê±µ½{$item['buylitenddate']}</b></font> <font color="#0000ff"><b><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->½ûÖ¹¹ºÂò<!--}else{-->¿ª·Å¹ºÂò<!--}--></b></font>
+      <font color="#ff0000"><b>æ¯å¤©{$item['buylitstardate']}æ—¶åˆ°{$item['buylitenddate']}</b></font> <font color="#0000ff"><b><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->ç¦æ­¢è´­ä¹°<!--}else{-->å¼€æ”¾è´­ä¹°<!--}--></b></font>
     </td>
   </tr>
   <!--}-->
   <tr>
-    <td class="buylt">Ò»¿¨Í¨¿¨ºÅ£º</td>
-    <td class="buyrt"><input type="text" name="yktcard[]" class="input"/> <span style="color:#996600;cursor:pointer" onclick="moreykt(this);">[ + ]¶à¸öÒ»¿¨Í¨</span></td>
+    <td class="buylt">ä¸€å¡é€šå¡å·ï¼š</td>
+    <td class="buyrt"><input type="text" name="yktcard[]" class="input"/> <span style="color:#996600;cursor:pointer" onclick="moreykt(this);">[ + ]å¤šä¸ªä¸€å¡é€š</span></td>
   </tr>
   <tr>
-    <td class="buylt">Ò»¿¨Í¨ÃÜÂë£º</td>
+    <td class="buylt">ä¸€å¡é€šå¯†ç ï¼š</td>
     <td class="buyrt"><input type="password" name="yktpwd[]"  class="input"/></td>
   </tr>
   
   
   <!--if( $item['ptype'] == 1 || $item['ptype'] == 2){-->
   <tr>
-  <td class="buylt">³äÖµ{$item['idlable']}£º</td>
+  <td class="buylt">å……å€¼{$item['idlable']}ï¼š</td>
   <td class="buyrt"><input id="ubzczacount" name="ubzczacount" type="text"  class="input"/> *</td>
   </tr>
   <tr>
-  <td class="buylt">ÖØ¸´{$item['idlable']}£º</td>
+  <td class="buylt">é‡å¤{$item['idlable']}ï¼š</td>
   <td class="buyrt"><input id="ubzreczacount" name="ubzreczacount" type="text"  class="input" /> *</td>
   </tr>
   <!--}-->
@@ -151,7 +151,7 @@
   <!--}-->
   <!--if( $item['ptype'] == 3 && $item['disparea'] == 1 ){-->
   <tr>
-    <td class="buylt">Ñ¡Ôñ{$item['idlable']}£º</td>
+    <td class="buylt">é€‰æ‹©{$item['idlable']}ï¼š</td>
     <td class="buyrt">
     <div id="cardsdiv">--</div>
     <select style="display:none" id="ubzqty" name="ubzqty"><option value="1">1</option></select>
@@ -160,10 +160,10 @@
   <!--}else{-->
   <!--if(!isset($vd['xml']) || (isset($vd['xml'])&&$vd['xml']==0)){-->
   <tr>
-    <td class="buylt">¹ºÂòÊıÁ¿£º</td>
+    <td class="buylt">è´­ä¹°æ•°é‡ï¼š</td>
     <td class="buyrt">
       <select name="ubzqty" id="ubzqty" onchange="ChangeNum()">
-        <option value="0">ÇëÑ¡Ôñ</option>
+        <option value="0">è¯·é€‰æ‹©</option>
         <!--if( isset($vd['qtylist']) ){-->
         {$vd['qtylist']}
         <!--}-->
@@ -174,11 +174,11 @@
   <!--}-->
   
   <tr>
-    <td class="buylt" valign="top" style="padding-top:8px;">ÑéÖ¤Âë£º</td>
+    <td class="buylt" valign="top" style="padding-top:8px;">éªŒè¯ç ï¼š</td>
     <td class="buyrt">
       <input type="text" name="randcode" id="randcode" class="input"  style="width:80px"/>
       <div style="padding-top:3px;">
-      <img src="{$vd['root']}index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="¿´²»Çå³ş?Çëµã»÷Ë¢ĞÂ" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/> <span style="color:#996600;cursor:pointer" onclick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>¿´²»Çå</u></span>
+      <img src="{$vd['root']}index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="çœ‹ä¸æ¸…æ¥š?è¯·ç‚¹å‡»åˆ·æ–°" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/> <span style="color:#996600;cursor:pointer" onclick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>çœ‹ä¸æ¸…</u></span>
       </div>
     </td>
   </tr>
@@ -188,16 +188,16 @@
   </tr>
   <!--if($vd['dispbuyer']){-->
   <tr>
-    <td class="buylt">Emailµç×ÓĞÅÏä£º</td>
-    <td class="buyrt"><input type="text" name="ubzcmail" id="ubzcmail" class="input" /> <font color="#996600">ÓĞĞ§Email¿É»ñµÃ´ÙÏúĞÅÏ¢£¡</font></td>
+    <td class="buylt">Emailç”µå­ä¿¡ç®±ï¼š</td>
+    <td class="buyrt"><input type="text" name="ubzcmail" id="ubzcmail" class="input" /> <font color="#996600">æœ‰æ•ˆEmailå¯è·å¾—ä¿ƒé”€ä¿¡æ¯ï¼</font></td>
   </tr>
   <tr>
-    <td class="buylt">ÁªÏµQQ£º</td>
-    <td class="buyrt"><input type="text" name="ubzcqq" id="ubzcqq" class="input" /> <font color="#996600">ÓĞÎÊÌâÊ±¿ÉÒÔºÍÄúÁªÏµ£¡</font></td>
+    <td class="buylt">è”ç³»QQï¼š</td>
+    <td class="buyrt"><input type="text" name="ubzcqq" id="ubzcqq" class="input" /> <font color="#996600">æœ‰é—®é¢˜æ—¶å¯ä»¥å’Œæ‚¨è”ç³»ï¼</font></td>
   </tr>
   <!--}-->
   <tr>
-    <td colspan="2" style="background:#E8E8E8;height:25px;font-weight:bold;text-align:center">²úÆ·½éÉÜ</td>
+    <td colspan="2" style="background:#E8E8E8;height:25px;font-weight:bold;text-align:center">äº§å“ä»‹ç»</td>
   </tr>
   <tr>
     <td colspan="2" style="padding:5px 5px 20px 5px;">{#ubbcode($item['pdesc'])}</td>
@@ -210,19 +210,19 @@
                   <td width="5%" height="25" align="middle">
                       <img height="18" src="{$vd['content']}images/jt.gif" width="18"></td>
                   <td>
-                      <a href="{$item['web']}" target="_blank">¹ÙÍøÊ×Ò³</a></td>
+                      <a href="{$item['web']}" target="_blank">å®˜ç½‘é¦–é¡µ</a></td>
                   <td width="5%">
                       <img height="18" src="{$vd['content']}images/jt.gif" width="18"></td>
                   <td>
-                      <a target="_blank">ÕË»§¹ÜÀí</a></td>
+                      <a target="_blank">è´¦æˆ·ç®¡ç†</a></td>
                   <td width="6%">
                       <img height="18" src="{$vd['content']}images/jt.gif" width="18" /></td>
                   <td>
-                      <a target="_blank">¼Æ·ÑËµÃ÷</a></td>
+                      <a target="_blank">è®¡è´¹è¯´æ˜</a></td>
                   <td width="5%">
                       <img height="18" src="{$vd['content']}images/jt.gif" width="18" /></td>
                   <td>
-                      <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">»ØÍøÕ¾Ê×Ò³</a></td>
+                      <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">å›ç½‘ç«™é¦–é¡µ</a></td>
               </tr>
           </tbody>
       </table>
@@ -236,7 +236,7 @@
       {$vd['sips']}
     </td>
     <td style="padding:10px;text-align:right;line-height:20px;">
-      °æÈ¨ËùÓĞ &copy; 2004-2011 {$vd['web']['webname']}<br>ICP±¸°¸ºÅ£º<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a>
+      ç‰ˆæƒæ‰€æœ‰ &copy; 2004-2011 {$vd['web']['webname']}<br>ICPå¤‡æ¡ˆå·ï¼š<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a>
     </td>
   </tr>
 </table>
@@ -261,10 +261,10 @@
     <div>
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['qq'][$j])&&count($vd['qq'][$j]) > 0){-->
-      <h3>¿Í·şQQ£º</h3>
+      <h3>å®¢æœQQï¼š</h3>
       <!--for($i=0;$i<count($vd['qq'][$j]);$i++){-->
         <a href="tencent://message/?uin={$vd['qq'][$j][$i]}&Site={$vd['web']['webname']}&Menu=yes" target="_blank">
-        <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" />
+        <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="ç‚¹å‡»è¿™é‡Œç»™æˆ‘å‘æ¶ˆæ¯" />
         </a><br/>
       <!--}-->
       <!--}-->
@@ -272,10 +272,10 @@
   
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['wangwang'][$j])&&count($vd['wangwang'][$j]) > 0){-->
-      <h3>¿Í·şÍúÍú£º</h3>
+      <h3>å®¢æœæ—ºæ—ºï¼š</h3>
       <!--for($i=0;$i<count($vd['wangwang'][$j]);$i++){-->
         <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1">
-          <img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1" alt="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" />
+          <img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1" alt="ç‚¹å‡»è¿™é‡Œç»™æˆ‘å‘æ¶ˆæ¯" />
         </a><br/>
       <!--}-->
       <!--}-->
@@ -283,7 +283,7 @@
   
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['hi'][$j])&&count($vd['hi'][$j]) > 0){-->
-      <h3>¿Í·şHi£º</h3>
+      <h3>å®¢æœHiï¼š</h3>
       <!--for($i=0;$i<count($vd['hi'][$j]);$i++){-->
         <a href="baidu://message/?id={$vd['hi'][$j][$i]}">
           <img src="http://tieba.baidu.com/tb/img/hi/hiOnline.gif" border="0">
@@ -383,7 +383,7 @@ function moreykt(obj)
   <!--if(isset($proptmp['yktmaxnum'])&&$proptmp['yktmaxnum'] > 0){-->
   if(no > {$proptmp['yktmaxnum']})
   {
-    alert('ÄúºÃ£¬±¾ÉÌÆ·ÉèÖÃÎªÒ»´Î×î¶à{$proptmp['yktmaxnum']}ÕÅ');
+    alert('æ‚¨å¥½ï¼Œæœ¬å•†å“è®¾ç½®ä¸ºä¸€æ¬¡æœ€å¤š{$proptmp['yktmaxnum']}å¼ ');
     return;
   }
   <!--}-->
@@ -403,7 +403,7 @@ function AddElement(row,index) {
     var newRow = obj.insertRow(row); 
     c1 = newRow.insertCell(-1);
     c1.className = "buylt";
-    c1.innerHTML = "¿¨ºÅ"+i+"£º";
+    c1.innerHTML = "å¡å·"+i+"ï¼š";
     c2 = newRow.insertCell(-1);
     c2.className = "buyrt";
     c2.innerHTML = "<input type='text' name='yktcard[]' class='input'/>";
@@ -411,7 +411,7 @@ function AddElement(row,index) {
     newRow = obj.insertRow(row+1); 
     c1 = newRow.insertCell(-1);
     c1.className = "buylt";
-    c1.innerHTML = "ÃÜÂë"+i+"£º";
+    c1.innerHTML = "å¯†ç "+i+"ï¼š";
     c2 = newRow.insertCell(-1);
     c2.className = "buyrt";
     c2.innerHTML = "<input type='text' name='yktpwd[]'  class='input'/>";
@@ -497,13 +497,13 @@ function setpoints(obj)
   	{}
     else
   	{
-  		alert("ÇëÏÈÑ¡Ôñ³äÖµÓÎÏ·£¡");
+  		alert("è¯·å…ˆé€‰æ‹©å……å€¼æ¸¸æˆï¼");
       return false;
   	}
     qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
     if(qty <= 0)
     {
-    	alert("ÇëÏÈÑ¡ÔñÊıÁ¿£¡");
+    	alert("è¯·å…ˆé€‰æ‹©æ•°é‡ï¼");
       return false;
     }
     
@@ -514,18 +514,18 @@ function setpoints(obj)
     if(tt1 == "")
     {
       $("ubzczacount").focus();
-      alert("³äÖµÕÊºÅ²»ÄÜÎª¿Õ£¡");
+      alert("å……å€¼å¸å·ä¸èƒ½ä¸ºç©ºï¼");
       return false;
     }
     
     if(tt1 !== tt2)
     {
       $("ubzreczacount").focus();
-      alert("Á½´ÎÕÊºÅÊäÈë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë");
+      alert("ä¸¤æ¬¡å¸å·è¾“å…¥ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥");
       return false;
     }
     
-    //¿´¿´ÊÇ²»ÊÇÓĞĞèÒª×Ô¶¯¼ì²éµÄ¶«Î÷
+    //çœ‹çœ‹æ˜¯ä¸æ˜¯æœ‰éœ€è¦è‡ªåŠ¨æ£€æŸ¥çš„ä¸œè¥¿
     if( $("needinput") )
     {
       nv = $("needinput").value;
@@ -541,8 +541,8 @@ function setpoints(obj)
         {
           if($(nvarr[i]) && $(nvarr[i]).value == "")
           {
-            altstr = ntypearr[i] == "radio" || ntypearr[i] == "select" ? "Ñ¡Ôñ"  : "ÊäÈë";
-            altstr = "ÇëÄú" + altstr + nlabelarr[i];
+            altstr = ntypearr[i] == "radio" || ntypearr[i] == "select" ? "é€‰æ‹©"  : "è¾“å…¥";
+            altstr = "è¯·æ‚¨" + altstr + nlabelarr[i];
             alert(altstr);
             return false;
           }
@@ -554,13 +554,13 @@ function setpoints(obj)
     if($("randcode").value == "")
     {
       $("randcode").focus();
-      alert("ÇëÄúÊäÈëÑéÖ¤Âë£¡");
+      alert("è¯·æ‚¨è¾“å…¥éªŒè¯ç ï¼");
       return false;
     }
 
     if (qty>0)
     {
-      var str = "È·ÈÏ¹ºÂò <!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--> "+ qty +" ¸öÂğ£¿²¢Çë×¢ÒâÒÔÏÂ¹ºÂò×¢ÒâÊÂÏî£º\n\n\n1¡¢±¾ÉÌÆ·Ò»¾­¹ºÂòÎŞ·¨ÍË»»»õ£¬Çë×¢Òâ²»ÒªÑ¡Ôñ´íÎó£»";
+      var str = "ç¡®è®¤è´­ä¹° <!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--> "+ qty +" ä¸ªå—ï¼Ÿå¹¶è¯·æ³¨æ„ä»¥ä¸‹è´­ä¹°æ³¨æ„äº‹é¡¹ï¼š\n\n\n1ã€æœ¬å•†å“ä¸€ç»è´­ä¹°æ— æ³•é€€æ¢è´§ï¼Œè¯·æ³¨æ„ä¸è¦é€‰æ‹©é”™è¯¯ï¼›";
       
       if(confirm(str))
       {
@@ -573,7 +573,7 @@ function setpoints(obj)
     }
     else
     {
-      alert("ÇëÏÈÑ¡ÔñÊıÁ¿£¡");
+      alert("è¯·å…ˆé€‰æ‹©æ•°é‡ï¼");
       return false;
     }
   }

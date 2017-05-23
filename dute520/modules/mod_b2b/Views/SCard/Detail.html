@@ -1,30 +1,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=card&a=index" title="卡密列表"><font color="#000">卡密列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">卡密信息修改</span>(<a href="index.php?m=mod_b2b&c=card&a=detail&ubzcid={$item['cid']}">刷新</a>)</div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=card&a=index" title="锟斤拷锟斤拷锟叫憋拷"><font color="#000">锟斤拷锟斤拷锟叫憋拷</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">锟斤拷锟斤拷锟斤拷息锟睫革拷</span>(<a href="index.php?m=mod_b2b&c=card&a=detail&ubzcid={$item['cid']}">刷锟斤拷</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="锟介看锟斤拷锟斤拷锟斤拷匕锟斤拷锟�"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form method="post" action="index.php?m=mod_b2b&c=scard&a=update" name="cform" id="cform">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">编辑卡密</div>
+<div class="ctitle">锟洁辑锟斤拷锟斤拷</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">卡号:</td>
+    <td class="tablelt">锟斤拷锟斤拷:</td>
     <td class="tablert"><input type="text" size="25" name="ubzcardnumber" value="{$vd['item']['ubzcardnumber']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">修改密码:</td>
+    <td class="tablelt">锟睫革拷锟斤拷锟斤拷:</td>
     <td class="tablert">
     <input type="text" size="25" name="ubzcardpwd"/>
-      (留空的话表示不更改密码)</td>
+      (锟斤拷锟秸的伙拷锟斤拷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷)</td>
   </tr>
 </table>
 </div>
@@ -35,8 +35,8 @@
   <div class="optxt">
     <input type="hidden" value="{$vd['item']['ubzid']}" name="ubzid"/>
     <input type="hidden" value="{$vd['item']['ubzpid']}" name="ubzpid"/>
-    <input type="submit" value="修 改 &gt;&gt;" name="b1" class="btn"/>
-    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+    <input type="submit" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
   </div>
 </div>
 </form>

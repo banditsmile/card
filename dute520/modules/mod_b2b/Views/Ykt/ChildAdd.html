@@ -1,40 +1,40 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
     <td width="50%" height="35">
-      <span style="float:right;font-size:13px;font-weight:bold;">¿¨ÖÖÉú³É</span>
-      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >µ±Ç°²úÆ·£º{$vd['yktpname']}</span>
+      <span style="float:right;font-size:13px;font-weight:bold;">å¡ç§ç”Ÿæˆ</span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >å½“å‰äº§å“ï¼š{$vd['yktpname']}</span>
     </td>
   </tr>
 </table>
 <form method="post" action="index.php?m=mod_b2b&c=ykt&yktpid={$vd['yktpid']}&a=childsave" >
 <table id="priceTable" border="0" width="100%" style="border-collapse: collapse;line-height:25px;border:1px #CFDCF2 solid;background:#ffffe5" bordercolor="#CFDCF2">
   <tr>
-    <td class="buylt">¿¨ÖÖÃû³Æ£º</td>
+    <td class="buylt">å¡ç§åç§°ï¼š</td>
     <td class="buyrt">
       <input type="hidden" id="pid" name="pid" class="myinput"/>
       <input type="text" name="ykttag" class="myinput"/>
     </td>
   </tr>
   <tr>
-    <td class="buylt">ËùĞèµãÊı£º</td>
+    <td class="buylt">æ‰€éœ€ç‚¹æ•°ï¼š</td>
     <td class="buyrt">
-      <input type="text" name="yktpoints" class="myinput"/> ±ÈÀı£º1{$vd['lang']['moneyunit']} = 100µã
+      <input type="text" name="yktpoints" class="myinput"/> æ¯”ä¾‹ï¼š1{$vd['lang']['moneyunit']} = 100ç‚¹
     </td>
   </tr>
   <tr>
-    <td class="buylt">°ó¶¨Ò»¿¨Í¨¿¨ºÅÌØÕ÷Âë£º</td>
+    <td class="buylt">ç»‘å®šä¸€å¡é€šå¡å·ç‰¹å¾ç ï¼š</td>
     <td class="buyrt">
-      <input type="text" name="yktcard" class="myinput"/> <br/>ÇëĞ´Èë°ó¶¨µÄÒ»¿¨Í¨¿¨ºÅÌØÕ÷Âë£¬±ÈÈç¿¨ºÅÊÇsd3¿ªÍ·£¬¿ÉÒÔĞ´³Ésd3£¬¶à¸öÌØÕ÷Âë°ë½Ç¶ººÅÇø·Ö£¬Èçsd3,MY200
+      <input type="text" name="yktcard" class="myinput"/> <br/>è¯·å†™å…¥ç»‘å®šçš„ä¸€å¡é€šå¡å·ç‰¹å¾ç ï¼Œæ¯”å¦‚å¡å·æ˜¯sd3å¼€å¤´ï¼Œå¯ä»¥å†™æˆsd3ï¼Œå¤šä¸ªç‰¹å¾ç åŠè§’é€—å·åŒºåˆ†ï¼Œå¦‚sd3,MY200
     </td>
   </tr>
   <tr>
-    <td class="buylt">°ó¶¨ÉÌÆ·£º</td>
+    <td class="buylt">ç»‘å®šå•†å“ï¼š</td>
     <td class="buyrt">
       <select id="pname" style="width:250px;" onchange="set(this)">
       <!--foreach($vd['items'] as $item){-->
@@ -43,20 +43,20 @@
     </td>
   </tr>
   <tr>
-    <td class="buylt">°ó¶¨ÉÌÆ·ÃæÖµ£º</td>
+    <td class="buylt">ç»‘å®šå•†å“é¢å€¼ï¼š</td>
     <td class="buyrt"><span id="listprice">--</span>{$vd['lang']['moneyunit']}</td>
   </tr>
   <tr>
-    <td class="buylt">°ó¶¨ÉÌÆ·ÀàĞÍ£º</td>
+    <td class="buylt">ç»‘å®šå•†å“ç±»å‹ï¼š</td>
     <td class="buyrt"><span id="ptype">--</span></td>
   </tr>
   <tr>
-    <td class="buylt">ÊÇ·ñÒÑ¾­±»°ó¶¨£º</td>
+    <td class="buylt">æ˜¯å¦å·²ç»è¢«ç»‘å®šï¼š</td>
     <td class="buyrt"><span id="isbind">--</span></td>
   </tr>
   <tr>
     <td class="buylt" height="50px"></td>
-    <td class="buyrt"><input type="submit" value="È·ÈÏÌí¼Ó" class="mysubmit"/> <input type="reset" value="ÖØÖÃ" class="myreset"/></td>
+    <td class="buyrt"><input type="submit" value="ç¡®è®¤æ·»åŠ " class="mysubmit"/> <input type="reset" value="é‡ç½®" class="myreset"/></td>
   </tr>
 </table>
 </form>
@@ -72,9 +72,9 @@
     $("ptype").innerHTML = ProductType("{$vd['items'][0]['ptype']}");
     $("pid").value = {$vd['items'][0]['pid']};
     <!--if($vd['items'][0]['yktpid'] > 0){-->
-    $("isbind").innerHTML = "ÊÇ";
+    $("isbind").innerHTML = "æ˜¯";
     <!--}else{-->
-    $("isbind").innerHTML = "·ñ";
+    $("isbind").innerHTML = "å¦";
     <!--}-->
   <!--}-->
   
@@ -82,11 +82,11 @@
   {
     var val = obj.options[obj.selectedIndex].value;
     var tmp = val.split("|");
-    //»ñÈ¡¼Û¸ñ
+    //è·å–ä»·æ ¼
     $("listprice").innerHTML = tmp[1];
     $("ptype").innerHTML = ProductType(tmp[2]);
     $("pid").value = tmp[0];
-    $("isbind").innerHTML = tmp[3] > 0 ? "ÊÇ" : "·ñ";
+    $("isbind").innerHTML = tmp[3] > 0 ? "æ˜¯" : "å¦";
   }
 
   function ProductType(val)
@@ -94,15 +94,15 @@
     switch(val)
     {
       case "0":
-        return "¿¨ÃÜÉÌÆ·";
+        return "å¡å¯†å•†å“";
       case "1":
-        return "×Ô¶¯³äÖµ";
+        return "è‡ªåŠ¨å……å€¼";
       case "2":
-        return "´ú³äÉÌÆ·";
+        return "ä»£å……å•†å“";
       case "3":
-        return "QQÉÌÆ·";
+        return "QQå•†å“";
       default:
-        return "¿¨ÃÜÉÌÆ·";
+        return "å¡å¯†å•†å“";
     }
   }
 </script>

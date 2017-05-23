@@ -91,7 +91,7 @@ class SupController extends Controller
 								$R4e420efcc3 = $R026f0167b4;
 								$this->Assign( "item", $R4e420efcc3 );
 								$Re42bde3c42 = getvar( "ubzpname" );
-								$Re42bde3c42 = iconv( "UTF-8", "gb2312//IGNORE", $Re42bde3c42 );
+								$Re42bde3c42 = iconv( "UTF-8", "utf-8//IGNORE", $Re42bde3c42 );
 								$this->Assign( "suppname", $Re42bde3c42 );
 								$this->Assign( "suppid", $Rdc410fe8bb );
 						
@@ -131,7 +131,7 @@ class SupController extends Controller
 								$R55c494bb27 = $this->GetProductCache( $Rdc410fe8bb );
 								if ( !isset( $R55c494bb27['pname'] ) )
 								{
-												$this->Alert( "ÉÌÆ·ÒÑ¾­²»´æÔÚ£¬ÇëÉ¾³ý¶Ô½Ó¼´¿É" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ô½Ó¼ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R056735882a = $R4e420efcc3['info']['totlerow'];
@@ -170,7 +170,7 @@ class SupController extends Controller
 				public function SimplePid( )
 				{
 								$R7965cb3798 = getvar( "keywords", "" );
-								$R7965cb3798 = iconv( "UTF-8", "gb2312//IGNORE", $R7965cb3798 );
+								$R7965cb3798 = iconv( "UTF-8", "utf-8//IGNORE", $R7965cb3798 );
 								$data = array(
 												"keywords" => urlencode( $R7965cb3798 ),
 												"page" => intval( request( "page" ) ),
@@ -182,7 +182,7 @@ class SupController extends Controller
 								$R4e420efcc3 = $Rd67d5099b6->IProduct_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
 								include_once( UPATH_HELPER."ProductHelper.php" );
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 							
 												$this->View( );
 							
@@ -264,7 +264,7 @@ class SupController extends Controller
 												$data['action'] = $this->action[2];
 								}
 								$this->service->ISup_Save( $data );
-								$this->Alert( "Íê³É²Ù×÷£¡" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R90d20f095b = intval( request( "frm" ) );
 								if ( $R90d20f095b == 1 )
 								{
@@ -290,7 +290,7 @@ class SupController extends Controller
 								$this->service->ISup_Save( $data );
 								if ( $R636bb4567a != 1 )
 								{
-												$this->Alert( "Íê³ÉÉ¾³ý£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½" );
 								}
 								$R90d20f095b = intval( request( "frm" ) );
 								if ( $R636bb4567a == 0 )

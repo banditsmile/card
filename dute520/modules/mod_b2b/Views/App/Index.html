@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
 <style type="text/css">
 td{height:30px}
@@ -18,10 +18,10 @@ td{height:30px}
 <table border="0" width="100%" style="border-collapse: collapse;margin-top:5px;border:1px #cccccc solid;background:#fff">
   <tr>
     <td height="23" class="listhead headcur" onclick="TabGo(0)" id="td0" width="25%">
-    <div class="cursor">ÒÑÏÂÔØ³ÌĞò</div>
+    <div class="cursor">å·²ä¸‹è½½ç¨‹åº</div>
     </td>
     <td height="23" class="listhead" onclick="TabGo(1)" id="td1" width="25%">
-    <div class="cursor">¿ÉÏÂÔØ³ÌĞò</div>
+    <div class="cursor">å¯ä¸‹è½½ç¨‹åº</div>
     </td>
     <td height="23" class="listhead" width="50%">
     <div id="ccinfo"></div>
@@ -32,7 +32,7 @@ td{height:30px}
       <div style="height:500px;overflow-y:auto;" id="tplcontent">
       <!--foreach($vd['items'] as $item){-->
       <div style="width:55px;border:0px #cccccc solid;float:left;margin:5px;text-align:center;cursor:pointer" onclick="wingo('{$item['main']}','{$item['newwin']}')">
-        <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="°æ±¾ {$item['ver']}">
+        <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="ç‰ˆæœ¬ {$item['ver']}">
         <div style="text-align:center">{$item['name']}</div>
       </div>
       <!--}-->
@@ -43,7 +43,7 @@ td{height:30px}
 <div id="downed" style="display:none">
   <!--foreach($vd['items'] as $item){-->
   <div style="width:55px;border:0px #cccccc solid;float:left;margin:5px;text-align:center;cursor:pointer" onclick="wingo('{$item['main']}','{$item['newwin']}')">
-    <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="°æ±¾ {$item['ver']}">
+    <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="ç‰ˆæœ¬ {$item['ver']}">
     <div style="text-align:center">{$item['name']}</div>
   </div>
   <!--}-->
@@ -54,7 +54,7 @@ td{height:30px}
 <div id="indexdown" style="display:none"></div>
 <input type="hidden" name="path" value='<!--echo urlencode("update/update.zip");-->'/>
 <div id="load" style="display:none">
-  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>ÕıÔÚ¼ÓÔØÖĞÇëÉÔµÈ...</div>
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>æ­£åœ¨åŠ è½½ä¸­è¯·ç¨ç­‰...</div>
 </div>
 </body>
 <script type="text/javascript">  
@@ -131,12 +131,12 @@ td{height:30px}
   
   function getXMLHander()
   {
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
     if (window.XMLHttpRequest)
     {
       xmlhttp=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // é’ˆå¯¹ IE çš„ä»£ç ï¼š
     else if (window.ActiveXObject)
     {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -169,21 +169,21 @@ td{height:30px}
             {
               if(ackdata == 0 || ackdata == "0")
               {
-                $(id).innerHTML = txt_succ + "£¡";
+                $(id).innerHTML = txt_succ + "ï¼";
                 loadDisp(0);
                 nextstep(step);
               }
               else
               {
                 loadDisp(0);
-                $(id).innerHTML = txt_fail + "£¡";
+                $(id).innerHTML = txt_fail + "ï¼";
               }
             }
           }
           else
           {
             loadDisp(0);
-            $(id).innerHTML = txt_err + "£¡";
+            $(id).innerHTML = txt_err + "ï¼";
           }
         }
       }
@@ -193,15 +193,15 @@ td{height:30px}
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP£¬ÎŞ·¨Íê³É±¾´Î²Ù×÷")
+      alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTPï¼Œæ— æ³•å®Œæˆæœ¬æ¬¡æ“ä½œ")
     }
   }
   
   function down(id)
   {
-    $("ccinfo").innerHTML = "ÕıÔÚÏÂÔØ°²×°°ü...£¡";
-    setText("ÕıÔÚÏÂÔØ°²×°°ü...£¡");
-    loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=DownApp&id="+id, "ccinfo", '°²×°°üÏÂÔØÍê³É..£¡', '°²×°°üÏÂÔØÊ§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂ°²×°°üÏÂÔØÊ§°Ü..£¡', 1);
+    $("ccinfo").innerHTML = "æ­£åœ¨ä¸‹è½½å®‰è£…åŒ…...ï¼";
+    setText("æ­£åœ¨ä¸‹è½½å®‰è£…åŒ…...ï¼");
+    loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=DownApp&id="+id, "ccinfo", 'å®‰è£…åŒ…ä¸‹è½½å®Œæˆ..ï¼', 'å®‰è£…åŒ…ä¸‹è½½å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å®‰è£…åŒ…ä¸‹è½½å¤±è´¥..ï¼', 1);
   }
   
   function nextstep(step)
@@ -210,24 +210,24 @@ td{height:30px}
     {
       case 1:
         //unzip
-        $("ccinfo").innerHTML = "Ó¦ÓÃ¿ªÊ¼°²×°...£¡";
-        setText("Ó¦ÓÃ¿ªÊ¼°²×°...£¡");
-        loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=UnZip&issys=1&path="+$("path").value, "ccinfo", 'Éı¼¶°ü°²×°Íê³É..£¡', 'Éı¼¶°ü°²×°Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÉı¼¶°ü°²×°Ê§°Ü..£¡', 2);
+        $("ccinfo").innerHTML = "åº”ç”¨å¼€å§‹å®‰è£…...ï¼";
+        setText("åº”ç”¨å¼€å§‹å®‰è£…...ï¼");
+        loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=UnZip&issys=1&path="+$("path").value, "ccinfo", 'å‡çº§åŒ…å®‰è£…å®Œæˆ..ï¼', 'å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 2);
         break;
       case 2:
-        //¸üĞÂÊı¾İ¿â
-        $("ccinfo").innerHTML = "ÕıÔÚÉı¼¶Êı¾İ¿â...£¡";
-        setText("ÕıÔÚÉı¼¶Êı¾İ¿â...£¡");
-        loadXMLDoc("update/upgrade.php", "ccinfo", 'Êı¾İ¿âÉı¼¶Íê³É..£¡', 'Êı¾İ¿âÉı¼¶Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÊı¾İ¿âÉı¼¶Ê§°Ü..£¡', 3);
+        //æ›´æ–°æ•°æ®åº“
+        $("ccinfo").innerHTML = "æ­£åœ¨å‡çº§æ•°æ®åº“...ï¼";
+        setText("æ­£åœ¨å‡çº§æ•°æ®åº“...ï¼");
+        loadXMLDoc("update/upgrade.php", "ccinfo", 'æ•°æ®åº“å‡çº§å®Œæˆ..ï¼', 'æ•°æ®åº“å‡çº§å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´æ•°æ®åº“å‡çº§å¤±è´¥..ï¼', 3);
         break;
       case 3:
         //deletefile
-        $("ccinfo").innerHTML = "¿ªÊ¼É¾³ı°²×°°ü...£¡";
-        setText("¿ªÊ¼É¾³ı°²×°°ü...£¡");
-        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "ccinfo", '°²×°°üÉ¾³ıÍê³É..£¡', '°²×°°üÉ¾³ıÊ§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÉı¼¶°ü°²×°Ê§°Ü..£¡', 4);
+        $("ccinfo").innerHTML = "å¼€å§‹åˆ é™¤å®‰è£…åŒ…...ï¼";
+        setText("å¼€å§‹åˆ é™¤å®‰è£…åŒ…...ï¼");
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "ccinfo", 'å®‰è£…åŒ…åˆ é™¤å®Œæˆ..ï¼', 'å®‰è£…åŒ…åˆ é™¤å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 4);
         break;
       default:
-        $("ccinfo").innerHTML = "³ÌĞò°²×°Íê³É£¡<a href='update/update.txt' target='_blank'>²é¿´Ïà¹ØÄÚÈİ...</a>";
+        $("ccinfo").innerHTML = "ç¨‹åºå®‰è£…å®Œæˆï¼<a href='update/update.txt' target='_blank'>æŸ¥çœ‹ç›¸å…³å†…å®¹...</a>";
         flash = 1;
         break;
     }
@@ -241,7 +241,7 @@ td{height:30px}
     <!--foreach($vd['localitems'] as $item){-->
     <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
       <img src="{$vd['root']}themes/thumb/{$item['thumb']}" border="0" width="100%">
-      <div style="margin:5px 2px;float:left;">{$item['name']} [<a href="#" onclick='setup("{$item['file']}")'>°²×°</a>]</div>
+      <div style="margin:5px 2px;float:left;">{$item['name']} [<a href="#" onclick='setup("{$item['file']}")'>å®‰è£…</a>]</div>
     </div>
     <!--}-->
     <input type="hidden" id="totlepage" value="1"/>
@@ -251,10 +251,10 @@ td{height:30px}
     <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
       <img src="{$item['thumb']}" border="0" width="100%">
       <div style="margin:10px 2px 3px;float:left;width:95%">
-        {$item['name']} [<a href="#" onclick='down("{$item['id']}")'>ÏÂÔØ</a>][<a href="{$item['demo']}" target="_blank">ÑİÊ¾</a>]
+        {$item['name']} [<a href="#" onclick='down("{$item['id']}")'>ä¸‹è½½</a>][<a href="{$item['demo']}" target="_blank">æ¼”ç¤º</a>]
       </div>
-      <div style="margin:3px 2px;float:left;width:95%">ÊÊÓÃ£º{$item['version']}</div>
-      <div style="margin:3px 2px;float:left;width:95%">×÷Õß£º{$item['author']}</div>
+      <div style="margin:3px 2px;float:left;width:95%">é€‚ç”¨ï¼š{$item['version']}</div>
+      <div style="margin:3px 2px;float:left;width:95%">ä½œè€…ï¼š{$item['author']}</div>
     </div>
     <!--}-->
     <input type="hidden" id="totlepage" value="{$vd['totlepage']}"/>

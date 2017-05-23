@@ -1,446 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÕË»§¼ä×ª¿î</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<form name="personnel" method="post" action="index.php?m=mod_agent&c=staff&a=save">
-  <div class="new_qie">
-    <div class="new_qie2">
-      <h2> <a href="index.php?m=mod_agent&c=staff&nrows=500" class="goback">·µ»ØÔ±¹¤ÁĞ±í</a> <em>-</em> Ìí¼ÓÔ±¹¤ÕË»§</h2>
-    </div>
-  </div>
-  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left" style="width: 25%">µÇÂ½ÕËºÅ£º</td>
-		<td width="78%" class="tableright1"><div align="left">
-		  <input type='text' size='20' maxlength='30' name='staffname' class='input0' datatype="Username" msg="Ô±¹¤ÓÃ»§Ãû²»·ûºÏÒªÇó" tabindex="1">
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">µÇÂ½ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" class="input0" id="staffpwd" name="staffpwd"/>
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">È·ÈÏµÇÂ½ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" class="input0" id="restaffpwd" name="restaffpwd"/>
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">½»Ò×ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" class="input0" id="tradepwd" name="tradepwd"/>
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">È·ÈÏ½»Ò×ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" class="input0" id="retradepwd" name="retradepwd"/>
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ÊÇ·ñÆôÓÃ½»Ò×ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="radio" name="checktradepwd" value="1" id="usetradepass" checked>
-		  <u><font color=#0000ff>ÆôÓÃ½»Ò×ÃÜÂë</font></u></div>
-		  <label for="usetradepass" tabindex="7"></label> <div align="left">
-		    <input type="radio" name="checktradepwd" value="0" id="nousetradepass" tabindex="8">
-		    <u><font color=#ff0000>²»ÆôÓÃ½»Ò×ÃÜÂë</font></u></div>		  <label for="nousetradepass"></label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ĞÕÃû£º</td>
-      <td class="tableright1">
-        <div align="left">
-          <input type="text" class="input0" style="font-weight:normal" id="realname" name="realname" value=""/>
-        </div></td>
-    </tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ÓÊÏä£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="text" class="input0" id="email" name="email" value=""/>
-		  </div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">ÊÖ»ú£º</td>
-      <td class="tableright1"><div align="left">
-        <input type="text" class="input0" id="mobile" name="mobile" value=""/>
-      </div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">µç»°£º</td>
-      <td class="tableright1"><div align="left">
-        <input type="text" class="input0" id="tel" name="tel" value=""/>
-      </div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">µØÖ·£º</td>
-      <td class="tableright1"><div align="left">
-        <input type="text" class="input0" id="addr" name="addr" value=""/>
-      </div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">ÆäËü£º</td>
-      <td class="tableright1"><div align="left">
-        <input type="text" class="input0" id="other" name="other" value=""/>
-      </div></td>
-    </tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">×´Ì¬£º</td>
-		  <td class="tableright1"><div align="left">
-		    <input type="radio" name="frozen" value="0" id="nofrozen" checked />
-		    <u><font color=#0000ff>Æô¶¯</font></u></div>
-		    <label for="nofrozen" tabindex="7"></label> <div align="left">
-		      <input type="radio" name="frozen" value="0" id="frozen" />
-		      <u><font color=#ff0000>¶³½á</font></u></div>		    <label for="frozen"></label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">Ã¿ÈÕÏû·Ñ¶î£º</td>
-		<td class="tableright1">
-			<div align="left">
-			  <input type='text' size='15' maxlength='20' name='dayconsum' class='input0' value="0" datatype="Integer" msg="Ã¿ÈÕÏû·ÑÏŞ¶î±ØĞëÊÇÕûÊı" tabindex="18"> 
-		    <font color=#cccccc>0±íÊ¾²»ÏŞÖÆ</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ÏÔÊ¾½ø¼Û£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="radio" name="canseeprice" value="1" id="canseeprice" checked tabindex="19">
-		  <font color=#0000ff><u>ÏÔÊ¾</u></font></div>
-		  <label for="canseeprice"></label> <div align="left">
-		    <input type="radio" name="canseeprice" value="0" id="nodisprice" tabindex="20">
-		    <font color=#cccccc><u>²»ÏÔÊ¾</u></font></div>		  <label for="nodisprice"></label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ĞŞ¸ÄÊÛ¼Û£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="radio" name="caneditbuyerprice" value="1" id="caneditbuyerprice" tabindex="21">
-		  <font color=#0000ff><u>ÄÜĞŞ¸Ä</u></font></div>
-		  <label for="caneditbuyerprice"></label> <div align="left">
-		    <input type="radio" name="caneditbuyerprice" value="0" checked id="noeditprice" tabindex="22">
-		    <font color=#cccccc><u>²»ÄÜĞŞ¸Ä</u></font></div>		  <label for="noeditprice"></label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ÄÜ·ñ²éÑ¯ÆäËüÔ±¹¤¼ÇÂ¼£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="radio" name="canseeothers" value="1" id="canseeothers" tabindex="23">
-		  <font color=#0000ff><u>ÄÜ²é¿´</u></font>		  </div>
-		  <label for="canseeothers"></label> <div align="left">
-		    <input type="radio" name="canseeothers" value="0" checked id="noqueryotherdata" tabindex="24">
-		    <font color=#cccccc><u>²»ÄÜ²é¿´</u></font>		    </div>		  <label for="noqueryotherdata"></label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">Ô±¹¤È¨ÏŞ</td>
-		<td class="tableright1">
-		  <div align="left">
-		    <?php
-		$auright1 = array(
-		array(0,'¹º¿¨ÊÛÓÃ»§',1),
-		array(1,'½ø»õ¼ÇÂ¼²éÑ¯',1),
-		array(34,'ÏúÊÛ¼ÇÂ¼²éÑ¯',0),
-		array(3,'¸øÕË»§³äÖµ',0),
-		array(5,'²é¿´ÕË»§×Ê½ğ±ä¶¯¼ÇÂ¼',0),
-		array(6,'×Ê½ğËø¶¨',0),
-		array(26,'½è¿î¹ÜÀí',0),
-		array(12,'²Ù×÷ÈÕÖ¾',0),
-		array(16,'ÔÚÏßÍ¶ËßÏµÍ³',1),
-		array(18,'Æ½Ì¨ÄÚ²¿¶ÌĞÅ',1),
-		array(19,'»ã¿îÍ¨ÖªÊé',0),
-		array(23,'Ô±¹¤ÕÊ»§¹ÜÀí',0),
-		array(11,'Ô±¹¤ÁãÊÛÀûÈó±¨±í',0),
-		array(35,'Ô±¹¤ÁãÊÛ¼ÛÉè¶¨',0),
-		array(38,'Ô±¹¤½áÕÊ¹ÜÀí',1),
-		array(20,'ÕÊ»§ÃÜÂëÉè¶¨',1),
-		array(15,'ÕË»§°²È«¼ì²é',1),
-		array(39,'IP¼°ËùÔÚµØ°²È«°ó¶¨',1),
-		array(40,'Ó²¼şĞÅÏ¢°²È«°ó¶¨',1),
-		array(41,'ÊÖ»úÁîÅÆ°²È«°ó¶¨',1),
-    array(42,'ÃÜ±£²úÆ·°²È«°ó¶¨',1),
-    array(52,'»ı·Ö¹ÜÀí',0)
-		);
-		
-		if($vd['ainfo']['tbcz'] == 1)
-    {
-    	$auright1[] = array(64,'ÌÔ±¦Ğ¡µêÁĞ±í/¹Ò»ú',0);
-    	$auright1[] = array(65,'ÌÔ±¦Ğ¡µêÌí¼Ó',0);
-    	$auright1[] = array(66,'ÌÔ±¦¶©µ¥¼ÇÂ¼',0);
-    }
-    
-		$auright2 = array(
-		array(51,'¹ÜÀí¾­ÏúÉÌÏµÍ³',0),
-		array(4,'ÕË»§Óà¶îÏêÏ¸',0),
-		array(2,'ĞŞ¸ÄÏÂ¼Ò½ø¼Û',0),
-		array(9,'»®¿î¸øÏÂ¼¶¿Í»§',0),
-		array(13,'´ú×¢²áÏÂ¼¶ÕÊºÅ',0),
-		array(14,'ÏÂ¼¶¿Í»§µµ°¸¹ÜÀí',0),
-		array(28,'×ÔÓĞÉÌÆ··¢²¼Óë¹ÜÀí',0),
-		array(29,'×ÔÓĞÉÌÆ·Ìí¼Ó',0),
-		array(45,'×ÔÓĞÉÌÆ·¶¨¼Û',0),
-		array(31,'×ÔÓĞÉÌÆ·¿â´æ',0),
-    array(56,'×ÔÓĞÉÌÆ·³äÖµ¹ÜÀí',0),
-		array(44,'ÉÌÆ·ÏúÊÛ±¨±í²éÑ¯',0),
-		array(32,'ÏúÊÛÊÕÈëÈëÕÊ¼ÇÂ¼',0),
-		array(30,'ÏÂ¼¶¿Í»§¼Û¸ñ¹ÜÀí',0),
-		array(46,'ÏÂ¼¶¿Í»§¹º¿¨È¨ÏŞ',0),
-		array(47,'ÏÂ¼¶¿Í»§Ïû·Ñ¼ÇÂ¼',0),
-		array(48,'ÏÂ¼¶»ã¿îÍ¨ÖªÊé',0),
-		array(49,'ÒµÎñÔ±ÕÊ»§¹ÜÀí',0),
-    array(50,'ÒµÎñÔ±Òµ¼¨²éÑ¯',0),
-    array(57,'´úÀíÒ»¿¨Í¨ÁĞ±í',0),
-    array(58,'´úÀíÒ»¿¨Í¨»»¹º¼ÇÂ¼',0),
-    array(59,'»»¹ºÉÌÆ··µµã·ÑÂÊ',0),
-    array(60,'Ò»¿¨Í¨·µµãÃ÷Ï¸',0)
-		);
-		
-		if($vd['ainfo']['vipshop'] == 1)
-    {
-    	$auright2[] = array(53,'VIPÆ½Ì¨ÉèÖÃ',0);
-      $auright2[] = array(62,'VIP·ç¸ñÑ¡Ôñ',0);
-      $auright2[] = array(63,'VIP·ç¸ñ×Ô¶¨Òå',0);
-      $auright2[] = array(54,'VIPÆ½Ì¨¹ã¸æ',0);
-      $auright2[] = array(55,'VIPÆ½Ì¨¹«¸æ',0);
-    }
-		?>
-		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-		      <tr><td colspan="4"><b><div align="left">Ö±ÏúÉÌ¹¦ÄÜ£º</b></td></tr>
-		      <!--$i=0;foreach($auright1 as $item){-->
-		      
-		      <!--if($vd['leftrights'][$item[0]] == 1){-->
-		      
-		      <!--if($i == 0){-->
-		      <tr>
-		        <!--}$i++;-->
-		        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" <!--if($item[2]){--> checked<!--}--> /><label for="rights_{$item[0]}">{$item[1]}</label></td>
-    	    <!--if($i == 4){-->
-		        </tr>
-		      <!--$i=0;}-->
-		      
-		      <!--}-->
-		      
-		      <!--}-->
-		      
-		      <!--if($i > 0){-->
-		      <!--for($j=0; $j < 4 - $i; $j++){-->
-		      <td width="25%" class=stline>&nbsp;</td>
-    	    <!--}-->
-		        </tr>
-		      <!--}-->
-		      </table>
-		    <!--if($vd['mygid'] > 1){-->
-		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-		      <tr><td colspan="4"><b><div align="left">¾­ÏúÉÌ¹¦ÄÜ£º</b></td></tr>
-		      <!--$i=0;foreach($auright2 as $item){-->
-		      
-		      <!--if($vd['leftrights'][$item[0]] == 1){-->
-		      
-		      <!--if($i == 0){-->
-		      <tr>
-		        <!--}$i++;-->
-		        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" <!--if($item[2]){--> checked<!--}--> /><label for="rights_{$item[0]}">{$item[1]}</label></td>
-    	    <!--if($i == 4){-->
-		        </tr>
-		      <!--$i=0;}-->
-		      
-		      <!--}-->
-		      
-		      <!--}-->
-		      <!--if($i > 0){-->
-		      <!--for($j=0; $j < 4 - $i; $j++){-->
-		      <td width="25%" class=stline>&nbsp;</td>
-    	    <!--}-->
-		        </tr>
-		      <!--}-->
-		      </table>
-		    <!--}-->		
-		      </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">°ó¶¨IPµØÖ·£º</td>
-      <td class="tableright1">
-      <div align="left">
-        <input type="radio" name="ipcheck" value="1" onClick="setdisp('ip',1)"  id="yesbind" />
-        <font color=#0000ff>°ó¶¨IPµØÖ·</font></div>
-      <label for="yesbind"></label> <div align="left">
-        <input type="radio" name="ipcheck" value="0" onClick="setdisp('ip',0)" id="nobind" checked />
-        <font color=#cccccc>Î´°ó¶¨IPµØÖ·</font>      </div>      <label for="nobind"></label>      </td>
-    </tr>
-		<tr id="iptr" style="display:none">
-		  <td class="table1_left" style="width: 25%">IPµØÖ·£º</td>
-		  <td class="tableright1">
-		  	<div align="left">
-		  	  <!--for($i=0; $i<5; $i++){-->
-		  	  </div>
-		  	<div style="height:30px">
-		  	  <div align="left">
-		  	    <input type="text" class="myinput" size="25" name="ip[]" id="ip_{$i}" value=""/>
-		  	    <input type="button" name="button" value="È¡IPµØÖ·" class="tijiao_input" onClick="getip({$i})">
-		  	    </div>
-		  	</div>
-		  	<div align="left">
-		  	  <!--}-->		  
-	  	    </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">°ó¶¨Íø¿¨£º</td>
-      <td class="tableright1">
-      <div align="left">
-        <input type="radio" name="maccheck" value="1" onClick="setdisp('mac',1)"  id="yesbindmac" checked />
-        <font color=#0000ff>°ó¶¨Íø¿¨µØÖ·</font></div>
-      <label for="yesbindmac"></label> <div align="left">
-        <input type="radio" name="maccheck" value="0" onClick="setdisp('mac',0)" id="nobindmac" checked />
-        <font color=#cccccc>Î´°ó¶¨Íø¿¨µØÖ·</font></div>      <label for="nobindmac"></label>      </td>
-    </tr>
-		<tr id="mactr" style="display:none">
-		  <td class="table1_left" style="width: 25%">Íø¿¨µØÖ·</td>
-		  <td class="tableright1">
-		  	<div align="left">
-		  	  <!--for($i=0; $i<5; $i++){-->
-		  	  </div>
-		  	<div style="height:30px">
-		  	  <div align="left">
-		  	    <input type="text" class="myinput" size="25" name="mac[]" id="mac_{$i}" value=""/>
-		  	    <input type="button" name="button" value="È¡±¾»úÍø¿¨" class="tijiao_input" onClick="getmac({$i})">
-		  	    </div>
-		  	</div>
-		  	<div align="left">
-		  	  <!--}-->		  
-	  	    </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">°ó¶¨Ó²ÅÌ£º</td>
-      <td class="tableright1">
-      <div align="left">
-        <input type="radio" name="hdecheck" value="1" onClick="setdisp('hde',1)"  id="yesbindhde" />
-        <font color=#0000ff>°ó¶¨Ó²ÅÌ±àÂë</font></div>
-      <label for="yesbindhde"></label> <div align="left">
-        <input type="radio" name="hdecheck" value="0" onClick="setdisp('hde',0)" id="nobindhde" checked />
-        <font color=#cccccc>Î´°ó¶¨Ó²ÅÌ±àÂë</font></div>      <label for="nobindhde"></label>      </td>
-    </tr>
-		<tr id="hdetr" style="display:none">
-		  <td class="table1_left" style="width: 25%">Ó²ÅÌ±àÂë</td>
-		  <td class="tableright1">
-		  	<div align="left">
-		  	  <!--for($i=0; $i<5; $i++){-->
-		  	  </div>
-		  	<div style="height:30px">
-		  	  <div align="left">
-		  	    <input type="text" class="myinput" size="25" name="hde[]" id="hde_{$i}" value=""/>
-		  	    <input type="button" name="button" value="È¡±¾»úÓ²ÅÌ" class="tijiao_input" onClick="gethde({$i})">
-		  	    </div>
-		  	</div>
-		  	<div align="left">
-		  	  <!--}-->		  
-	  	    </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">°ó¶¨CPU£º</td>
-      <td class="tableright1">
-      <div align="left">
-        <input type="radio" name="cpucheck" value="1" onClick="setdisp('cpu',1)" id="yesbindcpu" />
-        <font color=#0000ff>°ó¶¨CPU±àÂë</font>      </div>
-      <label for="yesbindcpu"></label> <div align="left">
-        <input type="radio" name="cpucheck" value="0" onClick="setdisp('cpu',0)" id="nobindcpu" checked />
-        <font color=#cccccc>Î´°ó¶¨CPU±àÂë</font>      </div>      <label for="nobindcpu"></label>      </td>
-    </tr>
-		<tr id="cputr" style="display:none">
-		  <td class="table1_left" style="width: 25%">CPU±àÂë</td>
-		  <td class="tableright1">
-		  	<div align="left">
-		  	  <!--for($i=0; $i<5; $i++){-->
-		  	  </div>
-		  	<div style="height:30px">
-		  	  <div align="left">
-		  	    <input type="text" class="myinput" size="25" name="cpu[]" id="cpu_{$i}" value=""/>
-		  	    <input type="button" name="button" value="È¡±¾»úCPU" class="tijiao_input" onClick="getcpu({$i})">
-		  	    </div>
-		  	</div>
-		  	<div align="left">
-		  	  <!--}-->		  
-	  	    </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">ÊäÈë³¬¼¶ÃÜÂëÈ·ÈÏ</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" name="superpwd" size="30" class="input0"/>
-		  </div></td>
-		</tr>
-		
-		<tr>
-		  <td class="table1_left" style="width: 25%">×îºó²Ù×÷</td>
-		<td height="30" class="tableright1"><div align="left">
-		  <input type="submit" name="submit" value="Íê³ÉÌí¼Ó" class="tijiao_input" tabindex="24">
-		  <input type="reset" value="ÖØĞÂÌîĞ´" class="fanhui_input" name="reset" tabindex="25">
-		  </div></td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-  </table>
-</form>
-<input type="hidden" id="tmac" name="tmac"  value=""/>
-<script type="text/javascript">
-	var $ = function(id) {
-		return document.getElementById(id);
-	}
-	
-  function setdisp(tr, flag)
-  {
-  	$(tr+"tr").style.display = flag == 1 ? "" : "none"
-  }
-  
-	
-  function getip(i)
-  {
-  	$("ip_"+i).value = "{$vd['ip']}";
-  }
-  
-  function getmac(i)
-  {
-  	$("mac_"+i).value = document.all.t1.GetMacAddr;
-  }
-  
-  function getcpu(i)
-  {
-  	$("cpu_"+i).value = document.all.t1.GetCpuId;
-  }
-  
-  function gethde(i)
-  {
-  	$("hde_"+i).value = document.all.t1.GetHDE;
-  }
-
-</script>
-<?php
-   $fp = fopen($vd['sc']."tools/root.cer", "r");
-   $cert = fread($fp, 8192);
-   fclose($fp);
-?>
-<script type="text/JavaScript">
-$("tmac").value = document.all.t1.GetMacAddr;
-if($("tmac").value == "" || $("tmac").value == "undefined")
-{
-  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');
-}
-
-</script>
-<script language="vbscript">
-ON ERROR resume next
-<?php
-    $newcert = "sPKCS7=\"\"\r\n";
-    $line=strtok($cert,"\r\n");
-    while($line)
-    {
-     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";
-     $line=strtok("\r\n");
-    }
-    echo $newcert;
-?> 
-XEnroll.InstallPKCS7 sPKCS7 
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è´¦æˆ·é—´è½¬æ¬¾</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><form name="personnel" method="post" action="index.php?m=mod_agent&c=staff&a=save">  <div class="new_qie">    <div class="new_qie2">      <h2> <a href="index.php?m=mod_agent&c=staff&nrows=500" class="goback">è¿”å›å‘˜å·¥åˆ—è¡¨</a> <em>-</em> æ·»åŠ å‘˜å·¥è´¦æˆ·</h2>    </div>  </div>  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left" style="width: 25%">ç™»é™†è´¦å·ï¼š</td>		<td width="78%" class="tableright1"><div align="left">		  <input type='text' size='20' maxlength='30' name='staffname' class='input0' datatype="Username" msg="å‘˜å·¥ç”¨æˆ·åä¸ç¬¦åˆè¦æ±‚" tabindex="1">		  </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç™»é™†å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" class="input0" id="staffpwd" name="staffpwd"/>		  </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç¡®è®¤ç™»é™†å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" class="input0" id="restaffpwd" name="restaffpwd"/>		  </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">äº¤æ˜“å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" class="input0" id="tradepwd" name="tradepwd"/>		  </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç¡®è®¤äº¤æ˜“å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" class="input0" id="retradepwd" name="retradepwd"/>		  </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">æ˜¯å¦å¯ç”¨äº¤æ˜“å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="radio" name="checktradepwd" value="1" id="usetradepass" checked>		  <u><font color=#0000ff>å¯ç”¨äº¤æ˜“å¯†ç </font></u></div>		  <label for="usetradepass" tabindex="7"></label> <div align="left">		    <input type="radio" name="checktradepwd" value="0" id="nousetradepass" tabindex="8">		    <u><font color=#ff0000>ä¸å¯ç”¨äº¤æ˜“å¯†ç </font></u></div>		  <label for="nousetradepass"></label></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">å§“åï¼š</td>      <td class="tableright1">        <div align="left">          <input type="text" class="input0" style="font-weight:normal" id="realname" name="realname" value=""/>        </div></td>    </tr>		<tr>		  <td class="table1_left" style="width: 25%">é‚®ç®±ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="text" class="input0" id="email" name="email" value=""/>		  </div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">æ‰‹æœºï¼š</td>      <td class="tableright1"><div align="left">        <input type="text" class="input0" id="mobile" name="mobile" value=""/>      </div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">ç”µè¯ï¼š</td>      <td class="tableright1"><div align="left">        <input type="text" class="input0" id="tel" name="tel" value=""/>      </div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">åœ°å€ï¼š</td>      <td class="tableright1"><div align="left">        <input type="text" class="input0" id="addr" name="addr" value=""/>      </div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">å…¶å®ƒï¼š</td>      <td class="tableright1"><div align="left">        <input type="text" class="input0" id="other" name="other" value=""/>      </div></td>    </tr>		<tr>		  <td class="table1_left" style="width: 25%">çŠ¶æ€ï¼š</td>		  <td class="tableright1"><div align="left">		    <input type="radio" name="frozen" value="0" id="nofrozen" checked />		    <u><font color=#0000ff>å¯åŠ¨</font></u></div>		    <label for="nofrozen" tabindex="7"></label> <div align="left">		      <input type="radio" name="frozen" value="0" id="frozen" />		      <u><font color=#ff0000>å†»ç»“</font></u></div>		    <label for="frozen"></label></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">æ¯æ—¥æ¶ˆè´¹é¢ï¼š</td>		<td class="tableright1">			<div align="left">			  <input type='text' size='15' maxlength='20' name='dayconsum' class='input0' value="0" datatype="Integer" msg="æ¯æ—¥æ¶ˆè´¹é™é¢å¿…é¡»æ˜¯æ•´æ•°" tabindex="18"> 		    <font color=#cccccc>0è¡¨ç¤ºä¸é™åˆ¶</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">æ˜¾ç¤ºè¿›ä»·ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="radio" name="canseeprice" value="1" id="canseeprice" checked tabindex="19">		  <font color=#0000ff><u>æ˜¾ç¤º</u></font></div>		  <label for="canseeprice"></label> <div align="left">		    <input type="radio" name="canseeprice" value="0" id="nodisprice" tabindex="20">		    <font color=#cccccc><u>ä¸æ˜¾ç¤º</u></font></div>		  <label for="nodisprice"></label></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ä¿®æ”¹å”®ä»·ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="radio" name="caneditbuyerprice" value="1" id="caneditbuyerprice" tabindex="21">		  <font color=#0000ff><u>èƒ½ä¿®æ”¹</u></font></div>		  <label for="caneditbuyerprice"></label> <div align="left">		    <input type="radio" name="caneditbuyerprice" value="0" checked id="noeditprice" tabindex="22">		    <font color=#cccccc><u>ä¸èƒ½ä¿®æ”¹</u></font></div>		  <label for="noeditprice"></label></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">èƒ½å¦æŸ¥è¯¢å…¶å®ƒå‘˜å·¥è®°å½•ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="radio" name="canseeothers" value="1" id="canseeothers" tabindex="23">		  <font color=#0000ff><u>èƒ½æŸ¥çœ‹</u></font>		  </div>		  <label for="canseeothers"></label> <div align="left">		    <input type="radio" name="canseeothers" value="0" checked id="noqueryotherdata" tabindex="24">		    <font color=#cccccc><u>ä¸èƒ½æŸ¥çœ‹</u></font>		    </div>		  <label for="noqueryotherdata"></label></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">å‘˜å·¥æƒé™</td>		<td class="tableright1">		  <div align="left">		    <?php		$auright1 = array(		array(0,'è´­å¡å”®ç”¨æˆ·',1),		array(1,'è¿›è´§è®°å½•æŸ¥è¯¢',1),		array(34,'é”€å”®è®°å½•æŸ¥è¯¢',0),		array(3,'ç»™è´¦æˆ·å……å€¼',0),		array(5,'æŸ¥çœ‹è´¦æˆ·èµ„é‡‘å˜åŠ¨è®°å½•',0),		array(6,'èµ„é‡‘é”å®š',0),		array(26,'å€Ÿæ¬¾ç®¡ç†',0),		array(12,'æ“ä½œæ—¥å¿—',0),		array(16,'åœ¨çº¿æŠ•è¯‰ç³»ç»Ÿ',1),		array(18,'å¹³å°å†…éƒ¨çŸ­ä¿¡',1),		array(19,'æ±‡æ¬¾é€šçŸ¥ä¹¦',0),		array(23,'å‘˜å·¥å¸æˆ·ç®¡ç†',0),		array(11,'å‘˜å·¥é›¶å”®åˆ©æ¶¦æŠ¥è¡¨',0),		array(35,'å‘˜å·¥é›¶å”®ä»·è®¾å®š',0),		array(38,'å‘˜å·¥ç»“å¸ç®¡ç†',1),		array(20,'å¸æˆ·å¯†ç è®¾å®š',1),		array(15,'è´¦æˆ·å®‰å…¨æ£€æŸ¥',1),		array(39,'IPåŠæ‰€åœ¨åœ°å®‰å…¨ç»‘å®š',1),		array(40,'ç¡¬ä»¶ä¿¡æ¯å®‰å…¨ç»‘å®š',1),		array(41,'æ‰‹æœºä»¤ç‰Œå®‰å…¨ç»‘å®š',1),    array(42,'å¯†ä¿äº§å“å®‰å…¨ç»‘å®š',1),    array(52,'ç§¯åˆ†ç®¡ç†',0)		);				if($vd['ainfo']['tbcz'] == 1)    {    	$auright1[] = array(64,'æ·˜å®å°åº—åˆ—è¡¨/æŒ‚æœº',0);    	$auright1[] = array(65,'æ·˜å®å°åº—æ·»åŠ ',0);    	$auright1[] = array(66,'æ·˜å®è®¢å•è®°å½•',0);    }    		$auright2 = array(		array(51,'ç®¡ç†ç»é”€å•†ç³»ç»Ÿ',0),		array(4,'è´¦æˆ·ä½™é¢è¯¦ç»†',0),		array(2,'ä¿®æ”¹ä¸‹å®¶è¿›ä»·',0),		array(9,'åˆ’æ¬¾ç»™ä¸‹çº§å®¢æˆ·',0),		array(13,'ä»£æ³¨å†Œä¸‹çº§å¸å·',0),		array(14,'ä¸‹çº§å®¢æˆ·æ¡£æ¡ˆç®¡ç†',0),		array(28,'è‡ªæœ‰å•†å“å‘å¸ƒä¸ç®¡ç†',0),		array(29,'è‡ªæœ‰å•†å“æ·»åŠ ',0),		array(45,'è‡ªæœ‰å•†å“å®šä»·',0),		array(31,'è‡ªæœ‰å•†å“åº“å­˜',0),    array(56,'è‡ªæœ‰å•†å“å……å€¼ç®¡ç†',0),		array(44,'å•†å“é”€å”®æŠ¥è¡¨æŸ¥è¯¢',0),		array(32,'é”€å”®æ”¶å…¥å…¥å¸è®°å½•',0),		array(30,'ä¸‹çº§å®¢æˆ·ä»·æ ¼ç®¡ç†',0),		array(46,'ä¸‹çº§å®¢æˆ·è´­å¡æƒé™',0),		array(47,'ä¸‹çº§å®¢æˆ·æ¶ˆè´¹è®°å½•',0),		array(48,'ä¸‹çº§æ±‡æ¬¾é€šçŸ¥ä¹¦',0),		array(49,'ä¸šåŠ¡å‘˜å¸æˆ·ç®¡ç†',0),    array(50,'ä¸šåŠ¡å‘˜ä¸šç»©æŸ¥è¯¢',0),    array(57,'ä»£ç†ä¸€å¡é€šåˆ—è¡¨',0),    array(58,'ä»£ç†ä¸€å¡é€šæ¢è´­è®°å½•',0),    array(59,'æ¢è´­å•†å“è¿”ç‚¹è´¹ç‡',0),    array(60,'ä¸€å¡é€šè¿”ç‚¹æ˜ç»†',0)		);				if($vd['ainfo']['vipshop'] == 1)    {    	$auright2[] = array(53,'VIPå¹³å°è®¾ç½®',0);      $auright2[] = array(62,'VIPé£æ ¼é€‰æ‹©',0);      $auright2[] = array(63,'VIPé£æ ¼è‡ªå®šä¹‰',0);      $auright2[] = array(54,'VIPå¹³å°å¹¿å‘Š',0);      $auright2[] = array(55,'VIPå¹³å°å…¬å‘Š',0);    }		?>		    <table width="100%" border="0" cellspacing="0" cellpadding="0">		      <tr><td colspan="4"><b><div align="left">ç›´é”€å•†åŠŸèƒ½ï¼š</b></td></tr>		      <!--$i=0;foreach($auright1 as $item){-->		      		      <!--if($vd['leftrights'][$item[0]] == 1){-->		      		      <!--if($i == 0){-->		      <tr>		        <!--}$i++;-->		        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" <!--if($item[2]){--> checked<!--}--> /><label for="rights_{$item[0]}">{$item[1]}</label></td>    	    <!--if($i == 4){-->		        </tr>		      <!--$i=0;}-->		      		      <!--}-->		      		      <!--}-->		      		      <!--if($i > 0){-->		      <!--for($j=0; $j < 4 - $i; $j++){-->		      <td width="25%" class=stline>&nbsp;</td>    	    <!--}-->		        </tr>		      <!--}-->		      </table>		    <!--if($vd['mygid'] > 1){-->		    <table width="100%" border="0" cellspacing="0" cellpadding="0">		      <tr><td colspan="4"><b><div align="left">ç»é”€å•†åŠŸèƒ½ï¼š</b></td></tr>		      <!--$i=0;foreach($auright2 as $item){-->		      		      <!--if($vd['leftrights'][$item[0]] == 1){-->		      		      <!--if($i == 0){-->		      <tr>		        <!--}$i++;-->		        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" <!--if($item[2]){--> checked<!--}--> /><label for="rights_{$item[0]}">{$item[1]}</label></td>    	    <!--if($i == 4){-->		        </tr>		      <!--$i=0;}-->		      		      <!--}-->		      		      <!--}-->		      <!--if($i > 0){-->		      <!--for($j=0; $j < 4 - $i; $j++){-->		      <td width="25%" class=stline>&nbsp;</td>    	    <!--}-->		        </tr>		      <!--}-->		      </table>		    <!--}-->				      </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç»‘å®šIPåœ°å€ï¼š</td>      <td class="tableright1">      <div align="left">        <input type="radio" name="ipcheck" value="1" onClick="setdisp('ip',1)"  id="yesbind" />        <font color=#0000ff>ç»‘å®šIPåœ°å€</font></div>      <label for="yesbind"></label> <div align="left">        <input type="radio" name="ipcheck" value="0" onClick="setdisp('ip',0)" id="nobind" checked />        <font color=#cccccc>æœªç»‘å®šIPåœ°å€</font>      </div>      <label for="nobind"></label>      </td>    </tr>		<tr id="iptr" style="display:none">		  <td class="table1_left" style="width: 25%">IPåœ°å€ï¼š</td>		  <td class="tableright1">		  	<div align="left">		  	  <!--for($i=0; $i<5; $i++){-->		  	  </div>		  	<div style="height:30px">		  	  <div align="left">		  	    <input type="text" class="myinput" size="25" name="ip[]" id="ip_{$i}" value=""/>		  	    <input type="button" name="button" value="å–IPåœ°å€" class="tijiao_input" onClick="getip({$i})">		  	    </div>		  	</div>		  	<div align="left">		  	  <!--}-->		  	  	    </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç»‘å®šç½‘å¡ï¼š</td>      <td class="tableright1">      <div align="left">        <input type="radio" name="maccheck" value="1" onClick="setdisp('mac',1)"  id="yesbindmac" checked />        <font color=#0000ff>ç»‘å®šç½‘å¡åœ°å€</font></div>      <label for="yesbindmac"></label> <div align="left">        <input type="radio" name="maccheck" value="0" onClick="setdisp('mac',0)" id="nobindmac" checked />        <font color=#cccccc>æœªç»‘å®šç½‘å¡åœ°å€</font></div>      <label for="nobindmac"></label>      </td>    </tr>		<tr id="mactr" style="display:none">		  <td class="table1_left" style="width: 25%">ç½‘å¡åœ°å€</td>		  <td class="tableright1">		  	<div align="left">		  	  <!--for($i=0; $i<5; $i++){-->		  	  </div>		  	<div style="height:30px">		  	  <div align="left">		  	    <input type="text" class="myinput" size="25" name="mac[]" id="mac_{$i}" value=""/>		  	    <input type="button" name="button" value="å–æœ¬æœºç½‘å¡" class="tijiao_input" onClick="getmac({$i})">		  	    </div>		  	</div>		  	<div align="left">		  	  <!--}-->		  	  	    </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç»‘å®šç¡¬ç›˜ï¼š</td>      <td class="tableright1">      <div align="left">        <input type="radio" name="hdecheck" value="1" onClick="setdisp('hde',1)"  id="yesbindhde" />        <font color=#0000ff>ç»‘å®šç¡¬ç›˜ç¼–ç </font></div>      <label for="yesbindhde"></label> <div align="left">        <input type="radio" name="hdecheck" value="0" onClick="setdisp('hde',0)" id="nobindhde" checked />        <font color=#cccccc>æœªç»‘å®šç¡¬ç›˜ç¼–ç </font></div>      <label for="nobindhde"></label>      </td>    </tr>		<tr id="hdetr" style="display:none">		  <td class="table1_left" style="width: 25%">ç¡¬ç›˜ç¼–ç </td>		  <td class="tableright1">		  	<div align="left">		  	  <!--for($i=0; $i<5; $i++){-->		  	  </div>		  	<div style="height:30px">		  	  <div align="left">		  	    <input type="text" class="myinput" size="25" name="hde[]" id="hde_{$i}" value=""/>		  	    <input type="button" name="button" value="å–æœ¬æœºç¡¬ç›˜" class="tijiao_input" onClick="gethde({$i})">		  	    </div>		  	</div>		  	<div align="left">		  	  <!--}-->		  	  	    </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">ç»‘å®šCPUï¼š</td>      <td class="tableright1">      <div align="left">        <input type="radio" name="cpucheck" value="1" onClick="setdisp('cpu',1)" id="yesbindcpu" />        <font color=#0000ff>ç»‘å®šCPUç¼–ç </font>      </div>      <label for="yesbindcpu"></label> <div align="left">        <input type="radio" name="cpucheck" value="0" onClick="setdisp('cpu',0)" id="nobindcpu" checked />        <font color=#cccccc>æœªç»‘å®šCPUç¼–ç </font>      </div>      <label for="nobindcpu"></label>      </td>    </tr>		<tr id="cputr" style="display:none">		  <td class="table1_left" style="width: 25%">CPUç¼–ç </td>		  <td class="tableright1">		  	<div align="left">		  	  <!--for($i=0; $i<5; $i++){-->		  	  </div>		  	<div style="height:30px">		  	  <div align="left">		  	    <input type="text" class="myinput" size="25" name="cpu[]" id="cpu_{$i}" value=""/>		  	    <input type="button" name="button" value="å–æœ¬æœºCPU" class="tijiao_input" onClick="getcpu({$i})">		  	    </div>		  	</div>		  	<div align="left">		  	  <!--}-->		  	  	    </div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%">è¾“å…¥è¶…çº§å¯†ç ç¡®è®¤</td>		<td class="tableright1"><div align="left">		  <input type="password" name="superpwd" size="30" class="input0"/>		  </div></td>		</tr>				<tr>		  <td class="table1_left" style="width: 25%">æœ€åæ“ä½œ</td>		<td height="30" class="tableright1"><div align="left">		  <input type="submit" name="submit" value="å®Œæˆæ·»åŠ " class="tijiao_input" tabindex="24">		  <input type="reset" value="é‡æ–°å¡«å†™" class="fanhui_input" name="reset" tabindex="25">		  </div></td>		</tr>		</table>	</td>	</tr>  </table></form><input type="hidden" id="tmac" name="tmac"  value=""/><script type="text/javascript">	var $ = function(id) {		return document.getElementById(id);	}	  function setdisp(tr, flag)  {  	$(tr+"tr").style.display = flag == 1 ? "" : "none"  }  	  function getip(i)  {  	$("ip_"+i).value = "{$vd['ip']}";  }    function getmac(i)  {  	$("mac_"+i).value = document.all.t1.GetMacAddr;  }    function getcpu(i)  {  	$("cpu_"+i).value = document.all.t1.GetCpuId;  }    function gethde(i)  {  	$("hde_"+i).value = document.all.t1.GetHDE;  }</script><?php   $fp = fopen($vd['sc']."tools/root.cer", "r");   $cert = fread($fp, 8192);   fclose($fp);?><script type="text/JavaScript">$("tmac").value = document.all.t1.GetMacAddr;if($("tmac").value == "" || $("tmac").value == "undefined"){  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');}</script><script language="vbscript">ON ERROR resume next<?php    $newcert = "sPKCS7=\"\"\r\n";    $line=strtok($cert,"\r\n");    while($line)    {     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";     $line=strtok("\r\n");    }    echo $newcert;?> XEnroll.InstallPKCS7 sPKCS7 </script></body></html>

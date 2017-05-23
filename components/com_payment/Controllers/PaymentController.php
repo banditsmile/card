@@ -80,7 +80,7 @@ class PaymentController extends Controller
 								$this->Assign( "pname", $Rc5dcb9f365['ubzpname'] );
 								$this->Assign( "thispaycode", $R25e798d548 );
 								$this->Assign( "isautopay", isset( $Rc5dcb9f365['autopay'] ) && $Rc5dcb9f365['autopay'] == 1 ? 1 : 0 );
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->View( );
 				}
 

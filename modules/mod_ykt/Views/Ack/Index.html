@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="{$vd['web']['keywords']}" />
 <meta http-equiv="Description" content="{$vd['web']['description']}" />
 <link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub-buy.css" />
@@ -20,15 +20,15 @@
   <div id="headertab">
     <span style="float:right">
       <script src="{$vd['content']}js/cust.js"></script>
-      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">¿¨×´Ì¬²éÑ¯</a> &nbsp;
-      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">¿¨Óà¶î»¥×ª</a> &nbsp;
-      <a href="{$vd['root']}index.php?m=mod_user&c=msg&a=add" target="_blank">ÁôÑÔÍ¶Ëß</a> &nbsp;
-      <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">24Ğ¡Ê±ÔÚÏß´ğÒÉ</a> &nbsp;
-      <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">¾­ÏúÉÌ</a>
+      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">å¡çŠ¶æ€æŸ¥è¯¢</a> &nbsp;
+      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">å¡ä½™é¢äº’è½¬</a> &nbsp;
+      <a href="{$vd['root']}index.php?m=mod_user&c=msg&a=add" target="_blank">ç•™è¨€æŠ•è¯‰</a> &nbsp;
+      <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">24å°æ—¶åœ¨çº¿ç­”ç–‘</a> &nbsp;
+      <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">ç»é”€å•†</a>
     </span>
     <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{$vd['web']['website']}');" class="top"> 
-      ÉèÎªÊ×Ò³</a> |
-      <a href=javascript:window.external.AddFavorite('{$vd['web']['website']}','{$vd['web']['webname']}') class="top">Ìí¼Óµ½ÊÕ²Ø</a>
+      è®¾ä¸ºé¦–é¡µ</a> |
+      <a href=javascript:window.external.AddFavorite('{$vd['web']['website']}','{$vd['web']['webname']}') class="top">æ·»åŠ åˆ°æ”¶è—</a>
   </div>
 </div>
 <div id="ubtop">
@@ -39,9 +39,9 @@
     <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;height:60px;">
         <tr>
             <td align="center" class="black">
-                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">·µ»ØÊ×Ò³</a> |
-                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">ÖØĞÂÑ¡¿¨</a> |
-                <a href="javascript:window.location.reload();">Ë¢ĞÂ±¾Ò³</a>
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">è¿”å›é¦–é¡µ</a> |
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">é‡æ–°é€‰å¡</a> |
+                <a href="javascript:window.location.reload();">åˆ·æ–°æœ¬é¡µ</a>
             </td>
         </tr>
     </table>
@@ -80,9 +80,9 @@
 <!--if($order['payment'] > 99){-->
 <table id="orderTable" class="tbody" style="border-bottom:1px #ccc dashed;background:none">
   <tr bgcolor="#f0f0f0">
-    <td width="50%" style="padding: 3px" align="center">Ìá½»µÄÒ»¿¨Í¨¿¨ºÅ</td>
-    <td width="35%" style="padding: 3px" align="center">Ìá½»µÄÒ»¿¨Í¨ÃÜÂë</td>
-    <td width="15%" style="padding: 3px" align="center">µ±Ç°×´Ì¬</td>
+    <td width="50%" style="padding: 3px" align="center">æäº¤çš„ä¸€å¡é€šå¡å·</td>
+    <td width="35%" style="padding: 3px" align="center">æäº¤çš„ä¸€å¡é€šå¯†ç </td>
+    <td width="15%" style="padding: 3px" align="center">å½“å‰çŠ¶æ€</td>
   </tr>
   <!--foreach($vd['order']['cpitem'] as $card) {-->
   <tr bgcolor="#ffffff">
@@ -93,7 +93,7 @@
       <span>*****</span>
     </td>
     <td width="15%" style="padding: 5px" align="center">
-      <span><!--if($card['cardok']==0 || $card['cardok'] == 1){--><!--if($order['ordstate'] == -1) {--><font color="#ff0000">ÒÑÍË¿î<!--}else{--><font color="#0000ff">ÒÑÖ§¸¶<!--}--></font><!--}else if($card['cardok']==2){-->´¦ÀíÖĞ..<!--}else{--><font color="#ff0000">Ê§°Ü</font><!--}--></span>
+      <span><!--if($card['cardok']==0 || $card['cardok'] == 1){--><!--if($order['ordstate'] == -1) {--><font color="#ff0000">å·²é€€æ¬¾<!--}else{--><font color="#0000ff">å·²æ”¯ä»˜<!--}--></font><!--}else if($card['cardok']==2){-->å¤„ç†ä¸­..<!--}else{--><font color="#ff0000">å¤±è´¥</font><!--}--></span>
     </td>
   </tr>
   <!--}-->
@@ -102,8 +102,8 @@
 <table id="orderTable" class="tbody" style="border-bottom:1px #ccc dashed;background:none">
   <!--if($order['ptype'] == 0 || $order['ptype'] == 3 || $order['ptype'] > 99) {-->
   <tr bgcolor="#f0f0f0">
-    <td width="50%" style="padding: 3px" align="center"><!--if($order['ptype'] == 3) {-->ºÅÂë<!--}else{-->¿¨ºÅ<!--}-->(µã»÷¿¨ºÅ¼´¿É¸´ÖÆ£¬<span onclick="copyAllToClipboard()" style="cursor:pointer;color:#ff0000">µã´ËÈ«²¿¸´ÖÆ</span>) </td>
-    <td width="50%" style="padding: 3px" align="center">ÃÜÂë</td>
+    <td width="50%" style="padding: 3px" align="center"><!--if($order['ptype'] == 3) {-->å·ç <!--}else{-->å¡å·<!--}-->(ç‚¹å‡»å¡å·å³å¯å¤åˆ¶ï¼Œ<span onclick="copyAllToClipboard()" style="cursor:pointer;color:#ff0000">ç‚¹æ­¤å…¨éƒ¨å¤åˆ¶</span>) </td>
+    <td width="50%" style="padding: 3px" align="center">å¯†ç </td>
   </tr>
   <!--foreach($vd['order']['carditem'] as $card) {-->
   <tr bgcolor="#ffffff">
@@ -120,9 +120,9 @@
 <!--if($order['ptype'] == 6) {-->
 <table class="tbody">
   <tr>
-    <td style="width:15%;background:#EAEAEA;font-weight:bold;padding-left:5px;height:25px;">Â¼ÈëÔ±</td>
-    <td style="width:55%;background:#EAEAEA;font-weight:bold;padding-left:5px;">½ø¶È</td>
-    <td style="width:30%;background:#EAEAEA;font-weight:bold;padding-left:5px;">Â¼ÈëÊ±¼ä</td>
+    <td style="width:15%;background:#EAEAEA;font-weight:bold;padding-left:5px;height:25px;">å½•å…¥å‘˜</td>
+    <td style="width:55%;background:#EAEAEA;font-weight:bold;padding-left:5px;">è¿›åº¦</td>
+    <td style="width:30%;background:#EAEAEA;font-weight:bold;padding-left:5px;">å½•å…¥æ—¶é—´</td>
   </tr>
   <!--foreach($vd['order']['powerlv'] as $powerlv) {-->
   <tr>
@@ -135,106 +135,106 @@
 <!--}-->
 <table class="tbody" style="border-bottom:0px;">
   <tr>
-    <td class="buylt">¶©µ¥ºÅ£º</td>
-    <td class="buyrt"><font color="#ff0000">{$order['ordno']}</font> <!--if(($order['ordstate']==1 || $order['ordstate']==3) || $order['ordstate'] == -1) {--><!--}else{--><!--if(isset($vd['forpitts']) && $vd['forpitts'] == 1 && $order['ptype'] == 2){}else{--> [<a href="javascript:view();">Í¶Ëß´Ë¶©µ¥</a>]<!--}--><!--}--></td>
+    <td class="buylt">è®¢å•å·ï¼š</td>
+    <td class="buyrt"><font color="#ff0000">{$order['ordno']}</font> <!--if(($order['ordstate']==1 || $order['ordstate']==3) || $order['ordstate'] == -1) {--><!--}else{--><!--if(isset($vd['forpitts']) && $vd['forpitts'] == 1 && $order['ptype'] == 2){}else{--> [<a href="javascript:view();">æŠ•è¯‰æ­¤è®¢å•</a>]<!--}--><!--}--></td>
   </tr>
   <tr>
-    <td class="buylt">¹ºÂòÈÕÆÚ£º</td>
+    <td class="buylt">è´­ä¹°æ—¥æœŸï¼š</td>
     <td class="buyrt">{$order['orddate']}</td>
   </tr>
   <tr>
-    <td class="buylt">¹ºÂòÉÌÆ·£º</td>
-    <td class="buyrt"><b>{$order['pname']}</b> <a href="{#YktProductLink($order['pid'], 'ykt', $order['pid'])}">¼ÌĞø¹ºÂò±¾ÉÌÆ·</a></td>
+    <td class="buylt">è´­ä¹°å•†å“ï¼š</td>
+    <td class="buyrt"><b>{$order['pname']}</b> <a href="{#YktProductLink($order['pid'], 'ykt', $order['pid'])}">ç»§ç»­è´­ä¹°æœ¬å•†å“</a></td>
   </tr>
   <tr>
-    <td class="buylt">¹ºÂòÊıÁ¿£º</td>
+    <td class="buylt">è´­ä¹°æ•°é‡ï¼š</td>
     <td class="buyrt">{$order['qty']}</td>
   </tr>
   <tr>
-    <td class="buylt">¶©µ¥×´Ì¬£º</td>
+    <td class="buylt">è®¢å•çŠ¶æ€ï¼š</td>
     <td class="buyrt"><b>{#OrderState($order['ordstate'],$order['ptype'], $order['payment'])}</b> </td>
   </tr>
   <!--if($order['ptype'] == 0 || $order['ptype'] == 3 || $order['ptype'] > 99) {-->
   <!--if($order['failreason']!=''){-->
   <tr>
-    <td class="buylt">Ïà¹ØËµÃ÷£º</td>
+    <td class="buylt">ç›¸å…³è¯´æ˜ï¼š</td>
     <td class="buyrt" style="color:#ff0000"><!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['factoryreturn']!=''){-->
   <tr>
-    <td class="buylt">ÏµÍ³·´À¡£º</td>
+    <td class="buylt">ç³»ç»Ÿåé¦ˆï¼š</td>
     <td class="buyrt" style="color:#0000ff">{$order['factoryreturn']}</td>
   </tr>
   <!--}-->
   <!--}-->
   <!--if($order['ptype'] == 2 || $order['ptype'] == 1) {-->
   <tr>
-    <td class="buylt">³äÖµ½á¹û£º</td>
+    <td class="buylt">å……å€¼ç»“æœï¼š</td>
     <td class="buyrt"><font color="#ff0000"><b>
       <!--if($order['ordstate'] == -1) {-->
-      ³äÖµÊ§°Ü£¬<!--if($order['rollback'] == 1) {-->ÒÑ¾­ÍË»¹Óà¶î£¡<!--}-->
+      å……å€¼å¤±è´¥ï¼Œ<!--if($order['rollback'] == 1) {-->å·²ç»é€€è¿˜ä½™é¢ï¼<!--}-->
       <!--}-->
       <!--if($order['ordstate'] == 1 || $order['ordstate'] == 3) {-->
-      ÒÑ¾­Ìá½»ÏµÍ³³äÖµ£¬±¾Ò³»á¼´Ê±¸üĞÂ½á¹û£¬ÇëÁôÒâ<br/>£¨Èç³¤Ê±¼äÎ´·´Ó¦ÇëÊÖ¶¯Ë¢ĞÂ±¾Ò³Ãæ£©
+      å·²ç»æäº¤ç³»ç»Ÿå……å€¼ï¼Œæœ¬é¡µä¼šå³æ—¶æ›´æ–°ç»“æœï¼Œè¯·ç•™æ„<br/>ï¼ˆå¦‚é•¿æ—¶é—´æœªååº”è¯·æ‰‹åŠ¨åˆ·æ–°æœ¬é¡µé¢ï¼‰
       <!--}-->
       <!--if($order['ordstate'] == 2) {-->
-      ÒÑ¾­³äÖµ³É¹¦£¬ÇëÍæ¼Ò²éÑ¯ÓÎÏ·Ê±¼ä£¬´¦Àí³É¹¦
+      å·²ç»å……å€¼æˆåŠŸï¼Œè¯·ç©å®¶æŸ¥è¯¢æ¸¸æˆæ—¶é—´ï¼Œå¤„ç†æˆåŠŸ
       <!--}-->
       </b></font></td>
   </tr>
   <!--}-->
   <!--if($order['ptype'] == 1 || $order['ptype'] == 2) {-->
   <tr>
-    <td class="buylt">³äÖµÊ±¼ä£º</td>
+    <td class="buylt">å……å€¼æ—¶é—´ï¼š</td>
     <td class="buyrt">{$order['dealdate']}</td>
   </tr>
   <!--if($order['failreason']!=''){-->
   <tr>
-    <td class="buylt">³äÖµËµÃ÷£º</td>
+    <td class="buylt">å……å€¼è¯´æ˜ï¼š</td>
     <td class="buyrt" style="color:#ff0000"><!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['factoryreturn']!=''){-->
   <tr>
-    <td class="buylt">³§¼Ò·´À¡£º</td>
+    <td class="buylt">å‚å®¶åé¦ˆï¼š</td>
     <td class="buyrt" style="color:#0000ff">{$order['factoryreturn']}</td>
   </tr>
   <!--}-->
   <!--}-->
   <tr>
-    <td class="buylt">´¦ÀíÊ±¼ä£º</td>
+    <td class="buylt">å¤„ç†æ—¶é—´ï¼š</td>
     <td class="buyrt">{$order['dealdate']}</td>
   </tr>
   <!--if($order['ptype'] == 0 || $order['ptype'] > 99){-->
   <tr>
-    <td class="buylt">³äÖµÍøÖ·£º</td>
+    <td class="buylt">å……å€¼ç½‘å€ï¼š</td>
     <td class="buyrt"><a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a></td>
   </tr>
   <!--}-->
   
   <!--if($order['ptype'] == 1 || $order['ptype'] == 2) {-->
   <tr>
-    <td class="buylt">ÓÎÏ·ÓÃ»§Ãû£º</td>
+    <td class="buylt">æ¸¸æˆç”¨æˆ·åï¼š</td>
     <td class="buyrt">{$order['czaccount']}</td>
   </tr>
   <!--if(isset($order['thisgame']) && $order['thisgame'] != ''){-->
   <tr>
-    <td class="buylt"><!--if($order['namehide']=='thisgame'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ²úÆ·<!--}-->£º</td>
-    <td class="buyrt"><!--if($order['namehide']=='thisgame'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['thisgame'])}<!--}--></td>
+    <td class="buylt"><!--if($order['namehide']=='thisgame'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼äº§å“<!--}-->ï¼š</td>
+    <td class="buyrt"><!--if($order['namehide']=='thisgame'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['thisgame'])}<!--}--></td>
   </tr>
   <!--}-->
     
   <!--if($order['czarea1'] != ''){-->
   <tr>
-    <td class="buylt"><!--if($order['namehide']=='czarea1'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµÇøÓò<!--}-->£º</td>
-    <td class="buyrt"><!--if($order['namehide']=='czarea1'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['czarea1'])}<!--}--></td>
+    <td class="buylt"><!--if($order['namehide']=='czarea1'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼åŒºåŸŸ<!--}-->ï¼š</td>
+    <td class="buyrt"><!--if($order['namehide']=='czarea1'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['czarea1'])}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['czarea2'] != ''){-->
   <tr>
-    <td class="buylt"><!--if($order['namehide']=='czarea2'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ·şÎñÆ÷<!--}-->£º</td>
-    <td class="buyrt"><!--if($order['namehide']=='czarea2'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['czarea2'])}<!--}--></td>
+    <td class="buylt"><!--if($order['namehide']=='czarea2'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼æœåŠ¡å™¨<!--}-->ï¼š</td>
+    <td class="buyrt"><!--if($order['namehide']=='czarea2'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['czarea2'])}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['cztype'] != ''){-->
@@ -242,14 +242,14 @@
     <td class="buylt">
     	<!--if(strpos($order['cztype'], '::') > 0){-->
         <!--$mytemp = explode('::', $order['cztype']);$order['cztype']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¼š
       <!--}else{-->
       
-      <!--if($order['namehide']=='cztype'){-->µÇÂ½ÃÜÂë<!--}else{-->¼Æ·Ñ·½Ê½<!--}-->£º
+      <!--if($order['namehide']=='cztype'){-->ç™»é™†å¯†ç <!--}else{-->è®¡è´¹æ–¹å¼<!--}-->ï¼š
       
       <!--}-->
     </td>
-    <td class="buyrt"><!--if($order['namehide']=='cztype'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['cztype'])}<!--}--></td>
+    <td class="buyrt"><!--if($order['namehide']=='cztype'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['cztype'])}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['czother'] != ''){-->
@@ -257,15 +257,15 @@
     <td class="buylt">
     	<!--if(strpos($order['czother'], '::') > 0){-->
         <!--$mytemp = explode('::', $order['czother']);$order['czother']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¼š
       <!--}else{-->
       
-      <!--if($order['namehide']=='czother'){-->µÇÂ½ÃÜÂë<!--}else{-->ÕÊºÅÀàĞÍ<!--}-->£º
+      <!--if($order['namehide']=='czother'){-->ç™»é™†å¯†ç <!--}else{-->å¸å·ç±»å‹<!--}-->ï¼š
       
       <!--}-->
       	
     </td>
-    <td class="buyrt"><!--if($order['namehide']=='czother'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['czother'])}<!--}--></td>
+    <td class="buyrt"><!--if($order['namehide']=='czother'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['czother'])}<!--}--></td>
   </tr>
   <!--}-->
   <!--if($order['acountpwd'] != ''){-->
@@ -273,20 +273,20 @@
     <td class="buylt">
     	<!--if(strpos($order['acountpwd'], '::') > 0){-->
         <!--$mytemp = explode('::', $order['acountpwd']);$order['acountpwd']=$mytemp[1];-->
-        {$mytemp[0]}£º
+        {$mytemp[0]}ï¼š
       <!--}else{-->
       
-      <!--if($order['namehide']=='acountpwd'){-->µÇÂ½ÃÜÂë<!--}else{-->ÆäËûĞÅÏ¢<!--}-->£º
+      <!--if($order['namehide']=='acountpwd'){-->ç™»é™†å¯†ç <!--}else{-->å…¶ä»–ä¿¡æ¯<!--}-->ï¼š
       
       <!--}-->
     </td>
-    <td class="buyrt"><!--if($order['namehide']=='acountpwd'){--><font color="#888888">*¿Í»§ÃÜÂëÒş²Ø*</font><!--}else{-->{#CzText($order['acountpwd'])}<!--}--></td>
+    <td class="buyrt"><!--if($order['namehide']=='acountpwd'){--><font color="#888888">*å®¢æˆ·å¯†ç éšè—*</font><!--}else{-->{#CzText($order['acountpwd'])}<!--}--></td>
   </tr>
   <!--}-->
   
   <!--if($order['others'] != '') {-->
   <tr>
-    <td class="buylt">¹º¿¨±¸×¢£º</td>
+    <td class="buylt">è´­å¡å¤‡æ³¨ï¼š</td>
     <td class="buyrt"><textarea rows="5" cols="50">{$order['others']}</textarea></td>
   </tr>
   <!--}-->
@@ -294,68 +294,68 @@
   <!--}-->
   <!--if($order['ptype'] == 6) {-->
   <tr>
-    <td class="buylt">´úÁ·½ÇÉ«£º</td>
+    <td class="buylt">ä»£ç»ƒè§’è‰²ï¼š</td>
     <td class="buyrt">{$order['rolename']}</td>
   </tr>
   <tr>
-    <td class="buylt">ËùÔÚÇøÓò£º</td>
+    <td class="buylt">æ‰€åœ¨åŒºåŸŸï¼š</td>
     <td class="buyrt">{#CzText($order['czarea1'])}</td>
   </tr>
   <tr>
-    <td class="buylt">ËùÔÚ·şÎñÆ÷£º</td>
+    <td class="buylt">æ‰€åœ¨æœåŠ¡å™¨ï¼š</td>
     <td class="buyrt">{#CzText($order['czarea2'])}</td>
   </tr>
   <tr>
-    <td class="buylt">¼Æ·Ñ·½Ê½£º</td>
+    <td class="buylt">è®¡è´¹æ–¹å¼ï¼š</td>
     <td class="buyrt">{#CzText($order['cztype'])}</td>
   </tr>
   <tr>
-    <td class="buylt">ÕÊºÅÀàĞÍ£º</td>
+    <td class="buylt">å¸å·ç±»å‹ï¼š</td>
     <td class="buyrt">{#CzText($order['czother'])}</td>
   </tr>
   <!--}-->
   <!--if($order['ptype'] == 4 || $order['ptype'] == 5) {-->
   <tr>
-    <td class="buylt">½»Ò×·½Ê½£º</td>
+    <td class="buylt">äº¤æ˜“æ–¹å¼ï¼š</td>
     <td class="buyrt"><textarea name="ubzabst" wrap="VIRTUAL" cols="30" rows="3" scrolling="yes" style="padding:5px">{$order['tradeterm']}</textarea></td>
   </tr>
   <tr>
-    <td class="buylt">ÓÎÏ·½ÇÉ«£º</td>
+    <td class="buylt">æ¸¸æˆè§’è‰²ï¼š</td>
     <td class="buyrt">{$order['czaccount']}</td>
   </tr>
   <tr>
-    <td class="buylt">ËùÔÚÇøÓò£º</td>
+    <td class="buylt">æ‰€åœ¨åŒºåŸŸï¼š</td>
     <td class="buyrt">{#CzText($order['czarea1'])}</td>
   </tr>
   <tr>
-    <td class="buylt">ËùÔÚ·şÎñÆ÷£º</td>
+    <td class="buylt">æ‰€åœ¨æœåŠ¡å™¨ï¼š</td>
     <td class="buyrt">{#CzText($order['czarea2'])}</td>
   </tr>
   <tr>
-    <td class="buylt">¼Æ·Ñ·½Ê½£º</td>
+    <td class="buylt">è®¡è´¹æ–¹å¼ï¼š</td>
     <td class="buyrt">{#CzText($order['cztype'])}</td>
   </tr>
   <tr>
-    <td class="buylt">ÕÊºÅÀàĞÍ£º</td>
+    <td class="buylt">å¸å·ç±»å‹ï¼š</td>
     <td class="buyrt">{#CzText($order['czother'])}</td>
   </tr>
   <tr>
-    <td class="buylt">´¦ÀíÊ±¼ä£º</td>
+    <td class="buylt">å¤„ç†æ—¶é—´ï¼š</td>
     <td class="buyrt">{$order['dealdate']}</td>
   </tr>
   <!--}-->
 </table>
 <table class="tbody">
   <tr>
-    <td class="buylt">¸´ÖÆµØÖ·ÒÔºó²éÑ¯£º</td>
-    <td class="buyrt"><input id="pagehref" type="text" size="25" class="Index_font3"  readonly value="" onMouseMove="this.select()" onclick="copyToClipboard(this.value)"/>  <font color="#0000ff">ÔÚä¯ÀÀÆ÷ÖĞÊäÈë¼´¿É²éÑ¯½á¹û</font></td>
+    <td class="buylt">å¤åˆ¶åœ°å€ä»¥åæŸ¥è¯¢ï¼š</td>
+    <td class="buyrt"><input id="pagehref" type="text" size="25" class="Index_font3"  readonly value="" onMouseMove="this.select()" onclick="copyToClipboard(this.value)"/>  <font color="#0000ff">åœ¨æµè§ˆå™¨ä¸­è¾“å…¥å³å¯æŸ¥è¯¢ç»“æœ</font></td>
   </tr>
   <tr>
     <td colspan="2" align="center" style="border-top:1px #ccc dashed;height:50px;">
-      <input type="button" value="Í¶Ëß±¾¶©µ¥" onclick="view();" class="button" <!--if(($order['ordstate']==1 || $order['ordstate']==3) || $order['ordstate'] == -1 || (isset($vd['forpitts']) && $vd['forpitts'] == 1 && $order['ptype'] == 2)) {-->disabled<!--}-->/>
-      <input type="button" value="»Øµ½Ê×Ò³" onclick="window.location='{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt/';-->'" class="button">
-      <input type="button" value="Ë¢ĞÂ±¾Ãæ" onclick="window.location.reload();" class="button">
-      <input type="button" value="¹Ø±ÕÒ³Ãæ" onclick="window.close();" class="button">
+      <input type="button" value="æŠ•è¯‰æœ¬è®¢å•" onclick="view();" class="button" <!--if(($order['ordstate']==1 || $order['ordstate']==3) || $order['ordstate'] == -1 || (isset($vd['forpitts']) && $vd['forpitts'] == 1 && $order['ptype'] == 2)) {-->disabled<!--}-->/>
+      <input type="button" value="å›åˆ°é¦–é¡µ" onclick="window.location='{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt/';-->'" class="button">
+      <input type="button" value="åˆ·æ–°æœ¬é¢" onclick="window.location.reload();" class="button">
+      <input type="button" value="å…³é—­é¡µé¢" onclick="window.close();" class="button">
     </td>
   </tr>
   <tr>
@@ -363,20 +363,20 @@
       <form action="index.php?m=mod_ykt&c=order&a=complaint" method="post" target="_blank">
         <table id="complainttable" width="100%" style="display:none">
           <tr>
-            <td class="buylt">±êÌâ£º</td>
-            <td class="buyrt"><input type="text" name="title" value="Í¶Ëß¶©µ¥{$order['ordno']}"/></td>
+            <td class="buylt">æ ‡é¢˜ï¼š</td>
+            <td class="buyrt"><input type="text" name="title" value="æŠ•è¯‰è®¢å•{$order['ordno']}"/></td>
           </tr>
           <!--if($vd['islogin']==0){-->
           <tr>
-            <td class="buylt">ÁªÏµ·½Ê½£º</td>
-            <td class="buyrt"><textarea rows="2" name="lianxi" cols="38"></textarea><br/><font color="#6c6c6c">ÇëĞ´ÉÏÁªÏµ·½Ê½£¬²¢×¢Ã÷ÊÇºÎÖÖ·½Ê½£¬ÈçQQ:8888888</font></td>
+            <td class="buylt">è”ç³»æ–¹å¼ï¼š</td>
+            <td class="buyrt"><textarea rows="2" name="lianxi" cols="38"></textarea><br/><font color="#6c6c6c">è¯·å†™ä¸Šè”ç³»æ–¹å¼ï¼Œå¹¶æ³¨æ˜æ˜¯ä½•ç§æ–¹å¼ï¼Œå¦‚QQ:8888888</font></td>
           </tr>
           <!--}-->
           <tr>
-            <td class="buylt">ÄÚÈİ£º</td>
+            <td class="buylt">å†…å®¹ï¼š</td>
             <td class="buyrt"><textarea rows="5" name="content" cols="38"></textarea>
               <!--if($vd['islogin']==1){-->
-              <br/><font color="#6c6c6c">ÇëÔÚÍ¶ËßÄÚÈİÀï±ß¸½ÉÏÆäËûÁªÏµ·½Ê½</font>
+              <br/><font color="#6c6c6c">è¯·åœ¨æŠ•è¯‰å†…å®¹é‡Œè¾¹é™„ä¸Šå…¶ä»–è”ç³»æ–¹å¼</font>
               <!--}-->
             </td>
           </tr>
@@ -384,7 +384,7 @@
             <td class="buylt"></td>
             <td class="buyrt">
               <input type="hidden" value="{$order['ordno']}"  name="ordno">
-              <input type="submit" value="Ìá½»Í¶Ëß"  class="button">
+              <input type="submit" value="æäº¤æŠ•è¯‰"  class="button">
             </td>
           </tr>
         </table>
@@ -399,7 +399,7 @@
       {$vd['sips']}
     </td>
     <td style="padding:10px;text-align:right;line-height:20px;">
-      °æÈ¨ËùÓĞ &copy; 2004-2011 {$vd['web']['webname']}<br>ICP±¸°¸ºÅ£º<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a>
+      ç‰ˆæƒæ‰€æœ‰ &copy; 2004-2011 {$vd['web']['webname']}<br>ICPå¤‡æ¡ˆå·ï¼š<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a>
     </td>
   </tr>
 </table>
@@ -410,10 +410,10 @@
     <div>
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['qq'][$j])&&count($vd['qq'][$j]) > 0){-->
-      <h3>¿Í·şQQ£º</h3>
+      <h3>å®¢æœQQï¼š</h3>
       <!--for($i=0;$i<count($vd['qq'][$j]);$i++){-->
         <a href="tencent://message/?uin={$vd['qq'][$j][$i]}&Site={$vd['web']['webname']}&Menu=yes" target="_blank">
-        <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" />
+        <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="ç‚¹å‡»è¿™é‡Œç»™æˆ‘å‘æ¶ˆæ¯" />
         </a><br/>
       <!--}-->
       <!--}-->
@@ -421,10 +421,10 @@
   
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['wangwang'][$j])&&count($vd['wangwang'][$j]) > 0){-->
-      <h3>¿Í·şÍúÍú£º</h3>
+      <h3>å®¢æœæ—ºæ—ºï¼š</h3>
       <!--for($i=0;$i<count($vd['wangwang'][$j]);$i++){-->
         <a target="_blank" href="http://amos1.taobao.com/msg.ww?v=2&uid={$vd['wangwang'][$j][$i]}&s=1" >
-          <img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid={$vd['wangwang'][$j][$i]}&s=1" alt="µã»÷ÕâÀï¸øÎÒ·¢ÏûÏ¢" />
+          <img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid={$vd['wangwang'][$j][$i]}&s=1" alt="ç‚¹å‡»è¿™é‡Œç»™æˆ‘å‘æ¶ˆæ¯" />
         </a><br/>
       <!--}-->
       <!--}-->
@@ -432,7 +432,7 @@
   
       <!--for($j=0;$j<1;$j++){-->
       <!--if(isset($vd['hi'][$j])&&count($vd['hi'][$j]) > 0){-->
-      <h3>¿Í·şHi£º</h3>
+      <h3>å®¢æœHiï¼š</h3>
       <!--for($i=0;$i<count($vd['hi'][$j]);$i++){-->
         <a href="baidu://message/?id={$vd['hi'][$j][$i]}">
           <img src="http://tieba.baidu.com/tb/img/hi/hiOnline.gif" border="0">
@@ -535,12 +535,12 @@ function loadXMLDoc()
   <!--if(isset($order['sup'])&&$order['sup']==1){-->
   url = url + "&sign="+escape("{$vd['sign']}");
   <!--}-->
-  // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+  // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
   if (window.XMLHttpRequest)
   {
     xmlhttp=new XMLHttpRequest();
   }
-  // Õë¶Ô IE µÄ´úÂë£º
+  // é’ˆå¯¹ IE çš„ä»£ç ï¼š
   else if (window.ActiveXObject)
   {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -555,19 +555,19 @@ function loadXMLDoc()
   }
   else
   {
-    alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+    alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")
   }
 }
 
 function state_Change()
 {
-  // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+  // å¦‚æœ xmlhttp æ˜¾ç¤ºä¸º "loaded"
   if (xmlhttp.readyState==4)
   {
-    // Èç¹ûÎª "OK"
+    // å¦‚æœä¸º "OK"
     if (xmlhttp.status==200)
     {
-      // ÆäËû´úÂë..
+      // å…¶ä»–ä»£ç ..
       var ackdata=xmlhttp.responseText;
       ackparase(ackdata);
     }
@@ -576,14 +576,14 @@ function state_Change()
 
 function ackparase(ackdata)
 {
-  //½âÎö·şÎñÆ÷·µ»ØµÄÊı¾İ
+  //è§£ææœåŠ¡å™¨è¿”å›çš„æ•°æ®
   if ( (ackdata == "1" || ackdata == "3") || (payment>99 && ackdata == "0"))
   {
     setTimeout("loadXMLDoc()",1500);
   }
   else if(ackdata == "-2")
   {
-    alert('¶©µ¥²»´æÔÚ£¡');
+    alert('è®¢å•ä¸å­˜åœ¨ï¼');
     window.close();
   }
   else
@@ -637,7 +637,7 @@ function copyToClipboard(text){
   clip.setData(trans,null,clipid.kGlobalClipboard);
   
   }
-  window.alert("ÒÑ¸´ÖÆ³É¹¦£¬ÇëÖ±½ÓÕ³Ìù\n"+text);
+  window.alert("å·²å¤åˆ¶æˆåŠŸï¼Œè¯·ç›´æ¥ç²˜è´´\n"+text);
 }
 
 var isview = 0;
@@ -704,12 +704,12 @@ var IMGDIR = "{$vd['content']}images";
   {
     var xmlhttp3 = null;
     url = "ordno="+escape("{$order['ordno']}");
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
     if (window.XMLHttpRequest)
     {
       xmlhttp3=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // é’ˆå¯¹ IE çš„ä»£ç ï¼š
     else if (window.ActiveXObject)
     {
       xmlhttp3=new ActiveXObject("Microsoft.xmlhttp");
@@ -720,7 +720,7 @@ var IMGDIR = "{$vd['content']}images";
       xmlhttp3.onreadystatechange=function(){
         if (xmlhttp3.readyState==4)
         {
-          // Èç¹ûÎª "OK"
+          // å¦‚æœä¸º "OK"
           if (xmlhttp3.status==200)
           {
             
@@ -733,7 +733,7 @@ var IMGDIR = "{$vd['content']}images";
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³Öxmlhttp")
+      alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒxmlhttp")
     }
   }
   

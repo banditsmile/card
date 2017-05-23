@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -24,16 +24,16 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <div id="content" class="cwarpper" style="position:relative;overflow-y:scroll;">
 <div class="cbodyHead"></div>
 <div id="tab">
-<input type="button" id="tt0" value="у╧©╙кЫспиХжц"  onclick="tabdisp(this,0)" class="tab_active" onFocus="this.blur()"/>
-<input type="button" id="tt1" value="илф╥юЮпмиХжц" onclick="tabdisp(this,1)" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" id="tt2" value="╤т╥ОоХо╣мЁ╧╘╩У"  onclick="tabdisp(this,2)" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" id="tt3" value="кякВсе╩╞" onclick="tabdisp(this,3)" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" id="tt4" value="╧╨бРоЮ╧ьиХжц"  onclick="tabdisp(this,4)" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" id="tt5" value="илф╥╫Ииэ" onclick="tabdisp(this,5)" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" id="tt6" value="оЮ╧ьмЬж╥"  onclick="tabdisp(this,6)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt0" value="у╧О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫"  onclick="tabdisp(this,0)" class="tab_active" onFocus="this.blur()"/>
+<input type="button" id="tt1" value="О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫" onclick="tabdisp(this,1)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt2" value="О©╫т╥О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫"  onclick="tabdisp(this,2)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt3" value="О©╫О©╫О©╫О©╫О©╫е╩О©╫" onclick="tabdisp(this,3)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt4" value="О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫"  onclick="tabdisp(this,4)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt5" value="О©╫О©╫ф╥О©╫О©╫О©╫О©╫" onclick="tabdisp(this,5)" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" id="tt6" value="О©╫О©╫О©╫О©╫О©╫ж╥"  onclick="tabdisp(this,6)" class="tab_normal" onFocus="this.blur()"/>
 </div>
 <div id="t0" class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">лНп╢╩Ы╠╬пео╒ </div>
+<div class="ctitle">О©╫О©╫п╢О©╫О©╫О©╫О©╫О©╫О©╫о╒ </div>
 <div>
 <!--if(UB_B2C){-->
 <table border="0" id="ctable1" class="ctable" style="border:0px;background:none">
@@ -52,17 +52,17 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     <td valign="top">
       <table border="1" width="100%" class="ctable2" bordercolor="#ededed">
         <tr>
-          <td class="tablelt2">р╩╪╤╥жюЮё╨</td>
+          <td class="tablelt2">р╩О©╫О©╫О©╫О©╫О©╫Юё╨</td>
           <td class="tablert2">
             <select name="ubzdid1" size="1" onChange="changelocation(this.options[this.selectedIndex].value)" class="wenbenkuang">
-              <option select="selected" value="0">гКя║тЯр╩╪╤╥жюЮ</option>
+              <option select="selected" value="0">О©╫О©╫я║О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫</option>
               {#Option($vd['cat'], $vd['parentid'], 'name', 'id')}
             </select>
             <font color="#FF0000">*</font>
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">╤Ч╪╤╥жюЮё╨</td>
+          <td class="tablelt2">О©╫О©╫О©╫О©╫О©╫О©╫О©╫Юё╨</td>
           <td class="tablert2">
             <select name="catid" class="wenbenkuang">
               {#Option($vd['subcat'], $item['catid'], 'name', 'id')}
@@ -71,7 +71,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">илф╥цШЁфё╨</td>
+          <td class="tablelt2">О©╫О©╫ф╥О©╫О©╫О©╫фёО©╫</td>
           <td class="tablert2">
             <input type="text" name="ubzpname" id="ubzpname" size="28" value="{$item['pname']}"/><font color="#FF0000"> *</font>
             <input type="text" id="namecolor" name="namecolor" value="{$item['namecolor']}" size="10" onkeyup="setcolor(this)"/> 
@@ -80,37 +80,37 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">╢жлЕотй╬ё╨</td>
+          <td class="tablelt2">О©╫О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫</td>
           <td class="tablert2"><input type="checkbox" value="1" id="isbold" name="isbold" class="checkbox"  onFocus="this.blur()" {#ToggleCheck($item['isbold'])}/> 
           </td>
         </tr>
         <tr>
-          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>оЮ╤тилф╥цШЁфр╙╤лё╛жВр╙сцсзйврЁотй╬ё╛я╦кыхцбР╪р©╢╣╫</p>илф╥╠Йг╘ё╨</td>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫р╙О©╫лёО©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫О©╫рЁО©╫О©╫й╬О©╫О©╫я╦О©╫О©╫О©╫О©╫О©╫О©╫р©О©╫О©╫О©╫</p>О©╫О©╫ф╥О©╫О©╫г╘О©╫О©╫</td>
           <td class="tablert2"><input type="text" name="ubzptagname" size="20" value="{$item['ptagname']}"/></td>
         </tr>
         <tr>
-          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>иХжц╫Ь╩У╧ь╪Э╢йё╛╥╫╠Цо╣мЁ╟ОдЗя╟ур╨ойй╣д╩Ут╢</p>╫Ь╩У╧ь╪Э╢йё╨</td>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ц╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫я╟О©╫р╨О©╫О©╫й╣д╩О©╫т╢</p>О©╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫</td>
           <td class="tablert2"><input type="text" name="sup_keywords" size="20" value="{$item['sup_keywords']}"/></td>
         </tr>
       </table>
       <table border="0" width="100%" class="ctable2" style="margin-top:10px">
         <tr> 
-          <td class="tablelt2"><span class="name">╩Ы╠╬╪шг╝ё╨</span></td>
+          <td class="tablelt2"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫г╝О©╫О©╫</span></td>
           <td class="tablelr2" style="line-height:25px;height:58px">
-            <input type="text" name="ubzlistprice" id="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font><span class="tip">йпЁ║╪ш(илф╥╣дцФж╣)</span><br/> 
+            <input type="text" name="ubzlistprice" id="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font><span class="tip">О©╫пЁО©╫О©╫О©╫(О©╫О©╫ф╥О©╫О©╫О©╫О©╫ж╣)</span><br/> 
             <input type="text" name="ubzprice" id="ubzprice" size="10" class="priceinput" value="{$item['price']}"/>
-            <font color="#FF0000"> * </font><span class="tip">╫Ь╪ш(илф╥╣д╫Ь╩У╪ш)</span><br/>
+            <font color="#FF0000"> * </font><span class="tip">О©╫О©╫О©╫О©╫(О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫О©╫)</span><br/>
             <input type="hidden" name="oldprice"  value="{$item['price']}"/>
             <input type="hidden" name="oldlistprice" value="{$item['listprice']}"/>  
           </td>
         </tr>
         <tr> 
-          <td class="tablelt2"><span class="name">╪ш╦Я╠Д╦Э╨С╡ывВё╨</span></td>
+          <td class="tablelt2"><span class="name">О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</span></td>
           <td class="tablelr2" style="overflow:hidden;">
-            <input type="checkbox" id="delrank" name="delrank" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩиХжц╣д╪╤╠П╪ш╦Я</span><br/>
-            <input type="checkbox" id="delprivate" name="delprivate" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩкЫспцэ╪ш</span><br/>
-            <input type="checkbox" id="deltpl" name="deltpl" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩкЫспдё╟Е╪ш╦Я</span><br/>
-            <input type="checkbox" id="delpricemy" name="delpricemy" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩг╟л╗╬╜оЗилвт╪╨иХ╤╗╣даЦйш╪ш</span><br/>
+            <input type="checkbox" id="delrank" name="delrank" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫ц╣д╪О©╫О©╫О©╫ш╦О©╫</span><br/>
+            <input type="checkbox" id="delprivate" name="delprivate" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫э╪О©╫</span><br/>
+            <input type="checkbox" id="deltpl" name="deltpl" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫О©╫дёО©╫О©╫ш╦О©╫</span><br/>
+            <input type="checkbox" id="delpricemy" name="delpricemy" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╪О©╫О©╫Х╤╗О©╫О©╫О©╫О©╫О©╫ш╪О©╫</span><br/>
           </td>
         </tr>
       </table>
@@ -121,17 +121,17 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <input type="hidden" id="ubzimage" name="ubzimage" value="{$item['imagefull']}"/>
 <table border="1" width="100%" class="ctable" bordercolor="#ededed">
   <tr>
-    <td class="tablelt">р╩╪╤╥жюЮё╨</td>
+    <td class="tablelt">р╩О©╫О©╫О©╫О©╫О©╫Юё╨</td>
     <td class="tablert">
       <select name="ubzdid1" size="1" onChange="changelocation(this.options[this.selectedIndex].value)" class="wenbenkuang">
-        <option select="selected" value="0">гКя║тЯр╩╪╤╥жюЮ</option>
+        <option select="selected" value="0">О©╫О©╫я║О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫</option>
         {#Option($vd['cat'], $vd['parentid'], 'name', 'id')}
       </select>
       <font color="#FF0000">*</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">╤Ч╪╤╥жюЮё╨</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫О©╫Юё╨</td>
     <td class="tablert">
       <select name="catid" class="wenbenkuang">
         {#Option($vd['subcat'], $item['catid'], 'name', 'id')}
@@ -140,7 +140,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </td>
   </tr>
   <tr>
-    <td class="tablelt">илф╥цШЁфё╨</td>
+    <td class="tablelt">О©╫О©╫ф╥О©╫О©╫О©╫фёО©╫</td>
     <td class="tablert">
       <input type="text" name="ubzpname" id="ubzpname" size="28" value="{$item['pname']}"/><font color="#FF0000"> *</font>
       <input type="text" id="namecolor" name="namecolor" value="{$item['namecolor']}" size="10" onkeyup="setcolor(this)"/> 
@@ -149,34 +149,34 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </td>
   </tr>
   <tr>
-    <td class="tablelt2">╢жлЕотй╬ё╨</td>
+    <td class="tablelt2">О©╫О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫</td>
     <td class="tablert2"><input type="checkbox" value="1" id="isbold" name="isbold" class="checkbox"  onFocus="this.blur()" {#ToggleCheck($item['isbold'])}/> 
     </td>
   </tr>
   <tr>
-    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>оЮ╤тилф╥цШЁфр╙╤лё╛жВр╙сцсзйврЁотй╬ё╛я╦кыхцбР╪р©╢╣╫</p>илф╥╠Йг╘ё╨</td>
+    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫р╙О©╫лёО©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫О©╫рЁО©╫О©╫й╬О©╫О©╫я╦О©╫О©╫О©╫О©╫О©╫О©╫р©О©╫О©╫О©╫</p>О©╫О©╫ф╥О©╫О©╫г╘О©╫О©╫</td>
     <td class="tablert"><input type="text" name="ubzptagname" size="20" value="{$item['ptagname']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>иХжц╫Ь╩У╧ь╪Э╢йё╛╥╫╠Цо╣мЁ╟ОдЗя╟ур╨ойй╣д╩Ут╢</p>╫Ь╩У╧ь╪Э╢йё╨</td>
+    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ц╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫я╟О©╫р╨О©╫О©╫й╣д╩О©╫т╢</p>О©╫О©╫О©╫О©╫О©╫ь╪О©╫О©╫йёО©╫</td>
     <td class="tablert"><input type="text" name="sup_keywords" size="20" value="{$item['sup_keywords']}"/></td>
   </tr>
 </table>
 <table border="1" width="100%" class="ctable" bordercolor="#ededed">
   <tr> 
-    <td class="tablelt"><span class="name">╩Ы╠╬╪шг╝ё╨</span></td>
+    <td class="tablelt"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫г╝О©╫О©╫</span></td>
     <td class="tablelr2" style="line-height:25px;height:58px">
-      <input type="text" name="ubzlistprice" id="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font><span class="tip">йпЁ║╪ш(илф╥╣дцФж╣)</span><br/> 
-      <input type="text" name="ubzprice" id="ubzprice" size="10" class="priceinput" value="{$item['price']}"/><font color="#FF0000"> * </font><span class="tip">╫Ь╪ш(илф╥╣д╫Ь╩У╪ш)</span><br/>
+      <input type="text" name="ubzlistprice" id="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font><span class="tip">О©╫пЁО©╫О©╫О©╫(О©╫О©╫ф╥О©╫О©╫О©╫О©╫ж╣)</span><br/> 
+      <input type="text" name="ubzprice" id="ubzprice" size="10" class="priceinput" value="{$item['price']}"/><font color="#FF0000"> * </font><span class="tip">О©╫О©╫О©╫О©╫(О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫О©╫)</span><br/>
     </td>
   </tr>
   <tr> 
-    <td class="tablelt"><span class="name">╪ш╦Я╠Д╦Э╨С╡ывВё╨</span></td>
+    <td class="tablelt"><span class="name">О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</span></td>
     <td class="tablelr2" style="overflow:hidden;">
-      <input type="checkbox" id="delrank" name="delrank" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩиХжц╣д╪╤╠П╪ш╦Я</span><br/>
-      <input type="checkbox" id="delprivate" name="delprivate" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩкЫспцэ╪ш</span><br/>
-      <input type="checkbox" id="deltpl" name="deltpl" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩкЫспдё╟Е╪ш╦Я</span><br/>
-      <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" id="delpricemy" name="delpricemy" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬ЁЩг╟л╗╬╜оЗилвт╪╨иХ╤╗╣даЦйш╪ш</span><br/></span>
+      <input type="checkbox" id="delrank" name="delrank" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫ц╣д╪О©╫О©╫О©╫ш╦О©╫</span><br/>
+      <input type="checkbox" id="delprivate" name="delprivate" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫э╪О©╫</span><br/>
+      <input type="checkbox" id="deltpl" name="deltpl" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫О©╫О©╫О©╫О©╫дёО©╫О©╫ш╦О©╫</span><br/>
+      <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" id="delpricemy" name="delpricemy" value="1" class="checkbox" onFocus="this.blur()"/> <span class="spantip">м╛й╠и╬О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╪О©╫О©╫Х╤╗О©╫О©╫О©╫О©╫О©╫ш╪О©╫</span><br/></span>
     </td>
   </tr>
 </table>
@@ -185,11 +185,11 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 </div>
 
 <div class="cwarpper1" id="t1">
-<div class="ctitle">илф╥юЮпмиХжц</div>
+<div class="ctitle">О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</div>
 <div>
 <table border="0" width="100%" class="ctable" >
   <tr> 
-    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©╗цэилф╥ж╦сп©╗╨е╨мцэбК╣дилф╥,я║╨еилф╥ж╦хГQQ╨ебК║╒йж╩З╨ебКж╝юЮя║╨еоЗйш╣дилф╥</p>илф╥юЮпмё╨</td>
+    <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫ф╥ж╦О©╫п©О©╫О©╫е╨О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥,я║О©╫О©╫О©╫О©╫ф╥ж╦О©╫О©╫QQО©╫О©╫О©╫К║╒О©╫ж╩О©╫О©╫О©╫О©╫О©╫ж╝О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫ш╣О©╫О©╫О©╫ф╥</p>О©╫О©╫ф╥О©╫О©╫О©╫мёО©╫</td>
     <td class="tablert">
       <select size="1" id="ubzptype" name="ubzptype" onChange="showtpl(this)">
         {#Option(ProductTypeList(), $item['ptype'])}
@@ -197,69 +197,69 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </td>
   </tr>
   <tr id="tpl" style="display:none"> 
-    <td class="tablelt">ЁДж╣дё╟Её╨</td>
+    <td class="tablelt">О©╫О©╫ж╣дёО©╫Её╨</td>
     <td class="tablert">
-      <span id="tpllist"></span><font color="#FF0000">*</font><input type="text" id="pnamekey" name="pnamekey" size="5" value="" style="height:15px"/><span style="padding-left:5px;"></span><input type="button" value="кякВ" onclick="DispSelectZone()" class="button" style="height:20px"/>
+      <span id="tpllist"></span><font color="#FF0000">*</font><input type="text" id="pnamekey" name="pnamekey" size="5" value="" style="height:15px"/><span style="padding-left:5px;"></span><input type="button" value="О©╫О©╫О©╫О©╫" onclick="DispSelectZone()" class="button" style="height:20px"/>
     </td>
   </tr>
   <tr id="ubzmycztpl">
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╥г©╗цэюЮспп╖ё╛хГ╧Шм╛й╠я║тЯс╠ох©╗╧╨ЁДж╣дё╟Е,тРртс╠ох©╗╧╨дё╟Ен╙жВ</p>
-      вт╤╗рЕЁДж╣дё╟Её╨
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫г©О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫О©╫О©╫О©╫м╛й╠я║О©╫О©╫с╠О©╫х©О©╫О©╫О©╫О©╫О©╫ж╣дёО©╫О©╫,О©╫О©╫О©╫О©╫с╠О©╫х©О©╫О©╫О©╫дёО©╫О©╫н╙О©╫О©╫</p>
+      О©╫т╤О©╫О©╫О©╫О©╫ж╣дёО©╫Её╨
       </td>
     <td class="tablert">
     <select size="1" id="ubzsyscztpl" name="ubzsyscztpl" style="width:130px;">
-      <option value="0" selected>нчвт╤╗рЕЁДж╣дё╟Е</option>
+      <option value="0" selected>О©╫О©╫О©╫т╤О©╫О©╫О©╫О©╫ж╣дёО©╫О©╫</option>
       {#Option($vd['customtpl'], $item['syscztpl'], 'name', 'id')}
-    </select>[<a href="index.php?m=mod_b2b&c=GA&a=Create"><font color="#ff0000">лМ╪с</font></a>]
+    </select>[<a href="index.php?m=mod_b2b&c=GA&a=Create"><font color="#ff0000">О©╫О©╫О©╫</font></a>]
     </td>
   </tr>
   <tr id="czidname" style="display:none">
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p><span class="tip" id="tipidlable">мФ╪рсц╩╖цШ╣д╫п╥╗,╠ххГЁДQ╠рй╠╫пQQ╨е,ЁДсно╥й╠╫пуй╨е,хГ╧Шйг╫П╠рюЮ╩Руъв╟╠╦,©иртп╢╫ги╚цШ</span></p>
-      <span class="name" id="spanidlable">ЁДж╣IDцШЁфё╨</span>
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p><span class="tip" id="tipidlable">О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫д╫п╥О©╫,О©╫О©╫О©╫О©╫О©╫QО©╫О©╫й╠О©╫О©╫QQО©╫О©╫,О©╫О©╫О©╫О©╫о╥й╠О©╫О©╫О©╫й╨О©╫,О©╫О©╫О©╫О©╫г╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫в╟О©╫О©╫,О©╫О©╫О©╫О©╫п╢О©╫О©╫и╚О©╫О©╫</span></p>
+      <span class="name" id="spanidlable">О©╫О©╫ж╣IDО©╫О©╫О©╫фёО©╫</span>
     </td>
     <td class="tablert">
     <input type="text" id="ubzidlable" name="ubzidlable" size="10" value="{$item['idlable']}"/>
     </td>
   </tr>
   <tr id="areaserv" style="display:none">
-    <td class="tablelt"><span class="name" id="spanareaserv" >гЬ╥Чотй╬ё╨</span></td>
+    <td class="tablelt"><span class="name" id="spanareaserv" >О©╫О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫</span></td>
     <td class="tablert">
-      <span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>отй╬гЬсР
-      <input type="checkbox" value="1" name="ubzdispserv" class="checkbox" {#ToggleCheck($item['dispserv'])}/>отй╬╥ЧнЯфВ</span>
+      <span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>О©╫О©╫й╬О©╫О©╫О©╫О©╫
+      <input type="checkbox" value="1" name="ubzdispserv" class="checkbox" {#ToggleCheck($item['dispserv'])}/>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫</span>
       <span id="spanareaserv2" style="display:none">
-        <input type='radio' value='1' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==1){-->checked<!--}--> onFocus="this.blur()"/>тйпМя║╨е╧╨бР(╧╨бРй╠отй╬╨ебКё╛тйпМя║тЯ╧╨бР) <br/>
-        <input type='radio' value='0' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==0){-->checked<!--}--> onFocus="this.blur()"/>кФ╩З╨ебК(╧╨бРй╠╡╩отй╬╨ебКё╛кФ╩ЗлАх║©Б╢Ф╨ебК)
+        <input type='radio' value='1' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==1){-->checked<!--}--> onFocus="this.blur()"/>О©╫О©╫О©╫О©╫я║О©╫е╧О©╫О©╫О©╫(О©╫О©╫О©╫О©╫й╠О©╫О©╫й╬О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫я║О©╫О©╫О©╫О©╫) <br/>
+        <input type='radio' value='0' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==0){-->checked<!--}--> onFocus="this.blur()"/>О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫О©╫х║О©╫О©╫О©╫О©╫О©╫О©╫)
       </span>
     </td>
   </tr>
   <tr id="tradeterm" style="display:none">
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>лАй╬бР╪рхГ╨н╫╩рв╢кюЮилф╥(хГсно╥в╟╠╦тз╨н╢╕╫╩рвё╛╫П╠р╨м╨н╢╕╫╩рв)</p>
-      <span id="spanareaserv" >╫╩рв╥╫й╫ё╨</span>
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫н╫О©╫О©╫в╢О©╫О©╫О©╫О©╫О©╫ф╥(О©╫О©╫О©╫О©╫о╥в╟О©╫О©╫О©╫з╨н╢О©╫О©╫О©╫О©╫вёО©╫О©╫О©╫р╨м╨н╢О©╫О©╫О©╫О©╫О©╫)</p>
+      <span id="spanareaserv" >О©╫О©╫О©╫в╥О©╫й╫О©╫О©╫</span>
     </td>
     <td class="tablert">
       <textarea name="ubztradeterm" cols="28" style="width:208px;" rows="3">{$item['tradeterm']}</textarea>
     </td>
   </tr>
   <tr id="disponshow" style="display:none">
-    <td class="tablelt"><span class="name" id="spanareaserv" >╫╩рв╥╫й╫отй╬й╠╪Дё╨</span></td>
+    <td class="tablelt"><span class="name" id="spanareaserv" >О©╫О©╫О©╫в╥О©╫й╫О©╫О©╫й╬й╠О©╫Дё╨</span></td>
     <td class="tablert">
-      <input type="radio" value="0" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==1){-->checked<!--}-->/>Ёи╧╕╧╨бР╨Сотй╬
-      <input type="radio" value="1" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==0){-->checked<!--}-->/>╧╨бРг╟отй╬
+      <input type="radio" value="0" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==1){-->checked<!--}-->/>О©╫и╧О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╬
+      <input type="radio" value="1" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==0){-->checked<!--}-->/>О©╫О©╫О©╫О©╫г╟О©╫О©╫й╬
     </td>
   </tr>
   <tr id="stocks" style="display:none">
-    <td class="tablelt"><span class="name">©Б╢Фё╨</span></td>
+    <td class="tablelt"><span class="name">О©╫О©╫Фё╨</span></td>
     <td class="tablert">
-      <input type="text" value="1" name="ubzstocks" size="10" value="{$item['stocks']}"/> (тщн╢©╙╥е╧╕дэё╛нчпКлНп╢) ё╘
+      <input type="text" value="1" name="ubzstocks" size="10" value="{$item['stocks']}"/> (О©╫О©╫н╢О©╫О©╫О©╫е╧О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢) О©╫О©╫
     </td>
   </tr>
   <tr id="unit" style="display:none">
-    <td class="tablelt"><span class="name">©Б╢Ф╣╔н╩ё╨</span></td>
+    <td class="tablelt"><span class="name">О©╫О©╫Ф╣╔н╩О©╫О©╫</span></td>
     <td class="tablert">
-      <input type="text" size="10" name="ubzunit"  value="{$item['unit']}"/> (тщн╢©╙╥е╧╕дэё╛нчпКлНп╢)
+      <input type="text" size="10" name="ubzunit"  value="{$item['unit']}"/> (О©╫О©╫н╢О©╫О©╫О©╫е╧О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢)
     </td>
   </tr>
 </table>
@@ -267,23 +267,23 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 </div>
 
 <div class="cwarpper1" id="t2">
-<div class="ctitle">╤тсп©╗╧╨о╣мЁ╧╘╩У</div>
+<div class="ctitle">О©╫О©╫О©╫п©О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫</div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("╢Р╧╢"╠Мй╬тйпМа╙йшо╣мЁ╣дфДкШил╩╖я║тЯдЗ╣дилф╥вВн╙вт╪╨╣д╩Ут╢,╤ЬдЗ©ирт╢сжп╩Ях║юШхС)</p>
-        ╤тмБ╧╘╩Уё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("О©╫О©╫"О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫л╩О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫н╙О©╫т╪О©╫О©╫д╩О©╫т╢,О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╢О©╫О©╫п╩О©╫х║О©╫О©╫О©╫О©╫)</p>
+        О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzsup"  {#ToggleCheck($item['ubzsup'])} class="checkbox" onclick="showsupinfo(this.checked)" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr id="ubzsupprice" style="<!--if($item['ubzsup']==0){-->display:none<!--}-->"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╤тмБ╧╘╩У╣д╪ш╦Я(хГ╧Шилф╥сп╤тмБ╧╘╩У╧╕дэё╛гКвпо╦лНп╢╤тс╕╣д╧╘╩У╪шг╝ё╛╫╗рИ╡╩р╙╣мсздЗ╣д╫Ь╩У╪ш)</p>
-        ╤тмБ╧╘╩У╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫д╪ш╦О©╫(О©╫О©╫О©╫О©╫О©╫ф╥О©╫п╤О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫о╦О©╫О©╫п╢О©╫О©╫с╕О©╫д╧О©╫О©╫О©╫О©╫О©╫г╝О©╫О©╫О©╫О©╫О©╫И╡╩р╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╫О©╫О©╫О©╫О©╫О©╫)</p>
+        О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫шёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzsupprice" value="{$item['ubzsupprice']}" size="10"/>
@@ -291,28 +291,28 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr id="ubzsupcheck" style="<!--if($item['ubzsup']==0){-->display:none<!--}-->"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>"╢Р╧╢"╠Мй╬пХр╙иС╨к╡е©ирт╤т╫сдЗ╣дилф╥,╥ЯтР╡╩пХр╙</p>
-        ╤т╫сиС╨кё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>"О©╫О©╫"О©╫О©╫й╬О©╫О©╫р╙О©╫О©╫к╡е©О©╫О©╫т╤т╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥,О©╫О©╫О©╫О©╫О©╫О©╫р╙</p>
+        О©╫т╫О©╫О©╫О©╫кёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzsupcheck" {#ToggleCheck($item['ubzsupcheck'])} class="checkbox" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("╢Р╧╢"╠Мй╬©ьжф╢килф╥╦В╫Ь╩Уил╣даЦйш╪шё╛хГ╧Ш╣мсзвН╣маЦйш╪шЁЖйшилф╥ё╛о╣мЁ╩Авт╤╞мёж╧╤тфД╧╘╩У)</p>
-        йг╥Я©ьжфаЦйш╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("О©╫О©╫"О©╫О©╫й╬О©╫О©╫О©╫ф╢О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╣О©╫О©╫О©╫О©╫ш╪шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шЁО©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫о╣мЁО©╫О©╫О©╫т╤О©╫мёж╧О©╫О©╫О©╫Д╧╘О©╫О©╫)</p>
+        О©╫г╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" value="1" name="ubzctrl" {#ToggleCheck($item['ubzctrl'])} class="checkbox" onclick="showctrlinfo(this.checked)" onFocus="this.blur()"/>
-        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">оЙо╦</a>]
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">О©╫О©╫о╦</a>]
       </td>
     </tr>
     <tr id="ubzctrlprice" style="<!--if($item['ubzctrl']==0){-->display:none<!--}-->"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╤тмБ╧╘╩У╣двН╣маЦйш╪ш╦Я(хГ╧Ш╧╘с╕илпХр╙╤тилф╥©ьжфвН╣маЦйш╪шё╛гКвпо╦лНп╢)</p>
-        вН╣маЦйш╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Б╧╘О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪ш╦О©╫(О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫О©╫О©╫О©╫О©╫о╦О©╫О©╫п╢)</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzctrlprice" size="10" value="{$item['ubzctrlprice']}"/>
@@ -320,8 +320,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr style="display:none">
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╫Ь╩УилвН╣м╣д╧╨бРйЩа©</p>
-        вН╣мфП╧╨а©ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╣д╧О©╫О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzlowqty" size="10" value="{$item['ubzlowqty']}"/>
@@ -332,29 +332,29 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 </div>
 
 <div class="cwarpper1" id="t3">
-<div class="ctitle">кякВсе╩╞</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫е╩О©╫</div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        илф╥рЁцФ╠ЙлБё╨
+        О©╫О©╫ф╥рЁО©╫О©╫О©╫О©╫Бё╨
       </td> 
-      <td class="tablert"><input type="text" name="webtitle" value="{$item['webtitle']}" size="34"/> <span class="spantip">(аТ©утРд╛хоотй╬илф╥цШЁф)</span></td>
+      <td class="tablert"><input type="text" name="webtitle" value="{$item['webtitle']}" size="34"/> <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫О©╫О©╫О©╫й╬О©╫О©╫ф╥О©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        META_KEYWORDS(рЁцФ╧ь╪Э╢й)
+        META_KEYWORDS(рЁО©╫О©╫ь╪О©╫О©╫О©╫)
       </td>
       <td class="tablert" style="height:60px">
         <textarea rows="3" name="meta_keywords" cols="28" style="width:195px;">{$item['meta_keywords']}</textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дKEYWORDSдзхщ)</span></td>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫KEYWORDSО©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
-      <td class="tablelt">META_DESCRIPTION(рЁцФцХйЖ)
+      <td class="tablelt">META_DESCRIPTION(рЁО©╫О©╫О©╫О©╫О©╫О©╫)
       </td>
       <td class="tablert" style="height:60px">
         <textarea rows="3" name="meta_description" cols="28" style="width:195px;">{$item['meta_description']}</textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дDESCRIPTIONдзхщ)</span>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫DESCRIPTIONО©╫О©╫О©╫О©╫)</span>
       </td>
     </tr>
   </table>
@@ -362,71 +362,71 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 </div>
 <!--$proptmp=array('yktsamechecktime'=>0,'yktsamechecknum'=>0,'yktmaxnum'=>0,'yktnoothers'=>0,'playerchecktime'=>0,'playerchecknum'=>0,'playmore'=>0);if(isset($item['prop']) && $item['prop'] != '' && $item['prop'] != 'NULL'){;$proptmp = unserialize($item['prop']);}-->
 <div class="cwarpper1" id="t4">
-<div class="ctitle">╧╨бРоЮ╧ьиХжц</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt" style="line-height:25px;height:58px">
-        ╧╨бРйЩа©©ьжф(╥╫й╫р╩)ё╨
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫й╫р╩)О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="ubzqtymin" size="5" value="{$item['qtymin']}"/> <span class="tip">фП╧╨а©(╦Ж)</span><br/>  
-        <input type="text" name="ubzqtymax" size="5" value="{$item['qtymax']}"/> <span class="tip">╫ьж╧а©(╦Ж)</span> 
+        <input type="text" name="ubzqtymin" size="5" value="{$item['qtymin']}"/> <span class="tip">О©╫О©╫О©╫О©╫(О©╫О©╫)</span><br/>  
+        <input type="text" name="ubzqtymax" size="5" value="{$item['qtymax']}"/> <span class="tip">О©╫О©╫ж╧О©╫О©╫(О©╫О©╫)</span> 
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>а╫жж╥╫й╫хня║р╩жжё╛хГ╧ШпХр╙й╧сц╥╫й╫╤Чё╛╪╢иХжц╥╫й╫╤Ч╪╢©иё╛╥╫й╫р╩вт╤╞й╖п╖</p>
-        ╧╨бРйЩа©©ьжф(╥╫й╫╤Ч)ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ж╥О©╫й╫О©╫О©╫я║р╩О©╫жёО©╫О©╫О©╫О©╫О©╫О©╫р╙й╧О©╫ц╥О©╫й╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╥О©╫й╫О©╫О©╫О©╫О©╫О©╫иёО©╫О©╫О©╫й╫р╩О©╫т╤О©╫й╖п╖</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫й╫О©╫О©╫)О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="ubzqtylist" size="22" value="{$item['qtylist']}"/> <span class="spantip">вт╤╗рЕ╥╫й╫,гКй╧сцй╧сц╟К╫г╤╨╨е╦Т©╙оЮс╕йЩа©</span>
+        <input type="text" name="ubzqtylist" size="22" value="{$item['qtylist']}"/> <span class="spantip">О©╫т╤О©╫О©╫Е╥╫й╫,О©╫О©╫й╧О©╫О©╫й╧О©╫ц╟О©╫г╤О©╫О©╫е╦О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫О©╫</span>
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>вт╤╗рЕдё╟Е╩Руъ©╗цэилф╥╡е╩Аспп╖</p>
-        йЩа©╣╔н╩ё╨
+      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫т╤О©╫О©╫О©╫дёО©╫О©╫О©╫О©╫ъ©О©╫О©╫О©╫О©╫О©╫ф╥О©╫е╩О©╫О©╫О©╫п╖</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫н╩О©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="ubzunit" size="5" value="{$item['unit']}"/> 
       </td>
     </tr>
     <tr>
-      <td class="tablelt"><span class="name">╫Ь╩УсеохкЁпРё╨</span></td>
+      <td class="tablelt"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫кЁО©╫О©╫</span></td>
       <td class="tablert">
-        <input type="radio" name="supfirst" value="0" class="checkbox" <!--if($item['supfirst'] == 0){-->checked<!--}--> onFocus="this.blur()"/>╠╬╣ьсеох 
-        <input type="radio" name="supfirst" value="1" class="checkbox" <!--if($item['supfirst'] == 1){-->checked<!--}--> onFocus="this.blur()"/>а╙йш╧╘╩Уо╣мЁсеох 
+        <input type="radio" name="supfirst" value="0" class="checkbox" <!--if($item['supfirst'] == 0){-->checked<!--}--> onFocus="this.blur()"/>О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 
+        <input type="radio" name="supfirst" value="1" class="checkbox" <!--if($item['supfirst'] == 1){-->checked<!--}--> onFocus="this.blur()"/>О©╫О©╫О©╫ш╧О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫ 
       </td>
     </tr>
     <tr<!--if(UB_B2B+UB_YKT+UB_B2C==1){--> style="display:none"<!--}-->>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>ио╪эя║оН╧╢я║╨Сё╛╤тс╕ф╫л╗р╡пХр╙╧╢я║ё╛╢килф╥╥╫©и╠╩тз╤тс╕╣дг╟л╗©╢╣╫</p>
-        ╧╨бРх╗очё╨</td>
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫о╪О©╫я║О©╫Н╧╢я║О©╫Сё╛╤О©╫с╕ф╫л╗р╡О©╫О©╫р╙О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫и╠О©╫О©╫з╤О©╫с╕О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫х╗О©╫чёО©╫</td>
       <td class="tablert">
-        <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forshop" value="1" class="checkbox"  {#ToggleCheck($item['forshop'])} onFocus="this.blur()"/>аЦйшо╣мЁ©и╧╨бР</span> 
-        <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox"   {#ToggleCheck($item['forb2b'])} onFocus="this.blur()"/>еЗ╥╒о╣мЁ©и╧╨бР</span> 
-        <span<!--if(!UB_YKT || $item['ptype'] > 99){--> style="display:none"<!--}-->><input type="checkbox" name="forykt" id="forykt" value="1" class="checkbox"   {#ToggleCheck($item['forykt'])} onFocus="this.blur()" onclick="setykt(this)"/>р╩©╗м╗о╣мЁ©и╧╨бР</span>
+        <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forshop" value="1" class="checkbox"  {#ToggleCheck($item['forshop'])} onFocus="this.blur()"/>О©╫О©╫О©╫О©╫о╣мЁО©╫и╧О©╫О©╫О©╫</span> 
+        <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox"   {#ToggleCheck($item['forb2b'])} onFocus="this.blur()"/>О©╫О©╫О©╫О©╫о╣мЁО©╫и╧О©╫О©╫О©╫</span> 
+        <span<!--if(!UB_YKT || $item['ptype'] > 99){--> style="display:none"<!--}-->><input type="checkbox" name="forykt" id="forykt" value="1" class="checkbox"   {#ToggleCheck($item['forykt'])} onFocus="this.blur()" onclick="setykt(this)"/>р╩О©╫О©╫м╗о╣мЁО©╫и╧О©╫О©╫О©╫</span>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <!--if(UB_B2B+UB_YKT+UB_B2C>1){--><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>д©г╟╣д╟Ф╠╬ё╛ЁЩио╪э╤ткЫспф╫л╗спп╖мБё╛фДкЭя║оНж╩уК╤таЦйшф╫л╗иЗп╖</p>
-        <!--}-->илф╥╡ывВё╨
+        <!--if(UB_B2B+UB_YKT+UB_B2C>1){--><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>д©г╟О©╫д╟Ф╠╬О©╫О©╫О©╫О©╫О©╫о╪э╤О©╫О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫п╖О©╫Бё╛О©╫О©╫О©╫О©╫я║О©╫О©╫ж╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫п╖</p>
+        <!--}-->О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫
       </td> 
       <td class="tablert">
-        <input type="checkbox" value="1" name="ubzsell"  class="checkbox" {#ToggleCheck($item['sell'])} onFocus="this.blur()"/>ио╪э<!--if(UB_B2B+UB_YKT+UB_B2C>1){--><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>ио╪эя║оН╧╢я║╨Сё╛╤тс╕ф╫л╗р╡пХр╙╧╢я║ё╛╢килф╥╥╫©и╠╩тз╤тс╕╣дг╟л╗©╢╣╫</p><!--}-->
-        <span <!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" value="1" name="ubznew"  class="checkbox" {#ToggleCheck($item['new'])} onFocus="this.blur()"/>пбф╥
-        <input type="checkbox" value="1" name="ubztag"  class="checkbox" {#ToggleCheck($item['tag'])} onFocus="this.blur()"/>пбйж
-        <input type="checkbox" value="1" name="ubzremd"  class="checkbox" {#ToggleCheck($item['remd'])} onFocus="this.blur()"/>мф╪Ж
-        <input type="checkbox" value="1" name="ubzhot" class="checkbox" {#ToggleCheck($item['hot'])} onFocus="this.blur()"/>ххбТ</span>
-        <input type="checkbox" value="1" name="ubzsale" class="checkbox" {#ToggleCheck($item['sale'])} onFocus="this.blur()" onclick="javascript:alert('иХжц╢ыоЗ╣дилф╥ё╛м╛й╠йг╤т╫сгЧ╣юо╣мЁё╛\n\n©м╩╖╧╨бРй╠╫╚╡╩╤т╪ш╦Я╫Ьпп╪Л╡Иё╛р╡╬мйгтйпМдЦ╣мсзгЧ╣ю╧╘╩Уил╦ЬдЗ╣д╪ш╦ЯоЗйшё╛\n\nхГ╧ШдЗц╩спуБюЮр╙гСё╛гК╡╩р╙╧╢я║уБ╦Ж╣ь╥╫')"/>╢ыоЗ <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>иХжц╢ыоЗ╣дилф╥ё╛м╛й╠йг╤т╫сгЧ╣юо╣мЁё╛©м╩╖╧╨бРй╠╫╚╡╩╤т╪ш╦Я╫Ьпп╪Л╡Иё╛р╡╬мйгтйпМдЦ╣мсзгЧ╣ю╧╘╩Уил╦ЬдЗ╣д╪ш╦ЯоЗйшё╛хГ╧ШдЗц╩спуБюЮр╙гСё╛гК╡╩р╙╧╢я║уБ╦Ж╣ь╥╫</p>
+        <input type="checkbox" value="1" name="ubzsell"  class="checkbox" {#ToggleCheck($item['sell'])} onFocus="this.blur()"/>О©╫о╪О©╫<!--if(UB_B2B+UB_YKT+UB_B2C>1){--><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫о╪О©╫я║О©╫Н╧╢я║О©╫Сё╛╤О©╫с╕ф╫л╗р╡О©╫О©╫р╙О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫и╠О©╫О©╫з╤О©╫с╕О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫</p><!--}-->
+        <span <!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" value="1" name="ubznew"  class="checkbox" {#ToggleCheck($item['new'])} onFocus="this.blur()"/>О©╫О©╫ф╥
+        <input type="checkbox" value="1" name="ubztag"  class="checkbox" {#ToggleCheck($item['tag'])} onFocus="this.blur()"/>О©╫О©╫О©╫О©╫
+        <input type="checkbox" value="1" name="ubzremd"  class="checkbox" {#ToggleCheck($item['remd'])} onFocus="this.blur()"/>О©╫ф╪О©╫
+        <input type="checkbox" value="1" name="ubzhot" class="checkbox" {#ToggleCheck($item['hot'])} onFocus="this.blur()"/>О©╫О©╫О©╫О©╫</span>
+        <input type="checkbox" value="1" name="ubzsale" class="checkbox" {#ToggleCheck($item['sale'])} onFocus="this.blur()" onclick="javascript:alert('О©╫О©╫О©╫ц╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫м╛й╠О©╫г╤т╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫\n\nО©╫м╩О©╫О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫т╪ш╦О©╫О©╫О©╫п╪О©╫Иё╛р╡О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╦О©╫О©╫О©╫О©╫д╪ш╦О©╫О©╫О©╫О©╫шёО©╫\n\nО©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫К╡╩р╙О©╫О©╫я║О©╫О©╫О©╫О©╫ь╥О©╫')"/>О©╫О©╫О©╫О©╫ <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫ц╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫м╛й╠О©╫г╤т╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫м╩О©╫О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫т╪ш╦О©╫О©╫О©╫п╪О©╫Иё╛р╡О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╦О©╫О©╫О©╫О©╫д╪ш╦О©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫К╡╩р╙О©╫О©╫я║О©╫О©╫О©╫О©╫ь╥О©╫</p>
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>йЩвжт╫п║ё╛т╫©©г╟еепРё╛хГ╧Шц╩спльйБр╙гСё╛лН0╪╢©иё╛д╛хо╟╢лМ╪сй╠╪Д╣╧пРееап</p>
-        илф╥ееапкЁпРё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫т╫п║О©╫О©╫т╫О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫0О©╫О©╫О©╫иёО©╫д╛О©╫о╟О©╫О©╫О©╫О©╫й╠О©╫Д╣╧О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫ф╥О©╫О©╫О©╫О©╫кЁО©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="ordering" size="10" value="{$item['ordering']}"/>
@@ -434,24 +434,24 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr> 
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╥╫╠Ц╟╢ф╢рТйввжд╦╫ЬппкякВё╛╠ххГд╖йчйю╫Гё╛дЗ©иртп╢Ёиm╩Руъ╩Руъms╩Руъmssjё╛╢Сп║п╢гЬ╥жё╛гКмЁр╩кЫспилф╥╣д╢Сп║п╢ё╛хГ╧ШдЗиХ╣дп║п╢ё╛дгц╢гКтзкЫспилф╥жп╤╪п╢Ёип║п╢</p>
-        илф╥йввжд╦╢╝ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Ц╟╢ф╢О©╫О©╫О©╫О©╫О©╫О©╫д╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╖О©╫О©╫О©╫О©╫О©╫Гё╛О©╫О©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫mО©╫О©╫О©╫ъ╩О©╫О©╫О©╫msО©╫О©╫О©╫О©╫mssjО©╫О©╫О©╫О©╫п║п╢О©╫О©╫О©╫жёО©╫О©╫О©╫мЁр╩О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫д╢О©╫п║п╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п║п╢О©╫О©╫О©╫О©╫ц╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫п╤О©╫п╢О©╫О©╫п║п╢</p>
+        О©╫О©╫ф╥О©╫О©╫О©╫О©╫д╦О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" name="pinyin" size="10" value="{$item['pinyin']}"/>
       </td>
     </tr>
     <tr<!--if($item['aid'] <= 0){-->style="display:none"<!--}-->>
-      <td class="tablelt"><span class="name">цФоР╤тоСё╨</span></td>
+      <td class="tablelt"><span class="name">О©╫О©╫О©╫О©╫О©╫О©╫О©╫</span></td>
       <td class="tablert">
-        <input type="radio" name="tosys" value="1" class="checkbox" <!--if($item['tosys'] == 1){-->checked<!--}--> onFocus="this.blur()"/>о╣мЁх╚лЕсц╩╖ 
-        <input type="radio" name="tosys" value="-1" class="checkbox" <!--if($item['tosys'] == -1){-->checked<!--}--> onFocus="this.blur()"/>об╪╤сц╩╖ 
+        <input type="radio" name="tosys" value="1" class="checkbox" <!--if($item['tosys'] == 1){-->checked<!--}--> onFocus="this.blur()"/>о╣мЁх╚О©╫О©╫О©╫ц╩О©╫ 
+        <input type="radio" name="tosys" value="-1" class="checkbox" <!--if($item['tosys'] == -1){-->checked<!--}--> onFocus="this.blur()"/>О©╫б╪О©╫О©╫ц╩О©╫ 
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©иртй╧сц╩Щ╥ж╤р╩╩дЁп╘илф╥╩РуънОф╥╣хё╛╧╨бРр╩╦Жилф╥╣д╩Щ╥жйЩё╛N╦Жилф╥тР вэ╩Щ╥жйЩ= р╩╦Жилф╥╣д╩Щ╥жйЩ x N</p>
-        тЫкм╩Щ╥жё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫й╧О©╫ц╩О©╫О©╫ж╤р╩О©╫дЁп╘О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫хёО©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫ф╥О©╫д╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫NО©╫О©╫О©╫О©╫ф╥О©╫О©╫ О©╫э╩О©╫О©╫О©╫О©╫О©╫= р╩О©╫О©╫О©╫О©╫ф╥О©╫д╩О©╫О©╫О©╫О©╫О©╫ x N</p>
+        О©╫О©╫О©╫м╩О©╫О©╫жёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="scored" size="10" value="{$item['scored']}"/>
@@ -459,8 +459,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╗╧ЩеЗ╥╒о╣мЁё╛╬╜оЗил╧╨бРр╩╦Жилф╥╣д╥╣╣ЦйЩё╛N╦Жилф╥тР вэ╥╣╣ЦйЩ= р╩╦Жилф╥╣д╥╣╣ЦйЩ x N</p>
-        ╥╣╣Цё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╗О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫л╧О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫ф╥О©╫д╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫NО©╫О©╫О©╫О©╫ф╥О©╫О©╫ О©╫э╥О©╫О©╫О©╫О©╫О©╫= р╩О©╫О©╫О©╫О©╫ф╥О©╫д╥О©╫О©╫О©╫О©╫О©╫ x N</p>
+        О©╫О©╫О©╫Цё╨
       </td>
       <td class="tablert">
         <input type="text" name="reward" size="10" value="{$item['reward']}"/>
@@ -468,8 +468,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr<!--if($item['aid'] <= 0){-->style="display:none"<!--}-->> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╧╨бРЁи╧╕╨Сё╛╦Ьо╣мЁ╣длАЁи╠хюЩё╛вН╣м 0 </p>
-        ╦Ьо╣мЁлАЁиё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫и╧О©╫О©╫Сё╛╦О©╫о╣мЁО©╫О©╫О©╫О©╫и╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ 0 </p>
+        О©╫О©╫о╣мЁО©╫О©╫иёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="pfee" size="22" value="{$item['pfee']}"/> 
@@ -477,8 +477,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr<!--if($item['aid'] <= 0){-->style="display:none"<!--}-->> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╗╧Щ╨С╡е©иртг╟л╗тйпМ╧╨бР </p>
-        о╣мЁиС╨кё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╗О©╫О©╫О©╫О©╫е©О©╫О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫О©╫О©╫ </p>
+        о╣мЁО©╫О©╫кёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" name="schecked" value="1" class="checkbox" <!--if($item['checked'] == 1){-->checked<!--}--> onFocus="this.blur()"/> 
@@ -486,8 +486,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧Шн╙©утР╡╩╣╞ЁЖ</p>
-        ╧╨©╗╣╞ЁЖлАй╬ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫н╙О©╫О©╫О©╫Р╡╩╣О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫
       </td>
       <td class="tablert">
         <textarea rows="3" name="palert" cols="28" style="width:195px;">{$item['palert']}</textarea>
@@ -495,22 +495,22 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>об╤╘╣╔╨Сё╛тз"ЁДж╣╫А╧Ш"уБр╩ю╦отй╬╣длАй╬пео╒ё╛ж╩спуЩтзЁДж╣╣д╤╘╣╔╡еспп╖ё╛ря╬╜Ёи╧╕╩Руъй╖╟э╣д╤╘╣╔тР╡╩отй╬</p>
-        об╣╔╨С╣╞ЁЖ╣длАй╬ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫б╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫"О©╫О©╫ж╣О©╫О©╫О©╫"О©╫О©╫р╩О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫й╬О©╫О©╫о╒О©╫О©╫ж╩О©╫О©╫О©╫О©╫О©╫зЁО©╫ж╣О©╫д╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫О©╫я╬О©╫О©╫и╧О©╫О©╫О©╫О©╫О©╫й╖О©╫э╣д╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╬</p>
+        О©╫б╣О©╫О©╫С╣╞ЁО©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫
       </td>
       <td class="tablert">
         <textarea rows="3" name="orderalert" cols="28" style="width:195px;">{$item['orderalert']}</textarea>
       </td>
     </tr>
     <tr id="quickusetr">
-      <td class="tablelt">йг╥Я╪╢лА╪╢сцё╨</td>
+      <td class="tablelt">О©╫г╥О©╫О©╫А╪╢О©╫цёО©╫</td>
       <td class="tablert">
         <input type="checkbox" name="quickuse" value="1" class="checkbox" <!--if($item['quickuse'] == 1){-->checked<!--}--> onFocus="this.blur()"/> 
       </td>
     </tr>
     <tr id="quickusetimetr">
-      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╠Мй╬©м╩╖╧╨бР╨Стздг╦Жй╠╪Д╤ндз╠ьпКй╧сц</p>
-        ╧╨бР╨Сй╠╪Д╤ндзпКй╧сцё╨
+      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╬О©╫м╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╦О©╫й╠О©╫О©╫О©╫О©╫з╠О©╫О©╫О©╫й╧О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫цёО©╫
       </td>
       <td class="tablert">
         <input type="text" name="quickusetime" value="{$item['quickusetime']}" size="10" /> п║й╠ 
@@ -518,8 +518,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr id="buylit">
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╠Мй╬╬╜оЗил©ирт╦ЬкШ╣доб╪╤╤╗╪ш</p>
-        ╬╜оЗилйг╥Я©ирт╤╗╪шё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫л©О©╫О©╫т╦О©╫О©╫О©╫О©╫О©╫О©╫б╪О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╥О©╫О©╫О©╫т╤О©╫О©╫шёО©╫
       </td>
       <td class="tablert">
         <input type="checkbox" name="canmakeprice" value="1" class="checkbox" onFocus="this.blur()" <!--if($item['canmakeprice'] == 1){-->checked<!--}-->/> 
@@ -527,42 +527,42 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr id="buyadaytr">
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╠Мй╬╬╜оЗилр╩лЛ©ирт╧╨бР╣двН╤ЮйЩа©</p>
-        ╬╜оЗил╣╠ху©и╧╨бРё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫т╧О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫л╣О©╫О©╫у©и╧О©╫О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="buyaday" value="{$item['buyaday']}" size="10" /> 0╩Руъ©у╠Мй╬╡╩очжф 
+        <input type="text" name="buyaday" value="{$item['buyaday']}" size="10" /> 0О©╫О©╫О©╫ъ©у╠О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫ 
       </td>
     </tr>
     <tr id="buylit">
-      <td class="tablelt">фТсцй╠╪Д╤ночжфё╨</td>
+      <td class="tablelt">О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫фёО©╫</td>
       <td class="tablert">
         <input type="checkbox" name="buylit" value="1" class="checkbox" <!--if($item['buylit'] == 1){-->checked<!--}--> onFocus="this.blur()"/> 
       </td>
     </tr>
     <tr id="buylitstardate">
-      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>й╠╪Д╤ночжф╣дфПй╪й╠╪Д</p>
-        фПй╪й╠╪Дё╨
+      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>й╠О©╫О©╫О©╫О©╫О©╫О©╫ф╣О©╫О©╫О©╫й╪й╠О©╫О©╫</p>
+        О©╫О©╫й╪й╠О©╫Дё╨
       </td>
       <td class="tablert">
-        <input type="text" name="buylitstardate" value="{$item['buylitstardate']}" size="10" /> ╦Яй╫:08:15
+        <input type="text" name="buylitstardate" value="{$item['buylitstardate']}" size="10" /> О©╫О©╫й╫:08:15
       </td>
     </tr>
     <tr id="buylitenddate">
-      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>й╠╪Д╤ночжф╣д╫АйЬй╠╪Д</p>
-        ╫АйЬй╠╪Дё╨
+      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>й╠О©╫О©╫О©╫О©╫О©╫О©╫ф╣д╫О©╫О©╫О©╫й╠О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫й╠О©╫Дё╨
       </td>
       <td class="tablert">
-        <input type="text" name="buylitenddate" value="{$item['buylitenddate']}" size="10" /> ╦Яй╫:23:30 
+        <input type="text" name="buylitenddate" value="{$item['buylitenddate']}" size="10" /> О©╫О©╫й╫:23:30 
       </td>
     </tr>
     <tr id="buylitobject">
-      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>фТсцй╠╪Д╤ночжф╢Р╧╢╨С╡е╩АиЗп╖</p>
-        тзй╠╪Д╤ндзё╨
+      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫ф╢Р╧╢╨О©╫е╩О©╫О©╫О©╫п╖</p>
+        О©╫О©╫й╠О©╫О©╫О©╫О©╫зёО©╫
       </td>
       <td class="tablert">
-        <input type="radio" name="buylitobject" value="1" class="checkbox" <!--if( !isset($proptmp['buylitobject']) || ( isset($proptmp['buylitobject']) && $proptmp['buylitobject']==1 ) ){-->checked<!--}--> onFocus="this.blur()" onclick="javascript:alert('фТсцй╠╪Д╤ночжф╢Р╧╢╨С╡е╩АиЗп╖')"/>тйпМ╧╨бР 
-        <input type="radio" name="buylitobject" value="0" class="checkbox" <!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->checked<!--}--> onFocus="this.blur()" onclick="javascript:alert('фТсцй╠╪Д╤ночжф╢Р╧╢╨С╡е╩АиЗп╖')"/>╫Шж╧╧╨бР 
+        <input type="radio" name="buylitobject" value="1" class="checkbox" <!--if( !isset($proptmp['buylitobject']) || ( isset($proptmp['buylitobject']) && $proptmp['buylitobject']==1 ) ){-->checked<!--}--> onFocus="this.blur()" onclick="javascript:alert('О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫ф╢Р╧╢╨О©╫е╩О©╫О©╫О©╫п╖')"/>О©╫О©╫О©╫О©╫О©╫О©╫ 
+        <input type="radio" name="buylitobject" value="0" class="checkbox" <!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->checked<!--}--> onFocus="this.blur()" onclick="javascript:alert('О©╫О©╫О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫ф╢Р╧╢╨О©╫е╩О©╫О©╫О©╫п╖')"/>О©╫О©╫ж╧О©╫О©╫О©╫О©╫ 
       </td>
     </tr>
   </table>
@@ -571,31 +571,31 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 
 <div class="cwarpper1" id="ykt"  <!--if(UB_YKT){--> <!--if($item['forykt']==0){-->style="display:none"<!--}--><!--}else{--> style="display:none"<!--}-->>
 <div class="ctitle">
-  р╩©╗м╗оЮ╧ьиХжц
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">жВр╙сцсзр╩©╗м╗ф╫л╗</p>
+  р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">О©╫О©╫р╙О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗ф╫л╗</p>
 </div>
 <div>
   <table class="ctable" bordercolor="#ededed" style="border:0px">
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧ШаТ©у╣д╩╟ё╛р╩©╗м╗ф╫л╗╫╚отй╬мЙуШ╣дилф╥цШЁф</p>
-        р╩©╗м╗ф╫л╗отй╬╣дцШЁфё╨</td>
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫у╣д╩О©╫О©╫О©╫р╩О©╫О©╫м╗ф╫л╗О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫</p>
+        р╩О©╫О©╫м╗ф╫л╗О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫фёО©╫</td>
       <td class="tablert">
         <input type="text" name="ykttag" size="34" value="{$item['ykttag']}"/>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>1{$vd['lang']['moneyunit']} = 100╣Ц</p>
-        кЫпХ╣др╩©╗м╗╤р╩╩╣ЦйЩё╨</td>
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>1{$vd['lang']['moneyunit']} = 100О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>
       <td class="tablert">
-        <input type="text" name="yktpoints" size="34" value="{$item['yktpoints']}"/> 1{$vd['lang']['moneyunit']} = 100╣Ц
+        <input type="text" name="yktpoints" size="34" value="{$item['yktpoints']}"/> 1{$vd['lang']['moneyunit']} = 100О©╫О©╫
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧Ш©иртй╧сцр╩©╗м╗╤р╩╩ё╛гр╨мдЁжжр╩©╗м╗╟С╤╗ё╛©иртп╢иофДльуВбКё╛╥ЯтРаТ©у╪╢©и<br/>╠ххГр╩©╗мЁ©╗╨ейгsd3©╙м╥ё╛©иртп╢Ёиsd3ё╛╤Ю╦ЖльуВбК╟К╫г╤╨╨егЬ╥жё╛хГsd3,MY200</p>
-        ╟С╤╗р╩©╗м╗льуВбКё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫р╩О©╫О©╫м╗О©╫р╩О©╫О©╫О©╫О©╫р╨О©╫дЁО©╫О©╫р╩О©╫О©╫м╗О©╫С╤╗ёО©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫Кё╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫у╪О©╫О©╫О©╫<br/>О©╫О©╫О©╫О©╫р╩О©╫О©╫мЁО©╫О©╫О©╫О©╫О©╫О©╫sd3О©╫О©╫м╥О©╫О©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫sd3О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╤О©╫О©╫О©╫О©╫О©╫О©╫жёО©╫О©╫О©╫sd3,MY200</p>
+        О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫Кё╨
       </td>
       <td class="tablert">
         <input type="text" name="yktcard" size="34" value="{$item['yktcard']}"/> 
@@ -603,59 +603,59 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>IP╧╨©╗очжф╡ъбт,0╢н╠Мй╬нчочжф,0╥жжсN╢н╠Мй╬м╛р╩IPж╩дэ╧╨бРN╢н</p>
-        IP╩╩╧╨очжфё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>IPО©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╡О©╫О©╫О©╫,0О©╫н╠О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫,0О©╫О©╫О©╫О©╫NО©╫н╠О©╫й╬м╛р╩IPж╩О©╫э╧О©╫О©╫О©╫NО©╫О©╫</p>
+        IPО©╫О©╫О©╫О©╫О©╫О©╫О©╫фёО©╫
       </td>
       <td class="tablert">
-        <input type="text" name="yktipchecktime" value="{$item['yktipchecktime']}" size="10"/> ╥жжсдзм╛р╩IP╣ьж╥ж╩тйпМ╩╩╧╨<input type="text" name="yktipchecknum" value="{$item['yktipchecknum']}" size="10"/> ╢н   
+        <input type="text" name="yktipchecktime" value="{$item['yktipchecktime']}" size="10"/> О©╫О©╫О©╫О©╫О©╫О©╫м╛р╩IPО©╫О©╫ж╥ж╩О©╫О©╫О©╫О©╫О©╫О©╫<input type="text" name="yktipchecknum" value="{$item['yktipchecknum']}" size="10"/> О©╫О©╫   
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©м╩╖Ё╛ЁЖIP╧╨©╗очжф</p>
-        IP╩╩╧╨очжфЁ╛ЁЖ╨Сё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫м╩О©╫О©╫О©╫О©╫О©╫IPО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        IPО©╫О©╫О©╫О©╫О©╫О©╫О©╫фЁО©╫О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
       	<select name="yktipmore">
-      		<option value="0">нч╤╞вВ</option>
-      		<option value="1" <!--if(isset($proptmp['yktipmore']) && $proptmp['yktipmore']==1){-->selected<!--}--> >жцр╩©╗м╗©╗цэнчп╖</option>
+      		<option value="0">О©╫ч╤О©╫О©╫О©╫</option>
+      		<option value="1" <!--if(isset($proptmp['yktipmore']) && $proptmp['yktipmore']==1){-->selected<!--}--> >О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫п╖</option>
       	</select>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╛р╩уер╩©╗м╗╧╨©╗очжф╡ъбтё╛0╢н╠Мй╬нчочжфё╛0╥жжсN╢н╠Мй╬м╛р╩уер╩©╗м╗ж╩дэ╧╨бРN╢нё╛ж╩уК╤тйДхК╣д╣зр╩уер╩©╗м╗вЖ╪Л╡И</p>
-      	╣╔©╗м╗╩╩╧╨очжфё╨
+      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>м╛р╩О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╡О©╫О©╫тёО©╫0О©╫н╠О©╫й╬О©╫О©╫О©╫О©╫О©╫фёО©╫0О©╫О©╫О©╫О©╫NО©╫н╠О©╫й╬м╛р╩О©╫О©╫р╩О©╫О©╫м╗ж╩О©╫э╧О©╫О©╫О©╫NО©╫нёО©╫ж╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╣О©╫р╩О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫</p>
+      	О©╫О©╫О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫фёО©╫
       </td>
       <td class="tablert">
-        <input type="text" name="yktsamechecktime" value="{$proptmp['yktsamechecktime']}" size="10"/> ╥жжсдзм╛р╩уер╩©╗м╗ж╩тйпМ╩╩╧╨<input type="text" name="yktsamechecknum" value="{$proptmp['yktsamechecknum']}" size="10"/> ╢н 
+        <input type="text" name="yktsamechecktime" value="{$proptmp['yktsamechecktime']}" size="10"/> О©╫О©╫О©╫О©╫О©╫О©╫м╛р╩О©╫О©╫р╩О©╫О©╫м╗ж╩О©╫О©╫О©╫О©╫О©╫О©╫<input type="text" name="yktsamechecknum" value="{$proptmp['yktsamechecknum']}" size="10"/> О©╫О©╫ 
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©м╩╖Ё╛ЁЖIP╧╨©╗очжф</p>
-        ╣╔©╗м╗╩╩╧╨очжфЁ╛ЁЖ╨Сё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫м╩О©╫О©╫О©╫О©╫О©╫IPО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫фЁО©╫О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
       	<select name="yktsamemore">
-      		<option value="0">нч╤╞вВ</option>
-      		<option value="1" <!--if(isset($proptmp['yktsamemore']) && $proptmp['yktsamemore']==1){-->selected<!--}-->>жцр╩©╗м╗©╗цэнчп╖</option>
+      		<option value="0">О©╫ч╤О©╫О©╫О©╫</option>
+      		<option value="1" <!--if(isset($proptmp['yktsamemore']) && $proptmp['yktsamemore']==1){-->selected<!--}-->>О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫п╖</option>
       	</select>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>р╩©╗м╗╧╨©╗рЁцФц©╢нвН╤ЮйДхК╣др╩©╗м╗©╗цэйЩа©,0╩Руъ©у╠Мй╬╡╩очжф</p>
-      	ц©╢нвН╤ЮйДхК╣др╩©╗м╗йЩё╨
+      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫рЁО©╫О©╫ц©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫,0О©╫О©╫О©╫ъ©у╠О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫</p>
+      	ц©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
-        <input type="text" name="yktmaxnum"  size="10" value="{$proptmp['yktmaxnum']}"> уе<span class="spantip"></span>
+        <input type="text" name="yktmaxnum"  size="10" value="{$proptmp['yktmaxnum']}"> О©╫О©╫<span class="spantip"></span>
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧Ш╢Р╧╢илф╥рЁцФ╬м╡╩отй╬м╛юЮпмоб╣дфДкШилф╥</p>
-        ╡╩отй╬м╛юЮ╣дфДкШилф╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥рЁО©╫О©╫м╡О©╫О©╫О©╫й╬м╛О©╫О©╫О©╫О©╫О©╫б╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥</p>
+        О©╫О©╫О©╫О©╫й╬м╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫
       </td>
       <td class="tablert">
         <input type="checkbox" name="yktnoothers" value="1" class="checkbox" onFocus="this.blur()" <!--if(isset($proptmp['yktnoothers']) && $proptmp['yktnoothers']==1){-->checked<!--}-->/> 
@@ -663,22 +663,22 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>илф╥юЮпмн╙вт╤╞ЁДж╣╨м╢ЗЁДилф╥й╠спп╖ё╛0╢н╠Мй╬нчочжф,0╥жжсN╢н╠Мй╬м╛р╩IPж╩дэ╧╨бРN╢н</p>
-        мФ╪руй╨еЁДж╣очжфё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫ф╥О©╫О©╫О©╫О©╫н╙О©╫т╤О©╫О©╫О©╫ж╣О©╫м╢О©╫О©╫О©╫О©╫О©╫ф╥й╠О©╫О©╫п╖О©╫О©╫0О©╫н╠О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫,0О©╫О©╫О©╫О©╫NО©╫н╠О©╫й╬м╛р╩IPж╩О©╫э╧О©╫О©╫О©╫NО©╫О©╫</p>
+        О©╫О©╫О©╫О©╫й╨еЁО©╫ж╣О©╫О©╫О©╫фёО©╫
       </td>
       <td class="tablert">
-        <input type="text" name="playerchecktime" value="<!--echo isset($proptmp['playerchecktime']) ? $proptmp['playerchecktime'] : 0;-->" size="10"/> ╥жжсдзм╛р╩мФ╪руй╨еЁДж╣ж╩тйпМЁДж╣<input type="text" name="playerchecknum" value="<!--echo isset($proptmp['playerchecknum']) ? $proptmp['playerchecknum'] : 0;-->" size="10"/> ╢н   
+        <input type="text" name="playerchecktime" value="<!--echo isset($proptmp['playerchecktime']) ? $proptmp['playerchecktime'] : 0;-->" size="10"/> О©╫О©╫О©╫О©╫О©╫О©╫м╛р╩О©╫О©╫О©╫О©╫й╨еЁО©╫ж╣ж╩О©╫О©╫О©╫О©╫О©╫ж╣<input type="text" name="playerchecknum" value="<!--echo isset($proptmp['playerchecknum']) ? $proptmp['playerchecknum'] : 0;-->" size="10"/> О©╫О©╫   
       </td>
     </tr>
     <tr>
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>мФ╪руй╨еЁДж╣очжф</p>
-        мФ╪руй╨еЁДж╣очжфЁ╛ЁЖ╨Сё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫й╨еЁО©╫ж╣О©╫О©╫О©╫О©╫</p>
+        О©╫О©╫О©╫О©╫й╨еЁО©╫ж╣О©╫О©╫О©╫фЁО©╫О©╫О©╫О©╫О©╫
       </td>
       <td class="tablert">
       	<select name="yktsamemore">
-      		<option value="0">нч╤╞вВ</option>
-      		<option value="1" <!--if(isset($proptmp['playmore']) && $proptmp['playmore']==1){-->selected<!--}-->>жцр╩©╗м╗©╗цэнчп╖</option>
+      		<option value="0">О©╫ч╤О©╫О©╫О©╫</option>
+      		<option value="1" <!--if(isset($proptmp['playmore']) && $proptmp['playmore']==1){-->selected<!--}-->>О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫п╖</option>
       	</select>
       </td>
     </tr>
@@ -688,8 +688,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 
 <div class="cwarpper1" id="t5">
 <div class="ctitle">
-  илф╥╫Ииэ
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">хГ╧ШдЗр╙╠╬╣ьио╢╚м╪ф╛ё╛гК╠ёж╓╧Б╠Й╥ежцсз╡ЕхКн╩жцё╛ты╣Ц╩Вио╢╚╟╢е╔</p>
+  О©╫О©╫ф╥О©╫О©╫О©╫О©╫
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫о╢О©╫м╪ф╛О©╫О©╫О©╫К╠ёж╓О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╡О©╫О©╫О©╫н╩О©╫цёО©╫О©╫ы╣О©╫О©╫О©╫о╢О©╫О©╫О©╫е╔</p>
 </div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed" style="border:0px">
@@ -705,27 +705,27 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 
 
 <div class="cwarpper1" id="t6">
-<div class="ctitle">оЮ╧ьмЬж╥</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫ж╥</div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒ё╨мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        ╧ы╥╫мЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫ы╥О©╫О©╫О©╫ж╥О©╫О©╫
       </td> 
       <td class="tablert"><input type="text" name="ubzweb" value="{$item['web']}" size="34"/></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒ё╨мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        ЁДж╣мЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╒О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫О©╫ж╣О©╫О©╫ж╥О©╫О©╫
       </td>
       <td class="tablert"><input type="text" name="ubzczweb" value="{$item['czweb']}" size="34"/></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╦Яй╫ё╨отй╬╣дцШЁф+╟К╫г╤╨╨е+мЬж╥ё╛╤Ю╤тмЬж╥ё╛гКрт"|"╥жвИё╛хГё╨"цШЁф1,мЬж╥1|цШЁф2,мЬж╥2"ё╛мЬж╥г╟цФ╪с&quot;http://&quot;</p>
-        фДкШмЬж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫й╫О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫+О©╫О©╫г╤О©╫О©╫О©╫+О©╫О©╫ж╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫О©╫О©╫О©╫О©╫О©╫"|"О©╫О©╫О©╫Иё╛О©╫Гё╨"О©╫О©╫О©╫О©╫1,О©╫О©╫ж╥1|О©╫О©╫О©╫О©╫2,О©╫О©╫ж╥2"О©╫О©╫О©╫О©╫ж╥г╟О©╫О©╫О©╫&quot;http://&quot;</p>
+        О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫О©╫
       </td>
       <td class="tablert"><input type="text" name="ubzotherweb" value="{$item['otherweb']}" size="34"/> 
       </td>
@@ -735,31 +735,31 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 </div>
 
 <div class="cwarpper1" id="t7">
-<div class="ctitle">илф╥╡ывВуъоЮ╧ьпео╒</div>
+<div class="ctitle">О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╒</div>
 <div>
   <table border="0"  class="ctable" bordercolor="#ededed">
     <tr> 
-      <td class="tablelt">╢╢╫╗й╠╪Дё╨</td>
+      <td class="tablelt">О©╫О©╫О©╫О©╫й╠О©╫Дё╨</td>
       <td class="tablert"><input type="text" name="ubzaddeddate" value="{$item['addeddate']}" size="34"/> </td>
     </tr>
     <tr> 
-      <td class="tablelt">╢╢╫╗хкё╨</td>
+      <td class="tablelt">О©╫О©╫О©╫О©╫О©╫кёО©╫</td>
       <td class="tablert"><input type="text" name="ubzaddedby" value="{$item['addedby']}" size="34"/> </td>
     </tr>
     <tr> 
-      <td class="tablelt">╢╢╫╗хкIPё╨</td>
+      <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫IPО©╫О©╫</td>
       <td class="tablert"><input type="text" name="ubzaddedip" value="{$item['addedip']}" size="34"/> </td>
     </tr>
     <tr> 
-      <td class="tablelt">ио╢н╠Ю╪╜ё╨</td>
+      <td class="tablelt">О©╫о╢н╠Ю╪╜О©╫О©╫</td>
       <td class="tablert"><input type="text" name="ubzmdydate" value="{$item['mdydate']}" size="34"/> </td>
     </tr>
     <tr> 
-      <td class="tablelt">╠Ю╪╜хкё╨</td>
+      <td class="tablelt">О©╫Ю╪╜О©╫кёО©╫</td>
       <td class="tablert"><input type="text" name="ubzmdyby" value="{$item['mdyby']}" size="34"/> </td>
     </tr>
     <tr> 
-      <td class="tablelt">╠Ю╪╜хкIPё╨</td>
+      <td class="tablelt">О©╫Ю╪╜О©╫О©╫IPО©╫О©╫</td>
       <td class="tablert"><input type="text" name="ubzmdyip" value="{$item['mdyip']}" size="34"/> </td>
     </tr>
   </table>
@@ -777,11 +777,11 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     <input type="hidden" value="{$item['pid']}" name="ubzpid"/>
     <input type="hidden" value="{$vd['umebizpid']}" name="umebizpid"/>
     <input type="hidden" value="{$item['cztpl']}" id="ubzocztpl" name="ubzocztpl"/>
-    <input type="submit" value="╠Ю╪╜илф╥" class="btn"/>
-    <input type="reset" value="жьжц" class="btn"/>
+    <input type="submit" value="О©╫Ю╪╜О©╫О©╫ф╥" class="btn"/>
+    <input type="reset" value="О©╫О©╫О©╫О©╫" class="btn"/>
     <!--}else{-->
-    <input type="submit" value="лМ╪силф╥" class="btn"/>
-    <input type="reset" value="жьжц" class="btn"/>
+    <input type="submit" value="О©╫О©╫О©╫О©╫О©╫ф╥" class="btn"/>
+    <input type="reset" value="О©╫О©╫О©╫О©╫" class="btn"/>
     <!--}-->
   </div>
 </div>
@@ -790,12 +790,12 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <input type="hidden" id="website" value="{$vd['website']}"/>
 <input type="hidden" id="connecter" value="{$vd['connecter']}"/>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" title="илф╥ап╠М"><font color="#000">илф╥ап╠М</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">╠Ю╪╜илф╥</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="╡И©╢илф╥оЮ╧ь╟ОжЗ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" title="О©╫О©╫ф╥О©╫п╠О©╫"><font color="#000">О©╫О©╫ф╥О©╫п╠О©╫</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">О©╫Ю╪╜О©╫О©╫ф╥</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="О©╫И©╢О©╫О©╫ф╥О©╫О©╫ь╟О©╫О©╫О©╫"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >рЁцФ╪стьжпгКит╣х...</div>
+  <div id="loadcontent" >рЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╣О©╫...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 2;
@@ -834,21 +834,21 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
   {
     if($("ubzpname").value=="")
     {
-      alert("илф╥цШЁф╡╩дэн╙©уё║");
+      alert("О©╫О©╫ф╥О©╫О©╫О©╫ф╡О©╫О©╫О©╫н╙О©╫уёО©╫");
       $("ubzpname").focus();
       return false;
     }
     
     if($("ubzlistprice").value=="")
     {
-      alert("илф╥цФж╣╡╩дэн╙©уё║");
+      alert("О©╫О©╫ф╥О©╫О©╫ж╣О©╫О©╫О©╫О©╫н╙О©╫уёО©╫");
       $("ubzlistprice").focus();
       return false;
     }
     
     if($("ubzprice").value=="")
     {
-      alert("илф╥╫Ь╩У╪ш╡╩дэн╙©уё║");
+      alert("О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫ш╡О©╫О©╫О©╫н╙О©╫уёО©╫");
       $("ubzprice").focus();
       return false;
     }
@@ -956,7 +956,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
   
   function setpricecheck()
   {
-  	alert("хГ╧ШдЗпч╦дак╪ш╦Яё╛гКх╥хортоб╪ш╦Яйг╥ЯпХр╙и╬ЁЩ");
+  	alert("О©╫О©╫О©╫О©╫О©╫О©╫ч╦О©╫О©╫к╪ш╦О©╫О©╫О©╫х╥О©╫О©╫О©╫О©╫О©╫б╪ш╦О©╫О©╫г╥О©╫О©╫О©╫р╙и╬О©╫О©╫");
   	
   	$("delrank").checked = true;
   	$("delprivate").checked = true;
@@ -1002,25 +1002,25 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     
     if(findtpl == 0)
     {
-    	$("cat").options[$("cat").length] = new Option("гКя║тЯдё╟Е", 0);
+    	$("cat").options[$("cat").length] = new Option("О©╫О©╫я║О©╫О©╫дёО©╫О©╫", 0);
     }
   }
   
   //------------- 
-  //х╔╣Твж╢╝вС╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫О©╫ъ╣д©у╦О©╫ 
   function lTrim(str) 
   { 
     if (str.charAt(0) == " ") 
     { 
-      //хГ╧Швж╢╝вС╠ъ╣зр╩╦Жвж╥Шн╙©у╦Я 
-      str = str.slice(1);//╫╚©у╦Я╢свж╢╝жпх╔╣Т 
-      //уБр╩╬Др╡©и╦дЁи str = str.substring(1, str.length); 
-      str = lTrim(str); //╣щ╧И╣Всц 
+      //О©╫О©╫О©╫О©╫ж╢О©╫О©╫О©╫ъ╣О©╫р╩О©╫О©╫О©╫ж╥О©╫н╙О©╫у╦О©╫ 
+      str = str.slice(1);//О©╫О©╫О©╫у╦О©╫О©╫О©╫ж╢О©╫О©╫О©╫х╔О©╫О©╫ 
+      //О©╫О©╫р╩О©╫О©╫р╡О©╫и╦дЁО©╫ str = str.substring(1, str.length); 
+      str = lTrim(str); //О©╫щ╧О©╫О©╫О©╫О©╫ 
     } 
     return str; 
   } 
   
-  //х╔╣Твж╢╝ср╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫р╠ъ╣д©у╦О©╫ 
   function rTrim(str) 
   { 
     var iLength; 
@@ -1028,15 +1028,15 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     iLength = str.length; 
     if (str.charAt(iLength - 1) == " ") 
     { 
-      //хГ╧Швж╢╝ср╠ъ╣зр╩╦Жвж╥Шн╙©у╦Я 
-      str = str.slice(0, iLength - 1);//╫╚©у╦Я╢свж╢╝жпх╔╣Т 
-      //уБр╩╬Др╡©и╦дЁи str = str.substring(0, iLength - 1); 
-      str = rTrim(str); //╣щ╧И╣Всц 
+      //О©╫О©╫О©╫О©╫ж╢О©╫О©╫р╠ъ╣О©╫р╩О©╫О©╫О©╫ж╥О©╫н╙О©╫у╦О©╫ 
+      str = str.slice(0, iLength - 1);//О©╫О©╫О©╫у╦О©╫О©╫О©╫ж╢О©╫О©╫О©╫х╔О©╫О©╫ 
+      //О©╫О©╫р╩О©╫О©╫р╡О©╫и╦дЁО©╫ str = str.substring(0, iLength - 1); 
+      str = rTrim(str); //О©╫щ╧О©╫О©╫О©╫О©╫ 
     } 
     return str; 
   } 
   
-  //х╔╣Твж╢╝а╫╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫О©╫О©╫ъ╣д©у╦О©╫ 
   function trim(str) 
   { 
     return lTrim(rTrim(str)); 

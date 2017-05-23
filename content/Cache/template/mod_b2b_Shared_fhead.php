@@ -1,18 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>易卡网-点卡平台搭建</title>
-<meta http-equiv="Content-Language" content="zh-CN">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<link rel="stylesheet" href="<?php echo $vd['content']; ?>css/style.css" type="text/css">
-<script type="text/javascript" src="<?php echo $vd['content']; ?>js/utils.js"></script>
-</head>
-<script type="text/javascript">
-function timeoutlogout()
-{
-	alert('由于长时间未操作，为安全起见自动退出平台，请重新登录111！');
-	top.location.href='index.php?m=mod_b2b&a=Reg';
-}
-
-//setInterval('timeoutlogout()',3600000);
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>锟阶匡拷锟斤拷-锟姐卡平台锟筋建</title><meta http-equiv="Content-Language" content="zh-CN"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" href="<?php echo $vd['content']; ?>css/style.css" type="text/css"><script type="text/javascript" src="<?php echo $vd['content']; ?>js/utils.js"></script></head><script type="text/javascript">function timeoutlogout(){	alert('锟斤拷锟节筹拷时锟斤拷未锟斤拷锟斤拷锟斤拷为锟斤拷全锟斤拷锟斤拷远锟斤拷顺锟狡教拷锟斤拷锟斤拷锟斤拷碌锟铰�111锟斤拷');	top.location.href='index.php?m=mod_b2b&a=Reg';}//setInterval('timeoutlogout()',3600000);</script>

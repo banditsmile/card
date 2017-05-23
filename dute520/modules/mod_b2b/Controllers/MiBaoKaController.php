@@ -28,7 +28,7 @@ class MiBaoKaController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->IMiBaoKa_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "sn" => "ÐòÁÐºÅ" );
+								$R00be52aa45 = array( "sn" => "ï¿½ï¿½ï¿½Ðºï¿½" );
 							
 												$this->Assign( "sarray", $R00be52aa45 );
 												$this->view( );
@@ -42,7 +42,7 @@ class MiBaoKaController extends Controller
 								$R3db8f5c8bc = $Rd919497634->IMiBaoKa_GetBySn( $R1638fe16d3 );
 								if ( !isset( $R3db8f5c8bc['xy'] ) )
 								{
-												$this->Alert( "ÃÜ±£²»´æÔÚ" );
+												$this->Alert( "ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								global $masterid;
@@ -125,7 +125,7 @@ class MiBaoKaController extends Controller
 								$R908109654a = getvar( "sn", "", "POST" );
 								if ( trim( $R908109654a ) == "" )
 								{
-												$this->Alert( "ÃÜ±£¿¨ÐòÁÐºÅ²»ÄÜÎª¿Õ" );
+												$this->Alert( "ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐºÅ²ï¿½ï¿½ï¿½Îªï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R808b89ba0e = true;
@@ -144,7 +144,7 @@ class MiBaoKaController extends Controller
 												}
 												else
 												{
-																$this->Alert( "¹ÜÀíÔ±²»´æÔÚ" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -174,11 +174,11 @@ class MiBaoKaController extends Controller
 																				"arg2" => $R94e0136c8a
 																) );
 												}
-												$this->Alert( "ÉèÖÃ³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã³É¹ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "ÉèÖÃÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=MiBaoKa" );
 				}
@@ -239,13 +239,13 @@ class MiBaoKaController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -257,10 +257,10 @@ class MiBaoKaController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -271,7 +271,7 @@ class MiBaoKaController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -286,7 +286,7 @@ class MiBaoKaController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -303,7 +303,7 @@ class MiBaoKaController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -342,7 +342,7 @@ class MiBaoKaController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -363,7 +363,7 @@ class MiBaoKaController extends Controller
 								$R808b89ba0e = $this->instance->IMiBaoKa_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

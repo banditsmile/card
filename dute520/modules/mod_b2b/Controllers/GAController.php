@@ -32,11 +32,11 @@ class GAController extends Controller
 								$Ra3d57d5152 = factory::getinstance( "game" );
 								$R69f05bd302 = $Ra3d57d5152->IGame_Get( );
 								$Rbdbc624178 = array(
-												array( "name" => "²»ÆôÓÃ", "value" => "none" ),
-												array( "name" => "ÎÄ±¾ÊäÈë¿ò", "value" => "text" ),
-												array( "name" => "ÃÜÂë¿ò", "value" => "password" ),
-												array( "name" => "µ¥Ñ¡¿ò", "value" => "radio" ),
-												array( "name" => "ÏÂÀ­²Ëµ¥", "value" => "select" )
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "none" ),
+												array( "name" => "ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "text" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "password" ),
+												array( "name" => "ï¿½ï¿½Ñ¡ï¿½ï¿½", "value" => "radio" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½", "value" => "select" )
 								);
 								$this->Assign( "chargetype", $Rbdbc624178 );
 								$this->Assign( "game", $R69f05bd302 );
@@ -50,11 +50,11 @@ class GAController extends Controller
 								$Ra3d57d5152 = factory::getinstance( "game" );
 								$R69f05bd302 = $Ra3d57d5152->IGame_Get( );
 								$Rbdbc624178 = array(
-												array( "name" => "²»ÆôÓÃ", "value" => "none" ),
-												array( "name" => "ÎÄ±¾ÊäÈë¿ò", "value" => "text" ),
-												array( "name" => "ÃÜÂë¿ò", "value" => "password" ),
-												array( "name" => "µ¥Ñ¡¿ò", "value" => "radio" ),
-												array( "name" => "ÏÂÀ­²Ëµ¥", "value" => "select" )
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "none" ),
+												array( "name" => "ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "text" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "password" ),
+												array( "name" => "ï¿½ï¿½Ñ¡ï¿½ï¿½", "value" => "radio" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½", "value" => "select" )
 								);
 								$Oooo00 = "base64_decode";
 								$ooOO00o = $Oooo00( "YmFzZTY0X2RlY29kZQ==" );
@@ -65,17 +65,17 @@ class GAController extends Controller
 
 				public function Detail( )
 				{
-								$R2e3939cda7 = array( "0" => "ÎÞ³äÖµÇøÓòÑ¡Ôñ", "1" => "ÓÐ³äÖµÇøÓòÑ¡Ôñ", "2" => "¹ºÂò¿Í»§×ÔÐÐÊäÈë³äÖµÇøÓò" );
-								$R66af8b6ab1 = array( "0" => "ÎÞ³äÖµ·þÎñÆ÷Ñ¡Ôñ", "1" => "ÓÐ³äÖµ·þÎñÆ÷Ñ¡Ôñ", "2" => "¹ºÂò¿Í»§×ÔÐÐÊäÈë³äÖµ·þÎñÆ÷" );
-								$R91d25cb1c5 = array( "0" => "²»¹²Ïí¸ø×ÔÓÐÉÌÆ·", "1" => "¹²Ïí¸ø×ÔÓÐÉÌÆ·" );
+								$R2e3939cda7 = array( "0" => "ï¿½Þ³ï¿½Öµï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½", "1" => "ï¿½Ð³ï¿½Öµï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½" );
+								$R66af8b6ab1 = array( "0" => "ï¿½Þ³ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½", "1" => "ï¿½Ð³ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
+								$R91d25cb1c5 = array( "0" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "1" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·" );
 								$Ra3d57d5152 = factory::getinstance( "game" );
 								$R69f05bd302 = $Ra3d57d5152->IGame_Get( );
 								$Rbdbc624178 = array(
-												array( "name" => "²»ÆôÓÃ", "value" => "none" ),
-												array( "name" => "ÎÄ±¾ÊäÈë¿ò", "value" => "text" ),
-												array( "name" => "ÃÜÂë¿ò", "value" => "password" ),
-												array( "name" => "µ¥Ñ¡¿ò", "value" => "radio" ),
-												array( "name" => "ÏÂÀ­²Ëµ¥", "value" => "select" )
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "none" ),
+												array( "name" => "ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "text" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½", "value" => "password" ),
+												array( "name" => "ï¿½ï¿½Ñ¡ï¿½ï¿½", "value" => "radio" ),
+												array( "name" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½", "value" => "select" )
 								);
 								$this->Assign( "chargetype", $Rbdbc624178 );
 								$R3584859062 = intval( request( "id" ) );
@@ -127,12 +127,12 @@ class GAController extends Controller
 								if ( $R808b89ba0e )
 								{
 												$this->UpdateCache( "gametpl" );
-												$this->Alert( "²Ù×÷³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=GA" );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -174,7 +174,7 @@ class GAController extends Controller
 																												break;
 																								}
 																								$R7600bf49ee = $R4878d8074f == "password" ? "<input type='hidden' name='namehide' value='".str_replace( "ubz", "", $Ra1b5a7e9f5 )."' />" : "";
-																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."£º</td>"."<td class='rtjs'>".$R7600bf49ee."<input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/><input type='".$R4878d8074f."' class='input' name='".$Ra1b5a7e9f5."' id='".$Ra1b5a7e9f5."' /> * </td></tr>";
+																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."ï¿½ï¿½</td>"."<td class='rtjs'>".$R7600bf49ee."<input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/><input type='".$R4878d8074f."' class='input' name='".$Ra1b5a7e9f5."' id='".$Ra1b5a7e9f5."' /> * </td></tr>";
 																								$R10074df755[] = $Ra1b5a7e9f5;
 																								$Rd10c8605ef[] = $R62318950fd;
 																								$Rdb29ec38cd[] = $R4878d8074f;
@@ -199,7 +199,7 @@ class GAController extends Controller
 																								$R10074df755[] = $Ra1b5a7e9f5;
 																								$Rd10c8605ef[] = $R62318950fd;
 																								$Rdb29ec38cd[] = $R4878d8074f;
-																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."£º</td>"."<td class='rtjs'><input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/>".$Rd82f3074a7." * </td></tr>";
+																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."ï¿½ï¿½</td>"."<td class='rtjs'><input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/>".$Rd82f3074a7." * </td></tr>";
 																								break;
 																				case "select" :
 																								if ( $R050d05de12 != "" && $R62318950fd != "" )
@@ -207,7 +207,7 @@ class GAController extends Controller
 																												break;
 																								}
 																								$Rb813fe0dc6 = explode( ",", $R050d05de12 );
-																								$Rd82f3074a7 = "<option value=''>ÇëÑ¡Ôñ</option>";
+																								$Rd82f3074a7 = "<option value=''>ï¿½ï¿½Ñ¡ï¿½ï¿½</option>";
 																								foreach ( $Rb813fe0dc6 as $R0f8134fb60 )
 																								{
 																												$Rd82f3074a7 .= "<option value='".$R0f8134fb60."'>".$R0f8134fb60."</option>";
@@ -220,7 +220,7 @@ class GAController extends Controller
 																								$R10074df755[] = $Ra1b5a7e9f5;
 																								$Rd10c8605ef[] = $R62318950fd;
 																								$Rdb29ec38cd[] = $R4878d8074f;
-																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."£º</td>"."<td class='rtjs'><input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/><select name='".$Ra1b5a7e9f5."' id='".$Ra1b5a7e9f5." \\>".$Rd82f3074a7."</select> * </td></tr>";
+																								$Rd235580370 = "<tr><td class='ltjs'>".$R62318950fd."ï¿½ï¿½</td>"."<td class='rtjs'><input type='hidden' name='".$Ra1b5a7e9f5."txt' id='".$Ra1b5a7e9f5."txt' value='".$R62318950fd."'/><select name='".$Ra1b5a7e9f5."' id='".$Ra1b5a7e9f5." \\>".$Rd82f3074a7."</select> * </td></tr>";
 																								break;
 																				default :
 																								break;
@@ -269,9 +269,9 @@ class GAController extends Controller
 												if ( 0 < count( $R511b772072 ) )
 												{
 																$R10074df755[] = "ubzczarea1";
-																$Rd10c8605ef[] = "³äÖµÇøÓò";
+																$Rd10c8605ef[] = "ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½";
 																$Rdb29ec38cd[] = "select";
-																$R332caeb6fc = "<tr><td class='ltjs'>³äÖµÇøÓò£º</td><td class='rtjs'><select id='ubzczarea1' name='ubzczarea1' border='0' style='padding:5px;' ".$R1a8a6ef768.">"."<option value='' selected>ÇëÑ¡Ôñ³äÖµÇøÓò</option>".$R332caeb6fc."</select></td>";
+																$R332caeb6fc = "<tr><td class='ltjs'>ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</td><td class='rtjs'><select id='ubzczarea1' name='ubzczarea1' border='0' style='padding:5px;' ".$R1a8a6ef768.">"."<option value='' selected>ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</option>".$R332caeb6fc."</select></td>";
 												}
 												$R332caeb6fc .= "</select>";
 												$Rbdee6550e4 = "";
@@ -280,7 +280,7 @@ class GAController extends Controller
 												if ( 0 < count( $R511b772072 ) && 0 < count( $R3db8f5c8bc ) - count( $R511b772072 ) )
 												{
 																$R10074df755[] = "ubzczarea2";
-																$Rd10c8605ef[] = "³äÖµ·þÎñÆ÷";
+																$Rd10c8605ef[] = "ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 																$Rdb29ec38cd[] = "select";
 																$Rbdee6550e4 = "var serv = new Array();";
 																$Ra16d228039 = 0;
@@ -292,7 +292,7 @@ class GAController extends Controller
 																								$Ra16d228039++;
 																				}
 																}
-																$R5e11d80105 = "<tr><td class='ltjs'>·þÎñÆ÷£º</td><td class='rtjs'><select id='ubzczarea2' name='ubzczarea2' border='0' style='padding:5px;'><option value='' selected>ÇëÑ¡Ôñ³äÖµ·þÎñÆ÷</option></select></td>";
+																$R5e11d80105 = "<tr><td class='ltjs'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td><td class='rtjs'><select id='ubzczarea2' name='ubzczarea2' border='0' style='padding:5px;'><option value='' selected>ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option></select></td>";
 												}
 								}
 								else
@@ -300,16 +300,16 @@ class GAController extends Controller
 												if ( $R2e3939cda7 == 2 )
 												{
 																$R10074df755[] = "ubzczarea1";
-																$Rd10c8605ef[] = "³äÖµÇøÓò";
+																$Rd10c8605ef[] = "ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½";
 																$Rdb29ec38cd[] = "text";
-																$R332caeb6fc = "<tr><td class='ltjs'>³äÖµÇøÓò£º</td><td class='rtjs'><input type='text' id='ubzczarea1' class='input' name='ubzczarea1'> * </td></tr>";
+																$R332caeb6fc = "<tr><td class='ltjs'>ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</td><td class='rtjs'><input type='text' id='ubzczarea1' class='input' name='ubzczarea1'> * </td></tr>";
 												}
 												if ( $R66af8b6ab1 == 2 )
 												{
 																$R10074df755[] = "ubzczarea2";
-																$Rd10c8605ef[] = "³äÖµ·þÎñÆ÷";
+																$Rd10c8605ef[] = "ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 																$Rdb29ec38cd[] = "text";
-																$R5e11d80105 = "<tr><td class='ltjs'>³äÖµ·þÎñÆ÷£º</td><td class='rtjs'><input type='text' id='ubzczarea2' class='input' name='ubzczarea2'> * </td></tr>";
+																$R5e11d80105 = "<tr><td class='ltjs'>ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td><td class='rtjs'><input type='text' id='ubzczarea2' class='input' name='ubzczarea2'> * </td></tr>";
 												}
 								}
 								$R63bede6b19 = "";
@@ -324,7 +324,7 @@ class GAController extends Controller
 												$R63bede6b19 = $Rbdee6550e4." TplHtml=\"<table width='100%'>".$Reed85df425.$R332caeb6fc.$R5e11d80105."</table>".$R3fc2e7f821.$R925e52b930.$R28d4cb2fcc."\";";
 								}
 								$R63bede6b19 .= "function TplShow(){\$(\"cztpl\").innerHTML = TplHtml;} TplShow();";
-								$R63bede6b19 = $R63bede6b19."function setserv(obj){"."var selectval=obj.options[obj.selectedIndex].value;"."tmp=selectval.split(\"||\");"."i=0;"."\$(\"ubzczarea2\").length=0;"."\$(\"ubzczarea2\").options[\$(\"ubzczarea2\").length] = new Option(\"ÇëÑ¡Ôñ·þÎñÆ÷\", \"\");"."for(i=0;i<serv.length;i++){"."if(serv[i][0]==tmp[0]){"."\$(\"ubzczarea2\").options[\$(\"ubzczarea2\").length] = new Option(serv[i][1], serv[i][1]);"."}"."}"."}";
+								$R63bede6b19 = $R63bede6b19."function setserv(obj){"."var selectval=obj.options[obj.selectedIndex].value;"."tmp=selectval.split(\"||\");"."i=0;"."\$(\"ubzczarea2\").length=0;"."\$(\"ubzczarea2\").options[\$(\"ubzczarea2\").length] = new Option(\"ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\", \"\");"."for(i=0;i<serv.length;i++){"."if(serv[i][0]==tmp[0]){"."\$(\"ubzczarea2\").options[\$(\"ubzczarea2\").length] = new Option(serv[i][1], serv[i][1]);"."}"."}"."}";
 								$R2552e540b9 = UPATH_ROOT;
 								$Rcc5c6e696c = explode( DS, UPATH_ROOT );
 								array_pop( $Rcc5c6e696c );
@@ -332,7 +332,7 @@ class GAController extends Controller
 								global $g_mod;
 								$R762df0f9ab = $R2552e540b9.DS."content".DS."mod_shared".DS."skins".DS."cztpl".DS.$R3584859062.".js";
 								$this->WriteFile( $R762df0f9ab, $R63bede6b19 );
-								$this->Alert( "Ä£°åÉú³ÉÍê±Ï£¡" );
+								$this->Alert( "Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½" );
 								$this->HistoryGo( );
 				}
 
@@ -349,7 +349,7 @@ class GAController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -361,10 +361,10 @@ class GAController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -375,7 +375,7 @@ class GAController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -390,7 +390,7 @@ class GAController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -407,7 +407,7 @@ class GAController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -446,7 +446,7 @@ class GAController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -467,7 +467,7 @@ class GAController extends Controller
 								$R808b89ba0e = $this->instance->IGameTpl_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

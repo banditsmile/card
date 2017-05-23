@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -24,7 +24,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <div class="cbodyHead"></div>
 
 <div id="t0" class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">ÌîÐ´»ù±¾ÐÅÏ¢ </div>
+<div class="ctitle">ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ </div>
 <div>
 <table border="0" id="ctable1" class="ctable" style="border:0px;background:none">
   <tr>
@@ -42,54 +42,54 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
     <td valign="top">
       <table border="1" width="100%" class="ctable2" bordercolor="#ededed">
         <tr>
-          <td class="tablelt2"><span class="name">¶Ò»»²ßÂÔ£º</span></td>
+          <td class="tablelt2"><span class="name">ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô£ï¿½</span></td>
           <td class="tablert2">
             <select name="method" onchange="setmethod(this)" >
-              <option value="1">ÊµÎï¶Ò»»</option>
-              <option value="2">¶Ò»»½ðÇ®(×ªÈëÓà¶î)</option>
-              <option value="3">¶Ò»»ÉÌÆ·</option>
+              <option value="1">Êµï¿½ï¿½Ò»ï¿½</option>
+              <option value="2">ï¿½Ò»ï¿½ï¿½ï¿½Ç®(×ªï¿½ï¿½ï¿½ï¿½ï¿½)</option>
+              <option value="3">ï¿½Ò»ï¿½ï¿½ï¿½Æ·</option>
             </select>
           </td>
         </tr>
         <tr id="trparam" style="display:none">
-          <td class="tablelt2"><span class="name" id="paramlabel">¶Ò»»ÉÌÆ·±àºÅ</span>£º</td>
+          <td class="tablelt2"><span class="name" id="paramlabel">ï¿½Ò»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½</span>ï¿½ï¿½</td>
           <td class="tablert2">
-            <input type="text" id="param" name="param" size="10" value="" /> <span class="spantip" id="paramspan">ÊäÈëÄúÐèÒª¶Ò»»µÄÉÌÆ·¶ÔÓ¦µÄ±àºÅ</span>
+            <input type="text" id="param" name="param" size="10" value="" /> <span class="spantip" id="paramspan">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ó¦ï¿½Ä±ï¿½ï¿½</span>
           </td>
         </tr>
         <tr>
-          <td class="tablelt2">ÉÌÆ·Ãû³Æ£º</td>
+          <td class="tablelt2">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½</td>
           <td class="tablert2">
             <input type="text" name="pname" id="pname" size="50" value=""/><font color="#FF0000"> *</font>
           </td>
         </tr>
         <tr> 
-          <td class="tablelt2"><span class="name">Åú·¢ÏµÍ³ËùÐè»ý·Ö£º</span></td>
+          <td class="tablelt2"><span class="name">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½</span></td>
           <td class="tablelr2" style="line-height:25px;">
             <input type="text" name="scored" id="scored" size="10" value=""/><font color="#FF0000"> * </font><span class="tip"></span><br/> 
           </td>
         </tr>
         <tr> 
-          <td class="tablelt2"><span class="name">ÁãÊÛÏµÍ³ËùÐè»ý·Ö£º</span></td>
+          <td class="tablelt2"><span class="name">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½</span></td>
           <td class="tablelr2" style="line-height:25px;">
             <input type="text" name="scoredb2c" id="scoredb2c" size="10" value=""/><font color="#FF0000"> * </font><span class="tip"></span><br/> 
           </td>
         </tr>
         <tr>
-          <td class="tablelt2"><span class="name">¿â´æ£º</span></td>
+          <td class="tablelt2"><span class="name">ï¿½ï¿½æ£º</span></td>
           <td class="tablert2">
             <input type="text" value="1" name="stocks" size="10" />
           </td>
         </tr>
         <tr>
-          <td class="tablelt2"><span class="name">¿â´æµ¥Î»£º</span></td>
+          <td class="tablelt2"><span class="name">ï¿½ï¿½æµ¥Î»ï¿½ï¿½</span></td>
           <td class="tablert2">
             <input type="text" size="10" name="unit" />
           </td>
         </tr>
         <tr> 
           <td class="tablelt">
-            ÉÌÆ·ÅÅÁÐË³Ðò£º
+            ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½
           </td>
           <td class="tablert">
             <input type="text" name="ordering" size="10" value="0"/>
@@ -97,10 +97,10 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
         </tr> 
         <tr>
           <td class="tablelt">
-            ¹ºÂòÈ¨ÏÞ£º</td>
+            ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½</td>
           <td class="tablert">
-            <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forb2c" value="1" class="checkbox" onFocus="this.blur()" <!--if(UB_B2C&&UB_YKT+UB_B2B==0){-->checked<!--}-->/>ÁãÊÛÏµÍ³¿É¹ºÂò </span>
-            <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox" onFocus="this.blur()" <!--if(UB_B2B&&UB_YKT+UB_B2C==0){-->checked<!--}-->/>Åú·¢ÏµÍ³¿É¹ºÂò </span> 
+            <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forb2c" value="1" class="checkbox" onFocus="this.blur()" <!--if(UB_B2C&&UB_YKT+UB_B2B==0){-->checked<!--}-->/>ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½É¹ï¿½ï¿½ï¿½ </span>
+            <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox" onFocus="this.blur()" <!--if(UB_B2B&&UB_YKT+UB_B2C==0){-->checked<!--}-->/>ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½É¹ï¿½ï¿½ï¿½ </span> 
           </td>
         </tr>
       </table>
@@ -112,8 +112,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 
 <div class="cwarpper1" id="t5">
 <div class="ctitle">
-  ÉÌÆ·½éÉÜ
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">Èç¹ûÄúÒª±¾µØÉÏ´«Í¼Æ¬£¬Çë±£Ö¤¹â±ê·ÅÖÃÓÚ²åÈëÎ»ÖÃ£¬ÔÙµã»÷ÉÏ´«°´Å¥</p>
+  ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ë±£Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½Ùµï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½Å¥</p>
 </div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed" style="border:0px">
@@ -133,8 +133,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="submit" value="Ìí¼Ó»ý·ÖÉÌÆ·" class="btn"/>
-    <input type="reset" value="ÖØÖÃ" class="btn"/>
+    <input type="submit" value="ï¿½ï¿½Ó»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·" class="btn"/>
+    <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="btn"/>
   </div>
 </div>
 </form>
@@ -142,12 +142,12 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 <input type="hidden" id="website" value="{$vd['website']}"/>
 <input type="hidden" id="connecter" value="{$vd['connecter']}"/>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=Home"><font color="#000">»ý·ÖÏµÍ³</a></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">Ìí¼Ó»ý·ÖÉÌÆ·</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´ÉÌÆ·Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=Home"><font color="#000">ï¿½ï¿½ï¿½ï¿½ÏµÍ³</a></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½Ó»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½Æ·ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 <script type="text/javascript">
   var notlocal = 0;
@@ -164,14 +164,14 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
   	if(vmethod == 3)
   	{
   		$("trparam").style.display = "";
-  		$("paramlabel").innerHTML = "¶Ò»»ÉÌÆ·±àºÅ";
-  		$("paramspan").innerHTML = "ÊäÈëÄúÐèÒª¶Ò»»µÄÉÌÆ·¶ÔÓ¦µÄ±àºÅ";
+  		$("paramlabel").innerHTML = "ï¿½Ò»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½";
+  		$("paramspan").innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ó¦ï¿½Ä±ï¿½ï¿½";
   	}
     else if(vmethod == 2)
   	{
   		$("trparam").style.display = "";
-  		$("paramlabel").innerHTML = "¿É¶Ò»»½ð¶î";
-  		$("paramspan").innerHTML = "µ¥Î»(Ôª)";
+  		$("paramlabel").innerHTML = "ï¿½É¶Ò»ï¿½ï¿½ï¿½ï¿½";
+  		$("paramspan").innerHTML = "ï¿½ï¿½Î»(Ôª)";
   	}
   	else if(vmethod == 1)
   	{
@@ -183,14 +183,14 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
   {
     if($("ubzpname").value=="")
     {
-      alert("ÉÌÆ·Ãû³Æ²»ÄÜÎª¿Õ£¡");
+      alert("ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½");
       $("ubzpname").focus();
       return false;
     }
     
     if($("scored").value=="")
     {
-      alert("ËùÐè»ý·Ö²»ÄÜÎª¿Õ£¡");
+      alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½");
       $("scored").focus();
       return false;
     }

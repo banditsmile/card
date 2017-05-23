@@ -1,8 +1,8 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     
 
-    <title>ÐÂÔÆÊý¿¨ÏúÊÛÏµÍ³</title>
+    <title>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³</title>
 
     <script language="javascript" type="text/javascript">
 
@@ -64,7 +64,7 @@
 
                 <div class="system_logo">
 
-                    <a href="http://www.xybss.com.cn/" target="_blank" class="logo" title="ÐÂÔÆÊý¿¨ÏúÊÛÏµÍ³"></a>
+                    <a href="http://www.xybss.com.cn/" target="_blank" class="logo" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³"></a>
 
                 </div>
 
@@ -87,19 +87,19 @@
 
 
                         <a href="index.php?m=mod_b2b&c=Sys" target="frmright">
-						×ÊÁÏÉèÖÃ</a><a
+						ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><a
 
 
 
-                            href="index.php?m=mod_b2b&c=Logo" target="frmright">LOGO¹ÜÀí</a><a href="index.php?m=mod_b2b&c=Ad" target="frmright">¹ã¸æ¹ÜÀí</a><a
+                            href="index.php?m=mod_b2b&c=Logo" target="frmright">LOGOï¿½ï¿½ï¿½ï¿½</a><a href="index.php?m=mod_b2b&c=Ad" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><a
 
 
 
-                            href="index.php?m=mod_b2b&c=Article&a=Add" target="frmright">Ìí¼Ó¹«¸æ</a><a
+                            href="index.php?m=mod_b2b&c=Article&a=Add" target="frmright">ï¿½ï¿½Ó¹ï¿½ï¿½ï¿½</a><a
 
 
 
-                                        href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" target="frmright">ÉÌÆ·¹ÜÀí</a><a
+                                        href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a><a
 
 
 
@@ -107,31 +107,31 @@
 
 
 
-                            href="index.php?m=mod_b2b&c=GA&a=Create" target="frmright">³äÖµÄ£°å</a><a
+                            href="index.php?m=mod_b2b&c=GA&a=Create" target="frmright">ï¿½ï¿½ÖµÄ£ï¿½ï¿½</a><a
 
 
 
-                                        href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">³äÖµ¿¨ÃÜ</a></a><a
+                                        href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</a></a><a
 
 
 
-                                                href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright"><a href="index.php?m=mod_b2b&c=Bank" target="frmright">»ã¿îÕËºÅ</a><a
+                                                href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright"><a href="index.php?m=mod_b2b&c=Bank" target="frmright">ï¿½ï¿½ï¿½ï¿½Ëºï¿½</a><a
 
 
 
-                            href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">ÀûÈó±¨±í</a><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ÓÃ»§¹ÜÀí</a></a><a
+                            href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">ï¿½ï¿½ï¿½ó±¨±ï¿½</a><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</a></a><a
 
 
 
-                                                    href="index.php?m=mod_b2b&c=EShop" target="frmright">·ÖÕ¾¹ÜÀí</a><a
+                                                    href="index.php?m=mod_b2b&c=EShop" target="frmright">ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½</a><a
 
 
 
-                                                        href="index.php?m=mod_b2b&c=Html&a=Home" target="frmright">Êý¾ÝÉú³É</a><a
+                                                        href="index.php?m=mod_b2b&c=Html&a=Home" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><a
 
 
 
-                                                    href="index.php?m=mod_b2b&c=Fs&a=ListTpl" target="frmright">¸ü»»·ç¸ñ</a></div>
+                                                    href="index.php?m=mod_b2b&c=Fs&a=ListTpl" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></div>
 
 
 
@@ -164,15 +164,15 @@
 
 
                         <a href="index.php?m=mod_b2b&c=Product&allaid=1&aid=-1&ptype=-1" target="frmright">
-						ÉÌÆ·ÉóÅú</a><a href="index.php?m=mod_b2b&c=Order&aid=-3"
+						ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a><a href="index.php?m=mod_b2b&c=Order&aid=-3"
 
 
 
-                            target="frmright">¶©µ¥ÁÐ±í</a><a href="http://sup.ekakm.com" id="SupUrl" target="_blank">Óà¶î<span id="Balance">0.000</span></a><a
+                            target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</a><a href="http://sup.ekakm.com" id="SupUrl" target="_blank">ï¿½ï¿½ï¿½<span id="Balance">0.000</span></a><a
 
 
 
-                                href="index.php?m=mod_b2b&c=Profit&allaid=1" target="frmright">ÏúÊÛ±¨±í<span id="Message2"></span></a><a
+                                href="index.php?m=mod_b2b&c=Profit&allaid=1" target="frmright">ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½<span id="Message2"></span></a><a
 
 
 
@@ -208,11 +208,11 @@
 
 
 
-                        <a href="../index.php" target="_blank">Åú·¢Æ½Ì¨</a>
+                        <a href="../index.php" target="_blank">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨</a>
 
 
 
-                        <a href="/ykt" target="_blank">Ò»¿¨Í¨<span id="Saving1"></span></a>                    </div>
+                        <a href="/ykt" target="_blank">Ò»ï¿½ï¿½Í¨<span id="Saving1"></span></a>                    </div>
 
 
 
@@ -341,8 +341,8 @@
                             <div class="lie lie2">
 
                                 <a href="index.php?a=home&showver=1" class="shouye" target="frmright">
-								Ê×Ò³</a> <a href="index.php?c=Home&a=Logout" class="tuichu">
-								ÍË³ö</a>
+								ï¿½ï¿½Ò³</a> <a href="index.php?c=Home&a=Logout" class="tuichu">
+								ï¿½Ë³ï¿½</a>
 
                                 <div style="clear: both">
 
@@ -372,7 +372,7 @@
 
             <td valign="middle" style="width: 12px; cursor: pointer; " bgcolor="#c3daf9" onMouseOver="this.style.backgroundColor='#ddeafc';this.style.color='red'" onMouseOut="this.style.backgroundColor='';this.style.color=''" onClick="switchSysBar()">
 
-                <span class="navpoint" id="switchPoint" title="¹Ø±Õ/´ò¿ª×óÀ¸"><img src="images/right.gif" style="margin:2px"></span>
+                <span class="navpoint" id="switchPoint" title="ï¿½Ø±ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"><img src="images/right.gif" style="margin:2px"></span>
 
             </td>
 
@@ -390,12 +390,12 @@
 
                                 <div class="wenzi">
 
-                                ¡¡</div>
+                                ï¿½ï¿½</div>
 
                                 
 
                                 <div class="wenzi3"><a href="#">
-									µ±Ç°µÇÂ¼¹ÜÀíÔ±£º<?php echo $vd['admin']; ?></a></div>
+									ï¿½ï¿½Ç°ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½<?php echo $vd['admin']; ?></a></div>
 
                             </div>
 

@@ -1,78 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Ä£°å¼Û¸ñÉèÖÃ</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>Ä£°å¼Û¸ñÉèÖÃ</h2>
-  </div>
-  <ul>
-    <li><a href="index.php?m=mod_b2b&c=price"><span>Ä£°å¼Û¸ñ¹ÜÀí</span></a></li>
-    <li><a href="index.php?m=mod_b2b&c=price&a=AddRankTpl"><span >µ¥¼¶±ğ¼Û¸ñÄ£°å</span></a></li>
-	<li><a href="" class="on">ÉÌÆ·¼Û¸ñÉèÖÃ</a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>ÉÌÆ·¼Û¸ñÃÜ¼Û</span></a></li>
-  </ul>
-</div>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-		<form name="sellhistory" method="get" action="index.php">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left"> ÉÌÆ·Ãû³Æ</td>
-		<td width="78%" align="left" class="tableright1">
-			<div align="left">
-			  <input type="hidden" name="stype" value="pname"/>
-			  <input type="hidden" name="m" value="mod_b2b"/>
-			  <input type="hidden" name="c" value="product"/>
-			  <input type="hidden" name="a" value="AgentPrice"/>
-			  <input type="text" name="keywords" size="30" class="input0" dataType="Integer" msg="ÇëÊäÈë¹Ø¼ü´Ê" value="">		
-		    </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">&nbsp;</td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type="submit" name="Submit222" value="È·ÈÏ²éÑ¯" class="tijiao_input"> 
-		  <input type="reset" name="reset" value="ÖØÖÃ²éÑ¯" class="fanhui_input">
-		  </div></td>
-		</tr>
-		</table>
-		</form>
-	</td>
-	</tr>
-</table>
-	<br>
-    <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
-      <tr>
-        <th width="50%" class="heardertop1"> ÉÌÆ·Ãû³Æ</td>
-        <th width="10%" class="heardertop1"> ¿Í»§·şÎñ</td>
-        <th width="12%" class="heardertop1"> ÃæÖµ({$vd['lang']['moneyunit']})</td>
-        <th width="13%" class="heardertop1"> ½ø»õ¼Û({$vd['lang']['moneyunit']})</td>
-        <th width="15%" class="heardertop1"> Éè¶¨¼Û¸ñ</td>
-      <!--foreach($vd['items'] as $item) {-->
-	  	<tr class="trd">
-        <td width="50%" align="left">{$item['pname']}
-            <!--if($item['owner']>0 && $item['owner'] != $vd['vip']){-->
-          <img src="{$vd['content']}images/own.gif" alt="Ò×¿¨Íø" title="×ÔÓĞÉÌÆ·"/>
-          <!--}--></td>
-        <td width="10%">ÏµÍ³</td>
-        <td width="12%">{$item['listprice']}</td>
-        <td width="13%">{$item['cprice']}</td>
-        <td width="15%">[<a href="index.php?m=mod_b2b&amp;c=product&amp;a=ViewAgentPrice&amp;pid={$item['pid']}"><font color="#ff0000">Éè¶¨¼Û¸ñ</font></a>]</td>
-      </tr>
-      <!--}-->
-</table>
-  	        <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
-	</td>
-	</tr>
-	</table>
-	<div id="page">
-	  <div align="right">{load(fpage)}</div>
-	</div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>æ¨¡æ¿ä»·æ ¼è®¾ç½®</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>æ¨¡æ¿ä»·æ ¼è®¾ç½®</h2>  </div>  <ul>    <li><a href="index.php?m=mod_b2b&c=price"><span>æ¨¡æ¿ä»·æ ¼ç®¡ç†</span></a></li>    <li><a href="index.php?m=mod_b2b&c=price&a=AddRankTpl"><span >å•çº§åˆ«ä»·æ ¼æ¨¡æ¿</span></a></li>	<li><a href="" class="on">å•†å“ä»·æ ¼è®¾ç½®</a></li>    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>å•†å“ä»·æ ¼å¯†ä»·</span></a></li>  </ul></div><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="sellhistory" method="get" action="index.php"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left"> å•†å“åç§°</td>		<td width="78%" align="left" class="tableright1">			<div align="left">			  <input type="hidden" name="stype" value="pname"/>			  <input type="hidden" name="m" value="mod_b2b"/>			  <input type="hidden" name="c" value="product"/>			  <input type="hidden" name="a" value="AgentPrice"/>			  <input type="text" name="keywords" size="30" class="input0" dataType="Integer" msg="è¯·è¾“å…¥å…³é”®è¯" value="">				    </div></td>		</tr>		<tr>		  <td class="table1_left">&nbsp;</td>		<td align="left" class="tableright1"><div align="left">		  <input type="submit" name="Submit222" value="ç¡®è®¤æŸ¥è¯¢" class="tijiao_input"> 		  <input type="reset" name="reset" value="é‡ç½®æŸ¥è¯¢" class="fanhui_input">		  </div></td>		</tr>		</table>		</form>	</td>	</tr></table>	<br>    <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">      <tr>        <th width="50%" class="heardertop1"> å•†å“åç§°</td>        <th width="10%" class="heardertop1"> å®¢æˆ·æœåŠ¡</td>        <th width="12%" class="heardertop1"> é¢å€¼({$vd['lang']['moneyunit']})</td>        <th width="13%" class="heardertop1"> è¿›è´§ä»·({$vd['lang']['moneyunit']})</td>        <th width="15%" class="heardertop1"> è®¾å®šä»·æ ¼</td>      <!--foreach($vd['items'] as $item) {-->	  	<tr class="trd">        <td width="50%" align="left">{$item['pname']}            <!--if($item['owner']>0 && $item['owner'] != $vd['vip']){-->          <img src="{$vd['content']}images/own.gif" alt="æ˜“å¡ç½‘" title="è‡ªæœ‰å•†å“"/>          <!--}--></td>        <td width="10%">ç³»ç»Ÿ</td>        <td width="12%">{$item['listprice']}</td>        <td width="13%">{$item['cprice']}</td>        <td width="15%">[<a href="index.php?m=mod_b2b&amp;c=product&amp;a=ViewAgentPrice&amp;pid={$item['pid']}"><font color="#ff0000">è®¾å®šä»·æ ¼</font></a>]</td>      </tr>      <!--}--></table>  	        <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 	</td>	</tr>	</table>	<div id="page">	  <div align="right">{load(fpage)}</div>	</div></body></html>

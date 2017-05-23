@@ -12,7 +12,7 @@
 
 
 
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 
@@ -230,7 +230,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-              <p>ÏµÍ³¹ÜÀí</p>
+              <p>ÏµÍ³ï¿½ï¿½ï¿½ï¿½</p>
 
 
 
@@ -242,27 +242,27 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-              <li><a href="index.php?c=Home&a=Home" target="frmright">ºóÌ¨Ê×Ò³</a> || <a href="?c=Home&a=Logout" target="frmright">ÍË³öÏµÍ³</a></li>
+              <li><a href="index.php?c=Home&a=Home" target="frmright">ï¿½ï¿½Ì¨ï¿½ï¿½Ò³</a> || <a href="?c=Home&a=Logout" target="frmright">ï¿½Ë³ï¿½ÏµÍ³</a></li>
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Sys" target="frmright">Æ½Ì¨»ù±¾ÉèÖÃ</a>              
+              <li><a href="index.php?m=mod_b2b&c=Sys" target="frmright">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>              
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Popupsbulletin&a=Close" target="frmright">Ç°Ì¨¹«¸æ¹ÜÀí</a></li>
+              <li><a href="index.php?m=mod_b2b&c=Popupsbulletin&a=Close" target="frmright">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Logo" target="frmright">Æ½Ì¨LOGO¹ÜÀí</a></li>
+              <li><a href="index.php?m=mod_b2b&c=Logo" target="frmright">Æ½Ì¨LOGOï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Master" target="frmright">¹ÜÀíÔ±ÉèÖÃ</a></li>
+              <li><a href="index.php?m=mod_b2b&c=Master" target="frmright">ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-              <li><a href="?m=mod_b2b&c=MiBaoKa" target="frmright">ÃÜ±£¿¨¹ÜÀí</a> ||<a href="?m=mod_b2b&c=Payment" target="frmright">Ö§¸¶¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Rank" target="frmright">ÓÃ»§¼¶±ðÌåÏµ¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Ad" target="frmright">Í¼Æ¬Óë¹ã¸æ¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Bank" target="frmright">ÒøÐÐ»ã¿îÕËºÅ¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Poll" target="frmright">Æ½Ì¨Í¶Æ±¹ÜÀí</a></li></ul>
+              <li><a href="?m=mod_b2b&c=MiBaoKa" target="frmright">ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> ||<a href="?m=mod_b2b&c=Payment" target="frmright">Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Rank" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Ad" target="frmright">Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Bank" target="frmright">ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ËºÅ¹ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Poll" target="frmright">Æ½Ì¨Í¶Æ±ï¿½ï¿½ï¿½ï¿½</a></li></ul>
 
 
 
@@ -278,7 +278,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-              <div class="bt6">ÐÂÎÅ¹«¸æ</div>
+              <div class="bt6">ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½</div>
 
 
 
@@ -286,19 +286,15 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Article" target="frmright">ÐÂÎÅÁÐ±í</a> || <a href="index.php?m=mod_b2b&c=Article&a=Add" target="frmright">Ìí¼ÓÐÂÎÅ¹«¸æ</a></li>
+              <li><a href="index.php?m=mod_b2b&c=Article" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</a> || <a href="index.php?m=mod_b2b&c=Article&a=Add" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½</a></li>
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Article" target="frmright">±à¼­ÐÂÎÅ¹«¸æ</a></li><li><a href="index.php?m=mod_b2b&c=Board" target="frmright">ÐÂÎÅ·ÖÀà¹ÜÀí</a></li>
+              <li><a href="index.php?m=mod_b2b&c=Article" target="frmright">ï¿½à¼­ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Board" target="frmright">ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-              <li><a href="index.php?m=mod_b2b&c=Complaint&by=1" target="frmright">ÓÃ»§Í¶Ëß¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=PM&a=add" target="frmright">·¢ËÍÕ¾ÄÚÐÅ</a> || <a href="index.php?m=mod_b2b&c=PM&by=1" target="frmright">Õ¾ÄÚÐÅÁÐ±í</a></li></ul>
-
-
-
-
+              <li><a href="index.php?m=mod_b2b&c=Complaint&by=1" target="frmright">ï¿½Ã»ï¿½Í¶ï¿½ß¹ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=PM&a=add" target="frmright">ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=PM&by=1" target="frmright">Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</a></li></ul>
 
 
 
@@ -306,27 +302,31 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="4"  id="menu4" onclick="showsubmenu(4)" toggleGroup="on" class="menutitle"><div class="bt11">Æ½Ì¨¶©µ¥</div>
 
 
 
-</h3><ul id="submenu4"><li><a href="index.php?m=mod_b2b&c=Order&aid=-2" target="frmright">Æ½Ì¨¶©µ¥</a> || <a href="index.php?m=mod_b2b&c=Order&aid=-2&ishistory=1" target="frmright">ÀúÊ·¶©µ¥</a></li><li><a href="index.php?m=mod_b2b&c=Order&optype=w&by=1&aid=-2" target="frmright">´ý´¦Àí¶©µ¥</a> || <a href="index.php?m=mod_b2b&c=Order&optype=s&aid=-2" target="frmright">ÒÑ´¦Àí¶©µ¥</a></li><li><a href="index.php?m=mod_b2b&c=Order&optype=f&aid=-2" target="frmright">Î´»ã¿î¶©µ¥</a> ||<a href="index.php?m=mod_b2b&c=Order&optype=u&aid=-2" target="frmright">Ê§°Ü¶©µ¥</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=CzList&optype=sd|w&by=1&aid=-2" target="frmright">ÊÖ¹¤¶©µ¥Î´´ú³ä</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=Deal&optype=sd|d&by=1&aid=-2" target="frmright">ÊÖ¹¤¶©µ¥Î´³äÖµ</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=CzList&optype=sd&aid=-2" target="frmright">ÊÖ¹¤¶©µ¥¼ÇÂ¼</a></li>
+
+<h3 menuid="4"  id="menu4" onclick="showsubmenu(4)" toggleGroup="on" class="menutitle"><div class="bt11">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Bd&aid=-2&ordstate=1&by=1" target="frmright">²¹µ¥Í¶Ëß´¦Àí</a></li><li><a href="index.php?m=mod_b2b&c=Bd&a=Set" target="frmright">²¹µ¥ÏµÍ³ÅäÖÃ</a></li>
+</h3><ul id="submenu4"><li><a href="index.php?m=mod_b2b&c=Order&aid=-2" target="frmright">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Order&aid=-2&ishistory=1" target="frmright">ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Order&optype=w&by=1&aid=-2" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Order&optype=s&aid=-2" target="frmright">ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Order&optype=f&aid=-2" target="frmright">Î´ï¿½ï¿½î¶©ï¿½ï¿½</a> ||<a href="index.php?m=mod_b2b&c=Order&optype=u&aid=-2" target="frmright">Ê§ï¿½Ü¶ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=CzList&optype=sd|w&by=1&aid=-2" target="frmright">ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=Deal&optype=sd|d&by=1&aid=-2" target="frmright">ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½Öµ</a></li><li><a href="index.php?m=mod_b2b&c=Order&a=CzList&optype=sd&aid=-2" target="frmright">ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Order&a=Often&aid=-2" target="frmright">³£¹ºÉÌÆ·Í³¼Æ</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Bd&aid=-2&ordstate=1&by=1" target="frmright">ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ß´ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Bd&a=Set" target="frmright">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Order&a=Chart&aid=-2" target="frmright">ÆßÈÕ¶©µ¥Í¼±í</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">Æ½Ì¨ÀûÈó±í</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Order&a=Often&aid=-2" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Í³ï¿½ï¿½</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1&ishistory=1" target="frmright">Æ½Ì¨ÀúÊ·ÀûÈó±í</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Order&a=Chart&aid=-2" target="frmright">ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½Í¼ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+
+
+
+<li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1&ishistory=1" target="frmright">Æ½Ì¨ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
@@ -346,15 +346,11 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="5"  id="menu5" onclick="showsubmenu(5)" togglegroup="on" class="menutitle"><div class="bt12">ÏµÍ³ÉÌÆ·</div>
+<h3 menuid="5"  id="menu5" onclick="showsubmenu(5)" togglegroup="on" class="menutitle"><div class="bt12">ÏµÍ³ï¿½ï¿½Æ·</div>
 
 
 
-</h3><ul id="submenu5"><li><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" target="frmright">ÏµÍ³ÉÌÆ·</a></li><li><a href="index.php?m=mod_b2b&c=Category" target="frmright">ÉÌÆ··ÖÀà¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Quick" target="frmright">±ãÃñÖÐÐÄ</a> || <a href="index.php?m=mod_b2b&c=PS&a=create" target="frmright">Ìí¼ÓÉÌÆ·</a></li><li><a href="index.php?m=mod_b2b&c=Price&a=PriceTpl" target="frmright">ÉÌÆ·¼Û¸ñÄ£°å</a></li><li><a href="index.php?m=mod_b2b&c=Right" target="frmright">ÉÌÆ·¹ºÂòÈ¨ÏÞ</a></li><li><a href="index.php?m=mod_b2b&c=PS&ptype=-1&aid=-1" target="frmright">ÉÌÆ·´æ¿âÐÅÏ¢</a></li><li><a href="index.php?m=mod_b2b&c=Game" target="frmright">Çø·þ¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=GA&a=Create" target="frmright">ÉÌÆ·³äÖµÄ£°åÌí¼Ó</a></li><li><a href="index.php?m=mod_b2b&c=GA" target="frmright">ÉÌÆ·³äÖµÄ£°å¹ÜÀí</a></li></ul>
-
-
-
-
+</h3><ul id="submenu5"><li><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" target="frmright">ÏµÍ³ï¿½ï¿½Æ·</a></li><li><a href="index.php?m=mod_b2b&c=Category" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Quick" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=PS&a=create" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Æ·</a></li><li><a href="index.php?m=mod_b2b&c=Price&a=PriceTpl" target="frmright">ï¿½ï¿½Æ·ï¿½Û¸ï¿½Ä£ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Right" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=PS&ptype=-1&aid=-1" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</a></li><li><a href="index.php?m=mod_b2b&c=Game" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=GA&a=Create" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ÖµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=GA" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ÖµÄ£ï¿½ï¿½ï¿½ï¿½ï¿½</a></li></ul>
 
 
 
@@ -366,7 +362,11 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="6"  id="menu6" onclick="showsubmenu(6)" toggleGroup="on" class="menutitle"><div class="bt6">ÉÌÆ·¿¨ÃÜ</div>
+
+
+
+
+<h3 menuid="6"  id="menu6" onclick="showsubmenu(6)" toggleGroup="on" class="menutitle"><div class="bt6">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
@@ -374,7 +374,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Card&by=1" target="frmright">ÉÌÆ·¿¨ÃÜ</a> || <a href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">³äÖµ¿¨ÃÜÉú³É</a></li><li><a href="index.php?m=mod_b2b&c=Card&a=Add" target="frmright">ÅúÁ¿¼Ó¿¨</a> || <a href="index.php?m=mod_b2b&c=Card&a=Dels" target="frmright">ÅúÁ¿É¾¿¨</a></li><li><a href="index.php?m=mod_b2b&c=Card&optype=f&by=1" target="frmright">ÒÑ³öÊÛ¿¨ºÅ</a> || <a href="index.php?m=mod_b2b&c=Card&optype=s&by=1" target="frmright">Î´³öÊÛ¿¨ºÅ</a></li><li><a href="index.php?m=mod_b2b&c=Card&by=1" target="frmright">±à¼­¿¨ºÅ || ÎÄ¼þµ¼Èë</a></li></ul>
+  <li><a href="index.php?m=mod_b2b&c=Card&by=1" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Card&a=Add" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½</a> || <a href="index.php?m=mod_b2b&c=Card&a=Dels" target="frmright">ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Card&optype=f&by=1" target="frmright">ï¿½Ñ³ï¿½ï¿½Û¿ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Card&optype=s&by=1" target="frmright">Î´ï¿½ï¿½ï¿½Û¿ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Card&by=1" target="frmright">ï¿½à¼­ï¿½ï¿½ï¿½ï¿½ || ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½</a></li></ul>
 
 
 
@@ -386,7 +386,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="7"  id="menu7" onclick="showsubmenu(7)" togglegroup="on" class="menutitle"><div class="bt7">²ÆÎñ¹ÜÀí</div></h3><ul id="submenu7"><li><a href="index.php?m=mod_b2b&c=Bank" target="frmright">²ÆÎñ¹ÜÀí</a> || <a href="index.php?m=mod_b2b&c=Bank" target="frmright">»ã¿îÕËºÅ</a></li><li><a href="index.php?m=mod_b2b&c=Remit&by=1" target="frmright">»ã¿îÍ¨ÖªÊé¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">Æ½Ì¨ÀûÈó±í</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1" target="frmright">¶©µ¥¸÷ÏîÀûÈó±í</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit" target="frmright">ÓÃ»§´úÀíÀûÈó±í</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent" target="frmright">ÓÃ»§ÕËºÅ²ÆÎñÐÅÏ¢</a></li><li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ÓÃ»§Óà¶î×ª»¯</a></li></ul>
+<h3 menuid="7"  id="menu7" onclick="showsubmenu(7)" togglegroup="on" class="menutitle"><div class="bt7">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></h3><ul id="submenu7"><li><a href="index.php?m=mod_b2b&c=Bank" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Bank" target="frmright">ï¿½ï¿½ï¿½ï¿½Ëºï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Remit&by=1" target="frmright">ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1&s=1" target="frmright">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Profit&aid=-1" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent" target="frmright">ï¿½Ã»ï¿½ï¿½ËºÅ²ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</a></li><li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½</a></li></ul>
 
 
 
@@ -394,15 +394,11 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="9"  id="menu9" onclick="showsubmenu(9)" togglegroup="on" class="menutitle"><div class="bt8">Ò»¿¨Í¨¹ÜÀí</div>
+<h3 menuid="9"  id="menu9" onclick="showsubmenu(9)" togglegroup="on" class="menutitle"><div class="bt8">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
-</h3><ul id="submenu9"><li><a href="index.php?m=mod_b2b&c=trade&a=state" target="frmright">Ò»¿¨Í¨¹ÜÀí</a> || <a href="index.php?m=mod_b2b&c=Ykt&by=1"  target="frmright">¿¨ÃÜÁÐ±í</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">¿¨ÃÜÉú³É</a> || <a href="index.php?m=mod_b2b&c=ykt&a=add" target="frmright">¿¨ÃÜµ¼Èë</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Group" target="frmright">ÓÐÐ§×´Ì¬¹ÜÀí</a> | <a href="index.php?m=mod_b2b&c=Ykt&a=Card&ptype=100,101" target="frmright">´æ¿â¹ÜÀí</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Data" target="frmright">Ò»¿¨Í¨×´Ì¬²éÑ¯</a></li><li><a href="index.php?m=mod_b2b&c=YT&permit=-1" target="frmright">Ò»¿¨Í¨×ª¿¨È¨ÏÞÉèÖÃ</a></li><li><a href="index.php?m=mod_b2b&c=Addr&forykt=1" target="frmright">Ò»¿¨Í¨¾­ÏúÉÌÃûÂ¼</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Data" target="frmright">Ò»¿¨Í¨Ê¹ÓÃÇé¿öÃ÷Ï¸</a></li><li><a href="index.php?m=mod_b2b&c=Reward&a=Home" target="frmright">Ò»¿¨Í¨·µµãÃ÷Ï¸²éÑ¯</a></li><li><a href="index.php?m=mod_b2b&c=Order&payment=100&aid=-1" target="frmright">Ò»¿¨Í¨»»¹ºÉÌÆ··ÖÎö</a></li></ul>
-
-
-
-
+</h3><ul id="submenu9"><li><a href="index.php?m=mod_b2b&c=trade&a=state" target="frmright">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Ykt&by=1"  target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Create" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=ykt&a=add" target="frmright">ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Group" target="frmright">ï¿½ï¿½Ð§×´Ì¬ï¿½ï¿½ï¿½ï¿½</a> | <a href="index.php?m=mod_b2b&c=Ykt&a=Card&ptype=100,101" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Data" target="frmright">Ò»ï¿½ï¿½Í¨×´Ì¬ï¿½ï¿½Ñ¯</a></li><li><a href="index.php?m=mod_b2b&c=YT&permit=-1" target="frmright">Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Addr&forykt=1" target="frmright">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼</a></li><li><a href="index.php?m=mod_b2b&c=Ykt&a=Data" target="frmright">Ò»ï¿½ï¿½Í¨Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸</a></li><li><a href="index.php?m=mod_b2b&c=Reward&a=Home" target="frmright">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ñ¯</a></li><li><a href="index.php?m=mod_b2b&c=Order&payment=100&aid=-1" target="frmright">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a></li></ul>
 
 
 
@@ -414,7 +410,11 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="8"  id="menu8" onclick="showsubmenu(8)" toggleGroup="on" class="menutitle"><div class="bt9"></a>Æ½Ì¨ÓÃ»§</div>
+
+
+
+
+<h3 menuid="8"  id="menu8" onclick="showsubmenu(8)" toggleGroup="on" class="menutitle"><div class="bt9"></a>Æ½Ì¨ï¿½Ã»ï¿½</div>
 
 
 
@@ -422,31 +422,31 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">Æ½Ì¨ÓÃ»§¹ÜÀí</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">Æ½Ì¨ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=EShop" target="frmright">·ÖÕ¾¹ÜÀíÏµÍ³</a></li>
+  <li><a href="index.php?m=mod_b2b&c=EShop" target="frmright">ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ÏµÍ³</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ËùÓÐÓÃ»§ÁÐ±í</a></li><li><a href="index.php?m=mod_b2b&c=Agent&a=Relation" target="frmright">ÓÃ»§¹ØÏµ×ª»¯</a></li><li><a href="index.php?m=mod_b2b&c=Funds" target="frmright">ÓÃ»§³äÖµ¼ÇÂ¼</a></li>
+<li><a href="index.php?m=mod_b2b&c=Agent" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ð±ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Agent&a=Relation" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½Ïµ×ªï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Funds" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½Öµï¿½ï¿½Â¼</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Money" target="frmright">ÓÃ»§×Ê½ð¹ÜÀí</a></li>
+<li><a href="index.php?m=mod_b2b&c=Money" target="frmright">ï¿½Ã»ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent" target="frmright">ÓÃ»§ÕÊÎñ±¨±í</a></li>
+<li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ñ±¨±ï¿½</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent&ishistory=1" target="frmright">ÓÃ»§ÕÊÎñ±¨±í</a></li>
+<li><a href="index.php?m=mod_b2b&c=Trade&tpl=agent&ishistory=1" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ñ±¨±ï¿½</a></li>
 
 
 
-<li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit" target="frmright">ÓÃ»§´úÀíÀûÈó±¨±í</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit&ishistory=1" target="frmright">ÓÃ»§´úÀíÀûÈóÀúÊ·±¨±í</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=12&tpl=agentproductprofit" target="frmright">ÓÃ»§¹©»õËùµÃ±¨±í</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=12&tpl=agentproductprofit" target="frmright">ÓÃ»§¹©»õËùµÃÀúÊ·±¨±í</a></li><li><a href="index.php?m=mod_b2b&c=Staff" target="frmright">ÓÃ»§Ô±¹¤ÁÐ±í</a></li></ul>
+<li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó±¨±ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=11&tpl=agentorderprofit&ishistory=1" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=12&tpl=agentproductprofit" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Trade&tradetype=12&tpl=agentproductprofit" target="frmright">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Staff" target="frmright">ï¿½Ã»ï¿½Ô±ï¿½ï¿½ï¿½Ð±ï¿½</a></li></ul>
 
 
 
@@ -466,7 +466,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <div class="bt1">¹©»õ¹ÜÀí</div>
+  <div class="bt1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
@@ -474,19 +474,15 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Product&allaid=1&aid=-1&ptype=-1" target="frmright">ÉÌÆ·ÉóÅú</a> || <a href="index.php?m=mod_b2b&c=Order&aid=-3" target="frmright">ÉÌÆ·¶©µ¥</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Product&allaid=1&aid=-1&ptype=-1" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a> || <a href="index.php?m=mod_b2b&c=Order&aid=-3" target="frmright">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Order&aid=-3&ishistory=1" target="frmright">¹©»õÉÌÀúÊ·¶©µ¥</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Order&aid=-3&ishistory=1" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Profit&allaid=1" target="frmright">¹©»õÉÌÆ·ÏúÊÛ±¨±í</a></li></ul>
-
-
-
-
+  <li><a href="index.php?m=mod_b2b&c=Profit&allaid=1" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½</a></li></ul>
 
 
 
@@ -494,16 +490,20 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="10"  id="menu10" onclick="showsubmenu(10)" toggleGroup="on" class="menutitle"><div class="bt3">Æ½Ì¨Êý¾Ý</div></h3><ul id="submenu10"> <li><a href="index.php?m=mod_b2b&c=Html&a=Home" target="frmright">Éú³É¾²Ì¬Ò³Ãæ</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Fs&a=ListTpl" target="frmright">Ñ¡ÔñÍøÕ¾Ä£°å</a></li>
-<li><a href="index.php?m=mod_b2b&c=Fs&a=BakTplHome" target="frmright">±¸·ÝÍøÕ¾Ä£°å</a></li>
+
+<h3 menuid="10"  id="menu10" onclick="showsubmenu(10)" toggleGroup="on" class="menutitle"><div class="bt3">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½</div></h3><ul id="submenu10"> <li><a href="index.php?m=mod_b2b&c=Html&a=Home" target="frmright">ï¿½ï¿½ï¿½É¾ï¿½Ì¬Ò³ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="index.php?m=mod_b2b&c=Cache&a=Clear" target="frmright">ÇåÀíÆ½Ì¨»º´æ</a></li><li><a href="index.php?m=mod_b2b&c=App" target="frmright">Ó¦ÓÃÖÐÐÄ</a></li><li><a href="index.php?m=mod_b2b&c=Theme" target="frmright">×Ô¶¨ÒåÄ£°å</a></li>
+  <li><a href="index.php?m=mod_b2b&c=Fs&a=ListTpl" target="frmright">Ñ¡ï¿½ï¿½ï¿½ï¿½Õ¾Ä£ï¿½ï¿½</a></li>
+<li><a href="index.php?m=mod_b2b&c=Fs&a=BakTplHome" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾Ä£ï¿½ï¿½</a></li>
+
+
+
+  <li><a href="index.php?m=mod_b2b&c=Cache&a=Clear" target="frmright">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=App" target="frmright">Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li><li><a href="index.php?m=mod_b2b&c=Theme" target="frmright">ï¿½Ô¶ï¿½ï¿½ï¿½Ä£ï¿½ï¿½</a></li>
 
 
 
@@ -527,7 +527,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <div class="bt1">ÔöÖµ·þÎñ¹ÜÀí</div>
+  <div class="bt1">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
@@ -535,7 +535,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <li><a href="#" target="_blank">ÎÞ</a></li>
+  <li><a href="#" target="_blank">ï¿½ï¿½</a></li>
 
 
 
@@ -554,27 +554,27 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-<h3 menuid="13"  id="menu13" onclick="showsubmenu(13)" toggleGroup="on" class="menutitle"><div class="bt4">ÓéÀÖÖÐÐÄ</div></h3><ul id="submenu13">
+<h3 menuid="13"  id="menu13" onclick="showsubmenu(13)" toggleGroup="on" class="menutitle"><div class="bt4">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></h3><ul id="submenu13">
 
 
 
-  <li><a href="http://web.kugou.com/index.html?" target="frmright">ÔÚÏßÒôÀÖ</a></li>
+  <li><a href="http://web.kugou.com/index.html?" target="frmright">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="http://www.webps.cn/" target="frmright">ÔÚÏßPs</a></li>
+  <li><a href="http://www.webps.cn/" target="frmright">ï¿½ï¿½ï¿½ï¿½Ps</a></li>
 
 
 
-  <li><a href="http://xiuxiu.web.meitu.com/main.html" target="frmright">ÃÀÍ¼ÐãÐã</a></li>
+  <li><a href="http://xiuxiu.web.meitu.com/main.html" target="frmright">ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li class="STYLE1">¸ü¶àÓ¦ÓÃ¼´½«ÍÆ³ö</li>
+  <li class="STYLE1">ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Æ³ï¿½</li>
 
 
 
-  <li class="STYLE1">»¶Ó­´ó¼ÒÌá³ö½¨Òé</li>
+  <li class="STYLE1">ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
 
 
 
@@ -598,7 +598,7 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <div class="bt1">Õ¾µãµ÷ÊÔ</div>
+  <div class="bt1">Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 
 
 
@@ -606,19 +606,19 @@ body, h1,button,input,select,textarea,  fieldset,td{ font:12px/1.5 microsoft yah
 
 
 
-  <li><span class="STYLE1"><a href="../index.php" target="frmright">Ö÷Ò³ÐÅÏ¢µ÷ÊÔ</a></span></li>
+  <li><span class="STYLE1"><a href="../index.php" target="frmright">ï¿½ï¿½Ò³ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½</a></span></li>
 
 
 
-  <li class="STYLE1"><a href="../index.php?m=mod_b2b&c=Article&a=more" target="frmright">ÍøÖ·µ¼º½µ÷ÊÔ</a></li>
+  <li class="STYLE1"><a href="../index.php?m=mod_b2b&c=Article&a=more" target="frmright">ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li class="STYLE1"><a href="../index.php?m=mod_b2b&c=Article&a=Home&name=Åú·¢ÏµÍ³¹«¸æ" target="frmright">ÎÄÕÂÏµÍ³µ÷ÊÔ</a></li>
+  <li class="STYLE1"><a href="../index.php?m=mod_b2b&c=Article&a=Home&name=ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½" target="frmright">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½</a></li>
 
 
 
-  <li><a href="/ykt" target="frmright">Ò»¿¨Í¨ÏµÍ³µ÷ÊÔ</a><a href="/ykt"></a></li>
+  <li><a href="/ykt" target="frmright">Ò»ï¿½ï¿½Í¨ÏµÍ³ï¿½ï¿½ï¿½ï¿½</a><a href="/ykt"></a></li>
 
 
 

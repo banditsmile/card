@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 <html>
 <head>
-<title>ºóÌ¨ÏµÍ³</title>
-<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>åå°ç³»ç»Ÿ</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <style tyle="text/css">
 body{
 margin:0px;
@@ -106,9 +106,9 @@ position:absolute;top:39px;left:15px;font-size:13px;color:#E13800
     <div class="Tab" style="border:0px;">
       <ul id="tab"></ul>
     </div>
-    <div id="sms"><img src="{$vd['sc']}images/sms.gif" alt="Ïà¹Ø¶ÌĞÅÏ¢"/></div>
+    <div id="sms"><img src="{$vd['sc']}images/sms.gif" alt="ç›¸å…³çŸ­ä¿¡æ¯"/></div>
     <div id="sysmsg"></div>
-    <div id="other">Ç°Ì¨£º<!--if(UB_YKT){--><a href="<!--if($vd['yktsite']==''){-->../<!--if(UB_DEFAULT != 'ykt'){-->ykt<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">Ò»¿¨Í¨ÏµÍ³ </a><!--}--><!--if(UB_B2B){--> <a href="../<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">Åú·¢ÏµÍ³</a><!--}--><!--if(UB_B2C){--> <a href="<!--if($vd['b2csite']==''){-->../<!--if(UB_DEFAULT != 'b2c'){-->b2c<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">ÁãÊÛ</a><!--}--></div>
+    <div id="other">å‰å°ï¼š<!--if(UB_YKT){--><a href="<!--if($vd['yktsite']==''){-->../<!--if(UB_DEFAULT != 'ykt'){-->ykt<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">ä¸€å¡é€šç³»ç»Ÿ </a><!--}--><!--if(UB_B2B){--> <a href="../<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">æ‰¹å‘ç³»ç»Ÿ</a><!--}--><!--if(UB_B2C){--> <a href="<!--if($vd['b2csite']==''){-->../<!--if(UB_DEFAULT != 'b2c'){-->b2c<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">é›¶å”®</a><!--}--></div>
 </div>
 </body>
 </html>
@@ -156,7 +156,7 @@ position:absolute;top:39px;left:15px;font-size:13px;color:#E13800
   {
     rightobj = document.all ? window.parent.frames["frmright"] : window.parent.document.getElementById("frmright").contentWindow;
     //rightobj.src = "loading.html";
-    rightobj.document.write('<body style="BACKGROUND:#fff;font-size:12px;"><div style="position:absolute;top:10%;left:30%;text-align:center;"><div style="padding:30px 5px;background:#FFF4E9;border:1px #FFDDDB solid;width:230px;color:#DF7939"><div style="padding-bottom:8px"><img src="{$vd['sc']}images/js_loader.gif"></div>Èç¹û¹ı³¤Ê±¼äÃ»·´Ó¦,ÇëÖØĞÂµã»÷Á´½Ó</div></div></body>');
+    rightobj.document.write('<body style="BACKGROUND:#fff;font-size:12px;"><div style="position:absolute;top:10%;left:30%;text-align:center;"><div style="padding:30px 5px;background:#FFF4E9;border:1px #FFDDDB solid;width:230px;color:#DF7939"><div style="padding-bottom:8px"><img src="{$vd['sc']}images/js_loader.gif"></div>å¦‚æœè¿‡é•¿æ—¶é—´æ²¡ååº”,è¯·é‡æ–°ç‚¹å‡»é“¾æ¥</div></div></body>');
   }
   
   function CacheUpdate()
@@ -241,7 +241,7 @@ position:absolute;top:39px;left:15px;font-size:13px;color:#E13800
             if($("notdealorder")){
              $("notdealorder").innerHTML = data;
             }
-            //¿ªÊ¼ÏìÁå
+            //å¼€å§‹å“é“ƒ
             playSound("{$vd['sc']}images/ring.wav");
           }
         }

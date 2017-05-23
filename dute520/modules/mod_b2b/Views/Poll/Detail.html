@@ -1,52 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Poll" title="ͶƱ�б�"><font color="#000">ͶƱ�б�</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['title']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="�鿴ͶƱ��ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Poll" title="投票列表"><font color="#000">投票列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['title']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="查看投票相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Poll&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">ͶƱ��Ϣ�޸�</div>
+<div class="ctitle">投票信息修改</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">����</td>
+    <td class="tablelt">主题</td>
     <td class="tablert"><input type="text" name="title" size="25" value="{$item['title']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt"">����ʱ��</td>
+    <td class="tablelt"">过期时间</td>
     <td class="tablert">
       <input type="text" name="expiration" size="25" style="vertical-align:middle;"  id="expiration" value="{$item['expiration']}"/>
       <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('expiration')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt"">����ƽ̨</td>
+    <td class="tablelt"">发布平台</td>
     <td class="tablert">
-      <input type="checkbox" name="forb2b" value="1" class="checkbox" {#ToggleCheck($item['forb2b'])}/>����
-      <input type="checkbox" name="forb2c" value="1" class="checkbox" {#ToggleCheck($item['forb2c'])}/>����
-      <input type="checkbox" name="forykt" value="1" class="checkbox" {#ToggleCheck($item['forykt'])}/>һ��ͨ
+      <input type="checkbox" name="forb2b" value="1" class="checkbox" {#ToggleCheck($item['forb2b'])}/>批发
+      <input type="checkbox" name="forb2c" value="1" class="checkbox" {#ToggleCheck($item['forb2c'])}/>零售
+      <input type="checkbox" name="forykt" value="1" class="checkbox" {#ToggleCheck($item['forykt'])}/>一卡通
     </td>
   </tr>
   <tr>
-    <td class="tablelt"">ͶƱ����</td>
+    <td class="tablelt"">投票属性</td>
     <td class="tablert">
-      <input type="radio" name="isradio" value="1" class="checkbox" <!--if($item['isradio']==1){-->checked<!--}-->/> ��ѡ
-      <input type="radio" name="isradio" value="0" class="checkbox" <!--if($item['isradio']==0){-->checked<!--}-->/> ��ѡ
+      <input type="radio" name="isradio" value="1" class="checkbox" <!--if($item['isradio']==1){-->checked<!--}-->/> 单选
+      <input type="radio" name="isradio" value="0" class="checkbox" <!--if($item['isradio']==0){-->checked<!--}-->/> 多选
     </td>
   </tr>
   <tr>
     <td class="tablelt""></td>
     <td class="tablert">
-      <input type="submit" value="�� ��" class="button"/>
-      <input type="button" value="ȡ ��" onclick="disp('adddiv')" class="button"/>
+      <input type="submit" value="修 改" class="button"/>
+      <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
     </td>
   </tr>
 </table>

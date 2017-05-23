@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-     <title>ÕË»§¼ä×ª¿î</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <title>ï¿½Ë»ï¿½ï¿½ï¿½×ªï¿½ï¿½</title>
      <link href="/index/css/common.css" type="text/css" rel="stylesheet" />
      <link href="/index/css/page.css" type="text/css" rel="stylesheet" />
      <style type="text/css">
@@ -11,11 +11,11 @@
  <body class="mainbg">
  <div class="new_qie">
    <div class="new_qie2">
-     <h2> ÕË»§¼ä×ª¿î</h2>
+     <h2> ï¿½Ë»ï¿½ï¿½ï¿½×ªï¿½ï¿½</h2>
    </div>
    <ul>
-     <li><a href="" class="on">ÕË»§¼ä×ª¿î</a></li>
-     <li><a href="index.php?m=mod_agent&c=trade&tpl=history&tradetype=31,32">ÕË»§×Ê½ðÃ÷Ï¸</a></li>
+     <li><a href="" class="on">ï¿½Ë»ï¿½ï¿½ï¿½×ªï¿½ï¿½</a></li>
+     <li><a href="index.php?m=mod_agent&c=trade&tpl=history&tradetype=31,32">ï¿½Ë»ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ï¸</a></li>
    </ul>
  </div>
   	<script type="text/javascript">
@@ -36,27 +36,27 @@
  <form name="finance" method="post" action="index.php?m=mod_agent&c=funds&a=TranSave">
  <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
    <tr>
-     <td class="table1_left"> Óà¶î£º </td>
+     <td class="table1_left"> ï¿½ï¿½î£º </td>
      <td class="tdleft"><span id="lblBalance" class="red">0 Ôª</span></td>
  
    </tr>
  
    <tr>
  
-     <td class="table1_left"> ÓÃ»§±àºÅ£º </td>
+     <td class="table1_left"> ï¿½Ã»ï¿½ï¿½ï¿½Å£ï¿½ </td>
  
      <td class="tdleft"> 
- <a title="×¢Òâ£ºÇëÎðÊäÈë×Ô¼ºµÄ±àºÅ£¬ÇëÎñ±ØÊäÈëÕýÈ·µÄ´úÀí±àºÅ£¬Èç¹ûÊäÈë´íÎó£¬¾ÍËã¸ÃÆ½Ì¨ÖÐ²»º¬ÓÐÕâ¸öÓÃ»§×Ê½ðÒ²»á±»×ª×ß£¡½÷É÷²Ù×÷£¡"><input name="underlingid" type="text" class="input0" id="underlingid" style="font-weight:normal" size="24"/>
+ <a title="×¢ï¿½â£ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä±ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ä´ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬¾ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ê½ï¿½Ò²ï¿½á±»×ªï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"><input name="underlingid" type="text" class="input0" id="underlingid" style="font-weight:normal" size="24"/>
  
  <span style="display:none"><input name="fundsto" type="radio" onclick="setval(this)" value="1" checked="checked"/></td>
-               <span id="RequiredFieldValidator1" style="color:Red;display:none;">±ØÌî</span><span id="RegularExpressionValidator1" style="color:Red;display:none;">¿Í»§±àºÅ²»ºÏ·¨</span> </tr>
+               <span id="RequiredFieldValidator1" style="color:Red;display:none;">ï¿½ï¿½ï¿½ï¿½</span><span id="RegularExpressionValidator1" style="color:Red;display:none;">ï¿½Í»ï¿½ï¿½ï¿½Å²ï¿½ï¿½Ï·ï¿½</span> </tr>
    <tr>
-     <td class="table1_left"> ×ª¿î½ð¶î£º </td>
+     <td class="table1_left"> ×ªï¿½ï¿½ï¿½î£º </td>
      <td class="tdleft"><input name="dollars" type="text" id="dollars" class="input0" onfocus="this.className='input01'" onblur="this.className='input0'" />
-       &nbsp;Ôª <span id="RequiredFieldValidator9" style="color:Red;display:none;">±ØÌî</span><span id="RegularExpressionValidator5" style="color:Red;display:none;">½ð¶î²»ºÏ·¨</span> </td>
+       &nbsp;Ôª <span id="RequiredFieldValidator9" style="color:Red;display:none;">ï¿½ï¿½ï¿½ï¿½</span><span id="RegularExpressionValidator5" style="color:Red;display:none;">ï¿½ï¿½î²»ï¿½Ï·ï¿½</span> </td>
    </tr>
    <tr>
-     <td class="table1_left">³¬¼¶ÃÜÂë£º</td>
+     <td class="table1_left">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
  
      <td class="tdleft"><span class="tableright1">
  
@@ -68,13 +68,13 @@
  
    <tr>
  
-     <td class="table1_left"> ×ª¿î±¸×¢£º </td>
+     <td class="table1_left"> ×ªï¿½î±¸×¢ï¿½ï¿½ </td>
  
      <td class="tdleft"><textarea name="reason" rows="2" cols="20" id="reason" class="input0" onfocus="this.className='input01'" onblur="this.className='input0'" style="width: 240px;
  
                          height: 50px"></textarea>
  
-         <span id="txtConclusionValidator1" style="color:Red;display:none;">³¬¹ý255×Ö</span> </td>
+         <span id="txtConclusionValidator1" style="color:Red;display:none;">ï¿½ï¿½ï¿½ï¿½255ï¿½ï¿½</span> </td>
  
    </tr>
  
@@ -82,9 +82,9 @@
  
      <td class="table1_left">&nbsp;</td>
  
-     <td class="tdleft"><input type="submit" name="btnSubmit" value="È·ÈÏÌá½»" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnSubmit" class="tijiao_input" />
+     <td class="tdleft"><input type="submit" name="btnSubmit" value="È·ï¿½ï¿½ï¿½á½»" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnSubmit" class="tijiao_input" />
  
-         <input name="button" type="button" class="fanhui_input" id="Button1" onclick="history.go(-1);" value="·µ»Ø" />    </td>
+         <input name="button" type="button" class="fanhui_input" id="Button1" onclick="history.go(-1);" value="ï¿½ï¿½ï¿½ï¿½" />    </td>
  
    </tr>
  
@@ -94,4 +94,4 @@
  
  </html>
 
-
+

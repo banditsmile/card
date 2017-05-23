@@ -1,173 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÃÜ±£¿¨°ó¶¨</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> ÃÜ±£¿¨°ó¶¨</h2>
-  </div>
-  <ul>
-  </ul>
-</div>
-<body class="mainbg">
-<!--$item=$vd['item'];-->
-<div class="main5" id="main5">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td width="22%" height="30" class="table1_left">ÓÃ»§±àºÅ£º</td>
-		<td width="78%" class="tableright1"><div align="left">
-		  <input name='CustomerId' type='text' disabled class='input1 ' value="{$vd['agent'][7]}" size='30' maxlength='10'>
-		  </div></td>
-		</tr>
-		<!--if($vd['agent'][9] > 0){-->
-		<tr>
-		<td width="22%" height="30" class="table1_left">°ó¶¨Ô±¹¤£º</td>
-		<td width="78%" class="tableright1"><div align="left">
-		  <input name='CustomerId' type='text' disabled class='input1 ' value="{$vd['agent'][7]}" size='30' maxlength='10'>
-		  </div></td>
-		</tr>
-		<!--}else{-->
-		<tr>
-		<td class="table1_left">°ó¶¨×ÜÕÊºÅ£º</td>
-		<td class="tableright1"><div align="left">
-		  <input name='LoginName' type='text' disabled class='input1 ' value="{$vd['agent'][0]}" size='30' maxlength='30'>
-		  </div></td>
-		</tr>
-		<!--}-->
-		
-		<!--if($item['mibaokacheck']==1){-->
-		<tr>
-		<td height="30" class="table1_left">ÃÜ±£¿¨°ó¶¨×´Ì¬£º</td>
-		<td class="tableright1"><div align="left"><b><font color="#0000ff">ÒÑ°ó¶¨</font></b></div></td>
-		</tr>
-		<tr>
-		<td height="30" class="table1_left">°ó¶¨²Ù×÷£º</td>
-		<td class="tableright1">
-		   <div style="padding-top:10px">
-		     <div align="left">
-               <input type="button" value="ÉêÇë½â°ó" onClick="javascript:window.location.href='index.php?m=mod_agent&c=msg&a=add&msgtitle=<!--echo urlencode('ÉêÇë½â°ó');-->'" class="tijiao_input" style="cursor:pointer"> 
-             </div>
-		   </div>		</td>
-		</tr>
-		<!--}else{-->
-		<tr>
-		<td height="30" class="table1_left">ÃÜ±£¿¨°ó¶¨×´Ì¬£º</td>
-		<td class="tableright1"><div align="left"><b><font color="#cccccc">Î´°ó¶¨</font></b>
-		  </div></td>
-		</tr>
-		<tr>
-		<td height="30" class="table1_left">°ó¶¨²Ù×÷£º</td>
-		<td class="tableright1">
-		   <div style="padding-top:10px">
-		     <div align="left">
-               <input type="button" value="Ãâ·ÑÉêÇë" onClick="javascript:window.location.href='index.php?m=mod_agent&c=messenger&a=add&msgtitle=<!--echo urlencode('ÉêÇëÃÜ±£¿¨');-->'" class="tijiao_input" style="cursor:pointer"> 
-             </div>
-		   </div>		</td>
-		</tr>
-		<!--}-->
-  </table>
-	</div>
-<input type="hidden" id="webdir" name="webdir"  value="{$vd['root']}"/>
-<script type="text/JavaScript">
-var $ = function(id){
-	return document.getElementById(id);
-}
-function disp(idx)
-{
-	$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
-}
-
-function sendmobile(val)
-{
-	if(val)
-  {
-	  $("sendtip1").style.display = "";
-  }
-  else
-	{
-		$("sendtip").style.display = "";
-  }
-	
-	if (window.XMLHttpRequest)
-  {
-    xmlhttpsm=new XMLHttpRequest();
-  }
-  // Õë¶Ô IE µÄ´úÂë£º
-  else if (window.ActiveXObject)
-  {
-    xmlhttpsm=new ActiveXObject("Microsoft.xmlhttp");
-  }
-  
-	webroot    = $("webdir").value;
-	mymobile   = $("mobiletmp").value;
-	myurl      = webroot + "index.php?m=mod_agent&c=Security&a=Fetion";
-	
-  if (xmlhttpsm!=null)
-  {
-    xmlhttpsm.onreadystatechange=function(){
-      if (xmlhttpsm.readyState==4)
-      {
-        if (xmlhttpsm.status==200)
-        {
-        	var ackdata=xmlhttpsm.responseText;
-          if(ackdata != "0")
-          {
-          	//disp('adddiv');
-          	//disp('sfdiv');
-          	if(val)
-          	{
-          		alert("ÑéÖ¤Âë·¢ËÍÊ§°Ü£¬ÇëÖØĞÂµã»÷½â³ı°ó¶¨");
-          	}
-            else
-          	{
-        		  alert("ÑéÖ¤Âë·¢ËÍÊ§°Ü£¬ÇëÖØĞÂµã»÷ÏÂÒ»²½");
-        	  }
-          }
-          else
-        	{
-        		if(val)
-          	{
-        		  $('sfsub').value = "½â³ı°ó¶¨";
-        	  }
-        	  else
-        		{
-        			disp('adddiv');
-        			$("mobile").value = mymobile;
-        		}
-       
-        	  disp('sfdiv');
-        	  if(val)
-            {
-	            $("sendtip1").style.display = "none";
-            }
-            else
-	          {
-	          	$("sendtip").style.display = "none";
-            }
-            
-            $("v").value = val;
-        	}
-        }
-        else
-        {
-          alert("·¢ËÍÊ§°Ü£¬ÇëÖØĞÂµã»÷ÏÂÒ»²½");
-        }
-      }
-    };
-
-    xmlhttpsm.open("post", myurl, true);
-    xmlhttpsm.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    xmlhttpsm.send('val=' + val + '&mobile=' + mymobile);
-  }
-  else
-  {
-    alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³Öxmlhttp")
-  }
-}
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>å¯†ä¿å¡ç»‘å®š</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> å¯†ä¿å¡ç»‘å®š</h2>  </div>  <ul>  </ul></div><body class="mainbg"><!--$item=$vd['item'];--><div class="main5" id="main5"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td width="22%" height="30" class="table1_left">ç”¨æˆ·ç¼–å·ï¼š</td>		<td width="78%" class="tableright1"><div align="left">		  <input name='CustomerId' type='text' disabled class='input1 ' value="{$vd['agent'][7]}" size='30' maxlength='10'>		  </div></td>		</tr>		<!--if($vd['agent'][9] > 0){-->		<tr>		<td width="22%" height="30" class="table1_left">ç»‘å®šå‘˜å·¥ï¼š</td>		<td width="78%" class="tableright1"><div align="left">		  <input name='CustomerId' type='text' disabled class='input1 ' value="{$vd['agent'][7]}" size='30' maxlength='10'>		  </div></td>		</tr>		<!--}else{-->		<tr>		<td class="table1_left">ç»‘å®šæ€»å¸å·ï¼š</td>		<td class="tableright1"><div align="left">		  <input name='LoginName' type='text' disabled class='input1 ' value="{$vd['agent'][0]}" size='30' maxlength='30'>		  </div></td>		</tr>		<!--}-->				<!--if($item['mibaokacheck']==1){-->		<tr>		<td height="30" class="table1_left">å¯†ä¿å¡ç»‘å®šçŠ¶æ€ï¼š</td>		<td class="tableright1"><div align="left"><b><font color="#0000ff">å·²ç»‘å®š</font></b></div></td>		</tr>		<tr>		<td height="30" class="table1_left">ç»‘å®šæ“ä½œï¼š</td>		<td class="tableright1">		   <div style="padding-top:10px">		     <div align="left">               <input type="button" value="ç”³è¯·è§£ç»‘" onClick="javascript:window.location.href='index.php?m=mod_agent&c=msg&a=add&msgtitle=<!--echo urlencode('ç”³è¯·è§£ç»‘');-->'" class="tijiao_input" style="cursor:pointer">              </div>		   </div>		</td>		</tr>		<!--}else{-->		<tr>		<td height="30" class="table1_left">å¯†ä¿å¡ç»‘å®šçŠ¶æ€ï¼š</td>		<td class="tableright1"><div align="left"><b><font color="#cccccc">æœªç»‘å®š</font></b>		  </div></td>		</tr>		<tr>		<td height="30" class="table1_left">ç»‘å®šæ“ä½œï¼š</td>		<td class="tableright1">		   <div style="padding-top:10px">		     <div align="left">               <input type="button" value="å…è´¹ç”³è¯·" onClick="javascript:window.location.href='index.php?m=mod_agent&c=messenger&a=add&msgtitle=<!--echo urlencode('ç”³è¯·å¯†ä¿å¡');-->'" class="tijiao_input" style="cursor:pointer">              </div>		   </div>		</td>		</tr>		<!--}-->  </table>	</div><input type="hidden" id="webdir" name="webdir"  value="{$vd['root']}"/><script type="text/JavaScript">var $ = function(id){	return document.getElementById(id);}function disp(idx){	$(idx).style.display = ($(idx).style.display == "") ? "none" : "";}function sendmobile(val){	if(val)  {	  $("sendtip1").style.display = "";  }  else	{		$("sendtip").style.display = "";  }		if (window.XMLHttpRequest)  {    xmlhttpsm=new XMLHttpRequest();  }  // é’ˆå¯¹ IE çš„ä»£ç ï¼š  else if (window.ActiveXObject)  {    xmlhttpsm=new ActiveXObject("Microsoft.xmlhttp");  }  	webroot    = $("webdir").value;	mymobile   = $("mobiletmp").value;	myurl      = webroot + "index.php?m=mod_agent&c=Security&a=Fetion";	  if (xmlhttpsm!=null)  {    xmlhttpsm.onreadystatechange=function(){      if (xmlhttpsm.readyState==4)      {        if (xmlhttpsm.status==200)        {        	var ackdata=xmlhttpsm.responseText;          if(ackdata != "0")          {          	//disp('adddiv');          	//disp('sfdiv');          	if(val)          	{          		alert("éªŒè¯ç å‘é€å¤±è´¥ï¼Œè¯·é‡æ–°ç‚¹å‡»è§£é™¤ç»‘å®š");          	}            else          	{        		  alert("éªŒè¯ç å‘é€å¤±è´¥ï¼Œè¯·é‡æ–°ç‚¹å‡»ä¸‹ä¸€æ­¥");        	  }          }          else        	{        		if(val)          	{        		  $('sfsub').value = "è§£é™¤ç»‘å®š";        	  }        	  else        		{        			disp('adddiv');        			$("mobile").value = mymobile;        		}               	  disp('sfdiv');        	  if(val)            {	            $("sendtip1").style.display = "none";            }            else	          {	          	$("sendtip").style.display = "none";            }                        $("v").value = val;        	}        }        else        {          alert("å‘é€å¤±è´¥ï¼Œè¯·é‡æ–°ç‚¹å‡»ä¸‹ä¸€æ­¥");        }      }    };    xmlhttpsm.open("post", myurl, true);    xmlhttpsm.setRequestHeader('Content-type','application/x-www-form-urlencoded');    xmlhttpsm.send('val=' + val + '&mobile=' + mymobile);  }  else  {    alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒxmlhttp")  }}</script></body></html>

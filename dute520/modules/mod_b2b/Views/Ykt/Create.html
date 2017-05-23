@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -17,25 +17,25 @@ padding:0 3px;
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">р╩©╗м╗©╗цэиЗЁи</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="╡И©╢р╩©╗м╗оЮ╧ь╟ОжЗ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="О©╫И©╢р╩О©╫О©╫м╗О©╫О©╫ь╟О©╫О©╫О©╫"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" name="cform" method="post" action="index.php?m=mod_b2b&c=ykt&a=save" onsubmit="return checkform()">
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">р╩©╗м╗иЗЁи</div>
+<div class="ctitle">р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫</div>
 <table border="1" id="ctable1" class="ctable"  bordercolor="#ededed">
   <tr>
-    <td class="tablelt">р╩©╗м╗юЮпм</td>
+    <td class="tablelt">р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫</td>
     <td class="tablert">
-      <span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="radio" value="100" name="ptype" id="ptype1" class="checkbox"<!--if(UB_YKT){-->onclick="setbindpid(1)" checked<!--}--> />р╩©╗м╗╤р╩╩в╗сц©╗</span>
-      <span<!--if(UB_YKT&&UB_B2C+UB_B2B==0){--> style="display:none"<!--}-->><input type="radio" value="101" name="ptype" class="checkbox" <!--if(UB_YKT){-->onclick="setbindpid(0)" <!--}--><!--if(!UB_YKT){--> checked<!--}--> />р╩©╗м╗ЁДж╣в╗сц©╗</span>
+      <span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="radio" value="100" name="ptype" id="ptype1" class="checkbox"<!--if(UB_YKT){-->onclick="setbindpid(1)" checked<!--}--> />р╩О©╫О©╫м╗О©╫р╩О©╫в╗О©╫ц©О©╫</span>
+      <span<!--if(UB_YKT&&UB_B2C+UB_B2B==0){--> style="display:none"<!--}-->><input type="radio" value="101" name="ptype" class="checkbox" <!--if(UB_YKT){-->onclick="setbindpid(0)" <!--}--><!--if(!UB_YKT){--> checked<!--}--> />р╩О©╫О©╫м╗О©╫О©╫ж╣в╗О©╫ц©О©╫</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">р╩©╗м╗цФж╣</td>
+    <td class="tablelt">р╩О©╫О©╫м╗О©╫О©╫ж╣</td>
     <td class="tablert">
       <div id="yktprice">
         <input type="text" name="yktprice" id="yktprice1" class="myinput"/> {$vd['lang']['moneyunit']}
@@ -43,19 +43,19 @@ padding:0 3px;
     </td>
   </tr>
   <tr>
-    <td class="tablelt">иЗЁийЩа©</td>
-    <td class="tablert"><input type="text" name="yktqty" class="myinput" value="100"/> уе©╗</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>
+    <td class="tablert"><input type="text" name="yktqty" class="myinput" value="100"/> О©╫е©О©╫</td>
   </tr>
   <tr>
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©╗╨еЁ╓╤х╡╩╟Эю╗г╟в╨╣дЁ╓╤хё╛хГ╧ШдЗм╛р╩╦Жй╠╪Д╤ниЗЁи╣д©╗цэйЩа©╧Щ╢Сё╛гКя║тЯЁ╓р╩╣Ц╣д©╗╨е</p>
-      ©╗╨ег╟в╨
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫еЁО©╫О©╫х╡О©╫О©╫О©╫О©╫О©╫г╟в╨О©╫дЁО©╫О©╫хёО©╫О©╫О©╫О©╫О©╫О©╫м╛р╩О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫и╣д©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я║О©╫О©╫р╩О©╫О©╫д©О©╫О©╫О©╫</p>
+      О©╫О©╫О©╫О©╫г╟в╨
     </td>
     <td class="tablert"><input type="text" name="prefix" class="myinput" value=""/></td>
   </tr>
   <tr>
     <td class="tablelt">
-      ©╗╨еЁ╓╤х
+      О©╫О©╫О©╫еЁО©╫О©╫О©╫
     </td>
     <td class="tablert">
       <select name="cardlength">
@@ -66,11 +66,11 @@ padding:0 3px;
         <option value="16">16н╩</option>
         <option value="18">18н╩</option>
         <option value="20">20н╩</option>
-      </select><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╡╩╟Эю╗г╟в╨╣дЁ╓╤хё╛хГ╧ШдЗм╛р╩╦Жй╠╪Д╤ниЗЁи╣д©╗цэйЩа©╧Щ╢Сё╛гКя║тЯЁ╓р╩╣Ц╣д©╗╨е</p>
+      </select><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫г╟в╨О©╫дЁО©╫О©╫хёО©╫О©╫О©╫О©╫О©╫О©╫м╛р╩О©╫О©╫й╠О©╫О©╫О©╫О©╫О©╫О©╫и╣д©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я║О©╫О©╫р╩О©╫О©╫д©О©╫О©╫О©╫</p>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">цэбКЁ╓╤х</td>
+    <td class="tablelt">О©╫О©╫О©╫КЁ╓О©╫О©╫</td>
     <td class="tablert">
       <select name="pwdlength">
         <option value="6">6н╩</option>
@@ -86,68 +86,68 @@ padding:0 3px;
     </td>
   </tr>
   <tr>
-    <td class="tablelt">цэбКвИ╨о╥╫й╫</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫о╥О©╫й╫</td>
     <td class="tablert">
       <select name="pwdtype">
-        <option value="0">╢©йЩвж</option>
-        <option value="1">╢©вжд╦</option>
-        <option value="2">йЩвж+вжд╦</option>
+        <option value="0">О©╫О©╫О©╫О©╫О©╫О©╫</option>
+        <option value="1">О©╫О©╫О©╫О©╫д╦</option>
+        <option value="2">О©╫О©╫О©╫О©╫+О©╫О©╫д╦</option>
       </select>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">йг╥Яп╢хК©Б</td>
+    <td class="tablelt">О©╫г╥О©╫п╢О©╫О©╫О©╫</td>
     <td class="tablert">
       <select name="iswrite" onchange="setproduct(this)">
-        <option value="0">иЗЁинд╪Ч╡╩╣╪хКйЩ╬щ©Б</option>
-        <option value="1" selected >иЗЁинд╪Ч╡╒гр╣╪хКйЩ╬щ©Б</option>
-        <option value="2">иЗЁинд╪Ч╡╒гр╣╪хК╣╫ряспилф╥</option>
-        <option value="3">╡╩иЗЁинд╪Чж╠╫с╣╪хКйЩ╬щ©Б</option>
+        <option value="0">О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫щ©О©╫</option>
+        <option value="1" selected >О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫О©╫р╣О©╫О©╫О©╫О©╫О©╫О©╫щ©О©╫</option>
+        <option value="2">О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫О©╫р╣О©╫О©╫К╣╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥</option>
+        <option value="3">О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╪О©╫ж╠О©╫с╣О©╫О©╫О©╫О©╫О©╫О©╫щ©О©╫</option>
       </select>
     </td>
   </tr>
   <tr id="tr1" style="display:none">
     <td class="tablelt">
-      ╣╪хК╣╫илф╥
+      О©╫О©╫О©╫К╣╫О©╫О©╫ф╥
     </td>
     <td class="tablert">
       <select id="topid" style="width:250px;" name="topid">
-        <option value="0">гКя║тЯд©╠Йилф╥</option>
+        <option value="0">О©╫О©╫я║О©╫О©╫д©О©╫О©╫О©╫О©╫ф╥</option>
         {#Option($vd['yktitems'], 0, 'pname', 'pid')}
       </select> 
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧ШдЗоёмШуБ╢ниЗЁи╣др╩©╗м╗╣╪хК╣╫уБ╦Жилф╥╣д©Б╢ФюО╠ъё╛я║тЯ╪╢©иё╛уБюОж╩ап╬ыр╩©╗м╗юЮпм╣дряспилф╥(ф╫л╗©╗)</p>
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫оёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫и╣О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫К╣╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫д©О©╫О©╫О©╫О©╫ъёО©╫я║О©╫Я╪╢©иёО©╫О©╫О©╫О©╫О©╫ж╩О©╫п╬О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫м╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥(ф╫л╗О©╫О©╫)</p>
     </td>
   </tr>
   <tr id="trbindpid" <!--if(!UB_YKT){--> style="display:none"<!--}-->>
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧ШдЗоёмШуБ╢ниЗЁи╣др╩©╗м╗ж╩дэЁДж╣╢килф╥ё╛дЗ©иртя║тЯ╟С╤╗ё╛уБюОж╩ап╬ы╤тр╩©╗м╗ф╫л╗©╙╥е╧╨бР╣д╡Зф╥</p>
-      ╟С╤╗илф╥
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫оёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫и╣О©╫р╩О©╫О©╫м╗ж╩О©╫эЁО©╫ж╣О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я║О©╫О©╫С╤╗ёО©╫О©╫О©╫О©╫О©╫ж╩О©╫п╬ы╤О©╫р╩О©╫О©╫м╗ф╫л╗О©╫О©╫О©╫е╧О©╫О©╫О©╫д╡О©╫ф╥</p>
+      О©╫О©╫О©╫О©╫ф╥
     </td>
     <td class="tablert">
       <select id="bindpid" style="width:250px;" name="bindpid" onchange="setyktnikename(this)">
-        <option value="0">╡╩╟С╤╗илф╥</option>
+        <option value="0">О©╫О©╫О©╫О©╫О©╫О©╫ф╥</option>
         {#Option($vd['items'], 0, 'pname', 'pid')}
       </select> 
-      <input type="text" id="pnamekey" name="pnamekey" size="10" value="" style="height:15px"/><span style="padding-left:5px;"></span><input type="button" value="кякВ" onclick="DispSelectZone()" class="button" style="height:20px"/>
+      <input type="text" id="pnamekey" name="pnamekey" size="10" value="" style="height:15px"/><span style="padding-left:5px;"></span><input type="button" value="О©╫О©╫О©╫О©╫" onclick="DispSelectZone()" class="button" style="height:20px"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">оЮ╧ь╡ывВ</td>
+    <td class="tablelt">О©╫О©╫ь╡О©╫О©╫О©╫</td>
     <td class="tablert">
-      <input type="radio" value="1" name="selladdr" id="selladdr1" class="checkbox" onclick="setaddr(this)"/> еЗ╥╒ф╫л╗ЁЖйш <input type="radio" value="0" name="selladdr" class="checkbox" id="selladdr2"   checked  onclick="setaddr(this)"/> фДкШ╣ь╥╫ЁЖйш 
+      <input type="radio" value="1" name="selladdr" id="selladdr1" class="checkbox" onclick="setaddr(this)"/> О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫О©╫О©╫ <input type="radio" value="0" name="selladdr" class="checkbox" id="selladdr2"   checked  onclick="setaddr(this)"/> О©╫О©╫О©╫О©╫О©╫ь╥О©╫О©╫О©╫О©╫О©╫ 
     </td>
   </tr>
   <tr id="tr_0_0" <!--if(!UB_YKT){--> style="display:none"<!--}-->>
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>хГ╧ШдЗ╣др╩©╗м╗йг╟╢уу╥гцФж╣╪ш╦ЯоЗйшЁЖх╔ё╛╩Руър╩©╗м╗╢ЗюМилг╟л╗иЗп╖╣дй╠╨Рё╛о╣мЁ╫╚╟╢уууБ╦Ж╪ш╦Я╫Ьпп©ш©Нё╛гКнЯ╠ьлНп╢р╩обаЦйш╪шё╛╥╫╠Цо╣мЁюШхСмЁ╪ф║ёаТ©у╣д╩╟тР╣хсзцФж╣</p>
-      аЦйш╪ш
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫г╟О©╫О©╫у╥О©╫О©╫О©╫ж╣О©╫ш╦О©╫О©╫О©╫О©╫шЁО©╫х╔О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫г╟л╗О©╫О©╫п╖О©╫О©╫й╠О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╦О©╫О©╫О©╫п©ш©Нё╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢р╩О©╫О©╫О©╫О©╫О©╫ш╪шёО©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫мЁО©╫ф║О©╫О©╫О©╫О©╫у╣д╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╣</p>
+      О©╫О©╫О©╫ш╪О©╫
     </td>
     <td class="tablert"><input type="text" name="cprice" id="cprice" class="myinput" value="" style="width:100px"/></td>
   </tr>
   <tr id="tr_1_0" style="display:none">
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╪ыхГ╡╩ж╦╤╗╠ПцШё╛о╣мЁ╩АтзиЗЁи╨Сд╛хоиЗЁир╩╦Ж "xxxв╗сц©╗" ж╝юЮ╣дцШЁф║ёхГ╧ШдЗоёмШтзеЗ╥╒ф╫л╗дЗ╣д©м╩╖©ирт╧╨бРуБ╦Жр╩©╗м╗©╗цэё╛╫╗рИж╦╤╗р╩об╠ПцШё╛╠ххГдг╦Жр╩©╗м╗йгЁДж╣"QQ╩фвЙ"╣дё╛дЗ©иртфПцШ"QQ╩фвЙф╫л╗©╗"</p>
-      р╩©╗м╗╠ПцШ
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫Г╡╩ж╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫и╨О©╫д╛О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫ "xxxв╗О©╫ц©О©╫" ж╝О©╫О©╫О©╫О©╫О©╫О©╫ф║О©╫О©╫О©╫О©╫О©╫О©╫оёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫О©╫д©м╩О©╫О©╫О©╫О©╫т╧О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫эёО©╫О©╫О©╫О©╫О©╫ж╦О©╫О©╫р╩О©╫б╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╦О©╫р╩О©╫О©╫м╗О©╫гЁО©╫ж╣"QQО©╫О©╫О©╫О©╫"О©╫дёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫"QQО©╫О©╫О©╫О©╫ф╫л╗О©╫О©╫"</p>
+      р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫
     </td>
     <td class="tablert">
       <input type="text" name="yktnickname" class="myinput" id="yktnickname" style="width:400px"/>
@@ -155,31 +155,31 @@ padding:0 3px;
   </tr>
   <tr id="tr_1_2" style="display:none">
     <td class="tablelt">
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>уБюЮпмр╩©╗м╗╣д╫Ь╩У╪шё╛©иртлНп╢дЗ╟С╤╗╣дилф╥╣д╫Ь╩У╪шё╛аТ©у╣д╩╟тР╣хсзр╩©╗м╗╣дцФж╣ё╛уБ╦Ж╫Ь╩У╪ш╫╚йг╬╜оЗил╧╨бРуБ╦Жр╩©╗м╗╣д╪ш╦Ярю╬щ</p>
-      ╫Ь╩У╪ш
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫д╫О©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫п╢О©╫О©╫О©╫С╤╗╣О©╫О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫у╣д╩О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫ж╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╫О©╫О©╫г╬О©╫О©╫О©╫О©╫л╧О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫д╪ш╦О©╫О©╫О©╫О©╫О©╫</p>
+      О©╫О©╫О©╫О©╫О©╫О©╫
     </td>
     <td class="tablert">
       <input type="text" name="price" class="myinput" id="price" style="width:100px"/>
     </td>
   </tr>
   <tr id="tr_1_1" style="display:none">
-    <td class="tablelt">╥ежцюЮ╠П</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>
     <td class="tablert">
-      <input type="radio" value="1" name="tcatid" class="checkbox" onclick="setcat(this)" checked/> сК╟С╤╗илф╥м╛юЮд© <input type="radio" value="0" name="tcatid" class="checkbox" onclick="setcat(this)"/> вт╤╗рЕюЮд© 
+      <input type="radio" value="1" name="tcatid" class="checkbox" onclick="setcat(this)" checked/> О©╫О©╫О©╫О©╫О©╫ф╥м╛О©╫О©╫д© <input type="radio" value="0" name="tcatid" class="checkbox" onclick="setcat(this)"/> О©╫т╤О©╫О©╫О©╫О©╫О©╫д© 
     </td>
   </tr>
   <tr id="tr_1_1_0" style="display:none">
-    <td class="tablelt">р╩╪╤╥жюЮ</td>
+    <td class="tablelt">р╩О©╫О©╫О©╫О©╫О©╫О©╫</td>
     <td class="tablert">
       <select name="ubzdid1" size="1" onChange="changelocation(this.options[this.selectedIndex].value)" class="wenbenkuang">
-        <option select="selected" value="0">гКя║тЯр╩╪╤╥жюЮ</option>
+        <option select="selected" value="0">О©╫О©╫я║О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫</option>
         {#Option($vd['cat'], $vd['parentid'], 'name', 'id')}
       </select>
       <font color="#FF0000">*</font>
     </td>
   </tr>
   <tr id="tr_1_1_1" style="display:none">
-    <td class="tablelt">╤Ч╪╤╥жюЮ</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>
     <td class="tablert">
       <select name="catid" class="wenbenkuang">
             {#Option($vd['subcat'], 0, 'name', 'id')}
@@ -189,56 +189,56 @@ padding:0 3px;
   </tr>
   <tr id="trbindaid" <!--if(!UB_YKT){--> style="display:none"<!--}-->>
     <td class="tablelt">
-    	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╢ЗюМил©ирттзиЗп╖╣дй╠╨Р╡е©ш©Н, ╣╠╠Пхк╧╨бРй╧сцуБ╦Жр╩©╗м╗ё╛╟С╤╗╣д╢ЗюМил©ирт╡Ия╞╤тс╕╣дЁДж╣╪гб╪╩Руъ╩Я╣ц╣╫оЮс╕╣д╥╣╣Ц,хГ╧ШдЗ╟С╤╗ак╢ЗюМил╡╒грйг╢ЗюМилг╟л╗╦╤╥я, дгц╢ж╩дэм╗╧Щг╟л╗иЗп╖</p>
-    	╟С╤╗╢ЗюМил╠Ю╨е
+    	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫л©О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫й╠О©╫О©╫е©ш©О©╫, О©╫О©╫О©╫О©╫О©╫к╧О©╫О©╫О©╫й╧О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫С╤╗╣д╢О©╫О©╫О©╫О©╫л©О©╫О©╫т╡О©╫я╞О©╫О©╫с╕О©╫дЁО©╫ж╣О©╫О©╫б╪О©╫О©╫О©╫ъ╩О©╫ц╣О©╫О©╫О©╫с╕О©╫д╥О©╫О©╫О©╫,О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫к╢О©╫О©╫О©╫О©╫л╡О©╫О©╫О©╫О©╫г╢О©╫О©╫О©╫О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫, О©╫О©╫ц╢ж╩О©╫О©╫м╗О©╫О©╫г╟л╗О©╫О©╫п╖</p>
+    	О©╫С╤╗╢О©╫О©╫О©╫О©╫л╠О©╫О©╫
     </td>
     <td class="tablert">
       <input type="text" name="bindaid" id="bindaid" class="myinput" value="" style="width:100px" style="font-weight:normal;background:#EAEAEA;" disabled /> <input type="checkbox" id="ckcardok" name="ckcardok" value="1" onclick="setcardok(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> 
     </td>
   </tr>
   <tr id="tr_okbyaid"  style="display:none">
-    <td class="tablelt">оъоб╦╤©Н</td>
+    <td class="tablelt">О©╫О©╫О©╫б╦О©╫О©╫О©╫</td>
     <td class="tablert">
       <input type="checkbox" value="1" name="okbyaid" class="checkbox" id="okbyaid"/> <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
-      ╡╩╢Р╧╢╠Мй╬, ╢кюЮ©╗цэж╩дэсир╩©╗м╗╬╜оЗм╗╧Щг╟л╗иЗп╖<br/>
+      О©╫О©╫О©╫Р╧╢╠О©╫й╬, О©╫О©╫О©╫Ю©╗О©╫О©╫ж╩О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫м╗О©╫О©╫г╟л╗О©╫О©╫п╖<br/>
       </p>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">бМиоиЗп╖</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫О©╫О©╫п╖</td>
     <td class="tablert">
       <input type="checkbox" value="1" name="cardok" class="checkbox"  checked id="cardok"/> <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
-      р╩©╗м╗иЗп╖╨Сё╨<br/>
-      <!--if(UB_YKT){-->р╩©╗м╗ф╫л╗сц╩╖╡е©иртсцю╢ЁДж╣╩Руъ╤р╩╩╣Ц©╗©╗цэ<br/><!--}-->
-      <!--if(UB_B2B){-->еЗ╥╒ф╫л╗сц╩╖╡е©иртсцю╢╦ЬсЮ╤НЁДж╣╩Руъ╢со╣мЁжп╧╨бР╤тс╕╣дф╫л╗©╗<br/><!--}-->
-      <!--if(UB_B2C){-->аЦйшф╫л╗сц╩╖╡е©иртсцю╢╦ЬсЮ╤НЁДж╣<br/><!--}-->
+      р╩О©╫О©╫м╗О©╫О©╫п╖О©╫О©╫<br/>
+      <!--if(UB_YKT){-->р╩О©╫О©╫м╗ф╫л╗О©╫ц╩О©╫О©╫е©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╣О©╫О©╫О©╫ъ╤р╩О©╫О©╫Ц©╗О©╫О©╫О©╫О©╫<br/><!--}-->
+      <!--if(UB_B2B){-->О©╫О©╫О©╫О©╫ф╫л╗О©╫ц╩О©╫О©╫е©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╣О©╫О©╫О©╫ъ╢О©╫о╣мЁО©╫п╧О©╫О©╫О©╫О©╫с╕О©╫О©╫ф╫л╗О©╫О©╫<br/><!--}-->
+      <!--if(UB_B2C){-->О©╫О©╫О©╫О©╫ф╫л╗О©╫ц╩О©╫О©╫е©О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╣<br/><!--}-->
       </p>
     </td>
   </tr>
   <tr style="display:none">
     <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
-    	╫Ж╤т"р╩©╗м╗╤р╩╩в╗сц©╗"спп╖ё╛кЫсп"р╩©╗м╗ЁДж╣в╗сц©╗"й╧сц╨С╤╪╡╩дэтый╧сцё╛╡╩бшдЦхГ╨ниХжц
-    </p>й╧сц╨С╡ывВ
+    	О©╫О©╫О©╫О©╫"р╩О©╫О©╫м╗О©╫р╩О©╫в╗О©╫ц©О©╫"О©╫О©╫п╖О©╫О©╫О©╫О©╫О©╫О©╫"р╩О©╫О©╫м╗О©╫О©╫ж╣в╗О©╫ц©О©╫"й╧О©╫ц╨С╤╪╡О©╫О©╫О©╫О©╫О©╫й╧О©╫цёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+    </p>й╧О©╫ц╨О©╫О©╫О©╫О©╫
     </td>
     <td class="tablert">
-      <input type="radio" value="0" name="allvalid" class="checkbox" checked/> ╡╩©итый╧сц<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>©╗сЮ╤Н╠ДЁи0ё╛©╗в╢л╛╠ДЁинчп╖ё╛╡╩©и╪лпЬй╧сц</p> <input type="radio" value="0" name="allvalid" class="checkbox" /> ©итый╧сц <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╢л╛н╙©╗спп╖ё╛©╗сЮ╤НтРйгоШ╥я╨Сйёоб╣дсЮ╤Нё╛©ирт╪лпЬй╧сц</p>
+      <input type="radio" value="0" name="allvalid" class="checkbox" checked/> О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫О©╫О©╫0О©╫О©╫О©╫О©╫в╢л╛О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫О©╫О©╫О©╫и╪О©╫О©╫О©╫й╧О©╫О©╫</p> <input type="radio" value="0" name="allvalid" class="checkbox" /> О©╫О©╫О©╫О©╫й╧О©╫О©╫ <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>в╢л╛н╙О©╫О©╫О©╫О©╫п╖О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╨О©╫йёО©╫б╣О©╫О©╫О©╫Нё╛О©╫О©╫О©╫т╪О©╫О©╫О©╫й╧О©╫О©╫</p>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">фДкШк╣цВ</td>
+    <td class="tablelt">О©╫О©╫О©╫О©╫к╣О©╫О©╫</td>
     <td class="tablert">
-      <!--if(UB_YKT){--> хГ╧Ш╟С╤╗илф╥ё╛ж╩спм╛й╠п╢хКйЩ╬щ©Б╡е╩Аспп╖,хГ╧Ш╟С╤╗ак╢ЗюМил, ╫╗рИ╡╩р╙╧╢я║иЗп╖<!--}else{-->ЁДж╣в╗сц©╗ж╩дэсцсзг╟л╗сц╩╖сЮ╤НЁДж╣<!--}-->
+      <!--if(UB_YKT){--> О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫ж╩О©╫О©╫м╛й╠п╢О©╫О©╫О©╫О©╫О©╫щ©О©╫е╩О©╫О©╫О©╫п╖,О©╫О©╫О©╫О©╫О©╫О©╫к╢О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫И╡╩р╙О©╫О©╫я║О©╫О©╫п╖<!--}else{-->О©╫О©╫ж╣в╗О©╫ц©О©╫ж╩О©╫О©╫О©╫О©╫О©╫О©╫г╟л╗О©╫ц╩О©╫О©╫О©╫О©╫О©╫ж╣<!--}-->
     </td>
   </tr>
   <tr>
-    <td class="tablelt">╨Сл╗ЁДж╣цэбК</td>
+    <td class="tablelt">О©╫О©╫л╗О©╫О©╫ж╣О©╫О©╫О©╫О©╫</td>
     <td class="tablert"><input type="password" id="mytradepwd" name="mytradepwd" value="" style="width:100px"/></td>
   </tr>
   <tr>
     <td class="tablelt"></td>
     <td class="tablert" style="height:80px">
-      <input type="submit" value="х╥хоиЗЁи &gt;&gt;" class="bigbtn"/>
-      <input type="reset" value="жь жц &gt;&gt;" class="bigbtn"/>
+      <input type="submit" value="х╥О©╫О©╫О©╫О©╫О©╫О©╫ &gt;&gt;" class="bigbtn"/>
+      <input type="reset" value="О©╫О©╫ О©╫О©╫ &gt;&gt;" class="bigbtn"/>
     </td>
   </tr>
 </table>
@@ -259,7 +259,7 @@ padding:0 3px;
 <script type="text/javascript">
   function set(id)
   {
-    //╩Ях║╪ш╦Я
+    //О©╫О©╫х║О©╫ш╦О©╫
     var selecthtml = "<select name='yktprice'>" + 
                       "<option value='1'>{$vd['lang']['moneysymbol']}1.00{$vd['lang']['moneyunit']}</option>" + 
                       "<option value='5'>{$vd['lang']['moneysymbol']}5.00{$vd['lang']['moneyunit']}</option>" + 
@@ -374,7 +374,7 @@ padding:0 3px;
     
     if(document.cform.catid.length == 0)
     {
-      document.cform.catid.options[document.cform.catid.length] = new Option("гКя║тЯ╤Ч╪╤╥жюЮ", "0");
+      document.cform.catid.options[document.cform.catid.length] = new Option("О©╫О©╫я║О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫", "0");
     }
   }
   
@@ -383,7 +383,7 @@ padding:0 3px;
   	if($("selladdr1").checked)
   	{
       txt = obj.options[obj.selectedIndex].text;
-      if(txt == "╡╩╟С╤╗илф╥")
+      if(txt == "О©╫О©╫О©╫О©╫О©╫О©╫ф╥")
       {
       	vyktprice = "";
       	if($("yktprice1") && $("yktprice1").value != "")
@@ -393,18 +393,18 @@ padding:0 3px;
       	
       	if($("ptype1") && $("ptype1").checked)
       	{
-      		txt = "ф╫л╗©╗" + vyktprice;
+      		txt = "ф╫л╗О©╫О©╫" + vyktprice;
       	}
         else
       	{
-      		txt =  "ф╫л╗" + vyktprice + "╪с©Н©╗"
+      		txt =  "ф╫л╗" + vyktprice + "О©╫с©Н©╗"
       	}
       	
       	$("yktnickname").value = txt;
       }
       else
     	{
-        $("yktnickname").value = txt + "ф╫л╗©╗";
+        $("yktnickname").value = txt + "ф╫л╗О©╫О©╫";
       }
     }
     else
@@ -415,7 +415,7 @@ padding:0 3px;
   
   function setcardok(obj)
   {
-  	alert("р╩©╗м╗╤р╩╩в╗сц©╗спп╖,хГ╧ШдЗ╟С╤╗ак╢ЗюМил,╡╒грц╩сп╧╢я║оъоб╦╤©Н╣д╩╟,о╣мЁж╩тйпМ╢ЗюМилм╗╧Щг╟л╗иЗп╖\n\n╨Сл╗ -║╣Ёё╧Ф -║╣о╣мЁ╩Ы╠╬иХжц -║╣г╟л╗оЮ╧ьиХжц -║╣р╩©╗м╗оЮ╧ьиХжц -║╣отй╬╢ЗюМр╩©╗м╗©╗цэ ╢╕\n\n©ирт©ьжфйг╥ЯтйпМ╢ЗюМвтппиЗп╖╣дй╠╨Ротй╬р╩©╗м╗цэбК");
+  	alert("р╩О©╫О©╫м╗О©╫р╩О©╫в╗О©╫ц©О©╫О©╫О©╫п╖,О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫к╢О©╫О©╫О©╫О©╫О©╫,О©╫О©╫О©╫О©╫ц╩О©╫п╧О©╫я║О©╫О©╫О©╫б╦О©╫О©╫О©╫д╩О©╫,о╣мЁж╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╗О©╫О©╫г╟л╗О©╫О©╫п╖\n\nО©╫О©╫л╗ -О©╫О©╫О©╫О©╫О©╫О©╫ -О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ -О©╫О©╫г╟л╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫ -О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫ -О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫ О©╫О©╫\n\nО©╫О©╫О©╫т©О©╫О©╫О©╫О©╫г╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╖О©╫О©╫й╠О©╫О©╫О©╫О©╫й╬р╩О©╫О©╫м╗О©╫О©╫О©╫О©╫");
   	state   = obj.checked ? false : true;
     bck     = obj.checked ? "#ffffff" : "#EAEAEA";
     
@@ -444,7 +444,7 @@ padding:0 3px;
   {
   	if( $("ckcardok").checked && $("bindaid").value == "")
   	{
-  		alert("дЗ╨ц,дЗ╧╢я║ак╟С╤╗╢ЗюМил,гКйДхК╢ЗюМил╣д╠Ю╨е");
+  		alert("О©╫О©╫О©╫О©╫,О©╫О©╫О©╫О©╫я║О©╫к╟С╤╗╢О©╫О©╫О©╫О©╫О©╫,О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╣д╠О©╫О©╫");
   		return false;
   	}
     else
@@ -480,26 +480,26 @@ padding:0 3px;
     }
     else
   	{
-  		$("bindpid").options[0] = new Option("╡╩╟С╤╗илф╥(ц╩спкя╣╫илф╥)", "0");
-  		$("yktnickname").value = "м╗сцф╫л╗©╗";
+  		$("bindpid").options[0] = new Option("О©╫О©╫О©╫О©╫О©╫О©╫ф╥(ц╩О©╫О©╫О©╫я╣О©╫О©╫О©╫ф╥)", "0");
+  		$("yktnickname").value = "м╗О©╫О©╫ф╫л╗О©╫О©╫";
   	}
   }
   
   //------------- 
-  //х╔╣Твж╢╝вС╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫О©╫ъ╣д©у╦О©╫ 
   function lTrim(str) 
   { 
     if (str.charAt(0) == " ") 
     { 
-      //хГ╧Швж╢╝вС╠ъ╣зр╩╦Жвж╥Шн╙©у╦Я 
-      str = str.slice(1);//╫╚©у╦Я╢свж╢╝жпх╔╣Т 
-      //уБр╩╬Др╡©и╦дЁи str = str.substring(1, str.length); 
-      str = lTrim(str); //╣щ╧И╣Всц 
+      //О©╫О©╫О©╫О©╫ж╢О©╫О©╫О©╫ъ╣О©╫р╩О©╫О©╫О©╫ж╥О©╫н╙О©╫у╦О©╫ 
+      str = str.slice(1);//О©╫О©╫О©╫у╦О©╫О©╫О©╫ж╢О©╫О©╫О©╫х╔О©╫О©╫ 
+      //О©╫О©╫р╩О©╫О©╫р╡О©╫и╦дЁО©╫ str = str.substring(1, str.length); 
+      str = lTrim(str); //О©╫щ╧О©╫О©╫О©╫О©╫ 
     } 
     return str; 
   } 
   
-  //х╔╣Твж╢╝ср╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫р╠ъ╣д©у╦О©╫ 
   function rTrim(str) 
   { 
     var iLength; 
@@ -507,15 +507,15 @@ padding:0 3px;
     iLength = str.length; 
     if (str.charAt(iLength - 1) == " ") 
     { 
-      //хГ╧Швж╢╝ср╠ъ╣зр╩╦Жвж╥Шн╙©у╦Я 
-      str = str.slice(0, iLength - 1);//╫╚©у╦Я╢свж╢╝жпх╔╣Т 
-      //уБр╩╬Др╡©и╦дЁи str = str.substring(0, iLength - 1); 
-      str = rTrim(str); //╣щ╧И╣Всц 
+      //О©╫О©╫О©╫О©╫ж╢О©╫О©╫р╠ъ╣О©╫р╩О©╫О©╫О©╫ж╥О©╫н╙О©╫у╦О©╫ 
+      str = str.slice(0, iLength - 1);//О©╫О©╫О©╫у╦О©╫О©╫О©╫ж╢О©╫О©╫О©╫х╔О©╫О©╫ 
+      //О©╫О©╫р╩О©╫О©╫р╡О©╫и╦дЁО©╫ str = str.substring(0, iLength - 1); 
+      str = rTrim(str); //О©╫щ╧О©╫О©╫О©╫О©╫ 
     } 
     return str; 
   } 
   
-  //х╔╣Твж╢╝а╫╠ъ╣д©у╦Я 
+  //х╔О©╫О©╫О©╫ж╢О©╫О©╫О©╫О©╫ъ╣д©у╦О©╫ 
   function trim(str) 
   { 
     return lTrim(rTrim(str)); 

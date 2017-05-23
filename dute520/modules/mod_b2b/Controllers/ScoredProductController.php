@@ -23,7 +23,7 @@ class ScoredProductController extends Controller
 
 				public function Index( )
 				{
-								$R6d10b7ab80 = array( "", "ÊµÎï¶Ò»»", "¶Ò»»½ðÇ®", "¶Ò»»ÉÌÆ·" );
+								$R6d10b7ab80 = array( "", "Êµï¿½ï¿½Ò»ï¿½", "ï¿½Ò»ï¿½ï¿½ï¿½Ç®", "ï¿½Ò»ï¿½ï¿½ï¿½Æ·" );
 								$R71a664ef8c = $this->PageInfo( );
 								$data = array( );
 								$data = array_merge( $data, $R71a664ef8c );
@@ -60,11 +60,11 @@ class ScoredProductController extends Controller
 								$R1d06ae92a6 = intval( request( "scoredb2c" ) );
 								$Rff50ed0063 = intval( request( "scoredykt" ) );
 								$R63bede6b19 = $_REQUEST['pdesc'];
-								$R63bede6b19 = str_replace( "'", "¡°", $R63bede6b19 );
-								$R63bede6b19 = str_replace( "*", "¡Á", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "'", "ï¿½ï¿½", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "*", "ï¿½ï¿½", $R63bede6b19 );
 								$R63bede6b19 = str_replace( "<", "&lt", $R63bede6b19 );
 								$R63bede6b19 = str_replace( ">", "&gt", $R63bede6b19 );
-								$GLOBALS['_REQUEST']['pdesc'] = str_replace( "\"", "¡°", $R63bede6b19 );
+								$GLOBALS['_REQUEST']['pdesc'] = str_replace( "\"", "ï¿½ï¿½", $R63bede6b19 );
 								$R24ef1b765a = htmlspecialchars( getvar( "pdesc" ) );
 								$R6ef86fd07c = intval( request( "stocks" ) );
 								$R5a38c81ec2 = getvar( "unit" );
@@ -76,7 +76,7 @@ class ScoredProductController extends Controller
 								$param = intval( request( "param" ) );
 								if ( $R0f99e0d6c7 == 3 && $param == 0 )
 								{
-												$this->Alert( "ÇëÊäÈëÄúÐèÒª¶Ò»»µÄÉÌÆ·µÄ±àºÅ\\n\\n±àºÅ¿ÉÒÔÍ¨¹ýºóÌ¨-¡µÉÌÆ· ´¦½øÐÐ²éÑ¯" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ä±ï¿½ï¿½\\n\\nï¿½ï¿½Å¿ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ì¨-ï¿½ï¿½ï¿½ï¿½Æ· ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Ñ¯" );
 												$this->HistoryGo( );
 								}
 								$R8e8b5578f7 = intval( request( "pid" ) );
@@ -112,19 +112,19 @@ class ScoredProductController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "²Ù×÷³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=ScoredProduct" );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -136,10 +136,10 @@ class ScoredProductController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -151,7 +151,7 @@ class ScoredProductController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -185,7 +185,7 @@ class ScoredProductController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -224,7 +224,7 @@ class ScoredProductController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "pid in (".$R3456919727.")";

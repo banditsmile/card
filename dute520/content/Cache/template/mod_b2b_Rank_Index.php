@@ -1,257 +1,1 @@
-<?php if($vd['table']==0){ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
-<link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/>
-<body>
-<?php $isb2c=intval(request('b2c')) ?>
-<div class="titleDiv" id="titleList">
-
-<div id="contentTip" style="display:none;"></div>
-<div id="adddiv" style="position:absolute;top:60px;left:50px;;width:320px;display:none">
-  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">╦Ь<font color="#ff0000"><?php if($isb2c==0){ ?>еЗ╥╒ф╫л╗<?php }else{ ?><?php echo $vd['tagname']; ?>ф╫л╗<?php } ?></font>лМ╪ссц╩╖╪╤╠П</div>
-  <div style="float:right;"><img src="<?php echo $vd['sc']; ?>images/destroy.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>
-  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">
-  <table border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tr>
-      <td width="35%">╪╤╠ПцШЁф</td>
-      <td width="65%"><input type="text" name="name" size="16"/></td>
-    </tr>
-    <tr>
-      <td width="35%">иЩ╪╤оШ╥я╤Н</td>
-      <td width="65%"><input type="text" name="money" size="16"/></td>
-    </tr>
-    <tr<?php if(!UB_B2B){ ?> style="display:none"<?php } ?>>
-      <td width="35%">вИ╠П</td>
-      <td width="65%">
-        <select name="gid">
-        <?php (Option($vd['group'], 0, 'gname', 'gid')); ?>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td width="35%">д╛хов╒╡А╪╤╠П</td>
-      <td width="65%"><input type="checkbox"  name="isdefault" value="1" class="checkbox" onFocus="this.blur()"/></td>
-    </tr>
-    <tr>
-      <td width="35%"></td>
-      <td width="65%">
-        <input type="hidden" name="discount" size="10" value="0.05"/>
-        <input type="submit" name="Submit" value="лМ ╪с" class="button">
-        <input type="button" name="Submit" value="х║ оШ" onClick="disp('adddiv')" class="button"/>
-      </td>
-    </tr>
-  </table>
-  </form>
-  </div>
-</div>
-
-<div id="adddivguize" style="position:absolute;top:60px;left:50px;;width:320px;display:none">
-  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">╪╤╠П╧ФтР[<a href="?m=mod_b2b&c=Sys&a=Config#guize">╣Ц╩ВиХжц╧ФтР</a>]</div>
-  <div style="float:right;"><img src="<?php echo $vd['sc']; ?>images/destroy.gif" onClick="disp('adddivguize')" style="cursor:pointer"/></div>
-  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">
-  <table border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tr>
-      <td style="font-size:12px">
-      	╧Ф╥╤пмё╨<br/>
-      	м╛р╩╦ЖвИ╠П╣д╬╜оЗил╡╩дэ╩╔н╙иооб╪╤ё╛╠ххГр╩╪╤╬╜оЗил╨м╤Ч╪╤╬╜оЗилм╛йТсз╬╜оЗилвИ╠Пё╛тРкШцг╡╩дэ╩╔н╙иооб╪╤<br/><br/>
-      	кии╒пмё╨<br/>
-      	м╛р╩╦ЖвИ╠П╣д╬╜оЗилр╡©иртн╙иооб╪╤ё╛╧ФтРйгж╩р╙уБ╦Ж╪╤╠П╣диЩ╪╤оШ╥я╫П╤НвЦ╧╩╢Сё╛кШ╬м©ирт╫сйу╠хкШп║╣д╪╤╠Пё╛ж╠оЗилЁЩмБ(р╡╬мйгк╣ж╠оЗил╡╩дэйуоб╪╤)<br/>
-      	
-      </td>
-    </tr>
-  </table>
-  </form>
-  </div>
-</div>
-
-<div id="menuMask" class="menuMask" style="display:none">
-  <form action="?m=mod_b2b&c=Tpl&tpl=Sup&v=Sup" method="post" style="margin:0px">
-  <div class="menuContent">
-  <input type="checkbox" name="id[]" value="tordering" id="tordering"/> илф╥цШЁф<br/>
-  <input type="checkbox" name="id[]" value="tpics" id="tpics"/> ╧╘╩Уил<br/>
-  <input type="checkbox" name="id[]" value="tname" id="tname"/> ╫Ь╩УиС╨к<br/>
-  <input type="checkbox" name="id[]" value="tabst" id="tabst"/> ╫Ь╩Усеох╪╤<br/>
-  <input type="checkbox" name="id[]" value="tfee" id="tfee"/> ╫Ь╩У╪ш<br/>
-  <input type="checkbox" name="id[]" value="tcode" id="tcode"/> вН╣мйш╪ш<br/>
-  </div>
-  <div class="menuOp">
-  <input type="submit" value="╠ё╢Ф" class="button" disabled />
-  <input type="button" value="жьжц" class="button" disabled onClick="tInfoReset()"/>
-  <input type="button" value="х║оШ" class="button" onClick="setMenuMask()"/>
-  </div>
-  </form>
-</div>
-
-    <div id="tip" style="display:none">
-  <span id="tiptable">╢крЁжпкЫсп <b><span id="ncheck"><?php echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow'] ?></span></b> лУ╪гб╪ряя║жп </span> 
-  <span id="tipspan">
-    <a href="javascript:CheckTotle(<?php echo $vd['totlerow']; ?>,0)">╣Ц╢кя║тЯ╣╠г╟ап╠МжпкЫсп <b><?php echo $vd['totlerow']; ?></b> лУ╪гб╪>></a>
-  </span>
-</div>
-    <div class="title"> ╣╠г╟н╩жцё╨©м╩╖╧эюМ &gt; ©м╩╖╪╤╠ПиХжц</div>
-<div class="gn">
-  <input name="button" type="button" class="tijiao_input" id="add" onclick="disp('adddiv')" value="лМ ╪с"/>
-  <input name="button2" type="button" class="tijiao_input" id="button" onclick="tableRefresh()" value="к╒ пб"/>
-  <input name="button3" type="button" class="tijiao_input" id="button2" onclick="disp('adddivguize')" value="╧Ф тР"/>
-  <a href="#" class="tishi1" onClick="batchEdit(this)">й╣й╠пч╦дгК╣╔╩ВуБюО,╣╠вжлЕ╠Ё╬╟оШй╖╨С╪╢©ипч╦д</a></div>
-    <div class="tishi1"> 1║╒ф╫л╗фТсцг╟гКох╤╗рЕ╨ц╪╤╠Пё╛ху╨СвН╨ц╡╩р╙тылМ╪спб╣д╪╤╠Пё╛хГ╧ШпХр╙тЖ╪спб╪╤╠Пж╩дэйг╠хт╜сп╪╤╠П╦Э╣м╣д╪╤╠Пё╩<br />
-      2║╒ц©╦ЖлЕо╣╣д╪╤╠П╫╗а╒гК╟╢╦ъ╪╤--&gt;╣м╪╤╣дкЁпРлМ╪сё╛╫╚вН╣м╪╤иХжцн╙в╒╡А╨Сд╛хо╪╤╠Пё╛╠ххГ╬╜оЗлЕо╣жп╢ср╩╟Ц╬╜оЗил-&gt;╦ъ╪╤╬╜оЗил-&gt;гЬсРвэ╬╜оЗилё╩ж╠оЗлЕо╣╢ср╩╟Цж╠оЗил-&gt;╦ъ╪╤ж╠оЗил-&gt;сепЦж╠оЗилё╩<br />
-      3║╒о╣мЁ╪╤╠Пт╫╤Юё╛╤╗╪ш╧╓вВт╫╦╢тсё╛╩АтЖ╪сдЦ╣дху╨С╧╓вВа©ё╛кЫрт╪╤╠Пйй╣╠ййа©╪╢©иё╩<br />
-      4║╒хГ╧Штзилф╥рясп╤╗╪ш╨СтылМ╪с╣д╪╤╠Пё╛╠ьпКн╙ц©╦Жилф╥жьпб╤╗╪шё╛йДхКпблМ╪с╪╤╠П╣доЗйш╪ш╦Яё╩<br />
-      5║╒г©ар╫╗рИ╢С╪р╫╚ц©╦ЖлЕо╣╣д╪╤╠П©ьжфтз2-4╦Жё╛хГ╧ШоЮс╕лЕо╣жппХр╙╤Ю╪╤╠П╧эюМё╛схфДйг╬╜оЗилуБ©Иё╛©иртй╧сцдё╟Е╤╗╪ш╩Рцэ╪ш╣д╥╫й╫ю╢ю╜©╙╪ш╦Я╡Нё╩<br />
-      6║╒╬╜оЗлЕо╣╢╢╫╗╨С╡╩©ии╬ЁЩ║ё </div>
-<div id="content">
-<?php } ?>
-  <?php if($vd['totlerow'] == 0) { ?>
-  <?php } ?>
-    <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">
-  <table cellspacing="1" cellpadding="0" class="page_table">
-    <tr>
-      <td  width="6%" class="table_top"> ╪╤╠ПеепР </td>
-      <td  width="54%" class="table_top"> ╪╤╠ПцШЁф</td>
-      <td  width="19%" class="table_top"> оШ╥я╤Н</td>
-	  <td  width="7%" class="table_top"> ╪╤╠ПюЮпм</td>
-      <td  width="7%" class="table_top"> д╛хо╪╤╠П </td>
-      <td  width="7%" class="table_top"> и╬ЁЩ </td>
-    </tr>
-      <?php $isb2c=intval(request('b2c')) ?>
-      <?php foreach($vd['items'] as $item) { ?>
-      <?php if(($isb2c==1 && $item['gid']==0) || ($isb2c==0 && $item['gid'] > 0)){ ?>
-      <?php //tbody ?>
-      <?php if($vd['isselect'] == 1){ ?>
-      <?php } ?>
-	      <tr onmouseover="this.style.backgroundColor='#f1f1f1';" onmouseout="this.style.backgroundColor='';">
-    <?php //tbody ?>
-    <?php if($vd['isselect'] == 1){ ?>
-	    <?php } ?>
-      <td type="checkbox" name="id[]2" id="idchk_<?php echo $item['id']; ?>" class="checkbox" value="<?php echo $item['id']; ?>" onclick="CheckThis(this)" onfocus='this.blur()'  disabled="disabled"><?php echo $item['id']; ?></td>
-      <td><span onclick="toInput(this,<?php echo $item['id']; ?>,'name')"><?php echo $item['name']; ?></span></td>
-      <td><span onclick="toInput(this,<?php echo $item['id']; ?>,'money')"><?php echo $item['money']; ?></span></td>
-      <?php if(UB_B2B){ ?>
-        <td width="67px"><select name="select2" onchange="toSelect(this, <?php echo $item['id']; ?>, 'gid')">
-          
-
-        <?php (Option($vd['group'], $item['gid'], 'gname', 'gid')); ?>
-
-      
-        </select>
-      </td>
-      <?php } ?>
-      <td><img src="<?php echo $vd['sc']; ?><?php (ToggleImgSrc($item['isdefault'])); ?>" onclick="toToggle(this,<?php echo $item['id']; ?>,'isdefault')" alt="╣Ц╩В╢км╪ф╛╪╢©ипч╦дв╢л╛" onfocus="this.blur()" class="mousehand"/></td>
-      <td><a href="#"  class="a delete" onclick="delSubmit(<?php echo $item['id']; ?>,'delitems')"></a>     </td>
-
-    <?php //endtbody ?>
-  </tr>
-
-  <?php }} ?>
-
-  
-
-</table>
-
-  <div id="content">
-    <input name="hidden" type="hidden" id="totlePage" value="<?php echo $vd['totlepage']; ?>"/>
-    <input name="hidden" type="hidden" id="thisPage" value="<?php echo $vd['thispage']; ?>"/>
-    <?php if($vd['table']==0){ ?>
-  </div>
-  <input name="hidden" type="hidden" id="op" value="index.php?m=mod_b2b&amp;c=rank&amp;a=Deals&amp;b2c=<?php echo $isb2c; ?>&amp;<?php echo $vd['op']; ?>"/>
-  <input name="hidden" type="hidden" id="url" value="index.php?m=mod_b2b&amp;c=rank&amp;a=index&amp;b2c=<?php echo $isb2c; ?>&amp;istable=1&amp;<?php echo $vd['op']; ?>"/>
-  <input name="hidden" type="hidden" id="params" value="<?php echo $vd['op']; ?>"/>
-  <div style="position:absolute;bottom:0px">
-    <div class="tbBottom" id="tbBottom">
-    <div style="float:right;text-align:right;">
-<form id="actionform" method="post" action="index.php?m=mod_b2b&amp;c=rank&amp;a=index&amp;b2c=<?php echo $isb2c; ?>&amp;<?php echo $vd['op']; ?>" style="margin:0px;" onsubmit="loadDisp(1)">
-          <div id="page"></div>
-  </form>
-</div>
-  <div id="load" style="display:none;">
-    <div id="loadcontent" >рЁцФ╪стьжпгКит╣х...</div>
-  </div>
-</body>
-
-<script type="text/javascript">
-
-//╣зр╩╡нйЩё╛╨С╠ъ╠ёаТотй╬╣дапйЩ
-
-//╣з╤Ч╡нйЩё╛ЁЩвН╨Ср╩╦Ж╡нйЩмБ╣д╠ёаТ╡нйЩ╣двэ©М╤х
-
-tRows   = <?php echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow'] ?>;
-
-tInfoA  = Array(0,0);
-
-totleRows = <?php echo $vd['totlerow']; ?>;
-
-deltxt  = "хГ╧Ши╬ЁЩакуБ╦Ж╪╤╠Пё╛╪╤╠П╤тс╕╣д╪ш╦Яр╡╩Аи╬ЁЩё╛╤тс╕╪╤╠П╣дсц╩╖╩Аоб╫╣р╩╪╤ё╛дЗх╥╤╗╫Ьппи╬ЁЩ╡ывВбПё©";
-
-thisaction = "и╬ЁЩ";
-
-thisdel = 0;
-
-statistics = 0;
-
-var resizeidx = 2;
-
-var helperVal = 1;
-
-</script>
-
-<script type="text/javascript">
-
-//╣╠г╟╠М╦ЯеДжц
-
-<?php //tinfo ?>
- tInfo = Array();
-<?php //endtinfo ?>
-
-</script>
-
-<script src="<?php echo $vd['sc']; ?>js/tools.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-
-function setct(val)
-
-{
-
-  $("cttr").style.display = val == 3 ? "" : "none";
-
-}
-
-
-
-function loadst()
-
-{
-
-  if(!confirm('╩Ях║╧╘╩Уил╣д╣В╪шилф╥╡╒╟╢ууоб╠ъдё╟Е╣В╪шё©'))
-
-  {
-
-    return;
-
-  }
-
-  
-
-  setLoad("уЩтз╣В╪шжп,гКит╨С...");
-
-  loadDisp(1);
-
-  
-
-  window.location.href = "index.php?m=mod_b2b&c=Price&a=PriceSaveBySup";
-
-  
-
-}
-
-</script>
-
-</html>
-
-<?php } ?>
+<?php if($vd['table']==0){ ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="css/main.css"/><link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/><body><?php $isb2c=intval(request('b2c')) ?><div class="titleDiv" id="titleList"><div id="contentTip" style="display:none;"></div><div id="adddiv" style="position:absolute;top:60px;left:50px;;width:320px;display:none">  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">О©╫О©╫<font color="#ff0000"><?php if($isb2c==0){ ?>О©╫О©╫О©╫О©╫ф╫л╗<?php }else{ ?><?php echo $vd['tagname']; ?>ф╫л╗<?php } ?></font>О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫</div>  <div style="float:right;"><img src="<?php echo $vd['sc']; ?>images/destroy.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">  <table border="0" cellspacing="0" cellpadding="0" width="100%">    <tr>      <td width="35%">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>      <td width="65%"><input type="text" name="name" size="16"/></td>    </tr>    <tr>      <td width="35%">О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╤О©╫</td>      <td width="65%"><input type="text" name="money" size="16"/></td>    </tr>    <tr<?php if(!UB_B2B){ ?> style="display:none"<?php } ?>>      <td width="35%">О©╫О©╫О©╫</td>      <td width="65%">        <select name="gid">        <?php (Option($vd['group'], 0, 'gname', 'gid')); ?>        </select>      </td>    </tr>    <tr>      <td width="35%">д╛О©╫О©╫в╒О©╫А╪╤О©╫О©╫</td>      <td width="65%"><input type="checkbox"  name="isdefault" value="1" class="checkbox" onFocus="this.blur()"/></td>    </tr>    <tr>      <td width="35%"></td>      <td width="65%">        <input type="hidden" name="discount" size="10" value="0.05"/>        <input type="submit" name="Submit" value="О©╫О©╫ О©╫О©╫" class="button">        <input type="button" name="Submit" value="х║ О©╫О©╫" onClick="disp('adddiv')" class="button"/>      </td>    </tr>  </table>  </form>  </div></div><div id="adddivguize" style="position:absolute;top:60px;left:50px;;width:320px;display:none">  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">О©╫О©╫О©╫О©╫О©╫О©╫О©╫[<a href="?m=mod_b2b&c=Sys&a=Config#guize">О©╫О©╫О©╫О©╫О©╫О©╫ц╧О©╫О©╫О©╫</a>]</div>  <div style="float:right;"><img src="<?php echo $vd['sc']; ?>images/destroy.gif" onClick="disp('adddivguize')" style="cursor:pointer"/></div>  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">  <table border="0" cellspacing="0" cellpadding="0" width="100%">    <tr>      <td style="font-size:12px">      	О©╫Ф╥╤О©╫мёО©╫<br/>      	м╛р╩О©╫О©╫О©╫О©╫О©╫д╬О©╫О©╫О©╫О©╫л╡О©╫О©╫э╩О©╫н╙О©╫О©╫О©╫б╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╨м╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╛О©╫О©╫О©╫з╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╡О©╫О©╫э╩О©╫н╙О©╫О©╫О©╫б╪О©╫<br/><br/>      	О©╫О©╫и╒О©╫мёО©╫<br/>      	м╛р╩О©╫О©╫О©╫О©╫О©╫д╬О©╫О©╫О©╫О©╫О©╫р╡О©╫О©╫О©╫О©╫н╙О©╫О©╫О©╫б╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╩р╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╫О©╫О©╫О©╫Ц╧╩О©╫О©╫О©╫О©╫О©╫м©О©╫О©╫т╫О©╫О©╫у╠О©╫О©╫О©╫п║О©╫д╪О©╫О©╫О©╫ж╠О©╫О©╫О©╫лЁО©╫О©╫О©╫(р╡О©╫О©╫О©╫О©╫к╣ж╠О©╫О©╫О©╫л╡О©╫О©╫О©╫О©╫О©╫О©╫б╪О©╫)<br/>      	      </td>    </tr>  </table>  </form>  </div></div><div id="menuMask" class="menuMask" style="display:none">  <form action="?m=mod_b2b&c=Tpl&tpl=Sup&v=Sup" method="post" style="margin:0px">  <div class="menuContent">  <input type="checkbox" name="id[]" value="tordering" id="tordering"/> О©╫О©╫ф╥О©╫О©╫О©╫О©╫<br/>  <input type="checkbox" name="id[]" value="tpics" id="tpics"/> О©╫О©╫О©╫О©╫О©╫О©╫<br/>  <input type="checkbox" name="id[]" value="tname" id="tname"/> О©╫О©╫О©╫О©╫О©╫О©╫О©╫<br/>  <input type="checkbox" name="id[]" value="tabst" id="tabst"/> О©╫О©╫О©╫О©╫О©╫О©╫О©╫х╪О©╫<br/>  <input type="checkbox" name="id[]" value="tfee" id="tfee"/> О©╫О©╫О©╫О©╫О©╫О©╫<br/>  <input type="checkbox" name="id[]" value="tcode" id="tcode"/> О©╫О©╫О©╫О©╫ш╪О©╫<br/>  </div>  <div class="menuOp">  <input type="submit" value="О©╫О©╫О©╫О©╫" class="button" disabled />  <input type="button" value="О©╫О©╫О©╫О©╫" class="button" disabled onClick="tInfoReset()"/>  <input type="button" value="х║О©╫О©╫" class="button" onClick="setMenuMask()"/>  </div>  </form></div>    <div id="tip" style="display:none">  <span id="tiptable">О©╫О©╫рЁО©╫О©╫О©╫О©╫О©╫О©╫ <b><span id="ncheck"><?php echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow'] ?></span></b> О©╫О©╫О©╫О©╫б╪О©╫О©╫я║О©╫О©╫ </span>   <span id="tipspan">    <a href="javascript:CheckTotle(<?php echo $vd['totlerow']; ?>,0)">О©╫О©╫О©╫я║О©╫О©╫г╟О©╫п╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫ <b><?php echo $vd['totlerow']; ?></b> О©╫О©╫О©╫О©╫б╪>></a>  </span></div>    <div class="title"> О©╫О©╫г╟н╩О©╫цёО©╫О©╫м╩О©╫О©╫О©╫О©╫О©╫ &gt; О©╫м╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</div><div class="gn">  <input name="button" type="button" class="tijiao_input" id="add" onclick="disp('adddiv')" value="О©╫О©╫ О©╫О©╫"/>  <input name="button2" type="button" class="tijiao_input" id="button" onclick="tableRefresh()" value="к╒ О©╫О©╫"/>  <input name="button3" type="button" class="tijiao_input" id="button2" onclick="disp('adddivguize')" value="О©╫О©╫ О©╫О©╫"/>  <a href="#" class="tishi1" onClick="batchEdit(this)">й╣й╠О©╫ч╦О©╫О©╫К╣╔О©╫О©╫О©╫О©╫О©╫О©╫,О©╫О©╫О©╫О©╫О©╫Е╠ЁО©╫О©╫О©╫О©╫й╖О©╫С╪╢©О©╫О©╫ч╦О©╫</a></div>    <div class="tishi1"> 1О©╫О©╫ф╫л╗О©╫О©╫О©╫О©╫г╟О©╫О©╫О©╫х╤О©╫О©╫О©╫ц╪О©╫О©╫О©╫О©╫у╨О©╫О©╫О©╫ц╡О©╫р╙О©╫О©╫О©╫О©╫О©╫О©╫б╣д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫б╪О©╫О©╫О©╫ж╩О©╫О©╫О©╫г╠О©╫т╜О©╫п╪О©╫О©╫О©╫О©╫О©╫м╣д╪О©╫О©╫О©╫<br />      2О©╫О©╫ц©О©╫О©╫О©╫О©╫о╣О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫К╟╢О©╫ъ╪О©╫--&gt;О©╫м╪О©╫О©╫О©╫кЁО©╫О©╫О©╫О©╫сёО©╫О©╫О©╫О©╫О©╫м╪О©╫О©╫О©╫О©╫О©╫н╙в╒О©╫О©╫О©╫д╛О©╫о╪О©╫О©╫Пё╛╠О©╫О©╫Г╬╜О©╫О©╫О©╫О©╫о╣О©╫п╢О©╫р╩О©╫Ц╬╜О©╫О©╫О©╫О©╫-&gt;О©╫ъ╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫-&gt;О©╫О©╫О©╫О©╫О©╫э╬О©╫О©╫О©╫О©╫лёО©╫ж╠О©╫О©╫О©╫О©╫о╣О©╫О©╫р╩О©╫О©╫ж╠О©╫О©╫О©╫О©╫-&gt;О©╫ъ╪О©╫ж╠О©╫О©╫О©╫О©╫-&gt;О©╫О©╫О©╫О©╫ж╠О©╫О©╫О©╫лёО©╫<br />      3О©╫О©╫о╣мЁО©╫О©╫О©╫О©╫т╫О©╫Юё╛О©╫О©╫О©╫ш╧О©╫О©╫О©╫т╫О©╫О©╫О©╫сёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫у╨О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╪О©╫О©╫О©╫О©╫й╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫иёО©╫<br />      4О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫п╤О©╫О©╫ш╨О©╫О©╫О©╫О©╫О©╫с╣д╪О©╫О©╫Пё╛╠О©╫О©╫О©╫н╙ц©О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫б╤О©╫О©╫шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫с╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╪ш╦О©╫<br />      5О©╫О©╫г©О©╫р╫О©╫О©╫О©╫О©╫р╫О©╫ц©О©╫О©╫О©╫О©╫о╣О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫2-4О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫о╣О©╫О©╫О©╫О©╫р╙О©╫Ю╪╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫г╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫Иё╛О©╫О©╫О©╫О©╫й╧О©╫О©╫дёО©╫Е╤╗О©╫ш╩О©╫О©╫э╪ш╣д╥О©╫й╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╦О©╫Нё╩<br />      6О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╣О©╫О©╫О©╫О©╫О©╫С╡╩©О©╫и╬О©╫О©╫О©╫О©╫ </div><div id="content"><?php } ?>  <?php if($vd['totlerow'] == 0) { ?>  <?php } ?>    <form name="form1" method="post" action="index.php?m=mod_b2b&c=Rank&a=Save" id="cform">  <table cellspacing="1" cellpadding="0" class="page_table">    <tr>      <td  width="6%" class="table_top"> О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ </td>      <td  width="54%" class="table_top"> О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>      <td  width="19%" class="table_top"> О©╫О©╫О©╫я╤О©╫</td>	  <td  width="7%" class="table_top"> О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</td>      <td  width="7%" class="table_top"> д╛О©╫о╪О©╫О©╫О©╫ </td>      <td  width="7%" class="table_top"> и╬О©╫О©╫ </td>    </tr>      <?php $isb2c=intval(request('b2c')) ?>      <?php foreach($vd['items'] as $item) { ?>      <?php if(($isb2c==1 && $item['gid']==0) || ($isb2c==0 && $item['gid'] > 0)){ ?>      <?php //tbody ?>      <?php if($vd['isselect'] == 1){ ?>      <?php } ?>	      <tr onmouseover="this.style.backgroundColor='#f1f1f1';" onmouseout="this.style.backgroundColor='';">    <?php //tbody ?>    <?php if($vd['isselect'] == 1){ ?>	    <?php } ?>      <td type="checkbox" name="id[]2" id="idchk_<?php echo $item['id']; ?>" class="checkbox" value="<?php echo $item['id']; ?>" onclick="CheckThis(this)" onfocus='this.blur()'  disabled="disabled"><?php echo $item['id']; ?></td>      <td><span onclick="toInput(this,<?php echo $item['id']; ?>,'name')"><?php echo $item['name']; ?></span></td>      <td><span onclick="toInput(this,<?php echo $item['id']; ?>,'money')"><?php echo $item['money']; ?></span></td>      <?php if(UB_B2B){ ?>        <td width="67px"><select name="select2" onchange="toSelect(this, <?php echo $item['id']; ?>, 'gid')">                  <?php (Option($vd['group'], $item['gid'], 'gname', 'gid')); ?>              </select>      </td>      <?php } ?>      <td><img src="<?php echo $vd['sc']; ?><?php (ToggleImgSrc($item['isdefault'])); ?>" onclick="toToggle(this,<?php echo $item['id']; ?>,'isdefault')" alt="О©╫О©╫О©╫О©╫О©╫м╪ф╛О©╫О©╫О©╫О©╫О©╫ч╦О©╫в╢л╛" onfocus="this.blur()" class="mousehand"/></td>      <td><a href="#"  class="a delete" onclick="delSubmit(<?php echo $item['id']; ?>,'delitems')"></a>     </td>    <?php //endtbody ?>  </tr>  <?php }} ?>  </table>  <div id="content">    <input name="hidden" type="hidden" id="totlePage" value="<?php echo $vd['totlepage']; ?>"/>    <input name="hidden" type="hidden" id="thisPage" value="<?php echo $vd['thispage']; ?>"/>    <?php if($vd['table']==0){ ?>  </div>  <input name="hidden" type="hidden" id="op" value="index.php?m=mod_b2b&amp;c=rank&amp;a=Deals&amp;b2c=<?php echo $isb2c; ?>&amp;<?php echo $vd['op']; ?>"/>  <input name="hidden" type="hidden" id="url" value="index.php?m=mod_b2b&amp;c=rank&amp;a=index&amp;b2c=<?php echo $isb2c; ?>&amp;istable=1&amp;<?php echo $vd['op']; ?>"/>  <input name="hidden" type="hidden" id="params" value="<?php echo $vd['op']; ?>"/>  <div style="position:absolute;bottom:0px">    <div class="tbBottom" id="tbBottom">    <div style="float:right;text-align:right;"><form id="actionform" method="post" action="index.php?m=mod_b2b&amp;c=rank&amp;a=index&amp;b2c=<?php echo $isb2c; ?>&amp;<?php echo $vd['op']; ?>" style="margin:0px;" onsubmit="loadDisp(1)">          <div id="page"></div>  </form></div>  <div id="load" style="display:none;">    <div id="loadcontent" >рЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╣О©╫...</div>  </div></body><script type="text/javascript">//О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ъ╠О©╫О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫//О©╫з╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫э©О©╫О©╫tRows   = <?php echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow'] ?>;tInfoA  = Array(0,0);totleRows = <?php echo $vd['totlerow']; ?>;deltxt  = "О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫Пё╛╪О©╫О©╫О©╫О©╫с╕О©╫д╪ш╦О©╫р╡О©╫О©╫и╬О©╫О©╫О©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫б╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫х╥О©╫О©╫О©╫О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫";thisaction = "и╬О©╫О©╫";thisdel = 0;statistics = 0;var resizeidx = 2;var helperVal = 1;</script><script type="text/javascript">//О©╫О©╫г╟О©╫О©╫О©╫О©╫О©╫О©╫О©╫<?php //tinfo ?> tInfo = Array();<?php //endtinfo ?></script><script src="<?php echo $vd['sc']; ?>js/tools.js" type="text/javascript"></script><script type="text/javascript">function setct(val){  $("cttr").style.display = val == 3 ? "" : "none";}function loadst(){  if(!confirm('О©╫О©╫х║О©╫О©╫О©╫О©╫О©╫л╣д╣О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫б╠О©╫дёО©╫О©╫О©╫О©╫шёО©╫'))  {    return;  }    setLoad("О©╫О©╫О©╫з╣О©╫О©╫О©╫О©╫О©╫,О©╫О©╫О©╫т╨О©╫...");  loadDisp(1);    window.location.href = "index.php?m=mod_b2b&c=Price&a=PriceSaveBySup";  }</script></html><?php } ?>

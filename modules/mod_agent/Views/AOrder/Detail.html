@@ -1,393 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>¶©µ¥ÏêÏ¸</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="service">
-  <!--$item = $vd['order']['item'];-->
-  <div class="new_qie">
-    <div class="new_qie2">
-      <h2>¶©µ¥ºÅ{$item['ordno']}</h2>
-    </div>
-  </div>  
-<table cellspacing="1" cellpadding="2" class="table1" style="margin-bottom: 10px;">
-        <tbody><tr>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ÉÌÆ·Ãû³Æ           </th>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ³äÖµÀàĞÍ           </th>
-    </tr>
-    <td width="24%" class="table1_left">ÉÌÆ·Ãû³Æ£º</td>
-    <td width="32%" class="buyrt1">{$item['pname']}({$item['pid']})</td>
-    <td width="8%" class="table1_left">ÉÌÆ·ÀàĞÍ£º</td>
-    <td width="36%" class="buyrt1">{#ProductType($item['ptype'])}</td>
-    </tr>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ¹ºÂòÏà¹Ø           </th>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ²Ù×÷½ğ¶î           </th>
-    </tr>
-    <td class="table1_left">ÏúÊÛÊıÁ¿£º</td>
-    <td class="buyrt1">{$item['qty']}(¸ö)</td>
-    <td class="table1_left">ÏúÊÛµ¥¼Û£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['cprice']}</td>
-    </tr>
-    <tr>
-    <td class="table1_left">ÏúÊÛ½ğ¶î£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['dollars']}</td>
-    <td class="table1_left">½ø»õ³É±¾£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}<!--echo $item['price']*$item['qty'];--></td>
-    </tr>
-    <tr>
-    <td class="table1_left">ÊÖĞø·ÑÂÊ£º</td>
-    <td class="buyrt1"><!--echo $item['fee']*100;-->%</td>
-    <td class="table1_left">ÊÖĞø·Ñ½ğ¶î£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}<!--echo round(($item['dollars'] * $item['fee']), 3)--></td>
-    </tr>
-    <tr>
-    <td class="table1_left">¾­ÏúÉÌÌá³É£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['agentprofit']}</td>
-    <td class="table1_left">ÏúÊÛÀûÈó£º</td>
-    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['ownerprofit']}</td>
-    </tr>
-    <tr>
-    <td class="table1_left">ÏúÊÛÊ±¼ä£º</td>
-    <td class="buyrt1">{$item['orddate']}</td>
-    <td class="table1_left">¶©µ¥×´Ì¬£º</td>
-    <td class="buyrt1"><strong>{#OrderState($item['ordstate'],$item['ptype'])}</strong></td>
-    </tr>
-    <tr>
-    <td class="table1_left">¿Í»§Ãû³Æ£º</td>
-    <td class="buyrt1">{$item['company']}({#DisplayCode($item['cid'])})</td>
-    <td class="table1_left">¿Í»§IPµØÖ·</td>
-    <td class="buyrt1">{$item['cip']}</td>
-    </tr>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ¹ºÂòÄÚÈİ           </th>
-            <th colspan="2" style="text-align: left; padding-left: 10px">    </tr>
-    
-    <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->
-    <tr>
-      <td class="table1_left">ÓÎÏ·ÓÃ»§Ãû£º</td>
-      <td colspan=3 class="buyrt3"><div align="left"><b><font color="#0000ff">{$item['czaccount']}</font></b></div></td>
-    </tr>
-    <!--if(isset($item['thisgame']) && $item['thisgame'] != ''){-->
-    <tr>
-      <td class="table1_left"><!--if($item['namehide']=='thisgame'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ²úÆ·<!--}-->£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['thisgame'])}</div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['czarea1'] != ''){-->
-    <tr>
-      <td class="table1_left"><!--if($item['namehide']=='czarea1'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµÇøÓò<!--}-->£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czarea1'])}</div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['czarea2'] != ''){-->
-    <tr>
-      <td class="table1_left"><!--if($item['namehide']=='czarea1'){-->µÇÂ½ÃÜÂë<!--}else{-->³äÖµ·şÎñÆ÷<!--}-->£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czarea2'])}</div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['cztype'] != ''){-->
-    <tr>
-      <td class="table1_left">
-      	<!--if(strpos($item['cztype'], '::') > 0){-->
-      	  <!--$mytemp = explode('::', $item['cztype']);$item['cztype']=$mytemp[1];-->
-      	  {$mytemp[0]}£º
-      	<!--}else{-->
-      	
-      	<!--if($item['namehide']=='cztype'){-->µÇÂ½ÃÜÂë<!--}else{-->¼Æ·Ñ·½Ê½<!--}-->£º
-      	
-      	<!--}-->      </td>
-      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['cztype'])}</div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['czother'] != ''){-->
-    <tr>
-      <td class="buylt1">
-      	<!--if(strpos($item['czother'], '::') > 0){-->
-      	  <!--$mytemp = explode('::', $item['czother']);$item['czother']=$mytemp[1];-->
-      	  {$mytemp[0]}£º
-      	<!--}else{-->
-      	
-      	<!--if($item['namehide']=='czother'){-->µÇÂ½ÃÜÂë<!--}else{-->ÕÊºÅÀàĞÍ<!--}-->£º
-      	
-      	<!--}-->      </td>
-      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czother'])}</div></td>
-    </tr>
-    <!--}-->
-    
-    <!--if($item['acountpwd'] != ''){-->
-    <tr>
-      <td class="buylt1">
-      	<!--if(strpos($item['acountpwd'], '::') > 0){-->
-      	  <!--$mytemp = explode('::', $item['acountpwd']);$item['acountpwd']=$mytemp[1];-->
-      	  {$mytemp[0]}£º
-      	<!--}else{-->
-      	
-      	<!--if($item['namehide']=='acountpwd'){-->µÇÂ½ÃÜÂë<!--}else{-->ÆäËûĞÅÏ¢<!--}-->£º
-      	
-      	<!--}-->      </td>
-      <td colspan=3 class="buyrt3"><div align="left">{$item['acountpwd']}</div></td>
-    </tr>
-    <!--}-->
-    <tr>
-      <td class="table1_left">¶©µ¥×´Ì¬£º</td>
-      <td colspan=3 class="buyrt3"><div align="left"><strong>{#OrderState($item['ordstate'],$item['ptype'])}</strong></div></td>
-    </tr>
-    <!--if($item['ordstate'] != 1 && $item['ordstate'] != 3 ){-->
-    <tr>
-      <td class="table1_left">´¦ÀíÊ±¼ä£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">{$item['dealdate']}</div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['ordstate'] == -1) {-->
-    <tr>
-      <td class="table1_left">Ê§°ÜÔ­Òò£º</td>
-      <td colspan=3 class="buyrt3"><div align="left"><font color="#ff0000">
-        <!--if($item['rollback'] == 1){-->
-        [<b>ÒÑ¾­ÍË¿î</b>]
-        <!--}-->
-      {$item['failreason']}</font></div></td>
-    </tr>
-    <!--}-->
-    <tr>
-      <td class="table1_left">³§¼Ò·´À¡£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">
-        <textarea rows="5" cols="50">{$item['factoryreturn']}</textarea>
-      </div></td>
-    </tr>
-    <!--if($item['others'] != '') {-->
-    <tr>
-      <td class="table1_left">¹º¿¨±¸×¢£º</td>
-      <td colspan=3 class="buyrt3"><div align="left">
-        <textarea rows="5" cols="50">{$item['others']}</textarea>
-      </div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['admname'] != ''){-->
-    <tr>
-      <td class="table1_left">¶©µ¥´ú´¦Àí£º</td>
-      <td colspan=3 class="buyrt3"><div align="left"><b>Æ½Ì¨¹ÜÀíÔ±</b></div></td>
-    </tr>
-    <!--}-->
-    <!--if($item['opname'] != ''){-->
-    <tr>
-      <td class="table1_left">´ú³äÕÊºÅ£º</td>
-      <td colspan=3 class="buyrt3"><div align="left"><b>{$item['opname']}</b></div></td>
-    </tr>
-    <!--}-->
-    <!--}-->
-    
-    <!--if($item['ptype'] == 0 || $item['ptype'] > 99 || $item['ptype'] == 3) {-->
-    <!--if(count($vd['order']['carditem']) > 0){-->
-    <tr>
-    <td colspan="4">
-		  <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-      <tr class="table1_left">
-        <td style="width:50%;text-align:center">
-          <!--if($item['ptype'] == 3){-->
-          ºÅÂë
-          <!--}else{-->
-          ¿¨ºÅ
-          <!--}-->        </td>
-        <td style="width:50%;text-align:center">ÃÜÂë</td>
-      </tr>
-      <!--foreach($vd['order']['carditem'] as $card) {-->
-      <tr>
-        <td style="width:50%;text-align:center">{$card['cardnumber']}</td>
-        <td style="width:50%;text-align:center">{$card['cardpwd']}</td>
-      </tr>
-      <!--}-->
-    </table>    </td>
-    </tr>
-    <!--}-->
-    <!--}-->
-    
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                ¶©µ¥¹ÜÀí           </th>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-    <tr id="checktable" style="display:none">
-    <td colspan="4" >
-      <form action="index.php?m=mod_agent&c=AOrder&a=check&ubzordno={$item['ordno']}&isc=<!--echo intval(request('isc'));-->" method="post">
-		  <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-      <tr>
-        <td width="22%" class="table1_left"><input type="radio" value="2" name="ordstate" class="checkbox" checked />³äÖµ³É¹¦£º</td>
-        <td width="78%" class="buyrt3">
-          <div align="left">±íÊ¾³äÖµ³É¹¦£¬Çë½«³§¼ÒµÄ³äÖµ¼ÇÂ¼¸´ÖÆÈëÏÂ±ß·½¿ò        </div></td>
-      </tr>
-      <tr>
-        <td class="table1_left"><input type="radio" value="-1" name="ordstate" class="checkbox" onClick="setrollback()"/>È¡Ïû³äÖµ£º</td>
-        <td align="left" class="buyrt3">
-          <div style="height:22px;">
-            <div align="left">
-              <input type="radio" value="³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎŞ·¨³äÖµ£¬ÇëÉÔºóÖØĞÂ¹ºÂò" name="failreason" class="checkbox" />
-              ³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎŞ·¨³äÖµ£¬ÇëÉÔºóÖØĞÂ¹ºÂò</div>
-          </div>
-          <div style="height:22px;">
-            <div align="left">
-              <input type="radio" value="³äÖµÕÊ»§²»·û£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÏÂµ¥¹ºÂò" name="failreason" class="checkbox" />
-              ³äÖµÕÊ»§²»·û£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÏÂµ¥¹ºÂò</div>
-          </div>
-          <div style="height:22px;">
-            <div align="left">
-              <input type="radio" value="³äÖµÇøÓò²»·û£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÏÂµ¥¹ºÂò" name="failreason" class="checkbox" />
-              ³äÖµÇøÓò²»·û£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÏÂµ¥¹ºÂò</div>
-          </div>
-          <div style="height:22px;">
-            <div align="left">
-              <input type="radio" value="ÉÌÆ·¿â´æ²»×ã£¬Çë´ıÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò" name="failreason" class="checkbox" />
-              ÉÌÆ·¿â´æ²»×ã£¬Çë´ıÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò</div>
-          </div>
-          <div style="height:22px;">
-            <div align="left">
-              <input type="radio" value="ÓÉÓÚ³§ÉÌ»òÕßÒ»Ğ©²»¿É¿ØÒòËØ£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÌá½»¶©µ¥" name="failreason" class="checkbox" />
-              ÓÉÓÚ³§ÉÌ»òÕßÒ»Ğ©²»¿É¿ØÒòËØ£¬ÎŞ·¨³äÖµ£¬ÇëÖØĞÂÌá½»¶©µ¥</div>
-          </div>
-          <div style="height:35px;">
-            <div align="left">
-              <input type="radio" value="" name="failreason" class="checkbox" id="custom"/>
-              ×ÔĞĞÊäÈë
-              <input type="text" value="Ò»°ã´íÎó" size="30" onKeyUp="set(this)" onMouseUp="set(this)"/>
-            </div>
-          </div>
-          <div align="left">
-            <div style="height:22px;" style="display:none">
-            <input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom" onclick="dispTrade()"/>
-            <font color="#ff0000">È¡Ïû¶©µ¥ºóÊ±ºò»Ö¸´¼ÇÂ¼(¿Í»§»Ö¸´Óà¶î)£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû³äµ¥²ÅÉúĞ§</font>
-            </div>
-              <div style="height:22px;display:none" id="tradepwd">
-            ÇëÊäÈëÄúµÄ³¬¼¶ÃÜÂë£º
-            <input type="password" name="superpwd" />        
-          </div></td>
-      </tr>
-      <tr>
-        <td class="table1_left">³§ÉÌ³äÖµ¼ÇÂ¼£º</td>
-        <td align="left" class="buyrt3">
-          <div align="left">
-            <textarea rows="5" name="factoryreturn" cols="50"></textarea>
-          </div></td>
-      </tr>
-      <tr>
-        <td class="table1_left" style="height:50px;">&nbsp;</td>
-        <td class="buyrt3"><div align="left">
-          <input type="submit" value="±£´æ³äÖµ½á¹û" class="tijiao_input" onClick="return confirm('È·ÈÏ¸üĞÂ¶©µ¥×´Ì¬Ã´£¿Èç¹ûÈ¡Ïû¶©µ¥£¬ÇëÈ·ÈÏÊÇ·ñĞèÒª²¹»ØÓà¶î')"/> 
-          <input type="reset" value="ÖØÖÃ" class="fanhui_input"/> 
-          <input type="button" value="È¡Ïû" class="fanhui_input" onClick="disp('checktable')"/>
-        </div></td>
-      </tr>
-      </table>
-      </form>    </td>
-    </tr>
-    <tr id="canceltable" style="display:none">
-    <td colspan="4" >
-      <form action="index.php?m=mod_agent&c=AOrder&a=CancelOrder&ubzordno={$item['ordno']}" method="post">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin-bottom: 10px;">
-      <tr>
-        <td width="22%" class="table1_left">È¡Ïû¶©µ¥Ô­Òò£º</td>
-        <td width="78%" class="buyrt3">
-           <div align="left">
-             <input type="text" value="" name="failreason" class="input" style="width:250px"/>        
-           </div></td>
-      </tr>
-      <tr>
-        <td class="table1_left">ÄúµÄ³¬¼¶ÃÜÂë£º</td>
-        <td align="left" class="buyrt3">
-          <div align="left">
-            <input type="password" name="superpwd" class="input"/>        
-          </div></td>
-      </tr>
-      <tr>
-        <td class="table1_left" style="height:50px;">&nbsp;</td>
-        <td class="buyrt3"><div align="left">
-          <input type="submit" value="Ìá½»" class="tijiao_input" onClick="return confirm('È·ÈÏÌá½»Ã´£¿È¡Ïû´Ë¶©µ¥²¢ÍË¿î')"/> 
-          <input type="reset" value="ÖØÖÃ" class="fanhui_input"/> 
-          <input type="button" value="È¡Ïû" class="fanhui_input" onClick="disp('canceltable')"/>
-        </div></td>
-      </tr>
-      </table>
-      </form>    </td>
-    </tr>
-    <tr>
-    <td class="table1_left"><div align="left">¶©µ¥È¡Ïû£º</div></td>
-    <td colspan=3 class="buyrt3">
-      <div align="left">
-        <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3) {-->
-        <!--if($item['ordstate'] > 0) {-->
-        <input type="button" onClick="disp('checktable')" value="´¦Àí´Ë¶©µ¥" class="tijiao_input"/>
-        <!--}-->
-        <!--}else{-->
-        <!--if($item['ordstate'] == 2) {-->
-        <input type="button" onClick="disp('canceltable')" value="È¡Ïû¶©µ¥²¢ÍË¿î" class="fanhui_input"/>
-        <!--}-->
-        <!--}-->
-        <input type="button" onClick="javascript:openScript('index.php?m=mod_agent&c=order&a=detail&ordno={$item['ordno']}','',780,580);" value="¶©µ¥²¹µ¥" class="tijiao_input"/>    
-      </div></td>
-    </tr>
-            <th colspan="2" style="text-align: left; padding-left: 10px">
-                <div align="left">ÆäËüËµÃ÷</div></th>
-            <th colspan="2" style="text-align: left; padding-left: 10px">    </tr>
-    
-    <tr>
-      <td class="table1_left"><div align="left">¸÷·ÑÂÊËµÃ÷£º</div></td>
-      <td colspan=3 class="buyrt3">
-        <div align="left">Ö»ÓĞ¶©µ¥½»Ò×Íê³É£¬ÊÖĞø·Ñ£¬Ìá³É¼°ÏúÊÛÀûÈó²Å»á¿ªÊ¼Í³¼Æ²¢×ªÈë¸÷×ÔÕÊºÅÖĞ      </div></td>
-    </tr>
-    
-    <tr>
-    <td colspan=4 align=center>
-      <div align="center">
-        <input type="button" name="goback" value="·µ»ØÉÏÒ³" class="fanhui_input" onClick="javascript:history.go(-1);">
-        </div></td>
-    </tr>
-</table>
-  </td>
-  </tr>
-  </table>
-  
-<script type="text/javascript">
-  function openScript(url,name,width,height)
-  {
-    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
-  }
-  
-  var $ = function(id)
-  {
-    return document.getElementById(id);
-  }
-  function disp(id)
-  {
-    $(id).style.display = $(id).style.display == "" ? "none" : "";
-  }
-  
-  function set(obj)
-  {
-    $("custom").value = obj.value;
-    $("custom").checked = true;
-  }
-  
-  function setrollback()
-  {
-  	<!--if($item['ordstate'] == 2){-->
-  		alert('Èç¹ûÄú°Ñ³É¹¦µÄ¶©µ¥È¡Ïûµô£¬Õâ¸ö¶©µ¥²úÉú´úÀíÀûÈó½«ÓÉÄú¸ºÔğÖ§¸¶');
-  	<!--}-->
-    $("rollback").checked = true;
-    $("tradepwd").style.display = "";
-  }
-  
-  function dispTrade()
-  {
-  	<!--if($item['ordstate'] == 2){-->
-  		alert('Èç¹ûÄú°Ñ³É¹¦µÄ¶©µ¥È¡Ïûµô£¬Õâ¸ö¶©µ¥²úÉú´úÀíÀûÈó½«ÓÉÄú¸ºÔğÖ§¸¶');
-  	<!--}-->
-    $("tradepwd").style.display = $("rollback").checked ? "" : "none";
-  }
-</script>
-</body>
-</html>
-
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è®¢å•è¯¦ç»†</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="service">  <!--$item = $vd['order']['item'];-->  <div class="new_qie">    <div class="new_qie2">      <h2>è®¢å•å·{$item['ordno']}</h2>    </div>  </div>  <table cellspacing="1" cellpadding="2" class="table1" style="margin-bottom: 10px;">        <tbody><tr>            <th colspan="2" style="text-align: left; padding-left: 10px">                å•†å“åç§°           </th>            <th colspan="2" style="text-align: left; padding-left: 10px">                å……å€¼ç±»å‹           </th>    </tr>    <td width="24%" class="table1_left">å•†å“åç§°ï¼š</td>    <td width="32%" class="buyrt1">{$item['pname']}({$item['pid']})</td>    <td width="8%" class="table1_left">å•†å“ç±»å‹ï¼š</td>    <td width="36%" class="buyrt1">{#ProductType($item['ptype'])}</td>    </tr>            <th colspan="2" style="text-align: left; padding-left: 10px">                è´­ä¹°ç›¸å…³           </th>            <th colspan="2" style="text-align: left; padding-left: 10px">                æ“ä½œé‡‘é¢           </th>    </tr>    <td class="table1_left">é”€å”®æ•°é‡ï¼š</td>    <td class="buyrt1">{$item['qty']}(ä¸ª)</td>    <td class="table1_left">é”€å”®å•ä»·ï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['cprice']}</td>    </tr>    <tr>    <td class="table1_left">é”€å”®é‡‘é¢ï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['dollars']}</td>    <td class="table1_left">è¿›è´§æˆæœ¬ï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}<!--echo $item['price']*$item['qty'];--></td>    </tr>    <tr>    <td class="table1_left">æ‰‹ç»­è´¹ç‡ï¼š</td>    <td class="buyrt1"><!--echo $item['fee']*100;-->%</td>    <td class="table1_left">æ‰‹ç»­è´¹é‡‘é¢ï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}<!--echo round(($item['dollars'] * $item['fee']), 3)--></td>    </tr>    <tr>    <td class="table1_left">ç»é”€å•†ææˆï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['agentprofit']}</td>    <td class="table1_left">é”€å”®åˆ©æ¶¦ï¼š</td>    <td class="buyrt1">{$vd['lang']['moneysymbol']}{$item['ownerprofit']}</td>    </tr>    <tr>    <td class="table1_left">é”€å”®æ—¶é—´ï¼š</td>    <td class="buyrt1">{$item['orddate']}</td>    <td class="table1_left">è®¢å•çŠ¶æ€ï¼š</td>    <td class="buyrt1"><strong>{#OrderState($item['ordstate'],$item['ptype'])}</strong></td>    </tr>    <tr>    <td class="table1_left">å®¢æˆ·åç§°ï¼š</td>    <td class="buyrt1">{$item['company']}({#DisplayCode($item['cid'])})</td>    <td class="table1_left">å®¢æˆ·IPåœ°å€</td>    <td class="buyrt1">{$item['cip']}</td>    </tr>            <th colspan="2" style="text-align: left; padding-left: 10px">                è´­ä¹°å†…å®¹           </th>            <th colspan="2" style="text-align: left; padding-left: 10px">    </tr>        <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->    <tr>      <td class="table1_left">æ¸¸æˆç”¨æˆ·åï¼š</td>      <td colspan=3 class="buyrt3"><div align="left"><b><font color="#0000ff">{$item['czaccount']}</font></b></div></td>    </tr>    <!--if(isset($item['thisgame']) && $item['thisgame'] != ''){-->    <tr>      <td class="table1_left"><!--if($item['namehide']=='thisgame'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼äº§å“<!--}-->ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['thisgame'])}</div></td>    </tr>    <!--}-->    <!--if($item['czarea1'] != ''){-->    <tr>      <td class="table1_left"><!--if($item['namehide']=='czarea1'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼åŒºåŸŸ<!--}-->ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czarea1'])}</div></td>    </tr>    <!--}-->    <!--if($item['czarea2'] != ''){-->    <tr>      <td class="table1_left"><!--if($item['namehide']=='czarea1'){-->ç™»é™†å¯†ç <!--}else{-->å……å€¼æœåŠ¡å™¨<!--}-->ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czarea2'])}</div></td>    </tr>    <!--}-->    <!--if($item['cztype'] != ''){-->    <tr>      <td class="table1_left">      	<!--if(strpos($item['cztype'], '::') > 0){-->      	  <!--$mytemp = explode('::', $item['cztype']);$item['cztype']=$mytemp[1];-->      	  {$mytemp[0]}ï¼š      	<!--}else{-->      	      	<!--if($item['namehide']=='cztype'){-->ç™»é™†å¯†ç <!--}else{-->è®¡è´¹æ–¹å¼<!--}-->ï¼š      	      	<!--}-->      </td>      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['cztype'])}</div></td>    </tr>    <!--}-->    <!--if($item['czother'] != ''){-->    <tr>      <td class="buylt1">      	<!--if(strpos($item['czother'], '::') > 0){-->      	  <!--$mytemp = explode('::', $item['czother']);$item['czother']=$mytemp[1];-->      	  {$mytemp[0]}ï¼š      	<!--}else{-->      	      	<!--if($item['namehide']=='czother'){-->ç™»é™†å¯†ç <!--}else{-->å¸å·ç±»å‹<!--}-->ï¼š      	      	<!--}-->      </td>      <td colspan=3 class="buyrt3"><div align="left">{#CzText($item['czother'])}</div></td>    </tr>    <!--}-->        <!--if($item['acountpwd'] != ''){-->    <tr>      <td class="buylt1">      	<!--if(strpos($item['acountpwd'], '::') > 0){-->      	  <!--$mytemp = explode('::', $item['acountpwd']);$item['acountpwd']=$mytemp[1];-->      	  {$mytemp[0]}ï¼š      	<!--}else{-->      	      	<!--if($item['namehide']=='acountpwd'){-->ç™»é™†å¯†ç <!--}else{-->å…¶ä»–ä¿¡æ¯<!--}-->ï¼š      	      	<!--}-->      </td>      <td colspan=3 class="buyrt3"><div align="left">{$item['acountpwd']}</div></td>    </tr>    <!--}-->    <tr>      <td class="table1_left">è®¢å•çŠ¶æ€ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left"><strong>{#OrderState($item['ordstate'],$item['ptype'])}</strong></div></td>    </tr>    <!--if($item['ordstate'] != 1 && $item['ordstate'] != 3 ){-->    <tr>      <td class="table1_left">å¤„ç†æ—¶é—´ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">{$item['dealdate']}</div></td>    </tr>    <!--}-->    <!--if($item['ordstate'] == -1) {-->    <tr>      <td class="table1_left">å¤±è´¥åŸå› ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left"><font color="#ff0000">        <!--if($item['rollback'] == 1){-->        [<b>å·²ç»é€€æ¬¾</b>]        <!--}-->      {$item['failreason']}</font></div></td>    </tr>    <!--}-->    <tr>      <td class="table1_left">å‚å®¶åé¦ˆï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">        <textarea rows="5" cols="50">{$item['factoryreturn']}</textarea>      </div></td>    </tr>    <!--if($item['others'] != '') {-->    <tr>      <td class="table1_left">è´­å¡å¤‡æ³¨ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left">        <textarea rows="5" cols="50">{$item['others']}</textarea>      </div></td>    </tr>    <!--}-->    <!--if($item['admname'] != ''){-->    <tr>      <td class="table1_left">è®¢å•ä»£å¤„ç†ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left"><b>å¹³å°ç®¡ç†å‘˜</b></div></td>    </tr>    <!--}-->    <!--if($item['opname'] != ''){-->    <tr>      <td class="table1_left">ä»£å……å¸å·ï¼š</td>      <td colspan=3 class="buyrt3"><div align="left"><b>{$item['opname']}</b></div></td>    </tr>    <!--}-->    <!--}-->        <!--if($item['ptype'] == 0 || $item['ptype'] > 99 || $item['ptype'] == 3) {-->    <!--if(count($vd['order']['carditem']) > 0){-->    <tr>    <td colspan="4">		  <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">      <tr class="table1_left">        <td style="width:50%;text-align:center">          <!--if($item['ptype'] == 3){-->          å·ç           <!--}else{-->          å¡å·          <!--}-->        </td>        <td style="width:50%;text-align:center">å¯†ç </td>      </tr>      <!--foreach($vd['order']['carditem'] as $card) {-->      <tr>        <td style="width:50%;text-align:center">{$card['cardnumber']}</td>        <td style="width:50%;text-align:center">{$card['cardpwd']}</td>      </tr>      <!--}-->    </table>    </td>    </tr>    <!--}-->    <!--}-->                <th colspan="2" style="text-align: left; padding-left: 10px">                è®¢å•ç®¡ç†           </th>            <th colspan="2" style="text-align: left; padding-left: 10px">    <tr id="checktable" style="display:none">    <td colspan="4" >      <form action="index.php?m=mod_agent&c=AOrder&a=check&ubzordno={$item['ordno']}&isc=<!--echo intval(request('isc'));-->" method="post">		  <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">      <tr>        <td width="22%" class="table1_left"><input type="radio" value="2" name="ordstate" class="checkbox" checked />å……å€¼æˆåŠŸï¼š</td>        <td width="78%" class="buyrt3">          <div align="left">è¡¨ç¤ºå……å€¼æˆåŠŸï¼Œè¯·å°†å‚å®¶çš„å……å€¼è®°å½•å¤åˆ¶å…¥ä¸‹è¾¹æ–¹æ¡†        </div></td>      </tr>      <tr>        <td class="table1_left"><input type="radio" value="-1" name="ordstate" class="checkbox" onClick="setrollback()"/>å–æ¶ˆå……å€¼ï¼š</td>        <td align="left" class="buyrt3">          <div style="height:22px;">            <div align="left">              <input type="radio" value="å‚å•†ç³»ç»Ÿå‡ºé”™æˆ–ç»´æŠ¤ï¼Œæ— æ³•å……å€¼ï¼Œè¯·ç¨åé‡æ–°è´­ä¹°" name="failreason" class="checkbox" />              å‚å•†ç³»ç»Ÿå‡ºé”™æˆ–ç»´æŠ¤ï¼Œæ— æ³•å……å€¼ï¼Œè¯·ç¨åé‡æ–°è´­ä¹°</div>          </div>          <div style="height:22px;">            <div align="left">              <input type="radio" value="å……å€¼å¸æˆ·ä¸ç¬¦ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°ä¸‹å•è´­ä¹°" name="failreason" class="checkbox" />              å……å€¼å¸æˆ·ä¸ç¬¦ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°ä¸‹å•è´­ä¹°</div>          </div>          <div style="height:22px;">            <div align="left">              <input type="radio" value="å……å€¼åŒºåŸŸä¸ç¬¦ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°ä¸‹å•è´­ä¹°" name="failreason" class="checkbox" />              å……å€¼åŒºåŸŸä¸ç¬¦ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°ä¸‹å•è´­ä¹°</div>          </div>          <div style="height:22px;">            <div align="left">              <input type="radio" value="å•†å“åº“å­˜ä¸è¶³ï¼Œè¯·å¾…æˆ‘ä»¬è¡¥å……åº“å­˜åå†è´­ä¹°" name="failreason" class="checkbox" />              å•†å“åº“å­˜ä¸è¶³ï¼Œè¯·å¾…æˆ‘ä»¬è¡¥å……åº“å­˜åå†è´­ä¹°</div>          </div>          <div style="height:22px;">            <div align="left">              <input type="radio" value="ç”±äºå‚å•†æˆ–è€…ä¸€äº›ä¸å¯æ§å› ç´ ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°æäº¤è®¢å•" name="failreason" class="checkbox" />              ç”±äºå‚å•†æˆ–è€…ä¸€äº›ä¸å¯æ§å› ç´ ï¼Œæ— æ³•å……å€¼ï¼Œè¯·é‡æ–°æäº¤è®¢å•</div>          </div>          <div style="height:35px;">            <div align="left">              <input type="radio" value="" name="failreason" class="checkbox" id="custom"/>              è‡ªè¡Œè¾“å…¥              <input type="text" value="ä¸€èˆ¬é”™è¯¯" size="30" onKeyUp="set(this)" onMouseUp="set(this)"/>            </div>          </div>          <div align="left">            <div style="height:22px;" style="display:none">            <input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom" onclick="dispTrade()"/>            <font color="#ff0000">å–æ¶ˆè®¢å•åæ—¶å€™æ¢å¤è®°å½•(å®¢æˆ·æ¢å¤ä½™é¢)ï¼ŒåŒæ—¶é€‰æ‹©å–æ¶ˆå……å•æ‰ç”Ÿæ•ˆ</font>            </div>              <div style="height:22px;display:none" id="tradepwd">            è¯·è¾“å…¥æ‚¨çš„è¶…çº§å¯†ç ï¼š            <input type="password" name="superpwd" />                  </div></td>      </tr>      <tr>        <td class="table1_left">å‚å•†å……å€¼è®°å½•ï¼š</td>        <td align="left" class="buyrt3">          <div align="left">            <textarea rows="5" name="factoryreturn" cols="50"></textarea>          </div></td>      </tr>      <tr>        <td class="table1_left" style="height:50px;">&nbsp;</td>        <td class="buyrt3"><div align="left">          <input type="submit" value="ä¿å­˜å……å€¼ç»“æœ" class="tijiao_input" onClick="return confirm('ç¡®è®¤æ›´æ–°è®¢å•çŠ¶æ€ä¹ˆï¼Ÿå¦‚æœå–æ¶ˆè®¢å•ï¼Œè¯·ç¡®è®¤æ˜¯å¦éœ€è¦è¡¥å›ä½™é¢')"/>           <input type="reset" value="é‡ç½®" class="fanhui_input"/>           <input type="button" value="å–æ¶ˆ" class="fanhui_input" onClick="disp('checktable')"/>        </div></td>      </tr>      </table>      </form>    </td>    </tr>    <tr id="canceltable" style="display:none">    <td colspan="4" >      <form action="index.php?m=mod_agent&c=AOrder&a=CancelOrder&ubzordno={$item['ordno']}" method="post"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin-bottom: 10px;">      <tr>        <td width="22%" class="table1_left">å–æ¶ˆè®¢å•åŸå› ï¼š</td>        <td width="78%" class="buyrt3">           <div align="left">             <input type="text" value="" name="failreason" class="input" style="width:250px"/>                   </div></td>      </tr>      <tr>        <td class="table1_left">æ‚¨çš„è¶…çº§å¯†ç ï¼š</td>        <td align="left" class="buyrt3">          <div align="left">            <input type="password" name="superpwd" class="input"/>                  </div></td>      </tr>      <tr>        <td class="table1_left" style="height:50px;">&nbsp;</td>        <td class="buyrt3"><div align="left">          <input type="submit" value="æäº¤" class="tijiao_input" onClick="return confirm('ç¡®è®¤æäº¤ä¹ˆï¼Ÿå–æ¶ˆæ­¤è®¢å•å¹¶é€€æ¬¾')"/>           <input type="reset" value="é‡ç½®" class="fanhui_input"/>           <input type="button" value="å–æ¶ˆ" class="fanhui_input" onClick="disp('canceltable')"/>        </div></td>      </tr>      </table>      </form>    </td>    </tr>    <tr>    <td class="table1_left"><div align="left">è®¢å•å–æ¶ˆï¼š</div></td>    <td colspan=3 class="buyrt3">      <div align="left">        <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3) {-->        <!--if($item['ordstate'] > 0) {-->        <input type="button" onClick="disp('checktable')" value="å¤„ç†æ­¤è®¢å•" class="tijiao_input"/>        <!--}-->        <!--}else{-->        <!--if($item['ordstate'] == 2) {-->        <input type="button" onClick="disp('canceltable')" value="å–æ¶ˆè®¢å•å¹¶é€€æ¬¾" class="fanhui_input"/>        <!--}-->        <!--}-->        <input type="button" onClick="javascript:openScript('index.php?m=mod_agent&c=order&a=detail&ordno={$item['ordno']}','',780,580);" value="è®¢å•è¡¥å•" class="tijiao_input"/>          </div></td>    </tr>            <th colspan="2" style="text-align: left; padding-left: 10px">                <div align="left">å…¶å®ƒè¯´æ˜</div></th>            <th colspan="2" style="text-align: left; padding-left: 10px">    </tr>        <tr>      <td class="table1_left"><div align="left">å„è´¹ç‡è¯´æ˜ï¼š</div></td>      <td colspan=3 class="buyrt3">        <div align="left">åªæœ‰è®¢å•äº¤æ˜“å®Œæˆï¼Œæ‰‹ç»­è´¹ï¼ŒææˆåŠé”€å”®åˆ©æ¶¦æ‰ä¼šå¼€å§‹ç»Ÿè®¡å¹¶è½¬å…¥å„è‡ªå¸å·ä¸­      </div></td>    </tr>        <tr>    <td colspan=4 align=center>      <div align="center">        <input type="button" name="goback" value="è¿”å›ä¸Šé¡µ" class="fanhui_input" onClick="javascript:history.go(-1);">        </div></td>    </tr></table>  </td>  </tr>  </table>  <script type="text/javascript">  function openScript(url,name,width,height)  {    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');  }    var $ = function(id)  {    return document.getElementById(id);  }  function disp(id)  {    $(id).style.display = $(id).style.display == "" ? "none" : "";  }    function set(obj)  {    $("custom").value = obj.value;    $("custom").checked = true;  }    function setrollback()  {  	<!--if($item['ordstate'] == 2){-->  		alert('å¦‚æœæ‚¨æŠŠæˆåŠŸçš„è®¢å•å–æ¶ˆæ‰ï¼Œè¿™ä¸ªè®¢å•äº§ç”Ÿä»£ç†åˆ©æ¶¦å°†ç”±æ‚¨è´Ÿè´£æ”¯ä»˜');  	<!--}-->    $("rollback").checked = true;    $("tradepwd").style.display = "";  }    function dispTrade()  {  	<!--if($item['ordstate'] == 2){-->  		alert('å¦‚æœæ‚¨æŠŠæˆåŠŸçš„è®¢å•å–æ¶ˆæ‰ï¼Œè¿™ä¸ªè®¢å•äº§ç”Ÿä»£ç†åˆ©æ¶¦å°†ç”±æ‚¨è´Ÿè´£æ”¯ä»˜');  	<!--}-->    $("tradepwd").style.display = $("rollback").checked ? "" : "none";  }</script></body></html>

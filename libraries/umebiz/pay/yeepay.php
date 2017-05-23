@@ -68,40 +68,40 @@ class yeepay
 								switch ( $Ref40cab171 )
 								{
 								case "QQCARD-NET" :
-												$R3995fedcc3 = "Q±Ò¿¨Ö§¸¶";
+												$R3995fedcc3 = "Qï¿½Ò¿ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "JUNNET-NET" :
-												$R3995fedcc3 = "¿¥ÍøÒ»¿¨Í¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨Ö§ï¿½ï¿½";
 												break;
 								case "SNDACARD-NET" :
-												$R3995fedcc3 = "Ê¢´ó¿¨Ö§¸¶";
+												$R3995fedcc3 = "Ê¢ï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "SZX-NET" :
-												$R3995fedcc3 = "ÉñÖÝÐÐÖ§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "ZHENGTU-NET" :
-												$R3995fedcc3 = "Õ÷Í¾¿¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½Í¾ï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "UNICOM-NET" :
-												$R3995fedcc3 = "ÁªÍ¨¿¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½Í¨ï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "LIANHUAOKCARD-NET" :
-												$R3995fedcc3 = "Áª»ªOK¿¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½ï¿½ï¿½OKï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								case "YPCARD-NET" :
-												$R3995fedcc3 = "Ò×±¦Ò»¿¨Í¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½×±ï¿½Ò»ï¿½ï¿½Í¨Ö§ï¿½ï¿½";
 												break;
 								default :
-												$R3995fedcc3 = "ÆäËüÓÎÏ·¿¨Ö§¸¶";
+												$R3995fedcc3 = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Ö§ï¿½ï¿½";
 												break;
 								}
-								$R3f243e1344 = "±¾Íø¹ØÊÇÊ¹ÓÃ<font color=\"#ff0000\">".$R3995fedcc3."</font>£¬µã»÷¸¶¿î°´Å¥ºóÄú½«½øÈëÖ§¸¶Ò³Ãæ£¬ÄúÖ»ÐèÒªÌîÐ´ºÃÐèÒªÖ§¸¶µÄ¿¨ºÅÃÜÂë¼´¿ÉÍê³É¹ºÂò";
+								$R3f243e1344 = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½<font color=\"#ff0000\">".$R3995fedcc3."</font>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î°´Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Ò³ï¿½æ£¬ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ÒªÖ§ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¼´ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½";
 								if ( $Ref40cab171 == "" )
 								{
-												$R3995fedcc3 = "Ò×±¦Ö§¸¶";
-												$R3f243e1344 = "µã»÷¸¶¿îºó£¬Äú½«½øÈëÍøÉÏÒøÐÐ/ÓÎÏ·¿¨/µç»°¿¨Ö§¸¶Ò³Ãæ£¬Ñ¡Ôñ¶ÔÓ¦ÒøÐÐ/ÓÎÏ·¿¨/µç»°¿¨¼´¿ÉÍê³É¸¶·Ñ¡£<a href='".UPATH_ROOT."article/1.html'>ÈçºÎ¿ªÍ¨ÍøÉÏÒøÐÐÒµÎñ?</a>";
+												$R3995fedcc3 = "ï¿½×±ï¿½Ö§ï¿½ï¿½";
+												$R3f243e1344 = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½Ï·ï¿½ï¿½/ï¿½ç»°ï¿½ï¿½Ö§ï¿½ï¿½Ò³ï¿½æ£¬Ñ¡ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½Ï·ï¿½ï¿½/ï¿½ç»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¸ï¿½ï¿½Ñ¡ï¿½<a href='".UPATH_ROOT."article/1.html'>ï¿½ï¿½Î¿ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½?</a>";
 								}
-								$R59d4ca4468 = "<input type='radio' name='ebank' value='yeepay".$Ref40cab171."form' onclick='EBankCheck(this)' />".$R3995fedcc3."<span class='textgray'>(<span class='dollars' id='yeepay".$Ref40cab171."formfee'>".$R8c167f6e77."%</span>ÊÖÐø·Ñ)</span>"."<input type='hidden' id='yeepay".$Ref40cab171."formamount' value='".$R16b83ea435."' />"."<form  action='https://www.yeepay.com/app-merchant-proxy/node' method='post' id='yeepayform' target='_blank'>"."<input type='hidden' name='p0_Cmd'\t\t\t\t\tvalue='{$R2f33bdef32}'/>"."<input type='hidden' name='p1_MerId'\t\t\t\tvalue='{$Rf0a500d42b}'/>"."<input type='hidden' name='p2_Order'\t\t\t\tvalue='{$Rff68bc88dc}'/>"."<input type='hidden' name='p3_Amt'\t\t\t\t\tvalue='{$R4854d0b826}'/>"."<input type='hidden' name='p4_Cur'\t\t\t\t\tvalue='{$R9c5854a9db}'/>"."<input type='hidden' name='p5_Pid'\t\t\t\t\tvalue='{$R94caa68fc0}'/>"."<input type='hidden' name='p6_Pcat'\t\t\t\tvalue='{$R178e7ed078}'/>"."<input type='hidden' name='p7_Pdesc'\t\t\t\tvalue='{$R8aa50d8bcf}'/>"."<input type='hidden' name='p8_Url'\t\t\t\t\tvalue='{$Rb38f64ad8d}'/>"."<input type='hidden' name='p9_SAF'\t\t\t\t\tvalue='{$R22c746f676}'/>"."<input type='hidden' name='pa_MP'\t\t\t\t\tvalue='{$Rc18530e669}'/>"."<input type='hidden' name='pd_FrpId'\t\t\t\tvalue='{$Ref40cab171}'/>"."<input type='hidden' name='pr_NeedResponse' value='{$Rf6880ff34d}'/>"."<input type='hidden' name='hmac'\t\t\t\t\t\tvalue='{$Rf2985c73f8}'/>"."<span id='yeepay".$Ref40cab171."formtip' style='display:none'>".$R3f243e1344."</span>"."</form><p></p>";
+								$R59d4ca4468 = "<input type='radio' name='ebank' value='yeepay".$Ref40cab171."form' onclick='EBankCheck(this)' />".$R3995fedcc3."<span class='textgray'>(<span class='dollars' id='yeepay".$Ref40cab171."formfee'>".$R8c167f6e77."%</span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</span>"."<input type='hidden' id='yeepay".$Ref40cab171."formamount' value='".$R16b83ea435."' />"."<form  action='https://www.yeepay.com/app-merchant-proxy/node' method='post' id='yeepayform' target='_blank'>"."<input type='hidden' name='p0_Cmd'\t\t\t\t\tvalue='{$R2f33bdef32}'/>"."<input type='hidden' name='p1_MerId'\t\t\t\tvalue='{$Rf0a500d42b}'/>"."<input type='hidden' name='p2_Order'\t\t\t\tvalue='{$Rff68bc88dc}'/>"."<input type='hidden' name='p3_Amt'\t\t\t\t\tvalue='{$R4854d0b826}'/>"."<input type='hidden' name='p4_Cur'\t\t\t\t\tvalue='{$R9c5854a9db}'/>"."<input type='hidden' name='p5_Pid'\t\t\t\t\tvalue='{$R94caa68fc0}'/>"."<input type='hidden' name='p6_Pcat'\t\t\t\tvalue='{$R178e7ed078}'/>"."<input type='hidden' name='p7_Pdesc'\t\t\t\tvalue='{$R8aa50d8bcf}'/>"."<input type='hidden' name='p8_Url'\t\t\t\t\tvalue='{$Rb38f64ad8d}'/>"."<input type='hidden' name='p9_SAF'\t\t\t\t\tvalue='{$R22c746f676}'/>"."<input type='hidden' name='pa_MP'\t\t\t\t\tvalue='{$Rc18530e669}'/>"."<input type='hidden' name='pd_FrpId'\t\t\t\tvalue='{$Ref40cab171}'/>"."<input type='hidden' name='pr_NeedResponse' value='{$Rf6880ff34d}'/>"."<input type='hidden' name='hmac'\t\t\t\t\t\tvalue='{$Rf2985c73f8}'/>"."<span id='yeepay".$Ref40cab171."formtip' style='display:none'>".$R3f243e1344."</span>"."</form><p></p>";
 								return $R59d4ca4468;
 				}
 
@@ -206,8 +206,8 @@ class yeepay
 
 				public function HmacMd5( $data, $Rf413f06aeb )
 				{
-								$Rf413f06aeb = iconv( "GB2312", "UTF-8", $Rf413f06aeb );
-								$data = iconv( "GB2312", "UTF-8", $data );
+								$Rf413f06aeb = iconv( "utf-8", "UTF-8", $Rf413f06aeb );
+								$data = iconv( "utf-8", "UTF-8", $data );
 								$Rda3e61414e = 64;
 								if ( $Rda3e61414e < strlen( $Rf413f06aeb ) )
 								{

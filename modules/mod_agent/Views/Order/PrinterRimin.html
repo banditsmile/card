@@ -1,81 +1,81 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="{$vd['web']['keywords']}" />
 <meta http-equiv="Description" content="{$vd['web']['description']}" />
-<title>Åú·¢Æ½Ì¨-{$vd['web']['title']}</title>
+<title>æ‰¹å‘å¹³å°-{$vd['web']['title']}</title>
 <style type="text/css">
 *{margin:0;padding:0;}
 body{font-family: Arial,sans-serif;color: #333;line-height: 130%;	margin: 0px;padding: 0px;font-size:12px;}
 td{line-height:130%;}
-body,tr,td,th{font-family: Arial,sans-serif,Verdana,ËÎÌå;color:#666;font-size:12px;}
+body,tr,td,th{font-family: Arial,sans-serif,Verdana,å®‹ä½“;color:#666;font-size:12px;}
 </style>
 </head> 
 <body leftmargin="0" topmargin="0">
 <!--$str='';$order = $vd['order']['item'];-->
 <table width="140" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr><td align=center>{$vd['web']['webname']}»¶Ó­Äú</td></tr>
+  <tr><td align=center>{$vd['web']['webname']}æ¬¢è¿æ‚¨</td></tr>
   <tr><td align=left><b>**************************************</b></td></tr>
-  <tr><td align=left>ÉÌÆ·£º{$order['pname']}</td></tr>
-  <tr><td align=left>ÊıÁ¿£º<strong>{$order['qty']}</strong> ¸ö</td></tr>
-  <tr><td align=left>µ¥¼Û£º{$order['buyerprice']}{$vd['lang']['moneyunit']}</td></tr>
-  <tr><td align=left>½ğ¶î£º<!--echo round($order['buyerprice'] * $order['qty']);-->{$vd['lang']['moneyunit']}</td></tr>
-  <tr><td align=left>Ê±¼ä£º<!--echo date("Y-m-d H:i:s");--></td></tr>
+  <tr><td align=left>å•†å“ï¼š{$order['pname']}</td></tr>
+  <tr><td align=left>æ•°é‡ï¼š<strong>{$order['qty']}</strong> ä¸ª</td></tr>
+  <tr><td align=left>å•ä»·ï¼š{$order['buyerprice']}{$vd['lang']['moneyunit']}</td></tr>
+  <tr><td align=left>é‡‘é¢ï¼š<!--echo round($order['buyerprice'] * $order['qty']);-->{$vd['lang']['moneyunit']}</td></tr>
+  <tr><td align=left>æ—¶é—´ï¼š<!--echo date("Y-m-d H:i:s");--></td></tr>
   <!--if($order['ptype']==1 || $order['ptype']==2){-->
-  <tr><td align=center>========¹ºÂòÄÚÈİ==========</td></tr>
+  <tr><td align=center>========è´­ä¹°å†…å®¹==========</td></tr>
   
   
   <!--if($order['failreason']!=''){-->
-  <tr><td align=left>³äÖµËµÃ÷£º<!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td></tr>
+  <tr><td align=left>å……å€¼è¯´æ˜ï¼š<!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td></tr>
   <!--}-->
   
   <!--if($order['factoryreturn']!=''){-->
-  <tr><td align=left>³§¼Ò·´À¡£º</td>
+  <tr><td align=left>å‚å®¶åé¦ˆï¼š</td>
     <td colspan=3 align="left" style="color:#0000ff">{$order['factoryreturn']}</td></tr>
   <!--}-->
   
   <!--if($order['ptype'] == 0 || $order['ptype'] > 99){-->
-  <tr><td align=left>³äÖµÍøÖ·£º<a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a>&nbsp;</td></tr>
+  <tr><td align=left>å……å€¼ç½‘å€ï¼š<a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a>&nbsp;</td></tr>
   <!--}-->
-  <tr><td align=left>ÓÎÏ·ÓÃ»§Ãû£º{$order['czaccount']}</td></tr>
+  <tr><td align=left>æ¸¸æˆç”¨æˆ·åï¼š{$order['czaccount']}</td></tr>
   
   <!--if($order['czarea1'] != ''){-->
-  <tr><td align=left>³äÖµÇøÓò£º{#CzText($order['czarea1'])}</td></tr>
+  <tr><td align=left>å……å€¼åŒºåŸŸï¼š{#CzText($order['czarea1'])}</td></tr>
   <!--}-->
   
   <!--if($order['czarea2'] != ''){-->
-  <tr><td align=left>³äÖµ·şÎñÆ÷£º{#CzText($order['czarea2'])}</td></tr>
+  <tr><td align=left>å……å€¼æœåŠ¡å™¨ï¼š{#CzText($order['czarea2'])}</td></tr>
   <!--}-->
   
   <!--if($order['cztype'] != ''){-->
-  <tr><td align=left>¼Æ·Ñ·½Ê½£º{#CzText($order['cztype'])}</td></tr>
+  <tr><td align=left>è®¡è´¹æ–¹å¼ï¼š{#CzText($order['cztype'])}</td></tr>
   <!--}-->
   
   <!--if($order['czother'] != ''){-->
-  <tr><td align=left>ÕÊºÅÀàĞÍ£º{#CzText($order['czother'])}</td></tr>
+  <tr><td align=left>å¸å·ç±»å‹ï¼š{#CzText($order['czother'])}</td></tr>
   <!--}-->
-  <tr><td align=left>³äÖµ½á¹û£º<font color="#ff0000"><b>
+  <tr><td align=left>å……å€¼ç»“æœï¼š<font color="#ff0000"><b>
      	<!--if($order['ordstate'] == -1) {-->
-     	³äÖµÊ§°Ü£¬<!--if($order['rollback'] == 1) {-->ÒÑ¾­ÍË»¹Óà¶î£¬<!--}-->
+     	å……å€¼å¤±è´¥ï¼Œ<!--if($order['rollback'] == 1) {-->å·²ç»é€€è¿˜ä½™é¢ï¼Œ<!--}-->
      	<!--}-->
      	<!--if($order['ordstate'] == 1) {-->
-     	ÒÑ¾­Ìá½»ÏµÍ³³äÖµ<br/>
+     	å·²ç»æäº¤ç³»ç»Ÿå……å€¼<br/>
      	<!--}-->
      	<!--if($order['ordstate'] == 2) {-->
-     	ÒÑ¾­³äÖµ³É¹¦
+     	å·²ç»å……å€¼æˆåŠŸ
      	<!--}-->
      	</b></font></td></tr>
-  <tr><td align=left>³äÖµÊ±¼ä£º{$order['dealdate']}</td></tr>
+  <tr><td align=left>å……å€¼æ—¶é—´ï¼š{$order['dealdate']}</td></tr>
   <!--}else{-->
-  <tr><td align=center>======¿¨ºÅ=====ÃÜÂë======</td></tr>
+  <tr><td align=center>======å¡å·=====å¯†ç ======</td></tr>
   <!--foreach($vd['order']['carditem'] as $card) {-->
-  <tr><td align=center>{$card['cardnumber']}¡¡{$card['cardpwd']}</td></tr>
+  <tr><td align=center>{$card['cardnumber']}ã€€{$card['cardpwd']}</td></tr>
   <!--}-->
   <tr><td align=left><b>**************************************</b></td></tr>
   <!--}-->
   <tr>
-  <td align=center><input type="button" name="buyagain" value="´òÓ¡" onclick="javascript:print();"> <input type="button" name="buyagain" value="¹Ø±Õ" onclick="javascript:window.close();"></td>
+  <td align=center><input type="button" name="buyagain" value="æ‰“å°" onclick="javascript:print();"> <input type="button" name="buyagain" value="å…³é—­" onclick="javascript:window.close();"></td>
   </tr>
 </table>
 </body>

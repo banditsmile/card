@@ -31,7 +31,7 @@ class BankController extends Controller
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "bkuti" ) ) ) );
-								$R00be52aa45 = array( "AccountBranch" => "¿ª»§ÐÐ", "AccountNO" => "ÒøÐÐ¿¨ºÅ", "AccountName" => "»§Ãû", "Address" => "¿ª»§µØ", "other" => "ÆäËûËµÃ÷" );
+								$R00be52aa45 = array( "AccountBranch" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "AccountNO" => "ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½", "AccountName" => "ï¿½ï¿½ï¿½ï¿½", "Address" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "other" => "ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -67,7 +67,7 @@ class BankController extends Controller
 								);
 								if ( $R3584859062 == 0 )
 								{
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$Oooo00 = "base64_decode";
 												$ooOO00o = $Oooo00( "YmFzZTY0X2RlY29kZQ==" );
 												$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
@@ -76,21 +76,21 @@ class BankController extends Controller
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->IBank_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=bank" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=bank" );
 				}
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -102,10 +102,10 @@ class BankController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -116,7 +116,7 @@ class BankController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -131,7 +131,7 @@ class BankController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -148,7 +148,7 @@ class BankController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -187,7 +187,7 @@ class BankController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -208,7 +208,7 @@ class BankController extends Controller
 								$R808b89ba0e = $this->instance->IBank_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

@@ -1,356 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>½ø»õ¼ÇÂ¼²éÑ¯</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-
-<body class="mainbg">
-
-<div class="new_qie">
-
-  <div class="new_qie2">
-
-    <h2> ½ø»õ¼ÇÂ¼²éÑ¯</h2>
-
-  </div>
-
-  <ul>
-
-    <li><a href="index.php?m=mod_agent&c=VOrder&ordstate=2">ÏúÊÛ¼ÇÂ¼²éÑ¯</a></li>
-
-    <li><a href="" class="on">½ø»õ¼ÇÂ¼²éÑ¯</a></li>
-
-    <li><a href="index.php?m=mod_agent&c=trade&tpl=history">ÕË»§×Ê½ğÃ÷Ï¸</a></li>
-
-  </ul>
-
-</div>
-
-<!--$ptype=request('ptype');$ordstate=request('ordstate');-->
-
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-
-	<tr>
-
-	<td class="tableleft">
-
-		<form name="history" method="get" action="index.php" id="advsearch">
-
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<!--$vhistory=$vd['ishistory']==1?0:1;if($vd['hashistory'] == 1){-->
-
-  	<tr>
-
-      <td class="table1_left">²éÑ¯Àà±ğ£º</td>
-
-      <td width="78%" class="tableright1">
-
-      	<div align="left">
-
-      	  <input type="hidden" name="ishistory" value="{$vd['ishistory']}" />
-
-      	  <a href="index.php?m=mod_agent&c=order&ishistory={$vhistory}"><font color="#ff0000"><u>
-
-      	    <!--if($vd['ishistory']==0){-->
-
-      	    ÀúÊ·Êı¾İ²éÑ¯
-
-      	    <!--}else{-->
-
-      	    »Øµ½µ±Ç°Êı¾İ²éÑ¯
-
-      	    <!--}-->
-
-    	    </u></font></a> </div></td>
-    </tr>
-
-    <!--}-->
-
-		<tr>
-
-		 <td class="table1_left">ÉÌÆ·ÀàĞÍ£º</td>
-		  <td width="78%" class="tableright1">
-
-			<div align="left">
-
-			  <select name="ptype">
-
-			    <option value="">È«²¿ÀàĞÍ</option>
-
-			    <option value="km" 
-
-			    <!--if($ptype=='km'){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >ĞéÄâ¿¨ÃÜ
-
-			    </option>
-
-			    <option value="cz" 
-
-			    <!--if($ptype=='cz'){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >³äÖµÉÌÆ·
-
-			    </option>
-	            </select>
-            </div></td>
-		</tr>
-
-		<tr>
-
-		  <td class="table1_left">¶©µ¥×´Ì¬£º</td>
-		  <td class="tableright1">
-
-			<div align="left">
-
-			  <select name="ordstate">
-
-			    <option value="">ËùÓĞ</option>
-
-	              <option value="2" 
-
-			    <!--if($ordstate==2){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >³É¹¦¶©µ¥
-
-			    </option>
-
-	              <option value="-1" 
-
-			    <!--if($ordstate==-1){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >Ê§°Ü¶©µ¥
-
-			    </option>
-
-	              <option value="1" 
-
-			    <!--if($ordstate==1){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >´¦ÀíÖĞ¶©µ¥
-
-			    </option>
-	            </select>
-            </div></td>
-		</tr>
-
-		<tr>
-
-		  <td class="table1_left">Ñ¡ÔñÔ±¹¤£º</td>
-		  <td class="tableright1">
-
-			<div align="left">
-
-			  <select name="staffname">
-
-		          <!--if($vd['canseeother'] == 1){-->
-
-			        <option value="">ËùÓĞÔ±¹¤(°üÀ¨×ÜÕËºÅ)</option>
-
-		          <!--}-->
-
-		          <!--foreach($vd['staff'] as $item){-->
-
-		          <!--if($vd['canseeother'] == 1){-->
-
-		          <option value="{$item['staffname']}" 
-
-			    <!--if($vd['staffname']==$item['staffname']){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >{$item['realname']}({#DisplayCode($item['staffid'],2)})
-
-			    </option>
-
-		          <!--}else{-->
-
-		          <!--if($vd['agent'][9] == $item['staffid']){-->
-
-		          <option value="{$item['staffname']}" 
-
-			    <!--if($vd['staffname']==$item['staffname']){-->
-
-			    selected
-
-			    <!--}-->
-
-			    >{$item['realname']}({#DisplayCode($item['staffid'],2)})
-
-			    </option>
-
-		          <!--}-->
-
-		          <!--}-->
-
-		          <!--}-->
-	            </select>
-            </div></td>
-		</tr>
-
-		<tr>
-
-		  <td class="table1_left">²éÑ¯Ê±¼ä¶Î£º</td>
-		  <td class="tableright1">
-
-          <div align="left">
-
-            <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
-
-                  <strong>ÖÁ</strong>
-
-            <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>    
-          </div></td>
-		</tr>
-
-		<tr>
-
-		<td class="table1_left"></td>
-
-		<td class="tableright1">
-
-			<div align="left">
-
-			  <input type="hidden" name="m" value="mod_agent">
-
-			  <input type="hidden" name="c" value="order">
-
-			  <input type="hidden" id="export" name="export" value="0"/>
-
-			  <input name="btnQuery" type="submit" class="input_s" onClick="setAct(0)" value=" "/>
-
-              <input name="btnQuery" type="submit" class="input_d" onClick="setAct(1)" value=" " />
-</div></td>
-		</tr>
-		</table>
-
-		</form>
-
-	</td>
-
-	</tr>
-
-</table>
-
-	<br>
-
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-
-	<tr>
-
-</table>
-
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-      <tr>
-        <th width="10%" class="heardertop1">¹ºÂòÈÕÆÚ</td>
-        <th width="20%" class="heardertop1">ÉÌÆ·Ãû³Æ</td>
-        <th width="10%" class="heardertop1">ÉÌÆ·ÀàĞÍ</td>
-        <th width="10%" class="heardertop1">³äÖµÕËºÅ</td>
-        <th width="8%" class="heardertop1">ÊıÁ¿</td>
-        <th width="8%" class="heardertop1">µ¥¼Û</td>
-        <th width="10%" class="heardertop1">½ğ¶î</td>
-        <th width="10%" class="heardertop1">Ô±¹¤</td>
-        <th width="8%" class="heardertop1">×´Ì¬</td>
-        <th width="6%" class="heardertop1">ÏêÏ¸</td>
-      <!--$cprice_sum = 0;$dollars_sum = 0;$qty_sum = 0;$profit_sum = 0;foreach($vd['items'] as $item) {-->
-		  	  	    <tr class="trd">
-        <td>{$item['orddate']}</td>
-        <td align="left">{$item['pname']}</td>
-        <td>{#ProductType($item['ptype'])}</td>
-        <td><!--if($item['czaccount']==''){-->
-          <!--}else{-->
-          {$item['czaccount']}
-          <!--}--></td>
-        <td><strong>{$item['qty']}</strong>¸ö</td>
-        <td><!--if($vd['canseeprice']){-->
-          {$item['cprice']}
-            <!--}else{-->
-          --
-          <!--}--></td>
-        <td><!--if($vd['canseeprice']){-->
-          {$item['dollars']}
-            <!--}else{-->
-          --
-          <!--}--></td>
-        <td>{#Operator($vd['agent'][0], $item['cname'], $vd['agent'][9])}</td>
-        <td><span class="eff">{#OrderState($item['ordstate'],$item['ptype'])}</span></td>
-        <td><input type="button" name="detail" value="ÏêÏ¸" class="buttonnor" onclick="location.href='index.php?m=mod_agent&amp;c=order&amp;in=1&amp;a=detail&amp;ordno={$item['ordno']}';" /></td>
-      </tr>
-      <!--$cprice_sum=$cprice_sum+$item['cprice']*$item['qty'];$dollars_sum=$dollars_sum+$item['dollars'];$qty_sum=$qty_sum+$item['qty'];$profit_sum=$profit_sum+$item['staffprofit'];}-->
-      <tr class="thr">
-        <td colspan="4">±¾Ò³ºÏ¼Æ£º</td>
-        <td>{$qty_sum}</td>
-        <td></td>
-        <td><!--if($vd['canseeprice']){echo round($dollars_sum,3);}else{-->
-          --
-            <!--}--></td>
-        <td colspan="3"></td>
-      </tr>
-      <tr class="thr">
-        <td colspan="4">²éÑ¯ºÏ¼Æ£º</td>
-        <td>{$vd['tradedata']['qty_sum']}</td>
-        <td></td>
-        <td><!--if($vd['canseeprice']){echo round($vd['tradedata']['dollars_sum'],3);}else{-->
-          --
-            <!--}--></td>
-        <td colspan="3"></td>
-      </tr>
-    </table>
-			   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-         <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
-    <div id="page" align="right">
-
-		{load(fpage)}
-
-	</div>
-
-	
-
-</body>
-
-</html>
-
-<script type="text/javascript">
-
-function setAct(v)
-
-{
-
-	$("export").value = v;
-
-	if(v > 0)
-
-	{
-
-	  $("advsearch").submit();
-
-	}
-
-}
-
-</script>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è¿›è´§è®°å½•æŸ¥è¯¢</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> è¿›è´§è®°å½•æŸ¥è¯¢</h2>  </div>  <ul>    <li><a href="index.php?m=mod_agent&c=VOrder&ordstate=2">é”€å”®è®°å½•æŸ¥è¯¢</a></li>    <li><a href="" class="on">è¿›è´§è®°å½•æŸ¥è¯¢</a></li>    <li><a href="index.php?m=mod_agent&c=trade&tpl=history">è´¦æˆ·èµ„é‡‘æ˜ç»†</a></li>  </ul></div><!--$ptype=request('ptype');$ordstate=request('ordstate');--><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="history" method="get" action="index.php" id="advsearch"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<!--$vhistory=$vd['ishistory']==1?0:1;if($vd['hashistory'] == 1){-->  	<tr>      <td class="table1_left">æŸ¥è¯¢ç±»åˆ«ï¼š</td>      <td width="78%" class="tableright1">      	<div align="left">      	  <input type="hidden" name="ishistory" value="{$vd['ishistory']}" />      	  <a href="index.php?m=mod_agent&c=order&ishistory={$vhistory}"><font color="#ff0000"><u>      	    <!--if($vd['ishistory']==0){-->      	    å†å²æ•°æ®æŸ¥è¯¢      	    <!--}else{-->      	    å›åˆ°å½“å‰æ•°æ®æŸ¥è¯¢      	    <!--}-->    	    </u></font></a> </div></td>    </tr>    <!--}-->		<tr>		 <td class="table1_left">å•†å“ç±»å‹ï¼š</td>		  <td width="78%" class="tableright1">			<div align="left">			  <select name="ptype">			    <option value="">å…¨éƒ¨ç±»å‹</option>			    <option value="km" 			    <!--if($ptype=='km'){-->			    selected			    <!--}-->			    >è™šæ‹Ÿå¡å¯†			    </option>			    <option value="cz" 			    <!--if($ptype=='cz'){-->			    selected			    <!--}-->			    >å……å€¼å•†å“			    </option>	            </select>            </div></td>		</tr>		<tr>		  <td class="table1_left">è®¢å•çŠ¶æ€ï¼š</td>		  <td class="tableright1">			<div align="left">			  <select name="ordstate">			    <option value="">æ‰€æœ‰</option>	              <option value="2" 			    <!--if($ordstate==2){-->			    selected			    <!--}-->			    >æˆåŠŸè®¢å•			    </option>	              <option value="-1" 			    <!--if($ordstate==-1){-->			    selected			    <!--}-->			    >å¤±è´¥è®¢å•			    </option>	              <option value="1" 			    <!--if($ordstate==1){-->			    selected			    <!--}-->			    >å¤„ç†ä¸­è®¢å•			    </option>	            </select>            </div></td>		</tr>		<tr>		  <td class="table1_left">é€‰æ‹©å‘˜å·¥ï¼š</td>		  <td class="tableright1">			<div align="left">			  <select name="staffname">		          <!--if($vd['canseeother'] == 1){-->			        <option value="">æ‰€æœ‰å‘˜å·¥(åŒ…æ‹¬æ€»è´¦å·)</option>		          <!--}-->		          <!--foreach($vd['staff'] as $item){-->		          <!--if($vd['canseeother'] == 1){-->		          <option value="{$item['staffname']}" 			    <!--if($vd['staffname']==$item['staffname']){-->			    selected			    <!--}-->			    >{$item['realname']}({#DisplayCode($item['staffid'],2)})			    </option>		          <!--}else{-->		          <!--if($vd['agent'][9] == $item['staffid']){-->		          <option value="{$item['staffname']}" 			    <!--if($vd['staffname']==$item['staffname']){-->			    selected			    <!--}-->			    >{$item['realname']}({#DisplayCode($item['staffid'],2)})			    </option>		          <!--}-->		          <!--}-->		          <!--}-->	            </select>            </div></td>		</tr>		<tr>		  <td class="table1_left">æŸ¥è¯¢æ—¶é—´æ®µï¼š</td>		  <td class="tableright1">          <div align="left">            <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>                  <strong>è‡³</strong>            <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>              </div></td>		</tr>		<tr>		<td class="table1_left"></td>		<td class="tableright1">			<div align="left">			  <input type="hidden" name="m" value="mod_agent">			  <input type="hidden" name="c" value="order">			  <input type="hidden" id="export" name="export" value="0"/>			  <input name="btnQuery" type="submit" class="input_s" onClick="setAct(0)" value=" "/>              <input name="btnQuery" type="submit" class="input_d" onClick="setAct(1)" value=" " /></div></td>		</tr>		</table>		</form>	</td>	</tr></table>	<br>	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr></table>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">      <tr>        <th width="10%" class="heardertop1">è´­ä¹°æ—¥æœŸ</td>        <th width="20%" class="heardertop1">å•†å“åç§°</td>        <th width="10%" class="heardertop1">å•†å“ç±»å‹</td>        <th width="10%" class="heardertop1">å……å€¼è´¦å·</td>        <th width="8%" class="heardertop1">æ•°é‡</td>        <th width="8%" class="heardertop1">å•ä»·</td>        <th width="10%" class="heardertop1">é‡‘é¢</td>        <th width="10%" class="heardertop1">å‘˜å·¥</td>        <th width="8%" class="heardertop1">çŠ¶æ€</td>        <th width="6%" class="heardertop1">è¯¦ç»†</td>      <!--$cprice_sum = 0;$dollars_sum = 0;$qty_sum = 0;$profit_sum = 0;foreach($vd['items'] as $item) {-->		  	  	    <tr class="trd">        <td>{$item['orddate']}</td>        <td align="left">{$item['pname']}</td>        <td>{#ProductType($item['ptype'])}</td>        <td><!--if($item['czaccount']==''){-->          <!--}else{-->          {$item['czaccount']}          <!--}--></td>        <td><strong>{$item['qty']}</strong>ä¸ª</td>        <td><!--if($vd['canseeprice']){-->          {$item['cprice']}            <!--}else{-->          --          <!--}--></td>        <td><!--if($vd['canseeprice']){-->          {$item['dollars']}            <!--}else{-->          --          <!--}--></td>        <td>{#Operator($vd['agent'][0], $item['cname'], $vd['agent'][9])}</td>        <td><span class="eff">{#OrderState($item['ordstate'],$item['ptype'])}</span></td>        <td><input type="button" name="detail" value="è¯¦ç»†" class="buttonnor" onclick="location.href='index.php?m=mod_agent&amp;c=order&amp;in=1&amp;a=detail&amp;ordno={$item['ordno']}';" /></td>      </tr>      <!--$cprice_sum=$cprice_sum+$item['cprice']*$item['qty'];$dollars_sum=$dollars_sum+$item['dollars'];$qty_sum=$qty_sum+$item['qty'];$profit_sum=$profit_sum+$item['staffprofit'];}-->      <tr class="thr">        <td colspan="4">æœ¬é¡µåˆè®¡ï¼š</td>        <td>{$qty_sum}</td>        <td></td>        <td><!--if($vd['canseeprice']){echo round($dollars_sum,3);}else{-->          --            <!--}--></td>        <td colspan="3"></td>      </tr>      <tr class="thr">        <td colspan="4">æŸ¥è¯¢åˆè®¡ï¼š</td>        <td>{$vd['tradedata']['qty_sum']}</td>        <td></td>        <td><!--if($vd['canseeprice']){echo round($vd['tradedata']['dollars_sum'],3);}else{-->          --            <!--}--></td>        <td colspan="3"></td>      </tr>    </table>			   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>         <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>     <div id="page" align="right">		{load(fpage)}	</div>	</body></html><script type="text/javascript">function setAct(v){	$("export").value = v;	if(v > 0)	{	  $("advsearch").submit();	}}</script>

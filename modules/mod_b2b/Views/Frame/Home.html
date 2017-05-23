@@ -1,154 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Ö±ÏúÉÌ_Í·²¿</title>
-<meta http-equiv="Content-Language" content="zh-CN">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<link rel="stylesheet" href="{$vd['content']}css/style.css" type="text/css">
-<Script Language="JavaScript">
-function $(id){return document.getElementById(id);}
-	function Div(ID,num){ 
-		if(num==1){
-			$(ID).style.display="";
-		}else{
-			$(ID).style.display="none";
-		}
-	}
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-  if (restore) selObj.selectedIndex=0;
-}
-</Script>
-</head>
-<body class="bg" style="overflow-y:hidden">&nbsp;
-	<div id="id" class="csout" style="display:none" onMouseOver="Div('id',1)" onMouseOut="Div('id',0)">
-		<div class="csmain">
-			<!--$temp = explode('|', $vd['web']['tel']);if(isset($temp[0])){-->
-			<!--$tmp = explode(',', $temp[0]);foreach($tmp as $item){-->
-			<span>{$item}</span>&nbsp;&nbsp;
-			<!--}}-->
-			<br>
-			<!--$temp = explode('|', $vd['web']['qq']);if(isset($temp[0])){-->
-			<!--$tmp = explode(',', $temp[0]);foreach($tmp as $item){-->
-			<a href=tencent://message/?uin={$item}&Site={$vd['web']['webname']}&Menu=yes><img border='0' SRC=http://wpa.qq.com/pa?p=1:{$item}:4 align='absmiddle'>{$item}</a>&nbsp;&nbsp;
-			<!--}}-->
-		</div>
-		<div class="csright"></div>
-	</div>
-<div id="top">
-		<?php
-    $tmp = array();
-    if(isset($vd['agent'][9]) && $vd['agent'][9] > 0)
-    {
-      $staffrights = $vd['agent'][11];
-      $tmp = explode(',',$staffrights);
-    }
-    else
-    {
-    	for($i = 0; $i < 80; $i++)
-    	{
-    		$tmp[$i] = '1';
-    	}
-    }
-    
-    $topinfo = array(
-      array(
-      'id'   => 5,
-      'txt' => '²ÆÎñ¼ÇÂ¼',
-      'url'  => 'index.php?m=mod_agent&c=trade&tpl=history'
-      ),
-      array(
-      'id'   => 34,
-      'txt' => 'ÏúÊÛ¼ÇÂ¼',
-      'url'  => 'index.php?m=mod_agent&c=VOrder&ordstate=2'
-      ),
-      array(
-      'id'   => 1,
-      'txt' => '½ø»õ¼ÇÂ¼',
-      'url'  => 'index.php?m=mod_agent&c=order'
-      ),
-      array(
-      'id'   => 0,
-      'txt'  => 'ÉÌÆ·Ä¿Â¼',
-      'url'  => 'index.php?m=mod_b2b&c=category'
-      ),
-      array(
-      'id'   => 3,
-      'txt' => 'ÕÊ»§³äÖµ',
-      'url'  => 'index.php?m=mod_agent&c=funds&a=AddFunds',
-      )
-    );
-    
-    ?>
-		<div id="topleft"><span><img src="{$vd['content']}images/mylogo.gif" width="220" height="68"></span></div>
-<div id="topright">
-		<div id="mebinfo">
-          <div style="margin-top:20"><br />
-            
-            »¶Ó­Äú£¬{$vd['agent'][1]}£º
-            <!--if($tmp[18]==1 ){-->
-            <a href="index.php?m=mod_agent&amp;c=Home" target="main"> ÎÒµÄÕË»§ </a><a href="index.php?m=mod_agent&amp;c=Home" target="main"></a><em>| </em><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main">Ô±¹¤ÕË»§</a><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main"></a><em> | </em><a a href="index.php?m=mod_agent&c=security&a=check" target="main">°²È«ÉèÖÃ </a><em>|</em><a a href="index.php?m=mod_agent&amp;c=trade&amp;tpl=history" target="main"> ×Ê½ğÃ÷Ï¸ </a><em>|</em><a href="index.php?m=mod_agent&amp;c=loan&amp;a=Create" target="main"> ½è¿îÉêÇë </a><em>| </em><a href="index.php?m=mod_agent&c=Messenger" target="main"><b>Õ¾ÄÚ¶ÌĞÅ£¨<span class="ye1" id="msgn">0</span>£©Ìõ</b></a><em>|</em><a href="index.php?m=mod_agent&amp;c=Complaint" target="main"> Í¶Ëß·´À¡</a><em> |</em><a href="{$vd['root']}index.php?m=mod_b2b&amp;a=logout" target="_top"><span class="exit"> ÍË³ö</span></a><br />
-            <br />
-            <br />
-			
-          </div>
-		<p></p></div>
-			
-		</div>
-</div>
-	<div id="mulu" style="background-image:url({$vd['content']}images/dh.jpg)" style="height:36px"><div id="mebinfobg"><div id="nav">
-					<!--$i=1;$len=count($topinfo);foreach($topinfo as $topitem){-->
-					<!--if($tmp[$topitem['id']] == 1){-->
-<li style="float:right" <!--if($i==1){--> class="end"<!--$i=0;}-->><a href="{$topitem['url']}" target="main">{$topitem['txt']}</a></li>
-					<!--}-->
-					<!--}-->
-<li style="float:right"><a href="{$vd['root']}index.php?m=mod_b2b&a=Home" target="main">Ö±ÏúÉÌÖĞĞÄ</a></li>
-				</ul>
-			</div><div style="float:right" ><!--}--><!--if($vd['esales']==1 && $tmp[51]==1 ){--><div id="mebinfo">µ±Ç°ÏµÍ³£º
-		  <select name="select" size="1" id="select" onchange="MM_jumpMenu('parent',this,0)">
-            <option value="index.php?m=mod_b2b&amp;c=Frame" selected="selected">Ö±ÏúÉÌÏµÍ³</option>
-            <option value="index.php?m=mod_b2b&amp;c=Dealer">¾­ÏúÉÌÏµÍ³</option>
-            <option value="index.php?m=mod_b2b&amp;c=Dealergong">¹©»õÉÌÏµÍ³</option>
-          </select>¡¡
-			  
-		  </a></font></span></font>
-			    <!--}-->¡¡
-			    <a href="{$vd['root']}index.php?m=mod_b2b&a=logout" target="_top"></a>¡¡<a href="#" onMouseOver="Div('id',1)" onMouseOut="Div('id',0)"><img src="{$vd['content']}images/icon_cs.jpg" vspace="3" border="0"></a></div>
-			</div></div>
-	
-	<!--if($tmp[18]==1 ){-->
-	<script type="text/javascript">
-		function MsgAlert(){
-      var xmlhttptop;
-      var obj = $("msgn");
-      var content = "´íÎó£¡"
-      try{
-        xmlhttptop=new XMLHttpRequest();
-      }
-      catch(e){
-        xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttptop.onreadystatechange=function(){
-        if (xmlhttptop.readyState==4){
-          if (xmlhttptop.status==200){
-            var data=xmlhttptop.responseText;
-            obj.innerHTML = data;
-            if(data > 0)
-            {
-            	alert("ÄúÓĞ" + data + "ÌõÎ´¶Á¶ÌĞÅÏ¢£¿");
-            	mainobj  = document.all ? window.parent.frames["main"] : window.parent.document.getElementById("main").contentWindow;
-              mainobj.location.href="index.php?m=mod_agent&c=Messenger";
-            }
-          }
-        }
-      }
-      xmlhttptop.open("post", "{$vd['root']}index.php?m=mod_b2b&c=Frame&a=Msg", true);
-      xmlhttptop.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      xmlhttptop.send('');
-    }
-    MsgAlert();
-    setInterval(MsgAlert, 60000);
-	</script>
-	<!--}-->
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>ç›´é”€å•†_å¤´éƒ¨</title><meta http-equiv="Content-Language" content="zh-CN"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" href="{$vd['content']}css/style.css" type="text/css"><Script Language="JavaScript">function $(id){return document.getElementById(id);}	function Div(ID,num){ 		if(num==1){			$(ID).style.display="";		}else{			$(ID).style.display="none";		}	}function MM_jumpMenu(targ,selObj,restore){ //v3.0  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");  if (restore) selObj.selectedIndex=0;}</Script></head><body class="bg" style="overflow-y:hidden">&nbsp;	<div id="id" class="csout" style="display:none" onMouseOver="Div('id',1)" onMouseOut="Div('id',0)">		<div class="csmain">			<!--$temp = explode('|', $vd['web']['tel']);if(isset($temp[0])){-->			<!--$tmp = explode(',', $temp[0]);foreach($tmp as $item){-->			<span>{$item}</span>&nbsp;&nbsp;			<!--}}-->			<br>			<!--$temp = explode('|', $vd['web']['qq']);if(isset($temp[0])){-->			<!--$tmp = explode(',', $temp[0]);foreach($tmp as $item){-->			<a href=tencent://message/?uin={$item}&Site={$vd['web']['webname']}&Menu=yes><img border='0' SRC=http://wpa.qq.com/pa?p=1:{$item}:4 align='absmiddle'>{$item}</a>&nbsp;&nbsp;			<!--}}-->		</div>		<div class="csright"></div>	</div><div id="top">		<?php    $tmp = array();    if(isset($vd['agent'][9]) && $vd['agent'][9] > 0)    {      $staffrights = $vd['agent'][11];      $tmp = explode(',',$staffrights);    }    else    {    	for($i = 0; $i < 80; $i++)    	{    		$tmp[$i] = '1';    	}    }        $topinfo = array(      array(      'id'   => 5,      'txt' => 'è´¢åŠ¡è®°å½•',      'url'  => 'index.php?m=mod_agent&c=trade&tpl=history'      ),      array(      'id'   => 34,      'txt' => 'é”€å”®è®°å½•',      'url'  => 'index.php?m=mod_agent&c=VOrder&ordstate=2'      ),      array(      'id'   => 1,      'txt' => 'è¿›è´§è®°å½•',      'url'  => 'index.php?m=mod_agent&c=order'      ),      array(      'id'   => 0,      'txt'  => 'å•†å“ç›®å½•',      'url'  => 'index.php?m=mod_b2b&c=category'      ),      array(      'id'   => 3,      'txt' => 'å¸æˆ·å……å€¼',      'url'  => 'index.php?m=mod_agent&c=funds&a=AddFunds',      )    );        ?>		<div id="topleft"><span><img src="{$vd['content']}images/mylogo.gif" width="220" height="68"></span></div><div id="topright">		<div id="mebinfo">          <div style="margin-top:20"><br />                        æ¬¢è¿æ‚¨ï¼Œ{$vd['agent'][1]}ï¼š            <!--if($tmp[18]==1 ){-->            <a href="index.php?m=mod_agent&amp;c=Home" target="main"> æˆ‘çš„è´¦æˆ· </a><a href="index.php?m=mod_agent&amp;c=Home" target="main"></a><em>| </em><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main">å‘˜å·¥è´¦æˆ·</a><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main"></a><em> | </em><a a href="index.php?m=mod_agent&c=security&a=check" target="main">å®‰å…¨è®¾ç½® </a><em>|</em><a a href="index.php?m=mod_agent&amp;c=trade&amp;tpl=history" target="main"> èµ„é‡‘æ˜ç»† </a><em>|</em><a href="index.php?m=mod_agent&amp;c=loan&amp;a=Create" target="main"> å€Ÿæ¬¾ç”³è¯· </a><em>| </em><a href="index.php?m=mod_agent&c=Messenger" target="main"><b>ç«™å†…çŸ­ä¿¡ï¼ˆ<span class="ye1" id="msgn">0</span>ï¼‰æ¡</b></a><em>|</em><a href="index.php?m=mod_agent&amp;c=Complaint" target="main"> æŠ•è¯‰åé¦ˆ</a><em> |</em><a href="{$vd['root']}index.php?m=mod_b2b&amp;a=logout" target="_top"><span class="exit"> é€€å‡º</span></a><br />            <br />            <br />			          </div>		<p></p></div>					</div></div>	<div id="mulu" style="background-image:url({$vd['content']}images/dh.jpg)" style="height:36px"><div id="mebinfobg"><div id="nav">					<!--$i=1;$len=count($topinfo);foreach($topinfo as $topitem){-->					<!--if($tmp[$topitem['id']] == 1){--><li style="float:right" <!--if($i==1){--> class="end"<!--$i=0;}-->><a href="{$topitem['url']}" target="main">{$topitem['txt']}</a></li>					<!--}-->					<!--}--><li style="float:right"><a href="{$vd['root']}index.php?m=mod_b2b&a=Home" target="main">ç›´é”€å•†ä¸­å¿ƒ</a></li>				</ul>			</div><div style="float:right" ><!--}--><!--if($vd['esales']==1 && $tmp[51]==1 ){--><div id="mebinfo">å½“å‰ç³»ç»Ÿï¼š		  <select name="select" size="1" id="select" onchange="MM_jumpMenu('parent',this,0)">            <option value="index.php?m=mod_b2b&amp;c=Frame" selected="selected">ç›´é”€å•†ç³»ç»Ÿ</option>            <option value="index.php?m=mod_b2b&amp;c=Dealer">ç»é”€å•†ç³»ç»Ÿ</option>            <option value="index.php?m=mod_b2b&amp;c=Dealergong">ä¾›è´§å•†ç³»ç»Ÿ</option>          </select>ã€€			  		  </a></font></span></font>			    <!--}-->ã€€			    <a href="{$vd['root']}index.php?m=mod_b2b&a=logout" target="_top"></a>ã€€<a href="#" onMouseOver="Div('id',1)" onMouseOut="Div('id',0)"><img src="{$vd['content']}images/icon_cs.jpg" vspace="3" border="0"></a></div>			</div></div>		<!--if($tmp[18]==1 ){-->	<script type="text/javascript">		function MsgAlert(){      var xmlhttptop;      var obj = $("msgn");      var content = "é”™è¯¯ï¼"      try{        xmlhttptop=new XMLHttpRequest();      }      catch(e){        xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");      }      xmlhttptop.onreadystatechange=function(){        if (xmlhttptop.readyState==4){          if (xmlhttptop.status==200){            var data=xmlhttptop.responseText;            obj.innerHTML = data;            if(data > 0)            {            	alert("æ‚¨æœ‰" + data + "æ¡æœªè¯»çŸ­ä¿¡æ¯ï¼Ÿ");            	mainobj  = document.all ? window.parent.frames["main"] : window.parent.document.getElementById("main").contentWindow;              mainobj.location.href="index.php?m=mod_agent&c=Messenger";            }          }        }      }      xmlhttptop.open("post", "{$vd['root']}index.php?m=mod_b2b&c=Frame&a=Msg", true);      xmlhttptop.setRequestHeader('Content-type','application/x-www-form-urlencoded');      xmlhttptop.send('');    }    MsgAlert();    setInterval(MsgAlert, 60000);	</script>	<!--}--></body></html>

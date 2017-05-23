@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PM" title="Õ¾ÄÚĞÅÏ¢ÁĞ±í"><font color="#000">Õ¾ÄÚĞÅÏ¢ÁĞ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">Õ¾ÄÚĞÅÏ¢ÏêÏ¸</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_detail" onFocus="this.blur()" title="²é¿´Õ¾ÄÚĞÅÏ¢Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PM" title="ç«™å†…ä¿¡æ¯åˆ—è¡¨"><font color="#000">ç«™å†…ä¿¡æ¯åˆ—è¡¨</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ç«™å†…ä¿¡æ¯è¯¦ç»†</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_detail" onFocus="this.blur()" title="æŸ¥çœ‹ç«™å†…ä¿¡æ¯ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
@@ -17,11 +17,11 @@
       <!--$msg = $vd['msg'];-->
       <div class="msgbody">
         <div class="msginfo">
-          <b><font color="#0099cc">{#DisplayCode($msg['msgfrom'], 4)}</font></b> ´´½¨ÓÚ {$msg['createdate']}
+          <b><font color="#0099cc">{#DisplayCode($msg['msgfrom'], 4)}</font></b> åˆ›å»ºäº {$msg['createdate']}
         </div>
         <div class="msgsubject">
           {$msg['title']}
-           ½ÓÊÕÕß£º<font color="#0000ff"><b><!--if($msg['msgto'] > 0){-->¿Í»§({#DisplayCode($msg['msgto'])})<!--}else{-->ÏµÍ³<!--}--></b></font><!--if($vd['str'] == 'Í¶Ëß'){-->  ¶©µ¥ºÅ£º<a href="index.php?m=mod_b2b&c=Order&a=detail&ubzordno={$msg['ordno']}"><u><font color="#0000ff"><b>{$msg['ordno']}</b></font></u></a>  Ï£Íû£º<font color="#0000ff"><b>{$msg['hope']}</b></font>
+           æ¥æ”¶è€…ï¼š<font color="#0000ff"><b><!--if($msg['msgto'] > 0){-->å®¢æˆ·({#DisplayCode($msg['msgto'])})<!--}else{-->ç³»ç»Ÿ<!--}--></b></font><!--if($vd['str'] == 'æŠ•è¯‰'){-->  è®¢å•å·ï¼š<a href="index.php?m=mod_b2b&c=Order&a=detail&ubzordno={$msg['ordno']}"><u><font color="#0000ff"><b>{$msg['ordno']}</b></font></u></a>  å¸Œæœ›ï¼š<font color="#0000ff"><b>{$msg['hope']}</b></font>
           <!--}-->
         </div>
         <div class="msgcontent">
@@ -32,7 +32,7 @@
       <!--foreach($vd['items'] as $item) {-->
       <div class="replybody">
         <div class="msginfo">
-          <font color="#0000ff"><b>{#DisplayCode($item['msgfrom'], 4)}</b></font> ´´½¨ÓÚ {$item['createdate']}
+          <font color="#0000ff"><b>{#DisplayCode($item['msgfrom'], 4)}</b></font> åˆ›å»ºäº {$item['createdate']}
         </div>
         <div class="msgcontent">
           <!--echo nl2br($item['content']);-->
@@ -47,60 +47,60 @@
 <form method="post" action="index.php?m=mod_b2b&c=PM&a=Save&parentid={$item['id']}" id="cform">
   <table border="1" class="ctable" bordercolor="#86B9D6">
     <tr>
-      <td align="center" colspan="2" class="listhead" style="height:30px"><b>Õ¾ÄÚ¶ÌĞÅ»Ø¸´</b></td>
+      <td align="center" colspan="2" class="listhead" style="height:30px"><b>ç«™å†…çŸ­ä¿¡å›å¤</b></td>
     </tr>
     <tr>
-      <td class="buylt">Ö÷Ìâ£º</td>
+      <td class="buylt">ä¸»é¢˜ï¼š</td>
       <td class="buyrt"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title" value="Re:{$item['title']}"/></td>
     </tr>
     <tr>
-      <td class="buylt">¶Ô·½±àºÅ£º</td>
+      <td class="buylt">å¯¹æ–¹ç¼–å·ï¼š</td>
       <td class="buyrt">
         <input type="hidden" name="msgtype" value="{$msg['msgtype']}"/>
         <!--if($msg['comefrom'] == 1){-->
         <input type="hidden" name="msgto" value="3"/>
-        <input type="text" class="myinput" style="font-weight:normal" name="underlingid" value="{$vd['msgto']}"/> Èç¹û·¢¸øÏµÍ³£¬±àºÅĞ´0¼´¿É£¬·ñÔòĞ´¶Ô·½µÄ±àºÅ
+        <input type="text" class="myinput" style="font-weight:normal" name="underlingid" value="{$vd['msgto']}"/> å¦‚æœå‘ç»™ç³»ç»Ÿï¼Œç¼–å·å†™0å³å¯ï¼Œå¦åˆ™å†™å¯¹æ–¹çš„ç¼–å·
         <!--}else{-->
         <input type="hidden" name="msgto" value="5"/>
         <input type="hidden" name="comefrom" value="{$msg['comefrom']}"/>
-        <input type="text" class="myinput" style="font-weight:normal" name="cid" value="{$vd['msgto']}"/> Èç¹û·¢¸øÏµÍ³£¬±àºÅĞ´0¼´¿É£¬·ñÔòĞ´¶Ô·½µÄ±àºÅ
+        <input type="text" class="myinput" style="font-weight:normal" name="cid" value="{$vd['msgto']}"/> å¦‚æœå‘ç»™ç³»ç»Ÿï¼Œç¼–å·å†™0å³å¯ï¼Œå¦åˆ™å†™å¯¹æ–¹çš„ç¼–å·
         <!--}-->
       </td>
     </tr>
     
     <tr>
-      <td class="buylt">»Ø¸´ÄÚÈİ£º</td>
+      <td class="buylt">å›å¤å†…å®¹ï¼š</td>
       <td class="buyrt">
       <textarea name="content" wrap="VIRTUAL" cols="80" rows="8" scrolling="yes" class="mytextarea"></textarea>
       </td>
     </tr>
-    <!--if($vd['str'] == 'Í¶Ëß'){-->
+    <!--if($vd['str'] == 'æŠ•è¯‰'){-->
     <tr>
-    <td class="buylt">¸Ä±ä×´Ì¬£º</td>
+    <td class="buylt">æ”¹å˜çŠ¶æ€ï¼š</td>
     <td class="buyrt">
       <input type="hidden" name="msgdirect" value="1" />
       <select name="msgstate">
-        <option value="1">Î´´¦Àí</option>
-        <option value="2">´¦ÀíÖĞ</option>
-        <option value="3">ÒÑ´¦Àí</option>
+        <option value="1">æœªå¤„ç†</option>
+        <option value="2">å¤„ç†ä¸­</option>
+        <option value="3">å·²å¤„ç†</option>
       </select>
     </td>
     </tr>
     <!--}-->
-    <!--if($vd['str'] == '»ã¿î'){-->
+    <!--if($vd['str'] == 'æ±‡æ¬¾'){-->
     <tr>
-    <td class="buylt">¸Ä±ä×´Ì¬£º</td>
+    <td class="buylt">æ”¹å˜çŠ¶æ€ï¼š</td>
     <td class="buyrt">
       <select name="msgstate">
-        <option value="1">Î´´¦Àí</option>
-        <option value="3">ÒÑ´¦Àí</option>
+        <option value="1">æœªå¤„ç†</option>
+        <option value="3">å·²å¤„ç†</option>
       </select>
     </td>
     </tr>
     <!--}-->
     <tr>
       <td class="buylt"></td>
-      <td class="buyrt" style="height:50px;"><input type="submit" id="mysubmit" value="ÂíÉÏ»Ø¸´" class="button"> <input type="reset" value="ÖØĞÂÌîĞ´" class="button"/></td>
+      <td class="buyrt" style="height:50px;"><input type="submit" id="mysubmit" value="é©¬ä¸Šå›å¤" class="button"> <input type="reset" value="é‡æ–°å¡«å†™" class="button"/></td>
     </tr>
   </table>
 </form>

@@ -1,158 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Ô±¹¤½áÕË¼ÇÂ¼</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<script language="javascript">
-function openScript(url,name,width,height)
-{
-var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
-}
-</script>
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> Ô±¹¤½áÕË¼ÇÂ¼</h2>
-  </div>
-  <ul>
-      <li><a href="index.php?m=mod_agent&c=check&a=Add">Ô±¹¤½áÕÊµÇ¼Ç</a></li>
-    <li><a href="" class="on">Ô±¹¤½áÕÊ¼ÇÂ¼</a></li>
-  </ul>
-</div>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-		<form name="checkouthistory" method="get" action="index.php">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr style="display:none">
-		  <td class="table1_left">¹Ø¼ü×Ö£º </td>
-		<td width="78%" class="tableright1"><div align="left">
-		  <input type="text" name="keywords" size="20" class="input" value="">
-		  </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">²éÑ¯µ÷¼Û£º </td>
-		<td class="tableright1">
-		  <div align="left">
-		    <select name="stype">
-		      
-        {#Option($vd['tradetypes'], $vd['tradetype'])}
-      
-		      </select>
-          </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Ñ¡ÔñÔ±¹¤£º</td>
-		<td class="tableright1">
-			<div align="left">
-			  <select name="keywords">
-			    <option value="" selected>ËùÓĞÔ±¹¤(º¬×ÜÕÊºÅ)</option>
-			    <!--foreach($vd['staff'] as $item){-->
-		          <option value="{$item['staffid']}" 
-			    <!--if(intval(request('keywords'))==$item['staffid']){-->
-			     selected 
-			    <!--}-->
-			    >{$item['realname']}({#DisplayCode($item['staffid'],2,0)})
-			    </option>
-		          <!--}-->
-		        </select>
-            </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">²éÑ¯Ê±¼ä¶Î£º </td>
-		<td class="tableright1">
-          <div align="left">
-            <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
-            
-                  <strong>ÖÁ</strong>&nbsp;
-            <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>    
-          </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left"></td>
-		<td class="tableright1">
-			<div align="left">
-			  <input type="hidden" name="m" value="mod_agent" />
-			  <input type="hidden" name="c" value="Check" />
-			  <input type="submit" name="submit" value="È·ÈÏ²éÑ¯" class="tijiao_input" tabindex="16">
-              <input type="reset" name="reset" value="ÖØÖÃ²éÑ¯" class="fanhui_input" tabindex="17">
-</div></td>
-		</tr>
-		</table>
-		</form>
-	</td>
-	</tr>
-</table>
-    <p>&nbsp;</p>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-      <tr>
-        <th width="10%" class="heardertop1">½áÕÊÊ±¼ä</td>
-        <th width="10%" class="heardertop1">½»°à¶ÔÏñ</td>
-        <th width="10%" class="heardertop1">½Ó°à¶ÔÏñ</td>
-        <th width="8%" class="heardertop1">ÕÊÃæ½ğ¶î</td>
-        <th width="8%" class="heardertop1">½»¿î½ğ¶î</td>
-        <th width="12%" class="heardertop1">¿ªÊ¼Ê±¼ä</td>
-        <th width="12%" class="heardertop1">½áÊøÊ±¼ä</td>
-        <th width="15%" class="heardertop1">½áÕÊ±¸×¢</td>
-        <th width="8%" class="heardertop1">µ±Ê±Óà¶î</td>
-        <th width="7%" class="heardertop1">²Ù×÷</td>
-      <!--if(count($vd['items']) > 0){-->
-      <!--$ar_sum=0;$ap_sum=0;foreach($vd['items'] as $item) {-->
-	  	  	    <tr class="trd">
-        <td>{$item['createdate']}</td>
-        <td><!--if($item['staffid']>0){-->
-          {$item['staffname']}(Ô±¹¤)
-            <!--}else{-->
-          ×ÜÕËºÅ
-          <!--}--></td>
-        <td><!--if($item['otherid']>0){-->
-          {$item['otherstaff']}(Ô±¹¤)
-            <!--}else{-->
-          ×ÜÕËºÅ
-          <!--}--></td>
-        <td>{$item['ar']}</td>
-        <td>{$item['ap']}</td>
-        <td>{$item['startdate']}</td>
-        <td>{$item['enddate']}</td>
-        <td align="left">{$item['remarks']}&nbsp;</td>
-        <td><!--if($item['remain']===null){-->
-          --
-            <!--}else{-->
-          {$item['remain']}
-          <!--}--></td>
-        <td><!--if(0){-->
-            <a href="javascript:openScript('#','',690,500)"> <font color="#0000ff">´òÓ¡</font> </a>
-            <!--}else{-->
-            <!--if(isset($vd['agent'][9]) && $vd['agent'][9] > 0){-->
-            <!--}else{-->
-            <a href="index.php?m=mod_agent&amp;c=check&amp;a=del&amp;id={$item['id']}"> <font color="#0000ff">É¾³ı</font> </a>
-            <!--}-->
-            <!--}-->
-        </td>
-      </tr>
-      <!--$ar_sum=$ar_sum+$item['ar'];$ap_sum=$ap_sum+$item['ap'];}-->
-      <tr class="thr">
-        <td colspan="2" align="center">±¾Ò³ºÏ¼Æ£º</td>
-        <td align="center">{$ar_sum}</td>
-        <td align="center">{$ap_sum}</td>
-        <td colspan="6">&nbsp;</td>
-      </tr>
-      <tr class="thr">
-        <td colspan="2" align="center">²éÑ¯ºÏ¼Æ£º</td>
-        <td align="center">{$vd['checkdata']['ar']}</td>
-        <td align="center">{$vd['checkdata']['ap']}</td>
-        <td colspan="6">&nbsp;</td>
-      </tr>
-      <!--}else{-->
-      <tr class="stline">
-        <td colspan="10" align="center">¶Ô²»Æğ£¬Ã»ÓĞÈÎºÎ¼ÇÂ¼£¡</td>
-      </tr>
-      <!--}-->
-    </table>
-	 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
-	<div id="page" align="right"> {load(fpage)} </div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>å‘˜å·¥ç»“è´¦è®°å½•</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><script language="javascript">function openScript(url,name,width,height){var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');}</script><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> å‘˜å·¥ç»“è´¦è®°å½•</h2>  </div>  <ul>      <li><a href="index.php?m=mod_agent&c=check&a=Add">å‘˜å·¥ç»“å¸ç™»è®°</a></li>    <li><a href="" class="on">å‘˜å·¥ç»“å¸è®°å½•</a></li>  </ul></div><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="checkouthistory" method="get" action="index.php"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr style="display:none">		  <td class="table1_left">å…³é”®å­—ï¼š </td>		<td width="78%" class="tableright1"><div align="left">		  <input type="text" name="keywords" size="20" class="input" value="">		  </div></td>		</tr>		<tr>		  <td class="table1_left">æŸ¥è¯¢è°ƒä»·ï¼š </td>		<td class="tableright1">		  <div align="left">		    <select name="stype">		              {#Option($vd['tradetypes'], $vd['tradetype'])}      		      </select>          </div></td>		</tr>		<tr>		  <td class="table1_left">é€‰æ‹©å‘˜å·¥ï¼š</td>		<td class="tableright1">			<div align="left">			  <select name="keywords">			    <option value="" selected>æ‰€æœ‰å‘˜å·¥(å«æ€»å¸å·)</option>			    <!--foreach($vd['staff'] as $item){-->		          <option value="{$item['staffid']}" 			    <!--if(intval(request('keywords'))==$item['staffid']){-->			     selected 			    <!--}-->			    >{$item['realname']}({#DisplayCode($item['staffid'],2,0)})			    </option>		          <!--}-->		        </select>            </div></td>		</tr>		<tr>		  <td class="table1_left">æŸ¥è¯¢æ—¶é—´æ®µï¼š </td>		<td class="tableright1">          <div align="left">            <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>                              <strong>è‡³</strong>&nbsp;            <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>              </div></td>		</tr>		<tr>		  <td class="table1_left"></td>		<td class="tableright1">			<div align="left">			  <input type="hidden" name="m" value="mod_agent" />			  <input type="hidden" name="c" value="Check" />			  <input type="submit" name="submit" value="ç¡®è®¤æŸ¥è¯¢" class="tijiao_input" tabindex="16">              <input type="reset" name="reset" value="é‡ç½®æŸ¥è¯¢" class="fanhui_input" tabindex="17"></div></td>		</tr>		</table>		</form>	</td>	</tr></table>    <p>&nbsp;</p>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">      <tr>        <th width="10%" class="heardertop1">ç»“å¸æ—¶é—´</td>        <th width="10%" class="heardertop1">äº¤ç­å¯¹åƒ</td>        <th width="10%" class="heardertop1">æ¥ç­å¯¹åƒ</td>        <th width="8%" class="heardertop1">å¸é¢é‡‘é¢</td>        <th width="8%" class="heardertop1">äº¤æ¬¾é‡‘é¢</td>        <th width="12%" class="heardertop1">å¼€å§‹æ—¶é—´</td>        <th width="12%" class="heardertop1">ç»“æŸæ—¶é—´</td>        <th width="15%" class="heardertop1">ç»“å¸å¤‡æ³¨</td>        <th width="8%" class="heardertop1">å½“æ—¶ä½™é¢</td>        <th width="7%" class="heardertop1">æ“ä½œ</td>      <!--if(count($vd['items']) > 0){-->      <!--$ar_sum=0;$ap_sum=0;foreach($vd['items'] as $item) {-->	  	  	    <tr class="trd">        <td>{$item['createdate']}</td>        <td><!--if($item['staffid']>0){-->          {$item['staffname']}(å‘˜å·¥)            <!--}else{-->          æ€»è´¦å·          <!--}--></td>        <td><!--if($item['otherid']>0){-->          {$item['otherstaff']}(å‘˜å·¥)            <!--}else{-->          æ€»è´¦å·          <!--}--></td>        <td>{$item['ar']}</td>        <td>{$item['ap']}</td>        <td>{$item['startdate']}</td>        <td>{$item['enddate']}</td>        <td align="left">{$item['remarks']}&nbsp;</td>        <td><!--if($item['remain']===null){-->          --            <!--}else{-->          {$item['remain']}          <!--}--></td>        <td><!--if(0){-->            <a href="javascript:openScript('#','',690,500)"> <font color="#0000ff">æ‰“å°</font> </a>            <!--}else{-->            <!--if(isset($vd['agent'][9]) && $vd['agent'][9] > 0){-->            <!--}else{-->            <a href="index.php?m=mod_agent&amp;c=check&amp;a=del&amp;id={$item['id']}"> <font color="#0000ff">åˆ é™¤</font> </a>            <!--}-->            <!--}-->        </td>      </tr>      <!--$ar_sum=$ar_sum+$item['ar'];$ap_sum=$ap_sum+$item['ap'];}-->      <tr class="thr">        <td colspan="2" align="center">æœ¬é¡µåˆè®¡ï¼š</td>        <td align="center">{$ar_sum}</td>        <td align="center">{$ap_sum}</td>        <td colspan="6">&nbsp;</td>      </tr>      <tr class="thr">        <td colspan="2" align="center">æŸ¥è¯¢åˆè®¡ï¼š</td>        <td align="center">{$vd['checkdata']['ar']}</td>        <td align="center">{$vd['checkdata']['ap']}</td>        <td colspan="6">&nbsp;</td>      </tr>      <!--}else{-->      <tr class="stline">        <td colspan="10" align="center">å¯¹ä¸èµ·ï¼Œæ²¡æœ‰ä»»ä½•è®°å½•ï¼</td>      </tr>      <!--}-->    </table>	 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 	<div id="page" align="right"> {load(fpage)} </div></body></html>

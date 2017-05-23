@@ -32,7 +32,7 @@ class RewardTplController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $R759c567671->IRewardTplName_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "name" => "Ä£°åÃû³Æ" );
+								$R00be52aa45 = array( "name" => "Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R063e6693e5 = factory::getinstance( "ranks" );
 								$R046b4585a2 = $R063e6693e5->IRank_Get( );
 								$this->Assign( "sarray", $R00be52aa45 );
@@ -80,12 +80,12 @@ class RewardTplController extends Controller
 								}
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "²Ù×÷³É¹¦" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=RewardTpl&a=RankTpl" );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -98,7 +98,7 @@ class RewardTplController extends Controller
 								$Rc41e18a4de = $R759c567671->IRewardTplName_GetById( $R3584859062 );
 								if ( $Rc41e18a4de['aid'] != $R2a51483b14 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rc2f1fd7d2e = factory::getinstance( "rewardtpl" );
@@ -111,18 +111,18 @@ class RewardTplController extends Controller
 																$R2097a8fddf = factory::getinstance( "agents" );
 																$data = array( "rewardtpl" => 0 );
 																$R2097a8fddf->IAgent_UpdateByStr( $data, " rewardtpl = ".$R3584859062 );
-																$this->Alert( "É¾³ý³É¹¦" );
+																$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½" );
 																$this->ScriptRedirect( "index.php?m=mod_b2b&c=RewardTpl&a=RankTpl" );
 												}
 												else
 												{
-																$this->Alert( "É¾³ýÊ§°Ü" );
+																$this->Alert( "É¾ï¿½ï¿½Ê§ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
 								else
 								{
-												$this->Alert( "É¾³ýÊ§°Ü" );
+												$this->Alert( "É¾ï¿½ï¿½Ê§ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -167,7 +167,7 @@ class RewardTplController extends Controller
 								$data = array_merge( $data, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IRewardTpl_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ", "listprice" => "ÉÌÆ·ÃæÖµ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "listprice" => "ï¿½ï¿½Æ·ï¿½ï¿½Öµ" );
 								$this->Assign( "sarray", $R00be52aa45 );
 					
 												$this->view( );
@@ -199,7 +199,7 @@ class RewardTplController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IRewardTpl_ProductPage( $data, "*" );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ", "listprice" => "ÉÌÆ·ÃæÖµ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "listprice" => "ï¿½ï¿½Æ·ï¿½ï¿½Öµ" );
 								$R63bede6b19 = $Rfff462d8f8 == 1 ? "aid > 0" : "aid < 1";
 								$this->Recycle( "products", $R63bede6b19 );
 								$this->Assign( "ptype", getvar( "ptype", -1 ) );
@@ -226,7 +226,7 @@ class RewardTplController extends Controller
 								$R2097a8fddf = factory::getinstance( "agents" );
 								$R4e420efcc3 = $R2097a8fddf->IAgent_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "aname" => "ÓÃ»§Ãû", "aid" => "ÓÃ»§±àºÅ", "parentid" => "ÉÏ¼¶±àºÅ", "arealname" => "ÕæÊµÐÕÃû", "aqq" => "QQ", "amail" => "ÓÊÏä", "atel" => "µç»°", "aaddr" => "×¡Ö·", "aremain" => "×îµÍÓà¶î", "acsmp" => "×îµÍÏû·Ñ", "prv" => "Ê¡", "city" => "ÊÐ", "zip" => "ÓÊ±à", "remarks" => "±¸×¢" );
+								$R00be52aa45 = array( "aname" => "ï¿½Ã»ï¿½ï¿½ï¿½", "aid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "parentid" => "ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½", "arealname" => "ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½", "aqq" => "QQ", "amail" => "ï¿½ï¿½ï¿½ï¿½", "atel" => "ï¿½ç»°", "aaddr" => "×¡Ö·", "aremain" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "acsmp" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "prv" => "Ê¡", "city" => "ï¿½ï¿½", "zip" => "ï¿½Ê±ï¿½", "remarks" => "ï¿½ï¿½×¢" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$R759c567671 = factory::getinstance( "rewardtplname" );
 								$R35ee3e47cf = $R759c567671->IRewardTplName_GetByStr( "aid = 0" );
@@ -259,7 +259,7 @@ class RewardTplController extends Controller
 																) );
 												}
 								}
-								$this->Alert( "Íê³É²Ù×÷" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=RewardTpl&a=Agent" );
 				}
 
@@ -286,19 +286,19 @@ class RewardTplController extends Controller
 								$this->FillPage( $data, $R4e420efcc3 );
 								$R0d2025d631 = $this->hander->ITrade_GetByLimit( $data, "sum(income) as income,sum(reward) as reward,sum(realreward) as realreward" );
 								$this->Assign( "record", $R0d2025d631 );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ", "bindaid" => "¾­ÏúÉÌ±àºÅ", "operator" => "²Ù×÷Õß", "yktnumber" => "Ò»¿¨Í¨¿¨ºÅ", "content" => "ÉÌÆ·" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "bindaid" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ï¿½", "operator" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "yktnumber" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "content" => "ï¿½ï¿½Æ·" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
 								if ( $Ra8b176bf4f == 11 )
 								{
-												$R4fa9c48c92 = array( "11" => "µã¿¨½»Ò×²úÉúµÄ´úÀíÀûÈó" );
+												$R4fa9c48c92 = array( "11" => "ï¿½ã¿¨ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								}
 								else if ( $Ra8b176bf4f == 12 )
 								{
-												$R4fa9c48c92 = array( "12" => "¹©»õËùµÃ" );
+												$R4fa9c48c92 = array( "12" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$R4fa9c48c92 = array( "1,2,21,22,31,32,98,99,101,100" => "ËùÓÐÀàÐÍ", "1" => "ÆÕÍ¨µã¿¨½»Ò×", "2" => "ÓÃ»§ÍøÒø³äÖµ", "21" => "´û¿î¸ø±ðÈË", "22" => "Ïò±ðÈË½è¿î", "31" => "×ª¿î¸ø±ðÈË", "32" => "±ðÈË×ª¿î¸øÎÒ", "98" => "×Ê½ð²Ù×÷²úÉúµÄ½»Ò×¼ÇÂ¼", "99" => "ÏµÍ³¸øÎÒ³äÖµ", "100" => "Ò»¿¨Í¨¶Ò»»¿¨¼ÇÂ¼", "101" => "Ò»¿¨Í¨³äÖµ¼ÇÂ¼", "31,32" => "ËùÓÐ×ª¿î¼ÇÂ¼", "21,22" => "ËùÓÐ´û¿î/½è¿î¼ÇÂ¼" );
+												$R4fa9c48c92 = array( "1,2,21,22,31,32,98,99,101,100" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "1" => "ï¿½ï¿½Í¨ï¿½ã¿¨ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ", "21" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "22" => "ï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½", "31" => "×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "32" => "ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½", "98" => "ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½×¼ï¿½Â¼", "99" => "ÏµÍ³ï¿½ï¿½ï¿½Ò³ï¿½Öµ", "100" => "Ò»ï¿½ï¿½Í¨ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â¼", "101" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµï¿½ï¿½Â¼", "31,32" => "ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Â¼", "21,22" => "ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Â¼" );
 								}
 								$this->Assign( "tradetypes", $R4fa9c48c92 );
 								$this->Assign( "tradetype", getvar( "tradetype" ) );
@@ -312,13 +312,13 @@ class RewardTplController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -330,16 +330,16 @@ class RewardTplController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" )
 								{
-												echo "²ÎÊý´íÎó1£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½";
 												exit( );
 								}
 								$Rcc5c6e696c = explode( ":", $param );
 								if ( count( $Rcc5c6e696c ) < 3 || intval( $Rcc5c6e696c[1] ) == 0 || intval( $Rcc5c6e696c[2] ) == 0 )
 								{
-												echo "²ÎÊý´íÎó2£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$R3db8f5c8bc = $this->hander->IRewardTpl_GetByStr( "rewardtpl=".intval( $Rcc5c6e696c[1] )." and pid=".intval( $Rcc5c6e696c[2] )." and rtype=3" );
 								if ( !isset( $R3db8f5c8bc[0]['id'] ) )
 								{
@@ -365,7 +365,7 @@ class RewardTplController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -379,7 +379,7 @@ class RewardTplController extends Controller
 								$R808b89ba0e = $this->hander->IRewardTpl_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 				}
 
@@ -397,7 +397,7 @@ class RewardTplController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -436,7 +436,7 @@ class RewardTplController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";

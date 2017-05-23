@@ -1,40 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{$vd['web']['title']}</title>
 <meta name="Keywords" content="{$vd['web']['keywords']}" />
-<meta name="Description" content="{$vd['web']['description']} Ó±ÏÈ¿¨¹ºµã¿¨ÁªÊÛÏµÍ³ www.umebiz.com" />
+<meta name="Description" content="{$vd['web']['description']} é¢–å…ˆå¡è´­ç‚¹å¡è”å”®ç³»ç»Ÿ www.umebiz.com" />
 <link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub-list-20080119.css" />
 </head>
 <body>
 <div id="ubtop">
 <input type="hidden" id="webdir" name="webdir" value="{$vd['root']}">
-<div style="height:30px;width:100%;margin-top:5px;"><span style="padding-left:10px;"><a href="#">µçĞÅÕ¾</a> | <a href="#">ÍøÍ¨Õ¾</a></span></div>
+<div style="height:30px;width:100%;margin-top:5px;"><span style="padding-left:10px;"><a href="#">ç”µä¿¡ç«™</a> | <a href="#">ç½‘é€šç«™</a></span></div>
 <div style="margin-bottom:5px;"><a href="{$vd['banner'][0]['url']}" target="_blank"><img src="{$vd['root']}{$vd['sc']}upload/{$vd['banner'][0]['pic']}" width="100%"/></a></div>
 <div class="headTab">
   <ul>
-    <li class="headTabActive" id="li0"><a href="{$vd['root']}index.php?m=mod_article" onmouseover="setnav(0)">Ê×Ò³</a></li>
-    <li  id="li1"><a href="#" onmouseover="setnav(1)">ÏµÍ³¹«¸æ</a></li>
-    <li  id="li2"><a href="#" onmouseover="setnav(2)">×îĞÂ»î¶¯</a></li>
-    <li  id="li3"><a href="#" onmouseover="setnav(3)">ĞÂÊÖ°ïÖú</a></li>
-    <li  id="li4"><a href="#" onmouseover="setnav(4)">³£¼ûÎÊÌâ</a></li>
-    <li  id="li5"><a href="#" onmouseover="setnav(5)">ĞĞÒµĞÅÏ¢</a></li>
-    <li  id="li6"><a href="#" onmouseover="setnav(6)">ÓÎÏ·×ÊÁÏ</a></li>
-    <li class="headTabEnd"><a href="#">ÆäËû</a></li>
+    <li class="headTabActive" id="li0"><a href="{$vd['root']}index.php?m=mod_article" onmouseover="setnav(0)">é¦–é¡µ</a></li>
+    <li  id="li1"><a href="#" onmouseover="setnav(1)">ç³»ç»Ÿå…¬å‘Š</a></li>
+    <li  id="li2"><a href="#" onmouseover="setnav(2)">æœ€æ–°æ´»åŠ¨</a></li>
+    <li  id="li3"><a href="#" onmouseover="setnav(3)">æ–°æ‰‹å¸®åŠ©</a></li>
+    <li  id="li4"><a href="#" onmouseover="setnav(4)">å¸¸è§é—®é¢˜</a></li>
+    <li  id="li5"><a href="#" onmouseover="setnav(5)">è¡Œä¸šä¿¡æ¯</a></li>
+    <li  id="li6"><a href="#" onmouseover="setnav(6)">æ¸¸æˆèµ„æ–™</a></li>
+    <li class="headTabEnd"><a href="#">å…¶ä»–</a></li>
   </ul>
   <div class="subhead" id="nav0">
-    <a href="{$vd['root']}<!--if(UB_DEFAULT=='b2c'){--><!--}else{-->b2c<!--}-->">ÁãÊÛÏµÍ³</a> - <a href="{$vd['root']}<!--if(UB_DEFAULT=='b2b'){--><!--}else{-->b2b<!--}-->">Åú·¢ÏµÍ³ - <a href="{$vd['root']}<!--if(UB_DEFAULT=='ykt'){--><!--}else{-->ykt<!--}-->">Ò»¿¨Í¨ÏµÍ³</a>
+    <a href="{$vd['root']}<!--if(UB_DEFAULT=='b2c'){--><!--}else{-->b2c<!--}-->">é›¶å”®ç³»ç»Ÿ</a> - <a href="{$vd['root']}<!--if(UB_DEFAULT=='b2b'){--><!--}else{-->b2b<!--}-->">æ‰¹å‘ç³»ç»Ÿ - <a href="{$vd['root']}<!--if(UB_DEFAULT=='ykt'){--><!--}else{-->ykt<!--}-->">ä¸€å¡é€šç³»ç»Ÿ</a>
   </div>
   <script type="text/javascript">
     var navv = new Array();
     navv[0]  = new Array();
-    navv[1]  = new Array("<!--echo urlencode('Ò»¿¨Í¨ÏµÍ³ĞÂÎÅ¹«¸æ')-->","<!--echo urlencode('Åú·¢ÏµÍ³¹«¸æ')-->");
-    navv[2]  = new Array("<!--echo urlencode('Ò»¿¨Í¨ÏµÍ³×îĞÂ»î¶¯')-->","<!--echo urlencode('Åú·¢ÏµÍ³×îĞÂ»î¶¯')-->");
-    navv[3]  = new Array("<!--echo urlencode('Ò»¿¨Í¨ÏµÍ³ĞÂÊÖ°ïÖú')-->","<!--echo urlencode('Åú·¢ÏµÍ³ĞÂÊÖ°ïÖú')-->");
-    navv[4]  = new Array("<!--echo urlencode('Ò»¿¨Í¨ÏµÍ³³£¼ûÎÊÌâ')-->","<!--echo urlencode('Åú·¢ÏµÍ³³£¼ûÎÊÌâ')-->");
-    navv[5]  = new Array("<!--echo urlencode('ĞĞÒµĞÅÏ¢')-->");
-    navv[6]  = new Array("<!--echo urlencode('ÓÎÏ·×ÊÁÏÕ¾')-->");
+    navv[1]  = new Array("<!--echo urlencode('ä¸€å¡é€šç³»ç»Ÿæ–°é—»å…¬å‘Š')-->","<!--echo urlencode('æ‰¹å‘ç³»ç»Ÿå…¬å‘Š')-->");
+    navv[2]  = new Array("<!--echo urlencode('ä¸€å¡é€šç³»ç»Ÿæœ€æ–°æ´»åŠ¨')-->","<!--echo urlencode('æ‰¹å‘ç³»ç»Ÿæœ€æ–°æ´»åŠ¨')-->");
+    navv[3]  = new Array("<!--echo urlencode('ä¸€å¡é€šç³»ç»Ÿæ–°æ‰‹å¸®åŠ©')-->","<!--echo urlencode('æ‰¹å‘ç³»ç»Ÿæ–°æ‰‹å¸®åŠ©')-->");
+    navv[4]  = new Array("<!--echo urlencode('ä¸€å¡é€šç³»ç»Ÿå¸¸è§é—®é¢˜')-->","<!--echo urlencode('æ‰¹å‘ç³»ç»Ÿå¸¸è§é—®é¢˜')-->");
+    navv[5]  = new Array("<!--echo urlencode('è¡Œä¸šä¿¡æ¯')-->");
+    navv[6]  = new Array("<!--echo urlencode('æ¸¸æˆèµ„æ–™ç«™')-->");
   </script>
   <script src="{$vd['content']}js/nav.js"></script>
 </div>

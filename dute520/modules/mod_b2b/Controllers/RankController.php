@@ -55,7 +55,7 @@ class RankController extends Controller
 																$R026f0167b4[] = $R0f8134fb60;
 												}
 								}
-								$Ra305322b39 = ( UB_YKT ? "Ò»¿¨Í¨" : "" ).( UB_B2C + UB_YKT == 2 ? "/" : "" ).( UB_B2C ? "ÁãÊÛ" : "" );
+								$Ra305322b39 = ( UB_YKT ? "Ò»ï¿½ï¿½Í¨" : "" ).( UB_B2C + UB_YKT == 2 ? "/" : "" ).( UB_B2C ? "ï¿½ï¿½ï¿½ï¿½" : "" );
 								$Oooo00 = "base64_decode";
 								$ooOO00o = $Oooo00( "YmFzZTY0X2RlY29kZQ==" );
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
@@ -69,19 +69,19 @@ class RankController extends Controller
 								$R413a5bdd03 = doubleval( request( "discount" ) );
 								if ( 1 < $R413a5bdd03 )
 								{
-												$this->Alert( "ÄúµÄÏúÊÛ¼Û¸ñ´óÓÚÃæÖµÁË!" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¼Û¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½!" );
 												$this->HistoryGo( );
 								}
 								$R6009e84434 = getvar( "name" );
 								if ( strpos( $R6009e84434, "|" ) !== false )
 								{
-												$this->Alert( "¼¶±ðÃû³Æ²»ÔÊÐíº¬ÓÐÌØÊâ·ûºÅ£¬ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R72852f08e6 = doubleval( request( "money" ) );
 								if ( 100000000 < $R72852f08e6 )
 								{
-												$this->Alert( "½¨ÒéÉý¼¶½ð¶î²»Òª´óÓÚ100000000£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î²»Òªï¿½ï¿½ï¿½ï¿½100000000ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$data = array(
@@ -94,7 +94,7 @@ class RankController extends Controller
 								);
 								if ( 0 < $R3584859062 )
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->hander->IRank_Update( $data, $R3584859062 );
 								}
 								else
@@ -109,12 +109,12 @@ class RankController extends Controller
 																$R3584859062 += 1;
 												}
 												$data['id'] = $R3584859062;
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->hander->IRank_Create( $data );
 												$this->hander->IRank_AddTableItem( $R3584859062 );
 								}
 								$this->UpdateCache( "ranks" );
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=rank" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=rank" );
 				}
 
 				public function Del( )
@@ -122,7 +122,7 @@ class RankController extends Controller
 								$R3584859062 = intval( request( "id" ) );
 								if ( $R3584859062 < 4 )
 								{
-												$this->Alert( "ÄúºÃ£¬ÕâÊÇÏµÍ³ÉèÖÃµÄ»ù±¾¼¶±ð£¬É¾³ý»áµ¼ÖÂ³ö´í£¡µã»÷È·ÈÏ·µ»Ø" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ÃµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½áµ¼ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï·ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rab95a9b478 = $this->hander->IRank_GetIdBelow( $R3584859062 );
@@ -132,12 +132,12 @@ class RankController extends Controller
 												$this->hander->IRank_DecreaseAgentRank( $Rab95a9b478, $R3584859062 );
 								}
 								$this->UpdateCache( "ranks" );
-								$this->go( $R808b89ba0e, "É¾³ý³É¹¦", "É¾³ýÊ§°Ü", "index.php?m=mod_b2b&c=rank" );
+								$this->go( $R808b89ba0e, "É¾ï¿½ï¿½ï¿½É¹ï¿½", "É¾ï¿½ï¿½Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=rank" );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -149,18 +149,18 @@ class RankController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								if ( strpos( $R244f38266c, "|" ) !== false )
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡²»ÔÊÐíº¬ÓÐÌØÊâ·ûºÅ£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½";
 												exit( );
 								}
 								if ( $param == "money" && 100000000 < doubleval( $R244f38266c ) )
 								{
-												echo "½¨ÒéÉý¼¶½ð¶î²»Òª´óÓÚ100000000£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î²»Òªï¿½ï¿½ï¿½ï¿½100000000ï¿½ï¿½";
 												exit( );
 								}
 								$data = array(
@@ -174,7 +174,7 @@ class RankController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -183,13 +183,13 @@ class RankController extends Controller
 								$R3584859062 = intval( request( "chkinclude" ) );
 								if ( $R3584859062 < 4 )
 								{
-												echo "ÄúºÃ£¬ÕâÊÇÏµÍ³ÉèÖÃµÄ»ù±¾¼¶±ð£¬É¾³ý»áµ¼ÖÂ³ö´í£¡";
+												echo "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ÃµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½áµ¼ï¿½Â³ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								$R3db8f5c8bc = $this->hander->IRank_Get( );
 								if ( count( $R3db8f5c8bc ) == 1 )
 								{
-												echo "ÄúºÃ£¬Èç¹ûÄúÇå¿Õ¼¶±ð£¬ÓÐ¿ÉÄÜ»áµ¼ÖÂÒ»Ð©Î´Öª´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ü»áµ¼ï¿½ï¿½Ò»Ð©Î´Öªï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								$Rab95a9b478 = $this->hander->IRank_GetIdBelow( $R3584859062 );

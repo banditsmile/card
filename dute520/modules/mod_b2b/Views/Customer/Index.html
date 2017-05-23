@@ -1,33 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--if($vd['inrecycle']==0){-->
 <div class="titleDiv" id="titleList">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Customer&{$vd['op']}" title="µã»÷ÖØÐÂ»ñÈ¡»áÔ±ÁÐ±í×ÊÁÏ" onclick="loadDisp(1)"><font color="#000">»áÔ±ÁÐ±í</font></a></span> (¹² <b><span id="tol1">{$vd['totlerow']}</span></b> ¸ö)</div>
-<div style="float:right"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_customer_index" onFocus="this.blur()" title="²é¿´»áÔ±Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Customer&{$vd['op']}" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½È¡ï¿½ï¿½Ô±ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½" onclick="loadDisp(1)"><font color="#000">ï¿½ï¿½Ô±ï¿½Ð±ï¿½</font></a></span> (ï¿½ï¿½ <b><span id="tol1">{$vd['totlerow']}</span></b> ï¿½ï¿½)</div>
+<div style="float:right"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_customer_index" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½Ô±ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div class="mytitle" id="mytitle">
-  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('delitems')"><samp title="ÏÈÑ¡ÔñÄúÒªÉ¾³ýµÄÐÐ,ÔÙµã´Ë°´Å¥">
-    <div style="padding-top:10px;padding-left:3px;">ÅúÁ¿É¾³ý</div></samp>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('delitems')"><samp title="ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Ùµï¿½Ë°ï¿½Å¥">
+    <div style="padding-top:10px;padding-left:3px;">ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½</div></samp>
   </div>
-  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="loadDisp(1);window.location='?m=mod_b2b&c=Customer&inrecycle=1'"><samp title="½øÈë»áÔ±»ØÊÕÏä">
-    <div style="padding-top:10px;padding-left:3px;">»ØÊÕÏä(<!--if($vd['recycle_num']){--><span id="recycle" style="color:#ff0000;font-weight:bold">{$vd['recycle_num']}</span><!--}else{--><span id="recycle" style="color:#008800;font-weight:bold">¿Õ</span><!--}-->)</div></samp>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="loadDisp(1);window.location='?m=mod_b2b&c=Customer&inrecycle=1'"><samp title="ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">
+    <div style="padding-top:10px;padding-left:3px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(<!--if($vd['recycle_num']){--><span id="recycle" style="color:#ff0000;font-weight:bold">{$vd['recycle_num']}</span><!--}else{--><span id="recycle" style="color:#008800;font-weight:bold">ï¿½ï¿½</span><!--}-->)</div></samp>
   </div>
-  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="µã»÷Ë¢ÐÂ±¾Ò³Ë¢ÐÂÊý¾Ý,²¢±£³ÖÔ­À´¹´Ñ¡×´Ì¬">
-    <div style="padding-top:10px;padding-left:9px;">Ë¢ÐÂ</div></samp>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="ï¿½ï¿½ï¿½Ë¢ï¿½Â±ï¿½Ò³Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Ñ¡×´Ì¬">
+    <div style="padding-top:10px;padding-left:9px;">Ë¢ï¿½ï¿½</div></samp>
   </div>
   
-  <div class="titleOp4 disable"><samp title="¹¦ÄÜÎ´¿ª·Å">
-  <div style="padding-top:10px;padding-left:3px;">¼´Ê±ÐÞ¸Ä <img src="{$vd['sc']}images/iconmenu.gif" style="vertical-align:middle"/></div></samp>
+  <div class="titleOp4 disable"><samp title="ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½">
+  <div style="padding-top:10px;padding-left:3px;">ï¿½ï¿½Ê±ï¿½Þ¸ï¿½ <img src="{$vd['sc']}images/iconmenu.gif" style="vertical-align:middle"/></div></samp>
   </div>
-  <div class="titleOp4"  onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="batch('customer')"><samp title="ÅúÁ¿ÐÞ¸ÄËùÑ¡ÏîµÄ¼ÇÂ¼">
-    <div style="padding-top:10px;padding-left:8px;">ÅúÁ¿ÐÞ¸Ä</div></samp>
+  <div class="titleOp4"  onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="batch('customer')"><samp title="ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä¼ï¿½Â¼">
+    <div style="padding-top:10px;padding-left:8px;">ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½</div></samp>
   </div>
-  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="batchEdit(this)"><samp title="ÅúÁ¿ÐÞ¸ÄËùÑ¡ÏîµÄ¼ÇÂ¼">
-    <div style="padding-top:10px;padding-left:8px;">ÊµÊ±ÐÞ¸Ä</div></samp>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="batchEdit(this)"><samp title="ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ä¼ï¿½Â¼">
+    <div style="padding-top:10px;padding-left:8px;">ÊµÊ±ï¿½Þ¸ï¿½</div></samp>
   </div>
   <div style="float:right;padding-top:4px;">
     <form action="index.php?m=mod_b2b&c=Customer" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
@@ -36,27 +36,27 @@
       {#Option($vd['sarray'], $vd['stype'])}
     </select>
     <select name="optype" style="vertical-align:middle;font-size:14px;width:100px;">
-      <option value="">ËùÓÐ¼¶±ð</option>
+      <option value="">ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½</option>
       {#Option($vd['rank'],0,'name', 'id')}
     </select>
-    <input type="submit" value="ËÑË÷" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    <input type="submit" value="ï¿½ï¿½ï¿½ï¿½" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
     </form>
   </div>
 </div>
 <!--}else{-->
 <div class="titleDiv" id="titleList">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Customer&a=index" title="»áÔ±ÁÐ±í" onclick="loadDisp(1)"><font color="#000">»áÔ±ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">»ØÊÕÏä</span>(¹² <b><span id="tol1">{$vd['totlerow']}</span></b> ¸ö)</div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_customer_index" onFocus="this.blur()" title="²é¿´»áÔ±Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Customer&a=index" title="ï¿½ï¿½Ô±ï¿½Ð±ï¿½" onclick="loadDisp(1)"><font color="#000">ï¿½ï¿½Ô±ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>(ï¿½ï¿½ <b><span id="tol1">{$vd['totlerow']}</span></b> ï¿½ï¿½)</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_customer_index" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½Ô±ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div class="mytitle" id="mytitle">
-  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="ÏÈÑ¡ÔñÄúÒªÏú»ÙµÄ»áÔ±¼ÇÂ¼,ÔÙµã´Ë°´Å¥">
-    <div style="padding-top:10px;padding-left:3px;">ÅúÁ¿Ïú»Ù</div></samp>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÙµÄ»ï¿½Ô±ï¿½ï¿½Â¼,ï¿½Ùµï¿½Ë°ï¿½Å¥">
+    <div style="padding-top:10px;padding-left:3px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div></samp>
   </div>
-  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="µã»÷Ë¢ÐÂ±¾Ò³Ë¢ÐÂÊý¾Ý,²¢±£³ÖÔ­À´¹´Ñ¡×´Ì¬">
-    <div style="padding-top:10px;padding-left:9px;">Ë¢ÐÂ</div></samp>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="ï¿½ï¿½ï¿½Ë¢ï¿½Â±ï¿½Ò³Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Ñ¡×´Ì¬">
+    <div style="padding-top:10px;padding-left:9px;">Ë¢ï¿½ï¿½</div></samp>
   </div>
-  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="delAllSubmit('restore')"><samp title="»¹Ô­»ØÊÕÏä×´Ì¬">
-    <div style="padding-top:10px;padding-left:9px;font-weight:bold">»¹Ô­</div></samp>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="delAllSubmit('restore')"><samp title="ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬">
+    <div style="padding-top:10px;padding-left:9px;font-weight:bold">ï¿½ï¿½Ô­</div></samp>
   </div>
   <div style="float:right;padding-top:4px;">
     <form action="index.php?m=mod_b2b&c=Customer&inrecycle=1" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
@@ -65,10 +65,10 @@
       {#Option($vd['sarray'], $vd['stype'])}
     </select>
     <select name="optype" style="vertical-align:middle;font-size:14px;width:100px;">
-      <option value="">ËùÓÐ¼¶±ð</option>
+      <option value="">ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½</option>
       {#Option($vd['rank'],0,'name', 'id')}
     </select>
-    <input type="submit" value="ËÑË÷" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    <input type="submit" value="ï¿½ï¿½ï¿½ï¿½" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
     </form>
   </div>
 </div>
@@ -76,28 +76,28 @@
 <div id="menuMask" class="menuMask" style="display:none">
   <form action="?m=mod_b2b&c=Tpl&tpl=customer" method="post" style="margin:0px">
   <div class="menuContent">
-  <input type="checkbox" name="id[]" value="name" id="name" class="checkbox" onFocus='this.blur()'/> ÓÃ»§Ãû<br/>
-  <input type="checkbox" name="id[]" value="tcid" id="tcid" class="checkbox" onFocus='this.blur()'/> ±àºÅ<br/>
-  <input type="checkbox" name="id[]" value="realname" id="realname" class="checkbox" onFocus='this.blur()'/> ÕæÊµÐÕÃû<br/>
-  <input type="checkbox" name="id[]" value="email" id="email" class="checkbox" onFocus='this.blur()'/> ÓÊÏä<br/>
-  <input type="checkbox" name="id[]" value="tel" id="tel" class="checkbox" onFocus='this.blur()'/> µç»°<br/>
+  <input type="checkbox" name="id[]" value="name" id="name" class="checkbox" onFocus='this.blur()'/> ï¿½Ã»ï¿½ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="tcid" id="tcid" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="realname" id="realname" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="email" id="email" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="tel" id="tel" class="checkbox" onFocus='this.blur()'/> ï¿½ç»°<br/>
   <input type="checkbox" name="id[]" value="qq" id="qq" class="checkbox" onFocus='this.blur()'/> QQ<br/>
-  <input type="checkbox" name="id[]" value="remain" id="remain" class="checkbox" onFocus='this.blur()'/> ÕË»§Óà¶î<br/>
-  <input type="checkbox" name="id[]" value="clv" id="clv" class="checkbox" onFocus='this.blur()'/> ¼¶±ð<br/>
+  <input type="checkbox" name="id[]" value="remain" id="remain" class="checkbox" onFocus='this.blur()'/> ï¿½Ë»ï¿½ï¿½ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="clv" id="clv" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½ï¿½ï¿½<br/>
   <input type="checkbox" name="id[]" value="addr" id="addr" class="checkbox" onFocus='this.blur()'/> ×¡Ö·<br/>
-  <input type="checkbox" name="id[]" value="csmp" id="csmp" class="checkbox" onFocus='this.blur()'/> ×ÜÏû·Ñ¶î<br/>
-  <input type="checkbox" name="id[]" value="regdate" id="regdate" class="checkbox" onFocus='this.blur()'/> ×¢²áÊ±¼ä<br/>
-  <input type="checkbox" name="id[]" value="regip" id="regip" class="checkbox" onFocus='this.blur()'/> ×¢²áIP<br/>
-  <input type="checkbox" name="id[]" value="lastdate" id="lastdate" class="checkbox" onFocus='this.blur()'/> ÉÏ´ÎµÇÂ½Ê±¼ä<br/>
-  <input type="checkbox" name="id[]" value="lastip" id="lastip" class="checkbox" onFocus='this.blur()'/> ÉÏ´ÎµÇÂ¼IP<br/>
-  <input type="checkbox" name="id[]" value="remarks" id="remarks" class="checkbox" onFocus='this.blur()'/> ±¸×¢ÐÅÏ¢<br/>
-  <input type="checkbox" name="id[]" value="msg" id="msg" class="checkbox" onFocus='this.blur()'/> ²é¿´Õ¾ÄÚÐÅÏ¢<br/>
-  <input type="checkbox" name="id[]" value="ask" id="ask" class="checkbox" onFocus='this.blur()'/> ²é¿´»áÔ±ÁôÑÔ<br/>
+  <input type="checkbox" name="id[]" value="csmp" id="csmp" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¶ï¿½<br/>
+  <input type="checkbox" name="id[]" value="regdate" id="regdate" class="checkbox" onFocus='this.blur()'/> ×¢ï¿½ï¿½Ê±ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="regip" id="regip" class="checkbox" onFocus='this.blur()'/> ×¢ï¿½ï¿½IP<br/>
+  <input type="checkbox" name="id[]" value="lastdate" id="lastdate" class="checkbox" onFocus='this.blur()'/> ï¿½Ï´Îµï¿½Â½Ê±ï¿½ï¿½<br/>
+  <input type="checkbox" name="id[]" value="lastip" id="lastip" class="checkbox" onFocus='this.blur()'/> ï¿½Ï´Îµï¿½Â¼IP<br/>
+  <input type="checkbox" name="id[]" value="remarks" id="remarks" class="checkbox" onFocus='this.blur()'/> ï¿½ï¿½×¢ï¿½ï¿½Ï¢<br/>
+  <input type="checkbox" name="id[]" value="msg" id="msg" class="checkbox" onFocus='this.blur()'/> ï¿½é¿´Õ¾ï¿½ï¿½ï¿½ï¿½Ï¢<br/>
+  <input type="checkbox" name="id[]" value="ask" id="ask" class="checkbox" onFocus='this.blur()'/> ï¿½é¿´ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½<br/>
   </div>
   <div class="menuOp">
-  <input type="submit" value="±£´æ" class="button"/>
-  <input type="button" value="ÖØÖÃ" class="button" onclick="tInfoReset()"/>
-  <input type="button" value="È¡Ïû" class="button" onclick="setMenuMask()"/>
+  <input type="submit" value="ï¿½ï¿½ï¿½ï¿½" class="button"/>
+  <input type="button" value="ï¿½ï¿½ï¿½ï¿½" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="È¡ï¿½ï¿½" class="button" onclick="setMenuMask()"/>
   </div>
   </form>
 </div>
@@ -107,13 +107,13 @@
     <td width="30px">
       <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
 <!--//thead-->
-<td width="120px"><b>ÓÃ»§Ãû</b></td>
-<td width="35px"><b>±àºÅ</b></td>
-<td width="120px"><b>ÕæÊµÐÕÃû</b></td>
-<td width="120px"><b>ÓÊÏä</b></td>
-<td width="120px"><b>µç»°</b></td>
-<td width="80px"><b>×ÜÏû·Ñ¶î</b></td>
-<td width="140px"><b>×¢²áÊ±¼ä</b></td>
+<td width="120px"><b>ï¿½Ã»ï¿½ï¿½ï¿½</b></td>
+<td width="35px"><b>ï¿½ï¿½ï¿½</b></td>
+<td width="120px"><b>ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½</b></td>
+<td width="120px"><b>ï¿½ï¿½ï¿½ï¿½</b></td>
+<td width="120px"><b>ï¿½ç»°</b></td>
+<td width="80px"><b>ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¶ï¿½</b></td>
+<td width="140px"><b>×¢ï¿½ï¿½Ê±ï¿½ï¿½</b></td>
 <!--//endthead-->
     <td width="22px">
       <img src="{$vd['sc']}images/rmb.png"/>
@@ -135,16 +135,16 @@
   </tr>
 </table>
 <div id="tip" style="display:none">
-  <span id="tiptable">´ËÒ³ÖÐËùÓÐ <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> Ìõ¼ÇÂ¼ÒÑÑ¡ÖÐ </span> 
+  <span id="tiptable">ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ¡ï¿½ï¿½ </span> 
   <span id="tipspan">
-    <a href="javascript:CheckTotle({$vd['totlerow']},0)">µã´ËÑ¡Ôñµ±Ç°ÁÐ±íÖÐËùÓÐ <b>{$vd['totlerow']}</b> Ìõ¼ÇÂ¼>></a>
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ç°ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <b>{$vd['totlerow']}</b> ï¿½ï¿½ï¿½ï¿½Â¼>></a>
   </span>
 </div>
 <div id="content">
   <!--if($vd['totlerow'] == 0) {-->
   <table  width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="right" colspan="20">ÎÞÈÎºÎ¼ÇÂ¼</td>
+    <td align="right" colspan="20">ï¿½ï¿½ï¿½ÎºÎ¼ï¿½Â¼</td>
   </tr>
   </table>
   <!--}-->
@@ -166,16 +166,16 @@
 <td width="140px">{$item['regdate']}</td>
 <!--//endtbody-->
     <td width="22px">
-      <a href="index.php?m=mod_b2b&c=Order&ubzcname={$item['cname']}&aid=-1" title="²é¿´Ïû·Ñ" onclick="loadDisp(1)"><img src="{$vd['sc']}images/rmb.png"/></a>
+      <a href="index.php?m=mod_b2b&c=Order&ubzcname={$item['cname']}&aid=-1" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½" onclick="loadDisp(1)"><img src="{$vd['sc']}images/rmb.png"/></a>
     </td>
     <td width="22px">
-      <a href="index.php?m=mod_b2b&c=Customer&a=Detail&ubzcid={$item['cid']}" title="±à¼­ÓÃ»§" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+      <a href="index.php?m=mod_b2b&c=Customer&a=Detail&ubzcid={$item['cid']}" title="ï¿½à¼­ï¿½Ã»ï¿½" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
     </td>
     <td width="22px">
       <!--if($vd['inrecycle']==0){-->
-      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['cid']},'delitems')" alt="É¾³ýÓÃ»§,¿ÉÒÔ´Ó»ØÊÕ»Ö¸´" style="cursor:pointer"/>
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['cid']},'delitems')" alt="É¾ï¿½ï¿½ï¿½Ã»ï¿½,ï¿½ï¿½ï¿½Ô´Ó»ï¿½ï¿½Õ»Ö¸ï¿½" style="cursor:pointer"/>
       <!--}else{-->
-      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['cid']},'destroyitems')" alt="Ïú»ÙÓÃ»§,Ïà¹ØÐÅÏ¢Ò²»á±»Ïú»Ù,ÎÞ·¨»Ö¸´" style="cursor:pointer"/>
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['cid']},'destroyitems')" alt="ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ò²ï¿½á±»ï¿½ï¿½ï¿½ï¿½,ï¿½Þ·ï¿½ï¿½Ö¸ï¿½" style="cursor:pointer"/>
       <!--}-->
     </td>
     <td class="endtd"></td>
@@ -197,42 +197,42 @@
 <div style="position:absolute;bottom:0px">
   <div class="tbBottom" id="tbBottom">
     <div style="float:left;padding-top:8px;">
-      <strong> ×Ü¼Æ <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> Ìõ</strong>
+      <strong> ï¿½Ü¼ï¿½ <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> ï¿½ï¿½</strong>
     </div>
     <div style="float:right;text-align:right;">
     <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Customer&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
     <div id="page"></div>
     <div style="float:left;margin-top:3px">
-      Ã¿Ò³ÏÔÊ¾<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> ¸ö 
-      µ½µÚ<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />Ò³<input type="submit" value=" È· ¶¨ &gt;&gt;" class="pagesub" />
+      Ã¿Ò³ï¿½ï¿½Ê¾<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> ï¿½ï¿½ 
+      ï¿½ï¿½ï¿½ï¿½<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />Ò³<input type="submit" value=" È· ï¿½ï¿½ &gt;&gt;" class="pagesub" />
     </div>
     </form>
     </div>
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 </body>
 <script type="text/javascript">
-//µÚÒ»²ÎÊý£¬ºó±ß±£ÁôÏÔÊ¾µÄÁÐÊý
-//µÚ¶þ²ÎÊý£¬³ý×îºóÒ»¸ö²ÎÊýÍâµÄ±£Áô²ÎÊýµÄ×Ü¿í¶È
+//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¿ï¿½ï¿½
 tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
 tInfoA  = Array(3,87);
 totleRows = {$vd['totlerow']};
 <!--if($vd['inrecycle']){-->
-deltxt  = "Èç¹ûÏú»Ù»áÔ±¼ÇÂ¼Ã´,»áÔ±Ïà¹ØÐÅÏ¢Ò²»á±»Ïú»Ù(°üÀ¨¶©µ¥ÐÅÏ¢£¬³äÖµÐÅÏ¢£¬ÁôÑÔÐÅÏ¢µÈ),ÇÒÎÞ·¨»Ö¸´,ÄúÈ·¶¨½øÐÐÏú»Ù²Ù×÷Âð£¿";
-thisaction = "Ïú»Ù";
+deltxt  = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½Ô±ï¿½ï¿½Â¼Ã´,ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ò²ï¿½á±»ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½),ï¿½ï¿½ï¿½Þ·ï¿½ï¿½Ö¸ï¿½,ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½";
+thisaction = "ï¿½ï¿½ï¿½ï¿½";
 <!--}else{-->
-deltxt  = "ÄúÈ·¶¨½øÐÐÉ¾³ý²Ù×÷Âð£¿É¾³ýºóÄú»¹¿ÉÒÔ´Ó»ØÊÕÏä½øÐÐ»Ö¸´";//"Èç¹ûÉ¾³ýÓÃ»§,ÓÃ»§Ïà¹ØÐÅÏ¢Ò²»á±»É¾³ý(°üÀ¨¶©µ¥ÐÅÏ¢£¬³äÖµÐÅÏ¢£¬ÁôÑÔÐÅÏ¢µÈ),ÄúÈ·¶¨½øÐÐÉ¾³ý²Ù×÷Âð£¿";
-thisaction = "É¾³ý";
+deltxt  = "ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ó»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»Ö¸ï¿½";//"ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ã»ï¿½,ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ò²ï¿½á±»É¾ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½),ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+thisaction = "É¾ï¿½ï¿½";
 <!--}-->
 thisdel = 0;
 statistics = 0;
 var resizeidx = 1;
 </script>
 <script type="text/javascript">
-//µ±Ç°±í¸ñÅäÖÃ
+//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 <!--//tinfo-->
  tInfo = Array('name','tcid','realname','email','tel','csmp','regdate');
 <!--//endtinfo-->

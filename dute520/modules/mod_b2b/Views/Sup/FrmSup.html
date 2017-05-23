@@ -1,84 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-<style type="text/css">
-body{background:#fff;padding:0px;margin:0px;}
-td{font-size:12px;}
-</style>
-</head>
-<body class="frmbody">
-<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6" bordercolor="#EAEAEA">
-  <tr>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·±àºÅ</font></td>
-    <td width="150" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·Ãû³Æ</font></td>
-    <td width="80" align="center" height="35" class="listhead">
-      <font color="#ff0000">¹©»õÉÌ</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">½ø»õÉóºË</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÓÅÏÈ¼¶</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">½ø»õ¼Û</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">×îµÍÊÛ¼Û</font></td>
-    <td width="80" align="center" height="35" class="listhead">
-      <font color="#ff0000">×î½üĞŞ¸Ä</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÊÇ·ñÉ¾³ı</font></td>
-    <td width="70" align="center" height="35" class="listhead">
-      <font color="#ff0000">±à¼­</font></td>
-  </tr>
-  <!--if($vd['totlerow'] == 0) {-->
-  <tr>
-    <td align="right" height="35" colspan="20">Ã»ÓĞËÑµ½ÉÌÆ·£¡ÇëÖØĞÂÊäÈë¹Ø¼ü´Ê</td>
-  </tr>
-  <!--}-->
-  <!--foreach($vd['items'] as $item) {-->
-  <form name="form1" method="post" action="<!--if($vd['noack'] == 0){-->index.php?m=mod_b2b&c=sup&a=save&frm=1<!--}else{-->#<!--}-->">
-  <tr>
-    <td width="70" align="center" height="35">
-    <input type="text" name="ubzspid" size="5" value="{$item['ubzspid']}" />
-    </td>
-    <td width="150" align="center" height="35">{$item['ubzspname']} </td>
-    <td width="80" align="center" height="35">{$item['ubzsuid']}
-          (<a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzpid={$vd['ubzpid']}&ubzuuid={$item['ubzsuid']}','',692,390);"><font color="#00875A">²é¿´</font></a>)</td>
-    <td width="70" align="center" height="35">{$item['ubzspok']}</td>
-    <td width="70" align="center" height="35">
-    <input type="text" name="ubzspri" size="5" value="{$item['ubzspri']}" />
-    </td>
-    <td width="70" align="center" height="35">{$item['ubzsupprice']}</td>
-    <td width="70" align="center" height="35">{$item['ubzctrlprice']}</td>
-    <td width="80" align="center" height="35">{$item['ubzspdate']}</td>
-    <td width="70" align="center" height="35">
-      <!--if($vd['noack'] == 0){-->
-    <a href="index.php?m=mod_b2b&c=sup&a=del&ubzepid={$item['ubzepid']}&ubzpid={$vd['ubzpid']}&frm=1">
-          É¾³ı´Ë¹©»õ
-          </a>
-      <!--}else{-->
-      --
-      <!--}-->
-    
-    </td>
-    <td width="70" align="center" height="35">
-    <input type="hidden" name="ubzepid" value="{$item['ubzepid']}" />
-    <input type="hidden" name="ubzpid" value="{$vd['ubzpid']}" />
-    <input value=" ĞŞ¸Ä &gt;&gt;" type="submit" class="button" <!--if($vd['noack'] == 0){--><!--}else{-->disabled<!--}-->/>
-    </td>
-  </tr>
-  </form>
-  <!--}-->
-</table>
-<script type="text/javascript">
-  var resizeidx = 1;
-  function openScript(url,name,width,height)
-  {
-    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=no');
-  }
-  <!--if($vd['noack'] > 0){-->alert('ÄúÔÚ¹©»õÏµÍ³ÖĞÓĞ¶©µ¥ÕıÔÚ½»Ò×´¦ÀíÖĞ£¬½»Ò×½áÊøºó·½¿É²Ù×÷¶Ô½Ó');<!--}-->
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/><style type="text/css">body{background:#fff;padding:0px;margin:0px;}td{font-size:12px;}</style></head><body class="frmbody"><table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6" bordercolor="#EAEAEA">  <tr>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">å•†å“ç¼–å·</font></td>    <td width="150" align="center" height="35" class="listhead">      <font color="#ff0000">å•†å“åç§°</font></td>    <td width="80" align="center" height="35" class="listhead">      <font color="#ff0000">ä¾›è´§å•†</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">è¿›è´§å®¡æ ¸</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">ä¼˜å…ˆçº§</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">è¿›è´§ä»·</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">æœ€ä½å”®ä»·</font></td>    <td width="80" align="center" height="35" class="listhead">      <font color="#ff0000">æœ€è¿‘ä¿®æ”¹</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">æ˜¯å¦åˆ é™¤</font></td>    <td width="70" align="center" height="35" class="listhead">      <font color="#ff0000">ç¼–è¾‘</font></td>  </tr>  <!--if($vd['totlerow'] == 0) {-->  <tr>    <td align="right" height="35" colspan="20">æ²¡æœ‰æœåˆ°å•†å“ï¼è¯·é‡æ–°è¾“å…¥å…³é”®è¯</td>  </tr>  <!--}-->  <!--foreach($vd['items'] as $item) {-->  <form name="form1" method="post" action="<!--if($vd['noack'] == 0){-->index.php?m=mod_b2b&c=sup&a=save&frm=1<!--}else{-->#<!--}-->">  <tr>    <td width="70" align="center" height="35">    <input type="text" name="ubzspid" size="5" value="{$item['ubzspid']}" />    </td>    <td width="150" align="center" height="35">{$item['ubzspname']} </td>    <td width="80" align="center" height="35">{$item['ubzsuid']}          (<a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzpid={$vd['ubzpid']}&ubzuuid={$item['ubzsuid']}','',692,390);"><font color="#00875A">æŸ¥çœ‹</font></a>)</td>    <td width="70" align="center" height="35">{$item['ubzspok']}</td>    <td width="70" align="center" height="35">    <input type="text" name="ubzspri" size="5" value="{$item['ubzspri']}" />    </td>    <td width="70" align="center" height="35">{$item['ubzsupprice']}</td>    <td width="70" align="center" height="35">{$item['ubzctrlprice']}</td>    <td width="80" align="center" height="35">{$item['ubzspdate']}</td>    <td width="70" align="center" height="35">      <!--if($vd['noack'] == 0){-->    <a href="index.php?m=mod_b2b&c=sup&a=del&ubzepid={$item['ubzepid']}&ubzpid={$vd['ubzpid']}&frm=1">          åˆ é™¤æ­¤ä¾›è´§          </a>      <!--}else{-->      --      <!--}-->        </td>    <td width="70" align="center" height="35">    <input type="hidden" name="ubzepid" value="{$item['ubzepid']}" />    <input type="hidden" name="ubzpid" value="{$vd['ubzpid']}" />    <input value=" ä¿®æ”¹ &gt;&gt;" type="submit" class="button" <!--if($vd['noack'] == 0){--><!--}else{-->disabled<!--}-->/>    </td>  </tr>  </form>  <!--}--></table><script type="text/javascript">  var resizeidx = 1;  function openScript(url,name,width,height)  {    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=no');  }  <!--if($vd['noack'] > 0){-->alert('æ‚¨åœ¨ä¾›è´§ç³»ç»Ÿä¸­æœ‰è®¢å•æ­£åœ¨äº¤æ˜“å¤„ç†ä¸­ï¼Œäº¤æ˜“ç»“æŸåæ–¹å¯æ“ä½œå¯¹æ¥');<!--}--></script></body></html>

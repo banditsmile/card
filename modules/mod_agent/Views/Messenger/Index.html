@@ -1,92 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Õ¾ÄÚ¶ÌĞÅ</title>
-    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
-    <link href="http://www.elingka.com/css/h_skin1/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> Õ¾ÄÚ¶ÌĞÅ</h2>
-  </div>
-  <ul>
-    <li><a href="" class="on">ÊÕ¼şÏä</a></li>
-  </ul>
-</div>
-<form action="index.php?m=mod_agent&amp;c=Messenger&amp;a=Add&amp;a=MessengerDel" method="post" name="messenger" id="messenger">
-<script type="text/javascript"> 
-function CheckOthers(form)
-{
-	for (var i=0;i<form.elements.length;i++)
-	{
-		var e = form.elements[i];
-			if (e.checked==false)
-			{
-				e.checked = true;
-			}
-			else
-			{
-				e.checked = false;
-			}
-	}
-}
-
-function CheckAll(form)
-{
-	for (var i=0;i<form.elements.length;i++)
-	{
-		var e = form.elements[i];
-			e.checked = true
-	}
-}
-</script>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-  <tr>
-    <th width="5%" class="heardertop1">Ñ¡¶¨</td>
-    <th width="16%" class="heardertop1">·¢ËÍÊ±¼ä</td>
-    <th width="35%" class="heardertop1">¶ÌĞÅ±êÌâ</td>
-    <th width="20%" class="heardertop1">·¢ËÍÈË</td>
-    <th width="8%" class="heardertop1">×´Ì¬</td>
-    <th width="16%" class="heardertop1">¶ÌĞÅ¹ÜÀí</td> 
-  <!--foreach($vd['items'] as $item) {-->
-    <tr class="trd">
-    <td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
-    <td>{$item['createdate']}</td>
-    <td align="left"><a href="index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;id={$item['id']}">{$item['title']}</a></td>
-    <td><!--if($item['msgfrom'] < 0){-->
-        <font color="#ff00ff">Ô±¹¤({#DisplayCode((0-$item['msgfrom']),2)})</font>
-        <!--}else{-->
-        <!--if($item['msgfrom'] == $vd['agent'][4]){-->
-        <font color="#0000ff">
-          <!--if($item['msgfrom']==0){-->
-          Æ½Ì¨¹ÜÀíÔ±
-          <!--}else{-->
-          ÉÏ¼Ò({#DisplayCode($item['msgfrom'],4)})
-          <!--}-->
-      </font>
-        <!--}else{-->
-        <font color="#ff0000">{#DisplayCode($item['msgfrom'],4)}</font>
-        <!--}-->
-        <!--}-->    </td>
-    <td><!--if($item['myreaded'] > 0 || ($item['isreaded'] == 1 && $item['msgto'] == $vd['agent'][7])) {-->
-        <font color="#0000ff">ÒÑ¶Á</font>
-        <!--}else{-->
-        <font color="#ff0000">Î´¶Á</font>
-        <!--}-->    </td>
-    <td><a href="javascript:" onClick="parent.Dialog.win({title:'²é¿´Õ¾ÄÚ¶ÌĞÅ',iframe:{src:'index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}'},width:600,height:300});"> ²é¿´</a> <a href="javascript:" onClick="parent.Dialog.win({title:'»Ø¸´Õ¾ÄÚ¶ÌĞÅ',iframe:{src:'index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;reply=1&amp;id={$item['id']}'},width:600,height:300});">»Ø¸´</a></td>
-  </tr>
-
-  <!--}-->
-</table>
-		 		   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-                   <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-                   <div align="left">
-				   </br/>
-                     <input name="button1" type="button" class="tijiao_input" value="·¢ËÍ" onclick="javascript:location.href='index.php?m=mod_agent&amp;c=Messenger&amp;a=Add';" />
-                     <input name="submit" type="submit" class="fanhui_input" value="É¾³ı" />
-                     <input name="selectall" type="button" class="tijiao_input" value="È«Ñ¡" onclick="CheckAll(this.form)" />
-                     <input name="selectother" type="button" class="tijiao_input" value="·´Ñ¡" onclick="CheckOthers(this.form)" />
-                   </div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>ç«™å†…çŸ­ä¿¡</title>    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />    <link href="http://www.elingka.com/css/h_skin1/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> ç«™å†…çŸ­ä¿¡</h2>  </div>  <ul>    <li><a href="" class="on">æ”¶ä»¶ç®±</a></li>  </ul></div><form action="index.php?m=mod_agent&amp;c=Messenger&amp;a=Add&amp;a=MessengerDel" method="post" name="messenger" id="messenger"><script type="text/javascript"> function CheckOthers(form){	for (var i=0;i<form.elements.length;i++)	{		var e = form.elements[i];			if (e.checked==false)			{				e.checked = true;			}			else			{				e.checked = false;			}	}}function CheckAll(form){	for (var i=0;i<form.elements.length;i++)	{		var e = form.elements[i];			e.checked = true	}}</script>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">  <tr>    <th width="5%" class="heardertop1">é€‰å®š</td>    <th width="16%" class="heardertop1">å‘é€æ—¶é—´</td>    <th width="35%" class="heardertop1">çŸ­ä¿¡æ ‡é¢˜</td>    <th width="20%" class="heardertop1">å‘é€äºº</td>    <th width="8%" class="heardertop1">çŠ¶æ€</td>    <th width="16%" class="heardertop1">çŸ­ä¿¡ç®¡ç†</td>   <!--foreach($vd['items'] as $item) {-->    <tr class="trd">    <td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>    <td>{$item['createdate']}</td>    <td align="left"><a href="index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;id={$item['id']}">{$item['title']}</a></td>    <td><!--if($item['msgfrom'] < 0){-->        <font color="#ff00ff">å‘˜å·¥({#DisplayCode((0-$item['msgfrom']),2)})</font>        <!--}else{-->        <!--if($item['msgfrom'] == $vd['agent'][4]){-->        <font color="#0000ff">          <!--if($item['msgfrom']==0){-->          å¹³å°ç®¡ç†å‘˜          <!--}else{-->          ä¸Šå®¶({#DisplayCode($item['msgfrom'],4)})          <!--}-->      </font>        <!--}else{-->        <font color="#ff0000">{#DisplayCode($item['msgfrom'],4)}</font>        <!--}-->        <!--}-->    </td>    <td><!--if($item['myreaded'] > 0 || ($item['isreaded'] == 1 && $item['msgto'] == $vd['agent'][7])) {-->        <font color="#0000ff">å·²è¯»</font>        <!--}else{-->        <font color="#ff0000">æœªè¯»</font>        <!--}-->    </td>    <td><a href="javascript:" onClick="parent.Dialog.win({title:'æŸ¥çœ‹ç«™å†…çŸ­ä¿¡',iframe:{src:'index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}'},width:600,height:300});"> æŸ¥çœ‹</a> <a href="javascript:" onClick="parent.Dialog.win({title:'å›å¤ç«™å†…çŸ­ä¿¡',iframe:{src:'index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;reply=1&amp;id={$item['id']}'},width:600,height:300});">å›å¤</a></td>  </tr>  <!--}--></table>		 		   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>                   <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>                   <div align="left">				   </br/>                     <input name="button1" type="button" class="tijiao_input" value="å‘é€" onclick="javascript:location.href='index.php?m=mod_agent&amp;c=Messenger&amp;a=Add';" />                     <input name="submit" type="submit" class="fanhui_input" value="åˆ é™¤" />                     <input name="selectall" type="button" class="tijiao_input" value="å…¨é€‰" onclick="CheckAll(this.form)" />                     <input name="selectother" type="button" class="tijiao_input" value="åé€‰" onclick="CheckOthers(this.form)" />                   </div></body></html>

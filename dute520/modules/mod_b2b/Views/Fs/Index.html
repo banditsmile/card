@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
 <style type="text/css">
 td{height:30px}
@@ -14,11 +14,11 @@ td{height:30px}
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
   <tr>
     <td width="40%" height="28" class="listhead">
-    <span>¡ú¿ªÊ¼½øĞĞÈí¼şÉı¼¶</span></td>
+    <span>â†’å¼€å§‹è¿›è¡Œè½¯ä»¶å‡çº§</span></td>
     <td width="59%" class="listhead" style="border-right:1px #ccc solid">
     <div align="right">
       <a target="_blank" href="../index.php" >
-      <span class="style11">Éı¼¶°ïÖú</span>&nbsp;</a></div>
+      <span class="style11">å‡çº§å¸®åŠ©</span>&nbsp;</a></div>
     </td>
   </tr>
 </table>
@@ -28,17 +28,17 @@ td{height:30px}
     <td width="100%" style="padding-left:0px;">
       <table border="0" width="100%" style="border-collapse: collapse;padding-right:20px;border:1px #ccc solid;background:#F0F0F0">
         <tr>
-          <td width="20%" style="border-right:0px #fff solid">µ±Ç°°æ±¾</td>
+          <td width="20%" style="border-right:0px #fff solid">å½“å‰ç‰ˆæœ¬</td>
           <td width="80%" style="border-right:1px #ccc solid">{$vd['version']} </td>
         </tr>
         <tr>
-          <td width="20%" style="border-right:0px #fff solid">×îĞÂ°æ±¾</td>
-          <td width="80%" style="border-right:1px #ccc solid">{$vd['newversion']} <a href="#" onclick="upgrade()">Éı¼¶</a></td>
+          <td width="20%" style="border-right:0px #fff solid">æœ€æ–°ç‰ˆæœ¬</td>
+          <td width="80%" style="border-right:1px #ccc solid">{$vd['newversion']} <a href="#" onclick="upgrade()">å‡çº§</a></td>
         </tr>
         <tr>
-          <td width="20%" style="border-right:0px #fff solid;border-bottom:1px #ccc solid">¿ª·¢ÉÌ</td>
+          <td width="20%" style="border-right:0px #fff solid;border-bottom:1px #ccc solid">å¼€å‘å•†</td>
           <td width="80%" style="border-right:1px #ccc solid;border-bottom:1px #ccc solid">
-			<a target="_blank" href="http://www.kamengwang.net">¿¨ÃËÍø</a></td>
+			<a target="_blank" href="http://www.kamengwang.net">å¡ç›Ÿç½‘</a></td>
         </tr>
       </table>
     </td>
@@ -72,12 +72,12 @@ td{height:30px}
   {
     if(checkversion())
     {
-      $("downloadinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> ÕıÔÚÏÂÔØÉı¼¶°ü...£¡";
-      loadXMLDoc("index.php?m=mod_b2b&c=fs&a=down", "downloadinfo", 'Éı¼¶°üÏÂÔØÍê³É..£¡', 'Éı¼¶°üÏÂÔØÊ§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÉı¼¶°üÏÂÔØÊ§°Ü..£¡', 1);
+      $("downloadinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> æ­£åœ¨ä¸‹è½½å‡çº§åŒ…...ï¼";
+      loadXMLDoc("index.php?m=mod_b2b&c=fs&a=down", "downloadinfo", 'å‡çº§åŒ…ä¸‹è½½å®Œæˆ..ï¼', 'å‡çº§åŒ…ä¸‹è½½å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å‡çº§åŒ…ä¸‹è½½å¤±è´¥..ï¼', 1);
     }
     else
     {
-      $("err").innerHTML = "<img src='" + $("alertimg").value + "'/> µ±Ç°°æ±¾ÒÑ¾­ÊÇ×îĞÂ°æ£¬²»ĞèÒªÉı¼¶£¡";
+      $("err").innerHTML = "<img src='" + $("alertimg").value + "'/> å½“å‰ç‰ˆæœ¬å·²ç»æ˜¯æœ€æ–°ç‰ˆï¼Œä¸éœ€è¦å‡çº§ï¼";
     }
   }
   
@@ -88,12 +88,12 @@ td{height:30px}
   
   function getXMLHander()
   {
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
     if (window.XMLHttpRequest)
     {
       xmlhttp=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // é’ˆå¯¹ IE çš„ä»£ç ï¼š
     else if (window.ActiveXObject)
     {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -116,18 +116,18 @@ td{height:30px}
             var ackdata=xmlhttp.responseText;
             if(ackdata == 0 || ackdata == "0")
             {
-              $(id).innerHTML = "<img src='" + $("succimg").value + "'/> " + txt_succ + "£¡";
+              $(id).innerHTML = "<img src='" + $("succimg").value + "'/> " + txt_succ + "ï¼";
               nextstep(step);
             }
             else
             {
               alert(ackdata);
-              $(id).innerHTML = "<img src='" + $("failimg").value + "'/> " + txt_fail + "£¡";
+              $(id).innerHTML = "<img src='" + $("failimg").value + "'/> " + txt_fail + "ï¼";
             }
           }
           else
           {
-            $(id).innerHTML = "<img src='" + $("errimg").value + "'/> " + txt_err + "£¡";
+            $(id).innerHTML = "<img src='" + $("errimg").value + "'/> " + txt_err + "ï¼";
           }
         }
       }
@@ -137,7 +137,7 @@ td{height:30px}
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP£¬ÎŞ·¨Íê³É±¾´Î²Ù×÷")
+      alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTPï¼Œæ— æ³•å®Œæˆæœ¬æ¬¡æ“ä½œ")
     }
   }
   
@@ -148,21 +148,21 @@ td{height:30px}
       case 1:
         //unzip
         //loadXMLDoc(url, id, txt_succ, txt_fail, txt_err, step);
-        $("unzipinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> ÕıÔÚ°²×°Éı¼¶°ü...£¡";
-        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=UnZip&issys=1&path="+$("path").value, "unzipinfo", 'Éı¼¶°ü°²×°Íê³É..£¡', 'Éı¼¶°ü°²×°Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÉı¼¶°ü°²×°Ê§°Ü..£¡', 2);
+        $("unzipinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> æ­£åœ¨å®‰è£…å‡çº§åŒ…...ï¼";
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=UnZip&issys=1&path="+$("path").value, "unzipinfo", 'å‡çº§åŒ…å®‰è£…å®Œæˆ..ï¼', 'å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 2);
         break;
       case 2:
-        //¸üĞÂÊı¾İ¿â
-        $("upgradeinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> ÕıÔÚÉı¼¶Êı¾İ¿â...£¡";
-        loadXMLDoc("update/upgrade.php", "upgradeinfo", 'Êı¾İ¿âÉı¼¶Íê³É..£¡', 'Êı¾İ¿âÉı¼¶Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÊı¾İ¿âÉı¼¶Ê§°Ü..£¡', 3);
+        //æ›´æ–°æ•°æ®åº“
+        $("upgradeinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> æ­£åœ¨å‡çº§æ•°æ®åº“...ï¼";
+        loadXMLDoc("update/upgrade.php", "upgradeinfo", 'æ•°æ®åº“å‡çº§å®Œæˆ..ï¼', 'æ•°æ®åº“å‡çº§å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´æ•°æ®åº“å‡çº§å¤±è´¥..ï¼', 3);
         break;
       case 3:
         //deletefile
-        $("delfileinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> ¿ªÊ¼É¾³ı°²×°°ü...£¡";
-        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "delfileinfo", '°²×°°üÉ¾³ıÍê³É..£¡', '°²×°°üÉ¾³ıÊ§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÉı¼¶°ü°²×°Ê§°Ü..£¡', 4);
+        $("delfileinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> å¼€å§‹åˆ é™¤å®‰è£…åŒ…...ï¼";
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "delfileinfo", 'å®‰è£…åŒ…åˆ é™¤å®Œæˆ..ï¼', 'å®‰è£…åŒ…åˆ é™¤å¤±è´¥..ï¼', 'ç”±äºæŸç§åŸå› å¯¼è‡´å‡çº§åŒ…å®‰è£…å¤±è´¥..ï¼', 4);
         break;
       default:
-        $("resultinfo").innerHTML = "<img src='" + $("succimg").value + "'/> Ó±ÏÈ¿¨¹ºÏµÍ³Éı¼¶³ÌĞòÍê³É£¬Äú¿ÉÒÔ¹Ø±Õ´ËÒ³ÁË£¡<br/><a href='update/update.txt' target='_blank'>²é¿´±¾´ÎÉı¼¶ÄÚÈİ...</a>";
+        $("resultinfo").innerHTML = "<img src='" + $("succimg").value + "'/> é¢–å…ˆå¡è´­ç³»ç»Ÿå‡çº§ç¨‹åºå®Œæˆï¼Œæ‚¨å¯ä»¥å…³é—­æ­¤é¡µäº†ï¼<br/><a href='update/update.txt' target='_blank'>æŸ¥çœ‹æœ¬æ¬¡å‡çº§å†…å®¹...</a>";
         break;
     }
   }

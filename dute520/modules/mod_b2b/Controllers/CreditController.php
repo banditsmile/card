@@ -31,7 +31,7 @@ class CreditController extends Controller
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "tierc" ) ) ) );
-								$R00be52aa45 = array( "aid" => "ÓÃ»§±àºÅ" );
+								$R00be52aa45 = array( "aid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -68,29 +68,29 @@ class CreditController extends Controller
 												) );
 												if ( isset( $R3db8f5c8bc[0]['id'] ) )
 												{
-																$this->Alert( "ÓÃ»§¶ÔÓ¦µÄ¼ÇÂ¼ÒÑ¾­´æÔÚ£¬Çë²»ÒªÖØ¸´Ìí¼Ó" );
+																$this->Alert( "ï¿½Ã»ï¿½ï¿½ï¿½Ó¦ï¿½Ä¼ï¿½Â¼ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ë²»Òªï¿½Ø¸ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->ICredit_Create( $data );
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->ICredit_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=Credit" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=Credit" );
 				}
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -102,10 +102,10 @@ class CreditController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -116,7 +116,7 @@ class CreditController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -131,7 +131,7 @@ class CreditController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -148,7 +148,7 @@ class CreditController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -187,7 +187,7 @@ class CreditController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -208,7 +208,7 @@ class CreditController extends Controller
 								$R808b89ba0e = $this->instance->ICredit_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

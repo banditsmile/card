@@ -1,48 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div class="titleDiv" id="titleList">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Game" title="µã»÷ÖØÐÂÇø·þÁÐ±í" onclick="loadDisp(1)"><font color="#000">Çø·þÁÐ±í</font></a></span> <span style="font-size:7px;">>></span> {$vd['game']}</div>
-<div style="float:right"><a href="index.php" onFocus="this.blur()" title="²é¿´¿¨ÃÜÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Game" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½" onclick="loadDisp(1)"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a></span> <span style="font-size:7px;">>></span> {$vd['game']}</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div class="mytitle" id="mytitle">
-  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="µã»÷Ë¢ÐÂ±¾Ò³Ë¢ÐÂÊý¾Ý,²¢±£³ÖÔ­À´¹´Ñ¡×´Ì¬">
-    <div style="padding-top:10px;padding-left:9px;"><img src="{$vd['sc']}images/add.gif" style="vertical-align:middle"/> Ìí¼Ó</div></samp>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="ï¿½ï¿½ï¿½Ë¢ï¿½Â±ï¿½Ò³Ë¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Ñ¡×´Ì¬">
+    <div style="padding-top:10px;padding-left:9px;"><img src="{$vd['sc']}images/add.gif" style="vertical-align:middle"/> ï¿½ï¿½ï¿½</div></samp>
   </div>  
   <div style="float:right;padding-top:4px;">
     <form action="index.php?m=mod_b2b&c=ykt&a=card" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
     <input type="text" name="keywords" size="16" value="" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
-    <input type="submit" value="Çø·þËÑË÷ &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    <input type="submit" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ &gt;&gt;" style="vertical-align:middle;" class="button"/>
     </form>
   </div>
 </div>
 <div id="adddiv" style="position:absolute;top:120px;left:230px;;width:320px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">Ìí¼ÓÇø·þ</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
   <form name="form1" method="post" action="index.php?m=mod_b2b&c=game&a=AreaSave">
   <table border="0" cellspacing="0" cellpadding="0" width="100%">
     <tr>
-      <td width="25%">Ãû³Æ</td>
+      <td width="25%">ï¿½ï¿½ï¿½ï¿½</td>
       <td width="75%"><input type="text" name="catname" size="25"/></td>
     </tr>
     <tr>
-      <td width="25%">ËùÊôÇøÓò</td>
+      <td width="25%">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td width="75%">
         <select name="area">
-        <option value="0">ÓÎÏ·ÇøÓò</a>
+        <option value="0">ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½</a>
         {#Option($vd['area'], 0, 'name', 'id')}
         </select>
       </td>
     </tr>
     <tr>
-      <td width="25%">ÀàÐÍ</td>
+      <td width="25%">ï¿½ï¿½ï¿½ï¿½</td>
       <td width="75%">
-        <input type="radio" name="areaserv" value="0" class="checkbox" checked onFocus="this.blur()"/> ÇøÓò
-        <input type="radio" name="areaserv" value="1" class="checkbox" onFocus="this.blur()"/> ·þÎñÆ÷
+        <input type="radio" name="areaserv" value="0" class="checkbox" checked onFocus="this.blur()"/> ï¿½ï¿½ï¿½ï¿½
+        <input type="radio" name="areaserv" value="1" class="checkbox" onFocus="this.blur()"/> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       </td>
     </tr>
     <tr>
@@ -50,8 +50,8 @@
       <td width="75%">
         <input type="hidden" name="game" value="{$vd['game']}"/>
         <input type="hidden" name="gameid" value="{$vd['gameid']}"/>
-        <input type="submit" name="Submit" value="Ìí ¼Ó" class="button" />
-        <input type="button" name="Submit" value="È¡ Ïû" onclick="disp('adddiv')" class="button"/>
+        <input type="submit" name="Submit" value="ï¿½ï¿½ ï¿½ï¿½" class="button" />
+        <input type="button" name="Submit" value="È¡ ï¿½ï¿½" onclick="disp('adddiv')" class="button"/>
       </td>
     </tr>
   </table>
@@ -62,17 +62,17 @@
   <tr>
     <td width="30px">
       <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
-    <td width="35px"><b>±àºÅ</b></td>
-    <td width="200px"><b>Ãû³Æ</b></td>
-    <td width="60px"><b>Àà±ð</b></td>
+    <td width="35px"><b>ï¿½ï¿½ï¿½</b></td>
+    <td width="200px"><b>ï¿½ï¿½ï¿½ï¿½</b></td>
+    <td width="60px"><b>ï¿½ï¿½ï¿½</b></td>
     <td width="100px"><b></b></td>
     <td class="endtd"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div></td>
   </tr>
 </table>
 <div id="tip" style="display:none">
-  <span id="tiptable">´ËÒ³ÖÐËùÓÐ <b><span id="ncheck">0</span></b> Ìõ¼ÇÂ¼ÒÑÑ¡ÖÐ </span> 
+  <span id="tiptable">ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <b><span id="ncheck">0</span></b> ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ¡ï¿½ï¿½ </span> 
   <span id="tipspan">
-    <a href="javascript:CheckTotle(<!--echo count($vd['items']);-->,0)">µã´ËÑ¡Ôñµ±Ç°ÁÐ±íÖÐËùÓÐ <b><!--echo count($vd['items']);--></b> Ìõ¼ÇÂ¼>></a>
+    <a href="javascript:CheckTotle(<!--echo count($vd['items']);-->,0)">ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ç°ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <b><!--echo count($vd['items']);--></b> ï¿½ï¿½ï¿½ï¿½Â¼>></a>
   </span>
 </div>
 <div id="content">
@@ -85,8 +85,8 @@
     </td>
     <td width="35px">{$area['id']}</td>
     <td width="200px">{$area['name']}</td>
-    <td width="60px">ÇøÓò</td>
-    <td width="100px"><a href="index.php?m=mod_b2b&c=game&a=AreaDel&id={$area['id']}&gameid={$area['gameid']}">É¾³ý</a></td>
+    <td width="60px">ï¿½ï¿½ï¿½ï¿½</td>
+    <td width="100px"><a href="index.php?m=mod_b2b&c=game&a=AreaDel&id={$area['id']}&gameid={$area['gameid']}">É¾ï¿½ï¿½</a></td>
     <td class="endtd"></td>
   </tr>
   <!--foreach($vd['items'] as $item) { if($item['parentid'] == $area['id']) {-->
@@ -96,8 +96,8 @@
     </td>
     <td width="35px">{$item['id']}</td>
     <td width="200px"> |--- {$item['name']}</td>
-    <td width="60px">·þÎñÆ÷</td>
-    <td width="100px"><a href="index.php?m=mod_b2b&c=game&a=AreaDel&id={$item['id']}&gameid={$area['gameid']}">É¾³ý</a></td>
+    <td width="60px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
+    <td width="100px"><a href="index.php?m=mod_b2b&c=game&a=AreaDel&id={$item['id']}&gameid={$area['gameid']}">É¾ï¿½ï¿½</a></td>
     <td class="endtd"></td>
   </tr>
   <!--}}-->
@@ -119,22 +119,22 @@
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 <script type="text/javascript">
-//µÚÒ»²ÎÊý£¬ºó±ß±£ÁôÏÔÊ¾µÄÁÐÊý
-//µÚ¶þ²ÎÊý£¬³ý×îºóÒ»¸ö²ÎÊýÍâµÄ±£Áô²ÎÊýµÄ×Ü¿í¶È
+//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¿ï¿½ï¿½
 tRows   = <!--echo count($vd['items'])-->;
 tInfoA  = Array(0,0);
 totleRows = <!--echo count($vd['items'])-->;
-deltxt  = "Ïú»ÙºóÎÞ·¨»Ö¸´£¬ÄúÈ·¶¨½øÐÐÏú»Ù²Ù×÷Âð£¿";
-thisaction = "Ïú»Ù";
+deltxt  = "ï¿½ï¿½ï¿½Ùºï¿½ï¿½Þ·ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½";
+thisaction = "ï¿½ï¿½ï¿½ï¿½";
 thisdel = 0;
 statistics = 0;
 var resizeidx = 2;
 </script>
 <script type="text/javascript">
-//µ±Ç°±í¸ñÅäÖÃ
+//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 <!--//tinfo-->
  tInfo = Array();
 <!--//endtinfo-->

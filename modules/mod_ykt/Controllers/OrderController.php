@@ -28,17 +28,17 @@ class OrderController extends Controller
 								$R0f8134fb60['item'] = $this->hander->IOrder_Get( $Rdcd9105806, "", $R5d899a20a5 );
 								if ( $R0f8134fb60['item'] == 0 )
 								{
-												$this->Alert( "ÄúÒª²éÕÒµÄ¶©µ¥²»´æÔÚ£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½Òªï¿½ï¿½ï¿½ÒµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( !$R0f8134fb60['item']['comefrom'] || $R0f8134fb60['item']['comefrom'] != 3 )
 								{
-												$this->Alert( "ÄúÒª²éÕÒµÄ¶©µ¥²»´æÔÚ£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½Òªï¿½ï¿½ï¿½ÒµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R0f8134fb60['item']['inrecycle'] == 1 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷£¡¶©µ¥ÒÑ¾­²»´æÔÚ" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R0f8134fb60['item']['ptype'] == 0 || $R0f8134fb60['item']['ptype'] == 3 || 99 < $R0f8134fb60['item']['ptype'] )
@@ -86,7 +86,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												echo "¸¶¿îÊ§°Ü";
+												echo "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½";
 								}
 								$Rdcd9105806 = getvar( "billno" );
 								$R3db8f5c8bc = $this->hander->IOrder_Get( $Rdcd9105806 );
@@ -107,7 +107,7 @@ class OrderController extends Controller
 								include_once( UPATH_PAY.$Rf70e923790.".php" );
 								include_once( UPATH_HELPER."OrderHelper.php" );
 								$Ra570b05d86 = new $Rf70e923790( );
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								if ( $Ra570b05d86->respond( $R9a1c862f32['uid'] ) )
 								{
 												$R96753b8637 = "";
@@ -134,7 +134,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												echo "È¡¿¨Ê§°Ü£¡";
+												echo "È¡ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -151,7 +151,7 @@ class OrderController extends Controller
 								$R1b33f70f78 = $R3db8f5c8bc['err']['errcode'];
 								if ( $R1b33f70f78 != 0 && $R1b33f70f78 != 18 && $this->RollBackMoney( $Rdcd9105806 ) )
 								{
-												$R3db8f5c8bc['err']['content'] = $R3db8f5c8bc['err']['content']."[¶©µ¥Ê§°Ü£¬Çë±£´æºÃÄúµÄÒ»¿¨Í¨ÒÔ±¸ÏÂ´ÎÖØÐÂ¹ºÂò]";
+												$R3db8f5c8bc['err']['content'] = $R3db8f5c8bc['err']['content']."[ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ë±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ô±ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½]";
 								}
 								return $R3db8f5c8bc;
 				}
@@ -170,7 +170,7 @@ class OrderController extends Controller
 								if ( count( $R3db8f5c8bc ) == 0 )
 								{
 												$R679e9b9234['err']['errcode'] = 1;
-												$R679e9b9234['err']['content'] = "Ã»ÓÐ´ËÖ§¸¶¶©µ¥£¡";
+												$R679e9b9234['err']['content'] = "Ã»ï¿½Ð´ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												return $R679e9b9234;
 								}
 								$R679e9b9234['err']['ptype'] = $R3db8f5c8bc['ptype'];
@@ -230,7 +230,7 @@ class OrderController extends Controller
 												if ( count( $R775f79f010 ) < $R3db8f5c8bc['qty'] )
 												{
 																$R679e9b9234['err']['errcode'] = 1;
-																$R679e9b9234['err']['content'] = "¿â´æ²»×ã£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½æ²»ï¿½ã£¡";
 												}
 												else
 												{
@@ -258,7 +258,7 @@ class OrderController extends Controller
 																				$this->UpdateRank( $R3db8f5c8bc['cname'], $R3db8f5c8bc['dollars'] );
 																}
 																$R679e9b9234['err']['errcode'] = 0;
-																$R679e9b9234['err']['content'] = "½»Ò×Íê±Ï£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½";
 																$R679e9b9234['item'] = $R775f79f010;
 												}
 								}
@@ -295,12 +295,12 @@ class OrderController extends Controller
 																				if ( $Rbf14a97cca['err']['errcode'] == 0 )
 																				{
 																								$R679e9b9234['err']['errcode'] = 0;
-																								$R679e9b9234['err']['content'] = "½»Ò×Íê±Ï£¡";
+																								$R679e9b9234['err']['content'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½";
 																								$data = array(
 																												"ordstate" => 2,
 																												"sup" => 1,
 																												"dealdate" => date( "Y-m-d H-i-s" ),
-																												"factoryreturn" => "×Ô¶¯³äÖµÍê³É³äÖµ"
+																												"factoryreturn" => "ï¿½Ô¶ï¿½ï¿½ï¿½Öµï¿½ï¿½É³ï¿½Öµ"
 																								);
 																				}
 																				else if ( $Rbf14a97cca['err']['errcode'] == 18 )
@@ -318,7 +318,7 @@ class OrderController extends Controller
 												else
 												{
 																$R679e9b9234['err']['errcode'] = 0;
-																$R679e9b9234['err']['content'] = "½»Ò×Íê±Ï£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½";
 																$data = array( "payment" => 100, "ordstate" => 1 );
 												}
 												$this->hander->IOrder_Update( $data, $Rdcd9105806 );
@@ -335,7 +335,7 @@ class OrderController extends Controller
 								$R679e9b9234['order'] = $R3db8f5c8bc;
 								$Rb41f4f8da0 = $R422f9a4efb->IProduct_Get( $R3db8f5c8bc['pid'], -1, "czweb,idlable" );
 								$R679e9b9234['order']['czweb'] = $Rb41f4f8da0['czweb'];
-								$R679e9b9234['err']['idlable'] = $R3db8f5c8bc['ptype'] == 3 ? $Rb41f4f8da0['idlable'] : "¿¨ºÅ";
+								$R679e9b9234['err']['idlable'] = $R3db8f5c8bc['ptype'] == 3 ? $Rb41f4f8da0['idlable'] : "ï¿½ï¿½ï¿½ï¿½";
 								return $R679e9b9234;
 				}
 
@@ -455,7 +455,7 @@ class OrderController extends Controller
 								$Rcc8a91d7c7->ICard_UpdateByOrdno( $data, $Rdcd9105806 );
 								$data = array(
 												"ordstate" => -1,
-												"failreason" => "¶©µ¥Ê§°Ü[Ò»¿¨Í¨Î´¿Û¿î£¬¿ÉÒÔÖØÐÂÊ¹ÓÃ]",
+												"failreason" => "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½[Ò»ï¿½ï¿½Í¨Î´ï¿½Û¿î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½]",
 												"factoryreturn" => "",
 												"rollback" => 1,
 												"dealdate" => date( "Y-m-d H-i-s" )
@@ -521,7 +521,7 @@ class OrderController extends Controller
 												if ( $R3db8f5c8bc['ordstate'] == 2 )
 												{
 																$R679e9b9234['err']['errcode'] = 1;
-																$R679e9b9234['err']['content'] = "³äÖµ¶©µ¥ÒÑ¾­´¦Àí£¬Çë²»ÒªÖØ¸´Ë¢ÐÂ£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Òªï¿½Ø¸ï¿½Ë¢ï¿½Â£ï¿½";
 																return $R679e9b9234;
 												}
 								}
@@ -542,19 +542,19 @@ class OrderController extends Controller
 												}
 												$R3b326299a9 = $R3db8f5c8bc['qty'] * $R3db8f5c8bc['cprice'];
 												$R679e9b9234['err']['ptype'] = $R3db8f5c8bc['ptype'];
-												$R679e9b9234['err']['idlable'] = $R3db8f5c8bc['ptype'] == 3 ? $Rb41f4f8da0['idlable'] : "¿¨ºÅ";
+												$R679e9b9234['err']['idlable'] = $R3db8f5c8bc['ptype'] == 3 ? $Rb41f4f8da0['idlable'] : "ï¿½ï¿½ï¿½ï¿½";
 												$R679e9b9234['err']['pname'] = $R3db8f5c8bc['pname'];
 												$R679e9b9234['err']['dollars'] = $R3b326299a9;
 												if ( ( 1 < $R3db8f5c8bc['ordstate'] || $R3db8f5c8bc['ordstate'] == -1 ) && ( 0 < $R3db8f5c8bc['ptype'] && $R3db8f5c8bc['ptype'] < 99 && $R3db8f5c8bc['ptype'] != 3 ) )
 												{
 																$R679e9b9234['err']['errcode'] = 0;
-																$R679e9b9234['err']['content'] = "¶©µ¥ÒÑ¾­´¦Àí£¬Çë²»ÒªÖØ¸´Ë¢ÐÂ1£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Òªï¿½Ø¸ï¿½Ë¢ï¿½ï¿½1ï¿½ï¿½";
 																return $R679e9b9234;
 												}
 												else if ( ( $R3db8f5c8bc['ordstate'] == 2 || $R3db8f5c8bc['ordstate'] == -1 ) && ( $R3db8f5c8bc['ptype'] == 0 || $R3db8f5c8bc['ptype'] == 3 || 99 < $R3db8f5c8bc['ptype'] ) )
 												{
 																$R679e9b9234['err']['errcode'] = 0;
-																$R679e9b9234['err']['content'] = "½»Ò×Íê³É£¡";
+																$R679e9b9234['err']['content'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½";
 																$Rf541845af3 = factory::getinstance( "cards" );
 																$R337d380380 = $Rf541845af3->ICard_Get( $Rdcd9105806, 99 );
 																$R679e9b9234['item'] = $R337d380380;
@@ -627,7 +627,7 @@ class OrderController extends Controller
 												$R26238b353c = "";
 												if ( trim( $R353a0fb914 ) == "" )
 												{
-																$this->Alert( "ÁªÏµ·½Ê½²»ÄÜÎª¿Õ£¬ÇëÌîÐ´ÄúµÄÁªÏµ·½Ê½·½±ãÎÒÃÇºÍÄúÁªÏµ" );
+																$this->Alert( "ï¿½ï¿½Ïµï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½Ïµ" );
 																$this->CloseWin( );
 												}
 								}
@@ -639,7 +639,7 @@ class OrderController extends Controller
 												$R3db8f5c8bc = $Rdeabc7f106->IOrder_Get( $Rdcd9105806, "", "", "tsid" );
 												if ( 0 < intval( $R3db8f5c8bc['tsid'] ) )
 												{
-																$this->Alert( "´Ë¶©µ¥ÒÑ¾­Í¶Ëß¹ý£¬Èç¹ûÄúÐèÒª²¹³ä£¬ÇëÊ¹ÓÃÄúµÄÕËºÅµÇÂ½ÏµÍ³ÔÚºó±ß»Ø¸´¼´¿É»òÕßÖ±½ÓÁªÏµ¹ÜÀíÔ±£¡" );
+																$this->Alert( "ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½Í¶ï¿½ß¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ä£¬ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅµï¿½Â½ÏµÍ³ï¿½Úºï¿½ß»Ø¸ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½" );
 																$this->CloseWin( );
 												}
 								}
@@ -647,7 +647,7 @@ class OrderController extends Controller
 								$Re82ee9b121 = getvar( "content" );
 								if ( $R353a0fb914 != "" )
 								{
-												$Re82ee9b121 = $Re82ee9b121."\\n\\nÁªÏµ·½Ê½£º\\n".$R353a0fb914;
+												$Re82ee9b121 = $Re82ee9b121."\\n\\nï¿½ï¿½Ïµï¿½ï¿½Ê½ï¿½ï¿½\\n".$R353a0fb914;
 								}
 								$Re82ee9b121 = htmlspecialchars( $Re82ee9b121 );
 								$R76e9854dc9 = getvar( "hope", "" );
@@ -684,12 +684,12 @@ class OrderController extends Controller
 																);
 																$Rdeabc7f106->IOrder_Update( $data, $Rdcd9105806 );
 												}
-												$this->Alert( "Í¶Ëß¶ÌÏûÏ¢·¢²¼³É¹¦£¡" );
+												$this->Alert( "Í¶ï¿½ß¶ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 												$this->CloseWin( );
 								}
 								else
 								{
-												$this->Alert( "Í¶Ëß¶ÌÏûÏ¢·¢²¼Ê§°Ü£¡" );
+												$this->Alert( "Í¶ï¿½ß¶ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->CloseWin( );
 								}
 				}

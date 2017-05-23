@@ -1,100 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>¼Û¸ñÄ£°åÌ×ÓÃ</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>µ¥¼¶±ğ¼Û¸ñÄ£°å</h2>
-  </div>
-  <ul>
-			<li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">Ìí¼Ó¼Û¸ñÄ£°å</span></a></li>
-			<li><a href="index.php?m=mod_b2b&c=Price&a=RankTpl">¼Û¸ñÄ£°åÁĞ±í</span></a></li>
-			<li><a href="" class="on">µ¥¼¶±ğ¼Û¸ñÄ£°å</a></li>
-  </ul>
-</div>
-		<FORM name="query" METHOD=POST ACTION="{$vd['root']}index.php?m=mod_b2b&c=price&a=Agent">
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td width="22%" class="table1_left">¹Ø¼ü×Ö£º</td>
-		<td width="78%" align="left" class="tableright1"><div align="left">
-		  <input type="text" size="30" name="keywords" class='input' value="">
-		  </div></td>
-		</tr>
-		<tr>
-		<td class="table1_left">²éÑ¯ÀàĞÍ£º</td>
-		<td align="left" class="tableright1">
-		  <div align="left">
-		    <select name="stype" id="stype" class="search_select">
-		          <option value="aname" selected>ÓÃ»§Ãû</option>
-		          <option value="aid">ÓÃ»§±àºÅ</option>
-		          <option value="company">ÉÌ»§Ãû³Æ</option>
-		          <option value="arealname">ÁªÏµÈË</option>
-	            </select>
-	            </div></td>
-		</tr>
-		<tr>
-		<td width="20%" class="table1_left"></td>
-		<td width="80%" align="left" class="tableright1">
-		  <div align="left">
-		    <input type="submit" name="Submit" value="È·ÈÏ²éÑ¯" class="tijiao_input">
-		    <input type="reset" name="reset3" value="ÖØÖÃ²éÑ¯" class="fanhui_input">
-	      </div></td>
-		</tr>
-		</table>
-		</FORM>
-	</td>
-	</tr>
-	</table>
-	<br>
-		<form name="template" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=AgentTplSave">
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-		<tr>
-		<th width="6%" class="heardertop1">±àºÅ</td>
-		<th width="11%" class="heardertop1">ÓÃ»§Ãû</td>
-		<th width="20%" class="heardertop1">ÉÌ»§Ãû³Æ</td>
-		<th width="8%" class="heardertop1">ÓÃ»§¼¶±ğ</td>
-		<th width="8%" class="heardertop1">ÁªÏµÈË</td>
-		<th width="6%" class="heardertop1">×´Ì¬</td>
-		<th width="9%" class="heardertop1">Óà¶î</td>
-		<th width="10%" class="heardertop1">Ïû·Ñ</td>
-		<th width="22%" class="heardertop1">Ä£°åÌ×ÓÃ</td>
-		<!--foreach($vd['items'] as $item) {-->
-      <tr class="trd">
-		<td>{$item['aid']}</td>
-		<td>{$item['aname']}</td>
-		<td align=left>{$item['company']}</td>
-		<td>{$item['rank']}</td>
-		<td>{$item['arealname']}</td>
-		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">¶³½á</font> <!--}else{--> <font color="#008800">Æô¶¯</font> <!--}--></td>
-		<td>{$item['aremain']}</td>
-		<td>{$item['acsmp']}</td>
-		<td>
-		    <input type="hidden" name="oldpricetpl_{$item['aid']}" value="{$item['pricetpl']}"/>
-      	<input type="hidden" name="aid[]" value="{$item['aid']}"/>
-        <select name="pricetpl_{$item['aid']}">
-        	<option value="0">²»Ì×ÓÃ¼Û¸ñÄ£°å</option>
-        	{#option($vd['tpls'], $item['pricetpl'], 'name', 'id')}
-        </select>
-		</td>
-	  </tr>
-		<!--}-->
-		</table>
-		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-	<div id="page" align="right">
-		{load(fpage)}
-	</div>
-	
-	
-	  <div align="left">
-	    <input type="hidden" name="SearchString" value="">
-	    <input type="submit" name="Submit" value="È·ÈÏÉèÖÃ" class="tijiao_input">
-	    <input type="reset" name="reset" value="ÖØĞÂÑ¡Ôñ" class="fanhui_input">
-	    </div>
-		</form>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>ä»·æ ¼æ¨¡æ¿å¥—ç”¨</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>å•çº§åˆ«ä»·æ ¼æ¨¡æ¿</h2>  </div>  <ul>			<li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">æ·»åŠ ä»·æ ¼æ¨¡æ¿</span></a></li>			<li><a href="index.php?m=mod_b2b&c=Price&a=RankTpl">ä»·æ ¼æ¨¡æ¿åˆ—è¡¨</span></a></li>			<li><a href="" class="on">å•çº§åˆ«ä»·æ ¼æ¨¡æ¿</a></li>  </ul></div>		<FORM name="query" METHOD=POST ACTION="{$vd['root']}index.php?m=mod_b2b&c=price&a=Agent">      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td width="22%" class="table1_left">å…³é”®å­—ï¼š</td>		<td width="78%" align="left" class="tableright1"><div align="left">		  <input type="text" size="30" name="keywords" class='input' value="">		  </div></td>		</tr>		<tr>		<td class="table1_left">æŸ¥è¯¢ç±»å‹ï¼š</td>		<td align="left" class="tableright1">		  <div align="left">		    <select name="stype" id="stype" class="search_select">		          <option value="aname" selected>ç”¨æˆ·å</option>		          <option value="aid">ç”¨æˆ·ç¼–å·</option>		          <option value="company">å•†æˆ·åç§°</option>		          <option value="arealname">è”ç³»äºº</option>	            </select>	            </div></td>		</tr>		<tr>		<td width="20%" class="table1_left"></td>		<td width="80%" align="left" class="tableright1">		  <div align="left">		    <input type="submit" name="Submit" value="ç¡®è®¤æŸ¥è¯¢" class="tijiao_input">		    <input type="reset" name="reset3" value="é‡ç½®æŸ¥è¯¢" class="fanhui_input">	      </div></td>		</tr>		</table>		</FORM>	</td>	</tr>	</table>	<br>		<form name="template" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=AgentTplSave">    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">		<tr>		<th width="6%" class="heardertop1">ç¼–å·</td>		<th width="11%" class="heardertop1">ç”¨æˆ·å</td>		<th width="20%" class="heardertop1">å•†æˆ·åç§°</td>		<th width="8%" class="heardertop1">ç”¨æˆ·çº§åˆ«</td>		<th width="8%" class="heardertop1">è”ç³»äºº</td>		<th width="6%" class="heardertop1">çŠ¶æ€</td>		<th width="9%" class="heardertop1">ä½™é¢</td>		<th width="10%" class="heardertop1">æ¶ˆè´¹</td>		<th width="22%" class="heardertop1">æ¨¡æ¿å¥—ç”¨</td>		<!--foreach($vd['items'] as $item) {-->      <tr class="trd">		<td>{$item['aid']}</td>		<td>{$item['aname']}</td>		<td align=left>{$item['company']}</td>		<td>{$item['rank']}</td>		<td>{$item['arealname']}</td>		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">å†»ç»“</font> <!--}else{--> <font color="#008800">å¯åŠ¨</font> <!--}--></td>		<td>{$item['aremain']}</td>		<td>{$item['acsmp']}</td>		<td>		    <input type="hidden" name="oldpricetpl_{$item['aid']}" value="{$item['pricetpl']}"/>      	<input type="hidden" name="aid[]" value="{$item['aid']}"/>        <select name="pricetpl_{$item['aid']}">        	<option value="0">ä¸å¥—ç”¨ä»·æ ¼æ¨¡æ¿</option>        	{#option($vd['tpls'], $item['pricetpl'], 'name', 'id')}        </select>		</td>	  </tr>		<!--}-->		</table>		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>	<div id="page" align="right">		{load(fpage)}	</div>			  <div align="left">	    <input type="hidden" name="SearchString" value="">	    <input type="submit" name="Submit" value="ç¡®è®¤è®¾ç½®" class="tijiao_input">	    <input type="reset" name="reset" value="é‡æ–°é€‰æ‹©" class="fanhui_input">	    </div>		</form></body></html>

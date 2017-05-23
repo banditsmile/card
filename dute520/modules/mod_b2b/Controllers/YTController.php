@@ -31,7 +31,7 @@ class YTController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->IYktTrans_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "outprice" => "×ª³ö¿¨ÃæÖµ", "inprice" => "×ªÈë¿¨ÃæÖµ", "outfeature" => "×ª³ö¿¨ÌØÕ÷Âë", "infeature" => "×ªÈë¿¨ÌØÕ÷Âë" );
+								$R00be52aa45 = array( "outprice" => "×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ", "inprice" => "×ªï¿½ë¿¨ï¿½ï¿½Öµ", "outfeature" => "×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "infeature" => "×ªï¿½ë¿¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -51,20 +51,20 @@ class YTController extends Controller
 								);
 								if ( $R3584859062 == 0 )
 								{
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->IYktTrans_Create( $data );
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->IYktTrans_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=YT" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=YT" );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -76,10 +76,10 @@ class YTController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -90,7 +90,7 @@ class YTController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -105,7 +105,7 @@ class YTController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -124,7 +124,7 @@ class YTController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -163,7 +163,7 @@ class YTController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -186,7 +186,7 @@ class YTController extends Controller
 								$R808b89ba0e = $this->instance->IYktTrans_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

@@ -1,208 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÉÌÆ·Ä¿Â¼</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-	<script language="JavaScript" src="{$vd['content']}js/loadgameindex.js"></script>
-</head>
-<body>
-<form name="form1" method="get" action="{$vd['root']}index.php">
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-<div class="new_qie">
-            <div class="new_qie2">
-                <h2>
-                    ÉÌÆ·°´Ä¿Â¼·ÖÀà</h2>
-                <span class="setup_index" style="margin-right: 15px;">
-                    <input id="lbtnLogin" type="checkbox" name="lbtnLogin" onclick="javascript:setTimeout('__doPostBack(\'lbtnLogin\',\'\')', 0)" /><label for="lbtnLogin">µÇÂ¼ºóµ½ÕâÒ³</label></span>
-                <span class="setup_index">
-                    <input id="btnDisplayCategoryImg" type="checkbox" name="btnDisplayCategoryImg" onclick="javascript:setTimeout('__doPostBack(\'btnDisplayCategoryImg\',\'\')', 0)" /><label for="btnDisplayCategoryImg">Í¼Æ¬ĞÎÊ½ÏÔÊ¾Ä¿Â¼</label></span>
-            </div>
-            <ul>
-                <li><a href="Buycard.aspx" class="on">ÉÌÆ·°´Ä¿Â¼·ÖÀà</a></li>
-                <li><a href="index.php?m=mod_b2b&amp;c=Category&amp;a=PinYin">ÉÌÆ·°´×ÖÄ¸·ÖÀà</a></li>
-            </ul>
-</div>
-    <script language="javascript" type="text/javascript">
-        function ShowSearchType(obj)
-        {
-            var pos = getElementPos(obj);
-            var div = document.getElementById("SearchType");
-            div.style.display = "";
-            div.style.left = pos.x;
-            div.style.top = pos.y + obj.offsetHeight;
-        }
-        function SelcetSearchType(obj)
-        {
-            document.getElementById("spanSearchType").innerHTML = obj.innerHTML;
-            document.getElementById("hfldSearchType").value = obj.key;
-            document.getElementById("SearchType").style.display = "none";
-        }
-        function CheckQuery()
-        {
-            if (document.getElementById("hfldSearchType").value == "")
-            {
-                alert("ÇëÑ¡ÔñËÑË÷ÀàĞÍ£¡");
-                return false;
-            }
-            if (document.getElementById("keywords").value == "" || document.getElementById("keywords").value == "ÊäÈëÓÎÏ·Ãû»òÓÎÏ·¹«Ë¾Ãû")
-            {
-                alert("ÇëÊäÈë²éÑ¯¹Ø¼ü×Ö£¡");
-                return false;
-            } 
-            return true;
-        }
-    </script>
-
-        <table class="ss_table" cellspacing="0" cellpadding="0">
-            <tr>
-                <td class="td1">
-                </td>
-                <td class="td2">
-                    <div class="input1">
-                        <input name="keywords" type="text" value="ÊäÈëÓÎÏ·Ãû»òÓÎÏ·¹«Ë¾Ãû" maxlength="30" id="keywords" class="ss1" onblur="if(value=='') {value='ÊäÈëÓÎÏ·Ãû»òÓÎÏ·¹«Ë¾Ãû'}" onfocus="if(value=='ÊäÈëÓÎÏ·Ãû»òÓÎÏ·¹«Ë¾Ãû') {value=''}" onkeyup="gamekeyup()" autocomplete="off" size="14" />
-                        <div style="display: none" id="searchlist">
-                            <ul>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="input11">
-                        <a id="spanSearchType" onclick="ShowSearchType(this)" class="ss2">ËÑË÷ÉÌÆ·</a>
-<form name="form1" method="get" action="{$vd['root']}index.php">
-                        <input type="hidden" name="hfldSearchType" id="hfldSearchType" value="Product" />
-			<input type="hidden" name="stype" value="pname"/>
-			<input type="hidden" name="m" value="mod_b2b"/>
-			<input type="hidden" name="c" value="product"/>
-			<input type="hidden" name="nrows" value="4000"/>
-                        <div id="typesearch" style="position: absolute; display: none;">
-                            <ul>
-                                <li onclick="SelcetSearchType(this)" key="product" onmouseover="this.className='ParvalueOn';"
-                                    onmouseout="this.className='';">ËÑË÷ÉÌÆ·</li>
-                                <li onclick="SelcetSearchType(this)" key="category" onmouseover="this.className='ParvalueOn';"
-                                    onmouseout="this.className='';">ËÑË÷Ä¿Â¼</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="input2">
-                        <input type="submit" name="btnQuery" value="ËÑË÷" onclick="return CheckQuery();" id="btnQuery" class="input_ss" onmouseover="this.className='input_ss_on';" onmouseout="this.className='input_ss';" />
-						    	<!--$k=array('QQ','Õ÷Í¾','ÌìÁú°Ë²¿','Ê¢´ó','ÍøÒ×','Ä§ÊŞÊÀ½ç' );-->
-                    </div>
-                    <div class="input22">
-                        <b>ÈÈÃÅËÑË÷£º</b><!--foreach($k as $item) {--><a href="{$vd['root']}index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=<!--echo urlencode($item);-->">{$item}</a><!--}-->
-                    </div>
-					        		<!--$icat=array();foreach($vd['cat'] as $cat) {-->
-
-    <!--$ls=array();foreach($vd['subcat'] as $subcat) {-->
-
-    <!--if($subcat['parentid'] == $cat['id'] && $subcat['forb2b'] == 1) {-->
-
-    <!--$ls[]=$subcat;-->
-
-    <!--}-->
-
-    <!--$icat[$cat['id']]=$ls;-->
-
-    <!--}}-->
-
-    
-
-    <!--$k=0;foreach($vd['cat'] as $cat) {-->
-
-    <!--if($cat['forb2b'] == 1) {-->
-
-                </td>
-                <td class="td3">
-                </td>
-            </tr>
-
-<table class="table4 margin10" cellspacing="1" cellpadding="0">
-
-<tr>
-
-<th height="23" colspan="5" align="left" bgcolor="#D7F1FF" class="heardertopno">¡¡<font color="{$cat['color']}" style=" font-weight:bolder">{$cat['name']}</font></td></tr>
-
-<!--$n=0;$i=0;$ls=$icat[$cat['id']];foreach($ls as $subcat) {-->
-
-<!--if($i == 0){-->
-
-<tr<!--if($n%2==1){--> class="hs"<!--}-->>
-
-<!--$n++;}$i++;-->
-
-<td width=20% height="30" class=stline><a onmouseover='ShowComment(this)' onmouseout='HideComment(this)' class='tip'  href='{#ListLink($subcat['id'])}'>
-
-<!--if($vd['showtype']==0){-->
-
-<font color={$subcat['color']}>{$subcat['name']}</font>
-
-<!--if($subcat['abst'] != '' && $subcat['abst'] != 'NULL'){-->
-
-<SPAN class=tip_info></SPAN>
-
-<!--}-->
-
-<!--}else{--><!--}-->
-
-</a></td>
-
-<!--if($i == 5){-->
-
-</tr>
-
-<!--$i=0;}-->
-
-<!--}-->
-
-
-
-<!--if($i > 0){-->
-
-<!--for($j=0; $j < 5 - $i; $j++){-->
-
-<td width="20%" height="13" class=stline></td>
-
-<!--}-->
-
-</tr>
-
-<!--}-->
-
-</table>
-
-<!--}$k++;}-->
-
-</html>            
-</form>
-
-    <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-
-    <script type="text/javascript" src="../../index/js/loadgame.js?r=0.34534535"></script>
-    <script language="javascript" type="text/javascript">
-        $(function () {
-            if ($("#btnQuery").length == 1) {
-                $("body").keydown(function (event) {
-                    if (event.keyCode == 13) {
-                        $("#btnQuery").focus();
-                    }
-                });
-            }
-        }); 
-    </script>
-	    <script language="javascript" type="text/javascript" src="../../index/js/getElementPos.js"></script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>å•†å“ç›®å½•</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />	<script language="JavaScript" src="{$vd['content']}js/loadgameindex.js"></script></head><body><form name="form1" method="get" action="{$vd['root']}index.php"><script type="text/javascript">//<![CDATA[var theForm = document.forms['form1'];if (!theForm) {    theForm = document.form1;}function __doPostBack(eventTarget, eventArgument) {    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {        theForm.__EVENTTARGET.value = eventTarget;        theForm.__EVENTARGUMENT.value = eventArgument;        theForm.submit();    }}//]]></script><div class="new_qie">            <div class="new_qie2">                <h2>                    å•†å“æŒ‰ç›®å½•åˆ†ç±»</h2>                <span class="setup_index" style="margin-right: 15px;">                    <input id="lbtnLogin" type="checkbox" name="lbtnLogin" onclick="javascript:setTimeout('__doPostBack(\'lbtnLogin\',\'\')', 0)" /><label for="lbtnLogin">ç™»å½•ååˆ°è¿™é¡µ</label></span>                <span class="setup_index">                    <input id="btnDisplayCategoryImg" type="checkbox" name="btnDisplayCategoryImg" onclick="javascript:setTimeout('__doPostBack(\'btnDisplayCategoryImg\',\'\')', 0)" /><label for="btnDisplayCategoryImg">å›¾ç‰‡å½¢å¼æ˜¾ç¤ºç›®å½•</label></span>            </div>            <ul>                <li><a href="Buycard.aspx" class="on">å•†å“æŒ‰ç›®å½•åˆ†ç±»</a></li>                <li><a href="index.php?m=mod_b2b&amp;c=Category&amp;a=PinYin">å•†å“æŒ‰å­—æ¯åˆ†ç±»</a></li>            </ul></div>    <script language="javascript" type="text/javascript">        function ShowSearchType(obj)        {            var pos = getElementPos(obj);            var div = document.getElementById("SearchType");            div.style.display = "";            div.style.left = pos.x;            div.style.top = pos.y + obj.offsetHeight;        }        function SelcetSearchType(obj)        {            document.getElementById("spanSearchType").innerHTML = obj.innerHTML;            document.getElementById("hfldSearchType").value = obj.key;            document.getElementById("SearchType").style.display = "none";        }        function CheckQuery()        {            if (document.getElementById("hfldSearchType").value == "")            {                alert("è¯·é€‰æ‹©æœç´¢ç±»å‹ï¼");                return false;            }            if (document.getElementById("keywords").value == "" || document.getElementById("keywords").value == "è¾“å…¥æ¸¸æˆåæˆ–æ¸¸æˆå…¬å¸å")            {                alert("è¯·è¾“å…¥æŸ¥è¯¢å…³é”®å­—ï¼");                return false;            }             return true;        }    </script>        <table class="ss_table" cellspacing="0" cellpadding="0">            <tr>                <td class="td1">                </td>                <td class="td2">                    <div class="input1">                        <input name="keywords" type="text" value="è¾“å…¥æ¸¸æˆåæˆ–æ¸¸æˆå…¬å¸å" maxlength="30" id="keywords" class="ss1" onblur="if(value=='') {value='è¾“å…¥æ¸¸æˆåæˆ–æ¸¸æˆå…¬å¸å'}" onfocus="if(value=='è¾“å…¥æ¸¸æˆåæˆ–æ¸¸æˆå…¬å¸å') {value=''}" onkeyup="gamekeyup()" autocomplete="off" size="14" />                        <div style="display: none" id="searchlist">                            <ul>                            </ul>                        </div>                    </div>                    <div class="input11">                        <a id="spanSearchType" onclick="ShowSearchType(this)" class="ss2">æœç´¢å•†å“</a><form name="form1" method="get" action="{$vd['root']}index.php">                        <input type="hidden" name="hfldSearchType" id="hfldSearchType" value="Product" />			<input type="hidden" name="stype" value="pname"/>			<input type="hidden" name="m" value="mod_b2b"/>			<input type="hidden" name="c" value="product"/>			<input type="hidden" name="nrows" value="4000"/>                        <div id="typesearch" style="position: absolute; display: none;">                            <ul>                                <li onclick="SelcetSearchType(this)" key="product" onmouseover="this.className='ParvalueOn';"                                    onmouseout="this.className='';">æœç´¢å•†å“</li>                                <li onclick="SelcetSearchType(this)" key="category" onmouseover="this.className='ParvalueOn';"                                    onmouseout="this.className='';">æœç´¢ç›®å½•</li>                            </ul>                        </div>                    </div>                    <div class="input2">                        <input type="submit" name="btnQuery" value="æœç´¢" onclick="return CheckQuery();" id="btnQuery" class="input_ss" onmouseover="this.className='input_ss_on';" onmouseout="this.className='input_ss';" />						    	<!--$k=array('QQ','å¾é€”','å¤©é¾™å…«éƒ¨','ç››å¤§','ç½‘æ˜“','é­”å…½ä¸–ç•Œ' );-->                    </div>                    <div class="input22">                        <b>çƒ­é—¨æœç´¢ï¼š</b><!--foreach($k as $item) {--><a href="{$vd['root']}index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=<!--echo urlencode($item);-->">{$item}</a><!--}-->                    </div>					        		<!--$icat=array();foreach($vd['cat'] as $cat) {-->    <!--$ls=array();foreach($vd['subcat'] as $subcat) {-->    <!--if($subcat['parentid'] == $cat['id'] && $subcat['forb2b'] == 1) {-->    <!--$ls[]=$subcat;-->    <!--}-->    <!--$icat[$cat['id']]=$ls;-->    <!--}}-->        <!--$k=0;foreach($vd['cat'] as $cat) {-->    <!--if($cat['forb2b'] == 1) {-->                </td>                <td class="td3">                </td>            </tr><table class="table4 margin10" cellspacing="1" cellpadding="0"><tr><th height="23" colspan="5" align="left" bgcolor="#D7F1FF" class="heardertopno">ã€€<font color="{$cat['color']}" style=" font-weight:bolder">{$cat['name']}</font></td></tr><!--$n=0;$i=0;$ls=$icat[$cat['id']];foreach($ls as $subcat) {--><!--if($i == 0){--><tr<!--if($n%2==1){--> class="hs"<!--}-->><!--$n++;}$i++;--><td width=20% height="30" class=stline><a onmouseover='ShowComment(this)' onmouseout='HideComment(this)' class='tip'  href='{#ListLink($subcat['id'])}'><!--if($vd['showtype']==0){--><font color={$subcat['color']}>{$subcat['name']}</font><!--if($subcat['abst'] != '' && $subcat['abst'] != 'NULL'){--><SPAN class=tip_info></SPAN><!--}--><!--}else{--><!--}--></a></td><!--if($i == 5){--></tr><!--$i=0;}--><!--}--><!--if($i > 0){--><!--for($j=0; $j < 5 - $i; $j++){--><td width="20%" height="13" class=stline></td><!--}--></tr><!--}--></table><!--}$k++;}--></html>            </form>    <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script type="text/javascript" src="../../index/js/loadgame.js?r=0.34534535"></script>    <script language="javascript" type="text/javascript">        $(function () {            if ($("#btnQuery").length == 1) {                $("body").keydown(function (event) {                    if (event.keyCode == 13) {                        $("#btnQuery").focus();                    }                });            }        });     </script>	    <script language="javascript" type="text/javascript" src="../../index/js/getElementPos.js"></script></body></html>

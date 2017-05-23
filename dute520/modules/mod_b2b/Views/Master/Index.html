@@ -1,245 +1,1 @@
-<!--if($vd['table']==0){-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
-<link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/>
-<body>
-<div class="title"> µ±Ç°Î»ÖÃ£º³£¹æ¹ÜÀí &gt; ÏµÍ³¹ÜÀíÔ±ÉèÖÃ</div>
-  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Master&a=Create" id="cform">
-        <table width="111%" cellpadding="0" cellspacing="1" class="page_table2">
-    <tr>
-            <td class="td_left"><div align="right">¹ÜÀíÔ±</div></td>
-      <td width="75%"><div align="left">
-        <input name="adminname" type="text" size="25">
-      </div></td>
-    </tr>
-    <tr>
-                  <td class="td_left"><div align="right">ÃÜÂë</div></td>
-      <td width="75%"><div align="left">
-        <input name="adminpass" type="password" size="25">
-      </div></td>
-    </tr>
-    <tr>
-                  <td class="td_left"><div align="right">½ÇÉ«</div></td>
-      <td width="75%">
-        <div align="left">
-          <select size="1" name="adminrank">
-            <!--if($vd['issuper']==1){-->
-            <option value=2>ÏµÍ³¹ÜÀíÔ±</option>
-            <!--}-->
-            <option value=3>»áÔ±¹ÜÀíÔ±</option>
-            <option value=4>¶©µ¥¹ÜÀíÔ±</option>
-            <option value=5>ÉÌÆ·¹ÜÀíÔ±</option>
-            <option value=6>ĞÂÎÅ¹ÜÀíÔ±</option>
-          </select>
-        </div></td>
-    </tr>
-    <tr>
-      <td class="td_left"><div align="right"></div></td>
-      <td width="75%"><input type="submit" name="Submit2" value="Ìí ¼Ó" class="tijiao_input" />
-      </span></td>
-    </tr>
-  </table>
-<div id="menuMask" class="menuMask" style="display:none"><form action="?m=mod_b2b&c=Tpl&tpl=Sup&v=Sup" method="post" style="margin:0px"><div class="menuContent"><p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>ÉÌÆ·±àºÅ<br/>
-        <input type="checkbox" name="id[]" value="tordering" id="tordering" class="checkbox" onFocus='this.blur()'/> 
-      ÉÌÆ·Ãû³Æ<br/>
-        <input type="checkbox" name="id[]" value="tpics" id="tpics" class="checkbox" onFocus='this.blur()'/> 
-      ¹©»õÉÌ<br/>
-        <input type="checkbox" name="id[]" value="tname" id="tname" class="checkbox" onFocus='this.blur()'/> 
-      ½ø»õÉóºË<br/>
-        <input type="checkbox" name="id[]" value="tabst" id="tabst" class="checkbox" onFocus='this.blur()'/> 
-      ½ø»õÓÅÏÈ¼¶<br/>
-        <input type="checkbox" name="id[]" value="tfee" id="tfee" class="checkbox" onFocus='this.blur()'/> 
-      ½ø»õ¼Û<br/>
-        <input type="checkbox" name="id[]" value="tcode" id="tcode" class="checkbox" onFocus='this.blur()'/> 
-      ×îµÍÊÛ¼Û<br/>
-    </p>
-  </div>
-  <div class="menuOp">
-  <input type="submit" value="±£´æ" class="button" disabled />
-  <input type="button" value="ÖØÖÃ" class="button" disabled onClick="tInfoReset()"/>
-  <input type="button" value="È¡Ïû" class="button" onClick="setMenuMask()"/>
-  </div>
-  </form>
-</div>
-<div style="display:none">
-  <form method="post" id="fakeform" action="index.php?m=mod_b2b&c=master&a=Update">
-    <input type="hidden" id="tadminname" name="adminname"/>
-    <input type="hidden" id="toldname"  name="oldname"/>
-    <input type="hidden" id="sid" name="id"/>
-    <input type="hidden" id="tadminpass" name="adminpass">
-    <input type="hidden" id="tadminrank" name="adminrank">
-  </form>
-</div>
-<div id="tip" style="display:none">
-  <span id="tiptable">´ËÒ³ÖĞËùÓĞ <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> Ìõ¼ÇÂ¼ÒÑÑ¡ÖĞ </span> 
-  <span id="tipspan">
-    <a href="javascript:CheckTotle({$vd['totlerow']},0)">µã´ËÑ¡Ôñµ±Ç°ÁĞ±íÖĞËùÓĞ <b>{$vd['totlerow']}</b> Ìõ¼ÇÂ¼>></a></span></div>
-<div id="content">
-<!--}-->
-  <!--if($vd['totlerow'] == 0) {-->
-  <tr>
-    <td align="right" colspan="20">ÎŞÈÎºÎ¼ÇÂ¼</td>
-  </tr>
-  </table>
-  <!--}-->
-        <table cellspacing="1" cellpadding="0" class="page_table">
-  <tr>
-        <td width="10%" class="table_top"><input name="chkall" id="chkall" type="checkbox" class="checkbox" onClick="CheckAll(this)" onFocus='this.blur()' disabled /></td>
-<!--//thead-->
-        <td width="10%" class="table_top">±àºÅ</td>
-        <td width="10%" class="table_top">¹ÜÀíÔ±</td>
-        <td width="10%" class="table_top">ÃÜÂë</td>
-        <td width="10%" class="table_top">½ÇÉ«</td>
-        <td width="10%" class="table_top">ĞŞ¸Ä</td>
-        <td width="10%" class="table_top">È¨ÏŞ</td>
-        <td width="10%" class="table_top">°ó¶¨</td>
-        <td width="10%" class="table_top">É¾³ı</td>
-<!--//endthead-->
-        <td width="10%" class="table_top"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div>
-    </td>
-  </tr>
-  <!--foreach($vd['items'] as $item) {-->
-  <tr>
-    <td width="30px">
-      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onClick="CheckThis(this)" onFocus='this.blur()'  disabled ></input>
-    </td>
-    <!--//tbody-->
-    <td width="35px">{$item['id']}</td>
-    <td width="165px">
-      <input name="adminname" id="adminname_{$item['id']}" type="text" size="25" value="{$item['adminName']}"/>
-      <input type="hidden" name="oldname" id="oldname_{$item['id']}" value="{$item['adminName']}" />
-      <input type="hidden" name="id" id="id_{$item['id']}" value="{$item['id']}" />
-    </td>
-    <td width="165px"><input name="adminpass" id="adminpass_{$item['id']}" type="password" size="25"></td>
-    <td width="100px">
-      <!--if($item['adminRank']==1){-->
-      <select size="1" name="adminrank" id="adminrank_{$item['id']}">
-        <option value="1">³¬¼¶¹ÜÀíÔ±</option>
-      </select>
-      <!--}else if($item['adminRank']==2){-->
-      <select size="1" name="adminrank" id="adminrank_{$item['id']}">
-        <option value="2">ÏµÍ³¹ÜÀíÔ±</option>
-        <!--if($vd['issuper']==1){-->
-        <option value=3 <!--if($item['adminRank'] == '3'){--> selected <!--}-->>»áÔ±¹ÜÀíÔ±</option>
-        <option value=4 <!--if($item['adminRank'] == '4'){--> selected <!--}-->>¶©µ¥¹ÜÀíÔ±</option>
-        <option value=5 <!--if($item['adminRank'] == '5'){--> selected <!--}-->>ÉÌÆ·¹ÜÀíÔ±</option>
-        <option value=6 <!--if($item['adminRank'] == '6'){--> selected <!--}-->>ĞÂÎÅ¹ÜÀíÔ±</option>
-        <!--}-->
-      </select>
-      <!--}else{-->
-      <select size="1" name="adminrank" id="adminrank_{$item['id']}">
-        <!--if($vd['issuper']==1){-->
-        <option value=2>ÏµÍ³¹ÜÀíÔ±</option>
-        <!--}-->
-        <option value=3 <!--if($item['adminRank'] == '3'){--> selected <!--}-->>»áÔ±¹ÜÀíÔ±</option>
-        <option value=4 <!--if($item['adminRank'] == '4'){--> selected <!--}-->>¶©µ¥¹ÜÀíÔ±</option>
-        <option value=5 <!--if($item['adminRank'] == '5'){--> selected <!--}-->>ÉÌÆ·¹ÜÀíÔ±</option>
-        <option value=6 <!--if($item['adminRank'] == '6'){--> selected <!--}-->>ĞÂÎÅ¹ÜÀíÔ±</option>
-      </select>
-      <!--}-->
-    </td>
-    <td width="80px">  <a href="#art1" class="a edit" onClick="tofake('{$item['id']}')">
-
-    <td width="60px">
-      <!--if($item['adminRank'] > 1){-->
-      <a href="index.php?m=mod_b2b&c=Master&a=Rights&adminname={$item['adminName']}"> ÉèÖÃ</a> 
-      <!--}else{-->
-      --
-      <!--}-->    </td>
-    <td width="60px">
-      <a href="index.php?m=mod_b2b&c=Master&a=Bind&adminname={$item['adminName']}"> °ó¶¨</a>    </td>
-    <td width="60px">
-      <!--if($item['adminRank'] > 1){-->
-      <a class="a delete" href="index.php?m=mod_b2b&c=Master&a=Del&id={$item['id']}" onClick="return confirm('ÄúÈ·¶¨ÒªÉ¾³ı´Ë¹ÜÀíÔ±Âğ£¿')"><font color=red></font></a> 
-      <!--}else{-->
-      --
-      <!--}-->    </td>
-    <!--//endtbody-->
-    <td class="endtd"></td>
-  </tr>
-  <!--}-->
-  
-</table>
-<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
-<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
-<!--if($vd['table']==0){-->
-</div>
-
-<input type="hidden" value="index.php?m=mod_b2b&c=master&a=Deals&{$vd['op']}" id="op"/>
-<input type="hidden" value="index.php?m=mod_b2b&c=master&a=index&istable=1&{$vd['op']}" id="url"/>
-<input type="hidden" value="{$vd['op']}" id="params"/>
-<div style="position:absolute;bottom:0px">
-  <div class="tbBottom" id="tbBottom">
-    <div style="float:left;padding-top:8px;">
-      <strong> ×Ü¼Æ <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> Ìõ</strong>
-    </div>
-    <div style="float:right;text-align:right;">
-    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=master&a=index&{$vd['op']}" style="margin:0px;" onSubmit="loadDisp(1)">
-    <div id="page"></div>
-    <div style="float:left;margin-top:3px">
-      Ã¿Ò³ÏÔÊ¾<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> ¸ö 
-      µ½µÚ<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />Ò³<input type="submit" value=" È· ¶¨ &gt;&gt;" class="pagesub" />
-    </div>
-    </form>
-    </div>
-  </div>
-</div>
-<div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖĞÇëÉÔµÈ...</div>
-</div>
-</body>
-<script type="text/javascript">
-//µÚÒ»²ÎÊı£¬ºó±ß±£ÁôÏÔÊ¾µÄÁĞÊı
-//µÚ¶ş²ÎÊı£¬³ı×îºóÒ»¸ö²ÎÊıÍâµÄ±£Áô²ÎÊıµÄ×Ü¿í¶È
-tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
-tInfoA  = Array(0,0);
-totleRows = {$vd['totlerow']};
-deltxt  = "Ïú»Ù·ÖÀàºó,ÊÇÎŞ·¨»Ö¸´µÄ,Ö»ÄÜÖØĞÂÌí¼Ó,ÄúÈ·¶¨½øĞĞÏú»Ù²Ù×÷Âğ£¿";
-thisaction = "Ïú»Ù";
-thisdel = 0;
-statistics = 0;
-var resizeidx = 4;
-</script>
-<script type="text/javascript">
-//µ±Ç°±í¸ñÅäÖÃ
-<!--//tinfo-->
- tInfo = Array('tid','tordering','tpics','tname','tabst','tfee','tcode');
-<!--//endtinfo-->
-function pickcolor(id) 
-{
-  var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");
-  if (color != null) 
-  {
-    $("colorexample"+id).style.backgroundColor = color;
-    $("textcolor"+id).value = color;
-  }
-}
-
-</script>
-<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
-<script type="text/javascript">
-function setct(val)
-{
-  $("cttr").style.display = val == 3 ? "" : "none";
-}
-
-function tofake(id)
-{
-  vararray = Array("adminname","oldname","adminpass");
-  len = vararray.length;
-  for(i=0; i<len; i++)
-  {
-    $("t"+vararray[i]).value = $(vararray[i]+"_"+id).value;
-  }
-  $("sid").value = id;
-  $("tadminrank").value = $("adminrank_"+id).options[$("adminrank_"+id).selectedIndex].value;
-  $("fakeform").submit();
-}
-</script>
-</html>
-<!--}-->
+<!--if($vd['table']==0){--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="css/main.css"/><link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/><body><div class="title"> å½“å‰ä½ç½®ï¼šå¸¸è§„ç®¡ç† &gt; ç³»ç»Ÿç®¡ç†å‘˜è®¾ç½®</div>  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Master&a=Create" id="cform">        <table width="111%" cellpadding="0" cellspacing="1" class="page_table2">    <tr>            <td class="td_left"><div align="right">ç®¡ç†å‘˜</div></td>      <td width="75%"><div align="left">        <input name="adminname" type="text" size="25">      </div></td>    </tr>    <tr>                  <td class="td_left"><div align="right">å¯†ç </div></td>      <td width="75%"><div align="left">        <input name="adminpass" type="password" size="25">      </div></td>    </tr>    <tr>                  <td class="td_left"><div align="right">è§’è‰²</div></td>      <td width="75%">        <div align="left">          <select size="1" name="adminrank">            <!--if($vd['issuper']==1){-->            <option value=2>ç³»ç»Ÿç®¡ç†å‘˜</option>            <!--}-->            <option value=3>ä¼šå‘˜ç®¡ç†å‘˜</option>            <option value=4>è®¢å•ç®¡ç†å‘˜</option>            <option value=5>å•†å“ç®¡ç†å‘˜</option>            <option value=6>æ–°é—»ç®¡ç†å‘˜</option>          </select>        </div></td>    </tr>    <tr>      <td class="td_left"><div align="right"></div></td>      <td width="75%"><input type="submit" name="Submit2" value="æ·» åŠ " class="tijiao_input" />      </span></td>    </tr>  </table><div id="menuMask" class="menuMask" style="display:none"><form action="?m=mod_b2b&c=Tpl&tpl=Sup&v=Sup" method="post" style="margin:0px"><div class="menuContent"><p>&nbsp;</p>    <p>&nbsp;</p>    <p>å•†å“ç¼–å·<br/>        <input type="checkbox" name="id[]" value="tordering" id="tordering" class="checkbox" onFocus='this.blur()'/>       å•†å“åç§°<br/>        <input type="checkbox" name="id[]" value="tpics" id="tpics" class="checkbox" onFocus='this.blur()'/>       ä¾›è´§å•†<br/>        <input type="checkbox" name="id[]" value="tname" id="tname" class="checkbox" onFocus='this.blur()'/>       è¿›è´§å®¡æ ¸<br/>        <input type="checkbox" name="id[]" value="tabst" id="tabst" class="checkbox" onFocus='this.blur()'/>       è¿›è´§ä¼˜å…ˆçº§<br/>        <input type="checkbox" name="id[]" value="tfee" id="tfee" class="checkbox" onFocus='this.blur()'/>       è¿›è´§ä»·<br/>        <input type="checkbox" name="id[]" value="tcode" id="tcode" class="checkbox" onFocus='this.blur()'/>       æœ€ä½å”®ä»·<br/>    </p>  </div>  <div class="menuOp">  <input type="submit" value="ä¿å­˜" class="button" disabled />  <input type="button" value="é‡ç½®" class="button" disabled onClick="tInfoReset()"/>  <input type="button" value="å–æ¶ˆ" class="button" onClick="setMenuMask()"/>  </div>  </form></div><div style="display:none">  <form method="post" id="fakeform" action="index.php?m=mod_b2b&c=master&a=Update">    <input type="hidden" id="tadminname" name="adminname"/>    <input type="hidden" id="toldname"  name="oldname"/>    <input type="hidden" id="sid" name="id"/>    <input type="hidden" id="tadminpass" name="adminpass">    <input type="hidden" id="tadminrank" name="adminrank">  </form></div><div id="tip" style="display:none">  <span id="tiptable">æ­¤é¡µä¸­æ‰€æœ‰ <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> æ¡è®°å½•å·²é€‰ä¸­ </span>   <span id="tipspan">    <a href="javascript:CheckTotle({$vd['totlerow']},0)">ç‚¹æ­¤é€‰æ‹©å½“å‰åˆ—è¡¨ä¸­æ‰€æœ‰ <b>{$vd['totlerow']}</b> æ¡è®°å½•>></a></span></div><div id="content"><!--}-->  <!--if($vd['totlerow'] == 0) {-->  <tr>    <td align="right" colspan="20">æ— ä»»ä½•è®°å½•</td>  </tr>  </table>  <!--}-->        <table cellspacing="1" cellpadding="0" class="page_table">  <tr>        <td width="10%" class="table_top"><input name="chkall" id="chkall" type="checkbox" class="checkbox" onClick="CheckAll(this)" onFocus='this.blur()' disabled /></td><!--//thead-->        <td width="10%" class="table_top">ç¼–å·</td>        <td width="10%" class="table_top">ç®¡ç†å‘˜</td>        <td width="10%" class="table_top">å¯†ç </td>        <td width="10%" class="table_top">è§’è‰²</td>        <td width="10%" class="table_top">ä¿®æ”¹</td>        <td width="10%" class="table_top">æƒé™</td>        <td width="10%" class="table_top">ç»‘å®š</td>        <td width="10%" class="table_top">åˆ é™¤</td><!--//endthead-->        <td width="10%" class="table_top"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div>    </td>  </tr>  <!--foreach($vd['items'] as $item) {-->  <tr>    <td width="30px">      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onClick="CheckThis(this)" onFocus='this.blur()'  disabled ></input>    </td>    <!--//tbody-->    <td width="35px">{$item['id']}</td>    <td width="165px">      <input name="adminname" id="adminname_{$item['id']}" type="text" size="25" value="{$item['adminName']}"/>      <input type="hidden" name="oldname" id="oldname_{$item['id']}" value="{$item['adminName']}" />      <input type="hidden" name="id" id="id_{$item['id']}" value="{$item['id']}" />    </td>    <td width="165px"><input name="adminpass" id="adminpass_{$item['id']}" type="password" size="25"></td>    <td width="100px">      <!--if($item['adminRank']==1){-->      <select size="1" name="adminrank" id="adminrank_{$item['id']}">        <option value="1">è¶…çº§ç®¡ç†å‘˜</option>      </select>      <!--}else if($item['adminRank']==2){-->      <select size="1" name="adminrank" id="adminrank_{$item['id']}">        <option value="2">ç³»ç»Ÿç®¡ç†å‘˜</option>        <!--if($vd['issuper']==1){-->        <option value=3 <!--if($item['adminRank'] == '3'){--> selected <!--}-->>ä¼šå‘˜ç®¡ç†å‘˜</option>        <option value=4 <!--if($item['adminRank'] == '4'){--> selected <!--}-->>è®¢å•ç®¡ç†å‘˜</option>        <option value=5 <!--if($item['adminRank'] == '5'){--> selected <!--}-->>å•†å“ç®¡ç†å‘˜</option>        <option value=6 <!--if($item['adminRank'] == '6'){--> selected <!--}-->>æ–°é—»ç®¡ç†å‘˜</option>        <!--}-->      </select>      <!--}else{-->      <select size="1" name="adminrank" id="adminrank_{$item['id']}">        <!--if($vd['issuper']==1){-->        <option value=2>ç³»ç»Ÿç®¡ç†å‘˜</option>        <!--}-->        <option value=3 <!--if($item['adminRank'] == '3'){--> selected <!--}-->>ä¼šå‘˜ç®¡ç†å‘˜</option>        <option value=4 <!--if($item['adminRank'] == '4'){--> selected <!--}-->>è®¢å•ç®¡ç†å‘˜</option>        <option value=5 <!--if($item['adminRank'] == '5'){--> selected <!--}-->>å•†å“ç®¡ç†å‘˜</option>        <option value=6 <!--if($item['adminRank'] == '6'){--> selected <!--}-->>æ–°é—»ç®¡ç†å‘˜</option>      </select>      <!--}-->    </td>    <td width="80px">  <a href="#art1" class="a edit" onClick="tofake('{$item['id']}')">    <td width="60px">      <!--if($item['adminRank'] > 1){-->      <a href="index.php?m=mod_b2b&c=Master&a=Rights&adminname={$item['adminName']}"> è®¾ç½®</a>       <!--}else{-->      --      <!--}-->    </td>    <td width="60px">      <a href="index.php?m=mod_b2b&c=Master&a=Bind&adminname={$item['adminName']}"> ç»‘å®š</a>    </td>    <td width="60px">      <!--if($item['adminRank'] > 1){-->      <a class="a delete" href="index.php?m=mod_b2b&c=Master&a=Del&id={$item['id']}" onClick="return confirm('æ‚¨ç¡®å®šè¦åˆ é™¤æ­¤ç®¡ç†å‘˜å—ï¼Ÿ')"><font color=red></font></a>       <!--}else{-->      --      <!--}-->    </td>    <!--//endtbody-->    <td class="endtd"></td>  </tr>  <!--}-->  </table><input type="hidden" value="{$vd['totlepage']}" id="totlePage"/><input type="hidden" value="{$vd['thispage']}" id="thisPage"/><!--if($vd['table']==0){--></div><input type="hidden" value="index.php?m=mod_b2b&c=master&a=Deals&{$vd['op']}" id="op"/><input type="hidden" value="index.php?m=mod_b2b&c=master&a=index&istable=1&{$vd['op']}" id="url"/><input type="hidden" value="{$vd['op']}" id="params"/><div style="position:absolute;bottom:0px">  <div class="tbBottom" id="tbBottom">    <div style="float:left;padding-top:8px;">      <strong> æ€»è®¡ <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> æ¡</strong>    </div>    <div style="float:right;text-align:right;">    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=master&a=index&{$vd['op']}" style="margin:0px;" onSubmit="loadDisp(1)">    <div id="page"></div>    <div style="float:left;margin-top:3px">      æ¯é¡µæ˜¾ç¤º<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> ä¸ª       åˆ°ç¬¬<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />é¡µ<input type="submit" value=" ç¡® å®š &gt;&gt;" class="pagesub" />    </div>    </form>    </div>  </div></div><div id="load" style="display:none;">  <div id="loadcontent" >é¡µé¢åŠ è½½ä¸­è¯·ç¨ç­‰...</div></div></body><script type="text/javascript">//ç¬¬ä¸€å‚æ•°ï¼Œåè¾¹ä¿ç•™æ˜¾ç¤ºçš„åˆ—æ•°//ç¬¬äºŒå‚æ•°ï¼Œé™¤æœ€åä¸€ä¸ªå‚æ•°å¤–çš„ä¿ç•™å‚æ•°çš„æ€»å®½åº¦tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;tInfoA  = Array(0,0);totleRows = {$vd['totlerow']};deltxt  = "é”€æ¯åˆ†ç±»å,æ˜¯æ— æ³•æ¢å¤çš„,åªèƒ½é‡æ–°æ·»åŠ ,æ‚¨ç¡®å®šè¿›è¡Œé”€æ¯æ“ä½œå—ï¼Ÿ";thisaction = "é”€æ¯";thisdel = 0;statistics = 0;var resizeidx = 4;</script><script type="text/javascript">//å½“å‰è¡¨æ ¼é…ç½®<!--//tinfo--> tInfo = Array('tid','tordering','tpics','tname','tabst','tfee','tcode');<!--//endtinfo-->function pickcolor(id) {  var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");  if (color != null)   {    $("colorexample"+id).style.backgroundColor = color;    $("textcolor"+id).value = color;  }}</script><script src="{$vd['sc']}js/tools.js" type="text/javascript"></script><script type="text/javascript">function setct(val){  $("cttr").style.display = val == 3 ? "" : "none";}function tofake(id){  vararray = Array("adminname","oldname","adminpass");  len = vararray.length;  for(i=0; i<len; i++)  {    $("t"+vararray[i]).value = $(vararray[i]+"_"+id).value;  }  $("sid").value = id;  $("tadminrank").value = $("adminrank_"+id).options[$("adminrank_"+id).selectedIndex].value;  $("fakeform").submit();}</script></html><!--}-->

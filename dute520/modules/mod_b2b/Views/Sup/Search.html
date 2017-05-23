@@ -1,131 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-</head>
-<body>
-<div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> »õÔ´ËÑË÷
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-    ÇëÎñ±Ø±£Ö¤ÄúµÄÏµÍ³Íø¹ØÉèÖÃÊÇÕýÈ·µÄ<br/>
-    ²Ù×÷ÈçÏÂ£º<br/>
-    ³£¹æ->ÏµÍ³Íø¹Ø¹ÜÀí
-  </p>
-</div>
-<div id="contentTip" style="display:none;"></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´»õÔ´ËÑË÷Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
-</div>
-<form id="cform" method="post" action="index.php?m=mod_b2b&c=sup">
-<div id="content" class="cwarpper">
-<div class="cbodyHead"></div>
-<div class="cwarpper1">
-<div class="ctitle">ËÑË÷À´×Ô¿¨ÓÅ¹º¹©»õÏµÍ³µÄ»õÔ´</div>
-<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
-  <tr>
-    <td class="tablelt">
-      ¹©»õÉÌÆ·¹Ø¼ü´Ê
-    </td>
-    <td class="tablert">
-      <input type='text' size='50' name='keywords' value=""> <span class="spantip">¶à¸ö¹Ø¼ü´ÊÇëÒÔ¶ººÅ»òÕß¿Õ¸ñ·Ö¿ª</span>
-    </td>
-  </tr
-  ><tr>
-    <td class="tablelt">
-      ÉÌÆ·ÀàÐÍ
-    </td>
-    <td class="tablert">
-      <input id="sd" type="radio" value="" name="ptype" class="radio" checked />ËùÓÐÉÌÆ·
-      <input id="km" type="radio" value="0" name="ptype" class="radio"/>¿¨ÃÜÉÌÆ·
-      <input id="cz" type="radio" value="1" name="ptype" class="radio"/>×Ô¶¯³äÖµ
-      <input id="sd" type="radio" value="2" name="ptype" class="radio"/>ÊÖ¶¯´ú³ä
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      ¹©»õ¼Û·¶Î§
-    </td>
-    <td class="tablert">
-      <input id="begsupprice" size="5" name="begsupprice" /> ÔªÖÁ
-      <input id="endsupprice" size="5" name="endsupprice" /> Ôª 
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      ¹©»õÉÌ±àºÅ
-    </td>
-    <td class="tablert">
-      <input id="supuid" size="20" name="supuid" />
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      ¹ýÂË¹©»õÉÌ
-    </td>
-    <td class="tablert">
-      <input id="filters" size="20" name="filters" /> <span class="spantip">¸ñÊ½198089,194049 ¹ýÂË¶à¸ö¹©»õÉÌÇëÒÔ¶ººÅ»ò¿Õ¸ñ·Ö¿ª</span>
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      ÊÇ·ñÏÞÖÆ×îµÍÊÛ¼Û
-    </td>
-    <td class="tablert">
-      <input id="ctrl" type="radio" value="" name="ctrl" class="radio" checked />ËùÓÐ
-      <input id="ctrl" type="radio" value="1" name="ctrl" class="radio" />ÏÞÖÆ
-      <input id="ctrl" type="radio" value="0" name="ctrl" class="radio" />²»ÏÞÖÆ
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      ÊÇ·ñÐèÒªÉóºË
-    </td>
-    <td class="tablert">
-      <input id="supcheck" type="radio" value="" name="supcheck" class="radio" checked />ËùÓÐ
-      <input id="supcheck" type="radio" value="1" name="supcheck" class="radio" />ÐèÒª
-      <input id="supcheck" type="radio" value="0" name="supcheck" class="radio" />²»ÐèÒª
-    </td>
-  </tr>
-  <tr>
-    <td class="tablelt">
-      
-    </td>
-    <td class="tablert" style="height:80px">
-      <input type="hidden" value="pidsearch" name="optype"/>
-      <input type="submit" value="È·ÈÏËÑË÷ &gt; &gt;" class="bigbtn"/>
-      <input type="reset" value="&lt; &lt; ÖØÐÂÌîÐ´" class="bigbtn"name="reset"/>
-    </td>
-  </tr>
-</table>
-<input type="hidden" value="{$item['cid']}" name="ubzcid" id="ubzcid"/>
-</div>
-<div class="cbodyFoot"></div>
-</div>
-<div id="opcontent" style="display:none">
-  <div class="optxt">
-    
-  </div>
-</div>
-</form>
-<script type="text/javascript">
-  var ctablenum = 2;
-</script>
-<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
-<script type="text/javascript">
-  function enable(obj)
-  {
-    state   = obj.checked ? false : true;
-    bck     = obj.checked ? "#ffffff" : "#EAEAEA";
-    
-    $("cpwd").readOnly   = state;
-    $("recpwd").readOnly = state;
-    
-    $("cpwd").style.background = bck;
-    $("recpwd").style.background = bck;
-    
-    $("cpwd").value = "";
-    $("recpwd").value = "";
-  }
-  setTableInput();
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/></head><body><div id="titleDiv"><div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">    ï¿½ï¿½ï¿½ï¿½Ø±ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½<br/>    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½<br/>    ï¿½ï¿½ï¿½ï¿½->ÏµÍ³ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½  </p></div><div id="contentTip" style="display:none;"></div><div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div></div><form id="cform" method="post" action="index.php?m=mod_b2b&c=sup"><div id="content" class="cwarpper"><div class="cbodyHead"></div><div class="cwarpper1"><div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½Å¹ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ä»ï¿½Ô´</div><table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">  <tr>    <td class="tablelt">      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ø¼ï¿½ï¿½ï¿½    </td>    <td class="tablert">      <input type='text' size='50' name='keywords' value=""> <span class="spantip">ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Å»ï¿½ï¿½ß¿Õ¸ï¿½Ö¿ï¿½</span>    </td>  </tr  ><tr>    <td class="tablelt">      ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½    </td>    <td class="tablert">      <input id="sd" type="radio" value="" name="ptype" class="radio" checked />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·      <input id="km" type="radio" value="0" name="ptype" class="radio"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·      <input id="cz" type="radio" value="1" name="ptype" class="radio"/>ï¿½Ô¶ï¿½ï¿½ï¿½Öµ      <input id="sd" type="radio" value="2" name="ptype" class="radio"/>ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½    </td>  </tr>  <tr>    <td class="tablelt">      ï¿½ï¿½ï¿½ï¿½ï¿½Û·ï¿½Î§    </td>    <td class="tablert">      <input id="begsupprice" size="5" name="begsupprice" /> Ôªï¿½ï¿½      <input id="endsupprice" size="5" name="endsupprice" /> Ôª     </td>  </tr>  <tr>    <td class="tablelt">      ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ï¿½    </td>    <td class="tablert">      <input id="supuid" size="20" name="supuid" />    </td>  </tr>  <tr>    <td class="tablelt">      ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½    </td>    <td class="tablert">      <input id="filters" size="20" name="filters" /> <span class="spantip">ï¿½ï¿½Ê½198089,194049 ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Å»ï¿½Õ¸ï¿½Ö¿ï¿½</span>    </td>  </tr>  <tr>    <td class="tablelt">      ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½    </td>    <td class="tablert">      <input id="ctrl" type="radio" value="" name="ctrl" class="radio" checked />ï¿½ï¿½ï¿½ï¿½      <input id="ctrl" type="radio" value="1" name="ctrl" class="radio" />ï¿½ï¿½ï¿½ï¿½      <input id="ctrl" type="radio" value="0" name="ctrl" class="radio" />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    </td>  </tr>  <tr>    <td class="tablelt">      ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½    </td>    <td class="tablert">      <input id="supcheck" type="radio" value="" name="supcheck" class="radio" checked />ï¿½ï¿½ï¿½ï¿½      <input id="supcheck" type="radio" value="1" name="supcheck" class="radio" />ï¿½ï¿½Òª      <input id="supcheck" type="radio" value="0" name="supcheck" class="radio" />ï¿½ï¿½ï¿½ï¿½Òª    </td>  </tr>  <tr>    <td class="tablelt">          </td>    <td class="tablert" style="height:80px">      <input type="hidden" value="pidsearch" name="optype"/>      <input type="submit" value="È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ &gt; &gt;" class="bigbtn"/>      <input type="reset" value="&lt; &lt; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´" class="bigbtn"name="reset"/>    </td>  </tr></table><input type="hidden" value="{$item['cid']}" name="ubzcid" id="ubzcid"/></div><div class="cbodyFoot"></div></div><div id="opcontent" style="display:none">  <div class="optxt">      </div></div></form><script type="text/javascript">  var ctablenum = 2;</script><script src="{$vd['sc']}js/content.js" type="text/javascript"></script><script type="text/javascript">  function enable(obj)  {    state   = obj.checked ? false : true;    bck     = obj.checked ? "#ffffff" : "#EAEAEA";        $("cpwd").readOnly   = state;    $("recpwd").readOnly = state;        $("cpwd").style.background = bck;    $("recpwd").style.background = bck;        $("cpwd").value = "";    $("recpwd").value = "";  }  setTableInput();</script></body></html>

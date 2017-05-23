@@ -59,7 +59,7 @@ class ProductController extends Controller
 								);
 								$this->Assign( "items", $R4e420efcc3['item'] );
 								include_once( UPATH_HELPER."ProductHelper.php" );
-								$this->YktInit( "ÉÌÆ·ÁÐ±í" );
+								$this->YktInit( "ï¿½ï¿½Æ·ï¿½Ð±ï¿½" );
 								$this->Assign( "keywords", getvar( "keywords", "" ) );
 							
 												$this->view( null, null, $R9906335164, $R511aa10c02 );
@@ -118,7 +118,7 @@ class ProductController extends Controller
 												{
 																copy( $R0d48a0d7da, $R3656889a44 );
 												}
-												$this->Alert( "ÉÌÆ·ÒÑ¾­ÏÂ¼Ü£¡ÇëÑ¡ÔñÆäËüÉÌÆ·»òÕßÁªÏµ¹ÜÀíÔ±" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½Â¼Ü£ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±" );
 												$this->HistoryGo( );
 								}
 								$this->Assign( "item", $R3db8f5c8bc );
@@ -213,7 +213,7 @@ class ProductController extends Controller
 				public function Zone( )
 				{
 								include_once( UPATH_HELPER."ProductHelper.php" );
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R8e8b5578f7 = intval( request( "pid" ) );
 								$R3db8f5c8bc = $this->GetProductCache( $R8e8b5578f7 );
 								if ( isset( $R3db8f5c8bc['ptype'] ) && $R3db8f5c8bc['sell'] == 1 && $R3db8f5c8bc['forykt'] == 1 )

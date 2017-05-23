@@ -1,141 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÕË»§¼ä×ª¿î</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>½è¿îÉêÇë</h2>
-  </div>
-  <ul>
-      <li><a href="" class="on">½è¿îÉêÇë</a></li>
-    <li><a href="index.php?m=mod_agent&c=Loan">È«²¿¼ÇÂ¼</a></li>
-  </ul>
-</div>
-<form name="checkout" method="post" action="index.php?m=mod_agent&c=Loan&a=Save">
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<!--$item=$vd['item'];-->
-    <tr>
-      <td class="table1_left" style="width: 25%">¹«Ë¾Ãû</span></td>
-      <td width="80%" class="tableright1"><div align="left"> {$item['company']}({#displayCode($item['aid'])})</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">ÕË»§¿ÉÓÃÓà¶î</span> </td>
-      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['aremain']} {$vd['lang']['moneyunit']}</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">Ä¿Ç°Ç·¿î</span> </td>
-      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['arrears']} {$vd['lang']['moneyunit']}</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">ĞÅÓÃ¶î¶È</span> </td>
-      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['credit']} {$vd['lang']['moneyunit']} (Èç¹ûÄúÇ·¿îÊıÄ¿Ğ¡ÓÚÕâ¸öÊıÖµÇÒÕıÔÚ¸úÏµÍ³½è¿î£¬ÄúµÄÉêÇë»á×Ô¶¯Íê³É)</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">Ïò±ğÈË½èÇ®</span> </td>
-      <td width="80%" class="tableright1">
-        
-          <div align="left">
-            <input type="text" class="tdleft" style="font-weight:normal" name="dollars" size="24"/> 
-            {$vd['lang']['moneyunit']}</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">²Ù×÷ÀàĞÍ</span> </td>
-      <td width="80%" class="tableright1">
-        
-          <div align="left">
-            <input type="radio" name="thisaction" value="21"  onclick="set(1)"/>
-            ½èÇ®¸ø±ğÈË 
-            <input type="radio" name="thisaction" value="22" checked onClick="set(0)"/>
-            Ïò±ğÈË½èÇ®</div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">¶Ô·½±àºÅ</span> </td>
-      <td width="80%" class="tdleft">
-        
-          <div align="left">
-            <input type="text" class="tdleft" style="font-weight:normal" name="otherside" id="otherside" size="24"/> 
-            <span id="spansys">
-              <input type="checkbox" name="issys" id="issys" value="1" onClick="setotherside(this)"/>
-            ÏµÍ³</span></div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">Ô¼¶¨»¹¿î</span> </td>
-      <td width="80%" class="tableright1">
-        
-        <div align="left">
-  <input type="text" class="tdleft" style="font-weight:normal" name="deadline" id="deadline" size="24" value="<!--echo date("Y-m-d H:i:s" , strtotime("30 days"));-->
-  " style="vertical-align:middle"/></div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">³¬¼¶ÃÜÂë</span> </td>
-      <td width="80%" class="tableright1">
-        
-          <div align="left">
-            <input type="password" class="tdleft" style="font-weight:normal" name="superpwd" size="24"/>
-          </div></td>
-    </tr>
-    <tr>
-      <td class="table1_left" style="width: 25%">²Ù×÷Ô­Òò</span> </td>
-      <td width="80%" class="tableright1">
-      	
-      	    <div align="left">
-      	      <textarea name="reason" cols="50" rows="5" scrolling="yes" style="padding:5px"></textarea>
-   	        </div></td>
-    </tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%">&nbsp;</td>
-		<td class="tableright1">
-		  
-		    <div align="left">
-		      <input type="hidden" name="Login_my" value="37126884">
-		      <input type="submit" name="submit" value="È·ÈÏÌá½»" class="tijiao_input" tabindex="16"> 
-		      <input type="reset" name="reset" value="ÖØĞÂÌîĞ´" class="fanhui_input" tabindex="17">
-	        </div></td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</form>
-<script type="text/javascript">
-	var $ = function(id) {
-		return document.getElementById(id);
-	}
-	function set(flag)
-	{
-		//loanTable.rows[7].style.display = flag ? "" : "none";
-		$("loanlable").innerHTML = flag ? "½èÇ®¸ø±ğÈË" : "Ïò±ğÈË½èÇ®";
-		
-		    
-    $("issys").checked = false;
-    $("otherside").style.background = "#fff";
-    $("otherside").disabled = false;
-    
-    $("spansys").style.display = flag ? "none" : "";
-
-	}
-	
-	function setotherside(obj)
-	{
-		if(obj.checked)
-		{
-			$("otherside").value = "";
-			$("otherside").style.background = "#f0f0f0";
-			$("otherside").disabled = true;
-		}
-	  else
-		{
-			$("otherside").style.background = "#fff";
-			$("otherside").disabled = false;
-		}
-	}
-</script>	
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è´¦æˆ·é—´è½¬æ¬¾</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>å€Ÿæ¬¾ç”³è¯·</h2>  </div>  <ul>      <li><a href="" class="on">å€Ÿæ¬¾ç”³è¯·</a></li>    <li><a href="index.php?m=mod_agent&c=Loan">å…¨éƒ¨è®°å½•</a></li>  </ul></div><form name="checkout" method="post" action="index.php?m=mod_agent&c=Loan&a=Save">	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<!--$item=$vd['item'];-->    <tr>      <td class="table1_left" style="width: 25%">å…¬å¸å</span></td>      <td width="80%" class="tableright1"><div align="left"> {$item['company']}({#displayCode($item['aid'])})</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">è´¦æˆ·å¯ç”¨ä½™é¢</span> </td>      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['aremain']} {$vd['lang']['moneyunit']}</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">ç›®å‰æ¬ æ¬¾</span> </td>      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['arrears']} {$vd['lang']['moneyunit']}</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">ä¿¡ç”¨é¢åº¦</span> </td>      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['credit']} {$vd['lang']['moneyunit']} (å¦‚æœæ‚¨æ¬ æ¬¾æ•°ç›®å°äºè¿™ä¸ªæ•°å€¼ä¸”æ­£åœ¨è·Ÿç³»ç»Ÿå€Ÿæ¬¾ï¼Œæ‚¨çš„ç”³è¯·ä¼šè‡ªåŠ¨å®Œæˆ)</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">å‘åˆ«äººå€Ÿé’±</span> </td>      <td width="80%" class="tableright1">                  <div align="left">            <input type="text" class="tdleft" style="font-weight:normal" name="dollars" size="24"/>             {$vd['lang']['moneyunit']}</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">æ“ä½œç±»å‹</span> </td>      <td width="80%" class="tableright1">                  <div align="left">            <input type="radio" name="thisaction" value="21"  onclick="set(1)"/>            å€Ÿé’±ç»™åˆ«äºº             <input type="radio" name="thisaction" value="22" checked onClick="set(0)"/>            å‘åˆ«äººå€Ÿé’±</div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">å¯¹æ–¹ç¼–å·</span> </td>      <td width="80%" class="tdleft">                  <div align="left">            <input type="text" class="tdleft" style="font-weight:normal" name="otherside" id="otherside" size="24"/>             <span id="spansys">              <input type="checkbox" name="issys" id="issys" value="1" onClick="setotherside(this)"/>            ç³»ç»Ÿ</span></div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">çº¦å®šè¿˜æ¬¾</span> </td>      <td width="80%" class="tableright1">                <div align="left">  <input type="text" class="tdleft" style="font-weight:normal" name="deadline" id="deadline" size="24" value="<!--echo date("Y-m-d H:i:s" , strtotime("30 days"));-->  " style="vertical-align:middle"/></div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">è¶…çº§å¯†ç </span> </td>      <td width="80%" class="tableright1">                  <div align="left">            <input type="password" class="tdleft" style="font-weight:normal" name="superpwd" size="24"/>          </div></td>    </tr>    <tr>      <td class="table1_left" style="width: 25%">æ“ä½œåŸå› </span> </td>      <td width="80%" class="tableright1">      	      	    <div align="left">      	      <textarea name="reason" cols="50" rows="5" scrolling="yes" style="padding:5px"></textarea>   	        </div></td>    </tr>		<tr>		  <td class="table1_left" style="width: 25%">&nbsp;</td>		<td class="tableright1">		  		    <div align="left">		      <input type="hidden" name="Login_my" value="37126884">		      <input type="submit" name="submit" value="ç¡®è®¤æäº¤" class="tijiao_input" tabindex="16"> 		      <input type="reset" name="reset" value="é‡æ–°å¡«å†™" class="fanhui_input" tabindex="17">	        </div></td>		</tr>		</table>	</td>	</tr>	</table></form><script type="text/javascript">	var $ = function(id) {		return document.getElementById(id);	}	function set(flag)	{		//loanTable.rows[7].style.display = flag ? "" : "none";		$("loanlable").innerHTML = flag ? "å€Ÿé’±ç»™åˆ«äºº" : "å‘åˆ«äººå€Ÿé’±";				        $("issys").checked = false;    $("otherside").style.background = "#fff";    $("otherside").disabled = false;        $("spansys").style.display = flag ? "none" : "";	}		function setotherside(obj)	{		if(obj.checked)		{			$("otherside").value = "";			$("otherside").style.background = "#f0f0f0";			$("otherside").disabled = true;		}	  else		{			$("otherside").style.background = "#fff";			$("otherside").disabled = false;		}	}</script>	</body></html>

@@ -1,8 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 
-<title>ÐÂÔÆÊý¿¨ÏúÊÛÏµÍ³ºóÌ¨</title>
+<title>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Ì¨</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <style type="text/css">
 
@@ -10,7 +10,7 @@
 
     <title>
 
-	ÐÂÔÆ¿¨ÓÃ»§ºóÌ¨µÇÂ¼
+	ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Â¼
 
 </title>
 
@@ -20,13 +20,13 @@
 
         html,body,form{
 
-            height: 100%;/*ÉèÖÃhtmlºÍbodyµÄwidthºÍheightÎª100%£¬¿ÉÊ¹È«ÆÁÉúÐ§*/
+            height: 100%;/*ï¿½ï¿½ï¿½ï¿½htmlï¿½ï¿½bodyï¿½ï¿½widthï¿½ï¿½heightÎª100%ï¿½ï¿½ï¿½ï¿½Ê¹È«ï¿½ï¿½ï¿½ï¿½Ð§*/
 
             width: 100%;
 
             margin: 0; 
 
-	        padding:0;/*ÉèÖÃÉÏÏÂ×óÓÒµÄÏà¶ÔÎ»ÖÃÎª0£¬¿É±ÜÃâ³¬³ö·¶Î§³öÏÖ¹ö¶¯Ìõ*/
+	        padding:0;/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Îª0ï¿½ï¿½ï¿½É±ï¿½ï¿½â³¬ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
 	        overflow-x:hidden;overflow-y:hidden;
 
@@ -40,7 +40,7 @@
 
 	        background:url(images/login_bg2.gif) #f8ffff repeat-x top;
 
-            white-space: nowrap;/*ÉèÖÃwhite-space:nowrap£¬Í¬Ê±ÔÚÏà¶Ô²ÎÕÕÔªËØÖÐÏß¾ÓÖÐÊ±Éè¶¨display:inline-block£¬¿É±ÜÃâä¯ÀÀÆ÷Ëõ·ÅÊ±£¬´¹Ö±¾ÓÖÐµÄÈÝÆ÷»»ÐÐ*/
+            white-space: nowrap;/*ï¿½ï¿½ï¿½ï¿½white-space:nowrapï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½ï¿½ï¿½Ê±ï¿½è¶¨display:inline-blockï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
         }
 
@@ -54,21 +54,21 @@
 
         .verticalAlign {
 
-            vertical-align: middle;/*ÉèÖÃvertical-align: middle£¬¿ÉÊ¹´ËºÍÍ¬Ò»¼¶±ðÔªËØÖÐÏß¶ÔÆë*/
+            vertical-align: middle;/*ï¿½ï¿½ï¿½ï¿½vertical-align: middleï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ëºï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½*/
 
             height: 100%;
 
-            width: 0px;    /*ÉèÖÃwidth:0px£¬¿ÉÊ¹´ËÔªËØ²»ÏÔÊ¾£¬Ö»ÎªÒ³ÃæÈÝÆ÷ÕûÌå´¹Ö±¶ÔÆë×÷²ÎÕÕ*/
+            width: 0px;    /*ï¿½ï¿½ï¿½ï¿½width:0pxï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ôªï¿½Ø²ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ö»ÎªÒ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å´¹Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
             border: none;
 
             padding: 0px;
 
-            margin: 0px 0px 0px -5px;/*ÉèÖÃmrgin-right:-5px£¬±ÜÃâÈÝÆ÷ºáÏò³¬³ö*/
+            margin: 0px 0px 0px -5px;/*ï¿½ï¿½ï¿½ï¿½mrgin-right:-5pxï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò³¬³ï¿½*/
 
-            display: inline-block;/*divÄÚÁª²»»»ÐÐ£¬ie8ºÍie9²»Ê¶±ð´ø*µÄÑùÊ½£¬Ö»Ö´ÐÐµÚÒ»¸ödisplay£¬ie6ºÍie7Ê¶±ð´ø*µÄÑùÊ½£¬Ö´ÐÐµÚ¶þ¸ödisplayºÍzoom*/
+            display: inline-block;/*divï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ie8ï¿½ï¿½ie9ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ö»Ö´ï¿½Ðµï¿½Ò»ï¿½ï¿½displayï¿½ï¿½ie6ï¿½ï¿½ie7Ê¶ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ö´ï¿½ÐµÚ¶ï¿½ï¿½ï¿½displayï¿½ï¿½zoom*/
 
-            *display:inline;/*ie6ºÍie7¼æÈÝdisplay: inline-block£¬ÒÔ¡¾*display:inline;*zoom:1;¡¿´úÌæ*/
+            *display:inline;/*ie6ï¿½ï¿½ie7ï¿½ï¿½ï¿½ï¿½display: inline-blockï¿½ï¿½ï¿½Ô¡ï¿½*display:inline;*zoom:1;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
             *zoom:1;
 
@@ -80,7 +80,7 @@
 
             height: auto;
 
-            vertical-align: middle;/*ÉèÖÃvertical-align: middle£¬Ïà¶ÔÍ¬Ò»¼¶±ðÔªËØÖÐÏß¶ÔÆë*/
+            vertical-align: middle;/*ï¿½ï¿½ï¿½ï¿½vertical-align: middleï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½*/
 
             margin: 0px;
 
@@ -88,9 +88,9 @@
 
             padding: 0px;
 
-            display: inline-block;/*divÄÚÁª²»»»ÐÐ£¬ie8ºÍie9²»Ê¶±ð´ø*µÄÑùÊ½£¬Ö»Ö´ÐÐµÚÒ»¸ödisplay£¬ie6ºÍie7Ê¶±ð´ø*µÄÑùÊ½£¬Ö´ÐÐµÚ¶þ¸ödisplayºÍzoom*/
+            display: inline-block;/*divï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ie8ï¿½ï¿½ie9ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ö»Ö´ï¿½Ðµï¿½Ò»ï¿½ï¿½displayï¿½ï¿½ie6ï¿½ï¿½ie7Ê¶ï¿½ï¿½ï¿½*ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ö´ï¿½ÐµÚ¶ï¿½ï¿½ï¿½displayï¿½ï¿½zoom*/
 
-            *display:inline;/*ie6ºÍie7¼æÈÝdisplay: inline-block£¬ÒÔ¡¾*display:inline;*zoom:1;¡¿´úÌæ*/
+            *display:inline;/*ie6ï¿½ï¿½ie7ï¿½ï¿½ï¿½ï¿½display: inline-blockï¿½ï¿½ï¿½Ô¡ï¿½*display:inline;*zoom:1;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
             *zoom:1;
 
@@ -106,7 +106,7 @@
 
             margin:auto;
 
-            display: block;/*divÄÚÁª»»ÐÐ*/
+            display: block;/*divï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
 	        text-align:right;
 
@@ -278,7 +278,7 @@
 
                      type: 2,
 
-                     title: ['¶¯Ì¬¿ÚÁî',true],
+                     title: ['ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½',true],
 
                      iframe: {src: url},
 
@@ -334,7 +334,7 @@
 
                 if(document.getElementById('txtUserName').value.Trim() == ''){
 
-                    ShowAlert(-1,"µÇÂ¼Ãû±ØÌî");
+                    ShowAlert(-1,"ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
                     flag = false;
 
@@ -348,7 +348,7 @@
 
                 if(document.getElementById('txtUserPassword').value.Trim() == ''){
 
-                    ShowAlert(-1,"ÃÜÂë±ØÌî");
+                    ShowAlert(-1,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
                     flag = false;
 
@@ -362,7 +362,7 @@
 
                 if(document.getElementById('txtCheckCode').value.Trim() == ''){
 
-                    ShowAlert(-2,"ÑéÖ¤Âë±ØÌî");
+                    ShowAlert(-2,"ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½");
 
                     flag = false;
 
@@ -408,11 +408,11 @@
 
             <div class="divTop">
 
-                ¡¡<a href="javascript:" onclick="window.external.AddFavorite(location.href,document.title);">
+                ï¿½ï¿½<a href="javascript:" onclick="window.external.AddFavorite(location.href,document.title);">
 
-                    ÊÕ²Ø±¾Ò³</a><a href="http://xybss.com.cn" target="_blank">ÐÂÔÆÊý¿¨</a><a href="http://52yma.taobao.com"
+                    ï¿½Õ²Ø±ï¿½Ò³</a><a href="http://xybss.com.cn" target="_blank">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><a href="http://52yma.taobao.com"
 
-                        target="_blank">ÆìÏÂÌÔ±¦</a></div>
+                        target="_blank">ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½</a></div>
 
             <div class="divBody">
 
@@ -440,7 +440,7 @@
 
                                 <td class="tdleft">
 
-                                    ÓÃ»§Ãû£º</div></td>
+                                    ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</div></td>
 
   <td width="77%" height="39" align="left"> <input name="adminname" type="text" class="input_1" id="adminname" style="width:160px" onBlur="CheckMobile()"></td>
 
@@ -450,7 +450,7 @@
 
                                 <td class="tdleft">
 
-                                    ÃÜ Âë£º</div></td>       
+                                    ï¿½ï¿½ ï¿½ë£º</div></td>       
 
   <td height="37" align="left"><input name="adminpass" type="password" class="input_2" id="password4" style="width:160px;"></td>
 
@@ -460,13 +460,13 @@
 
                                 <td class="tdleft">
 
-                                    ÑéÖ¤Âë£º</div></td>       
+                                    ï¿½ï¿½Ö¤ï¿½ë£º</div></td>       
 
   <td height="40" align="left" valign="top">
 
   <input name="VerifyCode" type="text" class="input_1" id="VerifyCode" size="10" maxlength="10" style="width:70px;">
 
-  <img src="../index.php?a=RandCode&t=1" alt="¿´²»Çå³þ?Çëµã»÷Ë¢ÐÂ" name="src" width="100" height="38" id="src" style="vertical-align:middle;" onClick="this.src=this.src+'&'+Math.random();"> <span style="color:#996600;cursor:pointer" onClick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><br>
+  <img src="../index.php?a=RandCode&t=1" alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½" name="src" width="100" height="38" id="src" style="vertical-align:middle;" onClick="this.src=this.src+'&'+Math.random();"> <span style="color:#996600;cursor:pointer" onClick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><br>
 
   
 
@@ -508,9 +508,9 @@
 
             </div>
 
-            <div class="divBottom">Copyright 2008-2014  <a href="http://xybss.com.cn" target="_blank">ÐÂÔÆÊý¿¨ °æÈ¨ËùÓÐ</a>
+            <div class="divBottom">Copyright 2008-2014  <a href="http://xybss.com.cn" target="_blank">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½</a>
 
-                ¡¡</div>
+                ï¿½ï¿½</div>
 
         </div>
 

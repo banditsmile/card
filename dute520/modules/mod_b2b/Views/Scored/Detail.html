@@ -1,41 +1,41 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->  
 
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&by=1" title="»ý·Ö¶©µ¥ÁÐ±í"><font color="#000">»ý·Ö¶©µ¥ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">»ý·Ö¶©µ¥ÏêÏ¸ÐÅÏ¢</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´»ý·Ö¶©µ¥Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&by=1" title="ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 
 <div id="adddiv" style="position:absolute;top:30px;left:30px;;width:580px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">´¦Àí»ý·Ö¶©µ¥</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
     <form action="index.php?m=mod_b2b&c=Scored&a=check&ubzordno={$item['ordno']}" method="post">
       <table id="checktable" width="100%" style="border-collapse: collapse;">
         <tr>
-          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />·¢»õ³É¹¦£º</td>
+          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½</td>
           <td width="75%" style="padding-left:10px">
-            ±íÊ¾»ý·ÖËù¶Ò»»µÄ¶«Î÷ÒÑ¾­´¦ÀíÍê±Ï
+            ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
           </td>
         </tr>
         <tr>
-          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡Ïû¶Ò»»£º</td>
+          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½</td>
           <td width="75%" style="font-size:12px">
-            <div style="height:22px;"><input type="radio" value="Ã»ÓÐ¿â´æÁË" name="failreason" class="checkbox" /> Ã»ÓÐ¿â´æÁË</div>
-            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/> ÆäËûÔ­Òò
+            <div style="height:22px;"><input type="radio" value="Ã»ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" /> Ã»ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/> ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½
             <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" style="vertical-align:middle"/></div>
-            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><font color="#ff0000">È¡Ïû»ý·Ö¶©µ¥ºóÊ±ºò»Ö¸´»ý·Ö£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû¶Ò»»²ÅÉúÐ§</font></div>
-            <div style="height:22px;display:none" id="tradepwd">ÇëÊäÈëºóÌ¨³äÖµÃÜÂë£º<input type="password" name="tradepwd" />
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><font color="#ff0000">È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö£ï¿½Í¬Ê±Ñ¡ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ð§</font></div>
+            <div style="height:22px;display:none" id="tradepwd">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë£º<input type="password" name="tradepwd" />
           </td>
         </tr>
         <tr>
           <td width="25%" style="height:50px;"></td>
-          <td width="75%"><input type="submit" value="Ìá½»½á¹û" class="button" onclick="return confirm('È·ÈÏ¸üÐÂ»ý·Ö¶©µ¥×´Ì¬Ã´£¿Èç¹ûÈ¡Ïû¶Ò»»£¬ÇëÈ·ÈÏÊÇ·ñÐèÒª²¹»ØÓà¶î')"/> <input type="reset" value="ÖØÖÃ" class="button"/> <input type="button" value="È¡Ïû" class="button" onclick="disp('adddiv')"/></td>
+          <td width="75%"><input type="submit" value="ï¿½á½»ï¿½ï¿½ï¿½" class="button" onclick="return confirm('È·ï¿½Ï¸ï¿½ï¿½Â»ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½×´Ì¬Ã´ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')"/> <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="button"/> <input type="button" value="È¡ï¿½ï¿½" class="button" onclick="disp('adddiv')"/></td>
         </tr>
       </table>
     </form>
@@ -45,32 +45,32 @@
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">»ù±¾ÐÅÏ¢ »ý·Ö¶©µ¥ºÅ£º{$item['ordno']} (<!--if($item['ordstate']==1){--><font color="#0000ff">´¦ÀíÖÐ</font><!--}else if($item['ordstate']==-1){--><font color="#cccccc">ÎÞÐ§</font><!--}else{--><font color="#008800">ÒÑ´¦Àí</font><!--}-->)</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Å£ï¿½{$item['ordno']} (<!--if($item['ordstate']==1){--><font color="#0000ff">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font><!--}else if($item['ordstate']==-1){--><font color="#cccccc">ï¿½ï¿½Ð§</font><!--}else{--><font color="#008800">ï¿½Ñ´ï¿½ï¿½ï¿½</font><!--}-->)</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">¶Ò»»ÉÌÆ·£º</td>
+    <td class="tablelt" height="50px">ï¿½Ò»ï¿½ï¿½ï¿½Æ·ï¿½ï¿½</td>
     <td class="tablert"><b>{$item['pname']}</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶Ò»»ÊýÁ¿£º</td>
+    <td class="tablelt" height="50px">ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['qty']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÏûºÄ»ý·Ö£º</td>
-    <td class="tablert">{$item['scored']} µã</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Ö£ï¿½</td>
+    <td class="tablert">{$item['scored']} ï¿½ï¿½</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶Ò»»ÈÕÆÚ£º</td>
+    <td class="tablelt" height="50px">ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ú£ï¿½</td>
     <td class="tablert">{$item['createdate']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶Ò»»²ßÂÔ£º</td>
+    <td class="tablelt" height="50px">ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô£ï¿½</td>
     <td class="tablert">{$vd['method'][$item['method']]}</td>
   </tr>
   <!--if($item['failreason']!=''){-->
   <tr>
-    <td class="tablelt">´¦ÀíËµÃ÷£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><b><!--if($item['ordstate'] == -1) {-->{$item['failreason']}<!--}--></b></td>
   </tr>
   <!--}-->
@@ -80,23 +80,23 @@
 
 <!--if($item['method']==1){-->
 <div class="cwarpper1">
-<div class="ctitle">¶Ò»»ÕßÊÕ»õÐÅÏ¢</div>
+<div class="ctitle">ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½Ï¢</div>
 <div>
 <table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">ÐÕÃû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['realname']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">µØÖ·£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ö·ï¿½ï¿½</td>
     <td class="tablert">{$item['addr']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">µç»°£º</td>
+    <td class="tablelt" height="50px">ï¿½ç»°ï¿½ï¿½</td>
     <td class="tablert">{$item['tel']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÓÊ±à£º</td>
+    <td class="tablelt" height="50px">ï¿½Ê±à£º</td>
     <td class="tablert">{$item['zip']}</td>
   </tr>
 </table>
@@ -104,20 +104,20 @@
 </div>
 <!--}-->
 <div class="cwarpper1">
-<div class="ctitle">Âò¼ÒÐÅÏ¢£º</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">À´×ÔÆ½Ì¨£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½</td>
     <td class="tablert"><b>{#ComeFrom($item['comefrom'])}Æ½Ì¨</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">À´Ô´IP£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ô´IPï¿½ï¿½</td>
     <td class="tablert">{$item['cip']}</td>
   </tr>
   <!--if($item['admname'] != ''){-->
   <tr>
-    <td class="tablelt">·¢»õ¹ÜÀíÔ±£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½</td>
     <td class="tablert"><b>{$item['admname']}</b></td>
   </tr>
   <!--}-->
@@ -131,12 +131,12 @@
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="button" onclick="disp('adddiv')" value="´¦Àí´Ë»ý·Ö¶©µ¥" class="btn"/>
-    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=Scored&a=del&ubzordno={$item['ordno']}'" value="É¾³ý´Ë»ý·Ö¶©µ¥" class="btn"/>
+    <input type="button" onclick="disp('adddiv')" value="ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½" class="btn"/>
+    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=Scored&a=del&ubzordno={$item['ordno']}'" value="É¾ï¿½ï¿½ï¿½Ë»ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½" class="btn"/>
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >ÕýÔÚ´¦ÀíÖÐ...</div>
+  <div id="loadcontent" >ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 4;

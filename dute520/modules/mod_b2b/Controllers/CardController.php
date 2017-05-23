@@ -47,10 +47,10 @@ class CardController extends Controller
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "cdiok" ) ) ) );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "cardnumber" => "¿¨ºÅ", "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ", "ordno" => "¶©µ¥ºÅ" );
+								$R00be52aa45 = array( "cardnumber" => "ï¿½ï¿½ï¿½ï¿½", "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->Recycle( "cards", "ptype < 100" );
 								$this->Assign( "sarray", $R00be52aa45 );
-								$R5026051cf5 = array( "-1" => "ËùÓÐ", "f" => "ÒÑÊÛ³ö", "s" => "Î´ÊÛ³ö" );
+								$R5026051cf5 = array( "-1" => "ï¿½ï¿½ï¿½ï¿½", "f" => "ï¿½ï¿½ï¿½Û³ï¿½", "s" => "Î´ï¿½Û³ï¿½" );
 								$this->Assign( "ssellstate", $R5026051cf5 );
 								$this->Assign( "cardstate", getvar( "optype", "" ) );
 						
@@ -60,13 +60,13 @@ class CardController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Detail( )
 				{
-								$R793c7fe26b = array( "0" => "ÒÑÊÛ³ö", "1" => "¿¨ÓÐÐ§", "2" => "Î´ÉúÐ§", "3" => "Ê¹ÓÃÖÐ", "4" => "¿¨ÎÞÐ§" );
+								$R793c7fe26b = array( "0" => "ï¿½ï¿½ï¿½Û³ï¿½", "1" => "ï¿½ï¿½ï¿½ï¿½Ð§", "2" => "Î´ï¿½ï¿½Ð§", "3" => "Ê¹ï¿½ï¿½ï¿½ï¿½", "4" => "ï¿½ï¿½ï¿½ï¿½Ð§" );
 								$R3584859062 = intval( request( "ubzid" ) );
 								$Oooo00 = "base64_decode";
 								$ooOO00o = $Oooo00( "YmFzZTY0X2RlY29kZQ==" );
@@ -132,7 +132,7 @@ class CardController extends Controller
 												$data['cardpwd'] = base64_encode( $R37db13e189 );
 								}
 								$R3db8f5c8bc = $this->hander->ICard_Update( $data, $R3584859062 );
-								$this->Alert( "¸üÐÂ²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=card&a=detail&ubzid=".$R3584859062 );
 				}
 
@@ -145,7 +145,7 @@ class CardController extends Controller
 												"action" => $this->action[3]
 								);
 								$R3db8f5c8bc = $this->service->ICard_Save( $data );
-								$this->Alert( "Íê³É²Ù×÷£¡" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$R65edce27dd = $R3db8f5c8bc['item']['ubzpname'];
 								$R51b4178493 = $R3db8f5c8bc['item']['ubzsadd'];
 								$R94927a2851 = $R3db8f5c8bc['item']['ubzfadd'];
@@ -186,7 +186,7 @@ class CardController extends Controller
 												$agent = $this->GetAgentCache( $R30c230ef2f );
 												if ( !isset( $agent['forykt'] ) || $agent['forykt'] == 0 )
 												{
-																$this->Alert( "ÄúºÃ,¸ÃÓÃ»§²¢·ÇÒ»¿¨Í¨´úÀíÉÌ,ÎÞ·¨°ó¶¨" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Þ·ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -194,7 +194,7 @@ class CardController extends Controller
 								$R0f8134fb60 = getvar( "ubzcards" );
 								if ( trim( $R0f8134fb60 ) == "" )
 								{
-												$this->Alert( "ÄúºÃ,ÇëÊäÈëÒªµ¼ÈëµÄ¿¨ÃÜ" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R0f8134fb60 = preg_replace( "/\r\n/", "|", $R0f8134fb60 );
@@ -297,10 +297,10 @@ class CardController extends Controller
 												$R808b89ba0e = $R79583fa24b->IBuyRights_Create( $data );
 												if ( !$R808b89ba0e )
 												{
-																$this->Alert( "°ó¶¨Ê§°Ü£¬Çë½øÈë Ò»¿¨Í¨ºÍÉÌÆ·¶Ò»»¹ØÏµ±í ½øÐÐ°ó¶¨£¬ÉèÖÃ¶ÔÏóÑ¡ÔñÒ»¿¨Í¨Åú´Î£¬±¾Åú´ÎÎª".$R7661e907a4 );
+																$this->Alert( "ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ò»ï¿½ï¿½ï¿½Ïµï¿½ï¿½ ï¿½ï¿½ï¿½Ð°ó¶¨£ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª".$R7661e907a4 );
 												}
 								}
-								$this->Alert( "Íê³É²Ù×÷ÁË£¡" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½Ë£ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=card&a=result&pname=".urlencode( $R65edce27dd )."&succ=".$R51b4178493."&fail=".$R94927a2851 );
 				}
 
@@ -319,7 +319,7 @@ class CardController extends Controller
 								$R0f8134fb60 = getvar( "ubzcards" );
 								if ( trim( $R0f8134fb60 ) == "" )
 								{
-												$this->Alert( "ÄúºÃ,ÇëÊäÈëÒªÉ¾³ýµÄ¿¨ºÅ" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R0f8134fb60 = preg_replace( "/\r\n/", "|", $R0f8134fb60 );
@@ -385,7 +385,7 @@ class CardController extends Controller
 												}
 												$this->hander->ICard_DestroyByStr( $R63bede6b19, "" );
 								}
-								$this->Alert( "Íê³É²Ù×÷£¡³É¹¦É¾³ý".$R51b4178493." ÕÅ Ê§°Ü".$R94927a2851." ÕÅ" );
+								$this->Alert( "ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½É¾ï¿½ï¿½".$R51b4178493." ï¿½ï¿½ Ê§ï¿½ï¿½".$R94927a2851." ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=card&a=Dels" );
 				}
 
@@ -405,13 +405,13 @@ class CardController extends Controller
 				public function Del( )
 				{
 								$this->hander->ICard_Delete( $this->GetId( "id" ) );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "Index.php?m=mod_b2b&c=card" );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -423,10 +423,10 @@ class CardController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -437,7 +437,7 @@ class CardController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -461,7 +461,7 @@ class CardController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -480,7 +480,7 @@ class CardController extends Controller
 								$R808b89ba0e = $this->hander->ICard_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 				}
 
@@ -503,7 +503,7 @@ class CardController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -542,7 +542,7 @@ class CardController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -561,7 +561,7 @@ class CardController extends Controller
 								$R48aa85bc4e = getvar( "mytradepwd" );
 								if ( trim( $R48aa85bc4e ) == "" || md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 								{
-												$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 												$this->HistoryGo( );
 								}
 				}

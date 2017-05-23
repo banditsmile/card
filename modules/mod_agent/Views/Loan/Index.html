@@ -1,123 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÕË»§¼ä×ª¿î</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-</head>
-  <form name="form1" method="post" action="?Action=ToUpDisplay">
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>È«²¿¼ÇÂ¼</h2>
-  </div>
-  <ul>
-    <li><a href="index.php?m=mod_agent&c=loan&a=Create" >½è¿îÉêÇë</a></li>
-    <li><a href="" class="on">È«²¿¼ÇÂ¼</a></li>
-  </ul>
-</div>
-<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:380px;display:none">
-  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">ÊäÈëÃÜÂëÈ·ÈÏ</div>
-  	<div style="float:right;"><img src="{$vd['content']}images/icon_del.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>
-  	<form name="form1" method="post" action="index.php?m=mod_agent&c=Loan" id="tform" style="clear:both">
-  	<table border="0" cellspacing="0" cellpadding="0" width="100%">
-      <tr>
-        <td width="25%" height="35px" align="center">³¬¼¶ÃÜÂë</td>
-        <td width="75%"><input type="password" class="myinput" style="font-weight:normal" name="superpwd" size="24"/></td>
-      </tr>
-      <tr>
-      	<td width="25%"></td>
-        <td width="75%">
-        	<input type="hidden" name="ordno" id="ordno" value="" />
-        	<input type="hidden" name="a"  id="a" value=""/>
-        	<input type="submit" value="Ìá ½»" class="button"/>
-        	<input type="button" value="È¡ Ïû" onClick="disp('adddiv')" class="button"/>
-        </td>
-      </tr>
-    </table>
-    </form>
-    </div>
-</div>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-      <tr>
-      <th width="14%" class="heardertop1"> ½è¾İ</td>
-      <th width="9%" class="heardertop1"> ÀàĞÍ</td>
-      <th width="9%" class="heardertop1"> ½ğ¶î({$vd['lang']['moneyunit']})</td>
-      <th width="10%" class="heardertop1"> Ô­Òò</td>
-      <th width="8%" class="heardertop1"> ¶Ô·½</td>
-      <th width="11%" class="heardertop1"> ½è¿îÊ±¼ä</td>
-      <th width="11%" class="heardertop1"> Ô¼¶¨»¹¿î</td>
-      <th width="9%" class="heardertop1"> ÒÑ»¹</td>
-      <th width="11%" class="heardertop1"> »¹¿îÈÕÆÚ</td>
-      <th width="8%" class="heardertop1"> ²Ù×÷</td>
-    </tr>
-    <!--foreach($vd['items'] as $item) {-->
-    <tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">
-      <td>{$item['ordno']}</td>
-      <td>{#TradeType($item['thisaction'])}</td>
-      <td style="color:#0000ff;font-weight:bold">{$item['dollars']}</td>
-      <td>{$item['reason']}&nbsp;</td>
-      <td>{#DisplayCode($item['otherside'])}</td>
-      <td>{$item['createdate']}&nbsp;</td>
-      <td>{$item['deadline']}&nbsp;</td>
-      <td style="color:#ff0000;font-weight:bold">{$item['payback']}&nbsp;</td>
-      <td>{$item['paybackdate']}&nbsp;</td>
-      <td><!--if($item['thisaction'] == 21){-->
-          <!--if($item['state'] == 0){-->
-          <a href="#" onClick="setaction('{$item['ordno']}', 'CheckIn')"><font color="#ff00ff">Í¬Òâ</font> / <a href="#" onclick="setaction('{$item['ordno']}', 'Refuse')"><font color="#ff0000">¾Ü¾ø</font></a>
-          <!--}else if($item['state'] == 1){-->
-          <a href="index.php?m=mod_agent&c=Loan&a=Urge&ordno={$item['ordno']}"><font color="#ff00ff">×·Õ®</font></a>
-          <!--}else if($item['state'] == -1){-->
-          <font color="#cccccc">ÒÑ¾Ü¾ø</font>
-          <!--}else{-->
-          <font color="#0000ff">ÒÑ»¹¿î</font>
-          <!--}-->
-          <!--}else{-->
-          <!--if($item['state'] == 0){-->
-          <font color="#ff0000">µÈ´ı</font>
-          <!--}else if($item['state'] == 1){-->
-          <a href="#" onClick="setaction('{$item['ordno']}', 'Repayment')"><font color="#ff00ff">»¹¿î</font></a>
-          <!--}else if($item['state'] == -1){-->
-          <font color="#cccccc">ÒÑ¾Ü¾ø</font>
-          <!--}else{-->
-          <font color="#0000ff">ÒÑ»¹¿î</font>
-          <!--}-->
-          <!--}-->
-          </font> </td>
-    </tr>
-    <!--}-->
-  </table>
-  </td>
-  
-  </tr>
-  
-    </table>
-	<div id="page" align="right">
-		{load(fpage)}
-	</div>
-	</form>
-	
-	<br>
-	<br>
-<script type="text/javascript">
-	var $=function(id){
-		return document.getElementById(id);
-	}
-	
-	function setaction(ordno,act)
-	{
-		$("ordno").value = ordno;
-		$("a").value = act;
-		disp('adddiv');
-	}
-	
-	function disp(idx)
-	{
-		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
-	}
-</script>
-</body>
-</html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è´¦æˆ·é—´è½¬æ¬¾</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /></head>  <form name="form1" method="post" action="?Action=ToUpDisplay"><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>å…¨éƒ¨è®°å½•</h2>  </div>  <ul>    <li><a href="index.php?m=mod_agent&c=loan&a=Create" >å€Ÿæ¬¾ç”³è¯·</a></li>    <li><a href="" class="on">å…¨éƒ¨è®°å½•</a></li>  </ul></div><div id="adddiv" style="position:absolute;top:100px;left:230px;;width:380px;display:none">  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">è¾“å…¥å¯†ç ç¡®è®¤</div>  	<div style="float:right;"><img src="{$vd['content']}images/icon_del.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>  	<form name="form1" method="post" action="index.php?m=mod_agent&c=Loan" id="tform" style="clear:both">  	<table border="0" cellspacing="0" cellpadding="0" width="100%">      <tr>        <td width="25%" height="35px" align="center">è¶…çº§å¯†ç </td>        <td width="75%"><input type="password" class="myinput" style="font-weight:normal" name="superpwd" size="24"/></td>      </tr>      <tr>      	<td width="25%"></td>        <td width="75%">        	<input type="hidden" name="ordno" id="ordno" value="" />        	<input type="hidden" name="a"  id="a" value=""/>        	<input type="submit" value="æ äº¤" class="button"/>        	<input type="button" value="å– æ¶ˆ" onClick="disp('adddiv')" class="button"/>        </td>      </tr>    </table>    </form>    </div></div>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">      <tr>      <th width="14%" class="heardertop1"> å€Ÿæ®</td>      <th width="9%" class="heardertop1"> ç±»å‹</td>      <th width="9%" class="heardertop1"> é‡‘é¢({$vd['lang']['moneyunit']})</td>      <th width="10%" class="heardertop1"> åŸå› </td>      <th width="8%" class="heardertop1"> å¯¹æ–¹</td>      <th width="11%" class="heardertop1"> å€Ÿæ¬¾æ—¶é—´</td>      <th width="11%" class="heardertop1"> çº¦å®šè¿˜æ¬¾</td>      <th width="9%" class="heardertop1"> å·²è¿˜</td>      <th width="11%" class="heardertop1"> è¿˜æ¬¾æ—¥æœŸ</td>      <th width="8%" class="heardertop1"> æ“ä½œ</td>    </tr>    <!--foreach($vd['items'] as $item) {-->    <tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">      <td>{$item['ordno']}</td>      <td>{#TradeType($item['thisaction'])}</td>      <td style="color:#0000ff;font-weight:bold">{$item['dollars']}</td>      <td>{$item['reason']}&nbsp;</td>      <td>{#DisplayCode($item['otherside'])}</td>      <td>{$item['createdate']}&nbsp;</td>      <td>{$item['deadline']}&nbsp;</td>      <td style="color:#ff0000;font-weight:bold">{$item['payback']}&nbsp;</td>      <td>{$item['paybackdate']}&nbsp;</td>      <td><!--if($item['thisaction'] == 21){-->          <!--if($item['state'] == 0){-->          <a href="#" onClick="setaction('{$item['ordno']}', 'CheckIn')"><font color="#ff00ff">åŒæ„</font> / <a href="#" onclick="setaction('{$item['ordno']}', 'Refuse')"><font color="#ff0000">æ‹’ç»</font></a>          <!--}else if($item['state'] == 1){-->          <a href="index.php?m=mod_agent&c=Loan&a=Urge&ordno={$item['ordno']}"><font color="#ff00ff">è¿½å€º</font></a>          <!--}else if($item['state'] == -1){-->          <font color="#cccccc">å·²æ‹’ç»</font>          <!--}else{-->          <font color="#0000ff">å·²è¿˜æ¬¾</font>          <!--}-->          <!--}else{-->          <!--if($item['state'] == 0){-->          <font color="#ff0000">ç­‰å¾…</font>          <!--}else if($item['state'] == 1){-->          <a href="#" onClick="setaction('{$item['ordno']}', 'Repayment')"><font color="#ff00ff">è¿˜æ¬¾</font></a>          <!--}else if($item['state'] == -1){-->          <font color="#cccccc">å·²æ‹’ç»</font>          <!--}else{-->          <font color="#0000ff">å·²è¿˜æ¬¾</font>          <!--}-->          <!--}-->          </font> </td>    </tr>    <!--}-->  </table>  </td>    </tr>      </table>	<div id="page" align="right">		{load(fpage)}	</div>	</form>		<br>	<br><script type="text/javascript">	var $=function(id){		return document.getElementById(id);	}		function setaction(ordno,act)	{		$("ordno").value = ordno;		$("a").value = act;		disp('adddiv');	}		function disp(idx)	{		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";	}</script></body></html>

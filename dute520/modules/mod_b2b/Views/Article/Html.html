@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
 <style type="text/css">
 td{height:30px}
@@ -10,34 +10,34 @@ td{height:30px}
 <body>
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
   <tr>
-    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">¾²Ì¬Ò³ÃæÉú³É³ÌĞò</td>
+    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">é™æ€é¡µé¢ç”Ÿæˆç¨‹åº</td>
   </tr>
   <tr>
-    <td width="25%" align="center">ÎÄÕÂÏµÍ³Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="±àºÅ{$vd['id']}µÄÎÄÕÂ¶ÔÓ¦¾²Ì¬Ò³ÃæÉú³É" class="button" style="padding-left:0px;"/></td>
+    <td width="25%" align="center">æ–‡ç« ç³»ç»Ÿç›¸å…³é¡µé¢</td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="ç¼–å·{$vd['id']}çš„æ–‡ç« å¯¹åº”é™æ€é¡µé¢ç”Ÿæˆ" class="button" style="padding-left:0px;"/></td>
   </tr>
   <!--if(UB_B2C){-->
   <tr>
-    <td width="25%" align="center"<!--if(!UB_YKT&&!UB_B2B){--> style="border-bottom:1px #ccc solid"<!--}-->>ÁãÊÛÆ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center"<!--if(!UB_YKT&&!UB_B2B){--> style="border-bottom:1px #ccc solid"<!--}-->>é›¶å”®å¹³å°ç›¸å…³é¡µé¢</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;<!--if(!UB_YKT&&!UB_B2B){-->border-bottom:1px #ccc solid<!--}-->">
-      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
-      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="ÉÌÆ·×ÜÀà¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="é¦–é¡µé™æ€é¡µé¢ç”Ÿæˆ" class="button"/>
+      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="å•†å“æ€»ç±»é™æ€é¡µé¢ç”Ÿæˆ" class="button"/>
     </td>
   </tr>
   <!--}-->
   <!--if(UB_B2B){-->
   <tr>
-    <td width="25%" align="center"<!--if(!UB_YKT){--> style="border-bottom:1px #ccc solid"<!--}-->>Åú·¢Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center"<!--if(!UB_YKT){--> style="border-bottom:1px #ccc solid"<!--}-->>æ‰¹å‘å¹³å°ç›¸å…³é¡µé¢</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;<!--if(!UB_YKT){-->border-bottom:1px #ccc solid<!--}-->">
-      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="é¦–é¡µé™æ€é¡µé¢ç”Ÿæˆ" class="button"/>
     </td>
   </tr>
   <!--}-->
   <!--if(UB_YKT){-->
   <tr>
-    <td width="25%" align="center" style="border-bottom:1px #ccc solid">Ò»¿¨Í¨Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center" style="border-bottom:1px #ccc solid">ä¸€å¡é€šå¹³å°ç›¸å…³é¡µé¢</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;border-bottom:1px #ccc solid">
-      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="é¦–é¡µé™æ€é¡µé¢ç”Ÿæˆ" class="button"/>
     </td>
   </tr>
   <!--}-->
@@ -61,15 +61,15 @@ td{height:30px}
   var m  = "mod_b2b";
   var c  = "html";
   var a  = 'index';
-  var modname = "ÁãÊÛÏµÍ³";
+  var modname = "é›¶å”®ç³»ç»Ÿ";
   var id = 0;
   
   var thisid = 0;
   
-  var single = 1; // Èç¹ûµ¥ÏîÔòÎª1
+  var single = 1; // å¦‚æœå•é¡¹åˆ™ä¸º1
   var thiscount = 0;
   
-  // Ë³Ğò Ê×Ò³->ÀàÄ¿->ÉÌÆ·->ÁĞ±í->ÎÄÕÂ
+  // é¡ºåº é¦–é¡µ->ç±»ç›®->å•†å“->åˆ—è¡¨->æ–‡ç« 
   
   function loadXMLDoc()
   {
@@ -77,12 +77,12 @@ td{height:30px}
     var url=null;
     
     url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod;
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
     if (window.XMLHttpRequest)
     {
       xmlhttp=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // é’ˆå¯¹ IE çš„ä»£ç ï¼š
     else if (window.ActiveXObject)
     {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -97,22 +97,22 @@ td{height:30px}
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+      alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")
     }
   }
   
   function state_Change()
   {
     var result = document.getElementById("result");
-    // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+    // å¦‚æœ xmlhttp æ˜¾ç¤ºä¸º "loaded"
     if (xmlhttp.readyState==4)
     {
-      // Èç¹ûÎª "OK"
+      // å¦‚æœä¸º "OK"
       if (xmlhttp.status==200)
       {
         if(a == "index")
         {
-          result.innerHTML = modname + "Ê×Ò³Éú³ÉÍê±Ï  => index.html";
+          result.innerHTML = modname + "é¦–é¡µç”Ÿæˆå®Œæ¯•  => index.html";
           if(single == 1)
           {
             return;
@@ -125,7 +125,7 @@ td{height:30px}
         
         if(a == "cat")
         {
-          result.innerHTML = modname + "ÀàÄ¿Éú³ÉÍê±Ï  => cat.html";
+          result.innerHTML = modname + "ç±»ç›®ç”Ÿæˆå®Œæ¯•  => cat.html";
           if(single == 1)
           {
             return;
@@ -140,11 +140,11 @@ td{height:30px}
         
         if(a == "product")
         {
-          result.innerHTML = modname + "±àºÅÎª" + thisid + "ÉÌÆ·Éú³ÉÍê±Ï  => product/" + thisid + ".html";
+          result.innerHTML = modname + "ç¼–å·ä¸º" + thisid + "å•†å“ç”Ÿæˆå®Œæ¯•  => product/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == pidcount))
           {
-            result.innerHTML = "ËùÓĞÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰å•†å“é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             return;
           }
 
@@ -153,7 +153,7 @@ td{height:30px}
             a = "plist";
             thisid = cat[0];
             thiscount = 1;
-            result.innerHTML = "ËùÓĞÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰å•†å“é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             if(single == 1)
             {
               return;
@@ -167,11 +167,11 @@ td{height:30px}
         
         if(a == "plist")
         {
-          result.innerHTML = "±àºÅÎª" + thisid + "µÄÉÌÆ··ÖÀàÉú³ÉÍê±Ï  => list/" + thisid + ".html";
+          result.innerHTML = "ç¼–å·ä¸º" + thisid + "çš„å•†å“åˆ†ç±»ç”Ÿæˆå®Œæ¯•  => list/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == catcount))
           {
-            result.innerHTML = "ËùÓĞÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰å•†å“åˆ†ç±»é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             return;
           }
 
@@ -180,7 +180,7 @@ td{height:30px}
             a = "article";
             thisid = art[0];
             thiscount = 1;
-            result.innerHTML = "ËùÓĞÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰å•†å“åˆ†ç±»é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             if(single == 1)
             {
               return;
@@ -194,17 +194,17 @@ td{height:30px}
         
         if(a == "article")
         {
-          result.innerHTML = "±àºÅÎª" + thisid + "µÄÎÄÕÂÉú³ÉÍê±Ï  => article/" + thisid + ".html";
+          result.innerHTML = "ç¼–å·ä¸º" + thisid + "çš„æ–‡ç« ç”Ÿæˆå®Œæ¯•  => article/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == artcount))
           {
-            result.innerHTML = "ËùÓĞÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰æ–‡ç« é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             return;
           }
           
           if(thiscount == artcount)
           {
-            result.innerHTML = "ËùÓĞÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "æ‰€æœ‰æ–‡ç« é™æ€é¡µé¢ç”Ÿæˆå®Œæ¯•";
             if(single == 1)
             {
               return;
@@ -218,7 +218,7 @@ td{height:30px}
       }
       else
       {
-        result.innerHTML = "Ê×Ò³Éú³ÉÊ§°Ü";
+        result.innerHTML = "é¦–é¡µç”Ÿæˆå¤±è´¥";
       }
     }
   }
@@ -245,16 +245,16 @@ td{height:30px}
     switch(mod)
     {
       case "b2b":
-        modname = "Åú·¢";
+        modname = "æ‰¹å‘";
         break;
       case "ykt":
-        modname = "Ò»¿¨Í¨";
+        modname = "ä¸€å¡é€š";
         break;
       case "b2c":
-        modname = "ÁãÊÛ";
+        modname = "é›¶å”®";
         break;
       case "article":
-        modname = "ÎÄÕÂ";
+        modname = "æ–‡ç« ";
         break;
     }
     

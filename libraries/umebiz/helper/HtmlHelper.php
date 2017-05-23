@@ -118,22 +118,22 @@ function ComeFrom( $Re4b9c26a33 )
 				switch ( $Re4b9c26a33 )
 				{
 				case 1 :
-								echo "Åú·¢";
+								echo "ï¿½ï¿½ï¿½ï¿½";
 								break;
 				case 2 :
-								echo "ÁãÊÛ";
+								echo "ï¿½ï¿½ï¿½ï¿½";
 								break;
 				case 3 :
-								echo "Ò»¿¨Í¨";
+								echo "Ò»ï¿½ï¿½Í¨";
 								break;
 				case 4 :
-								echo "ÌÔ±¦";
+								echo "ï¿½Ô±ï¿½";
 								break;
 				case 98 :
 								echo "ÏµÍ³";
 								break;
 				default :
-								echo "Åú·¢";
+								echo "ï¿½ï¿½ï¿½ï¿½";
 								break;
 				}
 }
@@ -157,11 +157,11 @@ function SubName( $R8409eaa6ec )
 				echo $R8eeb1221ae;
 }
 
-function SubText( $R8409eaa6ec, $Rcf222ccba2 = 11, $Rbe4c4d037e = 0, $Re2a6348a52 = "gb2312" )
+function SubText( $R8409eaa6ec, $Rcf222ccba2 = 11, $Rbe4c4d037e = 0, $Re2a6348a52 = "utf-8" )
 {
 				if ( $Re2a6348a52 == "UTF-8" )
 				{
-								$R14a748f38c = "/[\x01-]|[?ß][€-¿]|à[?¿][€-¿]|[?ï][€-¿][€-¿]|ð[?¿][€-¿][€-¿]|[?÷][€-¿][€-¿][€-¿]/";
+								$R14a748f38c = "/[\x01-]|[?ï¿½][ï¿½-ï¿½]|ï¿½[?ï¿½][ï¿½-ï¿½]|[?ï¿½][ï¿½-ï¿½][ï¿½-ï¿½]|ï¿½[?ï¿½][ï¿½-ï¿½][ï¿½-ï¿½]|[?ï¿½][ï¿½-ï¿½][ï¿½-ï¿½][ï¿½-ï¿½]/";
 								preg_match_all( $R14a748f38c, $R8409eaa6ec, $R9c04209226 );
 								if ( $Rcf222ccba2 < count( $R9c04209226[0] ) - $Rbe4c4d037e )
 								{

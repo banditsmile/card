@@ -1,31 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['order']['item'];-->  
 
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&by=1" title="订单列表"><font color="#000">订单列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">订单详细信息</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&by=1" title="锟斤拷锟斤拷锟叫憋拷"><font color="#000">锟斤拷锟斤拷锟叫憋拷</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">锟斤拷锟斤拷锟斤拷细锟斤拷息</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="锟介看锟斤拷锟斤拷锟斤拷匕锟斤拷锟�"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 
 <div id="cdiv" style="position:absolute;bottom:30px;left:30px;;width:580px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">注：回车表示另外一个回复</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">注锟斤拷锟截筹拷锟斤拷示锟斤拷锟斤拷一锟斤拷锟截革拷</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
     <form action="index.php?m=mod_b2b&c=Bd&a=EctSave&id={$item['id']}" method="post">
       <table id="checktable" width="100%" style="border-collapse: collapse;">
         <tr>
-          <td width="25%">编辑回复信息：</td>
+          <td width="25%">锟洁辑锟截革拷锟斤拷息锟斤拷</td>
           <td width="75%">
             <textarea rows="5" name="ordererrcontent" cols="50"><!--echo implode("\n",$vd['ect']);--></textarea>
           </td>
         </tr>
         <tr>
           <td width="25%" style="height:50px;"></td>
-          <td width="75%"><input type="submit" value="提交保存" class="button" onclick="return confirm('您确认保存么')"/> <input type="reset" value="重置" class="button"/> <input type="button" value="取消" class="button" onclick="disp('cdiv')"/></td>
+          <td width="75%"><input type="submit" value="锟结交锟斤拷锟斤拷" class="button" onclick="return confirm('锟斤拷确锟较憋拷锟斤拷么')"/> <input type="reset" value="锟斤拷锟斤拷" class="button"/> <input type="button" value="取锟斤拷" class="button" onclick="disp('cdiv')"/></td>
         </tr>
       </table>
     </form>
@@ -36,33 +36,33 @@
 <div class="cbodyHead"></div>
 <form action="index.php?m=mod_b2b&c=Bd&a=check&id={$item['id']}&ref=czlist" method="post">
 <div class="cwarpper1">
-<div class="ctitle">基本信息</div>
+<div class="ctitle">锟斤拷锟斤拷锟斤拷息</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">充值号码：</td>
+    <td class="tablelt" height="50px">锟斤拷值锟斤拷锟诫：</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <!--if($item['accpwd'] !==''){-->
   <tr>
-    <td class="tablelt" height="50px">账号密码：</td>
+    <td class="tablelt" height="50px">锟剿猴拷锟斤拷锟诫：</td>
     <td class="tablert">{$item['accpwd']}</td>
   </tr>
   <!--}-->
   <tr>
-    <td class="tablelt" height="50px">业务类型：</td>
+    <td class="tablelt" height="50px">业锟斤拷锟斤拷锟酵ｏ拷</td>
     <td class="tablert"><b>{$item['cztype']}</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">图标是否亮：</td>
+    <td class="tablelt" height="50px">图锟斤拷锟角凤拷锟斤拷锟斤拷</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">客户提交备注：</td>
+    <td class="tablelt" height="50px">锟酵伙拷锟结交锟斤拷注锟斤拷</td>
     <td class="tablert"><textarea rows="3" name="bankalert" style="width:208px;background:#f8f8f8" readonly>{$item['remark']}</textarea></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">处理状态：</td>
+    <td class="tablelt" height="50px">锟斤拷锟斤拷状态锟斤拷</td>
     <td class="tablert">
     	<select name="ordstate">
         {#Option($vd['bdstate'], $item['ordstate'])}
@@ -71,7 +71,7 @@
   </tr>
   
   <tr>
-    <td class="tablelt" >管理员回复：<br/></td>
+    <td class="tablelt" >锟斤拷锟斤拷员锟截革拷锟斤拷<br/></td>
     <td class="tablert" style="font-size:12px;padding-top:8px;padding-bottom:8px;">
     	<table border="0">
       <!--foreach($vd['ect'] as $ectitem){-->
@@ -83,7 +83,7 @@
       <tr>
       	<td width="5%"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/></td>
       	<td  width="95%" style="font-size:12px">
-      	自行输入
+      	锟斤拷锟斤拷锟斤拷锟斤拷
         <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" style="vertical-align:middle"/>
         </td>
       </tr>
@@ -94,9 +94,9 @@
   <tr>
     <td class="tablelt" style="height:50px;"></td>
     <td class="tablert">
-    	<input type="submit" value=" 提 交 " class="button" /> 
-    	<input type="reset" value=" 重 置 " class="button"/>
-    	<input type="button" value="编辑回复" class="button" onclick="disp('cdiv')"/>
+    	<input type="submit" value=" 锟斤拷 锟斤拷 " class="button" /> 
+    	<input type="reset" value=" 锟斤拷 锟斤拷 " class="button"/>
+    	<input type="button" value="锟洁辑锟截革拷" class="button" onclick="disp('cdiv')"/>
     </td>
   </tr>
 </table>
@@ -106,11 +106,11 @@
 <div id="opcontent" style="display:none">
   
   <div class="optxt">
-    <input type="button" onclick="disp('adddiv')" value="处理此订单" class="btn"/>
+    <input type="button" onclick="disp('adddiv')" value="锟斤拷锟斤拷硕锟斤拷锟�" class="btn"/>
   </div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >正在补单中...</div>
+  <div id="loadcontent" >锟斤拷锟节诧拷锟斤拷锟斤拷...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 4;

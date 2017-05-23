@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css">
 <style type="text/css">
 td{height:30px;}
@@ -23,27 +23,27 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
     array(
       'val' => UB_B2B ? 1 : 0,
       'idx' => 1,
-      'txt' => 'Åú·¢ÍâÒ³Ö÷Ìâ'
+      'txt' => 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½'
     ),
     array(
       'val' => UB_B2B ? 1 : 0,
       'idx' => 5,
-      'txt' => 'Åú·¢ÄÚÒ³Ö÷Ìâ'
+      'txt' => 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½'
     ),
     array(
       'val' => UB_B2C ? 1 : 0,
       'idx' => 2,
-      'txt' => 'ÁãÊÛÖ÷Ìâ'
+      'txt' => 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
     ),
     array(
       'val' => UB_YKT ? 1 : 0,
       'idx' => 3,
-      'txt' => 'Ò»¿¨Í¨Ö÷Ìâ'
+      'txt' => 'Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½'
     ),
     array(
       'val' => UB_B2B+UB_B2C+UB_YKT > 1 ? 1 : 0,
       'idx' => 4,
-      'txt' => 'Òýµ¼Ò³Ö÷Ìâ'
+      'txt' => 'ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½'
     )
   );
 ?>
@@ -54,7 +54,7 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
       <?php foreach($vd['items'] as $item){ ?>
       <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
       	<div style="width:150px;height:150px;background:url(<?php echo $vd['root']; ?>themes/thumb/<?php echo $item['thumb']; ?>) center no-repeat"></div>
-        <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>°²×°</a>]</div>
+        <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>ï¿½ï¿½×°</a>]</div>
       </div>
       <?php } ?>
       </div>
@@ -63,8 +63,8 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
 </table>
 <div id="opcontent" style="height:30px;">
   <div class="optxt">
-    µÚ<span id="tthispage" style="font-weight:bold"><?php echo $vd['thispage']; ?></span>Ò³/×Ü<span id="ttotlepage" style="font-weight:bold"><?php echo $vd['totlepage']; ?></span>Ò³ <input type="button" class="button" value="&lt;&lt; ÉÏÒ»Ò³" <?php echo $vd['prestate']; ?> onclick="gopre()" id="gopre"  />
-      <input type="button" class="button" value="ÏÂÒ»Ò³ &gt;&gt;" <?php echo $vd['nextstate']; ?> onclick="gonext()" id="gonext"  />
+    ï¿½ï¿½<span id="tthispage" style="font-weight:bold"><?php echo $vd['thispage']; ?></span>Ò³/ï¿½ï¿½<span id="ttotlepage" style="font-weight:bold"><?php echo $vd['totlepage']; ?></span>Ò³ <input type="button" class="button" value="&lt;&lt; ï¿½ï¿½Ò»Ò³" <?php echo $vd['prestate']; ?> onclick="gopre()" id="gopre"  />
+      <input type="button" class="button" value="ï¿½ï¿½Ò»Ò³ &gt;&gt;" <?php echo $vd['nextstate']; ?> onclick="gonext()" id="gonext"  />
     <span id="ccinfo"></span>
   </div>
 </div>
@@ -72,7 +72,7 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
   <?php foreach($vd['items'] as $item){ ?>
   <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
   	<div class="iborder" style="background:url(<?php echo $vd['root']; ?>themes/thumb/<?php echo $item['thumb']; ?>) no-repeat center"></div>
-    <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>°²×°</a>]</div>
+    <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>ï¿½ï¿½×°</a>]</div>
   </div>
   <?php } ?>
   <input type="hidden" id="totlepage" value="1"/>
@@ -83,7 +83,7 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
 <div id="yktdown" style="display:none"></div>
 <div id="indexdown" style="display:none"></div>
 <div id="load" style="display:none">
-  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>ÕýÔÚ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 </body>
 <script type="text/javascript">  
@@ -196,8 +196,8 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
   
   function setup(fname)
   {
-    $("ccinfo").innerHTML = "¿ªÊ¼°²×°Ö÷Ìâ°ü...£¡";
-    loadXMLDoc("index.php?m=mod_b2b&c=fs&a=unzip&path="+fname, "ccinfo", 'Ö÷Ìâ°ü°²×°Íê³É..£¡', 'Ö÷Ìâ°ü°²×°Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÖ÷Ìâ°ü°²×°Ê§°Ü..£¡', 1);
+    $("ccinfo").innerHTML = "ï¿½ï¿½Ê¼ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½...ï¿½ï¿½";
+    loadXMLDoc("index.php?m=mod_b2b&c=fs&a=unzip&path="+fname, "ccinfo", 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½ï¿½..ï¿½ï¿½', 1);
   }
   
   function checkversion()
@@ -207,12 +207,12 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
   
   function getXMLHander()
   {
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º
     if (window.XMLHttpRequest)
     {
       xmlhttp=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º
     else if (window.ActiveXObject)
     {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -270,20 +270,20 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
             {
               if(ackdata == 0 || ackdata == "0")
               {
-                $(id).innerHTML = txt_succ + "£¡";
+                $(id).innerHTML = txt_succ + "ï¿½ï¿½";
                 nextstep(step);
               }
               else
               {
                 //alert(ackdata);
-                $(id).innerHTML = txt_fail + "£¡";
+                $(id).innerHTML = txt_fail + "ï¿½ï¿½";
               }
             }
           }
           else
           {
             loadDisp(0);
-            $(id).innerHTML = txt_err + "£¡";
+            $(id).innerHTML = txt_err + "ï¿½ï¿½";
           }
         }
       }
@@ -293,14 +293,14 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP£¬ÎÞ·¨Íê³É±¾´Î²Ù×÷")
+      alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTPï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½É±ï¿½ï¿½Î²ï¿½ï¿½ï¿½")
     }
   }
   
   function down(id)
   {
-    $("ccinfo").innerHTML = "¿ªÊ¼°²×°Ö÷Ìâ°ü...£¡";
-    loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=DownTpl&id="+id, "ccinfo", 'Ö÷Ìâ°ü°²×°Íê³É..£¡', 'Ö÷Ìâ°ü°²×°Ê§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÖ÷Ìâ°ü°²×°Ê§°Ü..£¡', 5);
+    $("ccinfo").innerHTML = "ï¿½ï¿½Ê¼ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½...ï¿½ï¿½";
+    loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=DownTpl&id="+id, "ccinfo", 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½ï¿½..ï¿½ï¿½', 5);
   }
   
   function nextstep(step)
@@ -310,8 +310,8 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
       case 1:
         unzip
         loadXMLDoc(url, id, txt_succ, txt_fail, txt_err, step);
-         $("ccinfo").innerHTML = "Ö÷Ìâ°ü¿ªÊ¼¸üÐÂ...£¡";
-         loadXMLDoc("index.php?m=mod_b2b&c=fs&a=ClearCache", "ccinfo", 'Ö÷Ìâ°ü¸üÐÂÍê³É..£¡', 'Ö÷Ìâ°ü¸üÐÂÊ§°Ü..£¡', 'ÓÉÓÚÄ³ÖÖÔ­Òòµ¼ÖÂÖ÷Ìâ°ü¸üÐÂÊ§°Ü..£¡', 5);
+         $("ccinfo").innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...ï¿½ï¿½";
+         loadXMLDoc("index.php?m=mod_b2b&c=fs&a=ClearCache", "ccinfo", 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½..ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½..ï¿½ï¿½', 5);
         break;
       case 2:
        update
@@ -342,7 +342,7 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
     }
   } 
   
-  //ieÔÚframesetÖÐÖ±½ÓÊ¹ÓÃonresizeÊÂ¼þÓÐbug£¬³ß´ç´Ó´óµ½Ð¡µÄÊ±ºò£¬Èç¹û > 390£¬Èç¹û¼¤»îÕâ¸öÊÂ¼þ
+  //ieï¿½ï¿½framesetï¿½ï¿½Ö±ï¿½ï¿½Ê¹ï¿½ï¿½onresizeï¿½Â¼ï¿½ï¿½ï¿½bugï¿½ï¿½ï¿½ß´ï¿½Ó´ï¿½Ð¡ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ > 390ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
   if(getOs() == "MSIE" && window.frameElement != null)
   {
     window.frameElement.attachEvent("onresize",cheightResize);
@@ -362,7 +362,7 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
     <?php foreach($vd['localitems'] as $item){ ?>
     <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
       <img src="<?php echo $vd['root']; ?>themes/thumb/<?php echo $item['thumb']; ?>" border="0" width="100%">
-      <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>°²×°</a>]</div>
+      <div style="margin:5px 2px;float:left;"><?php echo $item['name']; ?> [<a href="#" onclick='setup("<?php echo $item['file']; ?>")'>ï¿½ï¿½×°</a>]</div>
     </div>
     <?php } ?>
     <input type="hidden" id="totlepage" value="1"/>
@@ -372,10 +372,10 @@ background:url(<?php echo $vd['root']; ?><?php echo $vd['sc']; ?>picture/image/n
     <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
     	<div class="iborder" style="background:url(<?php echo $item['thumb']; ?>) no-repeat center"></div>
       <div style="margin:10px 2px 3px;float:left;width:95%">
-        <?php echo $item['name']; ?> [<a href="#" onclick='down("<?php echo $item['id']; ?>")'>°²×°</a>][<a href="<?php echo $item['demo']; ?>" target="_blank">ÑÝÊ¾</a>]
+        <?php echo $item['name']; ?> [<a href="#" onclick='down("<?php echo $item['id']; ?>")'>ï¿½ï¿½×°</a>][<a href="<?php echo $item['demo']; ?>" target="_blank">ï¿½ï¿½Ê¾</a>]
       </div>
-      <div style="margin:3px 2px;float:left;width:95%">ÊÊÓÃ£º<?php echo $item['version']; ?></div>
-      <div style="margin:3px 2px;float:left;width:95%">×÷Õß£º<?php echo $item['author']; ?></div>
+      <div style="margin:3px 2px;float:left;width:95%">ï¿½ï¿½ï¿½Ã£ï¿½<?php echo $item['version']; ?></div>
+      <div style="margin:3px 2px;float:left;width:95%">ï¿½ï¿½ï¿½ß£ï¿½<?php echo $item['author']; ?></div>
     </div>
     <?php } ?>
     <input type="hidden" id="totlepage" value="<?php echo $vd['totlepage']; ?>"/>

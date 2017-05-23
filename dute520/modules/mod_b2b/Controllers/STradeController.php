@@ -42,7 +42,7 @@ class STradeController extends Controller
 								$R4e420efcc3 = $R902f80a2a7->ITrade_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
 								$this->Assign( "remain", $R4e420efcc3['remain'] );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 					
 												$this->view( );
@@ -51,7 +51,7 @@ class STradeController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 

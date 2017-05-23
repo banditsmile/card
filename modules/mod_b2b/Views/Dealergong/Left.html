@@ -1,128 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-    <title id="AgentSiteName">Ö±ÏúÉÌ²Ëµ¥</title>
-    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
-    <link href="http://www.elingka.com/css/h_skin1/index.css" type="text/css" rel="stylesheet" />
-    <link href="http://www.elingka.com/css/h_skin1/dialog.css" type="text/css" rel="stylesheet" />
-
-    <script type="text/javascript" src="http://www.elingka.com/js/dialog.js"></script>
-<script type="text/javascript" src="/content/mod_b2b/js/utils.js"></script>
-<script language="JavaScript" type="text/JavaScript">
-function toggle(targetid){
-	if (document.getElementById){
-		target=document.getElementById(targetid);
-			if (target.style.display==""){
-				target.style.display = "none";
-			} else {
-				target.style.display = "";
-			}
-	}
-}
-</script>
-</head>
-<body>
-
-        <table cellpadding="0" cellspacing="0" class="all_table">
-            
-            <tr>
-                <td class="td_left" valign="top">
-                    <div class="nr_left">
-                        <div class="login_top">
-                        </div>
-                        <div class="login">
-                          <h2> <span class="yh">ÓÃ»§ĞÅÏ¢</span></h2>
-                          <h3 class="menutitle" onclick="toggle('div666')"> <span>ÓÃ»§ĞÅÏ¢</span></h3>
-                          <ul id="div666">
-                            <li>±à ºÅ£º{$vd['agent'][7]}</li>					
-    <li id="staffid" style="display:none">Ô± ¹¤£º<span id="mchstaffid"><font color="0">ÏµÍ³</font></span></li><li>¼¶ ±ğ£º{$vd['agent'][2]}</li>					
-    <li>Óà ¶î£º<span class="yue">{$vd['agent'][6]}</span></li>										
-  <li id="mchparentidid">ÉÏ ¼¶£º<span class="jifen">{$vd['agent'][4]}</span></li>				 
-            <li>Çø Óò£º{$vd['agent'][3]}</span></li>
-            <li style="padding: 5px 0 4px 9px"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=AddFunds" class="pay1" target="ifrpage">
-                                    ³äÖµ</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=tran" class="pay1" target="ifrpage">×ªÕË</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail"
-                                        class="pay1" target="ifrpage" style="margin-right: 0">ÌáÏÖ</a></li>
-                          </ul>
-                          <script type="text/javascript">					$("mchremainid").style.display = getCookie('umebiz_com_1') == "0" ? "none" : "";          $("mchparentidid").style.display = getCookie('umebiz_com_2') == "0" ? "none" : "";          $("mcharrearsid").style.display = getCookie('umebiz_com_9') == "0" ? "none" : "";          $("mchcreditid").style.display = getCookie('umebiz_com_10') == "0" ? "none" : "";				</script>
-                        </div>
-                        <div class="login_bottom">
-                        </div>
-                        <div class="main_top">
-                        </div>
-                      <div class="main" id="menua">
-                        <h3 class="menutitle" id="menu1" onclick="toggle('div1')"><span>ÉÌÆ··¢²¼¹ÜÀí</span></h3>
-                          <ul id="div1">
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Create" target="ifrpage">·¢²¼¹©»õÉÌÆ·</a></li>
-                            <li class="li"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock"  target="ifrpage">¹©»õÉÌÆ·¹ÜÀí</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Underling&amp;a=Consump" target="ifrpage">ÏÂ¼¶¿Í»§Ïû·Ñ·ÖÎö</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock" target="ifrpage">ËùÓĞÉÌÆ·¿â´æ¹ÜÀí</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">¹©»õÊÕÈë×ªÖÁÓà¶î</a></li>
-                          </ul>
-                          <h3 class="menutitle" id="menu2" onclick="toggle('div2')"><span>¹©»õÉÌÆ·¹ÜÀí</span></h3>
-                          <ul id="div2">
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrder&amp;ptype=sd&amp;ordstate=1&amp;by=1" target="ifrpage">ÊÖ¹¤¶©µ¥ÁĞ±í</a></li>
-                            <li class="li1"><a href="http://kmcc.exikameng.com/admin/bs_dat.html" target="ifrpage">¿ÉÒÉ¶©µ¥ÁĞ±í</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">³äÖµÖĞµÄÁĞ±í</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Complaint&amp;msgdirect=1" target="ifrpage">¶©µ¥Í¶Ëß´¦Àí</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">¹©»õ½»Ò×Ã÷Ï¸</a></li>
-                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">ÏúÊÛÈëÕËÃ÷Ï¸</a></li>
-                        </ul>
-                          </div>
-                        <div class="main_bottom">
-                        </div>
-                    </div>
-
-
-                </td>
-                
-            </tr>
-
-        </table>
-<script type="text/javascript">
-	function RemainAlert(){
-    var xmlhttptop;
-    
-    var obj = document.getElementById("mcharemain");
-    
-    try{
-      xmlhttptop=new XMLHttpRequest();
-    }
-    catch(e){
-      xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttptop.onreadystatechange=function(){
-      if (xmlhttptop.readyState==4){
-        if (xmlhttptop.status==200){
-          var data=xmlhttptop.responseText;
-          tmp = data.split(",");
-
-          if(data == "-1")
-          {
-          	alert("ÏµÍ³ÒÑ¾­ÍË³ö£¬ÇëÖØĞÂµÇÂ½");
-          	window.top.location.href = "/index.php?m=mod_b2b&a=logout";
-          }
-          else
-          {
-            obj.innerHTML = "£¤" + tmp[0];
-            document.getElementById("mchincome").innerHTML = "£¤" + tmp[1];
-            document.getElementById("mchfunds").innerHTML = "£¤" + tmp[2];
-          }
-        }
-      }
-    }
-    \
-  }
-  RemainAlert();
-  setInterval(RemainAlert, 10000);
-
-  if (screen.width<=1024)
-  {
-  document.getElementById("div3").style.display="none";
-  document.getElementById("div4").style.display="none";
-  }
-</script>
-<style>  html { overflow-y:hidden; } </style>
-<style>  html { overflow-x:hidden; } </style>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />    <title id="AgentSiteName">ç›´é”€å•†èœå•</title>    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />    <link href="http://www.elingka.com/css/h_skin1/index.css" type="text/css" rel="stylesheet" />    <link href="http://www.elingka.com/css/h_skin1/dialog.css" type="text/css" rel="stylesheet" />    <script type="text/javascript" src="http://www.elingka.com/js/dialog.js"></script><script type="text/javascript" src="/content/mod_b2b/js/utils.js"></script><script language="JavaScript" type="text/JavaScript">function toggle(targetid){	if (document.getElementById){		target=document.getElementById(targetid);			if (target.style.display==""){				target.style.display = "none";			} else {				target.style.display = "";			}	}}</script></head><body>        <table cellpadding="0" cellspacing="0" class="all_table">                        <tr>                <td class="td_left" valign="top">                    <div class="nr_left">                        <div class="login_top">                        </div>                        <div class="login">                          <h2> <span class="yh">ç”¨æˆ·ä¿¡æ¯</span></h2>                          <h3 class="menutitle" onclick="toggle('div666')"> <span>ç”¨æˆ·ä¿¡æ¯</span></h3>                          <ul id="div666">                            <li>ç¼– å·ï¼š{$vd['agent'][7]}</li>					    <li id="staffid" style="display:none">å‘˜ å·¥ï¼š<span id="mchstaffid"><font color="0">ç³»ç»Ÿ</font></span></li><li>çº§ åˆ«ï¼š{$vd['agent'][2]}</li>					    <li>ä½™ é¢ï¼š<span class="yue">{$vd['agent'][6]}</span></li>										  <li id="mchparentidid">ä¸Š çº§ï¼š<span class="jifen">{$vd['agent'][4]}</span></li>				             <li>åŒº åŸŸï¼š{$vd['agent'][3]}</span></li>            <li style="padding: 5px 0 4px 9px"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=AddFunds" class="pay1" target="ifrpage">                                    å……å€¼</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=tran" class="pay1" target="ifrpage">è½¬è´¦</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail"                                        class="pay1" target="ifrpage" style="margin-right: 0">æç°</a></li>                          </ul>                          <script type="text/javascript">					$("mchremainid").style.display = getCookie('umebiz_com_1') == "0" ? "none" : "";          $("mchparentidid").style.display = getCookie('umebiz_com_2') == "0" ? "none" : "";          $("mcharrearsid").style.display = getCookie('umebiz_com_9') == "0" ? "none" : "";          $("mchcreditid").style.display = getCookie('umebiz_com_10') == "0" ? "none" : "";				</script>                        </div>                        <div class="login_bottom">                        </div>                        <div class="main_top">                        </div>                      <div class="main" id="menua">                        <h3 class="menutitle" id="menu1" onclick="toggle('div1')"><span>å•†å“å‘å¸ƒç®¡ç†</span></h3>                          <ul id="div1">                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Create" target="ifrpage">å‘å¸ƒä¾›è´§å•†å“</a></li>                            <li class="li"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock"  target="ifrpage">ä¾›è´§å•†å“ç®¡ç†</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Underling&amp;a=Consump" target="ifrpage">ä¸‹çº§å®¢æˆ·æ¶ˆè´¹åˆ†æ</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock" target="ifrpage">æ‰€æœ‰å•†å“åº“å­˜ç®¡ç†</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">ä¾›è´§æ”¶å…¥è½¬è‡³ä½™é¢</a></li>                          </ul>                          <h3 class="menutitle" id="menu2" onclick="toggle('div2')"><span>ä¾›è´§å•†å“ç®¡ç†</span></h3>                          <ul id="div2">                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrder&amp;ptype=sd&amp;ordstate=1&amp;by=1" target="ifrpage">æ‰‹å·¥è®¢å•åˆ—è¡¨</a></li>                            <li class="li1"><a href="http://kmcc.exikameng.com/admin/bs_dat.html" target="ifrpage">å¯ç–‘è®¢å•åˆ—è¡¨</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">å……å€¼ä¸­çš„åˆ—è¡¨</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Complaint&amp;msgdirect=1" target="ifrpage">è®¢å•æŠ•è¯‰å¤„ç†</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">ä¾›è´§äº¤æ˜“æ˜ç»†</a></li>                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">é”€å”®å…¥è´¦æ˜ç»†</a></li>                        </ul>                          </div>                        <div class="main_bottom">                        </div>                    </div>                </td>                            </tr>        </table><script type="text/javascript">	function RemainAlert(){    var xmlhttptop;        var obj = document.getElementById("mcharemain");        try{      xmlhttptop=new XMLHttpRequest();    }    catch(e){      xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");    }    xmlhttptop.onreadystatechange=function(){      if (xmlhttptop.readyState==4){        if (xmlhttptop.status==200){          var data=xmlhttptop.responseText;          tmp = data.split(",");          if(data == "-1")          {          	alert("ç³»ç»Ÿå·²ç»é€€å‡ºï¼Œè¯·é‡æ–°ç™»é™†");          	window.top.location.href = "/index.php?m=mod_b2b&a=logout";          }          else          {            obj.innerHTML = "ï¿¥" + tmp[0];            document.getElementById("mchincome").innerHTML = "ï¿¥" + tmp[1];            document.getElementById("mchfunds").innerHTML = "ï¿¥" + tmp[2];          }        }      }    }    \  }  RemainAlert();  setInterval(RemainAlert, 10000);  if (screen.width<=1024)  {  document.getElementById("div3").style.display="none";  document.getElementById("div4").style.display="none";  }</script><style>  html { overflow-y:hidden; } </style><style>  html { overflow-x:hidden; } </style></body></html>

@@ -1,85 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>»ã¿îÍ¨ÖªÊé</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
-<script language="javascript" type="text/javascript" src="http://www.elingka.com/js/ifrauto1.js?isposkback=False"></script>
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-
-</head>
-<body>
-<div class="new_qie">
-            <div class="new_qie2">
-                <h2>
-                    ÒøÐÐÏßÏÂ»ã¿î</h2>
-            </div>
-            <ul>
-               <li> <a id="lbtn22" href="../index.php?m=mod_agent&c=funds&a=AddFunds">ÔÚÏß³äÖµ</a></li>
-
-	<li> <a id="lbtn21" class="on" href="">ÒøÐÐ»ã¿î³äÖµ</a></li>
-
-    <li> <a id="lbtn23" href="../index.php?m=mod_agent&c=Funds&a=YktFunds">³äÖµ¿¨³äÖµ</a></li>
-            </ul>
-</div>
-        <div class="fb_liucheng">
-            <ul>
-                <h2>
-                    ÏßÏÂ»ã¿îÁ÷³Ì£º</h2>
-                <li>ÏßÏÂ»ã¿î³É¹¦</li>
-                <li class="li2"></li>
-                <li>Ìá½»»ã¿îÍ¨Öª</li>
-                <li class="li2"></li>
-                <li>µÈ´ý´¦Àí</li>
-                <li class="li2"></li>
-                <li>¼Ó¿î³É¹¦</li>
-            </ul>
-        </div>
-        <div style="margin-bottom: 5px;">
-            Ñ¡ÔñÉÏ¼¶»ã¿î¶ÔÏñ£º<select name="ReceiverID" onchange="javascript:setTimeout('__doPostBack(\'ReceiverID\',\'\')', 0)" id="ReceiverID">
-	<option selected="selected" value="0">Æ½Ì¨¹ÜÀíÔ±</option>
-
-</select></div>
-        
-                <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
-      <tr>
-        <th width="20%" height="41">¿ª»§ÐÐ</th>
-        <th width="20%">ÕË»§Ãû</th>
-        <th width="20%"><span class="heardertop1">ÒøÐÐÕËºÅ</span></th>
-        <th width="20%"><span class="heardertop1">¿ª»§µØ</span></th>
-        <th width="20%"><span class="heardertop1">Ìá½»»ã¿îÍ¨ÖªÊé</span></th>
-  <?php foreach($vd['bank'] as $item) { ?>
-  <?php if($item['AccountNO'] != ''){ ?>
-	    <tr class="trd">
-        <td><?php echo $item['AccountBranch']; ?></td>
-        <td><?php echo $item['AccountName']; ?></td>
-        <td align=left><?php echo $item['AccountNO']; ?></td>
-        <td><?php echo $item['Address']; ?></td>
-        <td><a href="index.php?m=mod_agent&amp;c=Remit&amp;a=Add&amp;id=<?php echo $item['id']; ?>">
-                            Ìá½»»ã¿îÍ¨Öª</a></td>
-      </tr>
-      <?php } ?>
-	  <?php } ?>
-    </table>           
-	        <script language="javascript" type="text/javascript" src="http://www.elingka.com/js/jquery.js"></script>
-
-    </form>
-
-    <script language="javascript" type="text/javascript" src="http://www.elingka.com/js/select.js"></script> 
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <title>ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½</title>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../index/css/page.css" type="text/css" rel="stylesheet" /><script language="javascript" type="text/javascript" src="http://www.elingka.com/js/ifrauto1.js?isposkback=False"></script><script type="text/javascript">//<![CDATA[var theForm = document.forms['form1'];if (!theForm) {    theForm = document.form1;}function __doPostBack(eventTarget, eventArgument) {    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {        theForm.__EVENTTARGET.value = eventTarget;        theForm.__EVENTARGUMENT.value = eventArgument;        theForm.submit();    }}//]]></script></head><body><div class="new_qie">            <div class="new_qie2">                <h2>                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½</h2>            </div>            <ul>               <li> <a id="lbtn22" href="../index.php?m=mod_agent&c=funds&a=AddFunds">ï¿½ï¿½ï¿½ß³ï¿½Öµ</a></li>	<li> <a id="lbtn21" class="on" href="">ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½Öµ</a></li>    <li> <a id="lbtn23" href="../index.php?m=mod_agent&c=Funds&a=YktFunds">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Öµ</a></li>            </ul></div>        <div class="fb_liucheng">            <ul>                <h2>                    ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½ï¿½ï¿½Ì£ï¿½</h2>                <li>ï¿½ï¿½ï¿½Â»ï¿½ï¿½É¹ï¿½</li>                <li class="li2"></li>                <li>ï¿½á½»ï¿½ï¿½ï¿½Í¨Öª</li>                <li class="li2"></li>                <li>ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½</li>                <li class="li2"></li>                <li>ï¿½Ó¿ï¿½É¹ï¿½</li>            </ul>        </div>        <div style="margin-bottom: 5px;">            Ñ¡ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<select name="ReceiverID" onchange="javascript:setTimeout('__doPostBack(\'ReceiverID\',\'\')', 0)" id="ReceiverID">	<option selected="selected" value="0">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½Ô±</option></select></div>                        <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">      <tr>        <th width="20%" height="41">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>        <th width="20%">ï¿½Ë»ï¿½ï¿½ï¿½</th>        <th width="20%"><span class="heardertop1">ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½</span></th>        <th width="20%"><span class="heardertop1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span></th>        <th width="20%"><span class="heardertop1">ï¿½á½»ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½</span></th>  <?php foreach($vd['bank'] as $item) { ?>  <?php if($item['AccountNO'] != ''){ ?>	    <tr class="trd">        <td><?php echo $item['AccountBranch']; ?></td>        <td><?php echo $item['AccountName']; ?></td>        <td align=left><?php echo $item['AccountNO']; ?></td>        <td><?php echo $item['Address']; ?></td>        <td><a href="index.php?m=mod_agent&amp;c=Remit&amp;a=Add&amp;id=<?php echo $item['id']; ?>">                            ï¿½á½»ï¿½ï¿½ï¿½Í¨Öª</a></td>      </tr>      <?php } ?>	  <?php } ?>    </table>           	        <script language="javascript" type="text/javascript" src="http://www.elingka.com/js/jquery.js"></script>    </form>    <script language="javascript" type="text/javascript" src="http://www.elingka.com/js/select.js"></script> </body></html>

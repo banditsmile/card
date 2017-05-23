@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
 <style type="text/css">
 td{height:30px}
@@ -10,55 +10,55 @@ td{height:30px}
 <body>
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
   <tr>
-    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">��Ʒ�۸����</td>
+    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">商品价格管理</td>
   </tr>
   <tr>
     <td width="25%" align="center">
-      <input type="button" onclick="winopen('?m=mod_b2b&c=Price&a=PriceTpl')" value="��Ʒ�۸�ģ��" class="button" style="color:#ff0000"/>
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Price&a=PriceTpl')" value="商品价格模板" class="button" style="color:#ff0000"/>
     </td>
     <td width="75%" align="left" style="border-right:1px #ccc solid">
-      (����)������Ʒ�ļ۸�ģ�壬�����ݵĿ��Ƹ����û��۸�
-    </td>
-  </tr>
-  <tr>
-    <td width="25%" align="center">
-      <input type="button" onclick="winopen('?m=mod_b2b&c=Price&a=PriceSaveBySup')" value="��Ʒ�Զ�����" class="button" style="color:#ff0000"/>
-    </td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid">
-      (����)�����Ʒ��ӱ�ȿ�������ϵͳ�Խӣ���ֻ������һ�����������Ʒ�Ľ����۸����
+      (常用)设置商品的价格模板，方便快捷的控制各级用户价格
     </td>
   </tr>
   <tr>
     <td width="25%" align="center">
-      <input type="button" onclick="winopen('?m=mod_b2b&c=Price')" value="��Ʒ��������" class="button"/>
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Price&a=PriceSaveBySup')" value="商品自动调价" class="button" style="color:#ff0000"/>
     </td>
     <td width="75%" align="left" style="border-right:1px #ccc solid">
-      ��ĳһ����Ʒ�����趨�۸���۵���Ʒ����ʹ�ü۸�ģ�����
+      (常用)如果商品和颖先卡购进货系统对接，您只需轻轻一按即可完成商品的进货价格调整
     </td>
   </tr>
   <tr>
     <td width="25%" align="center">
-      <input type="button" onclick="winopen('?m=mod_b2b&c=Price')" value="��Ʒ�û��ܼ�" class="button"/>
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Price')" value="商品单独定价" class="button"/>
     </td>
     <td width="75%" align="left" style="border-right:1px #ccc solid">
-      ���ĳһ����Ʒ��������ĳ���û����ü۸�
+      给某一个商品单独设定价格，设价的商品不再使用价格模板给价
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Price')" value="商品用户密价" class="button"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      针对某一款商品，单独给某个用户设置价格
     </td>
   </tr>
   
   <tr>
     <td width="25%" align="center">
-      <input type="button" onclick="winopen('?m=mod_b2b&c=Rank')" value="��Ʒ�۸񼶱�" class="button"/>
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Rank')" value="商品价格级别" class="button"/>
     </td>
     <td width="75%" align="left" style="border-right:1px #ccc solid">
-      Ҳ���û����𣬼۸�ģ����Ҫ�ڴ˻����Ͻ�������
+      也叫用户级别，价格模板主要在此基础上进行设置
     </td>
   </tr>
   <tr>
     <td width="25%" align="center" style="border-bottom:1px #ccc solid">
-      <input type="button" onclick="disp('cdiv')" value="����ͻ��۸�" class="button"/>
+      <input type="button" onclick="disp('cdiv')" value="清除客户价格" class="button"/>
     </td>
     <td width="75%" align="left" style="border-bottom:1px #ccc solid;border-right:1px #ccc solid">
-      ����ͻ����¼����õ����м۸�
+      清除客户给下级设置的所有价格
     </td>
   </tr>
 </table>
@@ -69,22 +69,22 @@ td{height:30px}
   </tr>
 </table>
 <div id="load" style="display:none">
-  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>ҳ����������Ե�...</div>
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>页面加载中请稍等...</div>
 </div>
 <div id="cdiv" style="position:absolute;top:245px;left:30px;;width:480px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">����ͻ����¼����õļ۸�</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">清除客户给下级设置的价格</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
   <form id="cform" method="post" action="index.php?m=mod_b2b&c=Price&a=ClearPrice">
     <table id="checktable" width="100%" style="border-collapse: collapse;">
       <tr>
-        <td width="25%"">�������û����</td>
+        <td width="25%"">请输入用户编号</td>
         <td width="75%"><input type="text" id="aid" name="aid" value=""/></td>
       </tr>
       <tr>
         <td width="25%" style="height:50px;"></td>
         <td width="75%">
-          <input type="submit" value="��֪����ȷ�����" class="button"/> <input type="button" value="ȡ��" class="button" onclick="disp('cdiv')"/>
+          <input type="submit" value="我知道，确认清除" class="button"/> <input type="button" value="取消" class="button" onclick="disp('cdiv')"/>
         </td>
       </tr>
     </table>

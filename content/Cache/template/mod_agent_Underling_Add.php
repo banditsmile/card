@@ -1,140 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>´´½¨ÏÂ¼¶¿Í»§</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<script src="/content/mod_b2b/js/city.js" type="text/javascript"></script>
-    <div class="new_qie">
-        <div class="new_qie2">
-            <h2>
-                <a href="index.php?m=mod_agent&c=Underling" class="goback">·µ»ØÏÂ¼¶¿Í»§ÁÐ±í</a> <em>-</em> ´´½¨ÏÂ¼¶¿Í»§</h2>
-        </div>
-    </div>
-	<FORM name="register" method="post" action="index.php?m=mod_agent&c=Underling&a=RegSave">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">µÇÂ½ÕË»§Ãû</span> </td>
-		<td width="78%" align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='20' name='ubzcname' class='input0' datatype="Username" msg="µÇÂ¼ÓÃ»§Ãû²»·ûºÏÒªÇó">  
-		  <font color=#cccccc>
-		  <label>
-		  <input type="button" name="Submit3" class="input_jc" value="¼ì²âÕËºÅ">
-		  </label>
-		  6-20Î»Ö®¼äµÄÊý×Ö»òÓ¢ÎÄ×ÖÄ¸</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">µÇÂ½/½»Ò×ÃÜÂë</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='password' size='30' maxlength='30' name='ubzcpwd' class='input0' datatype="NewPass" msg="µÇÂ¼/½»Ò×ÃÜÂë²»·ûºÏÒªÇó"> 
-		  <font color=#cccccc>ÃÜÂë±ØÐëÎª6-30Î»Ö®¼äµÄÊý×Ö»ò×ÖÄ¸</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÖØ¸´ÃÜÂë</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='password' size='30' maxlength='30' name='reubzcpwd' class='input0' datatype="Repeat" to="CustomerLoginPassword" msg="Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ" /> 
-		  <font color=#cccccc>ÖØ¸´ÊäÈëµÇÂ¼/½»Ò×ÃÜÂë</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÉÌ»§Ãû³Æ</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='50' name='ubzcompany' class='input0' datatype="LimitB" min="4" max="50" msg="¹«Ë¾Ãû³Æ±ØÐëÌîÐ´ÇÒÔÚ25¸öºº×ÖÒÔÄÚ"> 
-		  <font color=#cccccc>50¸öºº×ÖÒÔÄÚ</font></div></td>
-		</tr>
-		
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ËùÔÚÇøÓò</span> </td>
-		<td align="left" class="tableright1">
-		  <div align="left">
-		    <select name="ubzprv" class='tdleft' id="prv" OnChange="setcity();" style="border:1px groove #C0C0C0; width:80px; font-family:ËÎÌå; font-size:9pt; text-decoration:none; color:#000000; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">
-		      <option value="">ËùÔÚÊ¡</option>
-		      <option value="°²»Õ">°²»Õ</option>
-		      <option value="±±¾©">±±¾©</option>
-		      <option value="ÖØÇì">ÖØÇì</option>
-		      <option value="¸£½¨">¸£½¨</option>
-		      <option value="¸ÊËà">¸ÊËà</option>
-		      <option value="¹ã¶«">¹ã¶«</option>
-		      <option value="¹ãÎ÷">¹ãÎ÷</option>
-		      <option value="¹óÖÝ">¹óÖÝ</option>
-		      <option value="º£ÄÏ">º£ÄÏ</option>
-		      <option value="ºÓ±±">ºÓ±±</option>
-		      <option value="ºÚÁú½­">ºÚÁú½­</option>
-		      <option value="ºÓÄÏ">ºÓÄÏ</option>
-		      <option value="Ïã¸Û">Ïã¸Û</option>
-		      <option value="ºþ±±">ºþ±±</option>
-		      <option value="ºþÄÏ">ºþÄÏ</option>
-		      <option value="½­ËÕ">½­ËÕ</option>
-		      <option value="½­Î÷">½­Î÷</option>
-		      <option value="¼ªÁÖ">¼ªÁÖ</option>
-		      <option value="ÁÉÄþ">ÁÉÄþ</option>
-		      <option value="°ÄÃÅ">°ÄÃÅ</option>
-		      <option value="ÄÚÃÉ¹Å">ÄÚÃÉ¹Å</option>
-		      <option value="ÄþÏÄ">ÄþÏÄ</option>
-		      <option value="Çàº£">Çàº£</option>
-		      <option value="É½¶«">É½¶«</option>
-		      <option value="ÉÏº£">ÉÏº£</option>
-		      <option value="É½Î÷">É½Î÷</option>
-		      <option value="ÉÂÎ÷">ÉÂÎ÷</option>
-		      <option value="ËÄ´¨">ËÄ´¨</option>
-		      <option value="Ì¨Íå">Ì¨Íå</option>
-		      <option value="Ìì½ò">Ìì½ò</option>
-		      <option value="ÐÂ½®">ÐÂ½®</option>
-		      <option value="Î÷²Ø">Î÷²Ø</option>
-		      <option value="ÔÆÄÏ">ÔÆÄÏ</option>
-		      <option value="Õã½­">Õã½­</option>
-	        </select>
-		  </div></td>
-		</tr>
-		
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÁªÏµÈËÐÕÃû</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='20' name='ubzcrealname' class='input0' datatype="Chinese" msg="ÕæÊµÐÕÃûÖ»ÔÊÐíÌîÐ´ÖÐÎÄ"> 
-		  <font color=#cccccc>2-4¸öÖÐÎÄºº×Ö</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">Éí·ÝÖ¤ºÅÂë</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='18' name='ubzidcard' class='input0' datatype="IdCard" msg="Éí·ÝÖ¤ºÅÂë²»ÕýÈ·"> 
-		  <font color=#cccccc>15»ò18Î»Êý×Ö</font></div></td>
-		</tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÊÖ»úºÅÂë</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='20' name='ubzcmobile' class='input0' datatype="Mobile" msg="ÊÖ»úºÅÂë²»ÕýÈ·"> 
-		  <font color=#cccccc>11Î»ÒÔ13»ò15»ò18¿ªÍ·µÄÊÖ»úºÅÂë</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÁªÏµµç»°</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='20' name='ubzctel' class='input0' datatype="Phone" msg="ÁªÏµµç»°²»·ûºÏÒªÇó"> 
-		  <font color=#cccccc>ºÅÂë¸ñÊ½Îª£º021-88888888</font></div></td>
-		</tr>
-		
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÁªÏµQQ</span> </td>
-		<td width="78%" align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='20' name='ubzcqq' class='input0' datatype="QQ" msg="QQºÅÂë²»·ûºÏÒªÇó"> 
-		  <font color=#cccccc>5-12Î»Êý×ÖºÅÂë</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">µç×ÓÐÅÏä</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='30' maxlength='50' name='ubzcmail' class='input0' require="false" datatype="Email" msg="µç×ÓÓÊÏä¸ñÊ½²»·û"> 
-		  <font color=#cccccc>ÒÔ@Ïà¸ôµÄµç×ÓÓÊ¼þµØÖ·</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">ÁªÏµµØÖ·</span> </td>
-		<td align="left" class="tableright1"><div align="left">
-		  <input type='text' size='50' maxlength='100' name='ubzcaddr' class='input0' require="false" datatype="LimitB" min="1" max="100" msg="ÁªÏµµØÖ·±ØÐëÔÚ50¸öºº×ÖÖ®ÄÚ"> 
-		  <font color=#cccccc>50¸öºº×ÖÒÔÄÚ</font></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left" style="width: 25%"></td>
-		  <td align="left" class="tableright1"><div align="left">
-		    <input type="submit" name="Submit" value="È·ÈÏ×¢²á" class="tijiao_input">
-		    <input type="reset" name="reset" value="ÖØÐÂÌîÐ´" class="fanhui_input">
-	           </div></td>
-		  </tr>
-		</table>
-	</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Í»ï¿½</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><script src="/content/mod_b2b/js/city.js" type="text/javascript"></script>    <div class="new_qie">        <div class="new_qie2">            <h2>                <a href="index.php?m=mod_agent&c=Underling" class="goback">ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Í»ï¿½ï¿½Ð±ï¿½</a> <em>-</em> ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Í»ï¿½</h2>        </div>    </div>	<FORM name="register" method="post" action="index.php?m=mod_agent&c=Underling&a=RegSave"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½Â½ï¿½Ë»ï¿½ï¿½ï¿½</span> </td>		<td width="78%" align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='20' name='ubzcname' class='input0' datatype="Username" msg="ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½">  		  <font color=#cccccc>		  <label>		  <input type="button" name="Submit3" class="input_jc" value="ï¿½ï¿½ï¿½ï¿½Ëºï¿½">		  </label>		  6-20Î»Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½Ä¸</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½Â½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='password' size='30' maxlength='30' name='ubzcpwd' class='input0' datatype="NewPass" msg="ï¿½ï¿½Â¼/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½"> 		  <font color=#cccccc>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª6-30Î»Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Ä¸</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='password' size='30' maxlength='30' name='reubzcpwd' class='input0' datatype="Repeat" to="CustomerLoginPassword" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë²»Ò»ï¿½ï¿½" /> 		  <font color=#cccccc>ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='50' name='ubzcompany' class='input0' datatype="LimitB" min="4" max="50" msg="ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½25ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"> 		  <font color=#cccccc>50ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></div></td>		</tr>				<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1">		  <div align="left">		    <select name="ubzprv" class='tdleft' id="prv" OnChange="setcity();" style="border:1px groove #C0C0C0; width:80px; font-family:ï¿½ï¿½ï¿½ï¿½; font-size:9pt; text-decoration:none; color:#000000; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1">		      <option value="">ï¿½ï¿½ï¿½ï¿½Ê¡</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ã¶«">ï¿½ã¶«</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½Ó±ï¿½">ï¿½Ó±ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½É¹ï¿½">ï¿½ï¿½ï¿½É¹ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½àº£">ï¿½àº£</option>		      <option value="É½ï¿½ï¿½">É½ï¿½ï¿½</option>		      <option value="ï¿½Ïºï¿½">ï¿½Ïºï¿½</option>		      <option value="É½ï¿½ï¿½">É½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½Ä´ï¿½">ï¿½Ä´ï¿½</option>		      <option value="Ì¨ï¿½ï¿½">Ì¨ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>		      <option value="ï¿½Â½ï¿½">ï¿½Â½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>		      <option value="ï¿½ã½­">ï¿½ã½­</option>	        </select>		  </div></td>		</tr>				<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='20' name='ubzcrealname' class='input0' datatype="Chinese" msg="ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½"> 		  <font color=#cccccc>2-4ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='18' name='ubzidcard' class='input0' datatype="IdCard" msg="ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·"> 		  <font color=#cccccc>15ï¿½ï¿½18Î»ï¿½ï¿½ï¿½ï¿½</font></div></td>		</tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='20' name='ubzcmobile' class='input0' datatype="Mobile" msg="ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·"> 		  <font color=#cccccc>11Î»ï¿½ï¿½13ï¿½ï¿½15ï¿½ï¿½18ï¿½ï¿½Í·ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½Ïµï¿½ç»°</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='20' name='ubzctel' class='input0' datatype="Phone" msg="ï¿½ï¿½Ïµï¿½ç»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½"> 		  <font color=#cccccc>ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Îªï¿½ï¿½021-88888888</font></div></td>		</tr>				<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½ÏµQQ</span> </td>		<td width="78%" align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='20' name='ubzcqq' class='input0' datatype="QQ" msg="QQï¿½ï¿½ï¿½ë²»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½"> 		  <font color=#cccccc>5-12Î»ï¿½ï¿½ï¿½Öºï¿½ï¿½ï¿½</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='30' maxlength='50' name='ubzcmail' class='input0' require="false" datatype="Email" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½"> 		  <font color=#cccccc>ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ö·</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">ï¿½ï¿½Ïµï¿½ï¿½Ö·</span> </td>		<td align="left" class="tableright1"><div align="left">		  <input type='text' size='50' maxlength='100' name='ubzcaddr' class='input0' require="false" datatype="LimitB" min="1" max="100" msg="ï¿½ï¿½Ïµï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½50ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½"> 		  <font color=#cccccc>50ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></div></td>		</tr>		<tr>		  <td class="table1_left" style="width: 25%"></td>		  <td align="left" class="tableright1"><div align="left">		    <input type="submit" name="Submit" value="È·ï¿½ï¿½×¢ï¿½ï¿½" class="tijiao_input">		    <input type="reset" name="reset" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´" class="fanhui_input">	           </div></td>		  </tr>		</table>	</tr>

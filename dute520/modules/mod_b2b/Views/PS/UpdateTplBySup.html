@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
   #ctable1 td{text-align:center}
@@ -9,20 +9,20 @@
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PS&a=UpdateTplBySup" title="��������"><font color="#000">ģ�弰��ضԽӵ������</font></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ps_index" onFocus="this.blur()" title="�鿴ģ�������ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PS&a=UpdateTplBySup" title="继续调整"><font color="#000">模板及相关对接调整结果</font></a></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ps_index" onFocus="this.blur()" title="查看模板调整相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Catalog&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">�ԽӷǱ�������Ʒ����(<font color="#ff0000">{$vd['err1']}</font>)</div>
+<div class="ctitle">对接非本类型商品错误(<font color="#ff0000">{$vd['err1']}</font>)</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr class="listhead">
-    <td width="10%" style="height:30px"><b>���</b></td>
-    <td width="10%" style="height:30px"><b>��Ʒ���</b></td>
-    <td width="80%" style="height:30px;text-align:left"><b>��Ʒ����</b></td>
+    <td width="10%" style="height:30px"><b>序号</b></td>
+    <td width="10%" style="height:30px"><b>商品编号</b></td>
+    <td width="80%" style="height:30px;text-align:left"><b>商品名称</b></td>
   </tr>
   {$vd['str1']}
 </table>
@@ -30,13 +30,13 @@
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">��ֵģ��ѡ�����(<font color="#ff0000">{$vd['err2']}</font>)</div>
+<div class="ctitle">充值模板选择错误(<font color="#ff0000">{$vd['err2']}</font>)</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr class="listhead">
-    <td width="10%" style="height:30px"><b>���</b></td>
-    <td width="10%" style="height:30px"><b>��Ʒ���</b></td>
-    <td width="80%" style="height:30px;text-align:left"><b>��Ʒ����</b></td>
+    <td width="10%" style="height:30px"><b>序号</b></td>
+    <td width="10%" style="height:30px"><b>商品编号</b></td>
+    <td width="80%" style="height:30px;text-align:left"><b>商品名称</b></td>
   </tr>
   {$vd['str2']}
 </table>

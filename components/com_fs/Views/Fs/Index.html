@@ -1,11 +1,11 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style type="text/css">
 body {
 BACKGROUND:#fff;
 MARGIN:0;
-FONT:normal 12px 宋体;
+FONT:normal 12px 瀹嬩綋;
 }
 
 input {
@@ -102,7 +102,7 @@ BACKGROUND:#fff;
   function SetFile(fname)
   {
     //get the name
-    document.getElementById("uploadresult").innerHTML = "上传成功!路径：" + fname;
+    document.getElementById("uploadresult").innerHTML = "涓婁紶鎴愬姛!璺緞锛�" + fname;
     var temp = fname.split('/');
     window.parent.document.getElementById("{$vd['inputid']}").value = temp[temp.length-1];
   }
@@ -111,8 +111,8 @@ BACKGROUND:#fff;
   <input id="txtFolder" type="hidden" value="{$vd['dirname']}" name="txtFolder" />
   <input id="cmbType"   type="hidden" value="Image" name="cmbType" />
   <input id="txtFileUpload" type="file" name="NewFile" onchange="ShowImg(this.value, {$vd['imgid']})"/>
-  <input type="submit" value="上传" onclick="SetAction();"/>
-  <font color="#FF0000"><span id="uploadresult">* (请选择要上传的图片,然后点击上传按钮)</span></font>
+  <input type="submit" value="涓婁紶" onclick="SetAction();"/>
+  <font color="#FF0000"><span id="uploadresult">* (璇烽�夋嫨瑕佷笂浼犵殑鍥剧墖,鐒跺悗鐐瑰嚮涓婁紶鎸夐挳)</span></font>
 </form>
 <span id="eUrl" style="display:none"></span>
 <iframe id="eRunningFrame" src="javascript:void(0)" name="eRunningFrame" width="100%" style="display:none"></iframe>

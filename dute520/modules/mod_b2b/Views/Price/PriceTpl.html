@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
@@ -8,26 +8,26 @@
 <div id="content" class="cwarpper" style="position:relative">
 <div class="cbodyHead"></div>
 <div id="tab">
-<input type="button" value="╤Ю╪╤╠П╪ш╦Ядё╟Е"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=PriceTpl'" class="tab_active" onFocus="this.blur()"/>
-<input type="button" value="╣╔╪╤╠П╪ш╦Ядё╟Е" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=RankTpl'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="О©╫Ю╪╤О©╫О©╫ш╦О©╫дёО©╫О©╫"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=PriceTpl'" class="tab_active" onFocus="this.blur()"/>
+<input type="button" value="О©╫О©╫О©╫О©╫О©╫О©╫ш╦О©╫дёО©╫О©╫" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=RankTpl'" class="tab_normal" onFocus="this.blur()"/>
 </div>
 <div class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">╪ш╦ЯоЮ╧ьк╣цВ</div>
+<div class="ctitle">О©╫ш╦О©╫О©╫О©╫О©╫к╣О©╫О©╫</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╪ш╦Яй╧сц</td>
-    <td class="tablert" style="line-height:25px;white-space:normal">о╣мЁ╩Авт╤╞╟╢ууоб╠ъ╣ддё╟Е╪фкЦсц╩╖╤тс╕╣д╪ш╦Яё╛нчпХдЗты╣╔╤юн╙илф╥╤╗╪ш</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫ш╦О©╫й╧О©╫О©╫</td>
+    <td class="tablert" style="line-height:25px;white-space:normal">о╣мЁО©╫О©╫О©╫т╤О©╫О©╫О©╫О©╫О©╫О©╫б╠ъ╣О©╫дёО©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫с╕О©╫д╪ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ы╣О©╫О©╫О©╫н╙О©╫О©╫ф╥О©╫О©╫О©╫О©╫</td>
   </tr>
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╪ш╦Ясеох╪╤</td>
-    <td class="tablert" style="line-height:25px;white-space:normal">цэ╪ш > ио╪риХ╪ш(хГ╧Шж╠йТо╣мЁё╛ио╪р╬мйго╣мЁ) > ио╪рдё╟Е╪ш╦Я > о╣мЁдё╟Е╪ш╦Я <a id="nodisp" href="#detail">оЙо╦гК╡И©╢об╠ъ╣д╠╦в╒</a></td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫ш╦О©╫О©╫О©╫О©╫х╪О©╫</td>
+    <td class="tablert" style="line-height:25px;white-space:normal">О©╫э╪О©╫ > О©╫о╪О©╫О©╫О©╫О©╫(О©╫О©╫О©╫ж╠О©╫О©╫о╣мЁО©╫О©╫О©╫о╪р╬О©╫О©╫О©╫о╣мЁ) > О©╫о╪О©╫дёО©╫О©╫ш╦О©╫ > о╣мЁдёО©╫О©╫ш╦О©╫ <a id="nodisp" href="#detail">О©╫О©╫о╦О©╫О©╫И©╢О©╫б╠ъ╣д╠О©╫в╒</a></td>
   </tr>
 </table>
 </div>
 </div>
 <div class="cwarpper1">
-<div class="ctitle">о╣мЁд╛хо╠Йв╪дё╟ЕиХжц</div>
+<div class="ctitle">о╣мЁд╛О©╫о╠О©╫в╪дёО©╫О©╫О©╫О©╫О©╫О©╫</div>
 <!--if(count($vd['items']) > 0){-->
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
@@ -37,17 +37,17 @@
     <td class="tablert" style="font-size:12px;">
       <input name="id[]" type="hidden" value="{$item['id']}"/>
       <select name="priceplan_{$item['id']}" style="font-size:12px;vertical-align:middle" onchange="set(this, {$item['id']})">
-        <option value="1"<!--if($item['priceplan']==1){--> selected<!--}-->>╥╫╟╦р╩(юШхСуш©ш)</option>
-        <option value="2"<!--if($item['priceplan']==2){--> selected<!--}-->>╥╫╟╦╤Ч(ж╠╫сюш╪с)</option>
-        <option value="3"<!--if($item['priceplan']==3){--> selected<!--}-->>╥╫╟╦хЩ(цФж╣уш©ш)</option>
-        <option value="4"<!--if($item['priceplan']==4){--> selected<!--}-->>╥╫╟╦кд(╧л╤╗уш©ш)</option>
+        <option value="1"<!--if($item['priceplan']==1){--> selected<!--}-->>О©╫О©╫О©╫О©╫р╩(О©╫О©╫О©╫О©╫О©╫ш©О©╫)</option>
+        <option value="2"<!--if($item['priceplan']==2){--> selected<!--}-->>О©╫О©╫О©╫О©╫О©╫О©╫(ж╠О©╫О©╫О©╫ш╪О©╫)</option>
+        <option value="3"<!--if($item['priceplan']==3){--> selected<!--}-->>О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫ж╣О©╫ш©О©╫)</option>
+        <option value="4"<!--if($item['priceplan']==4){--> selected<!--}-->>О©╫О©╫О©╫О©╫О©╫О©╫(О©╫л╤О©╫О©╫ш©О©╫)</option>
       </select>
-       ╪ш╦Я = 
+       О©╫ш╦О©╫ = 
       <input name="discout_{$item['id']}" type="text" size="5" value="{$item['discout']}" class="myinput" style="padding-top:2px;height:18px;width:50px;"/>
-       <span id="std_{$item['id']}">{$item['char']} <!--if($item['priceplan']==1){-->x (цФж╣ - нр╣д╫Ь╩У╪ш) + нр╣д╫Ь╩У╪ш<!--}-->
-       <!--if($item['priceplan']==2){-->+ нр╣д╫Ь╩У╪ш<!--}-->
-       <!--if($item['priceplan']==3){-->x цФж╣ + нр╣д╫Ь╩У╪ш<!--}--></span>
-       <!--if($item['priceplan']==4){-->x цФж╣<!--}--></span>
+       <span id="std_{$item['id']}">{$item['char']} <!--if($item['priceplan']==1){-->x (О©╫О©╫ж╣ - О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫) + О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫<!--}-->
+       <!--if($item['priceplan']==2){-->+ О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫<!--}-->
+       <!--if($item['priceplan']==3){-->x О©╫О©╫ж╣ + О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫<!--}--></span>
+       <!--if($item['priceplan']==4){-->x О©╫О©╫ж╣<!--}--></span>
       </td>
   </tr>
   <!--}-->
@@ -57,53 +57,53 @@
 </div>
 <a name="detail"></a>
 <div class="cwarpper1">
-<div class="ctitle">╠╦в╒</div>
+<div class="ctitle">О©╫О©╫в╒</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╥╫╟╦р╩(юШхСуш©ш)</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫О©╫О©╫О©╫р╩(О©╫О©╫О©╫О©╫О©╫ш©О©╫)</td>
     <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
-    ╤тс╕╪╤╠П╪ш╦Я = нр╣д╫Ь╩У╪ш + (цФж╣ - нр╣д╫Ь╩У╪ш) x ╠хюЩ<br/>
-    <font color="#ff0000">╢к╥╫╟╦жВр╙ох╪фкЦдЗ©ирт╩Я╣ц╣двН╢СюШхСё╛х╩╨С╪фкЦдЗ╢сжппХр╙╩Ях║╣д╠хюЩё╛ты╪сиодЗ╣д╫Ь╩У╪ш╬мйгвНжусц╩╖╣д╪ш╦Я</font>
+    О©╫О©╫с╕О©╫О©╫О©╫О©╫ш╦О©╫ = О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫ + (О©╫О©╫ж╣ - О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫) x О©╫О©╫О©╫О©╫<br/>
+    <font color="#ff0000">О©╫к╥О©╫О©╫О©╫О©╫О©╫р╙О©╫х╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╩О©╫ц╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫х╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫х║О©╫д╠О©╫О©╫О©╫О©╫О©╫О©╫ы╪О©╫О©╫О©╫О©╫О©╫О©╫д╫О©╫О©╫О©╫О©╫ш╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫д╪ш╦О©╫</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╥╫╟╦╤Ч(ж╠╫сюш╪с)</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫О©╫О©╫О©╫О©╫О©╫(ж╠О©╫О©╫О©╫ш╪О©╫)</td>
     <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
-    ╤тс╕╪╤╠П╪ш╦Я = нр╣д╫Ь╩У╪ш + ╠хюЩ<br/>
-    <font color="#ff0000">╢к╥╫╟╦╨цюМ╫Бр╩╣Цё╛╠ххГдЦоёмШ╤тс╕╪╤╠П╤╪╩Ях║0.1{$vd['lang']['moneyunit']}╣дюШхСё╛вНжусц╩╖╣д╪ш╦Я╬мйг╫Ь╩У╪ш╪сиоуБ╦ЖюШхС╪╢©и║ёх╠╣Цйгспп╘илф╥юШхС╥жеД╡╩╨оюМё╛╠ххГQ╠р╟╢{$vd['lang']['moneyunit']}ЁДё╛╟╢0.88╫Ь╩У╪шё╛хГ╧Ш╪сио0.1ё╛дг╫Ь╩У╪ш╬мйг0.98акё╛уБжж╪ш╦Ясп©идэ╬м╩Аф╚╦ъё╛хГ╧Шйг10000{$vd['lang']['moneyunit']}╣дилф╥ё╛╪сио0.1ё╛сц╩╖╪ш╦Я╬мйг10000.1ё╛╪ш╦Ясп©идэ╬мф╚╣мак</font>
+    О©╫О©╫с╕О©╫О©╫О©╫О©╫ш╦О©╫ = О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫ + О©╫О©╫О©╫О©╫<br/>
+    <font color="#ff0000">О©╫к╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫Цё╛О©╫О©╫О©╫О©╫О©╫О©╫оёО©╫О©╫О©╫О©╫с╕О©╫О©╫О©╫П╤╪╩О©╫х║0.1{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫д╪ш╦О©╫О©╫О©╫г╫О©╫О©╫О©╫О©╫ш╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫С╪╢©и║О©╫х╠О©╫О©╫О©╫О©╫О©╫О©╫п╘О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫Д╡╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫QО©╫р╟О©╫{$vd['lang']['moneyunit']}О©╫Дё╛О©╫О©╫0.88О©╫О©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫0.1О©╫О©╫О©╫г╫О©╫О©╫О©╫О©╫ш╬О©╫О©╫О©╫0.98О©╫кёО©╫О©╫О©╫О©╫ж╪ш╦О©╫О©╫п©О©╫О©╫э╬м╩О©╫ф╚О©╫ъёО©╫О©╫О©╫О©╫О©╫О©╫10000{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫0.1О©╫О©╫О©╫ц╩О©╫О©╫ш╦О©╫О©╫О©╫О©╫10000.1О©╫О©╫О©╫ш╦О©╫О©╫п©О©╫О©╫э╬О©╫ф╚О©╫О©╫О©╫О©╫</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╥╫╟╦хЩ(цФж╣уш©ш)</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫О©╫О©╫О©╫О©╫О©╫(О©╫О©╫ж╣О©╫ш©О©╫)</td>
     <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
-    ╤тс╕╪╤╠П╪ш╦Я = нр╣д╫Ь╩У╪ш + цФж╣ x ╠хюЩ<br/>
-    <font color="#ff0000">се╣Ц╫Исз╥╫╟╦р╩╨м╥╫╟╦╤Чж╝╪Д║ёдЁп╘юШхС©у╪Д╨э╣м╣дилф╥ё╛©идэ╩АтЛЁи╪ш╦Я╡╩╨оюМё╛╠ххГрф╤╞©╗100{$vd['lang']['moneyunit']}╫Ь╩У╪ш98.8ё╛хГ╧Ш╦Ь3%╣дюШхСё╛о╣мЁвНжу╪фкЦобю╢╣д╪ш╦Яйг100{$vd['lang']['moneyunit']}(98.8 + 100 x 3% = 101.8ё╛сисз╢СсзцФж╣ё╛╟╢цФж╣100{$vd['lang']['moneyunit']}кЦ)ё╛уБжж╠хюЩ╬м╡╩л╚╨оййак║ё╣╚йгхГ╧Ш╦ЬдЁ©НмБ╧риХуБ╦Ж╠хюЩё╛╠ххГмБ╧р20{$vd['lang']['moneyunit']}©╗ё╛╫Ь╩У╪ш15{$vd['lang']['moneyunit']}ё╛╪сио3%╨Сё╛йг15.6{$vd['lang']['moneyunit']}ё╛оЮ╤т╩╧йг╫о╨оюМ</font>
+    О©╫О©╫с╕О©╫О©╫О©╫О©╫ш╦О©╫ = О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫ + О©╫О©╫ж╣ x О©╫О©╫О©╫О©╫<br/>
+    <font color="#ff0000">О©╫е╣О©╫О©╫О©╫з╥О©╫О©╫О©╫р╩О©╫м╥О©╫О©╫О©╫О©╫О©╫ж╝О©╫Д║ёдЁп╘О©╫О©╫О©╫О©╫у╪О©╫э╣м╣О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫э╩О©╫О©╫О©╫и╪ш╦Я╡╩╨О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╤О©╫О©╫О©╫100{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫О©╫О©╫98.8О©╫О©╫О©╫О©╫О©╫О©╫О©╫3%О©╫О©╫О©╫О©╫О©╫О©╫о╣мЁО©╫О©╫О©╫у╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╪ш╦О©╫О©╫О©╫100{$vd['lang']['moneyunit']}(98.8 + 100 x 3% = 101.8О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫ж╣О©╫О©╫О©╫О©╫О©╫О©╫ж╣100{$vd['lang']['moneyunit']}О©╫О©╫)О©╫О©╫О©╫О©╫О©╫ж╠О©╫О©╫О©╫О©╫м╡О©╫л╚О©╫О©╫О©╫О©╫О©╫к║О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫дЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫20{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫15{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫О©╫О©╫3%О©╫О©╫О©╫О©╫15.6{$vd['lang']['moneyunit']}О©╫О©╫О©╫О©╫т╩О©╫О©╫г╫о╨О©╫О©╫О©╫</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╥╫╟╦кд(╧л╤╗уш©ш)</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫О©╫О©╫О©╫О©╫О©╫(О©╫л╤О©╫О©╫ш©О©╫)</td>
     <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
-    ╤тс╕╪╤╠П╪ш╦Я = цФж╣ x ╠хюЩ<br/>
-    <font color="#ff0000">╢к╥╫╟╦жВр╙сцсзр╩п╘╨ом╛╪ш╦Яё╛╠ххГдЗ╦ЗдЁн╩©м╩╖╢ОЁип╜рИё╛кЫспилф╥╤╪╦ЬкШ╟ы╥жж╝╤Юиы╣душ©шё╛х╠╣Цйг╡©╥жилф╥╣д╫Ь╩У╪шоЮ╤т╫о╦ъё╛хГрф╤╞©╗</font>
+    О©╫О©╫с╕О©╫О©╫О©╫О©╫ш╦О©╫ = О©╫О©╫ж╣ x О©╫О©╫О©╫О©╫<br/>
+    <font color="#ff0000">О©╫к╥О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫р╩п╘О©╫О©╫м╛О©╫ш╦Яё╛╠О©╫О©╫О©╫О©╫О©╫О©╫О©╫дЁн╩О©╫м╩О©╫О©╫О©╫О©╫п╜О©╫Иё╛О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫ы╥О©╫ж╝О©╫О©╫О©╫ы╣О©╫О©╫ш©шёО©╫х╠О©╫О©╫О©╫г╡О©╫О©╫О©╫О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╫о╦ъёО©╫О©╫О©╫О©╫ф╤О©╫О©╫О©╫</font>
     </td>
   </tr>
   <tr>
-    <td class="tablelt" style="font-size:14px;text-align:center">╪ш╦Як╣цВ</td>
+    <td class="tablelt" style="font-size:14px;text-align:center">О©╫ш╦О©╫к╣О©╫О©╫</td>
     <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
-    <font color="#ff0000">пб╣д╪ш╦Я╥╫╟╦╡╩пХр╙ты╣╔╤юн╙илф╥иХ╤╗╪╤╠П╪ш╦Яё╛р╡╬мйгк╣ё╛дЗлМ╪силф╥╣дй╠╨Рё╛ж╩пХр╙лНп╢╨ццФж╣╨м╫Ь╩У╪ш╬м©иртакё╛йёоб╣д╫╩╦Ьо╣мЁвт╪╨╪фкЦ </font><br/>
-    м╛й╠о╣мЁтЖ╪сак╤Южж╪ш╦Я╩ЗжфбЗвЦдЗ╣д╡╩м╛пХгСё╨<br/>
-    [1] цэ╪шё╨р╡╬мйг╣╔╤юн╙дЁр╩╦Жсц╩╖иХ╪шё╛ио╪р©иртн╙вт╪╨╣дж╠йТоб╪рцэ╪шё╛о╣мЁ©иртн╙вт╪╨╣дж╠йТсц╩╖цэ╪ш<br/>
-    [2] дё╟Е╤╗╪шё╨дё╟Е╥жЁиа╫жжё╛р╩╦Жйг╤Ю╪╤╠П╪ш╦Ядё╟Её╛аМмБр╩╦Жйг╣╔╪╤╠П╪ш╦Ядё╟Е║ё<br/>╤Ю╪╤╠П╪ш╦Ядё╟Еж╩пХр╙╟я╤тс╕╣д╠хюЩ╨мй╧сц╥╫╟╦я║тЯ╨ц╬м©иртак║ё<br/>╣╔╪╤╠П╪ш╦Ядё╟ЕпХр╙дЗтз╤тс╕╣ддё╟ЕжпиХжцилф╥╪ш╦Яё╛хГ╧Ш╡╩иХжц╣д╩╟ё╛╬мй╧сц╤Ю╪╤╠Пдё╟Е╣д╥╫╟╦ю╢╪фкЦ╪ш╦Яё╛╣╔╪╤╠Пдё╟ЕпХр╙╦Ьсц╩╖╥жеД╥╫©ииЗп╖<br/><br/>
-    г╟л╗╬╜оЗил╨мо╣мЁ╤╪©иртй╧сцио╠ъ╣да╫жж╩Зжфю╢иХ╪шё╛г╟л╗╣д╬╜оЗилиХ╪шр╙сеохсз╨Сл╗о╣мЁ╣диХ╪шё╛хГ╧ШвНжусц╩╖╪ш╦Я╣мсзкШ╣дио╪р╣д╪ш╦Яё╛тРкШ╣д╪ш╦Я╣хсзкШ╣дио╪р╣д╧╨бР╪ш╦Яё╛хГ╧Ш╥╒ож╪ш╦Я╣мсзилф╥╣д╫Ь╩У╪шё╛дгц╢╪ш╦Я╣хсзцФж╣<br/>
+    <font color="#ff0000">О©╫б╣д╪ш╦Я╥╫╟О©╫О©╫О©╫О©╫О©╫р╙О©╫ы╣О©╫О©╫О©╫н╙О©╫О©╫ф╥О©╫Х╤╗О©╫О©╫О©╫О©╫ш╦О©╫р╡О©╫О©╫О©╫О©╫к╣О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫й╠О©╫О©╫ж╩О©╫О©╫р╙О©╫О©╫п╢О©╫О©╫О©╫О©╫ж╣О©╫м╫О©╫О©╫О©╫О©╫ш╬м©О©╫О©╫О©╫О©╫кёО©╫йёО©╫б╣д╫О©╫О©╫О©╫о╣мЁО©╫т╪О©╫О©╫О©╫О©╫О©╫ </font><br/>
+    м╛й╠о╣мЁО©╫О©╫О©╫О©╫О©╫к╤О©╫О©╫ж╪ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╡О©╫м╛О©╫О©╫О©╫О©╫<br/>
+    [1] О©╫э╪шёО©╫р╡О©╫О©╫О©╫г╣О©╫О©╫О©╫н╙дЁр╩О©╫О©╫О©╫ц╩О©╫О©╫О©╫шёО©╫О©╫о╪р©О©╫О©╫О©╫н╙О©╫т╪О©╫О©╫О©╫ж╠О©╫О©╫О©╫б╪О©╫О©╫э╪шёО©╫о╣мЁО©╫О©╫О©╫О©╫н╙О©╫т╪О©╫О©╫О©╫ж╠О©╫О©╫О©╫ц╩О©╫О©╫э╪О©╫<br/>
+    [2] дёО©╫Е╤╗О©╫шёО©╫дёО©╫О©╫жЁО©╫О©╫О©╫О©╫жёО©╫р╩О©╫О©╫О©╫г╤Ю╪╤О©╫О©╫ш╦О©╫дёО©╫Её╛О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫г╣О©╫О©╫О©╫О©╫О©╫ш╦О©╫дёО©╫Е║ё<br/>О©╫Ю╪╤О©╫О©╫ш╦О©╫дёО©╫О©╫ж╩О©╫О©╫р╙О©╫я╤О©╫с╕О©╫д╠О©╫О©╫О©╫О©╫О©╫й╧О©╫ц╥О©╫О©╫О©╫я║О©╫О©╫ц╬м©О©╫О©╫О©╫О©╫к║О©╫<br/>О©╫О©╫О©╫О©╫О©╫О©╫ш╦О©╫дёО©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫з╤О©╫с╕О©╫О©╫дёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╣д╩О©╫О©╫О©╫О©╫О©╫й╧О©╫ц╤Ю╪╤О©╫О©╫дёО©╫О©╫д╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ш╦Яё╛╣О©╫О©╫О©╫О©╫О©╫дёО©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫Д╥╫О©╫О©╫О©╫О©╫п╖<br/><br/>
+    г╟л╗О©╫О©╫О©╫О©╫О©╫л╨О©╫о╣мЁО©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫О©╫о╠ъ╣О©╫О©╫О©╫О©╫ж╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫шёО©╫г╟л╗О©╫д╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫з╨О©╫л╗о╣мЁО©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╪р╣д╪ш╦О©╫О©╫О©╫О©╫О©╫О©╫д╪ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫о╪р╣д╧О©╫О©╫О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╪ш╦О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫д╫О©╫О©╫О©╫О©╫шёО©╫О©╫О©╫ц╢О©╫ш╦О©╫О©╫О©╫О©╫О©╫О©╫ж╣<br/>
     <br/>
-    сеох╪╤кЁпРхГобё╨йвох╡И©╢йг╥Яспцэ╪шё╛хГ╧Шц╩спё╛тР╡И©╢ио╪рйг╥Я╤тфДй╧сцак╣╔╪╤╠Пдё╟ЕиХ╪шё╛хГ╧Шц╩спё╛╡И©╢ио╪рйг╥ЯиХжц╤Ю╪╤╠Пдё╟Её╛хГ╧Шц╩спё╛тРй╧сцо╣мЁ╤Ю╪╤╠Пдё╟Е╪фкЦсц╩╖╪ш╦Я<br>
+    О©╫О©╫О©╫х╪О©╫кЁО©╫О©╫О©╫О©╫О©╫бёО©╫О©╫О©╫О©╫х╡И©╢О©╫г╥О©╫О©╫О©╫О©╫э╪шёО©╫О©╫О©╫О©╫ц╩О©╫пёО©╫О©╫О©╫И©╢О©╫о╪О©╫О©╫г╥О©╫О©╫О©╫О©╫й╧О©╫О©╫О©╫к╣О©╫О©╫О©╫О©╫О©╫дёО©╫О©╫О©╫О©╫шёО©╫О©╫О©╫О©╫ц╩О©╫пёО©╫О©╫И©╢О©╫о╪О©╫О©╫г╥О©╫О©╫О©╫О©╫ц╤Ю╪╤О©╫О©╫дёО©╫Её╛О©╫О©╫О©╫ц╩О©╫пёО©╫О©╫О©╫й╧О©╫О©╫о╣мЁО©╫Ю╪╤О©╫О©╫дёО©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫ш╦О©╫<br>
     <br/>
     <font color="#ff0000">
-      сисз╣Ц©╗╣д╫Ь╩У╪ш╬╜Ёё╥╒иЗ╠Д╩╞ё╛р╩╟ЦгИ©Жобж╩пХр╙╨Сл╗╣д╧эюМт╠иХжц╨ц╤Ю╪╤╠Пдё╟Е╪╢©иё╛р╡╬мйгохиХжц╨ц╤Ю╪╤╠Пдё╟Её╛тзлМ╪силф╥╣дй╠╨Рп╢ио╫Ь╩У╪ш╨мцФж╣╬м©иртак
+      О©╫О©╫О©╫з╣Ц©╗О©╫д╫О©╫О©╫О©╫О©╫ш╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫Д╩╞О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╩О©╫О©╫р╙О©╫О©╫л╗О©╫д╧О©╫О©╫О©╫т╠О©╫О©╫О©╫ц╨ц╤Ю╪╤О©╫О©╫дёО©╫Е╪╢О©╫иёО©╫р╡О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╨ц╤Ю╪╤О©╫О©╫дёО©╫Её╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫й╠О©╫О©╫п╢О©╫о╫О©╫О©╫О©╫О©╫ш╨О©╫О©╫О©╫ж╣О©╫м©О©╫О©╫О©╫О©╫О©╫
     </font>
     <br/><br/>
-    <font color="#ff0000">хГ╧ШдЗйгмБ╩Цсц╩╖ё╛лМ╪силф╥╣дй╠╨Рё╛╫Ь╩У╪ш╨мцФж╣╪г╣цр╩╤╗р╙ох╩╩кЦ╨ц╤тс╕╣д╩Цбй╪ш╦Ятып╢хК</font>
+    <font color="#ff0000">О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ф╥О©╫О©╫й╠О©╫Рё╛╫О©╫О©╫О©╫О©╫ш╨О©╫О©╫О©╫ж╣О©╫г╣О©╫р╩О©╫О©╫р╙О©╫х╩О©╫О©╫О©╫ц╤О©╫с╕О©╫д╩О©╫О©╫й╪ш╦О©╫О©╫О©╫п╢О©╫О©╫</font>
     </td>
   </tr>
 </table>
@@ -115,18 +115,18 @@
 <div id="opcontent">
   <div class="optxt">
     <input type="hidden" value="pricetpl" name="$vd['pricetpl']"/>
-    <input type="submit" value="х╥хоиХжц &gt; &gt;" class="btn"/>
-    <input type="reset" value="&lt; &lt; жьжц" class="btn" name="reset" onclick="javascript:window.location.reload()" />
+    <input type="submit" value="х╥О©╫О©╫О©╫О©╫О©╫О©╫ &gt; &gt;" class="btn"/>
+    <input type="reset" value="&lt; &lt; О©╫О©╫О©╫О©╫" class="btn" name="reset" onclick="javascript:window.location.reload()" />
   </div>
 </div>
 </form>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <font color="#000">илф╥╪ш╦Ядё╟ЕиХжц</font> </div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="╡И©╢©м╩╖оЮ╧ь╟ОжЗ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <font color="#000">О©╫О©╫ф╥О©╫ш╦О©╫дёО©╫О©╫О©╫О©╫О©╫О©╫</font> </div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="О©╫И©╢О©╫м╩О©╫О©╫О©╫ь╟О©╫О©╫О©╫"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >рЁцФ╪стьжпгКит╣х...</div>
+  <div id="loadcontent" >рЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╣О©╫...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 2;
@@ -139,19 +139,19 @@
     str = "";
     if(val == "1")
     {
-      str = "% x (цФж╣ - нр╣д╫Ь╩У╪ш) + нр╣д╫Ь╩У╪ш";
+      str = "% x (О©╫О©╫ж╣ - О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫) + О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫";
     }
     else if(val == "2")
     {
-      str = "{$vd['lang']['moneyunit']} + нр╣д╫Ь╩У╪ш";
+      str = "{$vd['lang']['moneyunit']} + О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫";
     }
     else if(val == "3")
     {
-      str = "% x цФж╣ + нр╣д╫Ь╩У╪ш";
+      str = "% x О©╫О©╫ж╣ + О©╫р╣д╫О©╫О©╫О©╫О©╫О©╫";
     }
     else
     {
-      str = "% x цФж╣";
+      str = "% x О©╫О©╫ж╣";
     }
     
     $("std_"+idx).innerHTML = str;

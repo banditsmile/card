@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -15,38 +15,38 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <div id="content" class="cwarpper" style="position:relative">
 <div class="cbodyHead"></div>
 <div id="tab">
-<input type="button" value="ÌîÐ´»ù±¾ÐÅÏ¢"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
-<?php if(UB_B2C){ ?><input type="button" value="ÓÊÏä·¢ËÍÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_normal" onFocus="this.blur()"/><?php } ?>
-<input type="button" value="¹Ø±ÕÐÅÏ¢ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="Ç°Ì¨Ïà¹ØÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_active" onFocus="this.blur()"/>
-<input type="button" value="ºóÌ¨½»Ò×ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="IPÆÁ±ÎÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
-<?php if($vd['adminrank']==1){ ?><input type="button" value="Ïà¹Ø½Å±¾ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_normal" onFocus="this.blur()"/><?php } ?>
+<input type="button" value="ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
+<?php if(UB_B2C){ ?><input type="button" value="ï¿½ï¿½ï¿½ä·¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_normal" onFocus="this.blur()"/><?php } ?>
+<input type="button" value="ï¿½Ø±ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_active" onFocus="this.blur()"/>
+<input type="button" value="ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="IPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
+<?php if($vd['adminrank']==1){ ?><input type="button" value="ï¿½ï¿½Ø½Å±ï¿½ï¿½ï¿½ï¿½ï¿½"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_normal" onFocus="this.blur()"/><?php } ?>
 </div>
 
 <?php $temp = explode('|', $vd['sys']['config']);$cout=count($temp); ?>
 <div class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">¼Û¸ñÏà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">¼Û¸ñ±£ÁôµÄÎ»Êý</td>
+      <td class="tablelt">ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="dec" value="<?php if($cout > 6){echo $temp[6];} ?>" /> Ä¬ÈÏÊÇ3Î»£¬È«¾Öµ÷Õû¼Û¸ñÊ±Ôò±£ÁôÕâÃ´¶àµÄÎ»Êý
+        <input type="text" name="dec" value="<?php if($cout > 6){echo $temp[6];} ?>" /> Ä¬ï¿½ï¿½ï¿½ï¿½3Î»ï¿½ï¿½È«ï¿½Öµï¿½ï¿½ï¿½ï¿½Û¸ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½Î»ï¿½ï¿½
       </td>
     </tr>
     <?php if(UB_B2B){ ?>
     <tr>
-      <td class="tablelt">¹©»õÉÌÆ·Ä¬ÈÏµÄÊÖÐø·Ñ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ä¬ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="fee" value="<?php echo $vd['sys']['fee']; ?>" /> ÇëÐ´ÈëÐ¡Êýµã£¬±ÈÈç0.01 (0.01 = 1%)
+        <input type="text" name="fee" value="<?php echo $vd['sys']['fee']; ?>" /> ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½0.01 (0.01 = 1%)
       </td>
     </tr>
     <?php } ?>
     <tr>
-      <td class="tablelt">¶Ô½ÓÉÌÆ·×Ô¶¯µ÷Õû</td>
+      <td class="tablelt">ï¿½Ô½ï¿½ï¿½ï¿½Æ·ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="autoprice" value="1" <?php if(isset($temp[21]) && $temp[21] == 1){ ?>checked<?php } ?> /> ¶Ô½ÓÉÌÆ·×Ô¶¯¸üÐÂ½ø»õ£¬¿Í»§¹º¿¨Ê±²ÅÉúÐ§
+        <input type="checkbox" class="checkbox" name="autoprice" value="1" <?php if(isset($temp[21]) && $temp[21] == 1){ ?>checked<?php } ?> /> ï¿½Ô½ï¿½ï¿½ï¿½Æ·ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð§
       </td>
     </tr>
   </table>
@@ -54,25 +54,25 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">ÏÔÊ¾Ïà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">»õ±Ò·ûºÅ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="text" name="moneysymbol" value="<?php echo isset($vd['sys']['moneysymbol']) ? $vd['sys']['moneysymbol'] : $vd['lang']['moneysymbol']; ?>" /> 
       </td>
     </tr>
     <tr>
-      <td class="tablelt">»õ±Òµ¥Î»</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Òµï¿½Î»</td>
       <td class="tablert">
         <input type="text" name="moneyunit" value="<?php echo isset($vd['sys']['moneyunit']) ? $vd['sys']['moneyunit'] : $vd['lang']['moneyunit']; ?>" /> 
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÍøÒø¸¶¿îÒ³ÃæÌáÐÑ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <textarea rows="10" name="bankalert" cols="60" style="width:308px;"><?php echo isset($vd['sys']['bankalert']) ? $vd['sys']['bankalert'] : 'Çë¸¶¿î³É¹¦ºó£¬²»Òª¹Ø±ÕÒ³Ãæ£¬ÏµÍ³»á×Ô¶¯Ìø×ª»Ø±¾Æ½Ì¨£¬Äú¿´µ½³É¹¦³äÖµºó²ÅËãÍê³É¸¶¿î£¬Èç¹ûÃ»ÓÐÌø×ª£¬Çë²é¿´ä¯ÀÀÆ÷ÊÇ·ñ×öÁËÏÞÖÆ£¬¿ÉÒÔÊÔÐÐ»Ö¸´ä¯ÀÀÆ÷Ä¬ÈÏÅäÖÃ¿´¿´'; ?></textarea>
+        <textarea rows="10" name="bankalert" cols="60" style="width:308px;"><?php echo isset($vd['sys']['bankalert']) ? $vd['sys']['bankalert'] : 'ï¿½ë¸¶ï¿½ï¿½É¹ï¿½ï¿½ó£¬²ï¿½Òªï¿½Ø±ï¿½Ò³ï¿½æ£¬ÏµÍ³ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½×ªï¿½Ø±ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¸ï¿½ï¿½î£¬ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½'; ?></textarea>
       </td>
     </tr>
   </table>
@@ -80,37 +80,37 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">¶©µ¥Ïà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">Ç°Ì¨ÔÊÐí³·µ¥</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="cancel" value="1" <?php if($cout > 11){ToggleCheck($temp[11]);} ?> /> Ä¿Ç°½ö¶ÔÒ»¿¨Í¨°æ±¾ÓÐÐ§£¬ÇÒ¶©µ¥ÀàÐÍÎªÊÖ¶¯³äÖµ
+        <input type="checkbox" class="checkbox" name="cancel" value="1" <?php if($cout > 11){ToggleCheck($temp[11]);} ?> /> Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½æ±¾ï¿½ï¿½Ð§ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ö¶ï¿½ï¿½ï¿½Öµ
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ºóÌ¨ÓÐÐÂ¶©µ¥²¥·ÅÌáÊ¾Òô</td>
+      <td class="tablelt">ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="orderalert" value="1" <?php if($cout > 13){ToggleCheck($temp[13]);} ?> /> ´ò¹´±íÊ¾ÌáÊ¾
+        <input type="checkbox" class="checkbox" name="orderalert" value="1" <?php if($cout > 13){ToggleCheck($temp[13]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½Ê¾
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ºóÌ¨ÐÂ¶©µ¥¼ì²é¼ä¸ôÊ±¼ä</td>
+      <td class="tablelt">ï¿½ï¿½Ì¨ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="orderalerttime" value="<?php if($cout > 14){ echo $temp[14];} ?>"> µ¥Î»ÎªÃë <span class="spantip">Ê±¼äÔ½¶Ì£¬Ô½ÏûºÄÄúµÄÆ½Ì¨ÐÔÄÜ£¬½¨Òé30Ãë - 60ÃëÖ®¼ä</span>
+        <input type="text" name="orderalerttime" value="<?php if($cout > 14){ echo $temp[14];} ?>"> ï¿½ï¿½Î»Îªï¿½ï¿½ <span class="spantip">Ê±ï¿½ï¿½Ô½ï¿½Ì£ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½30ï¿½ï¿½ - 60ï¿½ï¿½Ö®ï¿½ï¿½</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Èç¹ûÍøÕ¾¿Õ¼äµÄÊ±¼äºÍ±ê×¼Ê±¼äÓÐÎó²î£¬Äú¿ÉÒÔÍ¨¹ýÕâ¸ö¹¦ÄÜÐ£×¼Ê±¼ä£¬Ê±¼äÍùÇ°ÌáÔòÊäÈë¸ºÊý£¬±ÈÈç-5</p>¶©µ¥Ê±¼äÐ£×¼</td>
+      <td class="tablelt"><strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Õ¼ï¿½ï¿½Ê±ï¿½ï¿½Í±ï¿½×¼Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£×¼Ê±ï¿½ä£¬Ê±ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¸ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-5</p>ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ð£×¼</td>
       <td class="tablert">
-        <input type="text" name="ordertimeadjust" value="<?php if(isset($temp[22])){ ?><?php echo $temp[22]; ?><?php }else{ ?>0<?php } ?>"  /> µ¥Î»ÎªÃë
+        <input type="text" name="ordertimeadjust" value="<?php if(isset($temp[22])){ ?><?php echo $temp[22]; ?><?php }else{ ?>0<?php } ?>"  /> ï¿½ï¿½Î»Îªï¿½ï¿½
       </td>
     </tr>
     <tr>
-      <td class="tablelt">½ûÖ¹ÊÖ¶¯¶©µ¥Í¶Ëß</td>
+      <td class="tablelt">ï¿½ï¿½Ö¹ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="forpitcomplaint2" value="1" <?php if($cout > 37){ToggleCheck($temp[37]);} ?> /> ´ò¹´±íÊ¾½ûÖ¹
+        <input type="checkbox" class="checkbox" name="forpitcomplaint2" value="1" <?php if($cout > 37){ToggleCheck($temp[37]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½Ö¹
       </td>
     </tr>
   </table>
@@ -120,13 +120,13 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 <?php if(UB_B2C||UB_YKT){ ?>
 <div class="cwarpper1">
-<div class="ctitle">ÑéÖ¤ÂëÏà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">Ò»¿¨Í¨µÇÂ¼ÑéÖ¤ÂëÉèÖÃ</td>
+      <td class="tablelt">Ò»ï¿½ï¿½Í¨ï¿½ï¿½Â¼ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="b2crandcode" value="1" <?php if($cout > 10){ToggleCheck($temp[10]);} ?> />´ò¹´±íÊ¾ÐèÒª£¬²»´ò¹´±íÊ¾²»ÐèÒª
+        <input type="checkbox" class="checkbox" name="b2crandcode" value="1" <?php if($cout > 10){ToggleCheck($temp[10]);} ?> />ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Òª
       </td>
     </tr>
   </table>
@@ -135,23 +135,23 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <?php } ?>
 
 <div class="cwarpper1">
-<div class="ctitle">·ÉÐÅ·¢ËÍÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">ÓÐ¶©µ¥ÊÇ·ñ·¢ËÍ·ÉÐÅ</td>
+      <td class="tablelt">ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Í·ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="fetion_send" value="1" <?php (ToggleCheck($vd['sys']['fetion_send'])); ?> />´ò¹´±íÊ¾ÐèÒª£¬²»´ò¹´±íÊ¾²»ÐèÒª
+        <input type="checkbox" class="checkbox" name="fetion_send" value="1" <?php (ToggleCheck($vd['sys']['fetion_send'])); ?> />ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Òª
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÊÖ»úºÅÂë</td>
+      <td class="tablelt">ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="fetion_mobile" value="<?php echo $vd['sys']['fetion_mobile']; ?>"> <span class="spantip"> ÐèÒªÍøÕ¾¿Õ¼äÖ§³Ö openssl ·½¿ÉÊ¹ÓÃÕâ¸ö¹¦ÄÜ</span>
+        <input type="text" name="fetion_mobile" value="<?php echo $vd['sys']['fetion_mobile']; ?>"> <span class="spantip"> ï¿½ï¿½Òªï¿½ï¿½Õ¾ï¿½Õ¼ï¿½Ö§ï¿½ï¿½ openssl ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">·ÉÐÅÃÜÂë</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="password" name="fetion_pass" value="<?php echo $vd['sys']['fetion_pass']; ?>">
       </td>
@@ -161,185 +161,185 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 <?php if(UB_B2B){ ?>
 <div class="cwarpper1">
-<div class="ctitle">¾­ÏúÉÌµÇÂ¼ÏµÍ³ºóÏà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½Â¼ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">µ¯³ö¹«¸æ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="pop" value="1" <?php if($cout > 0){ToggleCheck($temp[0]);} ?> />µÇÂ½ÏµÍ³¼´¿Ìµ¯³ö¹ÜÀíÔ±¹«¸æ(Èç¹ûÓÐ¹«¸æµÄ»°)
+        <input type="checkbox" class="checkbox" name="pop" value="1" <?php if($cout > 0){ToggleCheck($temp[0]);} ?> />ï¿½ï¿½Â½ÏµÍ³ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½Ä»ï¿½)
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Æ½Ì¨¹«¸æÄÚÈÝ</td>
+      <td class="tablelt">Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <textarea rows="10" name="popcontent" cols="60" style="width:308px;"><?php echo $vd['sys']['popcontent']; ?></textarea>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">×ªÈë¶ÌÐÅÏ¢Ò³Ãæ</td>
+      <td class="tablelt">×ªï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ò³ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="turntopm" value="1" <?php if($cout > 1){ToggleCheck($temp[1]);} ?> />µÇÂ½ÏµÍ³×ªÏòÏµÍ³¶ÌÐÅÏ¢Ò³Ãæ(Èç¹ûÓÐÐÂµÄ¶ÌÐÅµÄ»°)
+        <input type="checkbox" class="checkbox" name="turntopm" value="1" <?php if($cout > 1){ToggleCheck($temp[1]);} ?> />ï¿½ï¿½Â½ÏµÍ³×ªï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ï¢Ò³ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ¶ï¿½ï¿½ÅµÄ»ï¿½)
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ç°Ì¨ÌáÊ¾ÓÃ»§ÐÂ¶ÌÐÅÏ¢</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½Ê¾ï¿½Ã»ï¿½ï¿½Â¶ï¿½ï¿½ï¿½Ï¢</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="msgalert" value="1" <?php if($cout > 18){ToggleCheck($temp[18]);} ?> /> ´ò¹´±íÊ¾ÌáÊ¾
+        <input type="checkbox" class="checkbox" name="msgalert" value="1" <?php if($cout > 18){ToggleCheck($temp[18]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½Ê¾
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ç°Ì¨¶ÌÐÅÏ¢¼ì²éÊ±¼ä</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ê±ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="msgalerttime" value="<?php if($cout > 19){ echo $temp[19];} ?>"> µ¥Î»ÎªÃë <span class="spantip">Ê±¼äÔ½¶Ì£¬Ô½ÏûºÄÄúµÄÆ½Ì¨ÐÔÄÜ£¬½¨Òé300Ãë×óÓÒ</span>
+        <input type="text" name="msgalerttime" value="<?php if($cout > 19){ echo $temp[19];} ?>"> ï¿½ï¿½Î»Îªï¿½ï¿½ <span class="spantip">Ê±ï¿½ï¿½Ô½ï¿½Ì£ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½300ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÊÇ·ñÌáÐÑÓà¶î²»×ã</td>
+      <td class="tablelt">ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î²»ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="remainalert" value="1" <?php if($cout > 2){ToggleCheck($temp[2]);} ?> />µÇÂ½ÏµÍ³Ê±ÌáÐÑÓÃ»§
+        <input type="checkbox" class="checkbox" name="remainalert" value="1" <?php if($cout > 2){ToggleCheck($temp[2]);} ?> />ï¿½ï¿½Â½ÏµÍ³Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÉèÖÃÌáÐÑµÄµÄÓà¶îÉÏÏÞ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÑµÄµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="text" name="alertremain" value="<?php echo $vd['sys']['alertremain']; ?>" />
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÊÇ·ñÄ¬ÈÏ¿ª·ÅÒ»¿¨Í¨³äÖµ</td>
+      <td class="tablelt">ï¿½Ç·ï¿½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktcharge" value="1" <?php if($cout > 4){ToggleCheck($temp[4]);} ?> />µ±ÓÃ»§×¢²áµÄÊ±ºò£¬ÊÇ·ñÄ¬ÈÏ¿ª·ÅÒ»¿¨Í¨³äÖµ 
+        <input type="checkbox" class="checkbox" name="yktcharge" value="1" <?php if($cout > 4){ToggleCheck($temp[4]);} ?> />ï¿½ï¿½ï¿½Ã»ï¿½×¢ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç·ï¿½Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ 
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÔÊÐí²é¿´×ÔÓÐÉÌÆ·¿Í·þ</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Í·ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="showagentproductkf" value="1" <?php if($cout > 16){ToggleCheck($temp[16]);} ?> /> Òþ²ØµÄ»°£¬¿ÉÒÔ±£»¤ÄúµÄÆ½Ì¨¿ÍÔ´²»Á÷Ê§ 
+        <input type="checkbox" class="checkbox" name="showagentproductkf" value="1" <?php if($cout > 16){ToggleCheck($temp[16]);} ?> /> ï¿½ï¿½ï¿½ØµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ê§ 
       </td>
     </tr>
     <tr>
-      <td class="tablelt">·ÖÀàÒ³ÃæÊ¹ÓÃÍ¼±êÏÔÊ¾</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ê¹ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ê¾</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="catshowpic" value="1" <?php if($cout > 33){ToggleCheck($temp[33]);} ?> />Èç¹û²»´ò¹´ÔòÊÇÎÄ×ÖÏÔÊ¾·½Ê½
+        <input type="checkbox" class="checkbox" name="catshowpic" value="1" <?php if($cout > 33){ToggleCheck($temp[33]);} ?> />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê½
       </td>
     </tr>
     <tr>
-      <td class="tablelt">¾­ÏúÉÌÌá³É¼¶Êý</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="rankgetprofit" value="<?php if($cout > 30){echo $temp[30] ;}else{echo -1;} ?>"  /> ²»ÏÞÖÆµÄ»°£¬Ìî -1 ¼´¿É <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p> -1 £º±íÊ¾²»ÏÞÖÆ£¬ËùÓÐÉÏÏÂ¼¶£¬Ö»ÒªÓÐ²î¼Û£¬¾Í¿ÉÒÔ»ñµÃÌá³É<br/>0 £ºËùÓÐ¼¶±ð¶¼²»¸øÌá³É£¬²»¹ÜÓÐÃ»ÓÐ²î¼Û<br/>1:Ò»¼¶Ìá³É(ÉÏÏÂ¼¶)£¬Ö»ÓÐÖ±ÊôÉÏ¼¶ÓÐÌá³É<br/>2:¶þ¼¶Ìá³É(ÉÏÖÐÏÂ¼¶)£¬ÉÏÖÐÏÂ¼¶¹ØÏµµÄÊ±ºò£¬ÉÏÖÐÓÐÌá³É<br/>3:Èý¼¶Ìá³É(abcd¼¶)£¬abcd¼¶µÄÊ±ºò£¬abcÓÐÌá³É<br/>ÒÀ´ËÀàÍÆ£¬½¨ÒéÌîÐ´-1¼´¿É£¬²»ÏÞÖÆ</p>
+        <input type="text" name="rankgetprofit" value="<?php if($cout > 30){echo $temp[30] ;}else{echo -1;} ?>"  /> ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ -1 ï¿½ï¿½ï¿½ï¿½ <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p> -1 ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ö»Òªï¿½Ð²ï¿½Û£ï¿½ï¿½Í¿ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½ï¿½<br/>0 ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ð¶¼²ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð²ï¿½ï¿½<br/>1:Ò»ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Â¼ï¿½)ï¿½ï¿½Ö»ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br/>2:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br/>3:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(abcdï¿½ï¿½)ï¿½ï¿½abcdï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½abcï¿½ï¿½ï¿½ï¿½ï¿½<br/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´-1ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">¾­ÏúÉÌÌá³É±ÈÀý</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="rankprofit" value="<?php if($cout > 31){echo $temp[31] ;}else{echo 100;} ?>"  /> %  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p> ±ÈÈçabÎªÉÏÏÂ¼¶£¬ab²î¼ÛÎª1<?php echo $vd['lang']['moneyunit']; ?>£¬Ìá³É±ÈÀýÎª50%£¬Ôòa»ñµÃÌá³É1 x 50% = 0.5<?php echo $vd['lang']['moneyunit']; ?></p>
+        <input type="text" name="rankprofit" value="<?php if($cout > 31){echo $temp[31] ;}else{echo 100;} ?>"  /> %  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p> ï¿½ï¿½ï¿½ï¿½abÎªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½abï¿½ï¿½ï¿½Îª1<?php echo $vd['lang']['moneyunit']; ?>ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½Îª50%ï¿½ï¿½ï¿½ï¿½aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1 x 50% = 0.5<?php echo $vd['lang']['moneyunit']; ?></p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">¹©»õÉÌÆ·ÊÕÈë·ÖÅä</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
       	<a name="guize"></a>
         <input type="radio" class="checkbox" name="ownermoney" value="0" 
         <?php if(!isset($temp[34]) || (isset($temp[34]) && $temp[34] == 0)){ ?>
         checked
         <?php } ?>
-/> ³É±¾¼Û+ÀûÈó<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong>
-<p>±ÈÈç¹©»õÉÌÌí¼Ó×ÔÓÐÉÌÆ·Ê±ºòÉèµÄ½ø¼ÛÊÇa£¬¿Í»§(ÎÞÉÏ¼¶)¹ºÂòµÄ¼Û¸ñÊÇb£¬¸øÏµÍ³Ìá³ÉÊÇ0.02£¬×îÖÕÖÕ¹©»õËùµÃÎªa + (b - a - b x 0.02)</p>
-<input type="radio" class="checkbox" name="ownermoney" value="1" <?php if(isset($temp[34]) && $temp[34] == 1){ ?>checked<?php } ?> /> ³É±¾¼Û<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>±ÈÈç¹©»õÉÌÌí¼Ó×ÔÓÐÉÌÆ·Ê±ºòÉèµÄ½ø¼ÛÊÇa,×îÖÕÖÕ¹©»õËùµÃÎªa</p>
+/> ï¿½É±ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong>
+<p>ï¿½ï¿½ï¿½ç¹©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ê±ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½aï¿½ï¿½ï¿½Í»ï¿½(ï¿½ï¿½ï¿½Ï¼ï¿½)ï¿½ï¿½ï¿½ï¿½Ä¼Û¸ï¿½ï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½0.02ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªa + (b - a - b x 0.02)</p>
+<input type="radio" class="checkbox" name="ownermoney" value="1" <?php if(isset($temp[34]) && $temp[34] == 1){ ?>checked<?php } ?> /> ï¿½É±ï¿½ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½ï¿½ç¹©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ê±ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½a,ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªa</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ç°Ì¨³¬Ê±ÍË³ö</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½Ê±ï¿½Ë³ï¿½</td>
       <td class="tablert">
-      	<input type="text" name="b2btime" value="<?php if($cout > 38){ echo $temp[38];}else{echo 1200;} ?>"> Ãë <span class="spantip">ÎÞ¶¯×÷Ê±ºò×Ô¶¯ÍË³öÇ°Ì¨</span>
+      	<input type="text" name="b2btime" value="<?php if($cout > 38){ echo $temp[38];}else{echo 1200;} ?>"> ï¿½ï¿½ <span class="spantip">ï¿½Þ¶ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½Ë³ï¿½Ç°Ì¨</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">×¢²áºó¶à³¤Ê±¼ä¿ÉÒÔ¹º¿¨</td>
+      <td class="tablelt">×¢ï¿½ï¿½ï¿½à³¤Ê±ï¿½ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½</td>
       <td class="tablert">
       	<?php if($cout > 32){ ?>
       	<?php $cba = $temp[32];}else{ ?>
       	<?php $cba = 0;} ?>
       	<select name="canbuyafter">
-<option value="0"<?php if($cba == 0){ ?> selected<?php } ?>>ÂíÉÏ¿ÉÒÔ¹º¿¨</option>
-<option value="1800"<?php if($cba == 1800){ ?> selected<?php } ?>>30·ÖÖÓ</option>
+<option value="0"<?php if($cba == 0){ ?> selected<?php } ?>>ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½</option>
+<option value="1800"<?php if($cba == 1800){ ?> selected<?php } ?>>30ï¿½ï¿½ï¿½ï¿½</option>
 <option value="3600"<?php if($cba == 3600){ ?> selected<?php } ?>>1Ð¡Ê±</option>
 <option value="10800"<?php if($cba == 10800){ ?> selected<?php } ?>>3Ð¡Ê±</option>
 <option value="21600"<?php if($cba == 21600){ ?> selected<?php } ?>>6Ð¡Ê±</option>
 <option value="43200"<?php if($cba == 43200){ ?> selected<?php } ?>>12Ð¡Ê±</option>
 <option value="86400"<?php if($cba == 86400){ ?> selected<?php } ?>>24Ð¡Ê±</option>
 <option value="172800"<?php if($cba == 172800){ ?> selected<?php } ?>>48Ð¡Ê±</option>
-<option value="259200"<?php if($cba == 259200){ ?> selected<?php } ?>>3Ìì</option>
-<option value="432000"<?php if($cba == 432000){ ?> selected<?php } ?>>5Ìì</option>
-<option value="604800"<?php if($cba == 604800){ ?> selected<?php } ?>>7Ìì</option>
-        </select>ºó¿ÉÒÔ¹º¿¨
+<option value="259200"<?php if($cba == 259200){ ?> selected<?php } ?>>3ï¿½ï¿½</option>
+<option value="432000"<?php if($cba == 432000){ ?> selected<?php } ?>>5ï¿½ï¿½</option>
+<option value="604800"<?php if($cba == 604800){ ?> selected<?php } ?>>7ï¿½ï¿½</option>
+        </select>ï¿½ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½
       </td>
     </tr>
     <?php if(UB_YKT||UB_B2B||UB_B2C>1){ ?>
     <tr>
-      <td class="tablelt">×¢²áºóÄ¬ÈÏ¿ªÍ¨</td>
+      <td class="tablelt">×¢ï¿½ï¿½ï¿½Ä¬ï¿½Ï¿ï¿½Í¨</td>
       <td class="tablert">
         <input type="checkbox" class="checkbox" name="autocheckfrozen" value="1" <?php if($cout > 39){ToggleCheck($temp[39]);} ?> /> 
       </td>
     </tr>
     <?php } ?>
     <tr>
-      <td class="tablelt">Åú·¢ÏµÍ³µÇÂ½ºó×ª</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Â½ï¿½ï¿½×ª</td>
       <td class="tablert">
       	<?php $agentloginurl = isset($vd['sys']['loginurl']) ? $vd['sys']['loginurl'] : ''; ?>
       	<select name="agentloginurl">
-<option value=""<?php if($agentloginurl == ''){ ?> selected<?php } ?>>ÏµÍ³Ä¬ÈÏ(ÓÐ¶ÌÐÅ×ªÄÚ²¿¶ÌÐÅ£¬ÎÞ¶ÌÐÅ×ª¾­ÏúÉÌÊ×Ò³)</option>
-<option value="m=mod_b2b&c=Home&a=Home"<?php if($agentloginurl == 'm=mod_b2b&c=Home&a=Home'){ ?> selected<?php } ?> >¾­ÏúÉÌÊ×Ò³</option>
-<option value="m=mod_b2b&c=Category"<?php if($agentloginurl == 'm=mod_b2b&c=Category'){ ?> selected<?php } ?> >¹º¿¨ÊÛÓÃ»§</option>
-<option value="m=mod_b2b&c=Fav"<?php if($agentloginurl == 'm=mod_b2b&c=Fav'){ ?> selected<?php } ?>>ÉÌÆ·ÊÕ²Ø¼Ð</option>
+<option value=""<?php if($agentloginurl == ''){ ?> selected<?php } ?>>ÏµÍ³Ä¬ï¿½ï¿½(ï¿½Ð¶ï¿½ï¿½ï¿½×ªï¿½Ú²ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½Þ¶ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³)</option>
+<option value="m=mod_b2b&c=Home&a=Home"<?php if($agentloginurl == 'm=mod_b2b&c=Home&a=Home'){ ?> selected<?php } ?> >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³</option>
+<option value="m=mod_b2b&c=Category"<?php if($agentloginurl == 'm=mod_b2b&c=Category'){ ?> selected<?php } ?> >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½</option>
+<option value="m=mod_b2b&c=Fav"<?php if($agentloginurl == 'm=mod_b2b&c=Fav'){ ?> selected<?php } ?>>ï¿½ï¿½Æ·ï¿½Õ²Ø¼ï¿½</option>
 <option value="m=mod_agent&c=trade&tpl=history"
 <?php if($agentloginurl == 'm=mod_agent&c=trade&tpl=history'){ ?>
  selected
 <?php } ?>
->¼Ó¿î¿Û¿î¼ÇÂ¼
+>ï¿½Ó¿ï¿½Û¿ï¿½ï¿½Â¼
 </option>
 <option value="m=mod_agent&c=order"
 <?php if($agentloginurl == 'm=mod_agent&c=order'){ ?>
  selected
 <?php } ?>
->½ø»õ¼ÇÂ¼²éÑ¯
+>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ¯
 </option>
 <option value="m=mod_agent&c=trade&tpl=profit&tradetype=11"
 <?php if($agentloginurl == 'm=mod_agent&c=trade&tpl=profit&tradetype=11'){ ?>
  selected
 <?php } ?>
->ÏúÊÛÀûÈó²éÑ¯
+>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯
 </option>
 <option value="m=mod_agent&c=Messenger"
 <?php if($agentloginurl == 'm=mod_agent&c=Messenger'){ ?>
  selected
 <?php } ?>
->Æ½Ì¨ÄÚ²¿¶ÌÐÅ
+>Æ½Ì¨ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½
 </option>
-<option value="m=mod_b2b&c=Quick"<?php if($agentloginurl == 'm=mod_b2b&c=Quick'){ ?> selected<?php } ?> >±ãÃñÖÐÐÄ</option>
+<option value="m=mod_b2b&c=Quick"<?php if($agentloginurl == 'm=mod_b2b&c=Quick'){ ?> selected<?php } ?> >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
         </select>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÃ»§¼¶±ð¹æÔò</td>
+      <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-      	<input type="radio" class="checkbox" name="ranktype" value="0" <?php if(!isset($temp[20]) || (isset($temp[20]) && $temp[20] == 0)){ ?>checked<?php } ?> /> ¹æ·¶ÐÍ<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Í¬Ò»¸ö×é±ðµÄ¾­ÏúÉÌ²»ÄÜ»¥ÎªÉÏÏÂ¼¶£¬±ÈÈçÒ»¼¶¾­ÏúÉÌºÍ¶þ¼¶¾­ÏúÉÌÍ¬ÊôÓÚ¾­ÏúÉÌ×é±ð£¬ÔòËûÃÇ²»ÄÜ»¥ÎªÉÏÏÂ¼¶</p>
-        <input type="radio" class="checkbox" name="ranktype" value="1" <?php if(isset($temp[20]) && $temp[20] == 1){ ?>checked<?php } ?> /> ËÉÉ¢ÐÍ<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Í¬Ò»¸ö×é±ðµÄ¾­ÏúÉÌÒ²¿ÉÒÔÎªÉÏÏÂ¼¶£¬¹æÔòÊÇÖ»ÒªÕâ¸ö¼¶±ðµÄÉý¼¶Ïû·Ñ½ð¶î×ã¹»´ó£¬Ëû¾Í¿ÉÒÔ½ÓÊÕ±ÈËûÐ¡µÄ¼¶±ð£¬Ö±ÏúÉÌ³ýÍâ(Ò²¾ÍÊÇËµÖ±ÏúÉÌ²»ÄÜÊÕÏÂ¼¶)</p>
+      	<input type="radio" class="checkbox" name="ranktype" value="0" <?php if(!isset($temp[20]) || (isset($temp[20]) && $temp[20] == 0)){ ?>checked<?php } ?> /> ï¿½æ·¶ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½Ì²ï¿½ï¿½Ü»ï¿½Îªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌºÍ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½Ü»ï¿½Îªï¿½ï¿½ï¿½Â¼ï¿½</p>
+        <input type="radio" class="checkbox" name="ranktype" value="1" <?php if(isset($temp[20]) && $temp[20] == 1){ ?>checked<?php } ?> /> ï¿½ï¿½É¢ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½ã¹»ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½Ô½ï¿½ï¿½Õ±ï¿½ï¿½ï¿½Ð¡ï¿½Ä¼ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ì³ï¿½ï¿½ï¿½(Ò²ï¿½ï¿½ï¿½ï¿½ËµÖ±ï¿½ï¿½ï¿½Ì²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½)</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÃ»§×¢²áÆðÊ¼±àºÅ</td>
+      <td class="tablelt">ï¿½Ã»ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="text" name="agentstartid" value="<?php if($cout > 36){echo $temp[36] ;}else{echo 0;} ?>"  /> <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>²»ÄÜÐ¡ÓÚµ±Ç°ÓÃ»§µÄ×î´ó±àºÅ£¬·ñÔòÎÞÐ§£¬0±íÊ¾Î¬³Öµ±Ç°×´Ì¬£¬µ±Ç°ÉèÖÃ²»¸Ä±äÒ²±íÊ¾Î¬³Öµ±Ç°×´Ì¬£¬²»ÄÜÐ¡ÓÚ0</p>
+        <input type="text" name="agentstartid" value="<?php if($cout > 36){echo $temp[36] ;}else{echo 0;} ?>"  /> <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Úµï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½0ï¿½ï¿½Ê¾Î¬ï¿½Öµï¿½Ç°×´Ì¬ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ã²ï¿½ï¿½Ä±ï¿½Ò²ï¿½ï¿½Ê¾Î¬ï¿½Öµï¿½Ç°×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½0</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Åú·¢Ç°Ì¨µ¼º½</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ç°Ì¨ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="hidden" name="oldb2bmenu" value="<?php echo $vd['sys']['b2bmenu']; ?>"/>
         <textarea rows="10" name="b2bmenu" cols="28" style="width:458px;"><?php echo $vd['sys']['b2bmenu']; ?></textarea>
-        <br/><span class="spantip">»Ø³µ´ú±íÒ»×é£¬Ã¿Ò»×éÓÃ"|"¸ô¿ª£¬"|"Ç°ÃæÊÇ²Ëµ¥£¬Æä´Î±íÊ¾ÊÇ·ñÐÂ´°¿Ú´ò¿ª,0±íÊ¾Ô­´°¿Ú£¬1±íÊ¾ÐÂ´°¿Ú£¬×îºóÒ»¸ö"|"ºóÃæÊÇ²Ëµ¥¶ÔÓ¦µÄÁ´½Ó</span>
+        <br/><span class="spantip">ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½é£¬Ã¿Ò»ï¿½ï¿½ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"|"Ç°ï¿½ï¿½ï¿½Ç²Ëµï¿½ï¿½ï¿½ï¿½ï¿½Î±ï¿½Ê¾ï¿½Ç·ï¿½ï¿½Â´ï¿½ï¿½Ú´ï¿½,0ï¿½ï¿½Ê¾Ô­ï¿½ï¿½ï¿½Ú£ï¿½1ï¿½ï¿½Ê¾ï¿½Â´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½Ç²Ëµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
       </td>
     </tr>
   </table>
@@ -348,83 +348,83 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <?php } ?>
 <?php if(UB_YKT){ ?>
 <div class="cwarpper1">
-<div class="ctitle">Ò»¿¨Í¨Ïà¹ØÉèÖÃ</div>
+<div class="ctitle">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">Ç°Ì¨ÏÔÊ¾Ò»¿¨Í¨ÃæÖµ</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½Ê¾Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ</td>
       <td class="tablert">
         <input type="hidden" name="oldfyktarray" value="<?php echo $vd['sys']['fyktarray']; ?>"/>
-        <input type="text" name="fyktarray" value="<?php echo $vd['sys']['fyktarray']; ?>"/> <span class="spantip">¶à¸öÃæÖµÓÃ°ë½Ç¶ººÅ¸ô¿ª¼´¿ÉÈç£º1,5,10,15,30,45,50,100</span>
+        <input type="text" name="fyktarray" value="<?php echo $vd['sys']['fyktarray']; ?>"/> <span class="spantip">ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ã°ï¿½Ç¶ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º1,5,10,15,30,45,50,100</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ËùÓÐÒ»¿¨Í¨ÁÐ±í</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ð±ï¿½</td>
       <td class="tablert">
-        <input type="text" name="yktarray" value="<?php echo $vd['sys']['yktarray']; ?>"/> <span class="spantip">¶à¸öÃæÖµÓÃ°ë½Ç¶ººÅ¸ô¿ª¼´¿ÉÈç£º1,5,10,15,30,45,50,100</span>
+        <input type="text" name="yktarray" value="<?php echo $vd['sys']['yktarray']; ?>"/> <span class="spantip">ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ã°ï¿½Ç¶ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º1,5,10,15,30,45,50,100</span>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ò»¿¨Í¨ÉÌÆ·¹º¿¨Ò³Ãæ</td>
+      <td class="tablelt">Ò»ï¿½ï¿½Í¨ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>
       <td class="tablert">
         <input type="checkbox" class="checkbox" name="dispkf" value="1" 
         <?php if($cout > 12){ToggleCheck($temp[12]);} ?>
-/> ÏÔÊ¾¿Í·þ <input type="checkbox" class="checkbox" name="dispad" value="1" 
+/> ï¿½ï¿½Ê¾ï¿½Í·ï¿½ <input type="checkbox" class="checkbox" name="dispad" value="1" 
 <?php if($cout > 28){ToggleCheck($temp[28]);} ?>
-/> ÏÔÊ¾¹ã¸æ <input type="checkbox" class="checkbox" name="dispbuyer" value="1" <?php if($cout > 29){ToggleCheck($temp[29]);} ?> /> ÏÔÊ¾¿Í»§ÁªÏµ·½Ê½ÊäÈë¿ò
+/> ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ <input type="checkbox" class="checkbox" name="dispbuyer" value="1" <?php if($cout > 29){ToggleCheck($temp[29]);} ?> /> ï¿½ï¿½Ê¾ï¿½Í»ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ò»¿¨Í¨¶©µ¥Ò³ÃæÖ±½ÓÏÔÊ¾¿Í·þ</td>
+      <td class="tablelt">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Í·ï¿½</td>
       <td class="tablert">
         <input type="checkbox" class="checkbox" name="yktorderdispkf" value="1" <?php if($cout > 15){ToggleCheck($temp[15]);} ?> />
       </td>
     </tr>
     <tr style="display:none">
-      <td class="tablelt">ÊÇ·ñÔÊÐíÊ¹ÓÃ¿Í»§×ÔÐÐÉú³ÉµÄÒ»¿¨Í¨</td>
+      <td class="tablelt">ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½Ò»ï¿½ï¿½Í¨</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktcustomcanuse" value="1" <?php if($cout > 35){ToggleCheck($temp[35]);} ?> /> ´ò¹´±íÊ¾ÔÊÐí<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>¿ªÍ¨ºó, ¿ÉÒÔÍ¨¹ý±à¼­ÓÃ»§¸øËû¿ª·ÅÈ¨ÏÞ, µ±Õâ¸ö¿¨ÃÜÌá½»¹º¿¨ºó, ×Ô¶¯¿Û³ýÓÃ»§µÄÓà¶î, ½÷É÷Ê¹ÓÃ</p>
+        <input type="checkbox" class="checkbox" name="yktcustomcanuse" value="1" <?php if($cout > 35){ToggleCheck($temp[35]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½Í¨ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½à¼­ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ô¶ï¿½ï¿½Û³ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÊÇ·ñÔÊÐíÒ»¿¨Í¨×ª¿¨</td>
+      <td class="tablelt">ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktcantran" value="1" <?php if($cout > 23){ToggleCheck($temp[23]);} ?> /> ´ò¹´±íÊ¾ÔÊÐí<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>Èç¹ûÄúÔÊÐí×ª»»£¬Äú¿ÉÒÔÍ¨¹ý ºóÌ¨ -> Ò»¿¨Í¨ -> Ò»¿¨Í¨×ª¿¨È¨ÏÞÉèÖÃ ½øÐÐÐÞ¸Ä×ªµãµÄÈ¨ÏÞ</p>
+        <input type="checkbox" class="checkbox" name="yktcantran" value="1" <?php if($cout > 23){ToggleCheck($temp[23]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ ï¿½ï¿½Ì¨ -> Ò»ï¿½ï¿½Í¨ -> Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½×ªï¿½ï¿½ï¿½È¨ï¿½ï¿½</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ö»ÔÊÐíÍ¬ÀàÒ»¿¨Í¨×ª¿¨</td>
+      <td class="tablelt">Ö»ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktonlysanmeproduct" value="1" <?php if($cout > 24){ToggleCheck($temp[24]);} ?> /> ´ò¹´±íÊ¾½ö°´ÕÕÕâ¸ö¹æÔòÖ´ÐÐ<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>¡°ÊÇ·ñÔÊÐíÒ»¿¨Í¨×ª¿¨¡±Ò²ÐèÒªÍ¬Ê±´ò¹´²Å»áÉúÐ§£¬·ñÔò×ª¿¨¹¦ÄÜÊÇ½ûÖ¹µÄ¡£"Ö»ÔÊÐíÍ¬ÀàÒ»¿¨Í¨×ª¿¨"´ò¹´ºó£¬×ª¿¨È¨ÏÞÉèÖÃµÄ¹æÔò(ºóÌ¨ -> Ò»¿¨Í¨ -> Ò»¿¨Í¨×ª¿¨È¨ÏÞÉèÖÃ)½«È«²¿ÎÞÐ§£¬Õâ¸öÊ±ºò£¬Á½ÕÅ¿¨Í¬Ê±ÔÊÐí¶Ò»»µÄÉÌÆ·±ØÐëÒ»Ä£Ò»Ñù²ÅÔÊÐí×ª¿¨¡£±ÈÈçAÆ½Ì¨¿¨°ó¶¨ÁË A1,A2ÉÌÆ·£¬BÆ½Ì¨¿¨°ó¶¨ÁËA1ÉÌÆ·£¬Õâ¸öÊ±ºòA,BÆ½Ì¨¿¨ÊÇ²»ÔÊÐí×ª¿¨µÄ£¬Ö»ÓÐBÆ½Ì¨¿¨Ò²°ó¶¨ÁËA1,A2ÉÌÆ·²Å¿ÉÒÔ×ª¿¨<br/>Ä¿Ç°½ö½ö¼ì²é°´ÕÕÅú´Î°ó¶¨ÉÌÆ·µÄÆ½Ì¨</p>
+        <input type="checkbox" class="checkbox" name="yktonlysanmeproduct" value="1" <?php if($cout > 24){ToggleCheck($temp[24]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½<strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p>ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ÒªÍ¬Ê±ï¿½ò¹´²Å»ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½Ö¹ï¿½Ä¡ï¿½"Ö»ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½"ï¿½ò¹´ºï¿½×ªï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ¹ï¿½ï¿½ï¿½(ï¿½ï¿½Ì¨ -> Ò»ï¿½ï¿½Í¨ -> Ò»ï¿½ï¿½Í¨×ªï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Å¿ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ò»Ä£Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AÆ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ A1,A2ï¿½ï¿½Æ·ï¿½ï¿½BÆ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A1ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½A,BÆ½Ì¨ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Ä£ï¿½Ö»ï¿½ï¿½BÆ½Ì¨ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½A1,A2ï¿½ï¿½Æ·ï¿½Å¿ï¿½ï¿½ï¿½×ªï¿½ï¿½<br/>Ä¿Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é°´ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Æ½Ì¨</p>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÏÔÊ¾´úÀíÒ»¿¨Í¨¿¨ÃÜ</td>
+      <td class="tablelt">ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktdailishowkm" value="1" <?php if($cout > 25){ToggleCheck($temp[25]);} ?> /> ´ò¹´±íÊ¾ÔÊÐí
+        <input type="checkbox" class="checkbox" name="yktdailishowkm" value="1" <?php if($cout > 25){ToggleCheck($temp[25]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
       </td>
     </tr>
     <a name="autoreward"></a>
     <tr>
-      <td class="tablelt">Ò»¿¨Í¨×Ô¶¯·µµã</td>
+      <td class="tablelt">Ò»ï¿½ï¿½Í¨ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" disabled class="checkbox" name="yktdailiautoreward" value="1" <?php if($cout > 26){ToggleCheck($temp[26]);} ?> /> ´ò¹´±íÊ¾ÔÊÐí(Ä¿Ç°Î´¿ª·Å´Ë¹¦ÄÜ)
+        <input type="checkbox" disabled class="checkbox" name="yktdailiautoreward" value="1" <?php if($cout > 26){ToggleCheck($temp[26]);} ?> /> ï¿½ò¹´±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½(Ä¿Ç°Î´ï¿½ï¿½ï¿½Å´Ë¹ï¿½ï¿½ï¿½)
       </td>
     </tr>
     
     <tr>
-      <td class="tablelt">Ò»¿¨Í¨Æ½Ì¨ÆÁ±ÎÊ§°Ü¼ÇÂ¼</td>
+      <td class="tablelt">Ò»ï¿½ï¿½Í¨Æ½Ì¨ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¼ï¿½Â¼</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="yktnoshowfail" value="1" <?php if($cout > 27){ToggleCheck($temp[27]);} ?> /> Ò»¿¨Í¨Æ½Ì¨²éÑ¯¿¨×´Ì¬µÄÊ±ºòÆÁ±ÎÊ§°ÜµÄ¼ÇÂ¼
+        <input type="checkbox" class="checkbox" name="yktnoshowfail" value="1" <?php if($cout > 27){ToggleCheck($temp[27]);} ?> /> Ò»ï¿½ï¿½Í¨Æ½Ì¨ï¿½ï¿½Ñ¯ï¿½ï¿½×´Ì¬ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ÜµÄ¼ï¿½Â¼
       </td>
     </tr>
     
     <tr>
-      <td class="tablelt">Ç°Ì¨¶¥²¿µ¼º½</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="hidden" name="oldyktnav" value="<?php echo $vd['sys']['yktnav']; ?>"/>
         <textarea rows="10" name="yktnav" cols="28" style="width:458px;"><?php echo $vd['sys']['yktnav']; ?></textarea>
-        <br/><span class="spantip">»Ø³µ´ú±íÒ»×é£¬Ã¿Ò»×éÓÃ"|"¸ô¿ª£¬"|"Ç°ÃæÊÇÏÔÊ¾µÄÃû³Æ£¬ºóÃæÊÇ¶ÔÓ¦µÄÁ´½Ó</span>
+        <br/><span class="spantip">ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½é£¬Ã¿Ò»ï¿½ï¿½ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"|"Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
       </td>
     </tr>
   </table>
@@ -433,35 +433,35 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <?php } ?>
 <?php if(UB_B2C){ ?>
 <div class="cwarpper1">
-<div class="ctitle">ÁãÊÛÆ½Ì¨Ò³ÃæÏà¹ØÉèÖÃ</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">ÆÀÂÛÉóºË</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
-        <input type="checkbox" class="checkbox" name="reviewchecked" value="1" <?php if($cout > 3){ToggleCheck($temp[3]);} ?>>ÓÃ»§Ìá½»ÉÌÆ·ÆÀÂÛÖ±½ÓÉóºËÍ¨¹ý
+        <input type="checkbox" class="checkbox" name="reviewchecked" value="1" <?php if($cout > 3){ToggleCheck($temp[3]);} ?>>ï¿½Ã»ï¿½ï¿½á½»ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
       </td>
     </tr>
     <tr>
-      <td class="tablelt">ÁãÊÛÇ°Ì¨µÇÂ½¹º¿¨</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ç°Ì¨ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <input type="checkbox" class="checkbox" name="b2cneedlogin" value="1" 
         <?php if($cout > 5){ToggleCheck($temp[5]);} ?>
         > </td>
     </tr>
     <tr>
-      <td class="tablelt">Ç°Ì¨µ¼º½À¸</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <textarea rows="10" name="b2cmenu" cols="28" style="width:458px;" onblur="setchange('b2cmenuchange')"><?php echo $vd['sys']['b2cmenu']; ?></textarea>
-        <br/><span class="spantip">»Ø³µ´ú±íÒ»×é£¬Ã¿Ò»×éÓÃ"|"¸ô¿ª£¬"|"Ç°ÃæÊÇ²Ëµ¥£¬Æä´Î±íÊ¾ÊÇ·ñÐÂ´°¿Ú´ò¿ª,0±íÊ¾Ô­´°¿Ú£¬1±íÊ¾ÐÂ´°¿Ú£¬×îºóÒ»¸ö"|"ºóÃæÊÇ²Ëµ¥¶ÔÓ¦µÄÁ´½Ó</span>
+        <br/><span class="spantip">ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½é£¬Ã¿Ò»ï¿½ï¿½ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"|"Ç°ï¿½ï¿½ï¿½Ç²Ëµï¿½ï¿½ï¿½ï¿½ï¿½Î±ï¿½Ê¾ï¿½Ç·ï¿½ï¿½Â´ï¿½ï¿½Ú´ï¿½,0ï¿½ï¿½Ê¾Ô­ï¿½ï¿½ï¿½Ú£ï¿½1ï¿½ï¿½Ê¾ï¿½Â´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½Ç²Ëµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
         <input type="hidden" name="b2cmenuchange" value="0" id="b2cmenuchange">
       </td>
     </tr>
     <tr>
-      <td class="tablelt">Ç°Ì¨ÈÈÃÅ</td>
+      <td class="tablelt">Ç°Ì¨ï¿½ï¿½ï¿½ï¿½</td>
       <td class="tablert">
         <textarea rows="10" name="hotkey" cols="28" style="width:458px;" onblur="setchange('hkchange')"><?php echo $vd['sys']['hotkey']; ?></textarea>
-        <br/><span class="spantip">»Ø³µ´ú±íÒ»×é£¬Ã¿Ò»×éÓÃ"|"¸ô¿ª£¬"|"Ç°ÃæÊÇÈÈÃÅ´Ê£¬ºóÃæÊÇÈÈÃÅ´Ê¶ÔÓ¦µÄ¹Ø¼ü´Ê£¬ÎÞ·Ö¸ôºÅÔò±íÊ¾Á½ÕßÏàÍ¬</span>
+        <br/><span class="spantip">ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½é£¬Ã¿Ò»ï¿½ï¿½ï¿½ï¿½"|"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"|"Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´Ê¶ï¿½Ó¦ï¿½Ä¹Ø¼ï¿½ï¿½Ê£ï¿½ï¿½Þ·Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬</span>
         <input type="hidden" name="hkchange" value="0" id="hkchange">
       </td>
     </tr>
@@ -470,105 +470,105 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">ÁãÊÛÆ½Ì¨Ç°Ì¨¿Í·þÑùÊ½</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨Ç°Ì¨ï¿½Í·ï¿½ï¿½ï¿½Ê½</div>
 <div>
   <table width="557" id="kftable" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">·ç¸ñÒ»&nbsp;&nbsp;<input id="radiob2c1" type="radio" class="checkbox"  name="styleb2c" checked value="0" ></td>
-      <td width="89" align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ò»&nbsp;&nbsp;<input id="radiob2c1" type="radio" class="checkbox"  name="styleb2c" checked value="0" ></td>
+      <td width="89" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td width="130" align="left"><img src="<?php echo $vd['sc']; ?>images/01_online.gif" width="74" height="23"></td>
-      <td width="90" align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td width="90" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/01_offline.gif" width="74" height="23"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¶þ&nbsp;&nbsp;<input id="radiob2c2" type="radio" class="checkbox"  name="styleb2c" value="1" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c2" type="radio" class="checkbox"  name="styleb2c" value="1" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÈý&nbsp;&nbsp;<input id="radiob2c3" type="radio" class="checkbox"  name="styleb2c" value="2" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c3" type="radio" class="checkbox"  name="styleb2c" value="2" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñËÄ&nbsp;&nbsp;<input id="radiob2c4" type="radio" class="checkbox"  name="styleb2c" value="3" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c4" type="radio" class="checkbox"  name="styleb2c" value="3" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_online.gif" width="44" height="24"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_offline.gif" width="44" height="24"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÎå&nbsp;&nbsp;<input id="radiob2c5" type="radio" class="checkbox"  name="styleb2c" value="4" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c5" type="radio" class="checkbox"  name="styleb2c" value="4" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_online.gif" width="61" height="15"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_offline.gif" width="61" height="15"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÁù&nbsp;&nbsp;<input id="radiob2c6" type="radio" class="checkbox"  name="styleb2c" value="5" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c6" type="radio" class="checkbox"  name="styleb2c" value="5" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/6_online.gif" width="68" height="29"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/6_offline.gif" width="68" height="29"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÆß&nbsp;&nbsp;<input id="radiob2c7" type="radio" class="checkbox"  name="styleb2c" value="6" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c7" type="radio" class="checkbox"  name="styleb2c" value="6" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/7_online.gif" width="71" height="24"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/7_offline.gif" width="71" height="24"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ°Ë&nbsp;&nbsp;<input id="radiob2c8" type="radio" class="checkbox"  name="styleb2c" value="7" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c8" type="radio" class="checkbox"  name="styleb2c" value="7" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/8_online.gif" width="60" height="16"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/8_offline.gif" width="51" height="16"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¾Å&nbsp;&nbsp;<input id="radiob2c9" type="radio" class="checkbox"  name="styleb2c" value="8" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c9" type="radio" class="checkbox"  name="styleb2c" value="8" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/9_online.gif" width="57" height="16"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/9_offline.gif" width="51" height="16"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®&nbsp;&nbsp;<input id="radiob2c10" type="radio" class="checkbox"  name="styleb2c" value="9" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®&nbsp;&nbsp;<input id="radiob2c10" type="radio" class="checkbox"  name="styleb2c" value="9" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_online.gif" width="61" height="16"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_offline.gif" width="51" height="16"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Ò»&nbsp;&nbsp;<input id="radiob2c11" type="radio" class="checkbox"  name="styleb2c" value="10" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®Ò»&nbsp;&nbsp;<input id="radiob2c11" type="radio" class="checkbox"  name="styleb2c" value="10" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_online.gif" width="65" height="66"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_offline.gif" width="65" height="66"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®¶þ&nbsp;&nbsp;<input id="radiob2c12" type="radio" class="checkbox"  name="styleb2c" value="11" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c12" type="radio" class="checkbox"  name="styleb2c" value="11" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_online.gif" width="82" height="34"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_offline.gif" width="82" height="34"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Èý&nbsp;&nbsp;<input id="radiob2c13" type="radio" class="checkbox"  name="styleb2c" value="12" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c13" type="radio" class="checkbox"  name="styleb2c" value="12" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_online.gif" width="138" height="29"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_offline.gif" width="138" height="29"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®ËÄ&nbsp;&nbsp;<input id="radiob2c15" type="radio" class="checkbox"  name="styleb2c" value="14" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2c15" type="radio" class="checkbox"  name="styleb2c" value="14" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_online.gif" width="43" height="16"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_offline.gif" width="43" height="16"></td>
     </tr>
   </table>
@@ -578,105 +578,105 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 <?php if(UB_B2B){ ?>
 <div class="cwarpper1">
-<div class="ctitle">Åú·¢Æ½Ì¨Ç°Ì¨¿Í·þÑùÊ½</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Æ½Ì¨Ç°Ì¨ï¿½Í·ï¿½ï¿½ï¿½Ê½</div>
 <div>
   <table width="557" id="kftable" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">·ç¸ñÒ»&nbsp;&nbsp;<input id="radiob2b1" type="radio" class="checkbox"  name="styleb2b" checked value="0" ></td>
-      <td width="89" align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ò»&nbsp;&nbsp;<input id="radiob2b1" type="radio" class="checkbox"  name="styleb2b" checked value="0" ></td>
+      <td width="89" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td width="130" align="left"><img src="<?php echo $vd['sc']; ?>images/01_online.gif"></td>
-      <td width="90" align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td width="90" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/01_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¶þ&nbsp;&nbsp;<input id="radiob2b2" type="radio" class="checkbox"  name="styleb2b" value="1" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b2" type="radio" class="checkbox"  name="styleb2b" value="1" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÈý&nbsp;&nbsp;<input id="radiob2b3" type="radio" class="checkbox"  name="styleb2b" value="2" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b3" type="radio" class="checkbox"  name="styleb2b" value="2" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñËÄ&nbsp;&nbsp;<input id="radiob2b4" type="radio" class="checkbox"  name="styleb2b" value="3" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b4" type="radio" class="checkbox"  name="styleb2b" value="3" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÎå&nbsp;&nbsp;<input id="radiob2b5" type="radio" class="checkbox"  name="styleb2b" value="4" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b5" type="radio" class="checkbox"  name="styleb2b" value="4" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÁù&nbsp;&nbsp;<input id="radiob2b6" type="radio" class="checkbox"  name="styleb2b" value="5" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b6" type="radio" class="checkbox"  name="styleb2b" value="5" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/06_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/06_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÆß&nbsp;&nbsp;<input id="radiob2b7" type="radio" class="checkbox"  name="styleb2b" value="6" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b7" type="radio" class="checkbox"  name="styleb2b" value="6" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/07_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/07_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ°Ë&nbsp;&nbsp;<input id="radiob2b8" type="radio" class="checkbox"  name="styleb2b" value="7" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b8" type="radio" class="checkbox"  name="styleb2b" value="7" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/08_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/08_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¾Å&nbsp;&nbsp;<input id="radiob2b9" type="radio" class="checkbox"  name="styleb2b" value="8" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b9" type="radio" class="checkbox"  name="styleb2b" value="8" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/09_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/09_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®&nbsp;&nbsp;<input id="radiob2b10" type="radio" class="checkbox"  name="styleb2b" value="9" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®&nbsp;&nbsp;<input id="radiob2b10" type="radio" class="checkbox"  name="styleb2b" value="9" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Ò»&nbsp;&nbsp;<input id="radiob2b11" type="radio" class="checkbox"  name="styleb2b" value="10" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®Ò»&nbsp;&nbsp;<input id="radiob2b11" type="radio" class="checkbox"  name="styleb2b" value="10" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®¶þ&nbsp;&nbsp;<input id="radiob2b12" type="radio" class="checkbox"  name="styleb2b" value="11" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b12" type="radio" class="checkbox"  name="styleb2b" value="11" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Èý&nbsp;&nbsp;<input id="radiob2b13" type="radio" class="checkbox"  name="styleb2b" value="12" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b13" type="radio" class="checkbox"  name="styleb2b" value="12" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®ËÄ&nbsp;&nbsp;<input id="radiob2b15" type="radio" class="checkbox"  name="styleb2b" value="14" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radiob2b15" type="radio" class="checkbox"  name="styleb2b" value="14" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_online.gif" /></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_offline.gif"></td>
     </tr>
   </table>
@@ -686,105 +686,105 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 <?php if(UB_YKT){ ?>
 <div class="cwarpper1">
-<div class="ctitle">Ò»¿¨Í¨Æ½Ì¨Ç°Ì¨¿Í·þÑùÊ½</div>
+<div class="ctitle">Ò»ï¿½ï¿½Í¨Æ½Ì¨Ç°Ì¨ï¿½Í·ï¿½ï¿½ï¿½Ê½</div>
 <div>
   <table width="557" id="kftable" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">·ç¸ñÒ»&nbsp;&nbsp;<input id="radioykt1" type="radio" class="checkbox"  name="styleykt" checked value="0" ></td>
-      <td width="89" align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ò»&nbsp;&nbsp;<input id="radioykt1" type="radio" class="checkbox"  name="styleykt" checked value="0" ></td>
+      <td width="89" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td width="130" align="left"><img src="<?php echo $vd['sc']; ?>images/01_online.gif"></td>
-      <td width="90" align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td width="90" align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/01_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¶þ&nbsp;&nbsp;<input id="radioykt2" type="radio" class="checkbox"  name="styleykt" value="1" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt2" type="radio" class="checkbox"  name="styleykt" value="1" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/02_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÈý&nbsp;&nbsp;<input id="radioykt3" type="radio" class="checkbox"  name="styleykt" value="2" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt3" type="radio" class="checkbox"  name="styleykt" value="2" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_online.gif" ></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/03_offline.gif" ></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñËÄ&nbsp;&nbsp;<input id="radioykt4" type="radio" class="checkbox"  name="styleykt" value="3" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt4" type="radio" class="checkbox"  name="styleykt" value="3" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/04_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÎå&nbsp;&nbsp;<input id="radioykt5" type="radio" class="checkbox"  name="styleykt" value="4" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt5" type="radio" class="checkbox"  name="styleykt" value="4" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/05_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÁù&nbsp;&nbsp;<input id="radioykt6" type="radio" class="checkbox"  name="styleykt" value="5" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt6" type="radio" class="checkbox"  name="styleykt" value="5" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/06_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/06_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÆß&nbsp;&nbsp;<input id="radioykt7" type="radio" class="checkbox"  name="styleykt" value="6" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt7" type="radio" class="checkbox"  name="styleykt" value="6" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/07_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/07_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ°Ë&nbsp;&nbsp;<input id="radioykt8" type="radio" class="checkbox"  name="styleykt" value="7" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt8" type="radio" class="checkbox"  name="styleykt" value="7" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/08_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/08_offline.gif" /></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñ¾Å&nbsp;&nbsp;<input id="radioykt9" type="radio" class="checkbox"  name="styleykt" value="8" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt9" type="radio" class="checkbox"  name="styleykt" value="8" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/09_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/09_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®&nbsp;&nbsp;<input id="radioykt10" type="radio" class="checkbox"  name="styleykt" value="9" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®&nbsp;&nbsp;<input id="radioykt10" type="radio" class="checkbox"  name="styleykt" value="9" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/10_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Ò»&nbsp;&nbsp;<input id="radioykt11" type="radio" class="checkbox"  name="styleykt" value="10" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®Ò»&nbsp;&nbsp;<input id="radioykt11" type="radio" class="checkbox"  name="styleykt" value="10" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/11_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®¶þ&nbsp;&nbsp;<input id="radioykt12" type="radio" class="checkbox"  name="styleykt" value="11" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt12" type="radio" class="checkbox"  name="styleykt" value="11" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/12_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®Èý&nbsp;&nbsp;<input id="radioykt13" type="radio" class="checkbox"  name="styleykt" value="12" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt13" type="radio" class="checkbox"  name="styleykt" value="12" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/13_offline.gif"></td>
     </tr>
     <tr>
-      <td class="tablelt">·ç¸ñÊ®ËÄ&nbsp;&nbsp;<input id="radioykt15" type="radio" class="checkbox"  name="styleykt" value="14" ></td>
-      <td align="right">ÔÚÏß×´Ì¬£º&nbsp;</td>
+      <td class="tablelt">ï¿½ï¿½ï¿½Ê®ï¿½ï¿½&nbsp;&nbsp;<input id="radioykt15" type="radio" class="checkbox"  name="styleykt" value="14" ></td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_online.gif"></td>
-      <td align="right">ÀëÏß×´Ì¬£º&nbsp;</td>
+      <td align="right">ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½&nbsp;</td>
       <td align="left"><img src="<?php echo $vd['sc']; ?>images/qq15_offline.gif"></td>
     </tr>
   </table>
@@ -798,17 +798,17 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="submit" value=" ÐÞ ¸Ä " class="btn"/>
-    <input type="reset" value=" ÖØ ÖÃ " class="btn"/>
+    <input type="submit" value=" ï¿½ï¿½ ï¿½ï¿½ " class="btn"/>
+    <input type="reset" value=" ï¿½ï¿½ ï¿½ï¿½ " class="btn"/>
   </div>
 </div>
 </form>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ÏµÍ³»ù±¾ÉèÖÃ"><font color="#000">ÏµÍ³»ù±¾ÉèÖÃ</font></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_index" onFocus="this.blur()" title="²é¿´Æ½Ì¨»ù±¾ÐÅÏ¢Ïà¹Ø°ïÖú"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"><font color="#000">ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></a></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_index" onFocus="this.blur()" title="ï¿½é¿´Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 2;

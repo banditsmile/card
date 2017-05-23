@@ -38,7 +38,7 @@ class ProductController extends Controller
 												$R7965cb3798 = getvar( "keywords" );
 												if ( trim( $R7965cb3798 ) == "" )
 												{
-																$this->Alert( "¹Ø¼ü´Ê²»ÄÜÎª¿Õ" );
+																$this->Alert( "ï¿½Ø¼ï¿½ï¿½Ê²ï¿½ï¿½ï¿½Îªï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -59,7 +59,7 @@ class ProductController extends Controller
 								{
 												if ( 1 < strlen( $Rb62a6519ba ) && $Rb62a6519ba != "09" )
 												{
-																$this->Alert( "²ÎÊý´íÎó" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 												$R4e420efcc3 = $this->GetPinYinCache( $Rb62a6519ba );
@@ -471,7 +471,7 @@ class ProductController extends Controller
 								$R2f07e1d8b8 = $this->GetAgentCache( $R4c4e792da9 );
 								if ( !isset( $R2f07e1d8b8['parentid'] ) || $R2f07e1d8b8['parentid'] != $R2a51483b14 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								global $masterid;
@@ -673,7 +673,7 @@ class ProductController extends Controller
 												$R4c97fa9810 = doubleval( request( "price_".$R0f8134fb60 ) );
 												if ( $R4c97fa9810 < $R4f39743f74 )
 												{
-																$this->Alert( "¼Û¸ñ²»ÔÊÐíµÍÓÚÄúµÄ½ø»õ¼Û£¬ÖØÐÂÉèÖÃ°É£¡" );
+																$this->Alert( "ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½Û£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°É£ï¿½" );
 																$this->HistoryGo( );
 												}
 												$data["price_".$R0f8134fb60] = doubleval( request( "price_".$R0f8134fb60 ) );
@@ -696,7 +696,7 @@ class ProductController extends Controller
 																$R5ff3ab27b8->IPrice_Create( $data );
 												}
 								}
-								$this->Alert( "¸üÐÂ³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=product&a=ViewAgentPrice&pid=".$R8e8b5578f7 );
 				}
 
@@ -725,11 +725,11 @@ class ProductController extends Controller
 								{
 												return 0;
 								}
-								$R768ed9c2d9 = "30·ÖÖÓ";
+								$R768ed9c2d9 = "30ï¿½ï¿½ï¿½ï¿½";
 								switch ( $R52690cedc4 )
 								{
 								case 1800 :
-												$R768ed9c2d9 = "30·ÖÖÓ";
+												$R768ed9c2d9 = "30ï¿½ï¿½ï¿½ï¿½";
 												break;
 								case 3600 :
 												$R768ed9c2d9 = "1Ð¡Ê±";
@@ -747,13 +747,13 @@ class ProductController extends Controller
 												$R768ed9c2d9 = "48Ð¡Ê±";
 												break;
 								case 259200 :
-												$R768ed9c2d9 = "3Ìì";
+												$R768ed9c2d9 = "3ï¿½ï¿½";
 												break;
 								case 432000 :
-												$R768ed9c2d9 = "5Ìì";
+												$R768ed9c2d9 = "5ï¿½ï¿½";
 												break;
 								case 604800 :
-												$R768ed9c2d9 = "7Ìì";
+												$R768ed9c2d9 = "7ï¿½ï¿½";
 												break;
 								default :
 												break;
@@ -763,7 +763,7 @@ class ProductController extends Controller
 								$R35a9abe007 = $Rd94164fb8c - $R5d6b0116e4;
 								if ( $R35a9abe007 < $R52690cedc4 )
 								{
-												$this->Alert( "ÄúºÃ£¬ÏµÍ³ÉèÖÃÐÂ×¢²áÓÃ»§".$R768ed9c2d9."ºó²ÅÄÜ¹º¿¨£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ã»ï¿½".$R768ed9c2d9."ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->CloseWin( );
 								}
 				}
@@ -780,13 +780,13 @@ class ProductController extends Controller
 								}
 								if ( $R8e8b5578f7 == 0 )
 								{
-												$this->Alert( "²ÎÊý´íÎó" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->CloseWin( );
 								}
 								$R3db8f5c8bc = $this->GetProductCache( $R8e8b5578f7 );
 								if ( !isset( $R3db8f5c8bc['sell'] ) || intval( $R3db8f5c8bc['sell'] ) == 0 || $R3db8f5c8bc['forb2b'] == 0 )
 								{
-												$this->Alert( "ÉÌÆ·ÒÑ¾­ÏÂ¼Ü£¡ÇëÑ¡ÔñÆäËüÉÌÆ·»òÕßÁªÏµ¹ÜÀíÔ±" );
+												$this->Alert( "ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½Â¼Ü£ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±" );
 												$this->CloseWin( );
 								}
 								$Rf05cb9bec5 = intval( $R3db8f5c8bc['sale'] );
@@ -803,7 +803,7 @@ class ProductController extends Controller
 												), $R7fb26bbe56 );
 												if ( !isset( $R4e420efcc3[0]['pid'] ) )
 												{
-																$this->Alert( "ÉÌÆ·²»´æÔÚ£¡" );
+																$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -826,7 +826,7 @@ class ProductController extends Controller
 																{
 																				$R7894b33158 = true;
 																				$data['price'] = $Rf64b3b1325;
-																				$this->Alert( "ÏµÍ³¶ÔÉÌÆ·¼Û¸ñ½øÐÐÁËµ÷Õû£¬Äú¿ÉÒÔ²é¿´½ø»õ¼ÛºóÔÙÏÂµ¥£¡" );
+																				$this->Alert( "ÏµÍ³ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²é¿´ï¿½ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½" );
 																}
 																if ( $R3db8f5c8bc['cztpl'] != $Rc28d922133 && $R3db8f5c8bc['ptype'] == 1 && 0 < $Rc28d922133 )
 																{
@@ -869,7 +869,7 @@ class ProductController extends Controller
 																}
 																if ( $R3db8f5c8bc['price'] < $Rf64b3b1325 && $Rf05cb9bec5 == 0 )
 																{
-																				$this->Alert( "ÉÌÆ·¼Û¸ñÉèÖÃ´íÎó£¬ÇëÁªÏµ¹ÜÀíÔ±ÐÞ¸Ä£¡" );
+																				$this->Alert( "ï¿½ï¿½Æ·ï¿½Û¸ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±ï¿½Þ¸Ä£ï¿½" );
 																				$this->CloseWin( );
 																}
 																if ( $R3db8f5c8bc['ptype'] == 1 && 0 < $R3db8f5c8bc['cztpl'] )
@@ -890,7 +890,7 @@ class ProductController extends Controller
 																				}
 																				if ( $R1b69c92460 != $R355ef3fa24['ptype'] )
 																				{
-																								$this->Alert( "ÉÌÆ·ÀàÐÍÉèÖÃ´íÎó£¬ÇëÁªÏµ¹ÜÀíÔ±ÐÞ¸Ä£¡" );
+																								$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±ï¿½Þ¸Ä£ï¿½" );
 																								$this->CloseWin( );
 																				}
 																}
@@ -900,7 +900,7 @@ class ProductController extends Controller
 												}
 												else
 												{
-																$this->Alert( "ÍøÂçÍ¨ÐÅ´íÎó£¬ÇëÉÔºó¹ºÂò£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Å´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½" );
 																$this->CloseWin( );
 												}
 								}
@@ -915,7 +915,7 @@ class ProductController extends Controller
 																) );
 																if ( !isset( $R4e420efcc3[0]['ptype'] ) )
 																{
-																				$this->Alert( "ÉÌÆ·²»´æÔÚ£¡" );
+																				$this->Alert( "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½" );
 																				$this->HistoryGo( );
 																}
 												}
@@ -976,7 +976,7 @@ class ProductController extends Controller
 				public function Zone( )
 				{
 								include_once( UPATH_HELPER."ProductHelper.php" );
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R7d2c561fef = intval( request( "nostock" ) );
 								$R3a8b307327 = $this->GetDec( );
 								$R8e8b5578f7 = intval( request( "pid" ) );
@@ -984,7 +984,7 @@ class ProductController extends Controller
 								if ( isset( $R3db8f5c8bc['ptype'] ) )
 								{
 												$R0f8134fb60 = $R3db8f5c8bc;
-												echo "¶ÁÈ¡ÖÐ..";
+												echo "ï¿½ï¿½È¡ï¿½ï¿½..";
 												$Rcc5c6e696c = $this->session->agent;
 												$R2a51483b14 = $Rcc5c6e696c[7];
 												$R198d213635 = 1;
@@ -1053,7 +1053,7 @@ class ProductController extends Controller
 								}
 								else
 								{
-												echo "<font color=\"#cccccc\">ÉÌÆ·ÒÑ¾­²»´æÔÚ</font>";
+												echo "<font color=\"#cccccc\">ï¿½ï¿½Æ·ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>";
 								}
 								exit( );
 				}
@@ -1129,7 +1129,7 @@ class ProductController extends Controller
 
 				public function PInfo( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								include_once( UPATH_HELPER."ArticleHelper.php" );
 								$R8e8b5578f7 = intval( request( "pid" ) );
 								$R3db8f5c8bc = $this->GetProductCache( $R8e8b5578f7 );
@@ -1164,7 +1164,7 @@ class ProductController extends Controller
 
 				public function PSupInfo( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R8e8b5578f7 = intval( request( "pid" ) );
 								$R3db8f5c8bc = $this->GetProductCache( $R8e8b5578f7 );
 								$R2a51483b14 = 0;

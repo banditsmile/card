@@ -1,118 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>ÏÂ¼¶¿Í»§µµ°¸¹ÜÀí</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="/content/mod_b2b/js/utils.js"></script>
-</head>
-		<form name="query" method="get" action="index.php">
-<body>
-      <script type="text/javascript">
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-</script> 
-<script type="text/javascript" language="javascript">
-    function Refresh(id) {
-        var theForm = document.forms["form1"];
-        if (!theForm) {
-            theForm = document.form1;
-        }
-        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-            theForm.Refresh1$HiddenField1.value = "1";
-            if (id != undefined)
-            {
-                theForm.Refresh1$HiddenField2.value = id;
-            }
-            theForm.submit();
-        }
-    }
-</script>
-    <div class="new_qie">
-      <div class="new_qie2">
-            <h2>
-                ÏÂ¼¶¿Í»§ÁĞ±í</h2>
-        </div>
-    </div>
-    <div class="input_div">
-        <a href="index.php?m=mod_agent&c=Underling&a=Add" class="input_add">ĞÂ½¨ÏÂ¼¶</a></div>
-    <table cellspacing="1" cellpadding="2" class="table5">
-        <tr>
-            <td width="15%" class="td_left">
-                ¹Ø¼ü×Ö£º            </td>
-            <td class="tdleft">
-                <input name="keywords" class="input0" type="text" id="keywords" />            </td>
-        </tr>
-        <tr>
-            <td class="td_left">
-                ²éÑ¯ÀàĞÍ£º            </td>
-          <td class="tdleft"><span class="tableright1">
-            <select name="stype">
-              <option value="aid" >¿Í»§±àºÅ</option>
-              <option value="aname" >ÓÃ»§Ãû</option>
-              <option value="company" >ÉÌ»§Ãû³Æ</option>
-              <option value="arealname" >ÁªÏµÈË</option>
-              <option value="aqq" >ÁªÏµQQ</option>
-              <option value="atel" >ÁªÏµµç»°</option>
-              <option value="mobile" >ÊÖ»úºÅÂë</option>
-            </select>
-          </span></td>
-        </tr>
-        <tr>
-            <td class="td_left">            </td>
-            <td class="tdleft">
-                			<input type="hidden" name="m" value="mod_agent">
-			<input type="hidden" name="c" value="Underling">
-			<input name="Submit" type="submit" class="input_s" value=" "></td>
-        </tr>
-    </table>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-      <tr>
-        <th width="7%" height="41">±àºÅ</th>
-        <th width="14%">ÕË»§Ãû</th>
-        <th width="16%"><span class="heardertop1">ÉÌ»§Ãû³Æ</span></th>
-        <th width="10%"><span class="heardertop1">ÓÃ»§¼¶±ğ</span></th>
-        <th width="9%"><span class="heardertop1">ÁªÏµÈË</span></th>
-        <th width="8%"><span class="heardertop1">ÁªÏµQQ</span></th>
-        <th width="7%"><span class="heardertop1">ÊÖ»úºÅÂë</span></th>
-        <th width="9%"><span class="heardertop1">ÁªÏµµç»°</span></th>
-        <th width="6%"><span class="heardertop1">×´Ì¬</span></th>
-        <th width="11%"><span class="heardertop1">ÏÂ¼¶</span></th>
-        <th width="3%"><span class="heardertop1">¹ÜÀí</span></th>
-      <!--foreach($vd['items'] as $item) {-->
-		  	  	    <tr class="trd">
-        <td>{$item['aid']}</td>
-        <td>{$item['aname']}</td>
-        <td align=left>{$item['company']}</td>
-        <td>{$item['rank']}</td>
-        <td>{$item['arealname']}</td>
-        <td>{$item['aqq']}</td>
-        <td>{$item['mobile']}</td>
-        <td>{$item['atel']}</td>
-        <td><!--if($item['frozen'] == 1){-->
-            <font color="#ff0000">¶³½á</font>
-            <!--}else{-->
-            <font color="#008800">Æô¶¯</font>
-            <!--}--></td>
-        <td><font color="#0000ff">{$item['underlingcount']}¸ö</font></td>
-        <td><a href="index.php?m=mod_agent&amp;c=underling&amp;a=detail&amp;aid={$item['aid']}"><u>¹ÜÀí</u></a></td>
-        <td width="0%"></td>
-      </tr>
-      <!--}-->
-    </table>
-		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-    <div align="right">{load(fpage)}
-    </div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <title>ä¸‹çº§å®¢æˆ·æ¡£æ¡ˆç®¡ç†</title>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />	<script type="text/javascript" src="/content/mod_b2b/js/utils.js"></script></head>		<form name="query" method="get" action="index.php"><body>      <script type="text/javascript">var theForm = document.forms['form1'];if (!theForm) {    theForm = document.form1;}function __doPostBack(eventTarget, eventArgument) {    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {        theForm.__EVENTTARGET.value = eventTarget;        theForm.__EVENTARGUMENT.value = eventArgument;        theForm.submit();    }}</script> <script type="text/javascript" language="javascript">    function Refresh(id) {        var theForm = document.forms["form1"];        if (!theForm) {            theForm = document.form1;        }        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {            theForm.Refresh1$HiddenField1.value = "1";            if (id != undefined)            {                theForm.Refresh1$HiddenField2.value = id;            }            theForm.submit();        }    }</script>    <div class="new_qie">      <div class="new_qie2">            <h2>                ä¸‹çº§å®¢æˆ·åˆ—è¡¨</h2>        </div>    </div>    <div class="input_div">        <a href="index.php?m=mod_agent&c=Underling&a=Add" class="input_add">æ–°å»ºä¸‹çº§</a></div>    <table cellspacing="1" cellpadding="2" class="table5">        <tr>            <td width="15%" class="td_left">                å…³é”®å­—ï¼š            </td>            <td class="tdleft">                <input name="keywords" class="input0" type="text" id="keywords" />            </td>        </tr>        <tr>            <td class="td_left">                æŸ¥è¯¢ç±»å‹ï¼š            </td>          <td class="tdleft"><span class="tableright1">            <select name="stype">              <option value="aid" >å®¢æˆ·ç¼–å·</option>              <option value="aname" >ç”¨æˆ·å</option>              <option value="company" >å•†æˆ·åç§°</option>              <option value="arealname" >è”ç³»äºº</option>              <option value="aqq" >è”ç³»QQ</option>              <option value="atel" >è”ç³»ç”µè¯</option>              <option value="mobile" >æ‰‹æœºå·ç </option>            </select>          </span></td>        </tr>        <tr>            <td class="td_left">            </td>            <td class="tdleft">                			<input type="hidden" name="m" value="mod_agent">			<input type="hidden" name="c" value="Underling">			<input name="Submit" type="submit" class="input_s" value=" "></td>        </tr>    </table>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">      <tr>        <th width="7%" height="41">ç¼–å·</th>        <th width="14%">è´¦æˆ·å</th>        <th width="16%"><span class="heardertop1">å•†æˆ·åç§°</span></th>        <th width="10%"><span class="heardertop1">ç”¨æˆ·çº§åˆ«</span></th>        <th width="9%"><span class="heardertop1">è”ç³»äºº</span></th>        <th width="8%"><span class="heardertop1">è”ç³»QQ</span></th>        <th width="7%"><span class="heardertop1">æ‰‹æœºå·ç </span></th>        <th width="9%"><span class="heardertop1">è”ç³»ç”µè¯</span></th>        <th width="6%"><span class="heardertop1">çŠ¶æ€</span></th>        <th width="11%"><span class="heardertop1">ä¸‹çº§</span></th>        <th width="3%"><span class="heardertop1">ç®¡ç†</span></th>      <!--foreach($vd['items'] as $item) {-->		  	  	    <tr class="trd">        <td>{$item['aid']}</td>        <td>{$item['aname']}</td>        <td align=left>{$item['company']}</td>        <td>{$item['rank']}</td>        <td>{$item['arealname']}</td>        <td>{$item['aqq']}</td>        <td>{$item['mobile']}</td>        <td>{$item['atel']}</td>        <td><!--if($item['frozen'] == 1){-->            <font color="#ff0000">å†»ç»“</font>            <!--}else{-->            <font color="#008800">å¯åŠ¨</font>            <!--}--></td>        <td><font color="#0000ff">{$item['underlingcount']}ä¸ª</font></td>        <td><a href="index.php?m=mod_agent&amp;c=underling&amp;a=detail&amp;aid={$item['aid']}"><u>ç®¡ç†</u></a></td>        <td width="0%"></td>      </tr>      <!--}-->    </table>		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>    <div align="right">{load(fpage)}    </div></body></html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style>
 .search_select {
@@ -36,84 +36,84 @@
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Bank" title="»ã¿îÒøĞĞÁĞ±í"><font color="#000">»ã¿îÒøĞĞÁĞ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['AccountBranch']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_bank_index" onFocus="this.blur()" title="²é¿´»ã¿îÒøĞĞÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Bank" title="æ±‡æ¬¾é“¶è¡Œåˆ—è¡¨"><font color="#000">æ±‡æ¬¾é“¶è¡Œåˆ—è¡¨</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['AccountBranch']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_bank_index" onFocus="this.blur()" title="æŸ¥çœ‹æ±‡æ¬¾é“¶è¡Œç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Bank&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">»ã¿îÒøĞĞĞÅÏ¢ĞŞ¸Ä</div>
+<div class="ctitle">æ±‡æ¬¾é“¶è¡Œä¿¡æ¯ä¿®æ”¹</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-      <td class="tablelt">¿ª»§ĞĞ</td>
+      <td class="tablelt">å¼€æˆ·è¡Œ</td>
       <td class="tablert"><input type="text" name="AccountBranch" size="25" value="{$item['AccountBranch']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÒøĞĞ¿¨ºÅ</td>
+    <td class="tablelt">é“¶è¡Œå¡å·</td>
     <td class="tablert"><input type="text" name="AccountNO" size="25" value="{$item['AccountNO']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">»§Ãû</td>
+    <td class="tablelt">æˆ·å</td>
     <td class="tablert"><input type="text" name="AccountName" size="25" value="{$item['AccountName']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">¿ª»§µØ</td>
+    <td class="tablelt">å¼€æˆ·åœ°</td>
     <td class="tablert"><input type="text" name="Address" size="25" value="{$item['Address']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÆäËûËµÃ÷</td>
+    <td class="tablelt">å…¶ä»–è¯´æ˜</td>
     <td class="tablert"><input type="text" name="other" size="25" value="{$item['other']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÒøĞĞÍøÖ·</td>
+    <td class="tablelt">é“¶è¡Œç½‘å€</td>
     <td class="tablert"><input type="text" name="banksite" size="25" value="{$item['banksite']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÒøĞĞÍ¼±ê</td>
+    <td class="tablelt">é“¶è¡Œå›¾æ ‡</td>
     <td class="tablert">
        <img src="{$vd['root']}content/mod_shared/skins/upload/{$item['bankicon']}" id="bankiconimg" border="0"/>
        <br/><input type="text" id="bankicon" name="bankicon" value="{$item['bankicon']}" size="25"/> 
     </td>
   </tr>
   <tr>
-      <td class="tablelt">Ïà¹ØÊôĞÔ</td>
+      <td class="tablelt">ç›¸å…³å±æ€§</td>
       <td class="tablert">
-        <input type="checkbox" name="settle" value="1" class="checkbox" {#ToggleCheck($item['settle'])}/>ÓÃÓÚ½áËã 
-        <input type="checkbox" name="remit" value="1" class="checkbox" {#ToggleCheck($item['remit'])}/>ÓÃÓÚ»ã¿î 
+        <input type="checkbox" name="settle" value="1" class="checkbox" {#ToggleCheck($item['settle'])}/>ç”¨äºç»“ç®— 
+        <input type="checkbox" name="remit" value="1" class="checkbox" {#ToggleCheck($item['remit'])}/>ç”¨äºæ±‡æ¬¾ 
       </td>
     </tr>
   <tr> 
-    <td class="tablelt">Ñ¡ÔñÍ¼±ê</td>
+    <td class="tablelt">é€‰æ‹©å›¾æ ‡</td>
     <td class="tablert">
        <div class="search_s">
          <span class="search_s1">
            <select class="search_select" onchange="setbankicon(this)">
-              <option value="bank_gh.gif" <!--if($item['bankicon']=='bank_gh.gif'){-->selected<!--}-->>¹¤ÉÌÒøĞĞ</option>
-             <option value="bank_js.gif" <!--if($item['bankicon']=='bank_js.gif'){-->selected<!--}-->>½¨ÉèÒøĞĞ</option>
-             <option value="bank_nh.gif" <!--if($item['bankicon']=='bank_nh.gif'){-->selected<!--}-->>Å©ÒµÒøĞĞ</option>
-             <option value="bank_yz.gif" <!--if($item['bankicon']=='bank_yz.gif'){-->selected<!--}-->>ÓÊÕşÂÌ¿¨</option>
-             <option value="bank_zh.gif" <!--if($item['bankicon']=='bank_zh.gif'){-->selected<!--}-->>ÕĞÉÌÒøĞĞ</option>
-             <option value="bank_jh.gif" <!--if($item['bankicon']=='bank_jh.gif'){-->selected<!--}-->>½»Í¨ÒøĞĞ</option>
-             <option value="bank_zg.gif" <!--if($item['bankicon']=='bank_zg.gif'){-->selected<!--}-->>ÖĞ¹úÒøĞĞ</option>
-             <option value="bank_gf.gif" <!--if($item['bankicon']=='bank_gf.gif'){-->selected<!--}-->>¹ã¶«·¢Õ¹ÒøĞĞ</option>
-             <option value="bank_pf.gif" <!--if($item['bankicon']=='bank_pf.gif'){-->selected<!--}-->>ÉÏº£ÆÖ¶«·¢Õ¹ÒøĞĞ</option>
-             <option value="bank_sf.gif" <!--if($item['bankicon']=='bank_sf.gif'){-->selected<!--}-->>ÉîÛÚ·¢Õ¹ÒøĞĞ</option>
-             <option value="bank_ms.gif" <!--if($item['bankicon']=='bank_ms.gif'){-->selected<!--}-->>ÖĞ¹úÃñÉúÒøĞĞ</option>
-             <option value="bank_zx.gif" <!--if($item['bankicon']=='bank_zx.gif'){-->selected<!--}-->>ÖĞĞÅÒøĞĞ</option>
-             <option value="bank_xy.gif" <!--if($item['bankicon']=='bank_xy.gif'){-->selected<!--}-->>ĞËÒµÒøĞĞ</option>
-             <option value="bank_gd.gif" <!--if($item['bankicon']=='bank_gd.gif'){-->selected<!--}-->>¹â´óÒøĞĞ</option>
-             <option value="bank_hx.gif" <!--if($item['bankicon']=='bank_hx.gif'){-->selected<!--}-->>»ªÏÄÒøĞĞ</option>
-             <option value="bank_alipay.gif" <!--if($item['bankicon']=='bank_alipay.gif'){-->selected<!--}-->>Ö§¸¶±¦</option>
-             <option value="bank_tenpay.gif" <!--if($item['bankicon']=='bank_tenpay.gif'){-->selected<!--}-->>²Æ¸¶Í¨</option>
-             <option value="bank_no.gif" <!--if($item['bankicon']=='bank_no.gif'){-->selected<!--}-->>ÆÕÍ¨Í¼±ê..</option>
+              <option value="bank_gh.gif" <!--if($item['bankicon']=='bank_gh.gif'){-->selected<!--}-->>å·¥å•†é“¶è¡Œ</option>
+             <option value="bank_js.gif" <!--if($item['bankicon']=='bank_js.gif'){-->selected<!--}-->>å»ºè®¾é“¶è¡Œ</option>
+             <option value="bank_nh.gif" <!--if($item['bankicon']=='bank_nh.gif'){-->selected<!--}-->>å†œä¸šé“¶è¡Œ</option>
+             <option value="bank_yz.gif" <!--if($item['bankicon']=='bank_yz.gif'){-->selected<!--}-->>é‚®æ”¿ç»¿å¡</option>
+             <option value="bank_zh.gif" <!--if($item['bankicon']=='bank_zh.gif'){-->selected<!--}-->>æ‹›å•†é“¶è¡Œ</option>
+             <option value="bank_jh.gif" <!--if($item['bankicon']=='bank_jh.gif'){-->selected<!--}-->>äº¤é€šé“¶è¡Œ</option>
+             <option value="bank_zg.gif" <!--if($item['bankicon']=='bank_zg.gif'){-->selected<!--}-->>ä¸­å›½é“¶è¡Œ</option>
+             <option value="bank_gf.gif" <!--if($item['bankicon']=='bank_gf.gif'){-->selected<!--}-->>å¹¿ä¸œå‘å±•é“¶è¡Œ</option>
+             <option value="bank_pf.gif" <!--if($item['bankicon']=='bank_pf.gif'){-->selected<!--}-->>ä¸Šæµ·æµ¦ä¸œå‘å±•é“¶è¡Œ</option>
+             <option value="bank_sf.gif" <!--if($item['bankicon']=='bank_sf.gif'){-->selected<!--}-->>æ·±åœ³å‘å±•é“¶è¡Œ</option>
+             <option value="bank_ms.gif" <!--if($item['bankicon']=='bank_ms.gif'){-->selected<!--}-->>ä¸­å›½æ°‘ç”Ÿé“¶è¡Œ</option>
+             <option value="bank_zx.gif" <!--if($item['bankicon']=='bank_zx.gif'){-->selected<!--}-->>ä¸­ä¿¡é“¶è¡Œ</option>
+             <option value="bank_xy.gif" <!--if($item['bankicon']=='bank_xy.gif'){-->selected<!--}-->>å…´ä¸šé“¶è¡Œ</option>
+             <option value="bank_gd.gif" <!--if($item['bankicon']=='bank_gd.gif'){-->selected<!--}-->>å…‰å¤§é“¶è¡Œ</option>
+             <option value="bank_hx.gif" <!--if($item['bankicon']=='bank_hx.gif'){-->selected<!--}-->>åå¤é“¶è¡Œ</option>
+             <option value="bank_alipay.gif" <!--if($item['bankicon']=='bank_alipay.gif'){-->selected<!--}-->>æ”¯ä»˜å®</option>
+             <option value="bank_tenpay.gif" <!--if($item['bankicon']=='bank_tenpay.gif'){-->selected<!--}-->>è´¢ä»˜é€š</option>
+             <option value="bank_no.gif" <!--if($item['bankicon']=='bank_no.gif'){-->selected<!--}-->>æ™®é€šå›¾æ ‡..</option>
            </select>
          </span>
        </div>
     </td>
   </tr>
   <tr> 
-    <td width="10%" align="right" height="46">ÉÏ´«Í¼±ê£º</td>
+    <td width="10%" align="right" height="46">ä¸Šä¼ å›¾æ ‡ï¼š</td>
     <td width="90%" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=imgid&fun=imginfo&inputid=bankicon&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
     <div id="imgid"></div><div id="imgsize"></div>
@@ -122,8 +122,8 @@
   <tr>
     <td class="tablelt""></td>
     <td class="tablert">
-      <input type="submit" value="ĞŞ ¸Ä" class="button"/>
-      <input type="button" value="È¡ Ïû" onclick="disp('adddiv')" class="button"/>
+      <input type="submit" value="ä¿® æ”¹" class="button"/>
+      <input type="button" value="å– æ¶ˆ" onclick="disp('adddiv')" class="button"/>
     </td>
   </tr>
 </table>
@@ -141,7 +141,7 @@
   var ctablenum = 2;
   function imginfo(imgsrc)
   {
-  document.getElementById("imgsize").innerHTML = "¸ß x ¿í£º" + imgsrc.height + " x " + imgsrc.width + "<br/>Í¼Æ¬´óĞ¡£º" + imgsrc.fileSize + " ×Ö½Ú"; 
+  document.getElementById("imgsize").innerHTML = "é«˜ x å®½ï¼š" + imgsrc.height + " x " + imgsrc.width + "<br/>å›¾ç‰‡å¤§å°ï¼š" + imgsrc.fileSize + " å­—èŠ‚"; 
   }
 </script>
 <script src="{$vd['sc']}js/content.js" type="text/javascript"></script>

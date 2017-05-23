@@ -52,7 +52,7 @@ class CategoryController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->ICategory_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "name" => "Ãû³Æ", "pinyin" => "Ê××ÖÄ¸", "ordering" => "ÅÅÐò" );
+								$R00be52aa45 = array( "name" => "ï¿½ï¿½ï¿½ï¿½", "pinyin" => "ï¿½ï¿½ï¿½ï¿½Ä¸", "ordering" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "parentid", $Rac9b8532b8 );
 								$this->Assign( "parent", $R3db8f5c8bc );
@@ -65,7 +65,7 @@ class CategoryController extends Controller
 
 				public function Coupon( )
 				{
-								$R030cbb891f = $this->instance->ICategory_GetByName( "Ö§¸¶Àà" );
+								$R030cbb891f = $this->instance->ICategory_GetByName( "Ö§ï¿½ï¿½ï¿½ï¿½" );
 								if ( !isset( $R030cbb891f['name'] ) )
 								{
 												$this->AddCoupon( );
@@ -80,7 +80,7 @@ class CategoryController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->ICategory_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "name" => "Ãû³Æ", "pinyin" => "Ê××ÖÄ¸", "ordering" => "ÅÅÐò" );
+								$R00be52aa45 = array( "name" => "ï¿½ï¿½ï¿½ï¿½", "pinyin" => "ï¿½ï¿½ï¿½ï¿½Ä¸", "ordering" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "parentid", $Rac9b8532b8 );
 								$this->Assign( "parent", $R3db8f5c8bc );
@@ -169,11 +169,11 @@ class CategoryController extends Controller
 
 				public function AddCoupon( )
 				{
-								$data = array( "parentid" => 0, "color" => "#000000", "ordering" => 0, "name" => "Ö§¸¶Àà", "pinyin" => "", "abst" => "", "hot" => 0, "shared" => 0, "forb2b" => 0, "forb2c" => 0, "forykt" => 0, "fork2k" => 1, "fee" => 0, "code" => 0 );
+								$data = array( "parentid" => 0, "color" => "#000000", "ordering" => 0, "name" => "Ö§ï¿½ï¿½ï¿½ï¿½", "pinyin" => "", "abst" => "", "hot" => 0, "shared" => 0, "forb2b" => 0, "forb2c" => 0, "forykt" => 0, "fork2k" => 1, "fee" => 0, "code" => 0 );
 								$R808b89ba0e = $this->instance->ICategory_Create( $data );
 								if ( !$R808b89ba0e )
 								{
-												$this->Alert( "¶ÁÈ¡Ê§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½È¡Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -219,7 +219,7 @@ class CategoryController extends Controller
 								if ( $R808b89ba0e )
 								{
 												$this->UpdateCache( "category" );
-												$this->Alert( "²Ù×÷³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								}
 								$R36b9ff2e13 = intval( request( "coupon" ) );
 								if ( 0 < $Rac9b8532b8 )
@@ -256,13 +256,13 @@ class CategoryController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -274,10 +274,10 @@ class CategoryController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -289,7 +289,7 @@ class CategoryController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -305,7 +305,7 @@ class CategoryController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -339,7 +339,7 @@ class CategoryController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -378,7 +378,7 @@ class CategoryController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -415,7 +415,7 @@ class CategoryController extends Controller
 								$R808b89ba0e = $this->instance->ICategory_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

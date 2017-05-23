@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">页面广告管理</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ad_index" onFocus="this.blur()" title="查看页面广告相关相关帮助"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">页锟斤拷锟斤拷锟斤拷锟�</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ad_index" onFocus="this.blur()" title="锟介看页锟斤拷锟斤拷锟斤拷锟斤拷锟截帮拷锟斤拷"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
@@ -15,12 +15,12 @@
 <div class="cwarpper1">
 <div class="ctitle">
   <div style="padding-left:5px;padding-bottom:8px;" >
-    请选择广告类型：
+    锟斤拷选锟斤拷锟斤拷锟斤拷锟酵ｏ拷
     <select name="cat" onchange="javascript:location.href='index.php?m=mod_b2b&c=Ad&pos=' + this.options[selectedIndex].value;" class="ubselect">
     <?php (option($vd['adtype'], $vd['pos'])); ?>
     </select>
     <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-      本系统包括友情链接，各类广告图片都是基于广告系统，请选择对应的项进入
+      锟斤拷系统锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟接ｏ拷锟斤拷锟斤拷锟斤拷图片锟斤拷锟角伙拷锟节癸拷锟较低筹拷锟斤拷锟窖★拷锟斤拷应锟斤拷锟斤拷锟斤拷锟�
     </p>
   </div>
 </div>
@@ -29,7 +29,7 @@
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      <img src="<?php echo $vd['sc']; ?>images/add.gif" style="vertical-align:middle" border="0"/> 添加
+      <img src="<?php echo $vd['sc']; ?>images/add.gif" style="vertical-align:middle" border="0"/> 锟斤拷锟�
     </td>
   </tr>
   <tr> 
@@ -39,43 +39,43 @@
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">链接文字</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubztext" value="" size="34"/> 
-    文字颜色：
+    锟斤拷锟斤拷锟斤拷色锟斤拷
     <input type="text" id="textcolor200" name="ubztextcolor" value="" size="15" onkeyup="setcolor(this,200)"/> 
     <input id="colorexample200" type="text" size="1" readonly style="background:#6c6c6c">
     <img src="<?php echo $vd['sc']; ?>images/16.gif" onclick="pickcolor(200)" align="absmiddle" style="cursor:pointer;"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">显示类型</td>
+    <td width="15%" align="right" height="46">锟斤拷示锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()"/> 显示文字
-    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" checked/> 显示图片
+    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()"/> 锟斤拷示锟斤拷锟斤拷
+    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" checked/> 锟斤拷示图片
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">链接网址</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷址</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubzurl" value="" size="34"/> 
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="15%" align="right" height="46">锟较达拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=ad200&fun=imginfo200&inputid=ubzpic200&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">操作</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" name="pos" value="<?php echo $vd['pos']; ?>"/>
-    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" 锟斤拷 锟斤拷 &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="15%" align="right" height="46">图片预锟斤拷<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="ad200"></div><div id="logoinfo200"></div></td>
   </tr>
@@ -86,7 +86,7 @@
 
 function imginfo200(imgsrc)
 {
-  document.getElementById("logoinfo200").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+  document.getElementById("logoinfo200").innerHTML = "锟斤拷 x 锟斤拷" + imgsrc.height + " x " + imgsrc.width + "<br/>图片锟斤拷小锟斤拷" + imgsrc.fileSize + " 锟街斤拷"; 
 }
 
 </script>
@@ -97,7 +97,7 @@ function imginfo200(imgsrc)
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      <span style="float:right;"><a href="index.php?m=mod_b2b&c=Ad&a=Del&id=<?php echo $item['id']; ?>&pos=<?php echo $vd['pos']; ?>" onclick="return confirm('您确定进行删除操作吗？')">
+      <span style="float:right;"><a href="index.php?m=mod_b2b&c=Ad&a=Del&id=<?php echo $item['id']; ?>&pos=<?php echo $vd['pos']; ?>" onclick="return confirm('锟斤拷确锟斤拷锟斤拷锟斤拷删锟斤拷锟斤拷锟斤拷锟斤拷')">
         <img src="<?php echo $vd['sc']; ?>images/icon_trash.gif" border="0"/>
       </a>
       </span>
@@ -116,44 +116,44 @@ function imginfo200(imgsrc)
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">链接文字</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubztext" value="<?php echo $item['text']; ?>" size="34"/> 
-    文字颜色：
+    锟斤拷锟斤拷锟斤拷色锟斤拷
     <input type="text" id="textcolor<?php echo $i; ?>" name="ubztextcolor" value="<?php echo $item['textcolor']; ?>" size="15" onkeyup="setcolor(this,<?php echo $i; ?>)"/> 
     <input id="colorexample<?php echo $i; ?>" type="text" size="1" readonly style="background:<?php echo $item['textcolor']==''?'#6c6c6c' : $item['textcolor'] ?>">
     <img src="<?php echo $vd['sc']; ?>images/16.gif" onclick="pickcolor(<?php echo $i; ?>)" align="absmiddle" style="cursor:pointer;"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">显示类型</td>
+    <td width="15%" align="right" height="46">锟斤拷示锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()" <?php if($item['ispic']==0){ ?>checked<?php } ?>/> 显示文字
-    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" <?php if($item['ispic']==1){ ?>checked<?php } ?>/> 显示图片
+    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()" <?php if($item['ispic']==0){ ?>checked<?php } ?>/> 锟斤拷示锟斤拷锟斤拷
+    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" <?php if($item['ispic']==1){ ?>checked<?php } ?>/> 锟斤拷示图片
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">链接网址</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷址</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubzurl" value="<?php echo $item['url']; ?>" size="34"/> 
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="15%" align="right" height="46">锟较达拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=fs&imgid=ad<?php echo $i; ?>&fun=imginfo<?php echo $i; ?>&inputid=ubzpic<?php echo $i; ?>&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">操作</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" name="id" value="<?php echo $item['id']; ?>"/>
     <input type="hidden" name="pos" value="<?php echo $vd['pos']; ?>"/>
-    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" 锟斤拷 锟斤拷 &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="15%" align="right" height="46">图片预锟斤拷<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="ad<?php echo $i; ?>"></div><div id="logoinfo<?php echo $i; ?>"></div></td>
   </tr>
@@ -163,7 +163,7 @@ function imginfo200(imgsrc)
 <script type="text/javascript">  
 function imginfo<?php echo $i; ?>(imgsrc)
 {
-  document.getElementById("logoinfo" + <?php echo $i; ?>).innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+  document.getElementById("logoinfo" + <?php echo $i; ?>).innerHTML = "锟斤拷 x 锟斤拷" + imgsrc.height + " x " + imgsrc.width + "<br/>图片锟斤拷小锟斤拷" + imgsrc.fileSize + " 锟街斤拷"; 
 }
 </script>
 <?php $i++;} ?>

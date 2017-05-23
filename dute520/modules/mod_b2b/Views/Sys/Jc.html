@@ -1,81 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-</title><meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/style.css" type="text/css" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/style2.css" type="text/css" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/qie.css" type="text/css" /></head>
-
-<style type="text/css">
-td{white-space:normal;overflow:auto;text-overflow:none;}
-td p{display:none}
-td P.show {
-  DISPLAY: block
-}
-td STRONG {
-CURSOR:pointer;
-COLOR:#0197c9;
-PADDING:0 3px;
-}
-
-#jctip{font-size:12px;padding:5px;margin:5px}
-
-</style>
-</head>
-<body>
-<form method="post" action="index.php?m=mod_b2b&c=Sys&a=JcSave" name="cform" id="cform"> 
-<div id="content" class="cwarpper" style="position:relative">
-<div class="cbodyHead"></div>
-<div id="tab">
-<input type="button" value="ÌîĞ´»ù±¾ĞÅÏ¢"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
-<!--if(UB_B2C){--><input type="button" value="ÓÊÏä·¢ËÍÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_normal" onFocus="this.blur()"/><!--}-->
-<input type="button" value="¹Ø±ÕĞÅÏ¢ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="Ç°Ì¨Ïà¹ØÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="ºóÌ¨½»Ò×ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="IPÆÁ±ÎÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
-<!--if($vd['adminrank']==1){--><input type="button" value="Ïà¹Ø½Å±¾ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_active" onFocus="this.blur()"/><!--}-->
-</div>
-<div class="cwarpper1" >
-<div class="ctitle">
-  Åú·¢ÍâÒ³Ò³½Å½Å±¾(Ö§³ÖHTML)
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">¿ÉÒÔÌí¼ÓÆóÒµ¿Í·şµÈµÈĞÅÏ¢£¬Ğè¾²Ì¬Ò³Ãæ·½¿É¼ûµ½Ğ§¹û£¬Èç¹ûÖ»ÊÇÏëÊ×Ò³ÓĞĞ§£¬¿ÉÒÔÔÚ½Å±¾µÄ¿ªÍ·¼ÓÉÏ<br/>{$vd['addtipstart']}<br/>½áÎ²¼ÓÉÏ<br/>{$vd['addtipend']} <br/>±ÈÈçÄúµÄ½Å±¾ÊÇ{$vd['example']}<br/>ÄÇÃ´Äú¿ÉÒÔÔÚÏÂ¿òÖĞÊäÈë<br/>{$vd['addtipstart']}<br/>{$vd['example']}<br/>{$vd['addtipend']}</p>
-</div>
-<div>
-  <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">
-    <tr>
-      <td style="padding:10px">
-      	[<span style="cursor:pointer;color:#0000ff" onclick="disp('jctip')"><u>²é¿´ËµÃ÷</u></span>]<br/>
-      	<div id="jctip" style="display:none">¿ÉÒÔÌí¼ÓÆóÒµ¿Í·şµÈµÈĞÅÏ¢£¬Ğè¾²Ì¬Ò³Ãæ·½¿É¼ûµ½Ğ§¹û£¬Èç¹ûÖ»ÊÇÏëÊ×Ò³ÓĞĞ§£¬¿ÉÒÔÔÚ½Å±¾µÄ¿ªÍ·¼ÓÉÏ<br/><font color="#ff0000">{$vd['addtipstart']}</font><br/>½áÎ²¼ÓÉÏ<br/><font color="#ff0000">{$vd['addtipend']}</font> <br/>±ÈÈçÄúµÄ½Å±¾ÊÇ{$vd['example']}<br/>ÄÇÃ´Äú¿ÉÒÔÔÚÏÂ¿òÖĞÊäÈë<br/><font color="#ff0000">{$vd['addtipstart']}</font><br/>{$vd['example']}</font><br/><font color="#ff0000">{$vd['addtipend']}</font></div>
-        <textarea rows="10" name="b2bjc" style="width:99%;">{$vd['b2bjc']}</textarea>
-      </td>
-    </tr>
-  </table>
-</div>
-</div>
-
-<div class="cbodyFoot"></div>
-</div>
-
-<div id="opcontent">
-  <div class="optxt">
-    <input type="submit" value="ĞŞ¸Ä" class="chaxun_input"/>
-    <input type="reset" value="ÖØÖÃ" class="fanhui_input"/>
-  </div>
-</div>
-</form>
-<input type="hidden" id="webdir" value="{$vd['webdir']}"/>
-<input type="hidden" id="website" value="{$vd['website']}"/>
-<input type="hidden" id="connecter" value="{$vd['connecter']}"/>
-<div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ÏµÍ³»ù±¾ÉèÖÃ"><font color="#000">ÏµÍ³»ù±¾ÉèÖÃ</font></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_close" onFocus="this.blur()" title="²é¿´¹Ø±ÕĞÅÏ¢ÉèÖÃÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
-</div>
-<div id="contentTip" style="display:none;"></div>
-<div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖĞÇëÉÔµÈ...</div>
-</div>
-<script type="text/javascript">
-  var ctablenum = 2;
-</script>
-<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/style.css" type="text/css" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/style2.css" type="text/css" /><link rel="stylesheet" href="http://new.ka365.com.cn/SMCS83KHUA_CO9SJ3JSDG/css/qie.css" type="text/css" /></head><style type="text/css">td{white-space:normal;overflow:auto;text-overflow:none;}td p{display:none}td P.show {  DISPLAY: block}td STRONG {CURSOR:pointer;COLOR:#0197c9;PADDING:0 3px;}#jctip{font-size:12px;padding:5px;margin:5px}</style></head><body><form method="post" action="index.php?m=mod_b2b&c=Sys&a=JcSave" name="cform" id="cform"> <div id="content" class="cwarpper" style="position:relative"><div class="cbodyHead"></div><div id="tab"><input type="button" value="å¡«å†™åŸºæœ¬ä¿¡æ¯"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/><!--if(UB_B2C){--><input type="button" value="é‚®ç®±å‘é€è®¾ç½®" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_normal" onFocus="this.blur()"/><!--}--><input type="button" value="å…³é—­ä¿¡æ¯è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/><input type="button" value="å‰å°ç›¸å…³è®¾ç½®" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_normal" onFocus="this.blur()"/><input type="button" value="åå°äº¤æ˜“è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/><input type="button" value="IPå±è”½è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/><!--if($vd['adminrank']==1){--><input type="button" value="ç›¸å…³è„šæœ¬è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_active" onFocus="this.blur()"/><!--}--></div><div class="cwarpper1" ><div class="ctitle">  æ‰¹å‘å¤–é¡µé¡µè„šè„šæœ¬(æ”¯æŒHTML)  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">å¯ä»¥æ·»åŠ ä¼ä¸šå®¢æœç­‰ç­‰ä¿¡æ¯ï¼Œéœ€é™æ€é¡µé¢æ–¹å¯è§åˆ°æ•ˆæœï¼Œå¦‚æœåªæ˜¯æƒ³é¦–é¡µæœ‰æ•ˆï¼Œå¯ä»¥åœ¨è„šæœ¬çš„å¼€å¤´åŠ ä¸Š<br/>{$vd['addtipstart']}<br/>ç»“å°¾åŠ ä¸Š<br/>{$vd['addtipend']} <br/>æ¯”å¦‚æ‚¨çš„è„šæœ¬æ˜¯{$vd['example']}<br/>é‚£ä¹ˆæ‚¨å¯ä»¥åœ¨ä¸‹æ¡†ä¸­è¾“å…¥<br/>{$vd['addtipstart']}<br/>{$vd['example']}<br/>{$vd['addtipend']}</p></div><div>  <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">    <tr>      <td style="padding:10px">      	[<span style="cursor:pointer;color:#0000ff" onclick="disp('jctip')"><u>æŸ¥çœ‹è¯´æ˜</u></span>]<br/>      	<div id="jctip" style="display:none">å¯ä»¥æ·»åŠ ä¼ä¸šå®¢æœç­‰ç­‰ä¿¡æ¯ï¼Œéœ€é™æ€é¡µé¢æ–¹å¯è§åˆ°æ•ˆæœï¼Œå¦‚æœåªæ˜¯æƒ³é¦–é¡µæœ‰æ•ˆï¼Œå¯ä»¥åœ¨è„šæœ¬çš„å¼€å¤´åŠ ä¸Š<br/><font color="#ff0000">{$vd['addtipstart']}</font><br/>ç»“å°¾åŠ ä¸Š<br/><font color="#ff0000">{$vd['addtipend']}</font> <br/>æ¯”å¦‚æ‚¨çš„è„šæœ¬æ˜¯{$vd['example']}<br/>é‚£ä¹ˆæ‚¨å¯ä»¥åœ¨ä¸‹æ¡†ä¸­è¾“å…¥<br/><font color="#ff0000">{$vd['addtipstart']}</font><br/>{$vd['example']}</font><br/><font color="#ff0000">{$vd['addtipend']}</font></div>        <textarea rows="10" name="b2bjc" style="width:99%;">{$vd['b2bjc']}</textarea>      </td>    </tr>  </table></div></div><div class="cbodyFoot"></div></div><div id="opcontent">  <div class="optxt">    <input type="submit" value="ä¿®æ”¹" class="chaxun_input"/>    <input type="reset" value="é‡ç½®" class="fanhui_input"/>  </div></div></form><input type="hidden" id="webdir" value="{$vd['webdir']}"/><input type="hidden" id="website" value="{$vd['website']}"/><input type="hidden" id="connecter" value="{$vd['connecter']}"/><div id="titleDiv"><div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ç³»ç»ŸåŸºæœ¬è®¾ç½®"><font color="#000">ç³»ç»ŸåŸºæœ¬è®¾ç½®</font></a></div><div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_close" onFocus="this.blur()" title="æŸ¥çœ‹å…³é—­ä¿¡æ¯è®¾ç½®ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div></div><div id="contentTip" style="display:none;"></div><div id="load" style="display:none;">  <div id="loadcontent" >é¡µé¢åŠ è½½ä¸­è¯·ç¨ç­‰...</div></div><script type="text/javascript">  var ctablenum = 2;</script><script src="{$vd['sc']}js/content.js" type="text/javascript"></script></body></html>

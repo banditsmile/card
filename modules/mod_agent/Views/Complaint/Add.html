@@ -1,63 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>������۸�ģ��</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie2">
-  <h2>�ύ��Ͷ��</h2>
-</div>
-  <form method="post" name="complaint" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave">
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td width="22%" height="30" class="table1_left">�����ţ�</td>
-		<td width="78%" class="tableright1"><input type='text' size='20' name='ordno' class='input' value="{$vd['ordno']}" readonly></td>
-		</tr>
-		<tr>
-		<td class="table1_left">Ͷ�߽����ˣ�</td>
-		<td class="tableright1"><strong>
-		<!--if($vd['aid'] > 0){-->������({#DisplayCode($vd['aid'])})<!--}else{-->ƽ̨����Ա<!--}--></strong><input type="hidden" name="msgto" value="{$vd['aid']}"></td>
-		</tr>
-		<tr>
-		<td class="table1_left">Ͷ���������ͣ�</td>
-		<td class="tableright1">
-		<select name="other">
-    <!--if($vd['ptype'] == 1 || $vd['ptype'] == 2){-->
-    <option value="��ʱ��δ����">��ʱ��δ����</option>
-		<option value="��ֵ�ɹ�δ����" selected>��ֵ�ɹ�δ����</option>
-		<option value="���ɶ���δ����">���ɶ���δ����</option>
-		<!--}else{-->
-		<option value="�Ῠǰ����ֵ">�Ῠǰ����ֵ</option>
-		<option value="���Ż��������" selected>���Ż��������</option>
-		<option value="��ֵ�ɹ�δ����">��ֵ�ɹ�δ����</option>
-		<option value="�Ῠ�󱻳�ֵ">�Ῠ�󱻳�ֵ</option>
-		<option value="���ἴ�þ���">���ἴ�þ���</option>
-		<!--}-->
-		<option value="��������">��������</option>
-		</select>
-		</td>
-		</tr>
-		<tr>
-		<td class="table1_left">ϣ��������ʩ��</td>
-		<td class="tableright1"><input type="radio" name="hope" value="����" id="treat2" checked><label for="treat2">��<!--if($vd['ptype'] == 1 || $vd['ptype'] == 2){-->��ֵ<!--}else{-->��<!--}--></label> <input type="radio" name="hope" value="��Ǯ" id="treat3"><label for="treat3">��Ǯ</label> <input type="radio" name="hope" value="����" id="treat4"><label for="treat4">����</label></td>
-		</tr>
-		<tr>
-		<td class="table1_left">Ͷ�����ݣ�</td>
-		<td class="tableright1"><textarea name="content" cols="80" rows="5" class='input' onFocus="javascript:if(document.complaint.content.value=='��������ҪͶ�ߵ�����'){document.complaint.content.value='';}">��������ҪͶ�ߵ�����</textarea></td>
-		</tr>
-		<tr>
-		<td height="30" class="table1_left">&nbsp;</td>
-		<td class="tableright1">
-		<input name="submit" type="submit" class="button" value="ȷ���ύ">
-		<input name="reset2" type="reset" class="button" value="������д"></td>
-		</tr>
-	</table>
-</form>
-	</td>
-	</tr>
-</table>
-	
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>单级别价格模板</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie2">  <h2>提交新投诉</h2></div>  <form method="post" name="complaint" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave">      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td width="22%" height="30" class="table1_left">订单号：</td>		<td width="78%" class="tableright1"><input type='text' size='20' name='ordno' class='input' value="{$vd['ordno']}" readonly></td>		</tr>		<tr>		<td class="table1_left">投诉接收人：</td>		<td class="tableright1"><strong>		<!--if($vd['aid'] > 0){-->供货商({#DisplayCode($vd['aid'])})<!--}else{-->平台管理员<!--}--></strong><input type="hidden" name="msgto" value="{$vd['aid']}"></td>		</tr>		<tr>		<td class="table1_left">投诉问题类型：</td>		<td class="tableright1">		<select name="other">    <!--if($vd['ptype'] == 1 || $vd['ptype'] == 2){-->    <option value="长时间未代充">长时间未代充</option>		<option value="充值成功未到账" selected>充值成功未到账</option>		<option value="可疑订单未复核">可疑订单未复核</option>		<!--}else{-->		<option value="提卡前被充值">提卡前被充值</option>		<option value="卡号或密码错误" selected>卡号或密码错误</option>		<option value="充值成功未到账">充值成功未到账</option>		<option value="提卡后被充值">提卡后被充值</option>		<option value="即提即用纠纷">即提即用纠纷</option>		<!--}-->		<option value="其他问题">其他问题</option>		</select>		</td>		</tr>		<tr>		<td class="table1_left">希望处理措施：</td>		<td class="tableright1"><input type="radio" name="hope" value="补卡" id="treat2" checked><label for="treat2">补<!--if($vd['ptype'] == 1 || $vd['ptype'] == 2){-->充值<!--}else{-->卡<!--}--></label> <input type="radio" name="hope" value="退钱" id="treat3"><label for="treat3">退钱</label> <input type="radio" name="hope" value="其他" id="treat4"><label for="treat4">其他</label></td>		</tr>		<tr>		<td class="table1_left">投诉内容：</td>		<td class="tableright1"><textarea name="content" cols="80" rows="5" class='input' onFocus="javascript:if(document.complaint.content.value=='请描述需要投诉的内容'){document.complaint.content.value='';}">请描述需要投诉的内容</textarea></td>		</tr>		<tr>		<td height="30" class="table1_left">&nbsp;</td>		<td class="tableright1">		<input name="submit" type="submit" class="button" value="确认提交">		<input name="reset2" type="reset" class="button" value="重新填写"></td>		</tr>	</table></form>	</td>	</tr></table>	</body></html>

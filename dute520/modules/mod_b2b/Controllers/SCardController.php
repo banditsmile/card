@@ -45,7 +45,7 @@ class ScardController extends Controller
 								$data = array_merge( $data, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->service->ICard_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "ubzcardnumber" => "¿¨ºÅ", "ubzordno" => "¶©µ¥ºÅ", "ubzpname" => "ÉÌÆ·Ãû³Æ", "ubzpid" => "ÉÌÆ·±àºÅ" );
+								$R00be52aa45 = array( "ubzcardnumber" => "ï¿½ï¿½ï¿½ï¿½", "ubzordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ubzpname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "ubzpid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 								include_once( UPATH_HELPER."CardHelper.php" );
 					
@@ -92,7 +92,7 @@ class ScardController extends Controller
 												"action" => $this->action[2]
 								);
 								$R3db8f5c8bc = $this->service->ICard_Save( $data );
-								$this->Alert( "²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=SCard" );
 				}
 
@@ -107,7 +107,7 @@ class ScardController extends Controller
 								$this->Assign( "succ", $R3db8f5c8bc['item']['ubzsadd'] );
 								$this->Assign( "fail", $R3db8f5c8bc['item']['ubzfadd'] );
 								$this->Assign( "pname", $R3db8f5c8bc['item']['ubzpname'] );
-								$this->Alert( "²Ù×÷³É¹¦£¡" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 					
 												$this->View( );
 					
@@ -120,13 +120,13 @@ class ScardController extends Controller
 												"action" => $this->action[1]
 								);
 								$this->service->ICard_Save( $data );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->View( "Index" );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -156,7 +156,7 @@ class ScardController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 

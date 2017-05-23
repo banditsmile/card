@@ -1,117 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Ä£°å¼Û¸ñ¹ÜÀí</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>Ä£°å¼Û¸ñ¹ÜÀí</h2>
-  </div>
-  <ul>
-    <li><a href="" class="on">Ä£°å¼Û¸ñ¹ÜÀí</a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=price&amp;a=AddRankTpl"><span>µ¥¼¶±ğ¼Û¸ñÄ£°å</span></a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=AgentPrice"><span >ÉÌÆ·¼Û¸ñÉèÖÃ</span></a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>ÉÌÆ·¼Û¸ñÃÜ¼Û</span></a></li>
-  </ul>
-</div>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-		<form name="bulletin" method="post" action="index.php?m=mod_b2b&c=Price&a=Save">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<!--foreach($vd['items'] as $item) {-->
-    <tr>
-      <td class="table1_left">{$item['name']}£º</span></td>
-      <td width="78%" class="tableright1">
-      	<div align="left">
-      	  <input name="id[]" type="hidden" value="{$item['id']}"/>
-		  <select name="priceplan_{$item['id']}"onChange="set(this, {$item['id']})">
-      	    <option value="1"
-      	    <!--if($item['priceplan']==1){-->
-      	     selected
-      	    <!--}-->
-      	    >·½°¸Ò»(ÀûÈóÕÛ¿Û)
-      	    </option>
-      	    <option value="2"
-      	    <!--if($item['priceplan']==2){-->
-      	     selected
-      	    <!--}-->
-      	    >·½°¸¶ş(Ö±½ÓÀÛ¼Ó)
-      	    </option>
-      	    <option value="3"
-      	    <!--if($item['priceplan']==3){-->
-      	     selected
-      	    <!--}-->
-      	    >·½°¸Èı(ÃæÖµÕÛ¿Û)
-      	    </option>
-    	    </select>
-      	  ¼Û¸ñ = 
-      	  <input name="discout_{$item['id']}" type="text" size="5" value="{$item['discout']}" />
-      	  <span id="std_{$item['id']}">{$item['char']} 
-      	    <!--if($item['priceplan']==1){-->
-      	    x (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) + ÎÒµÄ½ø»õ¼Û
-      	    <!--}-->
-      	    <!--if($item['priceplan']==2){-->
-      	    + ÎÒµÄ½ø»õ¼Û
-      	    <!--}-->
-      	     <!--if($item['priceplan']==3){-->
-      	    x ÃæÖµ + ÎÒµÄ½ø»õ¼Û
-      	    <!--}-->
-    	    </span> </div></td>
-    </tr>
-    <!--}-->
-    <tr>
-     <td class="table1_left"> Ïà¹ØËµÃ÷£º </td>
-      <td width="78%" class="tableright1">
-      	<div align="left"><br/>
-    	  </div>
-      	<p align="left"> ·½°¸Ò»(ÀûÈóÕÛ¿Û)£º¶ÔÓ¦¼¶±ğ¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) x ±ÈÀı</p>
-        <p align="left">&nbsp;</p>
-        <p align="left"> ·½°¸¶ş(Ö±½ÓÀÛ¼Ó)£º¶ÔÓ¦¼¶±ğ¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + ±ÈÀı</p>
-        <p align="left">&nbsp;</p>
-        <p align="left"> ·½°¸Èı(ÃæÖµÕÛ¿Û)£º¶ÔÓ¦¼¶±ğ¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + ÃæÖµ x ±ÈÀı</p>
-        <div align="left"><br/>      
-        </div></td>
-    </tr>
-		<tr>
-		  <td class="table1_left">&nbsp;</td>
-		<td height="30" class="tableright1"><div align="left">
-		  <input type="submit" value="È·ÈÏÉèÖÃ" class="tijiao_input" name="submit">
-		  <input type="reset" value="ÖØĞÂÌîĞ´" class="fanhui_input" name="reset">
-		  </div></td>
-		</tr>
-		</table>
-		</form>
-	</td>
-	</tr>
-</table>
-<script type="text/JavaScript">
-var $ = function(id){
-	return document.getElementById(id);
-}
-
-function set(obj, idx)
-{
-	val = obj.options[obj.selectedIndex].value;
-	str = "";
-	if(val == "1")
-	{
-		str = "% x (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) + ÎÒµÄ½ø»õ¼Û";
-	}
-  else if(val == "2")
-  {
-  	str = "{$vd['lang']['moneyunit']} + ÎÒµÄ½ø»õ¼Û";
-  }
-  else
-	{
-		str = "% x ÃæÖµ + ÎÒµÄ½ø»õ¼Û";
-	}
-	
-	$("std_"+idx).innerHTML = str;
-}
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>æ¨¡æ¿ä»·æ ¼ç®¡ç†</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>æ¨¡æ¿ä»·æ ¼ç®¡ç†</h2>  </div>  <ul>    <li><a href="" class="on">æ¨¡æ¿ä»·æ ¼ç®¡ç†</a></li>    <li><a href="index.php?m=mod_b2b&amp;c=price&amp;a=AddRankTpl"><span>å•çº§åˆ«ä»·æ ¼æ¨¡æ¿</span></a></li>    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=AgentPrice"><span >å•†å“ä»·æ ¼è®¾ç½®</span></a></li>    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>å•†å“ä»·æ ¼å¯†ä»·</span></a></li>  </ul></div><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="bulletin" method="post" action="index.php?m=mod_b2b&c=Price&a=Save"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<!--foreach($vd['items'] as $item) {-->    <tr>      <td class="table1_left">{$item['name']}ï¼š</span></td>      <td width="78%" class="tableright1">      	<div align="left">      	  <input name="id[]" type="hidden" value="{$item['id']}"/>		  <select name="priceplan_{$item['id']}"onChange="set(this, {$item['id']})">      	    <option value="1"      	    <!--if($item['priceplan']==1){-->      	     selected      	    <!--}-->      	    >æ–¹æ¡ˆä¸€(åˆ©æ¶¦æŠ˜æ‰£)      	    </option>      	    <option value="2"      	    <!--if($item['priceplan']==2){-->      	     selected      	    <!--}-->      	    >æ–¹æ¡ˆäºŒ(ç›´æ¥ç´¯åŠ )      	    </option>      	    <option value="3"      	    <!--if($item['priceplan']==3){-->      	     selected      	    <!--}-->      	    >æ–¹æ¡ˆä¸‰(é¢å€¼æŠ˜æ‰£)      	    </option>    	    </select>      	  ä»·æ ¼ =       	  <input name="discout_{$item['id']}" type="text" size="5" value="{$item['discout']}" />      	  <span id="std_{$item['id']}">{$item['char']}       	    <!--if($item['priceplan']==1){-->      	    x (é¢å€¼ - æˆ‘çš„è¿›è´§ä»·) + æˆ‘çš„è¿›è´§ä»·      	    <!--}-->      	    <!--if($item['priceplan']==2){-->      	    + æˆ‘çš„è¿›è´§ä»·      	    <!--}-->      	     <!--if($item['priceplan']==3){-->      	    x é¢å€¼ + æˆ‘çš„è¿›è´§ä»·      	    <!--}-->    	    </span> </div></td>    </tr>    <!--}-->    <tr>     <td class="table1_left"> ç›¸å…³è¯´æ˜ï¼š </td>      <td width="78%" class="tableright1">      	<div align="left"><br/>    	  </div>      	<p align="left"> æ–¹æ¡ˆä¸€(åˆ©æ¶¦æŠ˜æ‰£)ï¼šå¯¹åº”çº§åˆ«ä»·æ ¼ = æˆ‘çš„è¿›è´§ä»· + (é¢å€¼ - æˆ‘çš„è¿›è´§ä»·) x æ¯”ä¾‹</p>        <p align="left">&nbsp;</p>        <p align="left"> æ–¹æ¡ˆäºŒ(ç›´æ¥ç´¯åŠ )ï¼šå¯¹åº”çº§åˆ«ä»·æ ¼ = æˆ‘çš„è¿›è´§ä»· + æ¯”ä¾‹</p>        <p align="left">&nbsp;</p>        <p align="left"> æ–¹æ¡ˆä¸‰(é¢å€¼æŠ˜æ‰£)ï¼šå¯¹åº”çº§åˆ«ä»·æ ¼ = æˆ‘çš„è¿›è´§ä»· + é¢å€¼ x æ¯”ä¾‹</p>        <div align="left"><br/>              </div></td>    </tr>		<tr>		  <td class="table1_left">&nbsp;</td>		<td height="30" class="tableright1"><div align="left">		  <input type="submit" value="ç¡®è®¤è®¾ç½®" class="tijiao_input" name="submit">		  <input type="reset" value="é‡æ–°å¡«å†™" class="fanhui_input" name="reset">		  </div></td>		</tr>		</table>		</form>	</td>	</tr></table><script type="text/JavaScript">var $ = function(id){	return document.getElementById(id);}function set(obj, idx){	val = obj.options[obj.selectedIndex].value;	str = "";	if(val == "1")	{		str = "% x (é¢å€¼ - æˆ‘çš„è¿›è´§ä»·) + æˆ‘çš„è¿›è´§ä»·";	}  else if(val == "2")  {  	str = "{$vd['lang']['moneyunit']} + æˆ‘çš„è¿›è´§ä»·";  }  else	{		str = "% x é¢å€¼ + æˆ‘çš„è¿›è´§ä»·";	}		$("std_"+idx).innerHTML = str;}</script></body></html>

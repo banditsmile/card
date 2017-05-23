@@ -1,82 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
-<link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/>
-<style type="text/css">
-td{height:30px}
-.preview_fake{ /* ¸Ã¶ÔÏóÓÃ»§ÔÚIEÏÂÏÔÊ¾Ô¤ÀÀÍ¼Æ¬ */
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
-}
-
-</style>
-</head>
-<body>
-<div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_logo_index" onFocus="this.blur()" title="²é¿´LOGOÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
-</div>
-<div id="contentTip" style="display:none;"></div>
-        <div>
-            <div class="title">
-                ÄúµÄÎ»ÖÃ£º³£¹æ¹ÜÀí > ¹ã¸æÉèÖÃÓë¹ÜÀí
-            </div>
-<!--foreach($vd['logo'] as $item){-->
-            <table width="100%" cellpadding="0" cellspacing="1" class="page_table4">
-  <tr>
-                    <td colspan="2" class="table_top" style="text-align: left">
-      {$item['name']}ÏµÍ³LOGO    </td>
-  </tr>
-  <tr>
-    <td class="td_left"> LOGOÍ¼Æ¬£º </td> 
-    <td width="85%" style="padding-left: 10px" height="47">
-    <img src="{$vd['root']}content/{$item['m']}/images/mylogo.gif" border="0"/>    </td>
-  </tr>
-  
-  <tr>
-    <td class="td_left"> ÉÏ´«Í¼Æ¬£º </td> 
-    <td width="85%" style="padding-left: 10px" height="47">
-    <input type="hidden" id="ubzimage{$item['m']}" name="ubzimage{$item['m']}" size="34"/> 
-    <iframe name="uploader" id="bodyiframe{$item['m']}" src="index.php?m=com_fs&c=fs&imgid=logo{$item['m']}&fun=imginfo{$item['m']}&inputid=ubzimage{$item['m']}&d=1&mod={$item['m']}" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>    </td>
-  </tr>
-  <tr>
-    <td class="td_left">&nbsp;</td> 
-    <td width="85%" style="padding-left: 10px" height="47">
-    <span class="spantip">×¢Òâ£ºlogoÍ¼Æ¬£¬ÇëÏÈÃüÃûÎªmylogo.gifÔÙÉÏ´«</span>    </td>
-  </tr>
-  <tr>
-    <td class="td_left"> Í¼Æ¬Ô¤ÀÀ£º </td> 
-    <td width="85%" style="padding-left: 10px" height="47">
-    <div id="logo{$item['m']}" class="preview_fake"></div><div id="logoinfo{$item['m']}"></div>    </td>
-  </tr>
-</table>
-<script type="text/javascript">
-function imginfo{$item['m']}(imgsrc)
-{
-	obj  = document.all ? window.frames["bodyiframe{$item['m']}"] : window.document.getElementById("bodyiframe{$item['m']}").contentWindow;
-  filen = obj.document.getElementById("txtFileUpload").value;
-
-	if( !filen.match( /mylogo.gif/i ) ){
-    alert('Í¼Æ¬¸ñÊ½ÎŞĞ§£¬Í¼Æ¬Ó¦¸ÃÃüÃûÎªmylogo.gifÔÙÉÏ´«£¡');
-    return false;
-  }
-  document.getElementById("logoinfo{$item['m']}").innerHTML = "¸ß x ¿í£º" + imgsrc.height + " x " + imgsrc.width + "<br/>Í¼Æ¬´óĞ¡£º" + imgsrc.fileSize + " ×Ö½Ú"; 
-}
-</script>
-<!--}-->
-</div>
-</div>
-
-<div class="cbodyFoot"></div>
-</div>
-<div id="opcontent" style="display:none">
-  <div class="optxt">
-  </div>
-</div>
-<script type="text/javascript">
-  var ctablenum = 2;
-</script>
-<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="css/main.css"/><link rel="stylesheet" type="text/css" href="http://www.xn2010.com/KH9AJL2_4HA26S/css/style2.css"/><style type="text/css">td{height:30px}.preview_fake{ /* è¯¥å¯¹è±¡ç”¨æˆ·åœ¨IEä¸‹æ˜¾ç¤ºé¢„è§ˆå›¾ç‰‡ */    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);}</style></head><body><div id="titleDiv"><div style="float:left"><a href="index.php?a=Home"></a></div><div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_logo_index" onFocus="this.blur()" title="æŸ¥çœ‹LOGOç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div></div><div id="contentTip" style="display:none;"></div>        <div>            <div class="title">                æ‚¨çš„ä½ç½®ï¼šå¸¸è§„ç®¡ç† > å¹¿å‘Šè®¾ç½®ä¸ç®¡ç†            </div><!--foreach($vd['logo'] as $item){-->            <table width="100%" cellpadding="0" cellspacing="1" class="page_table4">  <tr>                    <td colspan="2" class="table_top" style="text-align: left">      {$item['name']}ç³»ç»ŸLOGO    </td>  </tr>  <tr>    <td class="td_left"> LOGOå›¾ç‰‡ï¼š </td>     <td width="85%" style="padding-left: 10px" height="47">    <img src="{$vd['root']}content/{$item['m']}/images/mylogo.gif" border="0"/>    </td>  </tr>    <tr>    <td class="td_left"> ä¸Šä¼ å›¾ç‰‡ï¼š </td>     <td width="85%" style="padding-left: 10px" height="47">    <input type="hidden" id="ubzimage{$item['m']}" name="ubzimage{$item['m']}" size="34"/>     <iframe name="uploader" id="bodyiframe{$item['m']}" src="index.php?m=com_fs&c=fs&imgid=logo{$item['m']}&fun=imginfo{$item['m']}&inputid=ubzimage{$item['m']}&d=1&mod={$item['m']}" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>    </td>  </tr>  <tr>    <td class="td_left">&nbsp;</td>     <td width="85%" style="padding-left: 10px" height="47">    <span class="spantip">æ³¨æ„ï¼šlogoå›¾ç‰‡ï¼Œè¯·å…ˆå‘½åä¸ºmylogo.gifå†ä¸Šä¼ </span>    </td>  </tr>  <tr>    <td class="td_left"> å›¾ç‰‡é¢„è§ˆï¼š </td>     <td width="85%" style="padding-left: 10px" height="47">    <div id="logo{$item['m']}" class="preview_fake"></div><div id="logoinfo{$item['m']}"></div>    </td>  </tr></table><script type="text/javascript">function imginfo{$item['m']}(imgsrc){	obj  = document.all ? window.frames["bodyiframe{$item['m']}"] : window.document.getElementById("bodyiframe{$item['m']}").contentWindow;  filen = obj.document.getElementById("txtFileUpload").value;	if( !filen.match( /mylogo.gif/i ) ){    alert('å›¾ç‰‡æ ¼å¼æ— æ•ˆï¼Œå›¾ç‰‡åº”è¯¥å‘½åä¸ºmylogo.gifå†ä¸Šä¼ ï¼');    return false;  }  document.getElementById("logoinfo{$item['m']}").innerHTML = "é«˜ x å®½ï¼š" + imgsrc.height + " x " + imgsrc.width + "<br/>å›¾ç‰‡å¤§å°ï¼š" + imgsrc.fileSize + " å­—èŠ‚"; }</script><!--}--></div></div><div class="cbodyFoot"></div></div><div id="opcontent" style="display:none">  <div class="optxt">  </div></div><script type="text/javascript">  var ctablenum = 2;</script><script src="{$vd['sc']}js/content.js" type="text/javascript"></script></body></html>

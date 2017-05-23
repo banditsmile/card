@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
   #ctable1 td{text-align:center;white-space:normal;word-wrap: break-word; word-break: normal; }
@@ -9,22 +9,22 @@
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PS&tpl=NoStocks&ptype=-1&aid=-1&nrows=2000" title="¼ÌĞø²é¿´È±»õĞÅÏ¢"><font color="#000">È±»õĞÅÏ¢</font></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="²é¿´È±»õÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PS&tpl=NoStocks&ptype=-1&aid=-1&nrows=2000" title="ç»§ç»­æŸ¥çœ‹ç¼ºè´§ä¿¡æ¯"><font color="#000">ç¼ºè´§ä¿¡æ¯</font></a></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="æŸ¥çœ‹ç¼ºè´§ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">È±»õĞÅÏ¢(¹² <span class="dollars">{$vd['totlerow']}</span> ¸öÉÌÆ·È±»õ)</div>
+<div class="ctitle">ç¼ºè´§ä¿¡æ¯(å…± <span class="dollars">{$vd['totlerow']}</span> ä¸ªå•†å“ç¼ºè´§)</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr class="listhead">
-    <td width="58%" style="height:30px;text-align:left"><b>ÉÌÆ·Ãû³Æ</b></td>
-    <td width="10%" style="height:30px"><b>ÉÌÆ·ÀàĞÍ</b></td>
-    <td width="8%" style="height:30px"><b>×Ü¿â´æ</b></td>
-    <td width="10%" style="height:30px"><b>¹©»õ¿â´æ</b></td>
-    <td width="5%" style="height:30px"><b>±¾µØ</b></td>
-    <td width="8%" style="height:30px"><b>¹ÜÀí</b></td>
+    <td width="58%" style="height:30px;text-align:left"><b>å•†å“åç§°</b></td>
+    <td width="10%" style="height:30px"><b>å•†å“ç±»å‹</b></td>
+    <td width="8%" style="height:30px"><b>æ€»åº“å­˜</b></td>
+    <td width="10%" style="height:30px"><b>ä¾›è´§åº“å­˜</b></td>
+    <td width="5%" style="height:30px"><b>æœ¬åœ°</b></td>
+    <td width="8%" style="height:30px"><b>ç®¡ç†</b></td>
   </tr>
   <!--foreach($vd['items'] as $item) {-->
   <tr>
@@ -33,7 +33,7 @@
     <td width="8%" style="height:30px">{$item['totlestocks']}</td>
     <td width="10%" style="height:30px">{$item['supstocks']}</td>
     <td width="5%" style="height:30px">{$item['stocks']}</td>
-    <td width="8%" style="height:30px"><a href="?m=mod_b2b&c=sup&a=sup&ubzpid={$item['pid']}"><font color="#00875A">¹ÜÀí</font></a></td>
+    <td width="8%" style="height:30px"><a href="?m=mod_b2b&c=sup&a=sup&ubzpid={$item['pid']}"><font color="#00875A">ç®¡ç†</font></a></td>
   </tr>
   <!--}-->
 </table>

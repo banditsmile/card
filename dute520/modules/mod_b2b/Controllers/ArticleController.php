@@ -92,7 +92,7 @@ class ArticleController extends Controller
     $this->Assign('recycle_num', $Rb749275e94);
     
     
-								$R00be52aa45 = array( "title" => "Ö÷Ìâ" );
+								$R00be52aa45 = array( "title" => "ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "sarray", $R00be52aa45 );
 						
 												$this->view( );
@@ -126,11 +126,11 @@ class ArticleController extends Controller
 				{
 								$R3584859062 = intval( request( "id" ) );
 								$R63bede6b19 = $_REQUEST['nr'];
-								$R63bede6b19 = str_replace( "'", "¡°", $R63bede6b19 );
-								$R63bede6b19 = str_replace( "*", "¡Á", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "'", "ï¿½ï¿½", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "*", "ï¿½ï¿½", $R63bede6b19 );
 								$R63bede6b19 = str_replace( "<", "&lt;", $R63bede6b19 );
 								$R63bede6b19 = str_replace( ">", "&gt;", $R63bede6b19 );
-								$GLOBALS['_REQUEST']['nr'] = str_replace( "\"", "¡°", $R63bede6b19 );
+								$GLOBALS['_REQUEST']['nr'] = str_replace( "\"", "ï¿½ï¿½", $R63bede6b19 );
 								$data = array(
 												"title" => getvar( "title", "" ),
 												"pid" => intval( request( "pid" ) ),
@@ -149,12 +149,12 @@ class ArticleController extends Controller
 								{
 												$data['tick'] = 0;
 												$R3584859062 = $this->instance->IArticle_Create( $data );
-												$this->Alert( "Ìí¼Ó³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½Ó³É¹ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
 												$this->instance->IArticle_Update( $data, $R3584859062 );
-												$this->Alert( "¸üÐÂ³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½ï¿½ï¿½" );
 								}
 								    $this->UpdateCache('articles');
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Article&a=Html&id=".$R3584859062 );
@@ -165,7 +165,7 @@ class ArticleController extends Controller
 								$R3584859062 = $this->GetId( "id" );
 								$this->instance->IArticle_Delete( $R3584859062 );
 								$this->View( "index" );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 				}
 
 				public function Html( )
@@ -179,13 +179,13 @@ class ArticleController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -197,10 +197,10 @@ class ArticleController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -212,7 +212,7 @@ class ArticleController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -228,7 +228,7 @@ class ArticleController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -249,7 +249,7 @@ class ArticleController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -288,7 +288,7 @@ class ArticleController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -319,7 +319,7 @@ class ArticleController extends Controller
 								$R808b89ba0e = $this->instance->IArticle_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

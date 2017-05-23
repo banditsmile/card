@@ -81,7 +81,7 @@ class PSController extends Controller
 																else
 																{
 																				$R4e420efcc3['item'][$Ra16d228039]['totlestocks'] = productstock( $R4e420efcc3['item'][$Ra16d228039]['stocks'] );
-																				$R4e420efcc3['item'][$Ra16d228039]['supstocks'] = "<font color=\"#6c6c6c\">ÎÞ¹©»õÉÌ</font>";
+																				$R4e420efcc3['item'][$Ra16d228039]['supstocks'] = "<font color=\"#6c6c6c\">ï¿½Þ¹ï¿½ï¿½ï¿½ï¿½ï¿½</font>";
 																				if ( $R4e420efcc3['item'][$Ra16d228039]['stocks'] <= 0 )
 																				{
 																								$R026f0167b4[] = $R4e420efcc3['item'][$Ra16d228039];
@@ -95,7 +95,7 @@ class PSController extends Controller
 												for ( $Ra16d228039 = 0;	$Ra16d228039 < count( $R4e420efcc3['item'] );	$Ra16d228039++	)
 												{
 																$R4e420efcc3['item'][$Ra16d228039]['totlestocks'] = productstock( $R4e420efcc3['item'][$Ra16d228039]['stocks'] );
-																$R4e420efcc3['item'][$Ra16d228039]['supstocks'] = "<font color=\"#6c6c6c\">ÎÞ¹©»õÉÌ</font>";
+																$R4e420efcc3['item'][$Ra16d228039]['supstocks'] = "<font color=\"#6c6c6c\">ï¿½Þ¹ï¿½ï¿½ï¿½ï¿½ï¿½</font>";
 																if ( $R4e420efcc3['item'][$Ra16d228039]['stocks'] <= 0 )
 																{
 																				$R026f0167b4[] = $R4e420efcc3['item'][$Ra16d228039];
@@ -108,14 +108,14 @@ class PSController extends Controller
 												$R4e420efcc3['item'] = $R026f0167b4;
 								}
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "0" => "¿¨ÃÜÉÌÆ·", "1" => "×Ô¶¯³äÖµ", "2" => "´ú³äÉÌÆ·", "3" => "ºÅÂëÀà" );
+								$R00be52aa45 = array( "0" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "1" => "ï¿½Ô¶ï¿½ï¿½ï¿½Öµ", "2" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "3" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								if ( UB_YKT )
 								{
-												$R00be52aa45[] = "¶Ò»»ÀàÒ»¿¨Í¨";
+												$R00be52aa45[] = "ï¿½Ò»ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨";
 								}
 								if ( UB_B2C || UB_B2B )
 								{
-												$R00be52aa45[] = "³äÖµÀàÒ»¿¨Í¨";
+												$R00be52aa45[] = "ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½Í¨";
 								}
 								$R63bede6b19 = $Rfff462d8f8 == 1 ? "aid > 0" : "aid < 1";
 								$this->Recycle( "products", $R63bede6b19 );
@@ -144,7 +144,7 @@ class PSController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -152,11 +152,11 @@ class PSController extends Controller
 				{
 								if ( intval( request( "ptype" ) == 0 ) )
 								{
-												$this->Assign( "tabletitle", "¿¨ÃÜ" );
+												$this->Assign( "tabletitle", "ï¿½ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Assign( "tabletitle", "³äÖµ" );
+												$this->Assign( "tabletitle", "ï¿½ï¿½Öµ" );
 								}
 							
 												$this->View( );
@@ -233,7 +233,7 @@ class PSController extends Controller
 								$Rd2e691562d = $this->GetCatCache( );
 								if ( !isset( $Rd2e691562d[0]['id'] ) )
 								{
-												$this->Alert( "»¹Ã»ÓÐÌí¼Ó·ÖÀà£¬ÇëÏÈÌí¼Ó·ÖÀàÔÙÌí¼ÓÉÌÆ·" );
+												$this->Alert( "ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=category" );
 								}
 								$R97bfbe9263 = $this->GetSubCatCache( );
@@ -266,11 +266,11 @@ class PSController extends Controller
 								$Raba57bd7d6 = intval( request( "ubzsup" ) );
 								$R98aa12da5c = intval( request( "umebizpid" ) );
 								$R63bede6b19 = $_REQUEST['ubzpdesc'];
-								$R63bede6b19 = str_replace( "'", "¡°", $R63bede6b19 );
-								$R63bede6b19 = str_replace( "*", "¡Á", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "'", "ï¿½ï¿½", $R63bede6b19 );
+								$R63bede6b19 = str_replace( "*", "ï¿½ï¿½", $R63bede6b19 );
 								$R63bede6b19 = str_replace( "<", "&lt", $R63bede6b19 );
 								$R63bede6b19 = str_replace( ">", "&gt", $R63bede6b19 );
-								$GLOBALS['_REQUEST']['ubzpdesc'] = str_replace( "\"", "¡°", $R63bede6b19 );
+								$GLOBALS['_REQUEST']['ubzpdesc'] = str_replace( "\"", "ï¿½ï¿½", $R63bede6b19 );
 								$Rd2376260ad = getvar( "buylitstardate" );
 								$R3252b41309 = explode( ":", $Rd2376260ad );
 								if ( isset( $R3252b41309[1] ) )
@@ -320,7 +320,7 @@ class PSController extends Controller
 								$R239f541f81 = getvar( "ubzqtylist", "" );
 								if ( $R239f541f81 == "" && 10000 < $R7b5951700d - $R0cdee13a13 )
 								{
-												$this->Alert( "ÄúºÃ£¬¹ºÂòÊýÁ¿¼ä¾à¹ý´ó£¬½¨Òé×î´óÖµºÍ×îÐ¡ÖµÏà²î²»Òª³¬¹ý10000£¬»òÕßÄú¿ÉÒÔÑ¡Ôñ·½Ê½2ÁÐ±í¶¨ÒåÊýÁ¿" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ð¡Öµï¿½ï¿½î²»Òªï¿½ï¿½ï¿½ï¿½10000ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ê½2ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R2a039ed8fd = array(
@@ -411,7 +411,7 @@ class PSController extends Controller
 												}
 												if ( !$R808b89ba0e )
 												{
-																$this->Alert( "±¾µØ²ÎÊý¸üÐÂÊ§°Ü" );
+																$this->Alert( "ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -429,7 +429,7 @@ class PSController extends Controller
 												$R8e8b5578f7 = $this->hander->IProduct_Create( $R2a039ed8fd );
 												if ( $R8e8b5578f7 <= 0 )
 												{
-																$this->Alert( "±¾µØÉÌÆ·Ìí¼ÓÊ§°Ü" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -447,12 +447,12 @@ class PSController extends Controller
 																								$R808b89ba0e = $this->hander->IProduct_Update( $data, $R8e8b5578f7 );
 																								if ( !$R808b89ba0e )
 																								{
-																												$this->Alert( "ÑÏÖØ´íÎó£¬ÇëÉ¾³ýÉÌÆ·ºóÖØÐÂÌí¼Ó£¡" );
+																												$this->Alert( "ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½" );
 																												$this->HistoryGo( );
 																								}
 																				}
 																}
-																$this->Alert( "ÓÉÓÚÍøÂç»òÕßÆäËûÔ­Òò£¡²¿·Ö²ÎÊýÎ´³É¹¦ÌîÈë»ò¸üÐÂ£¬Äú¿ÉÒÔÖØÐÂ²Ù×÷»òÕß¹ý»áÔÙ²Ù×÷£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ò£¡²ï¿½ï¿½Ö²ï¿½ï¿½ï¿½Î´ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 												else
@@ -464,7 +464,7 @@ class PSController extends Controller
 																				$R808b89ba0e = $this->hander->IProduct_Update( $data, $R8e8b5578f7 );
 																				if ( !$R808b89ba0e )
 																				{
-																								$this->Alert( "ÑÏÖØ´íÎó£¬ÇëÉ¾³ýÉÌÆ·ºóÖØÐÂÌí¼Ó£¡" );
+																								$this->Alert( "ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½" );
 																								$this->HistoryGo( );
 																				}
 																}
@@ -472,11 +472,11 @@ class PSController extends Controller
 								}
 								if ( 0 < $R8e8b5578f7 )
 								{
-												$this->Alert( "²Ù×÷³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Alert( "²Ù×÷Ê§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rcd0c741934 = intval( request( "catid" ) );
@@ -628,7 +628,7 @@ class PSController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -640,10 +640,10 @@ class PSController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -666,12 +666,12 @@ class PSController extends Controller
 												}
 												else
 												{
-																echo "ÐÞ¸ÄÊ§°Ü£¡";
+																echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 												}
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡ÓÉÓÚÉÌÆ·¶ÔÍâ¹©»õ£¬ÓÐ¿ÉÄÜÊÇÍ¨ÐÅÎÊÌâµ¼ÖÂµÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½â¹©ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½âµ¼ï¿½Âµï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -759,7 +759,7 @@ class PSController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -790,7 +790,7 @@ class PSController extends Controller
 								$this->PUpdateCacheByResult( $R3db8f5c8bc );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 				}
 
@@ -828,12 +828,12 @@ class PSController extends Controller
 												}
 												else
 												{
-																echo "É¾³ýÊ§°ÜÁË£¡";
+																echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ë£ï¿½";
 												}
 								}
 								else
 								{
-												echo "É¾³ýÊ§°ÜÁË°¡£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½";
 								}
 				}
 
@@ -899,7 +899,7 @@ class PSController extends Controller
 								}
 								else
 								{
-												echo "Çå³ýÊ§°Ü£¡";
+												echo "ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -938,7 +938,7 @@ class PSController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "pid in (".$R3456919727.")";
@@ -1013,12 +1013,12 @@ class PSController extends Controller
 								}
 								if ( $R2145464ecd == false )
 								{
-												$this->Assign( "err", "±¾´Î¸üÐÂÓÐÊ§°Ü£¬ÇëÄú<a href=\"index.php?m=mod_b2b&c=PS&a=UpdateTplBySup\"><u>ÖØÐÂ¸üÐÂ</u></a>£¡" );
+												$this->Assign( "err", "ï¿½ï¿½ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½<a href=\"index.php?m=mod_b2b&c=PS&a=UpdateTplBySup\"><u>ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½</u></a>ï¿½ï¿½" );
 								}
 								else
 								{
-												$this->Assign( "err1", "Íê³É¸üÐÂ£¡±¾´ÎÓÐ <font color=\"#0000ff\">".$Ra7b9a38368."</font> ¸öÉÌÆ·¶Ô½Ó·Ç±¾ÀàÐÍÉÌÆ·" );
-												$this->Assign( "err2", "Íê³É¸üÐÂ£¡±¾´ÎÓÐ <font color=\"#0000ff\">".$Ra16d228039."</font> ¸ö×Ô¶¯³äÖµÉÌÆ·Ä£°å×öÁËÐÞ¸Ä" );
+												$this->Assign( "err1", "ï¿½ï¿½É¸ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <font color=\"#0000ff\">".$Ra7b9a38368."</font> ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ô½Ó·Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·" );
+												$this->Assign( "err2", "ï¿½ï¿½É¸ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <font color=\"#0000ff\">".$Ra16d228039."</font> ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Öµï¿½ï¿½Æ·Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½" );
 								}
 								$this->Assign( "str1", $R06e73b906e );
 								$this->Assign( "str2", $Rc894c8a8b2 );

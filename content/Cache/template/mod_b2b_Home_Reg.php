@@ -4,9 +4,9 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>ÓÃ»§×¢²á - <?php echo $vd['web']['webname']; ?></title></head>
+<title>ï¿½Ã»ï¿½×¢ï¿½ï¿½ - <?php echo $vd['web']['webname']; ?></title></head>
 
 <body>
 
@@ -50,7 +50,7 @@
 
 
 
-		        http = new ActiveXObject("MSXML2.XMLHTTP.3.0"); //Èç¹ûÓÃ»§Ê¹ÓÃIE£¬¾Í·µ»ØXMLHTTPµÄActiveX¶ÔÏó
+		        http = new ActiveXObject("MSXML2.XMLHTTP.3.0"); //ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ê¹ï¿½ï¿½IEï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½XMLHTTPï¿½ï¿½ActiveXï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -62,7 +62,7 @@
 
 
 
-		        http = new XMLHttpRequest(); //·ñÔò·µ»ØÒ»¸öXMLHttpRequest¶ÔÏó
+		        http = new XMLHttpRequest(); //ï¿½ï¿½ï¿½ò·µ»ï¿½Ò»ï¿½ï¿½XMLHttpRequestï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -74,7 +74,7 @@
 
 
 
-	    //»ñÈ¡È«¾ÖµÄHTTPÇëÇó¶ÔÏó
+	    //ï¿½ï¿½È¡È«ï¿½Öµï¿½HTTPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -82,7 +82,7 @@
 
 
 
-	    //´¦ÀíÇëÇó×´Ì¬±ä»¯
+	    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ä»¯
 
 
 
@@ -94,7 +94,7 @@
 
 
 
-	    //4±íÊ¾ÇëÇóÒÑÍê³É
+	    //4ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -106,7 +106,7 @@
 
 
 
-			    //»ñÈ¡·þÎñ¶ÎµÄÏìÓ¦ÎÄ±¾
+			    //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½Ó¦ï¿½Ä±ï¿½
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-				    document.getElementById("CheckCustomerName_span").innerHTML="ÓÃ»§ÃûÒÑ¾­´æÔÚ";
+				    document.getElementById("CheckCustomerName_span").innerHTML="ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½";
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-			        document.getElementById("CheckCustomerName_span").innerHTML="<font color=#009900>ÓÃ»§Ãû¿ÉÒÔÊ¹ÓÃ</font>";
+			        document.getElementById("CheckCustomerName_span").innerHTML="<font color=#009900>ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½</font>";
 
 
 
@@ -158,7 +158,7 @@
 
 
 
-                document.getElementById("CheckCustomerName_span").innerHTML="ÓÃ»§Ãû²»ÄÜÎª¿Õ";
+                document.getElementById("CheckCustomerName_span").innerHTML="ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½";
 
 
 
@@ -186,7 +186,7 @@
 
 
 
-		        document.getElementById("CheckCustomerName_span").innerHTML="ÓÃ»§Ãû±ØÐëÎª6-30Î»Ö®¼äµÄÊý×Ö»ò×ÖÄ¸";
+		        document.getElementById("CheckCustomerName_span").innerHTML="ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª6-30Î»Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Ä¸";
 
 
 
@@ -202,7 +202,7 @@
 
 
 
-		    //Ö¸¶¨·þÎñ¶ËµÄµØÖ·
+		    //Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËµÄµï¿½Ö·
 
 
 
@@ -210,7 +210,7 @@
 
 
 
-		    //ÇëÇó×´Ì¬±ä»¯Ê±µÄ´¦Àíº¯Êý
+		    //ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ä»¯Ê±ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -218,7 +218,7 @@
 
 
 
-		    //·¢ËÍÇëÇó
+		    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -262,7 +262,7 @@ var AgentQian = "Theme1";
 
     <div class="container">
 
-        <?php Í·²¿ ?>
+        <?php Í·ï¿½ï¿½ ?>
 
         <div class="header">
 
@@ -280,13 +280,13 @@ var AgentQian = "Theme1";
 
             <div class="login">
 
-                <a href="index.php">µÇÂ¼</a><span>ÒÑ×¢²áµÄÓÃ»§£¬Çë</span>
+                <a href="index.php">ï¿½ï¿½Â¼</a><span>ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 
             </div>
 
         </div>
 
-        <?php ÖÐ²¿ ?>
+        <?php ï¿½Ð²ï¿½ ?>
 
         <div class="middle">
 
@@ -294,7 +294,7 @@ var AgentQian = "Theme1";
 
             <div class="register_title">
 
-              <div class="register_titletxt"> ÓÃ»§×¢²á</div>
+              <div class="register_titletxt"> ï¿½Ã»ï¿½×¢ï¿½ï¿½</div>
 
             </div>
 
@@ -302,7 +302,7 @@ var AgentQian = "Theme1";
 
               <div class="applysheet">
 
-                <?php ÉêÇë±í ?>
+                <?php ï¿½ï¿½ï¿½ï¿½ï¿½ ?>
 
                 <div class="infoform">
 
@@ -312,11 +312,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      µÇÂ¼ÕË»§<span>£º</span> </div>
+                      ï¿½ï¿½Â¼ï¿½Ë»ï¿½<span>ï¿½ï¿½</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="text" type="text" class="input1" id="cname" onblur="check_id(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÊäÈëÄúÐèÒª×¢²áµÄÓÃ»§Ãû" />
+                      <input name="text" type="text" class="input1" id="cname" onblur="check_id(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½" />
 
                     </div>
 
@@ -338,11 +338,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>µÇÂ¼ÃÜÂë£º</span> </div>
+                      <span>ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ë£º</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="password2" type="password" class="input1" id="cpwd" onblur="check_password();" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÊäÈëµÇÂ¼/½»Ò×ÃÜÂë£¬³õÊ¼Ä¬ÈÏµÇÂ¼ÃÜÂëºÍ½»Ò×ÃÜÂëÏàÍ¬£¬Äú¿ÉÒÔ×¢²á³É¹¦ºó£¬µÇÂ¼ÏµÍ³ÐÞ¸Ä"/>
+                      <input name="password2" type="password" class="input1" id="cpwd" onblur="check_password();" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê¼Ä¬ï¿½Ïµï¿½Â¼ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½É¹ï¿½ï¿½ó£¬µï¿½Â¼ÏµÍ³ï¿½Þ¸ï¿½"/>
 
                     </div>
 
@@ -364,11 +364,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>È·ÈÏÃÜÂë£º</span> </div>
+                      <span>È·ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="password3" type="password" class="input1" id="recpwd" onblur="check_pw();"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÔÙ´ÎÊäÈëÃÜÂë"/>
+                      <input name="password3" type="password" class="input1" id="recpwd" onblur="check_pw();"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"/>
 
                     </div>
 
@@ -390,11 +390,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>ÁªÏµÈËÐÕÃû£º</span> </div>
+                      <span>ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="text3" type="text" class="input1" id="crealname" onblur="check_UserName(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÄúÌîÐ´±¾ÈËÕæÊµÐÕÃû"/>
+                      <input name="text3" type="text" class="input1" id="crealname" onblur="check_UserName(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½"/>
 
                     </div>
 
@@ -416,11 +416,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>Éí·ÝÖ¤ºÅÂë£º</span> </div>
+                      <span>ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ë£º</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="text4" type="text" class="input1" id="idcard" onblur="check_IdentityNO(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÌîÐ´ÄúÕæÊµµÄÉí·ÝÖ¤ºÅ(18Î»)"/>
+                      <input name="text4" type="text" class="input1" id="idcard" onblur="check_IdentityNO(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½(18Î»)"/>
 
                     </div>
 
@@ -442,11 +442,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>¹«Ë¾Ãû³Æ£º</span> </div>
+                      <span>ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½Æ£ï¿½</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="text5" type="text" class="input1" id="company"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÌîÐ´ÄúÕæÊµµÄ¹«Ë¾Ãû³Æ,Ã»ÓÐµÄ»°ÌîÐ´ÄúÏ²»¶µÄÃû×Ö¼´¿É"/>
+                      <input name="text5" type="text" class="input1" id="company"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Êµï¿½Ä¹ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½,Ã»ï¿½ÐµÄ»ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½"/>
 
                     </div>
 
@@ -468,11 +468,11 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>¼ÒÍ¥µØÖ·£º</span> </div>
+                      <span>ï¿½ï¿½Í¥ï¿½ï¿½Ö·ï¿½ï¿½</span> </div>
 
                     <div class="newscontent">
 
-                      <input name="text6" type="text" class="input1" id="eshop"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÌîÐ´ÄúÕæÊµµÄ¼ÒÍ¥µØÖ·,ÌîÐ´¼´¿É"/>
+                      <input name="text6" type="text" class="input1" id="eshop"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Êµï¿½Ä¼ï¿½Í¥ï¿½ï¿½Ö·,ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½"/>
 
                     </div>
 
@@ -494,7 +494,7 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>ÏúÊÛ·¶Î§£º</span> </div>
+                      <span>ï¿½ï¿½ï¿½Û·ï¿½Î§ï¿½ï¿½</span> </div>
 
                     <div class="newscontent">
 
@@ -504,17 +504,17 @@ var AgentQian = "Theme1";
 
                                 <select name="prv" id="prv"  style="border:1px groove #C0C0C0;" OnChange="setcity();">
 
-                                  <option value="Î´Éè¶¨" selected="selected">ÇëÑ¡Ôñ</option>
+                                  <option value="Î´ï¿½è¶¨" selected="selected">ï¿½ï¿½Ñ¡ï¿½ï¿½</option>
 
-                                  <option value="È«¹ú·¶Î§ÏúÊÛ">È«¹ú·¶Î§ÏúÊÛ</option>
+                                  <option value="È«ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½">È«ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½</option>
 
-                                  <option value="Ê¡¼¶·¶Î§ÏúÊÛ">Ê¡¼¶·¶Î§ÏúÊÛ</option>
+                                  <option value="Ê¡ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½">Ê¡ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½</option>
 
-                                  <option value="ÊÐ¼¶·¶Î§ÏúÊÛ">ÊÐ¼¶·¶Î§ÏúÊÛ</option>
+                                  <option value="ï¿½Ð¼ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½">ï¿½Ð¼ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½</option>
 
-                                  <option value="Íø°É·¶Î§ÏúÊÛ">Íø°É·¶Î§ÏúÊÛ</option>                                  
+                                  <option value="ï¿½ï¿½ï¿½É·ï¿½Î§ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½É·ï¿½Î§ï¿½ï¿½ï¿½ï¿½</option>                                  
 
-								  <option value="¸öÈË¹º¿¨Ê¹ÓÃ">¸öÈË¹º¿¨Ê¹ÓÃ</option>
+								  <option value="ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½">ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½</option>
 
 
 
@@ -530,11 +530,11 @@ var AgentQian = "Theme1";
 
 
 
-                       <select NAME="city" id="city" style="display:none" style="border:1px groove #C0C0C0; width:80px; font-family:ËÎÌå; font-size:9pt">  </select>
+                       <select NAME="city" id="city" style="display:none" style="border:1px groove #C0C0C0; width:80px; font-family:ï¿½ï¿½ï¿½ï¿½; font-size:9pt">  </select>
 
 
 
-								<span id="spancityprv" style="display:none">ÇëÑ¡ÔñÄú¹«Ë¾ËùÔÚµÄÊ¡·Ý</span>							
+								<span id="spancityprv" style="display:none">ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½Úµï¿½Ê¡ï¿½ï¿½</span>							
 
 
 
@@ -554,7 +554,7 @@ var AgentQian = "Theme1";
 
                       <label> *</label>
 
-                      <span>ÉÏ¼¶±àºÅ£º</span> </div>
+                      <span>ï¿½Ï¼ï¿½ï¿½ï¿½Å£ï¿½</span> </div>
 
                     <div class="newscontent">
 
@@ -568,11 +568,11 @@ var AgentQian = "Theme1";
 
                     <div class="infoline">
 
-                      <div class="newsname"> <span>ÊÖ»úºÅÂë£º</span> </div>
+                      <div class="newsname"> <span>ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ë£º</span> </div>
 
                       <div class="newscontent">
 
-                        <input name="text7" type="text" class="input1" id="cmobile" onblur="check_Phone(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÄúÌîÐ´¿ÉÒÔºÍÄú±¾ÈËÈ¡µÃÁªÏµµÄÊÖ»úºÅÂë"/>
+                        <input name="text7" type="text" class="input1" id="cmobile" onblur="check_Phone(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½"/>
 
                       </div>
 
@@ -590,11 +590,11 @@ var AgentQian = "Theme1";
 
                     <div class="infoline">
 
-                      <div class="newsname"> <span>ÁªÏµ£Ñ£Ñ£º</span> </div>
+                      <div class="newsname"> <span>ï¿½ï¿½Ïµï¿½Ñ£Ñ£ï¿½</span> </div>
 
                       <div class="newscontent">
 
-                        <input name="text8" type="text" class="input1" id="cqq" onblur="check_qq(this.value);"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÄúÌîÐ´¿ÉÒÔºÍÄú±¾ÈËÈ¡µÃÁªÏµµÄQQºÅÂë"/>
+                        <input name="text8" type="text" class="input1" id="cqq" onblur="check_qq(this.value);"  onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½QQï¿½ï¿½ï¿½ï¿½"/>
 
                       </div>
 
@@ -612,11 +612,11 @@ var AgentQian = "Theme1";
 
                     <div class="infoline">
 
-                      <div class="newsname"> <span>ÁªÏµµç»°£º</span> </div>
+                      <div class="newsname"> <span>ï¿½ï¿½Ïµï¿½ç»°ï¿½ï¿½</span> </div>
 
                       <div class="newscontent">
 
-                        <input name="text9" type="text" class="input1" id="ctel" onblur="check_Telephone(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="¸ñÊ½Èç£º010-88888888"/>
+                        <input name="text9" type="text" class="input1" id="ctel" onblur="check_Telephone(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½Ê½ï¿½ç£º010-88888888"/>
 
                       </div>
 
@@ -638,11 +638,11 @@ var AgentQian = "Theme1";
 
                         <label> </label>
 
-                        <span>µç×ÓÓÊÏä£º</span> </div>
+                        <span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä£º</span> </div>
 
                       <div class="newscontent">
 
-                        <input name="text10" type="text" class="input1" id="cmail" onblur="check_email(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÌîÐ´ÄúÕæÊµ³£ÓÃµÄÓÊÏä,ÒÔ±ãÒÔºóÕÒ»ØÃÜÂë"/>
+                        <input name="text10" type="text" class="input1" id="cmail" onblur="check_email(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Ô±ï¿½ï¿½Ôºï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½"/>
 
                       </div>
 
@@ -664,11 +664,11 @@ var AgentQian = "Theme1";
 
                         <label> </label>
 
-                        <span>ÁªÏµµØÖ·£º</span> </div>
+                        <span>ï¿½ï¿½Ïµï¿½ï¿½Ö·ï¿½ï¿½</span> </div>
 
                       <div class="newscontent">
 
-                        <input name="text11" type="text" class="input1" id="caddr" onblur="check_address(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ÇëÊäÈë¸ºÔðÈËµÄÁªÏµµØÖ·"/>
+                        <input name="text11" type="text" class="input1" id="caddr" onblur="check_address(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ë¸ºï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ïµï¿½ï¿½Ö·"/>
 
                       </div>
 
@@ -690,11 +690,11 @@ var AgentQian = "Theme1";
 
                         <label> </label>
 
-                        <span>ÉÏ¼¶±àºÅ£º</span> </div>
+                        <span>ï¿½Ï¼ï¿½ï¿½ï¿½Å£ï¿½</span> </div>
 
                       <div class="newscontent">
 
-                        <input type="text" size="25" id="parentid" <?php if(isset($vd['agent'][7])){ ?>value="<?php echo $vd['agent'][7]; ?>" disabled style="background:#f0f0f0"<?php } ?> class="input1" onblur="check_parent(this.value)" onmouseout="showtip(this.tips,0,150)" msg="ÇëÊäÈëÄúµÄÉÏ¼¶´úÀíÉÌ£¬Èç¹ûÃ»ÓÐ£¬Áô¿Õ¼´¿É(±íÊ¾ÉÏ¼¶ÊôÓÚ¹Ù·½Ö±Êô´úÀí)"/>
+                        <input type="text" size="25" id="parentid" <?php if(isset($vd['agent'][7])){ ?>value="<?php echo $vd['agent'][7]; ?>" disabled style="background:#f0f0f0"<?php } ?> class="input1" onblur="check_parent(this.value)" onmouseout="showtip(this.tips,0,150)" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì£ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½(ï¿½ï¿½Ê¾ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½Ú¹Ù·ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)"/>
 
                       </div>
 
@@ -716,13 +716,13 @@ var AgentQian = "Theme1";
 
                         <label> </label>
 
-                        <span>ÑéÖ¤Âë£º</span> </div>
+                        <span>ï¿½ï¿½Ö¤ï¿½ë£º</span> </div>
 
                       <div class="newstip">
 
-                        <input name="text12" type="text" class="regyanzheng" id="randcode" onblur="checkcode(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" maxlength="4" msg="ÇëÊäÈëÏÂÃæÍ¼ÏñÖÐµÄÑéÖ¤Âë"/>
+                        <input name="text12" type="text" class="regyanzheng" id="randcode" onblur="checkcode(this.value);" onmouseout="showtip(this.tips,0,150)" size="25" maxlength="4" msg="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ö¤ï¿½ï¿½"/>
 
-                      <span class="c-form-1-vcode"><img src="index.php?m=mod_b2b&a=randcode" id="src" height="38" alt="¿´²»Çå³þ?Çëµã»÷Ë¢ÐÂ" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/></span>                      </div>
+                      <span class="c-form-1-vcode"><img src="index.php?m=mod_b2b&a=randcode" id="src" height="38" alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/></span>                      </div>
 
                       <table width="200" border="0">
 
@@ -742,13 +742,13 @@ var AgentQian = "Theme1";
 
                         <label> </label>
 
-                        <span>Í¬Òâ£º</span> </div>
+                        <span>Í¬ï¿½â£º</span> </div>
 
                       <div class="newstip">
 
                         <input name="checkbox3" type="radio" onclick="setable(this)" />
 
-Í¬Òâ</div>
+Í¬ï¿½ï¿½</div>
 
                     </div>
 
@@ -758,7 +758,7 @@ var AgentQian = "Theme1";
 
                                 <label>
 
-                                    *</label><span>ÉÏ¼¶±àºÅ£º</span>
+                                    *</label><span>ï¿½Ï¼ï¿½ï¿½ï¿½Å£ï¿½</span>
 
                             </div>
 
@@ -776,21 +776,21 @@ var AgentQian = "Theme1";
 
                 </div>
 
-                <?php ¹ØÁªÕËºÅµÇÂ¼ ?>
+                <?php ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅµï¿½Â¼ ?>
 
                 <div class="selectlogin">
 
-                  <div class="havenum"> ÒÑÓÐÕËºÅ£¿
+                  <div class="havenum"> ï¿½ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½
 
-                      <input name="button" type="button" class="havenum_login" onclick="window.open('login.php','_self')" value="µÇÂ¼" />
+                      <input name="button" type="button" class="havenum_login" onclick="window.open('login.php','_self')" value="ï¿½ï¿½Â¼" />
 
                   </div>
 
-                  <div class="parten"> ÄúÒ²¿ÉÒÔÓÃºÏ×÷ÍøÕ¾ÕËºÅµÇÂ¼ </div>
+                  <div class="parten"> ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ËºÅµï¿½Â¼ </div>
 
-                  <div class="partenline"> <a id="btnQQ" class="input qq">QQ</a> <a id="btnSina" class="input sina">ÐÂÀËÎ¢²©</a> </div>
+                  <div class="partenline"> <a id="btnQQ" class="input qq">QQ</a> <a id="btnSina" class="input sina">ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½</a> </div>
 
-                  <div class="partenline"> <a id="taobao" class="input taobao">ÌÔ±¦</a> </div>
+                  <div class="partenline"> <a id="taobao" class="input taobao">ï¿½Ô±ï¿½</a> </div>
 
                 </div>
 
@@ -798,7 +798,7 @@ var AgentQian = "Theme1";
 
 
 
-								<input id="reg_submit" type="button" value=" È·ÈÏ×¢²á" class="register_btn" id="reg_submit"  onclick="sendinfo()" value="Íê³É×¢²á" disabled/><span id="spanresult"></span><input name="°´Å¥" type="button" class="rewrite_btn" id="rewrite_btn" onclick="regReset()" value="ÖØÐÂÌîÐ´" />
+								<input id="reg_submit" type="button" value=" È·ï¿½ï¿½×¢ï¿½ï¿½" class="register_btn" id="reg_submit"  onclick="sendinfo()" value="ï¿½ï¿½ï¿½×¢ï¿½ï¿½" disabled/><span id="spanresult"></span><input name="ï¿½ï¿½Å¥" type="button" class="rewrite_btn" id="rewrite_btn" onclick="regReset()" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´" />
 
 
 
@@ -818,67 +818,67 @@ var AgentQian = "Theme1";
 
                 <input name="checkbox2" type="checkbox" onclick="set(this)" value="0" checked="checked"/>
 
-                ¹ºÂòµã¿¨µÄÊ±ºòÏÔÊ¾½ø»õ¼Û¸ñ<br/>
+                ï¿½ï¿½ï¿½ï¿½ã¿¨ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="1" checked="checked"/>
 
-                ÏÔÊ¾ÕË»§Óà¶î<br/>
+                ï¿½ï¿½Ê¾ï¿½Ë»ï¿½ï¿½ï¿½ï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="2"/>
 
-                ÏÔÊ¾ÎÒµÄÉÏ¼¶¾­ÏúÉÌ<br/>
+                ï¿½ï¿½Ê¾ï¿½Òµï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="3" checked="checked"/>
 
-                ÔÊÐí½¨Á¢Ô±¹¤ÏúÊÛÕËºÅ<br/>
+                ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="4" checked="checked"/>
 
-    ÔÊÐíÔ±¹¤ÊÛ¿¨Ê±ÐÞ¸ÄÁãÊÛ¼Û¸ñ<br/>
+    ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Û¿ï¿½Ê±ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Û¼Û¸ï¿½<br/>
 
   </span> <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="5" checked="checked"/>
 
-                ÔÊÐíÊ¹ÓÃÍøÕ¾µÇÂ¼·½Ê½<br/>
+                ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½Â¼ï¿½ï¿½Ê½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="6" checked="checked"/>
 
-                ÔÊÐíÊ¹ÓÃµÇÂ¼Æ÷µÇÂ¼<br/>
+                ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="7"/>
 
-    ÊÕµ½ÐÂµÄ¶ÌÏûÏ¢µ¯³öÌáÐÑ¿ò<br/>
+    ï¿½Õµï¿½ï¿½ÂµÄ¶ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¿ï¿½<br/>
 
   </span> <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="8"/>
 
-                ¹º¿¨Ê±ºòÊäÈë½»Ò×ÃÜÂë<br/>
+                ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ë½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox" onclick="set(this)" value="9"/>
 
-                ÏÔÊ¾µ±Ç°Ç·¿î<br/>
+                ï¿½ï¿½Ê¾ï¿½ï¿½Ç°Ç·ï¿½ï¿½<br/>
 
   <span style="display:none">
 
   <input name="checkbox2" type="checkbox"onclick="set(this)" value="10"/>
 
-                ÏÔÊ¾ÐÅÓÃ¶î¶È<br/>
+                ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½<br/>
 
               </div>
 
@@ -1032,7 +1032,7 @@ var AgentQian = "Theme1";
 
 
 
-  //»ñÈ¡Êó±êµÄ×ø±ê
+  //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -1172,11 +1172,11 @@ var AgentQian = "Theme1";
 
 <div class="clear">
 
-  <div class="registerfoot"> <span class="fl"><a href="/index.php?m=mod_b2b&a=Dkf">¹ØÓÚÎÒÃÇ </a>|<a href="/index.php?m=mod_b2b&a=Dkf"> ÁªÏµ·½Ê½ </a>|<a
+  <div class="registerfoot"> <span class="fl"><a href="/index.php?m=mod_b2b&a=Dkf">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </a>|<a href="/index.php?m=mod_b2b&a=Dkf"> ï¿½ï¿½Ïµï¿½ï¿½Ê½ </a>|<a
 
-                    href="../index.php?m=mod_b2b&c=Article&a=Homecj&name=Åú·¢ÏµÍ³³£¼ûÎÊÌâ"> ³£¼ûÎÊÌâ</a><br />
+                    href="../index.php?m=mod_b2b&c=Article&a=Homecj&name=ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><br />
 
-  °æÈ¨ËùÓÐ <a id="Copyright"><?php echo $vd['web']['webname']; ?></a> ÔËÓªÉÌ£º<span id="OperatorName"><?php echo $vd['web']['beian']; ?></span></span> </div>
+  ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ <a id="Copyright"><?php echo $vd['web']['webname']; ?></a> ï¿½ï¿½Óªï¿½Ì£ï¿½<span id="OperatorName"><?php echo $vd['web']['beian']; ?></span></span> </div>
 
 </div>
 

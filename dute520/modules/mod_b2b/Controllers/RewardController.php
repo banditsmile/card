@@ -39,7 +39,7 @@ class RewardController extends Controller
 								$data = array_merge( $data, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IReward_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ", "listprice" => "ÉÌÆ·ÃæÖµ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "listprice" => "ï¿½ï¿½Æ·ï¿½ï¿½Öµ" );
 								$this->Assign( "sarray", $R00be52aa45 );
 					
 												$this->view( );
@@ -59,7 +59,7 @@ class RewardController extends Controller
 								$Rb3f07f8c36 = $this->GetProductCache( $R8e8b5578f7 );
 								if ( !isset( $Rb3f07f8c36['forykt'] ) || $Rb3f07f8c36['forykt'] == 0 )
 								{
-												$this->Alert( "ÄúºÃ,¸ÃÉÌÆ·Î´¶ÔÒ»¿¨Í¨³öÊÛ,ÎÞ·¨ÉèÖÃ·µµã" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Æ·Î´ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½,ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R71a664ef8c = $this->PageInfo( );
@@ -70,7 +70,7 @@ class RewardController extends Controller
 								$R4e420efcc3 = $this->hander->IReward_AgentPage( $data, "*" );
 								$data['aid'] = $R8e8b5578f7;
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "aname" => "´úÀíÉÌ", "company" => "¹«Ë¾", "aid" => "´úÀíÉÌID" );
+								$R00be52aa45 = array( "aname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "company" => "ï¿½ï¿½Ë¾", "aid" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID" );
 								$R63bede6b19 = $Rfff462d8f8 == 1 ? "aid > 0" : "aid < 1";
 								$this->Recycle( "products", $R63bede6b19 );
 								$this->Assign( "ptype", getvar( "ptype", -1 ) );
@@ -95,7 +95,7 @@ class RewardController extends Controller
 								$agent = $this->GetAgentCache( $R2a51483b14 );
 								if ( !isset( $agent['forykt'] ) || $agent['forykt'] == 0 )
 								{
-												$this->Alert( "ÄúºÃ,¸ÃÓÃ»§²¢·ÇÒ»¿¨Í¨´úÀíÉÌ,ÎÞ·¨ÉèÖÃ·µµã" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R71a664ef8c = $this->PageInfo( );
@@ -112,7 +112,7 @@ class RewardController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IReward_ProductPage( $data, "*" );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "pname" => "ÉÌÆ·Ãû³Æ", "pid" => "ÉÌÆ·±àºÅ" );
+								$R00be52aa45 = array( "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½" );
 								$R63bede6b19 = $Rfff462d8f8 == 1 ? "aid > 0" : "aid < 1";
 								$this->Recycle( "products", $R63bede6b19 );
 								$this->Assign( "ptype", getvar( "ptype", -1 ) );
@@ -147,19 +147,19 @@ class RewardController extends Controller
 								$this->FillPage( $data, $R4e420efcc3 );
 								$R0d2025d631 = $this->hander->ITrade_GetByLimit( $data, "sum(outcome) as outcome,sum(reward) as reward,sum(realreward) as realreward" );
 								$this->Assign( "record", $R0d2025d631 );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ", "bindaid" => "¾­ÏúÉÌ±àºÅ", "operator" => "²Ù×÷Õß", "yktnumber" => "Ò»¿¨Í¨¿¨ºÅ", "content" => "ÉÌÆ·" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "bindaid" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ï¿½", "operator" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "yktnumber" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "content" => "ï¿½ï¿½Æ·" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
 								if ( $Ra8b176bf4f == 11 )
 								{
-												$R4fa9c48c92 = array( "11" => "µã¿¨½»Ò×²úÉúµÄ´úÀíÀûÈó" );
+												$R4fa9c48c92 = array( "11" => "ï¿½ã¿¨ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								}
 								else if ( $Ra8b176bf4f == 12 )
 								{
-												$R4fa9c48c92 = array( "12" => "¹©»õËùµÃ" );
+												$R4fa9c48c92 = array( "12" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
-												$R4fa9c48c92 = array( "1,2,21,22,31,32,98,99,101,100" => "ËùÓÐÀàÐÍ", "1" => "ÆÕÍ¨µã¿¨½»Ò×", "2" => "ÓÃ»§ÍøÒø³äÖµ", "21" => "´û¿î¸ø±ðÈË", "22" => "Ïò±ðÈË½è¿î", "31" => "×ª¿î¸ø±ðÈË", "32" => "±ðÈË×ª¿î¸øÎÒ", "98" => "×Ê½ð²Ù×÷²úÉúµÄ½»Ò×¼ÇÂ¼", "99" => "ÏµÍ³¸øÎÒ³äÖµ", "100" => "Ò»¿¨Í¨¶Ò»»¿¨¼ÇÂ¼", "101" => "Ò»¿¨Í¨³äÖµ¼ÇÂ¼", "31,32" => "ËùÓÐ×ª¿î¼ÇÂ¼", "21,22" => "ËùÓÐ´û¿î/½è¿î¼ÇÂ¼" );
+												$R4fa9c48c92 = array( "1,2,21,22,31,32,98,99,101,100" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "1" => "ï¿½ï¿½Í¨ï¿½ã¿¨ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ", "21" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "22" => "ï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½", "31" => "×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "32" => "ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½", "98" => "ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½×¼ï¿½Â¼", "99" => "ÏµÍ³ï¿½ï¿½ï¿½Ò³ï¿½Öµ", "100" => "Ò»ï¿½ï¿½Í¨ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â¼", "101" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµï¿½ï¿½Â¼", "31,32" => "ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Â¼", "21,22" => "ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Â¼" );
 								}
 								$this->Assign( "tradetypes", $R4fa9c48c92 );
 								$this->Assign( "tradetype", getvar( "tradetype" ) );
@@ -173,13 +173,13 @@ class RewardController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -191,16 +191,16 @@ class RewardController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								$Rcc5c6e696c = explode( ":", $param );
 								if ( count( $Rcc5c6e696c ) < 3 || intval( $Rcc5c6e696c[1] ) == 0 || intval( $Rcc5c6e696c[2] ) == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$R3db8f5c8bc = $this->hander->IReward_GetByStr( "aid=".intval( $Rcc5c6e696c[1] )." and pid=".intval( $Rcc5c6e696c[2] )." and rtype=3" );
 								if ( !isset( $R3db8f5c8bc[0]['id'] ) )
 								{
@@ -226,7 +226,7 @@ class RewardController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -240,7 +240,7 @@ class RewardController extends Controller
 								$R808b89ba0e = $this->hander->IReward_DestroyByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 				}
 
@@ -258,7 +258,7 @@ class RewardController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -297,7 +297,7 @@ class RewardController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -360,18 +360,18 @@ class RewardController extends Controller
 								$Rcdf47c89e1 = doubleval( request( "ar" ) );
 								if ( $Rcdf47c89e1 == 0 || $R8aa41e9b03 == 0 )
 								{
-												$this->Alert( "·µµãÎª0, ÎÞÐè·µµã" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Îª0, ï¿½ï¿½ï¿½è·µï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $Rcdf47c89e1 < $R8aa41e9b03 )
 								{
-												$this->Alert( "Êµ¼Ê·µµã½ð¶î²»Ó¦¸Ã´óÓÚÏµÍ³¼ÆËã³öµÄ·µµã½ð¶î" );
+												$this->Alert( "Êµï¿½Ê·ï¿½ï¿½ï¿½ï¿½î²»Ó¦ï¿½Ã´ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$Rbd2ea88d3a = $this->Compute1( );
 								if ( $Rbd2ea88d3a != $Rcdf47c89e1 )
 								{
-												$this->Alert( "²ÎÊý´íÎó,ÇëÖØÐÂÌá½»" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»" );
 												$this->HistoryGo( );
 								}
 								$R63bede6b19 = "checkoutdate='".date( "Y-m-d H-i-s" )."',realreward=reward,checkout=1";
@@ -392,18 +392,18 @@ class RewardController extends Controller
 												$R3db8f5c8bc = $R2097a8fddf->IAgent_Update( $data, $R2a51483b14 );
 												if ( $R3db8f5c8bc )
 												{
-																$Re82ee9b121 = $R696350cab3."ÖÁ".$R1c8e0f6795;
+																$Re82ee9b121 = $R696350cab3."ï¿½ï¿½".$R1c8e0f6795;
 																$this->TradeCreate( $R2a51483b14, $R8aa41e9b03, $Rc0c42883ee, $R3ab1f9eb35, 61, $Re82ee9b121, $Ra236db885f, $Rcdf47c89e1 );
-																$this->Alert( "·µµã³É¹¦" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½É¹ï¿½" );
 												}
 												else
 												{
-																$this->Alert( "·µµãÊ§°Ü" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 												}
 								}
 								else
 								{
-												$this->Alert( "·µµãÊ§°Ü" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Reward&a=CheckOutTrade" );
 				}
@@ -452,9 +452,9 @@ class RewardController extends Controller
 								$this->FillPage( $data, $R4e420efcc3 );
 								$R0d2025d631 = $this->hander->ITrade_GetByLimit( $data, "sum(income) as income,sum(listprice) as listprice" );
 								$this->Assign( "record", $R0d2025d631 );
-								$R00be52aa45 = array( "aid" => "´úÀíÉÌ±àºÅ", "content" => "Ïà¹ØËµÃ÷", "admname" => "¹ÜÀíÔ±²Ù×÷Õß" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨" );
-								$R4fa9c48c92 = array( "61" => "Ò»¿¨Í¨·µµã" );
+								$R00be52aa45 = array( "aid" => "ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ï¿½", "content" => "ï¿½ï¿½ï¿½Ëµï¿½ï¿½", "admname" => "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨" );
+								$R4fa9c48c92 = array( "61" => "Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "tradetypes", $R4fa9c48c92 );
 								$this->Assign( "tradetype", getvar( "tradetype" ) );
 								$this->Assign( "sarray", $R00be52aa45 );

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -12,29 +12,29 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <div id="content" class="cwarpper" style="position:relative">
 <div class="cbodyHead"></div>
 <div id="tab">
-<input type="button" value="ÌîÐ´»ù±¾ÐÅÏ¢"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
-<!--if(UB_B2C){--><input type="button" value="ÓÊÏä·¢ËÍÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_active" onFocus="this.blur()"/><!--}-->
-<input type="button" value="¹Ø±ÕÐÅÏ¢ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="Ç°Ì¨Ïà¹ØÉèÖÃ" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="ºóÌ¨½»Ò×ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
-<input type="button" value="IPÆÁ±ÎÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
-<!--if($vd['adminrank']==1){--><input type="button" value="Ïà¹Ø½Å±¾ÉèÖÃ"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_normal" onFocus="this.blur()"/><!--}-->
+<input type="button" value="å¡«å†™åŸºæœ¬ä¿¡æ¯"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
+<!--if(UB_B2C){--><input type="button" value="é‚®ç®±å‘é€è®¾ç½®" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_active" onFocus="this.blur()"/><!--}-->
+<input type="button" value="å…³é—­ä¿¡æ¯è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="å‰å°ç›¸å…³è®¾ç½®" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="åŽå°äº¤æ˜“è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="IPå±è”½è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
+<!--if($vd['adminrank']==1){--><input type="button" value="ç›¸å…³è„šæœ¬è®¾ç½®"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_normal" onFocus="this.blur()"/><!--}-->
 </div>
 <div class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">ÓÊÏäÅäÖÃ</div>
+<div class="ctitle">é‚®ç®±é…ç½®</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt">ÓÊÏä·þÎñÆ÷</td>
-      <td class="tablert"><input type="text" name="mailserver" size="35" value="{$vd['sys']['mailserver']}"/>  <span class="spantip">ÓÊÏäsmtp·þÎñÆ÷£¬Èçsmtp.126.com</span></td>
+      <td class="tablelt">é‚®ç®±æœåŠ¡å™¨</td>
+      <td class="tablert"><input type="text" name="mailserver" size="35" value="{$vd['sys']['mailserver']}"/>  <span class="spantip">é‚®ç®±smtpæœåŠ¡å™¨ï¼Œå¦‚smtp.126.com</span></td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÊÏäÓÃ»§Ãû</td>
-      <td class="tablert"><input type="text" name="mailuser" size="35" value="{$vd['sys']['mailuser']}"/>  <span class="spantip">ÄúµÄÓÊÏä£¬Èçxxx@126.com</span></td>
+      <td class="tablelt">é‚®ç®±ç”¨æˆ·å</td>
+      <td class="tablert"><input type="text" name="mailuser" size="35" value="{$vd['sys']['mailuser']}"/>  <span class="spantip">æ‚¨çš„é‚®ç®±ï¼Œå¦‚xxx@126.com</span></td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÊÏäÃÜÂë</td>
-      <td class="tablert"><input type="password" name="mailpass" size="39" value="{$vd['sys']['mailpass']}" style="width:202px;"/>  <span class="spantip">ÄúµÄÓÊÏäÃÜÂë</span></td>
+      <td class="tablelt">é‚®ç®±å¯†ç </td>
+      <td class="tablert"><input type="password" name="mailpass" size="39" value="{$vd['sys']['mailpass']}" style="width:202px;"/>  <span class="spantip">æ‚¨çš„é‚®ç®±å¯†ç </span></td>
     </tr>
   </table>
 </div>
@@ -44,31 +44,31 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <!--if(UB_B2C|UB_YKT){-->
 <div class="cwarpper1">
 <div class="ctitle">
-  ÓÃ»§¹º¿¨ºó·¢ËÍÓÊ¼þ·¢ËÍÉèÖÃ<!--if(UB_B2B){-->(Ö»¶ÔÁãÊÛÏµÍ³ÓÐÐ§)<!--}-->
+  ç”¨æˆ·è´­å¡åŽå‘é€é‚®ä»¶å‘é€è®¾ç½®<!--if(UB_B2B){-->(åªå¯¹é›¶å”®ç³»ç»Ÿæœ‰æ•ˆ)<!--}-->
   <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-    Ö§³ÖµÄ±ê¼ÇÈçÏÂ£º<br/> 
-    {username} £ºµ±Ç°¹º¿¨µÄÓÃ»§Ãû<br/> 
-    {webname}  £ºÆ½Ì¨Ãû³Æ<br/>
-    {pname}    £ºµ±Ç°¹ºÂòµÄÉÌÆ·<br/>
-    {result}   £º¹º¿¨½á¹û£¬Ö»ÓÐ³É¹¦ºó²Å»á·¢ËÍ<br/>
-    {website}  £ºÆ½Ì¨ÍøÖ·<br/>
-    {date}     £º¹º¿¨Ê±¼ä<br/>
-    ÔÚÐèÒªÊäÈëÕâÐ©ÐÅÏ¢µÄµØ·½£¬ÄúÖ»Òª²åÈëÕâÐ©±ê¼Ç¼´¿É<br/>
-    <font color="#ff0000">×¢£º±ê¼ÇÊÇ°üº¬´óÀ©ºÅÔÚÄÚµÄ</font><br/>
-    ÄãÒ²¿ÉÒÔÊ¹ÓÃ±à¼­¿ò²åÈëÍ¼Æ¬»òÕß¶Ô×ÖÌå¶ÎÂä½øÐÐ´¦Àí<br/>
+    æ”¯æŒçš„æ ‡è®°å¦‚ä¸‹ï¼š<br/> 
+    {username} ï¼šå½“å‰è´­å¡çš„ç”¨æˆ·å<br/> 
+    {webname}  ï¼šå¹³å°åç§°<br/>
+    {pname}    ï¼šå½“å‰è´­ä¹°çš„å•†å“<br/>
+    {result}   ï¼šè´­å¡ç»“æžœï¼Œåªæœ‰æˆåŠŸåŽæ‰ä¼šå‘é€<br/>
+    {website}  ï¼šå¹³å°ç½‘å€<br/>
+    {date}     ï¼šè´­å¡æ—¶é—´<br/>
+    åœ¨éœ€è¦è¾“å…¥è¿™äº›ä¿¡æ¯çš„åœ°æ–¹ï¼Œæ‚¨åªè¦æ’å…¥è¿™äº›æ ‡è®°å³å¯<br/>
+    <font color="#ff0000">æ³¨ï¼šæ ‡è®°æ˜¯åŒ…å«å¤§æ‰©å·åœ¨å†…çš„</font><br/>
+    ä½ ä¹Ÿå¯ä»¥ä½¿ç”¨ç¼–è¾‘æ¡†æ’å…¥å›¾ç‰‡æˆ–è€…å¯¹å­—ä½“æ®µè½è¿›è¡Œå¤„ç†<br/>
   </p>
 </div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-    <td class="tablelt">ÓÊ¼þ×Ô¶¯·¢ËÍÉèÖÃ</td>
+    <td class="tablelt">é‚®ä»¶è‡ªåŠ¨å‘é€è®¾ç½®</td>
     <td class="tablert">
-        <input type="checkbox" name="postaftercbuy" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[1])}> ÓÃ»§¹º¿¨ºó·¢ËÍ
+        <input type="checkbox" name="postaftercbuy" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[1])}> ç”¨æˆ·è´­å¡åŽå‘é€
     </td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÊ¼þ±êÌâ</td>
-      <td class="tablert"><input type="text" name="mailtitle" size="35" value="{$vd['sys']['mailtitle']}"/>  <span class="spantip">¹ºÂòÉÌÆ·ºó·¢ËÍµÄÓÊ¼þ±êÌâ</span></td>
+      <td class="tablelt">é‚®ä»¶æ ‡é¢˜</td>
+      <td class="tablert"><input type="text" name="mailtitle" size="35" value="{$vd['sys']['mailtitle']}"/>  <span class="spantip">è´­ä¹°å•†å“åŽå‘é€çš„é‚®ä»¶æ ‡é¢˜</span></td>
     </tr>
   </table>
   <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">
@@ -85,26 +85,26 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 <div class="cwarpper1">
 <div class="ctitle">
-  ÓÃ»§×¢²áºóÓÊ¼þ·¢ËÍÉèÖÃ(Ö»¶ÔÁãÊÛÏµÍ³ÓÐÐ§)
+  ç”¨æˆ·æ³¨å†ŒåŽé‚®ä»¶å‘é€è®¾ç½®(åªå¯¹é›¶å”®ç³»ç»Ÿæœ‰æ•ˆ)
   <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-    Ö§³ÖµÄ±ê¼ÇÈçÏÂ£º<br/> 
-    {username} £º×¢²áµÄÓÃ»§<br/> 
-    {userpass} £ºÓÃ»§ÃÜÂë<br/>
-    {website}  £ºÆ½Ì¨µØÖ·<br/>
-    {date}     £º×¢²áÊ±¼ä<br/>
-    ÔÚÐèÒªÊäÈëÕâÐ©ÐÅÏ¢µÄµØ·½£¬ÄúÖ»Òª²åÈëÕâÐ©±ê¼Ç¼´¿É<br/>
-    <font color="#ff0000">×¢£º±ê¼ÇÊÇ°üº¬´óÀ©ºÅÔÚÄÚµÄ</font><br/>
-    ÄãÒ²¿ÉÒÔÊ¹ÓÃ±à¼­¿ò²åÈëÍ¼Æ¬»òÕß¶Ô×ÖÌå¶ÎÂä½øÐÐ´¦Àí<br/>
+    æ”¯æŒçš„æ ‡è®°å¦‚ä¸‹ï¼š<br/> 
+    {username} ï¼šæ³¨å†Œçš„ç”¨æˆ·<br/> 
+    {userpass} ï¼šç”¨æˆ·å¯†ç <br/>
+    {website}  ï¼šå¹³å°åœ°å€<br/>
+    {date}     ï¼šæ³¨å†Œæ—¶é—´<br/>
+    åœ¨éœ€è¦è¾“å…¥è¿™äº›ä¿¡æ¯çš„åœ°æ–¹ï¼Œæ‚¨åªè¦æ’å…¥è¿™äº›æ ‡è®°å³å¯<br/>
+    <font color="#ff0000">æ³¨ï¼šæ ‡è®°æ˜¯åŒ…å«å¤§æ‰©å·åœ¨å†…çš„</font><br/>
+    ä½ ä¹Ÿå¯ä»¥ä½¿ç”¨ç¼–è¾‘æ¡†æ’å…¥å›¾ç‰‡æˆ–è€…å¯¹å­—ä½“æ®µè½è¿›è¡Œå¤„ç†<br/>
   </p>
 </div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
     <tr>
-    <td class="tablelt">ÓÊ¼þ×Ô¶¯·¢ËÍÉèÖÃ</td>
-    <td class="tablert"><input type="checkbox" name="postafterareg" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[2])}> ÓÃ»§×¢²áºó·¢ËÍ</td>
+    <td class="tablelt">é‚®ä»¶è‡ªåŠ¨å‘é€è®¾ç½®</td>
+    <td class="tablert"><input type="checkbox" name="postafterareg" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[2])}> ç”¨æˆ·æ³¨å†ŒåŽå‘é€</td>
     </tr>
     <tr>
-      <td class="tablelt">ÓÊ¼þ±êÌâ</td>
+      <td class="tablelt">é‚®ä»¶æ ‡é¢˜</td>
       <td class="tablert"><input type="text" name="aregmailtitle" size="35" value="{$vd['sys']['aregmailtitle']}"/>  <span class="spantip"></span></td>
     </tr>
   </table>
@@ -125,8 +125,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <div id="opcontent">
   
   <div class="optxt">
-    <input type="submit" value=" ÐÞ ¸Ä " class="btn"/>
-    <input type="reset" value=" ÖØ ÖÃ " class="btn"/>
+    <input type="submit" value=" ä¿® æ”¹ " class="btn"/>
+    <input type="reset" value=" é‡ ç½® " class="btn"/>
   </div>
 </div>
 </form>
@@ -134,12 +134,12 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <input type="hidden" id="website" value="{$vd['website']}"/>
 <input type="hidden" id="connecter" value="{$vd['connecter']}"/>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ÏµÍ³»ù±¾ÉèÖÃ"><font color="#000">ÏµÍ³»ù±¾ÉèÖÃ</font></a></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_email" onFocus="this.blur()" title="²é¿´ÓÊÏä·¢ËÍÉèÖÃÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›žåˆ°åŽå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="ç³»ç»ŸåŸºæœ¬è®¾ç½®"><font color="#000">ç³»ç»ŸåŸºæœ¬è®¾ç½®</font></a></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_email" onFocus="this.blur()" title="æŸ¥çœ‹é‚®ç®±å‘é€è®¾ç½®ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >é¡µé¢åŠ è½½ä¸­è¯·ç¨ç­‰...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 2;

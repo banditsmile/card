@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
@@ -10,17 +10,17 @@
     <td width="50%" height="35">
       <span style="float:right">
       <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
-      <input type="submit" value="ÉÌÆ·ËÑË÷ &gt;&gt;" style="vertical-align:middle;"/>
+      <input type="submit" value="å•†å“æœç´¢ &gt;&gt;" style="vertical-align:middle;"/>
       </span>
       <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >
-        ÇëÑ¡ÔñÄúÒªµÄ²Ù×÷
+        è¯·é€‰æ‹©æ‚¨è¦çš„æ“ä½œ
         <select id="righttype" onchange="inititem(this)">
           {#Option($vd['righttype'], $vd['limititem'])}
         </select>
         <input type="text" size="10" id="item" value="{$vd['limittext']}"/>
         <input type="hidden" id="itemval" onkeydown=""/>
-        <input type="button" id="btnselect" value="Ñ¡ÔñÉÌ¼ÒĞÕÃû" onclick="setlimit()" align="absmiddle" style="cursor:pointer;"/>
-        <input type="button" value="Ö´ĞĞ" onclick="go()" align="absmiddle" style="cursor:pointer;"/>
+        <input type="button" id="btnselect" value="é€‰æ‹©å•†å®¶å§“å" onclick="setlimit()" align="absmiddle" style="cursor:pointer;"/>
+        <input type="button" value="æ‰§è¡Œ" onclick="go()" align="absmiddle" style="cursor:pointer;"/>
       </span>
     </td>
   </tr>
@@ -29,26 +29,26 @@
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
   <tr>
     <td width="12%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·ËùÓĞ</font></td>
+      <font color="#ff0000">å•†å“æ‰€æœ‰</font></td>
     <td width="40%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·Ãû³Æ</font></td>
+      <font color="#ff0000">å•†å“åç§°</font></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·ÀàĞÍ</font></td>
+      <font color="#ff0000">å•†å“ç±»å‹</font></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÌÆ·ÃæÖµ</font></td>
+      <font color="#ff0000">å•†å“é¢å€¼</font></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">½ø»õ¼Û</font></td>
+      <font color="#ff0000">è¿›è´§ä»·</font></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">¹©»õÉÌ</font></td>
+      <font color="#ff0000">ä¾›è´§å•†</font></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÉÏ¼Ü</font>
+      <font color="#ff0000">ä¸Šæ¶</font>
     </td>
     <td width="8%" align="center" height="35" class="listhead">
-      <font color="#ff0000">ÏŞÖÆ¹ºÂò</font></td>
+      <font color="#ff0000">é™åˆ¶è´­ä¹°</font></td>
   </tr>
   <!--if($vd['totlerow'] == 0) {-->
   <tr>
-    <td align="right" height="35" colspan="20">Ã»ÓĞÄúÒªÕÒµÄÉÌÆ·£¬ÇëÖØĞÂ²Ù×÷</td>
+    <td align="right" height="35" colspan="20">æ²¡æœ‰æ‚¨è¦æ‰¾çš„å•†å“ï¼Œè¯·é‡æ–°æ“ä½œ</td>
   </tr>
   <!--}-->
   <form name="form" method="post" action="index.php?m=mod_b2b&c=product&a=RightsSave&itemtext={$vd['limittext']}&limititem={$vd['limititem']}">
@@ -73,23 +73,23 @@
   <!--}-->
   <tr>
     <td align="left" height="35" colspan="2">
-    <strong>±¾¼ÇÂ¼×Ü¼Æ <font color="#ff0000">{$vd['totlerow']}</font> Ìõ  µÚ {$vd['thispage']} Ò³</strong>/ ¹² {$vd['totlepage']} Ò³</strong>
+    <strong>æœ¬è®°å½•æ€»è®¡ <font color="#ff0000">{$vd['totlerow']}</font> æ¡  ç¬¬ {$vd['thispage']} é¡µ</strong>/ å…± {$vd['totlepage']} é¡µ</strong>
     </td>
     <td align="right" height="35" colspan="7">
       <input type="hidden" name="limititem" value="{$vd['limititem']}"/>
       <input type="hidden" name="limitvalue" value="{$vd['limitvalue']}"/>
       <input type="hidden" name="agent" value="1"/>
-      <input type="submit" value=" ĞŞ¸ÄÈ¨ÏŞ &gt;&gt;"/>
-      <input type="reset" value=" ÖØÉè &gt;&gt;"/>
+      <input type="submit" value=" ä¿®æ”¹æƒé™ &gt;&gt;"/>
+      <input type="reset" value=" é‡è®¾ &gt;&gt;"/>
     </td>
   </tr>
   </form>
   <tr>
     <td align="left" height="35" colspan="9">
     <form method="post" action="index.php?m=mod_b2b&c=product&a=AgentProductRights&{$vd['op']}">
-      <input type="button" value="ÉÏÒ»Ò³ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['prepage']}&{$vd['op']}'"/>
-      <input type="button" value="ÏÂÒ»Ò³ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['nextpage']}&{$vd['op']}'"/>
-      µ½µÚ<input type="text" name="page" size="2" value="" class="txt"/>Ò³<input type="submit" value=" È· ¶¨ &gt;&gt;"/>
+      <input type="button" value="ä¸Šä¸€é¡µ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="ä¸‹ä¸€é¡µ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['nextpage']}&{$vd['op']}'"/>
+      åˆ°ç¬¬<input type="text" name="page" size="2" value="" class="txt"/>é¡µ<input type="submit" value=" ç¡® å®š &gt;&gt;"/>
     </form>
     </td>
   </tr>
@@ -116,26 +116,26 @@
     {
       case "aid":
         selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
-        $("btnselect").value = "Ñ¡Ôñ¾­ÏúÉÌÃû³Æ";
+        $("btnselect").value = "é€‰æ‹©ç»é”€å•†åç§°";
         break;
       case "gid":
         selectpage = "index.php?m=mod_b2b&c=rank&isselect=1";
-        $("btnselect").value = "Ñ¡Ôñ¾­ÏúÉÌ¼¶±ğ";
+        $("btnselect").value = "é€‰æ‹©ç»é”€å•†çº§åˆ«";
         break;
       case "zoneid":
         selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
-        $("btnselect").value = "Ñ¡ÔñÉÌ¼ÒËùÔÚµØ";
+        $("btnselect").value = "é€‰æ‹©å•†å®¶æ‰€åœ¨åœ°";
         break;
       default:
         selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
-        $("btnselect").value = "Ñ¡ÔñÉÌ¼ÒÃû³Æ";
+        $("btnselect").value = "é€‰æ‹©å•†å®¶åç§°";
         break;
     }
   }
   
   function go()
   {
-    //Ñ¡ÔñµÄÀàĞÍ
+    //é€‰æ‹©çš„ç±»å‹
     righttype = $('righttype').options[$('righttype').selectedIndex].value;
     val       = $("itemval").value;
     window.location.href = "index.php?m=mod_b2b&c=product&a=AgentProductRights&" + righttype + '=' + val + "&itemtext=" + $("item").value;

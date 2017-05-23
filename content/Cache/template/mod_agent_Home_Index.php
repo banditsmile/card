@@ -6,9 +6,9 @@
 
 <head>
 
-<title>账户基本资料设置</title>
+<title>锟剿伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link href="../Themes/css/style_home.css" rel="stylesheet" type="text/css">
 
@@ -18,7 +18,7 @@
 
             <th colspan="2" style="text-align: left; padding-left: 10px">
 
-                基本资料修改           </th>
+                锟斤拷锟斤拷锟斤拷锟斤拷锟睫革拷           </th>
 
             </div>
 
@@ -32,7 +32,7 @@
 
         <tr>
 
-          <td width="11%" class="table1_left" style="width: 25%"> 客户编号：</td>
+          <td width="11%" class="table1_left" style="width: 25%"> 锟酵伙拷锟斤拷牛锟�</td>
 
           <td width="89%" align="left" class="tableright1"><div align="left">10000</div></td>
 
@@ -40,7 +40,7 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 登陆账号：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷陆锟剿号ｏ拷</td>
 
           <td width="89%" align="left" class="tableright1"><div align="left">admin</div></td>
 
@@ -48,11 +48,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 真实姓名：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷实锟斤拷锟斤拷锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input name='ubzcrealname' type='text' class='biankuan' id="ubzcrealname" tabindex="2" value="站长" size='30' maxlength='50' datatype="Mobile" msg="手机号码不正确" />
+            <input name='ubzcrealname' type='text' class='biankuan' id="ubzcrealname" tabindex="2" value="站锟斤拷" size='30' maxlength='50' datatype="Mobile" msg="锟街伙拷锟斤拷锟诫不锟斤拷确" />
 
           </div></td>
 
@@ -60,11 +60,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 公 司 名： </td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷 司 锟斤拷锟斤拷 </td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input name='ubzcompany' type='text' class='biankuan' id="ubzcompany" tabindex="2" value="站长" size='30' maxlength='50' datatype="Mobile" msg="手机号码不正确" />
+            <input name='ubzcompany' type='text' class='biankuan' id="ubzcompany" tabindex="2" value="站锟斤拷" size='30' maxlength='50' datatype="Mobile" msg="锟街伙拷锟斤拷锟诫不锟斤拷确" />
 
           </div></td>
 
@@ -72,15 +72,15 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 销售范围：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟桔凤拷围锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-              <input type="hidden" name="prv" size="10" value="四川"/>
+              <input type="hidden" name="prv" size="10" value="锟侥达拷"/>
 
-              <input type="hidden" name="city" size="10" value="成都"/>
+              <input type="hidden" name="city" size="10" value="锟缴讹拷"/>
 
-              <input type='text' size='30' maxlength='50' name='ttdata' class='biankuan' value="四川" readonly="readonly" />
+              <input type='text' size='30' maxlength='50' name='ttdata' class='biankuan' value="锟侥达拷" readonly="readonly" />
 
           </div></td>
 
@@ -88,11 +88,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 手机号码：</td>
+          <td class="table1_left" style="width: 25%"> 锟街伙拷锟斤拷锟诫：</td>
 
           <td width="89%" align="left" class="tableright1"><div align="left">
 
-            <input type='text' size='30' maxlength='50' name='ubzcmobile' value="" class='biankuan' datatype="Mobile" msg="手机号码不正确" tabindex="2" />
+            <input type='text' size='30' maxlength='50' name='ubzcmobile' value="" class='biankuan' datatype="Mobile" msg="锟街伙拷锟斤拷锟诫不锟斤拷确" tabindex="2" />
 
           </div></td>
 
@@ -100,11 +100,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 电子邮箱：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷锟斤拷锟戒：</td>
 
           <td width="89%" align="left" class="tableright1"><div align="left">
 
-            <input type='text' size='30' maxlength='50' name='ubzcmail' value="" class='biankuan' datatype="Email" msg="电子邮箱格式不符" tabindex="5" />
+            <input type='text' size='30' maxlength='50' name='ubzcmail' value="" class='biankuan' datatype="Email" msg="锟斤拷锟斤拷锟斤拷锟斤拷锟绞斤拷锟斤拷锟�" tabindex="5" />
 
           </div></td>
 
@@ -112,11 +112,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 联系电话：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷系锟界话锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input type='text' size='30' maxlength='50' name='ubzctel' value="" class='biankuan' datatype="Phone" msg="联系电话不符合要求" tabindex="1" />
+            <input type='text' size='30' maxlength='50' name='ubzctel' value="" class='biankuan' datatype="Phone" msg="锟斤拷系锟界话锟斤拷锟斤拷锟斤拷要锟斤拷" tabindex="1" />
 
           </div></td>
 
@@ -124,11 +124,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 联系QQ：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷系QQ锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input type='text' size='30' maxlength='50' name='ubzcqq' value="11111" class='biankuan' datatype="QQ" msg="QQ号码不符合要求" tabindex="4" />
+            <input type='text' size='30' maxlength='50' name='ubzcqq' value="11111" class='biankuan' datatype="QQ" msg="QQ锟斤拷锟诫不锟斤拷锟斤拷要锟斤拷" tabindex="4" />
 
           </div></td>
 
@@ -136,11 +136,11 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 联系地址：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷系锟斤拷址锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input type='text' size='30' maxlength='50' name='ubzcaddr' value="" class='biankuan' datatype="LimitB" min="1" max="100" msg="联系地址必须在100个汉字之内" tabindex="3" />
+            <input type='text' size='30' maxlength='50' name='ubzcaddr' value="" class='biankuan' datatype="LimitB" min="1" max="100" msg="锟斤拷系锟斤拷址锟斤拷锟斤拷锟斤拷100锟斤拷锟斤拷锟斤拷之锟斤拷" tabindex="3" />
 
           </div></td>
 
@@ -148,7 +148,7 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 超级密码：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷锟斤拷锟诫：</td>
 
           <td align="left" class="tableright1"><div align="left">
 
@@ -160,19 +160,19 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 其它操作：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷</td>
 
           <td align="left" class="tableright1"><div align="left">
 
-            <input name="submit" type="submit" class="tijiao_input" tabindex="7" value="确认" />
+            <input name="submit" type="submit" class="tijiao_input" tabindex="7" value="确锟斤拷" />
 
-            <em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'修改登录密码',iframe:{src:'index.php?m=mod_agent&amp;a=ModifyPass'},width:600,height:300});"> <span id="modifypwd">修改登录密码</span></a><em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'修改交易密码',iframe:{src:'index.php?m=mod_agent&amp;a=TradePass'},width:600,height:300});"> <span id="modifytradepwd">修改交易密码</span></a></div></td>
+            <em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'锟睫改碉拷录锟斤拷锟斤拷',iframe:{src:'index.php?m=mod_agent&amp;a=ModifyPass'},width:600,height:300});"> <span id="modifypwd">锟睫改碉拷录锟斤拷锟斤拷</span></a><em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'锟睫改斤拷锟斤拷锟斤拷锟斤拷',iframe:{src:'index.php?m=mod_agent&amp;a=TradePass'},width:600,height:300});"> <span id="modifytradepwd">锟睫改斤拷锟斤拷锟斤拷锟斤拷</span></a></div></td>
 
         </tr>
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 关联QQ账号：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷QQ锟剿号ｏ拷</td>
 
           <td align="left" class="tableright1"><div align="left">11111</div></td>
 
@@ -180,28 +180,28 @@
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 关联淘宝账号：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷锟皆憋拷锟剿号ｏ拷</td>
 
-          <td align="left" class="tableright1"><div align="left">未关联</div></td>
+          <td align="left" class="tableright1"><div align="left">未锟斤拷锟斤拷</div></td>
 
         </tr>
 
         <tr>
 
-          <td class="table1_left" style="width: 25%"> 关联新浪微博账号：</td>
+          <td class="table1_left" style="width: 25%"> 锟斤拷锟斤拷锟斤拷锟斤拷微锟斤拷锟剿号ｏ拷</td>
 
-          <td align="left" class="tableright1"><div align="left">未关联</div></td>
+          <td align="left" class="tableright1"><div align="left">未锟斤拷锟斤拷</div></td>
 
         </tr>
 
       </table>
     </fieldset>
     <fieldset id="fieldset2">
-        <legend><span style=" color:Black;">财务信息</span></legend>
+        <legend><span style=" color:Black;">锟斤拷锟斤拷锟斤拷息</span></legend>
         <table cellspacing="0" cellpadding="0" class="table88">
             <tr>
                 <td class="td1">
-                    账户总额：
+                    锟剿伙拷锟杰额：
                 </td>
                 <td>
                     <span id="lblTotalAmount"><span id="lblQQ0"><span id="lblPhone2">
@@ -214,7 +214,7 @@
             </tr>
             <tr>
                 <td class="td1">
-                    可用金额：
+                    锟斤拷锟矫斤拷睿�
                 </td>
                 <td>
                     <span id="lblBalance"><span id="lblTotalAmount0"><span id="lblQQ1">
@@ -226,7 +226,7 @@
             </tr>
             <tr>
                 <td class="td1">
-                    冻结金额：
+                    锟斤拷锟斤拷锟筋：
                 </td>
                 <td>
                     <span id="lblFrozen"><span id="lblBalance0"><span id="lblTotalAmount1">
@@ -239,7 +239,7 @@
             </tr>
             <tr>
                 <td class="td1">
-                    未还欠款：
+                    未锟斤拷欠锟筋：
                 </td>
                 <td>
                     <span id="lblTransfer">0.000</span>
@@ -248,7 +248,7 @@
             </tr>
             <tr>
                 <td class="td1">
-                    一卡通未返款：
+                    一锟斤拷通未锟斤拷锟筋：
                 </td>
                 <td>
                     <span id="lblReturnMoney">0.000</span>
@@ -257,7 +257,7 @@
             </tr>
             <tr>
                 <td class="td1">
-                    供货商品提成：
+                    锟斤拷锟斤拷锟斤拷品锟斤拷桑锟�
                 </td>
                 <td>
                     <span id="lblIncome"><span id="lblBalance1"><span id="lblTotalAmount2">
@@ -271,128 +271,128 @@
             </tr>
             <tr>
                 <td class="td1">
-                    信用欠款上限：
+                    锟斤拷锟斤拷欠锟斤拷锟斤拷锟睫ｏ拷
                 </td>
                 <td>
-                    <span id="lblCreditAmount">信用欠款关闭</span>
+                    <span id="lblCreditAmount">锟斤拷锟斤拷欠锟斤拷乇锟�</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    积分：
+                    锟斤拷锟街ｏ拷
                 </td>
                 <td>
                     <span id="lblScore">0</span>
-                    个
+                    锟斤拷
                 </td>
             </tr>
         </table>
     </fieldset>
     <fieldset id="fieldset3">
-        <legend><span style=" color:Black;">系统权限</span></legend>
+        <legend><span style=" color:Black;">系统权锟斤拷</span></legend>
         <table cellspacing="0" cellpadding="0" class="table88">
             <tr>
                 <td class="td1">
-                    Api进货接口：
+                    Api锟斤拷锟斤拷锟接口ｏ拷
                 </td>
                 <td>
-                    <span id="lblApi">未开通</span>
+                    <span id="lblApi">未锟斤拷通</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    淘宝C店对接：
+                    锟皆憋拷C锟斤拷越樱锟�
                 </td>
                 <td>
-                    <span id="lblTBC">未开通</span>
+                    <span id="lblTBC">未锟斤拷通</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    拍拍C店对接：
+                    锟斤拷锟斤拷C锟斤拷越樱锟�
                 </td>
                 <td>
-                    未开通
+                    未锟斤拷通
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    充值卡充值权限：
+                    锟斤拷值锟斤拷锟斤拷值权锟睫ｏ拷
                 </td>
                 <td>
-                    <span id="lblIsForOneCard">有</span>
+                    <span id="lblIsForOneCard">锟斤拷</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    淘宝加款卡充值权限：
+                    锟皆憋拷锟接款卡锟斤拷值权锟睫ｏ拷
                 </td>
                 <td>
-                    <span id="lblTBCCardPay">有</span>
+                    <span id="lblTBCCardPay">锟斤拷</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    一卡通代理权限：
+                    一锟斤拷通锟斤拷锟斤拷权锟睫ｏ拷
                 </td>
                 <td>
-                    <span id="lblIsForOneCardCash">有</span>
+                    <span id="lblIsForOneCardCash">锟斤拷</span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    供货商品发布权限：
+                    锟斤拷锟斤拷锟斤拷品锟斤拷锟斤拷权锟睫ｏ拷
                 </td>
                 <td>
                     <span id="lblIsForSelfProduct"><span id="lblBalance2">
                     <span id="lblTotalAmount3"><span id="lblQQ4"><span id="lblPhone6">
                     <span id="lblContactName10"><span id="lblCompanyName11">
                     <span id="lblCustomerName12"><span id="lblCustomerID13">
-                    <span id="lblGongHuoShang">有</span>
+                    <span id="lblGongHuoShang">锟斤拷</span>
                     </span></span></span></span></span></span></span></span></span>
                 &nbsp;</td>
             </tr>
             <tr>
                 <td class="td1">
-                    账户间转款权限：
+                    锟剿伙拷锟斤拷转锟斤拷权锟睫ｏ拷
                 </td>
                 <td>
-                    <span id="lblTransferBalance">有</span>
+                    <span id="lblTransferBalance">锟斤拷</span>
                 </td>
             </tr>
         </table>
     </fieldset>
     <fieldset id="fieldset4">
-        <legend><span style=" color:Black;">自定义设置</span></legend>
+        <legend><span style=" color:Black;">锟皆讹拷锟斤拷锟斤拷锟斤拷</span></legend>
         <table cellspacing="0" cellpadding="0" class="table88">
             <tr>
                 <td class="td1">
-                    页面超时退出时间：
+                    页锟芥超时锟剿筹拷时锟戒：
                 </td>
                 <td>
-                    <span id="lblTimeOut">120</span>分钟
+                    <span id="lblTimeOut">120</span>锟斤拷锟斤拷
                 </td>
             </tr>
             <tr>
                 <td class="td1">
-                    自定义设置：
+                    锟皆讹拷锟斤拷锟斤拷锟矫ｏ拷
                 </td>
                 <td>
-                    <span disabled="disabled"><input id="CheckBox1" type="checkbox" name="CheckBox1" checked="checked" /><label for="CheckBox1">购买时显示进货价格</label></span>
-                </td>
-            </tr>
-            <tr>
-                <td class="td1">
-                </td>
-                <td>
-                    <span disabled="disabled"><input id="CheckBox2" type="checkbox" name="CheckBox2" checked="checked" disabled="disabled" /><label for="CheckBox2">报表显示进价相关价格</label></span>
+                    <span disabled="disabled"><input id="CheckBox1" type="checkbox" name="CheckBox1" checked="checked" /><label for="CheckBox1">锟斤拷锟斤拷时锟斤拷示锟斤拷锟斤拷锟桔革拷</label></span>
                 </td>
             </tr>
             <tr>
                 <td class="td1">
                 </td>
                 <td>
-                    <span disabled="disabled"><input id="CheckBox3" type="checkbox" name="CheckBox3" checked="checked" disabled="disabled" /><label for="CheckBox3">菜单中是否显示帐户余额</label></span>
+                    <span disabled="disabled"><input id="CheckBox2" type="checkbox" name="CheckBox2" checked="checked" disabled="disabled" /><label for="CheckBox2">锟斤拷锟斤拷锟斤拷示锟斤拷锟斤拷锟斤拷丶鄹锟�</label></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1">
+                </td>
+                <td>
+                    <span disabled="disabled"><input id="CheckBox3" type="checkbox" name="CheckBox3" checked="checked" disabled="disabled" /><label for="CheckBox3">锟剿碉拷锟斤拷锟角凤拷锟斤拷示锟绞伙拷锟斤拷锟�</label></span>
                 </td>
             </tr>
             <tr>
@@ -415,4 +415,4 @@
 
 <script type="text/javascript" id="tailjs-10125109_31685" sogou-script="true" src="https://BCC0E825-2420-4190-AF25-ABD45D41EA3A/sb/exttailcontentscript/?sbid=tailjs-10125109_31685&isTopFrame=false&url=http%3a%2f%2fwww.v5ka.com%2fIndex.aspx%23index" charset="UTF-8"></script>
 
-
+

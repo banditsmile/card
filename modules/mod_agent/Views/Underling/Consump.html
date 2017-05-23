@@ -1,120 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>ÏÂ¼¶¿Í»§Ïû·Ñ¼ÇÂ¼¼°·ÖÎö</title><meta http-equiv="Content-Type" content="text/html; charset=gb2312" />    
-    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
-
-
-</head>
-		<form name="query" method="get" action="index.php">
-<body>
-    <div class="new_qie">
-        <div class="new_qie2">
-            <h2>
-                ÏÂ¼¶¿Í»§Ïû·Ñ¼ÇÂ¼¼°·ÖÎö</h2>
-        </div>
-    </div>
-<div></div>
-
-<div></div>
-        <div class="xuan2">
-            <table cellspacing="1" cellpadding="2" class="table5">
-                <tr>
-                    <td width="15%" class="td_left">
-                        ¹Ø¼ü×Ö£º</td>
-                    <td class="tdleft">
-                        <input type="text" size="30" name="keywords" class='input0' value=""></td>
-                </tr>
-                <tr>
-                    <td class="td_left">
-                        ²éÑ¯Ìõ¼ş£º</td>
-                    <td class="tdleft"><span class="tableright1">
-                      <select name="stype">
-                        <option value="aid" >¿Í»§±àºÅ</option>
-                        <option value="aname" >ÓÃ»§Ãû</option>
-                        <option value="company" >ÉÌ»§Ãû³Æ</option>
-                        <option value="arealname" >ÁªÏµÈË</option>
-                      </select>
-                    </span></td>
-                </tr>
-                <tr>
-                    <td class="td_left">
-                        Ìõ¼şÑ¡Ôñ£º</td>
-                    <td class="tdleft">
-                        ³¬¹ı
-                        <select name="ddlSearchValue2" id="ddlSearchValue2">
-	<option selected="selected" value="0">0Ìì</option>
-	<option value="1">1Ìì</option>
-	<option value="3">3Ìì</option>
-	<option value="5">5Ìì</option>
-	<option value="7">7Ìì</option>
-	<option value="15">15Ìì</option>
-	<option value="30">30Ìì</option>
-	<option value="60">60Ìì</option>
-	<option value="90">90Ìì</option>
-
-</select>
-                        <select name="ddlSearchType2" id="ddlSearchType2">
-	<option selected="selected" value="Login">Î´µÇÂ¼</option>
-	<option value="Consume">Î´Ïû·Ñ</option>
-
-</select>
-                        µÄ¿Í»§
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_left">
-                    </td>
-                  <td class="tdleft">
-                        <input type="hidden" name="m" value="mod_agent">
-			<input type="hidden" name="c" value="Underling">
-			<input type="hidden" name="a" value="Consump">
-			<input type="submit" name="Submit" value=" " class="input_s"></td>
-                </tr>
-            </table>
-        </div>
-        <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-            <tr>
-                <th width="6%">
-                    ¿Í»§±àºÅ                </th>
-                <th width="12%">
-                    ÓÃ»§Ãû                </th>
-                <th width="16%">
-                    ¹«Ë¾Ãû³Æ                </th>
-                <th width="13%">
-                    ÓÃ»§¼¶±ğ</th>
-                <th width="13%">
-                    ÁªÏµÈË</th>
-                <th width="10%">
-                    ÕË»§×´Ì¬</th>
-                <th width="10%">
-                    Óà¶î</th>
-                <th width="6%">
-                    Ïû·Ñ</th>
-                <th width="6%">
-                    ¼ÇÂ¼                </th>
-                <th width="8%">
-                    ·ÖÎö                </th>
-            </tr>
-            
-                <!--foreach($vd['items'] as $item) {-->
-	  	  	    <tr class="trd">
-		<td>{$item['aid']}</td>
-		<td>{$item['aname']}</td>
-		<td align=left>{$item['company']}</td>
-		<td>{$item['rank']}</td>
-		<td>{$item['arealname']}</td>
-		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">¶³½á</font> <!--}else{--> <font color="#008800">Æô¶¯</font> <!--}--></td>
-		<td>{$item['aremain']}</td>
-		<td>{$item['acsmp']}</td>
-		<td><a href="index.php?m=mod_agent&c=Order&a=Underling&aid={$item['aid']}"><u>¼ÇÂ¼</u></a></td>
-		<td><font color="#cccccc">-</font></td>
-		</tr>
-		<!--}-->
-		</table>
-		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-	    <div align="right">{load(fpage)}
-        </div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>ä¸‹çº§å®¢æˆ·æ¶ˆè´¹è®°å½•åŠåˆ†æ</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../index/css/page.css" type="text/css" rel="stylesheet" /></head>		<form name="query" method="get" action="index.php"><body>    <div class="new_qie">        <div class="new_qie2">            <h2>                ä¸‹çº§å®¢æˆ·æ¶ˆè´¹è®°å½•åŠåˆ†æ</h2>        </div>    </div><div></div><div></div>        <div class="xuan2">            <table cellspacing="1" cellpadding="2" class="table5">                <tr>                    <td width="15%" class="td_left">                        å…³é”®å­—ï¼š</td>                    <td class="tdleft">                        <input type="text" size="30" name="keywords" class='input0' value=""></td>                </tr>                <tr>                    <td class="td_left">                        æŸ¥è¯¢æ¡ä»¶ï¼š</td>                    <td class="tdleft"><span class="tableright1">                      <select name="stype">                        <option value="aid" >å®¢æˆ·ç¼–å·</option>                        <option value="aname" >ç”¨æˆ·å</option>                        <option value="company" >å•†æˆ·åç§°</option>                        <option value="arealname" >è”ç³»äºº</option>                      </select>                    </span></td>                </tr>                <tr>                    <td class="td_left">                        æ¡ä»¶é€‰æ‹©ï¼š</td>                    <td class="tdleft">                        è¶…è¿‡                        <select name="ddlSearchValue2" id="ddlSearchValue2">	<option selected="selected" value="0">0å¤©</option>	<option value="1">1å¤©</option>	<option value="3">3å¤©</option>	<option value="5">5å¤©</option>	<option value="7">7å¤©</option>	<option value="15">15å¤©</option>	<option value="30">30å¤©</option>	<option value="60">60å¤©</option>	<option value="90">90å¤©</option></select>                        <select name="ddlSearchType2" id="ddlSearchType2">	<option selected="selected" value="Login">æœªç™»å½•</option>	<option value="Consume">æœªæ¶ˆè´¹</option></select>                        çš„å®¢æˆ·                    </td>                </tr>                <tr>                    <td class="td_left">                    </td>                  <td class="tdleft">                        <input type="hidden" name="m" value="mod_agent">			<input type="hidden" name="c" value="Underling">			<input type="hidden" name="a" value="Consump">			<input type="submit" name="Submit" value=" " class="input_s"></td>                </tr>            </table>        </div>        <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">            <tr>                <th width="6%">                    å®¢æˆ·ç¼–å·                </th>                <th width="12%">                    ç”¨æˆ·å                </th>                <th width="16%">                    å…¬å¸åç§°                </th>                <th width="13%">                    ç”¨æˆ·çº§åˆ«</th>                <th width="13%">                    è”ç³»äºº</th>                <th width="10%">                    è´¦æˆ·çŠ¶æ€</th>                <th width="10%">                    ä½™é¢</th>                <th width="6%">                    æ¶ˆè´¹</th>                <th width="6%">                    è®°å½•                </th>                <th width="8%">                    åˆ†æ                </th>            </tr>                            <!--foreach($vd['items'] as $item) {-->	  	  	    <tr class="trd">		<td>{$item['aid']}</td>		<td>{$item['aname']}</td>		<td align=left>{$item['company']}</td>		<td>{$item['rank']}</td>		<td>{$item['arealname']}</td>		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">å†»ç»“</font> <!--}else{--> <font color="#008800">å¯åŠ¨</font> <!--}--></td>		<td>{$item['aremain']}</td>		<td>{$item['acsmp']}</td>		<td><a href="index.php?m=mod_agent&c=Order&a=Underling&aid={$item['aid']}"><u>è®°å½•</u></a></td>		<td><font color="#cccccc">-</font></td>		</tr>		<!--}-->		</table>		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>	    <div align="right">{load(fpage)}        </div></body></html>

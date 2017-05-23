@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Keywords" content="{$vd['web']['keywords']}" />
 <meta http-equiv="Description" content="{$vd['web']['description']}" />
 <title>{$vd['web']['title']}</title>
@@ -16,7 +16,7 @@ var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resiza
 *{margin:0;padding:0;}
 body{font-family: Arial,sans-serif;color: #333;line-height: 130%;	margin: 0px;padding: 0px;font-size:12px;}
 td{line-height:130%;padding:0px;height:30px}
-body,tr,td,th,tbody,thead,tfoot{font-family: Arial,sans-serif,Verdana,ËÎÌå;color:#666;font-size:12px;}
+body,tr,td,th,tbody,thead,tfoot{font-family: Arial,sans-serif,Verdana,å®‹ä½“;color:#666;font-size:12px;}
 .left_content_td
 {
 BACKGROUND-POSITION: 50% bottom;
@@ -36,26 +36,26 @@ FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
 function convertCurrency(currencyDigits) 
 {
   var MAXIMUM_NUMBER = 99999999999.99;
-  var CN_ZERO = "Áã";
-  var CN_ONE = "Ò¼";
-  var CN_TWO = "·¡";
-  var CN_THREE = "Èş";
-  var CN_FOUR = "ËÁ";
-  var CN_FIVE = "Îé";
-  var CN_SIX = "Â½";
-  var CN_SEVEN = "Æâ";
-  var CN_EIGHT = "°Æ";
-  var CN_NINE = "¾Á";
-  var CN_TEN = "Ê°";
-  var CN_HUNDRED = "°Û";
-  var CN_THOUSAND = "Çª";
-  var CN_TEN_THOUSAND = "Íò";
-  var CN_HUNDRED_MILLION = "ÒÚ";
+  var CN_ZERO = "é›¶";
+  var CN_ONE = "å£¹";
+  var CN_TWO = "è´°";
+  var CN_THREE = "å";
+  var CN_FOUR = "è‚†";
+  var CN_FIVE = "ä¼";
+  var CN_SIX = "é™†";
+  var CN_SEVEN = "æŸ’";
+  var CN_EIGHT = "æŒ";
+  var CN_NINE = "ç–";
+  var CN_TEN = "æ‹¾";
+  var CN_HUNDRED = "ä½°";
+  var CN_THOUSAND = "ä»Ÿ";
+  var CN_TEN_THOUSAND = "ä¸‡";
+  var CN_HUNDRED_MILLION = "äº¿";
   var CN_SYMBOL = "";
   var CN_DOLLAR = "{$vd['lang']['moneyunit']}";
-  var CN_TEN_CENT = "½Ç";
-  var CN_CENT = "·Ö";
-  var CN_INTEGER = "Õû";
+  var CN_TEN_CENT = "è§’";
+  var CN_CENT = "åˆ†";
+  var CN_INTEGER = "æ•´";
    
   var integral;
   var decimal;
@@ -161,9 +161,9 @@ function convertCurrency(currencyDigits)
 <div align="center"> 
 <table width="95%" border="0" cellspacing="0" cellpadding="0">
 <tr> 
-  <td height=20 width="50%" ><b>´òÓ¡ÈÕÆÚ£º</b><!--echo date("Y-m-d H:i:s");--></td>
+  <td height=20 width="50%" ><b>æ‰“å°æ—¥æœŸï¼š</b><!--echo date("Y-m-d H:i:s");--></td>
   <td> 
-    <div align="right"><b>ÏúÊÛÉÌ£º</b>{$vd['web']['webname']}</div>
+    <div align="right"><b>é”€å”®å•†ï¼š</b>{$vd['web']['webname']}</div>
   </td>
 </tr>
 <tr> 
@@ -171,37 +171,37 @@ function convertCurrency(currencyDigits)
   <table width="100%" border="0" cellspacing="1" cellpadding="6" bgcolor="#acacac">
     <tr bgcolor="#FFFFFF"> 
       <td bgcolor="#F7F7F7" width="15%"> 
-        <div align="center">µã¿¨Ãû³Æ£º</div>
+        <div align="center">ç‚¹å¡åç§°ï¼š</div>
       </td>
       <td width="35%">{$order['pname']}</td>
       <td bgcolor="#F7F7F7" width="15%"> 
-        <div align="center">µã¿¨ÃæÖµ£º</div>
+        <div align="center">ç‚¹å¡é¢å€¼ï¼š</div>
       </td>
       <td width="35%">{$vd['lang']['moneysymbol']}{$order['listprice']}{$vd['lang']['moneyunit']}</td>
     </tr>
     <tr height=20 bgcolor="#FFFFFF"> 
       <td bgcolor="#F7F7F7" width="15%"> 
-        <div align="center">¹ºÂòÊıÁ¿£º</div>
+        <div align="center">è´­ä¹°æ•°é‡ï¼š</div>
       </td>
-      <td width="35%"><strong>{$order['qty']}</strong> ¸ö</td>
+      <td width="35%"><strong>{$order['qty']}</strong> ä¸ª</td>
       <td bgcolor="#F7F7F7" width="15%"> 
-        <div align="center">¹ºÂòµ¥¼Û£º</div>
+        <div align="center">è´­ä¹°å•ä»·ï¼š</div>
       </td>
       <td width="35%">{$vd['lang']['moneysymbol']}{$order['buyerprice']} {$vd['lang']['moneyunit']}</td>
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height=20 bgcolor="#F7F7F7" width="15%"> 
-      <div align="center">¹ºÂò½ğ¶î£º</div>
+      <div align="center">è´­ä¹°é‡‘é¢ï¼š</div>
       </td>
       <td width="35%">{$vd['lang']['moneysymbol']}<input type="text" name="buymoney" size="2" style="border: #ffffff 0px solid" value="<!--echo round($order['buyerprice'] * $order['qty']);-->">{$vd['lang']['moneyunit']}</td>
       <td bgcolor="#F7F7F7" width="15%"> 
-      <div align="center">½ğ¶î´óĞ´£º</div>
+      <div align="center">é‡‘é¢å¤§å†™ï¼š</div>
       </td>
       <td width="35%"><span  id="buymoney1"></span></td>
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height=20 bgcolor="#F7F7F7" width="15%"> 
-      <div align="center">³äÖµ·½·¨£º</div>
+      <div align="center">å……å€¼æ–¹æ³•ï¼š</div>
       </td>
       <td colspan="3"> 
       <div align="left">{$order['czweb']}</div>
@@ -209,7 +209,7 @@ function convertCurrency(currencyDigits)
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height=20 bgcolor="#F7F7F7" width="15%"> 
-      <div align="center">¿Í»§·şÎñ£º</div>
+      <div align="center">å®¢æˆ·æœåŠ¡ï¼š</div>
       </td>
       <td colspan="3"> 
       <div align="left"></div>
@@ -217,78 +217,78 @@ function convertCurrency(currencyDigits)
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height=20 bgcolor="#F7F7F7" colspan="4"> 
-      <div align="left">¡¡¹ºÂòÄÚÈİ£º</div>
+      <div align="left">ã€€è´­ä¹°å†…å®¹ï¼š</div>
       </td>
     </tr>
     <!--if($order['ptype']==1 || $order['ptype']==2){-->
     <!--if($order['failreason']!=''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµËµÃ÷£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼è¯´æ˜ï¼š</td>
       <td colspan=3 align="left" style="color:#ff0000"><!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td>
     </tr>
     <!--}-->
     
     <!--if($order['factoryreturn']!=''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³§¼Ò·´À¡£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å‚å®¶åé¦ˆï¼š</td>
       <td colspan=3 align="left" style="color:#0000ff">{$order['factoryreturn']}</td>
     </tr>
     <!--}-->
     
     <!--if($order['ptype'] == 0 || $order['ptype'] > 99){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµÍøÖ·£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼ç½‘å€ï¼š</td>
       <td colspan=3 align="left"><a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a>&nbsp;</td>
     </tr>
     <!--}-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">ÓÎÏ·ÓÃ»§Ãû£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">æ¸¸æˆç”¨æˆ·åï¼š</td>
       <td colspan=3 align="left">{$order['czaccount']}</td>
     </tr>
     
     <!--if($order['czarea1'] != ''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµÇøÓò£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼åŒºåŸŸï¼š</td>
       <td colspan=3 align="left">{#CzText($order['czarea1'])}</td>
     </tr>
     <!--}-->
     
     <!--if($order['czarea2'] != ''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµ·şÎñÆ÷£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼æœåŠ¡å™¨ï¼š</td>
       <td colspan=3 align="left">{#CzText($order['czarea2'])}</td>
     </tr>
     <!--}-->
     
     <!--if($order['cztype'] != ''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">¼Æ·Ñ·½Ê½£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">è®¡è´¹æ–¹å¼ï¼š</td>
       <td colspan=3 align="left">{#CzText($order['cztype'])}</td>
     </tr>
     <!--}-->
     
     <!--if($order['czother'] != ''){-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">ÕÊºÅÀàĞÍ£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å¸å·ç±»å‹ï¼š</td>
       <td colspan=3 align="left">{#CzText($order['czother'])}</td>
     </tr>
     <!--}-->
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµ½á¹û£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼ç»“æœï¼š</td>
       <td colspan=3 align="left"><font color="#ff0000"><b>
       	<!--if($order['ordstate'] == -1) {-->
-     	³äÖµÊ§°Ü£¬<!--if($order['rollback'] == 1) {-->ÒÑ¾­ÍË»¹Óà¶î£¬<!--}-->
+     	å……å€¼å¤±è´¥ï¼Œ<!--if($order['rollback'] == 1) {-->å·²ç»é€€è¿˜ä½™é¢ï¼Œ<!--}-->
      	<!--}-->
      	<!--if($order['ordstate'] == 1) {-->
-     	ÒÑ¾­Ìá½»ÏµÍ³³äÖµ<br/>
+     	å·²ç»æäº¤ç³»ç»Ÿå……å€¼<br/>
      	<!--}-->
      	<!--if($order['ordstate'] == 2) {-->
-     	ÒÑ¾­³äÖµ³É¹¦
+     	å·²ç»å……å€¼æˆåŠŸ
      	<!--}-->
       	</b></font></td>
     </tr>
     <tr bgcolor="#FFFFFF">
-      <td height=20 bgcolor="#F7F7F7" width="15%">³äÖµÊ±¼ä£º</td>
+      <td height=20 bgcolor="#F7F7F7" width="15%">å……å€¼æ—¶é—´ï¼š</td>
       <td colspan=3 align="left">{$order['dealdate']}</td>
     </tr>
     <!--}else{-->
@@ -298,13 +298,13 @@ function convertCurrency(currencyDigits)
   
         <tr bgcolor="#EEEEEE"> 
           <td bgcolor="#EEEEEE" height="20" width="40%"> 
-          <div align="center">µã¿¨¿¨ºÅ</div>
+          <div align="center">ç‚¹å¡å¡å·</div>
           </td>
           <td bgcolor="#EEEEEE" height="20" width="40%"> 
-          <div align="center">µã¿¨ÃÜÂë</div>
+          <div align="center">ç‚¹å¡å¯†ç </div>
           </td>
           <td bgcolor="#EEEEEE" height="20" width="20%"> 
-          <div align="center">µ½ÆÚÊ±¼ä</div>
+          <div align="center">åˆ°æœŸæ—¶é—´</div>
           </td>
         </tr>
         <!--foreach($vd['order']['carditem'] as $card) {-->
@@ -324,13 +324,13 @@ function convertCurrency(currencyDigits)
     <!--}-->
     <tr bgcolor="#FFFFFF"> 
       <td colspan="2" valign="top"> 
-      <div align="left"  style="padding:3px;">»¶Ó­ÏÂ´Îµ½±¾µêÀ´¹ºÂòµã¿¨£¬±¾µêµã¿¨ÆëÈ«£¬¼Û¸ñÓÅ»İ£¬»¶Ó­»İ¹Ë£¡£¡ÎÒÃÇ½«Ò»Èç¼ÈÍùµØÌá¹©ÓÅÖÊ·şÎñ£¬¾´Çë¹âÁÙ£¡</div>
+      <div align="left"  style="padding:3px;">æ¬¢è¿ä¸‹æ¬¡åˆ°æœ¬åº—æ¥è´­ä¹°ç‚¹å¡ï¼Œæœ¬åº—ç‚¹å¡é½å…¨ï¼Œä»·æ ¼ä¼˜æƒ ï¼Œæ¬¢è¿æƒ é¡¾ï¼ï¼æˆ‘ä»¬å°†ä¸€å¦‚æ—¢å¾€åœ°æä¾›ä¼˜è´¨æœåŠ¡ï¼Œæ•¬è¯·å…‰ä¸´ï¼</div>
       </td>
       <td colspan="2"> 
-      <div align="left"  style="padding:3px;">µØÖ·£º{$vd['web']['address']}<br>
-      Ãû³Æ£º{$vd['web']['webname']}<br>
-      µç»°£º{$vd['web']['tel']}<br>
-      ÍøÖ·£º{$vd['web']['website']}</div>
+      <div align="left"  style="padding:3px;">åœ°å€ï¼š{$vd['web']['address']}<br>
+      åç§°ï¼š{$vd['web']['webname']}<br>
+      ç”µè¯ï¼š{$vd['web']['tel']}<br>
+      ç½‘å€ï¼š{$vd['web']['website']}</div>
       </td>
     </tr>
   </table>
@@ -339,8 +339,8 @@ function convertCurrency(currencyDigits)
 <tr> 
 <td colspan=2 height=30>
 	<div align=center>
-		<input type="button" name="buyagain" value="È·ÈÏ´òÓ¡±¾Ò³" style='font-weight:bold;font-size:14px' class="button" onclick="javascript:print();"> 
-		<input type="button" style='font-weight:bold;font-size:14px'  value="¹Ø±Õ" onclick="javascript:window.close();">
+		<input type="button" name="buyagain" value="ç¡®è®¤æ‰“å°æœ¬é¡µ" style='font-weight:bold;font-size:14px' class="button" onclick="javascript:print();"> 
+		<input type="button" style='font-weight:bold;font-size:14px'  value="å…³é—­" onclick="javascript:window.close();">
 	</div>
 </td>
 </tr>

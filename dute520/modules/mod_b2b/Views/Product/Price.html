@@ -1,36 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$p = $vd['product']; -->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Price" title="ÉÌÆ·¼Û¸ñÖÆ¶¨"><font color="#000">ÉÌÆ·¼Û¸ñÖÆ¶¨</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$p['pname']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_product_price" onFocus="this.blur()" title="ÉèÖÃÉÌÆ·¼Û¸ñ"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Price" title="å•†å“ä»·æ ¼åˆ¶å®š"><font color="#000">å•†å“ä»·æ ¼åˆ¶å®š</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$p['pname']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_product_price" onFocus="this.blur()" title="è®¾ç½®å•†å“ä»·æ ¼"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=product&a=PriceSave">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">ÉèÖÃÉÌÆ·¼Û¸ñ</div>
+<div class="ctitle">è®¾ç½®å•†å“ä»·æ ¼</div>
 <table border="1" id="priceTable" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="tablelt">å•†å“åç§°ï¼š</td>
     <td class="tablert"><b>{$p['pname']}</b></td>
   </tr>
   <tr>
-    <td class="tablelt">ÉÌÆ·ÃæÖµ£º</td>
+    <td class="tablelt">å•†å“é¢å€¼ï¼š</td>
     <td class="tablert"><span id="listprice">{$p['listprice']}</span>{$vd['lang']['moneyunit']}</td>
   </tr>
   <tr>
-    <td class="tablelt">½ø»õ¼Û£º</td>
+    <td class="tablelt">è¿›è´§ä»·ï¼š</td>
     <td class="tablert"><span id="cprice">{$p['price']}</span>{$vd['lang']['moneyunit']}</td>
   </tr>
   <!--$i = 3; foreach($vd['items'] as $item) {-->
   <tr>
-    <td class="tablelt">{$item['name']}£º</td>
+    <td class="tablelt">{$item['name']}ï¼š</td>
     <td class="tablert">
       <div style="width:50%;float:left">
       <input name="id[]" type="hidden" value="{$item['id']}"/>
@@ -49,8 +49,8 @@
   <div class="optxt">
     <input name="priceid" type="hidden" value="{$vd['priceid']}"/>
     <input name="pid" type="hidden" value="{$p['pid']}"/>  
-    <input type="submit" value="ĞŞ ¸Ä" class="btn"/>
-    <input type="reset" value="ÖØ ÖÃ" class="btn"/>
+    <input type="submit" value="ä¿® æ”¹" class="btn"/>
+    <input type="reset" value="é‡ ç½®" class="btn"/>
   </div>
 </div>
 </form>
@@ -62,14 +62,14 @@
 <script type="text/javascript">
   function set(id)
   {
-    //»ñÈ¡¼Û¸ñ
+    //è·å–ä»·æ ¼
     var listprice = $('listprice').innerHTML;
     var thisprice = $('price_' + id).value;
     var save = listprice - thisprice;
     var discount = (1 - (save / listprice)) * 100;
     
-    $('save_' + id).innerHTML = "½ÚÊ¡£º<font color='#ff0000'>" + save.toFixed(2) + "</font>{$vd['lang']['moneyunit']}";
-    $('discount_' + id).innerHTML = "ÕÛ¿Û£º<font color='#ff0000'>" + discount.toFixed(2) + "%</font>";
+    $('save_' + id).innerHTML = "èŠ‚çœï¼š<font color='#ff0000'>" + save.toFixed(2) + "</font>{$vd['lang']['moneyunit']}";
+    $('discount_' + id).innerHTML = "æŠ˜æ‰£ï¼š<font color='#ff0000'>" + discount.toFixed(2) + "%</font>";
   }
   len  = $("priceTable").rows.length;
   for(var i=3;i < len;i++)

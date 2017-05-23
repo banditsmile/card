@@ -1,76 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>ÁªÏµĞÅÏ¢</title>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-<style type="text/css">
-body{padding:5px;}
-td{height:22px;}
-</style>
-</head>
-<body>
-<!--$item=$vd['item'];-->
-<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">
-  <tr>
-    <td height="35"  colspan="2" class="listhead texttle">¹©»õÉÌÆ·ÏêÏ¸ĞÅÏ¢</td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌ»§±àºÅ£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzuid']}
-    <font color="#ff0000"></font>
-    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}"><font color="#00875A">¸øÉÌ»§ÁôÑÔ</font></a> /
-    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">²é¿´ÊÇ·ñÊôÊµ</font></a> /
-    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom=10086&ubzmtitle=Í¶Ëß¹©»õÉÌ{$item['ubzuid']}µÄ{$item['ubzpname']}"><font color="#00875A">ÏòÏµÍ³¾Ù±¨</font></a> /
-    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">ÈçºÎÈÏÖ¤</font></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌ»§×Ü¹©»õ±£Ö¤½ğ£º</td>
-    <td width="68%" style="padding: 5px">
-    <span class="dollars">{$item['ubzsupmoney']} Ôª </span> 
-    ±£Ö¤½ğ¼¶±ğ£º<span class="dollars">{$item['ubzsuplv']}</span>¼¶
-    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">Ê²Ã´ÊÇ¹©»õ±£Ö¤½ğ?</font></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌÆ·±àºÅ£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzpid']}</td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌÆ·Ãû³Æ£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzpname']}</td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌÆ·ÀàĞÍ£º</td>
-    <td width="68%" style="padding: 5px"><font color='#ff6c00'>{#ProductType($item['ubzptype'])}</font></td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">ÉÌÆ·ËµÃ÷£º</td>
-    <td width="68%" style="padding: 5px">
-    <textarea rows="6" name="ubzdcrp" cols="60">{$item['ubzdcrp']}</textarea>
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">¹©»õĞÅÏ¢£º</td>
-    <td width="68%" style="padding: 5px">
-    ¹©»õ¼Û¸ñ£º<span class="dollars">{$item['ubzsupprice']} Ôª </span>
-    {#SupCheck($item['ubzsupcheck'])}
-    ×îµÍÊÛ¼Û£º{$item['ubzctrlprice']}
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">¹Ù·½ÍøÖ·£º</td>
-    <td width="68%" style="padding: 5px">
-    <a href="{$item['ubzweb']}" target="_blank">{$item['ubzweb']}</a>
-    </td>
-  </tr>
-  <tr>
-    <td width="30%" align="right" style="padding: 5px">³äÖµÍøÖ·£º</td>
-    <td width="68%" style="padding: 5px">
-    <a href="{$item['ubzczweb']}" target="_blank">{$item['ubzczweb']}</a>
-    </td>
-  </tr>
-</table>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>è”ç³»ä¿¡æ¯</title><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/><style type="text/css">body{padding:5px;}td{height:22px;}</style></head><body><!--$item=$vd['item'];--><table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">  <tr>    <td height="35"  colspan="2" class="listhead texttle">ä¾›è´§å•†å“è¯¦ç»†ä¿¡æ¯</td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†æˆ·ç¼–å·ï¼š</td>    <td width="68%" style="padding: 5px">{$item['ubzuid']}    <font color="#ff0000"></font>    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}"><font color="#00875A">ç»™å•†æˆ·ç•™è¨€</font></a> /    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">æŸ¥çœ‹æ˜¯å¦å±å®</font></a> /    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom=10086&ubzmtitle=æŠ•è¯‰ä¾›è´§å•†{$item['ubzuid']}çš„{$item['ubzpname']}"><font color="#00875A">å‘ç³»ç»Ÿä¸¾æŠ¥</font></a> /    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">å¦‚ä½•è®¤è¯</font></a>    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†æˆ·æ€»ä¾›è´§ä¿è¯é‡‘ï¼š</td>    <td width="68%" style="padding: 5px">    <span class="dollars">{$item['ubzsupmoney']} å…ƒ </span>     ä¿è¯é‡‘çº§åˆ«ï¼š<span class="dollars">{$item['ubzsuplv']}</span>çº§    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">ä»€ä¹ˆæ˜¯ä¾›è´§ä¿è¯é‡‘?</font></a>    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†å“ç¼–å·ï¼š</td>    <td width="68%" style="padding: 5px">{$item['ubzpid']}</td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†å“åç§°ï¼š</td>    <td width="68%" style="padding: 5px">{$item['ubzpname']}</td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†å“ç±»å‹ï¼š</td>    <td width="68%" style="padding: 5px"><font color='#ff6c00'>{#ProductType($item['ubzptype'])}</font></td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å•†å“è¯´æ˜ï¼š</td>    <td width="68%" style="padding: 5px">    <textarea rows="6" name="ubzdcrp" cols="60">{$item['ubzdcrp']}</textarea>    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">ä¾›è´§ä¿¡æ¯ï¼š</td>    <td width="68%" style="padding: 5px">    ä¾›è´§ä»·æ ¼ï¼š<span class="dollars">{$item['ubzsupprice']} å…ƒ </span>    {#SupCheck($item['ubzsupcheck'])}    æœ€ä½å”®ä»·ï¼š{$item['ubzctrlprice']}    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å®˜æ–¹ç½‘å€ï¼š</td>    <td width="68%" style="padding: 5px">    <a href="{$item['ubzweb']}" target="_blank">{$item['ubzweb']}</a>    </td>  </tr>  <tr>    <td width="30%" align="right" style="padding: 5px">å……å€¼ç½‘å€ï¼š</td>    <td width="68%" style="padding: 5px">    <a href="{$item['ubzczweb']}" target="_blank">{$item['ubzczweb']}</a>    </td>  </tr></table></body></html>

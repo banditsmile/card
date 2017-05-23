@@ -1,319 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>ÉÌÆ·½ø»õ¶Ô½Ó</title>
-<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
-<style type="text/css">
-body{padding:0px;}
-td{height:22px;}
-</style>
-</head>
-<body>
-<form name="form1" method="post" action="index.php?m=mod_b2b&c=sup&a=save&frm=1" target="frmimport" id="cform" style="padding:5px;">
-<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid;">
-  <tr>
-    <td height="35"  colspan="2" class="listhead texttle">ÉÌÆ·½ø»õ¶Ô½Ó</td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">ËÑË÷»õÔ´£º</td>
-    <td width="80%" style="padding: 5px">
-    <input type="text" id="spnamekey" name="spnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="ËÑË÷" onclick="loadSupProduct(1)" class="button"/>
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">µ±Ç°¹©»õÉÌÆ·±àºÅ£º</td>
-    <td width="80%" style="padding: 5px" id="supinfo">
-    <input type="text" name="ubzspid" size="5" value="{$vd['suppid']}"/><span id="otherinfo" style="padding-left:5px;"></span>
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">µ±Ç°¹©»õÉÌÆ·Ãû³Æ£º</td>
-    <td width="80%" style="padding: 5px" id="simplepid">{$vd['suppname']}</td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">¹©»õÓÅÏÈ¼¶£º</td>
-    <td width="80%" style="padding: 5px">
-    <input type="text" name="ubzspri" size="20" value="1"/>
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">ËÑË÷ÎÒµÄÉÌÆ·£º</td>
-    <td width="80%" style="padding: 5px">
-    <input type="text" id="pnamekey" name="pnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="ËÑË÷" onclick="DispSelectZone()" class="button"/> Èç¹ûÏÔÊ¾ËùÓĞÉÌÆ·£¬ÊäÈë¿Õ¸ñ¼´¿É
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">Ñ¡ÔñÎÒµÄÉÌÆ·£º</td>
-    <td width="80%" style="padding: 5px">
-      <select id="ubzpid" name="ubzpid" onchange="ShowImportList(this)" style="width:350px;">
-        {#Option($vd['item'], 0, 'pname', 'pid')}
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="right" style="padding: 5px">²Ù×÷£º</td>
-    <td width="80%" style="padding: 5px">
-    <input type="submit" value="È·ÈÏ¶Ô½Ó &gt; &gt;" style='font-weight:bold;font-size:14px' class="button" tabindex="21"/>
-    <span style="padding-left:5px;"></span>
-    <input type="reset" value="&lt; &lt; ÖØĞÂÌîĞ´" style='font-weight:bold;font-size:14px' class="button" name="reset" tabindex="22"/>
-    </td>
-  </tr>
-</table>
-</form>
-<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:5px #fff solid;margin-top:10px;">
-  <tr>
-    <td style="height:200px;padding-left:1px;background:#f6f6f6;">
-      <iframe frameBorder="0" width="100%" height="100%" id="frmimport" scrolling="no" name="frmimport" src="" allowTransparency="true" style="padding:0px;"></iframe>
-    </td>
-  </tr>
-</table>
-</body>
-</html>
-<script type="text/javascript">
-  var $ = function(id) {
-    return document.getElementById(id);
-  }
-  var tmp;
-  var i = 0;
-  var pArray = new Array();
-  
-  pidLength = $("ubzpid").length;
-  
-  for(i = 0; i < pidLength; i++)
-  {
-    /*
-    tmp   = $("ubzpid").options[i].text;
-    tchar = getFrist(tmp);
-    stext = getFrist(tmp) + tmp
-    pArray[i] = new Array($("ubzpid").options[i].value, stext);
-    */
-    pArray[i] = new Array($("ubzpid").options[i].value, $("ubzpid").options[i].text);
-    //$("ubzpid").options[i].text = stext;
-  }
-  
-  
-  function ShowImportList(obj)
-  {
-    $("frmimport").src = "index.php?m=mod_b2b&c=sup&a=FrmSup&ubzpid=" + $("ubzpid").options[$("ubzpid").selectedIndex].value + "&b=" + Math.random();
-  }
-  
-  function DispSelectZone()
-  {
-    $("ubzpid").length = 0;
-    var keys = trim($("pnamekey").value);
-    
-    for(i = 0; i < pidLength; i++)
-    {
-      if(pArray[i][1].toLowerCase().indexOf(keys)>-1)
-      {
-        $("ubzpid").options[$("ubzpid").length] = new Option(pArray[i][1], pArray[i][0]);
-      }
-    }
-  }
-      
-  //------------- 
-  //È¥µô×Ö´®×ó±ßµÄ¿Õ¸ñ 
-  function lTrim(str) 
-  { 
-    if (str.charAt(0) == " ") 
-    { 
-      //Èç¹û×Ö´®×ó±ßµÚÒ»¸ö×Ö·ûÎª¿Õ¸ñ 
-      str = str.slice(1);//½«¿Õ¸ñ´Ó×Ö´®ÖĞÈ¥µô 
-      //ÕâÒ»¾äÒ²¿É¸Ä³É str = str.substring(1, str.length); 
-      str = lTrim(str); //µİ¹éµ÷ÓÃ 
-    } 
-    return str; 
-  } 
-  
-  //È¥µô×Ö´®ÓÒ±ßµÄ¿Õ¸ñ 
-  function rTrim(str) 
-  { 
-    var iLength; 
-    
-    iLength = str.length; 
-    if (str.charAt(iLength - 1) == " ") 
-    { 
-      //Èç¹û×Ö´®ÓÒ±ßµÚÒ»¸ö×Ö·ûÎª¿Õ¸ñ 
-      str = str.slice(0, iLength - 1);//½«¿Õ¸ñ´Ó×Ö´®ÖĞÈ¥µô 
-      //ÕâÒ»¾äÒ²¿É¸Ä³É str = str.substring(0, iLength - 1); 
-      str = rTrim(str); //µİ¹éµ÷ÓÃ 
-    } 
-    return str; 
-  } 
-  
-  //È¥µô×Ö´®Á½±ßµÄ¿Õ¸ñ 
-  function trim(str) 
-  { 
-    return lTrim(rTrim(str)); 
-  } 
-
-  
-  function getFrist(s)
-  {
-    var a=["°¡a","°Éb","²Ác","àªd","¶îe","·¢f","¸Âg","¹şh","»÷j","¿¨k","À­l","Âèm","ÄÄn","Å¶o","Å¿p","Æßq","ÈÇr","Èös","Ëût","ÍÚw","Î÷x","Ñ¹y","Õ¦z"];
-    var fststr = s.charAt(0)
-    if(!isChinese(fststr))
-    {
-      return "";
-    }
-    
-    a.push(fststr);
-    a.sort(function(A,B){return A.localeCompare(B)});
-    for(var i = 0; i < 24; i++)
-    {
-      if(a[i] == fststr)
-      {
-        if(i == 0)
-        {
-          return "a-";
-        }
-        
-        if(i == 23)
-        {
-          return "z-";
-        }
-        
-        return a[i-1].charAt(1) + "-";
-      }
-    }
-    
-    return "z-";
-  }
-  
-  function IsDigit(cCheck) 
-  { 
-    return (('0'<=cCheck) && (cCheck<='9')); 
-  } 
-  function IsAlpha(cCheck) 
-  { 
-    return ((('a'<=cCheck) && (cCheck<='z')) || (('A'<=cCheck) && (cCheck<='Z'))) ;
-  } 
-  
-  function isChinese(str)
-  { 
-    var badChar ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-    badChar += "abcdefghijklmnopqrstuvwxyz"; 
-    badChar += "0123456789"; 
-    badChar += " "+"¡¡";//°ë½ÇÓëÈ«½Ç¿Õ¸ñ 
-    badChar += "`~!@#$%^&()-_=+]\\\\|:;\\\\\<,>?/";//²»°üº¬*»ò.µÄÓ¢ÎÄ·ûºÅ
-    if(""==str){ 
-      return false; 
-      } 
-    for(var i=0;i<str.length;i++){ 
-      var c = str.charAt(i);//×Ö·û´®strÖĞµÄ×Ö·û 
-      if(badChar.indexOf(c) > -1){ 
-        return false; 
-        } 
-    } 
-    return true; 
-  } 
-  
-  //ËÑË÷¹©»õÉÌÆ·
-  function loadSupProduct(page)
-  {
-    xmlhttp=null;
-    var url=null;
-    
-    url="page=" + page + "&keywords="+encodeURIComponent($("spnamekey").value);
-  
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
-    if (window.XMLHttpRequest)
-    {
-      xmlhttp=new XMLHttpRequest();
-    }
-    // Õë¶Ô IE µÄ´úÂë£º
-    else if (window.ActiveXObject)
-    {
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    
-    if (xmlhttp!=null)
-    {
-      xmlhttp.onreadystatechange=state_Change;
-      xmlhttp.open("post", "index.php?m=mod_b2b&c=sup&a=SimplePid", true);
-      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      xmlhttp.send(url);
-    }
-    else
-    {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
-    }
-  }
-  
-  function state_Change()
-  {
-    // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
-    if (xmlhttp.readyState==4)
-    {
-      // Èç¹ûÎª "OK"
-      if (xmlhttp.status==200)
-      {
-        // ÆäËû´úÂë..
-        var ackdata=xmlhttp.responseText;
-        $("simplepid").innerHTML = ackdata;
-        tmp = $("ubzsupinfo").options[$("ubzsupinfo").selectedIndex].value.split("|");
-        $("ubzspid").value = tmp[0];
-        $("otherinfo").innerHTML = tmp[1];
-      }
-      else
-      {
-        $("simplepid").innerHTML="<div class='col'>Ê§°Ü£¬ÖØĞÂÁ´½Ó</div>";
-      }
-    }
-  }
-  
-  function ShowSupInfo(obj)
-  {
-    tmp = obj.options[obj.selectedIndex].value.split("|");
-    $("ubzspid").value = tmp[0];
-    $("otherinfo").innerHTML = tmp[1];
-  }
-  
-  function iEvent(sType,oInput)
-  {
-    switch (sType){
-      case "focus" :
-        oInput.isfocus = true;
-        oInput.style.backgroundColor='#FFFFD8';
-      case "mouseover" :
-        oInput.style.borderColor = '#99E300';
-        break;
-      case "blur" :
-        oInput.isfocus = false;
-        oInput.style.backgroundColor="";
-      case "mouseout" :
-        if(!oInput.isfocus){
-          oInput.style.borderColor='#A1BCA3';
-        }
-        break;
-    }
-  }
-  
-  function setTableInput()
-  {
-    if(!$("cform"))
-    {
-      return;
-    }
-    myform  = $("cform");
-    formlen = myform.elements.length;
-    if(formlen == 0)
-    {
-      return;
-    }
-    
-    for (var i=0;i<myform.elements.length;i++) {
-      var e = myform.elements[i];
-      if (e.type == 'text') 
-      {
-        e.onmouseover=function(){ iEvent('mouseover',this)};
-        e.onfocus = function(){ iEvent('focus',this)};
-        e.onblur =function(){iEvent('blur',this)};
-        e.onmouseout=function(){ iEvent('mouseout',this)};
-      }
-    }
-  }
-  setTableInput();
-  //ËÑË÷½áÊø
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>å•†å“è¿›è´§å¯¹æ¥</title><link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/><style type="text/css">body{padding:0px;}td{height:22px;}</style></head><body><form name="form1" method="post" action="index.php?m=mod_b2b&c=sup&a=save&frm=1" target="frmimport" id="cform" style="padding:5px;"><table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid;">  <tr>    <td height="35"  colspan="2" class="listhead texttle">å•†å“è¿›è´§å¯¹æ¥</td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">æœç´¢è´§æºï¼š</td>    <td width="80%" style="padding: 5px">    <input type="text" id="spnamekey" name="spnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="æœç´¢" onclick="loadSupProduct(1)" class="button"/>    </td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">å½“å‰ä¾›è´§å•†å“ç¼–å·ï¼š</td>    <td width="80%" style="padding: 5px" id="supinfo">    <input type="text" name="ubzspid" size="5" value="{$vd['suppid']}"/><span id="otherinfo" style="padding-left:5px;"></span>    </td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">å½“å‰ä¾›è´§å•†å“åç§°ï¼š</td>    <td width="80%" style="padding: 5px" id="simplepid">{$vd['suppname']}</td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">ä¾›è´§ä¼˜å…ˆçº§ï¼š</td>    <td width="80%" style="padding: 5px">    <input type="text" name="ubzspri" size="20" value="1"/>    </td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">æœç´¢æˆ‘çš„å•†å“ï¼š</td>    <td width="80%" style="padding: 5px">    <input type="text" id="pnamekey" name="pnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="æœç´¢" onclick="DispSelectZone()" class="button"/> å¦‚æœæ˜¾ç¤ºæ‰€æœ‰å•†å“ï¼Œè¾“å…¥ç©ºæ ¼å³å¯    </td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">é€‰æ‹©æˆ‘çš„å•†å“ï¼š</td>    <td width="80%" style="padding: 5px">      <select id="ubzpid" name="ubzpid" onchange="ShowImportList(this)" style="width:350px;">        {#Option($vd['item'], 0, 'pname', 'pid')}      </select>    </td>  </tr>  <tr>    <td width="20%" align="right" style="padding: 5px">æ“ä½œï¼š</td>    <td width="80%" style="padding: 5px">    <input type="submit" value="ç¡®è®¤å¯¹æ¥ &gt; &gt;" style='font-weight:bold;font-size:14px' class="button" tabindex="21"/>    <span style="padding-left:5px;"></span>    <input type="reset" value="&lt; &lt; é‡æ–°å¡«å†™" style='font-weight:bold;font-size:14px' class="button" name="reset" tabindex="22"/>    </td>  </tr></table></form><table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:5px #fff solid;margin-top:10px;">  <tr>    <td style="height:200px;padding-left:1px;background:#f6f6f6;">      <iframe frameBorder="0" width="100%" height="100%" id="frmimport" scrolling="no" name="frmimport" src="" allowTransparency="true" style="padding:0px;"></iframe>    </td>  </tr></table></body></html><script type="text/javascript">  var $ = function(id) {    return document.getElementById(id);  }  var tmp;  var i = 0;  var pArray = new Array();    pidLength = $("ubzpid").length;    for(i = 0; i < pidLength; i++)  {    /*    tmp   = $("ubzpid").options[i].text;    tchar = getFrist(tmp);    stext = getFrist(tmp) + tmp    pArray[i] = new Array($("ubzpid").options[i].value, stext);    */    pArray[i] = new Array($("ubzpid").options[i].value, $("ubzpid").options[i].text);    //$("ubzpid").options[i].text = stext;  }      function ShowImportList(obj)  {    $("frmimport").src = "index.php?m=mod_b2b&c=sup&a=FrmSup&ubzpid=" + $("ubzpid").options[$("ubzpid").selectedIndex].value + "&b=" + Math.random();  }    function DispSelectZone()  {    $("ubzpid").length = 0;    var keys = trim($("pnamekey").value);        for(i = 0; i < pidLength; i++)    {      if(pArray[i][1].toLowerCase().indexOf(keys)>-1)      {        $("ubzpid").options[$("ubzpid").length] = new Option(pArray[i][1], pArray[i][0]);      }    }  }        //-------------   //å»æ‰å­—ä¸²å·¦è¾¹çš„ç©ºæ ¼   function lTrim(str)   {     if (str.charAt(0) == " ")     {       //å¦‚æœå­—ä¸²å·¦è¾¹ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸ºç©ºæ ¼       str = str.slice(1);//å°†ç©ºæ ¼ä»å­—ä¸²ä¸­å»æ‰       //è¿™ä¸€å¥ä¹Ÿå¯æ”¹æˆ str = str.substring(1, str.length);       str = lTrim(str); //é€’å½’è°ƒç”¨     }     return str;   }     //å»æ‰å­—ä¸²å³è¾¹çš„ç©ºæ ¼   function rTrim(str)   {     var iLength;         iLength = str.length;     if (str.charAt(iLength - 1) == " ")     {       //å¦‚æœå­—ä¸²å³è¾¹ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸ºç©ºæ ¼       str = str.slice(0, iLength - 1);//å°†ç©ºæ ¼ä»å­—ä¸²ä¸­å»æ‰       //è¿™ä¸€å¥ä¹Ÿå¯æ”¹æˆ str = str.substring(0, iLength - 1);       str = rTrim(str); //é€’å½’è°ƒç”¨     }     return str;   }     //å»æ‰å­—ä¸²ä¸¤è¾¹çš„ç©ºæ ¼   function trim(str)   {     return lTrim(rTrim(str));   }     function getFrist(s)  {    var a=["å•Ša","å§b","æ“¦c","å—’d","é¢e","å‘f","å˜g","å“ˆh","å‡»j","å¡k","æ‹‰l","å¦ˆm","å“ªn","å“¦o","è¶´p","ä¸ƒq","æƒ¹r","æ’’s","ä»–t","æŒ–w","è¥¿x","å‹y","å’‹z"];    var fststr = s.charAt(0)    if(!isChinese(fststr))    {      return "";    }        a.push(fststr);    a.sort(function(A,B){return A.localeCompare(B)});    for(var i = 0; i < 24; i++)    {      if(a[i] == fststr)      {        if(i == 0)        {          return "a-";        }                if(i == 23)        {          return "z-";        }                return a[i-1].charAt(1) + "-";      }    }        return "z-";  }    function IsDigit(cCheck)   {     return (('0'<=cCheck) && (cCheck<='9'));   }   function IsAlpha(cCheck)   {     return ((('a'<=cCheck) && (cCheck<='z')) || (('A'<=cCheck) && (cCheck<='Z'))) ;  }     function isChinese(str)  {     var badChar ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";     badChar += "abcdefghijklmnopqrstuvwxyz";     badChar += "0123456789";     badChar += " "+"ã€€";//åŠè§’ä¸å…¨è§’ç©ºæ ¼     badChar += "`~!@#$%^&()-_=+]\\\\|:;\\\\\<,>?/";//ä¸åŒ…å«*æˆ–.çš„è‹±æ–‡ç¬¦å·    if(""==str){       return false;       }     for(var i=0;i<str.length;i++){       var c = str.charAt(i);//å­—ç¬¦ä¸²strä¸­çš„å­—ç¬¦       if(badChar.indexOf(c) > -1){         return false;         }     }     return true;   }     //æœç´¢ä¾›è´§å•†å“  function loadSupProduct(page)  {    xmlhttp=null;    var url=null;        url="page=" + page + "&keywords="+encodeURIComponent($("spnamekey").value);      // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š    if (window.XMLHttpRequest)    {      xmlhttp=new XMLHttpRequest();    }    // é’ˆå¯¹ IE çš„ä»£ç ï¼š    else if (window.ActiveXObject)    {      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");    }        if (xmlhttp!=null)    {      xmlhttp.onreadystatechange=state_Change;      xmlhttp.open("post", "index.php?m=mod_b2b&c=sup&a=SimplePid", true);      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');      xmlhttp.send(url);    }    else    {      alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")    }  }    function state_Change()  {    // å¦‚æœ xmlhttp æ˜¾ç¤ºä¸º "loaded"    if (xmlhttp.readyState==4)    {      // å¦‚æœä¸º "OK"      if (xmlhttp.status==200)      {        // å…¶ä»–ä»£ç ..        var ackdata=xmlhttp.responseText;        $("simplepid").innerHTML = ackdata;        tmp = $("ubzsupinfo").options[$("ubzsupinfo").selectedIndex].value.split("|");        $("ubzspid").value = tmp[0];        $("otherinfo").innerHTML = tmp[1];      }      else      {        $("simplepid").innerHTML="<div class='col'>å¤±è´¥ï¼Œé‡æ–°é“¾æ¥</div>";      }    }  }    function ShowSupInfo(obj)  {    tmp = obj.options[obj.selectedIndex].value.split("|");    $("ubzspid").value = tmp[0];    $("otherinfo").innerHTML = tmp[1];  }    function iEvent(sType,oInput)  {    switch (sType){      case "focus" :        oInput.isfocus = true;        oInput.style.backgroundColor='#FFFFD8';      case "mouseover" :        oInput.style.borderColor = '#99E300';        break;      case "blur" :        oInput.isfocus = false;        oInput.style.backgroundColor="";      case "mouseout" :        if(!oInput.isfocus){          oInput.style.borderColor='#A1BCA3';        }        break;    }  }    function setTableInput()  {    if(!$("cform"))    {      return;    }    myform  = $("cform");    formlen = myform.elements.length;    if(formlen == 0)    {      return;    }        for (var i=0;i<myform.elements.length;i++) {      var e = myform.elements[i];      if (e.type == 'text')       {        e.onmouseover=function(){ iEvent('mouseover',this)};        e.onfocus = function(){ iEvent('focus',this)};        e.onblur =function(){iEvent('blur',this)};        e.onmouseout=function(){ iEvent('mouseout',this)};      }    }  }  setTableInput();  //æœç´¢ç»“æŸ</script>

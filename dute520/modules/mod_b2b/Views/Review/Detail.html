@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style>
 .search_select {
@@ -36,54 +36,54 @@
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Review" title="ÆÀÂÛÁĞ±í"><font color="#000">ÆÀÂÛÁĞ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['subject']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_bank_index" onFocus="this.blur()" title="²é¿´ÆÀÂÛÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Review" title="è¯„è®ºåˆ—è¡¨"><font color="#000">è¯„è®ºåˆ—è¡¨</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['subject']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_bank_index" onFocus="this.blur()" title="æŸ¥çœ‹è¯„è®ºç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Review&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">ÆÀÂÛÏêÏ¸ĞÅÏ¢</div>
+<div class="ctitle">è¯„è®ºè¯¦ç»†ä¿¡æ¯</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÆÀÂÛÕß£º</td>
+    <td class="tablelt">è¯„è®ºè€…ï¼š</td>
     <td class="tablert">{$item['reviewer']}</td>
   </tr>
   <tr>
-    <td class="tablelt">Ö÷Ìâ£º</td>
+    <td class="tablelt">ä¸»é¢˜ï¼š</td>
     <td class="tablert"><input type="text" name="subject" size="50" value="{$item['subject']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÄÚÈİ£º</td>
+    <td class="tablelt">å†…å®¹ï¼š</td>
     <td class="tablert">
       <textarea name="content" rows="5" cols="60">{$item['content']}</textarea>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÉóºË×´Ì¬£º</td>
+    <td class="tablelt">å®¡æ ¸çŠ¶æ€ï¼š</td>
     <td class="tablert">
-      <input type="checkbox" name="checked" value="1" class="checkbox" {#ToggleCheck($item['checked'])}/> ´ò¹´±íÊ¾ÒÑ¾­ÉóºËÍ¨¹ı
+      <input type="checkbox" name="checked" value="1" class="checkbox" {#ToggleCheck($item['checked'])}/> æ‰“å‹¾è¡¨ç¤ºå·²ç»å®¡æ ¸é€šè¿‡
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¸÷ÀàÊı¾İ£º</td>
+    <td class="tablelt">å„ç±»æ•°æ®ï¼š</td>
     <td class="tablert">
-      ÆÀ·Ö£º<b>{$item['marks']}</b> ·Ö      Í¬ÒâÊı£º<b>{$item['agree']}</b>  Í¬ÒâÊı£º<b>{$item['disagree']}</b>
+      è¯„åˆ†ï¼š<b>{$item['marks']}</b> åˆ†      åŒæ„æ•°ï¼š<b>{$item['agree']}</b>  åŒæ„æ•°ï¼š<b>{$item['disagree']}</b>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÆÀÂÛÊ±¼ä£º</td>
+    <td class="tablelt">è¯„è®ºæ—¶é—´ï¼š</td>
     <td class="tablert">{$item['createdate']}</td>
   </tr>
   <tr>
-    <td class="tablelt">À´Ô´IP£º</td>
+    <td class="tablelt">æ¥æºIPï¼š</td>
     <td class="tablert">{$item['reviewerip']}</td>
   </tr>
   <tr>
     <td class="tablelt""></td>
     <td class="tablert">
-      <input type="submit" value=" ĞŞ ¸Ä " class="button"/>
-      <input type="button" value=" È¡ Ïû " onclick="disp('adddiv')" class="button"/>
+      <input type="submit" value=" ä¿® æ”¹ " class="button"/>
+      <input type="button" value=" å– æ¶ˆ " onclick="disp('adddiv')" class="button"/>
     </td>
   </tr>
 </table>

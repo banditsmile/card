@@ -29,7 +29,7 @@ class VinfoController extends Controller
 								$data = array_merge( $data, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->IVinfo_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "vip" => "À´·Ãip", "vsn" => "»úÆ÷´úÂë", "vref" => "À´Ô´ÍøÖ·", "vgo" => "²Ù×÷Ò³Ãæ" );
+								$R00be52aa45 = array( "vip" => "ï¿½ï¿½ï¿½ï¿½ip", "vsn" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "vref" => "ï¿½ï¿½Ô´ï¿½ï¿½Ö·", "vgo" => "ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½" );
 								$Oooo00 = "base64_decode";
 								$ooOO00o = $Oooo00( "YmFzZTY0X2RlY29kZQ==" );
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
@@ -39,13 +39,13 @@ class VinfoController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -57,10 +57,10 @@ class VinfoController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -71,7 +71,7 @@ class VinfoController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -86,7 +86,7 @@ class VinfoController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -104,7 +104,7 @@ class VinfoController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -143,7 +143,7 @@ class VinfoController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -165,7 +165,7 @@ class VinfoController extends Controller
 								$R808b89ba0e = $this->instance->IVinfo_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

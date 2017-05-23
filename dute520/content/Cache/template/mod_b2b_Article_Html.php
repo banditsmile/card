@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css">
 <style type="text/css">
 td{height:30px}
@@ -10,34 +10,34 @@ td{height:30px}
 <body>
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
   <tr>
-    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">¾²Ì¬Ò³ÃæÉú³É³ÌÐò</td>
+    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½É³ï¿½ï¿½ï¿½</td>
   </tr>
   <tr>
-    <td width="25%" align="center">ÎÄÕÂÏµÍ³Ïà¹ØÒ³Ãæ</td>
-    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="±àºÅ<?php echo $vd['id']; ?>µÄÎÄÕÂ¶ÔÓ¦¾²Ì¬Ò³ÃæÉú³É" class="button" style="padding-left:0px;"/></td>
+    <td width="25%" align="center">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid"><input type="button" onclick="setdata(1, 'article', 'article')" value="ï¿½ï¿½ï¿½<?php echo $vd['id']; ?>ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½Ó¦ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="button" style="padding-left:0px;"/></td>
   </tr>
   <?php if(UB_B2C){ ?>
   <tr>
-    <td width="25%" align="center"<?php if(!UB_YKT&&!UB_B2B){ ?> style="border-bottom:1px #ccc solid"<?php } ?>>ÁãÊÛÆ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center"<?php if(!UB_YKT&&!UB_B2B){ ?> style="border-bottom:1px #ccc solid"<?php } ?>>ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;<?php if(!UB_YKT&&!UB_B2B){ ?>border-bottom:1px #ccc solid<?php } ?>">
-      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
-      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="ÉÌÆ·×ÜÀà¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'b2c')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="button"/>
+      <input type="button" onclick="setdata(1, 'cat', 'b2c')" value="ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="button"/>
     </td>
   </tr>
   <?php } ?>
   <?php if(UB_B2B){ ?>
   <tr>
-    <td width="25%" align="center"<?php if(!UB_YKT){ ?> style="border-bottom:1px #ccc solid"<?php } ?>>Åú·¢Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center"<?php if(!UB_YKT){ ?> style="border-bottom:1px #ccc solid"<?php } ?>>ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;<?php if(!UB_YKT){ ?>border-bottom:1px #ccc solid<?php } ?>">
-      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'b2b')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="button"/>
     </td>
   </tr>
   <?php } ?>
   <?php if(UB_YKT){ ?>
   <tr>
-    <td width="25%" align="center" style="border-bottom:1px #ccc solid">Ò»¿¨Í¨Æ½Ì¨Ïà¹ØÒ³Ãæ</td>
+    <td width="25%" align="center" style="border-bottom:1px #ccc solid">Ò»ï¿½ï¿½Í¨Æ½Ì¨ï¿½ï¿½ï¿½Ò³ï¿½ï¿½</td>
     <td width="75%" align="left" style="border-right:1px #ccc solid;border-bottom:1px #ccc solid">
-      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="Ê×Ò³¾²Ì¬Ò³ÃæÉú³É" class="button"/>
+      <input type="button" onclick="setdata(1, 'index', 'ykt')" value="ï¿½ï¿½Ò³ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="button"/>
     </td>
   </tr>
   <?php } ?>
@@ -61,15 +61,15 @@ td{height:30px}
   var m  = "mod_b2b";
   var c  = "html";
   var a  = 'index';
-  var modname = "ÁãÊÛÏµÍ³";
+  var modname = "ï¿½ï¿½ï¿½ï¿½ÏµÍ³";
   var id = 0;
   
   var thisid = 0;
   
-  var single = 1; // Èç¹ûµ¥ÏîÔòÎª1
+  var single = 1; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª1
   var thiscount = 0;
   
-  // Ë³Ðò Ê×Ò³->ÀàÄ¿->ÉÌÆ·->ÁÐ±í->ÎÄÕÂ
+  // Ë³ï¿½ï¿½ ï¿½ï¿½Ò³->ï¿½ï¿½Ä¿->ï¿½ï¿½Æ·->ï¿½Ð±ï¿½->ï¿½ï¿½ï¿½ï¿½
   
   function loadXMLDoc()
   {
@@ -77,12 +77,12 @@ td{height:30px}
     var url=null;
     
     url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid + "&thismod=" + thismod;
-    // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º
     if (window.XMLHttpRequest)
     {
       xmlhttp=new XMLHttpRequest();
     }
-    // Õë¶Ô IE µÄ´úÂë£º
+    // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º
     else if (window.ActiveXObject)
     {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -97,22 +97,22 @@ td{height:30px}
     }
     else
     {
-      alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+      alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTP")
     }
   }
   
   function state_Change()
   {
     var result = document.getElementById("result");
-    // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+    // ï¿½ï¿½ï¿½ xmlhttp ï¿½ï¿½Ê¾Îª "loaded"
     if (xmlhttp.readyState==4)
     {
-      // Èç¹ûÎª "OK"
+      // ï¿½ï¿½ï¿½Îª "OK"
       if (xmlhttp.status==200)
       {
         if(a == "index")
         {
-          result.innerHTML = modname + "Ê×Ò³Éú³ÉÍê±Ï  => index.html";
+          result.innerHTML = modname + "ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => index.html";
           if(single == 1)
           {
             return;
@@ -125,7 +125,7 @@ td{height:30px}
         
         if(a == "cat")
         {
-          result.innerHTML = modname + "ÀàÄ¿Éú³ÉÍê±Ï  => cat.html";
+          result.innerHTML = modname + "ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => cat.html";
           if(single == 1)
           {
             return;
@@ -140,11 +140,11 @@ td{height:30px}
         
         if(a == "product")
         {
-          result.innerHTML = modname + "±àºÅÎª" + thisid + "ÉÌÆ·Éú³ÉÍê±Ï  => product/" + thisid + ".html";
+          result.innerHTML = modname + "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => product/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == pidcount))
           {
-            result.innerHTML = "ËùÓÐÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             return;
           }
 
@@ -153,7 +153,7 @@ td{height:30px}
             a = "plist";
             thisid = cat[0];
             thiscount = 1;
-            result.innerHTML = "ËùÓÐÉÌÆ·¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             if(single == 1)
             {
               return;
@@ -167,11 +167,11 @@ td{height:30px}
         
         if(a == "plist")
         {
-          result.innerHTML = "±àºÅÎª" + thisid + "µÄÉÌÆ··ÖÀàÉú³ÉÍê±Ï  => list/" + thisid + ".html";
+          result.innerHTML = "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => list/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == catcount))
           {
-            result.innerHTML = "ËùÓÐÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             return;
           }
 
@@ -180,7 +180,7 @@ td{height:30px}
             a = "article";
             thisid = art[0];
             thiscount = 1;
-            result.innerHTML = "ËùÓÐÉÌÆ··ÖÀà¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½à¾²Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             if(single == 1)
             {
               return;
@@ -194,17 +194,17 @@ td{height:30px}
         
         if(a == "article")
         {
-          result.innerHTML = "±àºÅÎª" + thisid + "µÄÎÄÕÂÉú³ÉÍê±Ï  => article/" + thisid + ".html";
+          result.innerHTML = "ï¿½ï¿½ï¿½Îª" + thisid + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  => article/" + thisid + ".html";
           
           if((single == 1) &&(thiscount == artcount))
           {
-            result.innerHTML = "ËùÓÐÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¾ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             return;
           }
           
           if(thiscount == artcount)
           {
-            result.innerHTML = "ËùÓÐÎÄÕÂ¾²Ì¬Ò³ÃæÉú³ÉÍê±Ï";
+            result.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¾ï¿½Ì¬Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             if(single == 1)
             {
               return;
@@ -218,7 +218,7 @@ td{height:30px}
       }
       else
       {
-        result.innerHTML = "Ê×Ò³Éú³ÉÊ§°Ü";
+        result.innerHTML = "ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½";
       }
     }
   }
@@ -245,16 +245,16 @@ td{height:30px}
     switch(mod)
     {
       case "b2b":
-        modname = "Åú·¢";
+        modname = "ï¿½ï¿½ï¿½ï¿½";
         break;
       case "ykt":
-        modname = "Ò»¿¨Í¨";
+        modname = "Ò»ï¿½ï¿½Í¨";
         break;
       case "b2c":
-        modname = "ÁãÊÛ";
+        modname = "ï¿½ï¿½ï¿½ï¿½";
         break;
       case "article":
-        modname = "ÎÄÕÂ";
+        modname = "ï¿½ï¿½ï¿½ï¿½";
         break;
     }
     

@@ -1,69 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Loan&a=index" title="ÉÞÕËÁÐ±í"><font color="#000">ÉÞÕËÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ÐÂÔöÇ·¿î</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´ÓÃ»§Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Loan&a=index" title="ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½Ã»ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Loan&a=CreateSave">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">ÐÂÔöÇ·¿î</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÓÃ»§£º</td>
+    <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['company']}({$item['aid']})</td>
   </tr>
   <tr>
-    <td class="tablelt">µ±Ç°Ç·¿î£º</td>
-    <td class="tablert">{$item['arrears']} {$vd['lang']['moneyunit']} <a href="index.php?m=mod_b2b&c=Loan&stype=otherside&keywords={$item['aid']}"><u>¼ÇÂ¼</u></a></td>
+    <td class="tablelt">ï¿½ï¿½Ç°Ç·ï¿½î£º</td>
+    <td class="tablert">{$item['arrears']} {$vd['lang']['moneyunit']} <a href="index.php?m=mod_b2b&c=Loan&stype=otherside&keywords={$item['aid']}"><u>ï¿½ï¿½Â¼</u></a></td>
   </tr>
   <tr>
-    <td class="tablelt">½è¿î½ð¶î£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½î£º</td>
     <td class="tablert">
       <input type="text" class="myinput" style="font-weight:normal" name="dollars" size="20"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ç·¿îÊ±¼ä£º</td>
+    <td class="tablelt">Ç·ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert">
       <input type="text" class="myinput" style="font-weight:normal" name="createdate" id="t1" size="20" value="<!--echo date("Y-m-d H:i:s");-->"/><img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('t1')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ô¼¶¨»¹¿î£º</td>
+    <td class="tablelt">Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½î£º</td>
     <td class="tablert">
       <input type="text" class="myinput" style="font-weight:normal" name="deadline" id="t2" size="20" value="<!--echo date("Y-m-d H:i:s" , strtotime("30 days"));-->"/><img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('t2')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">±¸×¢ËµÃ÷£º</td>
+    <td class="tablelt">ï¿½ï¿½×¢Ëµï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">
       <textarea rows="3" name="reason" cols="28" id="reason" style="width:200px; color:#5c5c5c"></textarea>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ºóÌ¨³äÖµÃÜÂë£º</td>
+    <td class="tablelt">ï¿½ï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
       <input type="password" class="myinput" name="tradepwd" value="" size="20">
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ËµÃ÷£º</td>
+    <td class="tablelt">Ëµï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert" style="font-size:12px">
-      Ìá½»ºó£¬ÏµÍ³»á¸øÓÃ»§¼Ó¿î£¬Í¬Ê±Ôö¼ÓÒ»Ìõ<a href="index.php?m=mod_b2b&c=Loan&stype=otherside&keywords={$item['aid']}"><u>Ç·¿î¼ÇÂ¼</u></a>
+      ï¿½á½»ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ó¿î£¬Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½<a href="index.php?m=mod_b2b&c=Loan&stype=otherside&keywords={$item['aid']}"><u>Ç·ï¿½ï¿½ï¿½Â¼</u></a>
     </td>
   </tr>
   <tr>
     <td class="tablelt" style="height:80px"> </td>
     <td class="tablert">
-      <input type="submit" value="Ìá ½» &gt;&gt;" name="b1" class="button"/>
-      <input type="reset" value="ÖØ ÖÃ &gt;&gt;" name="b1" class="button"/>
+      <input type="submit" value="ï¿½ï¿½ ï¿½ï¿½ &gt;&gt;" name="b1" class="button"/>
+      <input type="reset" value="ï¿½ï¿½ ï¿½ï¿½ &gt;&gt;" name="b1" class="button"/>
     </td>
   </tr>
 </table>
@@ -80,7 +80,7 @@
 </div>
 </form>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >Ò³Ãæ¼ÓÔØÖÐÇëÉÔµÈ...</div>
+  <div id="loadcontent" >Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 1;
@@ -107,7 +107,7 @@
   
   function setArea(obj)
   {
-    if(obj.innerHTML == "ÇëÊäÈëÔ­Òò")
+    if(obj.innerHTML == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½")
     {
       obj.innerHTML = "";
     }
@@ -117,7 +117,7 @@
   {
     if(obj.innerHTML == "")
     {
-      obj.innerHTML = "ÇëÊäÈëÔ­Òò";
+      obj.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½";
     }
   }
 </script>

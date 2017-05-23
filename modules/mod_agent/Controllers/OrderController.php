@@ -29,12 +29,12 @@ class OrderController extends Controller
 								$R2f07e1d8b8 = $R2097a8fddf->IAgent_Get( $R2a51483b14, "parentid,aname,aid" );
 								if ( !isset( $R2f07e1d8b8['parentid'] ) )
 								{
-												$this->Alert( "ÄúºÃ£¡ÏÂ¼¶²»´æÔÚ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R2f07e1d8b8['parentid'] != $Rcc5c6e696c[7] )
 								{
-												$this->Alert( "ÄúºÃ£¡ÄúÎÞ·¨²Ù×÷ÆäËû¿Í»§µÄÏÂ¼¶£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								return $R2f07e1d8b8['aname'];
@@ -99,7 +99,7 @@ class OrderController extends Controller
 												$R2fa4b8c965 = $this->CheckUnderling( $Rac70c4890d );
 												if ( trim( $R2fa4b8c965 ) == "" )
 												{
-																$this->Alert( "ÄúºÃ£¡ÄúµÄÓÃ»§ÓÐÎÊÌâ£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¡" );
 																$this->HistoryGo( );
 												}
 												$R0dc0347d49 = "";
@@ -131,13 +131,13 @@ class OrderController extends Controller
 								if ( 0 < $R657cac7ff2 )
 								{
 												$R3db8f5c8bc = $this->hander->IOrder_GetByPageLimit( $data, "ordno,pname,czaccount,qty,cprice,dollars,ordstate,orddate" );
-												$R06c518f70e = array( "ordno" => "¶©µ¥ºÅ", "pname" => "¹ºÂòÉÌÆ·", "czaccount" => "³äÖµÕËºÅ", "qty" => "ÊýÁ¿", "cprice" => "µ¥¼Û", "dollars" => "Ö§³ö½ð¶î", "ordstate" => "¶©µ¥×´Ì¬", "orddate" => "ÈÕÆÚ" );
-												$Re8872481ab = array( "-1" => "½»Ò×Ê§°Ü", "0" => "Î´¸¶¿î", "1" => "ÕýÔÚ´¦ÀíÖÐ", "2" => "ÒÑÌá½»´¦Àí", "2" => "½»Ò×Íê³É" );
+												$R06c518f70e = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "pname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·", "czaccount" => "ï¿½ï¿½Öµï¿½Ëºï¿½", "qty" => "ï¿½ï¿½ï¿½ï¿½", "cprice" => "ï¿½ï¿½ï¿½ï¿½", "dollars" => "Ö§ï¿½ï¿½ï¿½ï¿½ï¿½", "ordstate" => "ï¿½ï¿½ï¿½ï¿½×´Ì¬", "orddate" => "ï¿½ï¿½ï¿½ï¿½" );
+												$Re8872481ab = array( "-1" => "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½", "0" => "Î´ï¿½ï¿½ï¿½ï¿½", "1" => "ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$R026f0167b4 = array( );
 												$R026f0167b4[] = $R06c518f70e;
 												foreach ( $R3db8f5c8bc as $R0f8134fb60 )
 												{
-																$R0f8134fb60['ordno'] = "¶©µ¥£º".$R0f8134fb60['ordno'];
+																$R0f8134fb60['ordno'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½".$R0f8134fb60['ordno'];
 																if ( $R198d213635 == 0 )
 																{
 																				$R0f8134fb60['cprice'] = "-";
@@ -149,7 +149,7 @@ class OrderController extends Controller
 																}
 																else
 																{
-																				$R0f8134fb60['ordstate'] = "½»Ò×Íê³É";
+																				$R0f8134fb60['ordstate'] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 																}
 																$R026f0167b4[] = $R0f8134fb60;
 												}
@@ -163,7 +163,7 @@ class OrderController extends Controller
 												$R1c8e0f6795 = str_replace( "-", "", $R1c8e0f6795 );
 												$R1c8e0f6795 = str_replace( " ", "-", $R1c8e0f6795 );
 												$R1c8e0f6795 = str_replace( ":", "", $R1c8e0f6795 );
-												$R7ca55aed77->output( $R026f0167b4, "½ø»õ¼ÇÂ¼_".$R696350cab3."_".$R1c8e0f6795 );
+												$R7ca55aed77->output( $R026f0167b4, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼_".$R696350cab3."_".$R1c8e0f6795 );
 												exit( );
 								}
 								$R4e420efcc3 = $this->hander->IOrder_Page( $data );
@@ -252,7 +252,7 @@ class OrderController extends Controller
 								}
 								else if ( $R034ae2ab94 == 0 )
 								{
-												$this->Alert( "Äú»¹Ã»ÓÐµÇÂ½£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ðµï¿½Â½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b" );
 								}
 								else
@@ -263,7 +263,7 @@ class OrderController extends Controller
 								{
 												if ( $R034ae2ab94 == 0 )
 												{
-																$this->Alert( "ÄúÎÞÈ¨²é¿´£¡ÇëÖØÐÂÊäÈë" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½È¨ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 												else
@@ -324,7 +324,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												$this->Alert( "Äú»¹Ã»ÓÐµÇÂ½£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ðµï¿½Â½ï¿½ï¿½" );
 												$this->GoHome( "b2b" );
 								}
 								$Rdcd9105806 = getvar( "ordno" );
@@ -340,13 +340,13 @@ class OrderController extends Controller
 												}
 												if ( !isset( $R0f8134fb60['item']['ordno'] ) )
 												{
-																$this->Alert( "ÄúÒª²éÕÒµÄ¶©µ¥²»´æÔÚ£¡ÇëÖØÐÂÊäÈë" );
+																$this->Alert( "ï¿½ï¿½Òªï¿½ï¿½ï¿½ÒµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
 								if ( $R0f8134fb60['item']['inrecycle'] == 1 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷£¡¶©µ¥ÒÑ¾­²»´æÔÚ" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$this->CheckRight( $R0f8134fb60['item'] );
@@ -430,7 +430,7 @@ class OrderController extends Controller
 												}
 												if ( $Rbd83edab70 == 0 && $R0f8134fb60['item']['cname'] != $Rcc5c6e696c[10] )
 												{
-																$this->Alert( "ÄúºÃ£¬ÄúÃ»ÓÐ²é¿´ÆäËûÔ±¹¤¼ÇÂ¼µÄÈ¨ÏÞ£¬ÇëÁªÏµÄúµÄÀÏ°å¿ªÍ¨£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ã»ï¿½Ð²é¿´ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½È¨ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Ï°å¿ªÍ¨ï¿½ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -444,7 +444,7 @@ class OrderController extends Controller
 												}
 												else
 												{
-																$R0f8134fb60['item']['comsumpscored'] = "»ý·Ö¶©µ¥ÒÑÉ¾³ý";
+																$R0f8134fb60['item']['comsumpscored'] = "ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½";
 												}
 								}
 								$this->Assign( "order", $R0f8134fb60 );
@@ -469,8 +469,8 @@ class OrderController extends Controller
 								if ( isset( $R3db8f5c8bc['isalerted'] ) && $R3db8f5c8bc['isalerted'] == 0 )
 								{
 												$R67250bac47 = factory::getinstance( "fetion" );
-												$Rbb3e87fa4e = "ÄúÓÐÐÂµÄ¶©µ¥£¬¶©µ¥ºÅÎª:".$Rdcd9105806." ¶©¹ºÉÌÆ·Îª£º".$R3db8f5c8bc['pname'];
-												$Rbb3e87fa4e = iconv( "gb2312", "UTF-8", $Rbb3e87fa4e );
+												$Rbb3e87fa4e = "ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:".$Rdcd9105806." ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Îªï¿½ï¿½".$R3db8f5c8bc['pname'];
+												$Rbb3e87fa4e = iconv( "utf-8", "UTF-8", $Rbb3e87fa4e );
 												$R7adfab20b6 = array(
 																"sms" => $Rbb3e87fa4e
 												);

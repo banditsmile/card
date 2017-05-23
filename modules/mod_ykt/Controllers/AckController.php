@@ -28,17 +28,17 @@ class AckController extends Controller
 								$R0f8134fb60['item'] = $this->hander->IOrder_Get( $Rdcd9105806 );
 								if ( $R0f8134fb60['item'] == 0 )
 								{
-												$this->Alert( "ÄúÒª²éÕÒµÄ¶©µ¥²»´æÔÚ£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½Òªï¿½ï¿½ï¿½ÒµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( !$R0f8134fb60['item']['comefrom'] || $R0f8134fb60['item']['comefrom'] != 3 )
 								{
-												$this->Alert( "ÄúÒª²éÕÒµÄ¶©µ¥²»´æÔÚ£¡ÇëÖØÐÂÊäÈë" );
+												$this->Alert( "ï¿½ï¿½Òªï¿½ï¿½ï¿½ÒµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R0f8134fb60['item']['inrecycle'] == 1 )
 								{
-												$this->Alert( "·Ç·¨²Ù×÷£¡¶©µ¥ÒÑ¾­²»´æÔÚ" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R0f8134fb60['item']['ordstate'] == 2 && ( $R0f8134fb60['item']['ptype'] == 0 || $R0f8134fb60['item']['ptype'] == 3 || 99 < $R0f8134fb60['item']['ptype'] ) )
@@ -184,8 +184,8 @@ class AckController extends Controller
 								if ( isset( $R3db8f5c8bc['isalerted'] ) && $R3db8f5c8bc['isalerted'] == 0 )
 								{
 												$R67250bac47 = factory::getinstance( "fetion" );
-												$Rbb3e87fa4e = "ÄúÓÐÐÂµÄ¶©µ¥£¬¶©µ¥ºÅÎª:".$Rdcd9105806." ¶©¹ºÉÌÆ·Îª£º".$R3db8f5c8bc['pname'];
-												$Rbb3e87fa4e = iconv( "gb2312", "UTF-8", $Rbb3e87fa4e );
+												$Rbb3e87fa4e = "ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª:".$Rdcd9105806." ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Îªï¿½ï¿½".$R3db8f5c8bc['pname'];
+												$Rbb3e87fa4e = iconv( "utf-8", "UTF-8", $Rbb3e87fa4e );
 												$R7adfab20b6 = array(
 																"sms" => $Rbb3e87fa4e
 												);

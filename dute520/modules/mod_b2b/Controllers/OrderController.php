@@ -170,9 +170,9 @@ class OrderController extends Controller
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "adiis" ) ) ) );
-								$R00be52aa45 = array( "ordno" => "¶©µ¥ºÅ", "cid" => "ÓÃ»§±àºÅ", "pid" => "ÉÌÆ·±àºÅ", "remarks" => "¶©µ¥±¸×¢", "aname" => "ÓÃ»§Ãû", "cname" => "²Ù×÷Õß", "pname" => "ÉÌÆ·Ãû", "cqq" => "QQºÅ", "ctel" => "µç»°", "cmail" => "ÓÊÏä", "czaccount" => "³äÖµÕÊºÅ", "cip" => "IP", "cardnumber" => "¿¨ºÅ", "admname" => "´ú³ä¹ÜÀíÔ±" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
-								$R4d5c62f7b3 = array( "" => "È«²¿¶©µ¥", "w|cz" => "´ý³äÖµ¶©µ¥", "s|cz" => "³É¹¦¶©µ¥", "u|cz" => "Ê§°Ü¶©µ¥", "sd|w" => "Î´´ú³äÊÖ¹¤", "sd|d" => "Î´³äÖµÊÖ¹¤", "sd" => "ÊÖ¹¤¼ÇÂ¼" );
+								$R00be52aa45 = array( "ordno" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "cid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "remarks" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢", "aname" => "ï¿½Ã»ï¿½ï¿½ï¿½", "cname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "pname" => "ï¿½ï¿½Æ·ï¿½ï¿½", "cqq" => "QQï¿½ï¿½", "ctel" => "ï¿½ç»°", "cmail" => "ï¿½ï¿½ï¿½ï¿½", "czaccount" => "ï¿½ï¿½Öµï¿½Êºï¿½", "cip" => "IP", "cardnumber" => "ï¿½ï¿½ï¿½ï¿½", "admname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
+								$R4d5c62f7b3 = array( "" => "È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "w|cz" => "ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½", "s|cz" => "ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½", "u|cz" => "Ê§ï¿½Ü¶ï¿½ï¿½ï¿½", "sd|w" => "Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½", "sd|d" => "Î´ï¿½ï¿½Öµï¿½Ö¹ï¿½", "sd" => "ï¿½Ö¹ï¿½ï¿½ï¿½Â¼" );
 								$this->Assign( "tradedata", $Rbf6c8991d9 );
 								$this->FillPage( $data, $R4e420efcc3 );
 								$this->Assign( "sarray", $R00be52aa45 );
@@ -226,7 +226,7 @@ class OrderController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -259,7 +259,7 @@ class OrderController extends Controller
 								);
 								if ( $R0f8134fb60['item']['ordstate'] == 3 )
 								{
-												$this->Alert( "ÒÑ¾­ÓÐÈË´¦Àí´Ë¶©µ¥£¬ÇëÎðÖØ¸´´¦Àí£¡" );
+												$this->Alert( "ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R0f8134fb60['item']['ordstate'] == 1 )
@@ -273,7 +273,7 @@ class OrderController extends Controller
 								include_once( "..".DS."libraries".DS."user".DS."ordererrcontent.php" );
 								if ( !isset( $ect ) )
 								{
-												$ect = array( "³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎÞ·¨³äÖµ£¬ÇëÉÔºóÖØÐÂ¹ºÂò", "³äÖµÕÊ»§²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò", "³äÖµÇøÓò²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò", "ÉÌÆ·¿â´æ²»×ã£¬Çë´ýÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò", "ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÌá½»¶©µ¥" );
+												$ect = array( "ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½", "ï¿½ï¿½Öµï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Öµï¿½ï¿½ï¿½ò²»·ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Æ·ï¿½ï¿½æ²»ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½" );
 								}
 							
 												$this->Assign( "ect", $ect );
@@ -347,7 +347,7 @@ class OrderController extends Controller
 								include_once( "..".DS."libraries".DS."user".DS."ordererrcontent.php" );
 								if ( !isset( $ect ) )
 								{
-												$ect = array( "³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎÞ·¨³äÖµ£¬ÇëÉÔºóÖØÐÂ¹ºÂò", "³äÖµÕÊ»§²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò", "³äÖµÇøÓò²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò", "ÉÌÆ·¿â´æ²»×ã£¬Çë´ýÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò", "ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÌá½»¶©µ¥" );
+												$ect = array( "ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½", "ï¿½ï¿½Öµï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Öµï¿½ï¿½ï¿½ò²»·ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Æ·ï¿½ï¿½æ²»ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½" );
 								}
 								$R90a95441bd = $this->GetAdmRight( 53 );
 								$R9e79160ed8 = $this->GetAdmRight( 61 );
@@ -366,7 +366,7 @@ class OrderController extends Controller
 												"ordno" => getvar( "ubzordno" )
 								);
 								$this->hander->IOrder_Update( $data );
-								$this->Alert( "¸üÐÂ³É¹¦" );
+								$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½" );
 								$this->View( "Index" );
 				}
 
@@ -379,7 +379,7 @@ class OrderController extends Controller
 								$Rebd5a5dade = $this->hander->IOrder_Get( $Rdcd9105806, "", "", "payment,rollback,ordstate,ptype,aname,pid,qty,pname,aid" );
 								if ( $Rebd5a5dade['ordstate'] == 3 )
 								{
-												echo "ÒÑ¾­ÓÐÈË´¦Àí´Ë¶©µ¥£¡";
+												echo "ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								if ( $Rebd5a5dade['ordstate'] == 1 )
@@ -453,7 +453,7 @@ class OrderController extends Controller
 								$Rebd5a5dade = $this->hander->IOrder_Get( $Rdcd9105806, "", "", "ordno,payment,rollback,ordstate,ptype,aname,pid,qty,pname,aid,cname,scored,aid,cid,fee,cprice,dollars,price,comefrom,profit,comefrom" );
 								if ( !isset( $Rebd5a5dade['payment'] ) )
 								{
-												$this->Alert( "¶©µ¥ÒÑ¾­É¾³ý»òÕß²»´æÔÚ£¬²Ù×÷Í£Ö¹£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ß²ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $Rebd5a5dade['ordstate'] == 2 )
@@ -461,7 +461,7 @@ class OrderController extends Controller
 												$Rff0cc71a1d = factory::getinstance( "session" );
 												if ( 1 < $Rff0cc71a1d->adminrank && $this->GetAdmRight( 53 ) == 0 )
 												{
-																$this->Alert( "ÄúÃ»ÓÐ´¦Àí´Ë¶©µ¥µÄÈ¨ÏÞ£¬ÇëÁªÏµ³¬¼¶¹ÜÀíÔ±" );
+																$this->Alert( "ï¿½ï¿½Ã»ï¿½Ð´ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±" );
 																$this->HistoryGo( );
 												}
 								}
@@ -485,11 +485,11 @@ class OrderController extends Controller
 																{
 																				$this->RollBack( $Rdcd9105806 );
 																}
-																$R63bede6b19 = "±¾´ÎÍË¿î³É¹¦£¡";
+																$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½É¹ï¿½ï¿½ï¿½";
 												}
 												if ( $Rbdf46d6e43 == -1 && $R922c035b87 == 1 && $R0b14cc7367 == 1 && $this->rollbackcan == false )
 												{
-																$R63bede6b19 = "´Ë¶©µ¥Ö®Ç°ÒÑ¾­ÍË¿î£¡±¾´Î²Ù×÷²»»áÖØ¸´ÍË¿î";
+																$R63bede6b19 = "ï¿½Ë¶ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ñ¾ï¿½ï¿½Ë¿î£¡ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ë¿ï¿½";
 												}
 								}
 								if ( $Rb60574d852 == 98 )
@@ -507,7 +507,7 @@ class OrderController extends Controller
 																}
 																else
 																{
-																				$R63bede6b19 = "´Ë¶©µ¥Ö®Ç°ÒÑ¾­ÍË¿î£¡±¾´Î²Ù×÷²»»áÖØ¸´ÍË¿î";
+																				$R63bede6b19 = "ï¿½Ë¶ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ñ¾ï¿½ï¿½Ë¿î£¡ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ë¿ï¿½";
 																}
 												}
 												if ( $Rbdf46d6e43 == 2 && ( $R4bef9862f8 = $UN_1 || $R4bef9862f8 == 3 ) )
@@ -518,7 +518,7 @@ class OrderController extends Controller
 																				$data['agentprofit'] = $R60144b28c1;
 																				if ( $Rebd5a5dade['profit'] < $R60144b28c1 )
 																				{
-																								$this->Alert( "ÉÌÆ·¼Û¸ñÓÐÎÊÌâµ¼ÖÂ´úÀíÀûÈó´íÎó£¬ÇëÊÖ¶¯²é¿´ÀûÈó±¨±í²¢×ÔÐÐ¿Û³ý£¡" );
+																								$this->Alert( "ï¿½ï¿½Æ·ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½âµ¼ï¿½Â´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½é¿´ï¿½ï¿½ï¿½ó±¨±ï¿½ï¿½ï¿½ï¿½Ð¿Û³ï¿½ï¿½ï¿½" );
 																				}
 																				if ( 0 < $R2a51483b14 )
 																				{
@@ -558,7 +558,7 @@ class OrderController extends Controller
 																}
 																else
 																{
-																				$R63bede6b19 = "´Ë¶©µ¥Ö®Ç°ÒÑ¾­ÍË¿î£¡±¾´Î²Ù×÷²»»áÖØ¸´ÍË¿î";
+																				$R63bede6b19 = "ï¿½Ë¶ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ñ¾ï¿½ï¿½Ë¿î£¡ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ë¿ï¿½";
 																}
 												}
 												$Rf3d646c485 = factory::getinstance( "scoredorder" );
@@ -568,7 +568,7 @@ class OrderController extends Controller
 												$Rf3d646c485->IScoredOrder_Update( $R85af19fea1, $Rdcd9105806 );
 								}
 								$this->hander->IOrder_Update( $data, getvar( "ubzordno" ) );
-								$this->Alert( "¸üÐÂ³É¹¦".$R63bede6b19 );
+								$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½".$R63bede6b19 );
 								$Rf134fa1665 = request( "ref" );
 								if ( $Rf134fa1665 == "czlist" )
 								{
@@ -595,7 +595,7 @@ class OrderController extends Controller
 												$R48aa85bc4e = getvar( "tradepwd" );
 												if ( md5( $R48aa85bc4e ) != $R25791b03ad['tradepwd'] )
 												{
-																$this->Alert( "ÊäÈëµÄºóÌ¨³äÖµÃÜÂë²»ÕýÈ·£¡ÇëÖØÐÂÊäÈë£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½Äºï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¡" );
 																$this->HistoryGo( );
 												}
 								}
@@ -629,7 +629,7 @@ class OrderController extends Controller
 								$R61a8cd51a4 = $Rf3d646c485->IScoredOrder_Get( $Rdcd9105806 );
 								if ( !isset( $R61a8cd51a4['scored'] ) )
 								{
-												$this->Alert( "ÍË¿îÊ§°Ü£¡ÇëÖØÐÂÍË¿î" );
+												$this->Alert( "ï¿½Ë¿ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½" );
 												return false;
 								}
 								$R2a51483b14 = $R61a8cd51a4['aid'];
@@ -646,7 +646,7 @@ class OrderController extends Controller
 								{
 												$data = array(
 																"ordstate" => -1,
-																"failreason" => "¶©µ¥Ê§°Ü»ý·ÖµãÒÑ¾­·µ»¹ÓÃ»§",
+																"failreason" => "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü»ï¿½ï¿½Öµï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½",
 																"factoryreturn" => "",
 																"rollback" => 1,
 																"dealdate" => date( "Y-m-d H-i-s" )
@@ -657,7 +657,7 @@ class OrderController extends Controller
 												$R645c69ff15 = factory::getinstance( "scored" );
 												$data = array(
 																"ordno" => $Rdcd9105806,
-																"pname" => "[¶©µ¥ÍË¿î]".$R61a8cd51a4['pname'],
+																"pname" => "[ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½]".$R61a8cd51a4['pname'],
 																"qty" => $R61a8cd51a4['qty'],
 																"scored" => $R114f28ca48,
 																"fat" => $Rc0c42883ee,
@@ -707,7 +707,7 @@ class OrderController extends Controller
 																$this->UpdateRank( $R56ea904d53['aname'], "-".$R56ea904d53['dollars'] );
 																$data = array(
 																				"ordstate" => -1,
-																				"failreason" => "¶©µ¥Ê§°Ü[ÒÑ¾­ÍË¿î]",
+																				"failreason" => "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½[ï¿½Ñ¾ï¿½ï¿½Ë¿ï¿½]",
 																				"factoryreturn" => "",
 																				"rollback" => 1,
 																				"dealdate" => date( "Y-m-d H-i-s" )
@@ -715,7 +715,7 @@ class OrderController extends Controller
 																$this->hander->IOrder_Update( $data, $R56ea904d53['ordno'] );
 																$R3ab1f9eb35 = $agent['aremain'];
 																$Rc0c42883ee = $R98bc1630cd;
-																$this->UpdateTrade( $R2a51483b14, 1, $R56ea904d53['ordno'], 0, "(¶©µ¥Ê§°ÜÍË¿î)".$R56ea904d53['pname'], $R4f39743f74, $R56ea904d53['qty'], $R9b252bf0a7, 0, $Rc0c42883ee, $R3ab1f9eb35, $R9b252bf0a7, 0 );
+																$this->UpdateTrade( $R2a51483b14, 1, $R56ea904d53['ordno'], 0, "(ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ë¿ï¿½)".$R56ea904d53['pname'], $R4f39743f74, $R56ea904d53['qty'], $R9b252bf0a7, 0, $Rc0c42883ee, $R3ab1f9eb35, $R9b252bf0a7, 0 );
 																$Rae8a26f24a = factory::getinstance( $this->tradetable );
 																$data = array( "state" => -1 );
 																$Rae8a26f24a->ITrade_UpdateByOrdno( $data, $Rdcd9105806 );
@@ -723,7 +723,7 @@ class OrderController extends Controller
 												}
 												else
 												{
-																$this->Alert( "ÍË¿îÊ§°Ü£¡ÇëÖØÐÂÍË¿î" );
+																$this->Alert( "ï¿½Ë¿ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½" );
 																return false;
 												}
 								}
@@ -741,7 +741,7 @@ class OrderController extends Controller
 								$Rd8fb5ae7df = $agent['funds'] - $R9b252bf0a7;
 								if ( $Rd8fb5ae7df < 0 )
 								{
-												$this->Alert( "ÄúµÄ¹©»õËùµÃ½ð¶îÌ«ÉÙ£¬±¾´Î²Ù×÷ÎÞ·¨½øÐÐ£¬Çë°Ñ¶ÔÓ¦¹©»õÉÌµÄÓà¶î×ªÈëËûµÄ¹©»õËùµÃ£¬ÔÙ½øÐÐÍË¿î²Ù×÷£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ï¿½Ì«ï¿½Ù£ï¿½ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ñ¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Ù½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												return false;
 								}
 								$data = array(
@@ -753,7 +753,7 @@ class OrderController extends Controller
 												$R65edce27dd = $R56ea904d53['pname'];
 												$R66b0d9d6f1 = $R56ea904d53['qty'];
 												$R63d0786ecc = round( $R9b252bf0a7 / $R66b0d9d6f1, 3 );
-												$this->UpdateTrade( $agent['aid'], 12, $Rdcd9105806, $agent['aid'], "[¶©µ¥È¡Ïû]".$R65edce27dd, $R63d0786ecc, $R66b0d9d6f1, 0, $agent['aid'], $Rd8fb5ae7df, $agent['funds'], $R9b252bf0a7, $R9b252bf0a7 );
+												$this->UpdateTrade( $agent['aid'], 12, $Rdcd9105806, $agent['aid'], "[ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½]".$R65edce27dd, $R63d0786ecc, $R66b0d9d6f1, 0, $agent['aid'], $Rd8fb5ae7df, $agent['funds'], $R9b252bf0a7, $R9b252bf0a7 );
 												return true;
 								}
 								else
@@ -833,7 +833,7 @@ class OrderController extends Controller
 												$this->UpdateCRank( $R56ea904d53['cname'], "-".$R56ea904d53['dollars'] );
 												$data = array(
 																"ordstate" => -1,
-																"failreason" => "¶©µ¥Ê§°ÜÒÑ¾­ÍË¿î»áÔ±ÕË»§",
+																"failreason" => "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½Ë¿ï¿½ï¿½Ô±ï¿½Ë»ï¿½",
 																"factoryreturn" => "",
 																"rollback" => 1,
 																"dealdate" => date( "Y-m-d H-i-s" )
@@ -956,11 +956,11 @@ class OrderController extends Controller
 				{
 								if ( $this->GetAdmRight( 42 ) == 0 )
 								{
-												$this->Alert( "ÄúÃ»ÓÐÉ¾³ýÈ¨ÏÞ" );
+												$this->Alert( "ï¿½ï¿½Ã»ï¿½ï¿½É¾ï¿½ï¿½È¨ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$this->hander->IOrder_DeleteByOrdno( getvar( "ubzordno" ) );
-								$this->Alert( "É¾³ý³É¹¦" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=Order&aid=-1&by=1" );
 				}
 
@@ -968,11 +968,11 @@ class OrderController extends Controller
 				{
 								if ( $this->GetAdmRight( 42 ) == 0 )
 								{
-												$this->Alert( "ÄúÃ»ÓÐÉ¾³ýÈ¨ÏÞ" );
+												$this->Alert( "ï¿½ï¿½Ã»ï¿½ï¿½É¾ï¿½ï¿½È¨ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$this->hander->IOrder_Delete( $this->GetId( "id" ) );
-								$this->Alert( "É¾³ý³É¹¦" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=order" );
 				}
 
@@ -1098,11 +1098,11 @@ class OrderController extends Controller
 																{
 																				$this->RollBack( $Rdcd9105806 );
 																}
-																$R63bede6b19 = "±¾´ÎÍË¿î³É¹¦£¡";
+																$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½É¹ï¿½ï¿½ï¿½";
 												}
 												if ( $Rbdf46d6e43 == -1 && $R922c035b87 == 1 && $R0b14cc7367 == 1 && $this->rollbackcan == false )
 												{
-																$R63bede6b19 = "´Ë¶©µ¥Ö®Ç°ÒÑ¾­ÍË¿î£¡±¾´Î²Ù×÷²»»áÖØ¸´ÍË¿î";
+																$R63bede6b19 = "ï¿½Ë¶ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ñ¾ï¿½ï¿½Ë¿î£¡ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ë¿ï¿½";
 												}
 								}
 								if ( $Rb60574d852 == 98 && $Rbdf46d6e43 == -1 && $R922c035b87 == 1 && $R0b14cc7367 == 0 )
@@ -1118,7 +1118,7 @@ class OrderController extends Controller
 												}
 												else
 												{
-																$R63bede6b19 = "´Ë¶©µ¥Ö®Ç°ÒÑ¾­ÍË¿î£¡±¾´Î²Ù×÷²»»áÖØ¸´ÍË¿î";
+																$R63bede6b19 = "ï¿½Ë¶ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ñ¾ï¿½ï¿½Ë¿î£¡ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Ë¿ï¿½";
 												}
 								}
 								$sess = factory::getinstance( "session" );
@@ -1132,7 +1132,7 @@ class OrderController extends Controller
 												}
 								}
 								$this->hander->IOrder_Update( $data, $Rdcd9105806 );
-								$this->Alert( "¸üÐÂ³É¹¦".$R63bede6b19 );
+								$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½".$R63bede6b19 );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=order&a=detail&ubzordno=".$Rdcd9105806 );
 				}
 
@@ -1196,7 +1196,7 @@ class OrderController extends Controller
 								else
 								{
 												$R0d9f8f778c = $Rb3f07f8c36['listprice'];
-												$R63bede6b19 = "´ÙÏú-";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½-";
 								}
 								$data = array(
 												"ubzordno" => urlencode( $R56ea904d53['ordno'] ),
@@ -1306,7 +1306,7 @@ class OrderController extends Controller
 
 				public function Respond( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								include_once( UPATH_HELPER."OrderHelper.php" );
 								$Rdcd9105806 = getvar( "ordno" );
 								$R3db8f5c8bc = $this->Deal( $Rdcd9105806 );
@@ -1336,7 +1336,7 @@ class OrderController extends Controller
 								$R0bd4c030b3 = getvar( "inputer", "" );
 								if ( $R22e989667c == "" )
 								{
-												$this->alert( "½ø¶È²»ÄÜÎª¿Õ£¡" );
+												$this->alert( "ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½" );
 												$this->HistoryGo( );
 								}
 								$data = array(
@@ -1347,15 +1347,15 @@ class OrderController extends Controller
 								);
 								if ( $R3584859062 == 0 )
 								{
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $R3fdff9ac40->IPowerLv_Create( $data );
 								}
 								else
 								{
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $R3fdff9ac40->IPowerLv_Update( $data, $R3584859062 );
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=order&a=detail&ubzordno=".$Rdcd9105806 );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=order&a=detail&ubzordno=".$Rdcd9105806 );
 				}
 
 				public function Deal( )
@@ -1367,7 +1367,7 @@ class OrderController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -1379,7 +1379,7 @@ class OrderController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								if ( $param == "ordstate" )
@@ -1392,7 +1392,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+												$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 												$data = array(
 																$param => $R244f38266c
 												);
@@ -1404,7 +1404,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡";
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -1419,7 +1419,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -1427,7 +1427,7 @@ class OrderController extends Controller
 				{
 								if ( $this->GetAdmRight( 42 ) == 0 )
 								{
-												echo "ÄúÃ»ÓÐÉ¾³ý¶©µ¥µÄÈ¨ÏÞ£¬ÇëÁªÏµ³¬¼¶¹ÜÀíÔ±";
+												echo "ï¿½ï¿½Ã»ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±";
 												exit( );
 								}
 								$R15a0359c8c = getvar( "stype", "ordno" );
@@ -1453,7 +1453,7 @@ class OrderController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -1492,7 +1492,7 @@ class OrderController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -1508,7 +1508,7 @@ class OrderController extends Controller
 				{
 								if ( $this->GetAdmRight( 42 ) == 0 )
 								{
-												echo "ÄúÃ»ÓÐÉ¾³ý¶©µ¥µÄÈ¨ÏÞ£¬ÇëÁªÏµ³¬¼¶¹ÜÀíÔ±";
+												echo "ï¿½ï¿½Ã»ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±";
 												exit( );
 								}
 								$R15a0359c8c = getvar( "stype", "cname" );
@@ -1530,7 +1530,7 @@ class OrderController extends Controller
 								$R808b89ba0e = $this->hander->IOrder_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{
@@ -1543,7 +1543,7 @@ class OrderController extends Controller
 								$Rdcd9105806 = getvar( "ordno" );
 								if ( $Rdcd9105806 == "" )
 								{
-												$this->Alert( "²Ù×÷Òì³£" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ì³£" );
 												$this->HistoryGo( );
 								}
 								$R63bede6b19 = "<?php \$ect = array(";
@@ -1569,7 +1569,7 @@ class OrderController extends Controller
 								flock( $Rf500f4a848, 2 );
 								fwrite( $Rf500f4a848, $R63bede6b19 );
 								fclose( $Rf500f4a848 );
-								$this->Alert( "²Ù×÷Íê³É" );
+								$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=order&a=detail&ubzordno=".$Rdcd9105806 );
 				}
 
@@ -1591,8 +1591,8 @@ class OrderController extends Controller
 								$R4e420efcc3 = $this->SetS( array(
 												"item" => $R4e420efcc3
 								) );
-								$R00be52aa45 = array( "cid" => "ÓÃ»§±àºÅ", "pid" => "ÉÌÆ·±àºÅ", "aid" => "ÉÌÆ·ËùÓÐÕß", "cname" => "²Ù×÷Õß", "cqq" => "QQºÅ", "ctel" => "µç»°", "cmail" => "ÓÊÏä", "czaccount" => "³äÖµÕÊºÅ", "cip" => "IP", "cardnumber" => "¿¨ºÅ", "admname" => "´ú³ä¹ÜÀíÔ±" );
-								$R4d5c62f7b3 = array( "" => "È«²¿¶©µ¥", "s" => "³É¹¦¶©µ¥", "u" => "Ê§°Ü¶©µ¥", "w" => "Î´´ú³ä¶©µ¥", "d" => "Î´³äÖµ¶©µ¥" );
+								$R00be52aa45 = array( "cid" => "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½", "pid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½", "aid" => "ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "cname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "cqq" => "QQï¿½ï¿½", "ctel" => "ï¿½ç»°", "cmail" => "ï¿½ï¿½ï¿½ï¿½", "czaccount" => "ï¿½ï¿½Öµï¿½Êºï¿½", "cip" => "IP", "cardnumber" => "ï¿½ï¿½ï¿½ï¿½", "admname" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±" );
+								$R4d5c62f7b3 = array( "" => "È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "s" => "ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½", "u" => "Ê§ï¿½Ü¶ï¿½ï¿½ï¿½", "w" => "Î´ï¿½ï¿½ï¿½ä¶©ï¿½ï¿½", "d" => "Î´ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½" );
 								$this->Assign( "oarray", $R4d5c62f7b3 );
 								$this->Assign( "sarray", $R00be52aa45 );
 								$this->Assign( "otype", request( "state" ) );

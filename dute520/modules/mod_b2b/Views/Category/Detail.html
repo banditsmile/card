@@ -1,83 +1,83 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Category" title="·ÖÀàÁĞ±í"><font color="#000">·ÖÀàÁĞ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['name']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="²é¿´·ÖÀàÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Category" title="åˆ†ç±»åˆ—è¡¨"><font color="#000">åˆ†ç±»åˆ—è¡¨</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['name']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="æŸ¥çœ‹åˆ†ç±»ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Category&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">·ÖÀàĞÅÏ¢ĞŞ¸Ä</div>
+<div class="ctitle">åˆ†ç±»ä¿¡æ¯ä¿®æ”¹</div>
 <table border="0" id="ctable1" class="ctable">
   <!-- if(1){-->
   <tr>
-    <td class="tablelt">·ÖÀàÃû³Æ</td>
+    <td class="tablelt">åˆ†ç±»åç§°</td>
     <td class="tablert"><input type="text" name="name" size="25" value="{$item['name']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÉÏ¼¶·ÖÀà±àºÅ</td>
+    <td class="tablelt">ä¸Šçº§åˆ†ç±»ç¼–å·</td>
     <td class="tablert">
       <input type="text" name="parentid" size="25" value="{$item['parentid']}"/>
-      <span class="spantip">0±íÊ¾Ã»ÓĞÉÏ¼¶</span>
+      <span class="spantip">0è¡¨ç¤ºæ²¡æœ‰ä¸Šçº§</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">·ÖÀàÑÕÉ«</td>
+    <td class="tablelt">åˆ†ç±»é¢œè‰²</td>
     <td class="tablert">
       <div style="float:left"><input type="text" name="color" id="textcolor0" size="25" value="{$item['color']}"/></div>
       <div onclick="pickcolor(0)" id="colorexample0" style="float:left;cursor:pointer;height:22px;margin-left:5px;margin-top:1px;width:16px;border:0px #fff solid;background:<!--echo $item['color']==''?'#000000':$item['color'];-->"/></div>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÅÅÁĞĞòºÅ</td>
+    <td class="tablelt">æ’åˆ—åºå·</td>
     <td class="tablert">
       <input type="text" name="ordering" size="25" value="{$item['ordering']}"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ê××ÖÄ¸</td>
+    <td class="tablelt">é¦–å­—æ¯</td>
     <td class="tablert"><input type="text" name="pinyin" size="25" value="{$item['pinyin']}"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÊÇ·ñÈÈÃÅ</td>
+    <td class="tablelt">æ˜¯å¦çƒ­é—¨</td>
     <td class="tablert"><input type="checkbox" name="hot" size="25" value="1" class="checkbox" {#ToggleCheck($item['hot'])}/></td>
   </tr>
   <tr>
-    <td class="tablelt">·ÖÀà¿É¼û</td>
+    <td class="tablelt">åˆ†ç±»å¯è§</td>
     <td class="tablert">
-    <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox"  {#ToggleCheck($item['forb2b'])}/>Åú·¢ÏµÍ³¿É¼û</span>
-    <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forb2c" value="1" class="checkbox"  {#ToggleCheck($item['forb2c'])}/>ÁãÊÛÏµÍ³¿É¼û</span>
-    <span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="forykt" value="1" class="checkbox"  {#ToggleCheck($item['forykt'])}/>Ò»¿¨Í¨ÏµÍ³¿É¼û</span>
+    <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox"  {#ToggleCheck($item['forb2b'])}/>æ‰¹å‘ç³»ç»Ÿå¯è§</span>
+    <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forb2c" value="1" class="checkbox"  {#ToggleCheck($item['forb2c'])}/>é›¶å”®ç³»ç»Ÿå¯è§</span>
+    <span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="forykt" value="1" class="checkbox"  {#ToggleCheck($item['forykt'])}/>ä¸€å¡é€šç³»ç»Ÿå¯è§</span>
     </td>
   </tr>
   <tr <!--if(!UB_B2B){--> style="display:none"<!--}-->>
-    <td class="tablelt">ÊÇ·ñ¹²Ïí¸ø×ÔÓĞÉÌÆ·</td>
+    <td class="tablelt">æ˜¯å¦å…±äº«ç»™è‡ªæœ‰å•†å“</td>
     <td class="tablert">
-    <input type="checkbox" name="shared" value="1" class="checkbox" {#ToggleCheck($item['shared'])}/>¹²Ïí
+    <input type="checkbox" name="shared" value="1" class="checkbox" {#ToggleCheck($item['shared'])}/>å…±äº«
     </td>
   </tr>
   <tr>
-    <td class="tablelt">·ÖÀà¼ò½é£º</td>
+    <td class="tablelt">åˆ†ç±»ç®€ä»‹ï¼š</td>
     <td class="tablert">
-    <input type="text" name="abst" size="25" value="{$item['abst']}"/> <span class="spantip">Êó±êÒÆÖÁÄ¿Â¼ºóÏÔÊ¾µÄÄÚÈİ</span></td>
+    <input type="text" name="abst" size="25" value="{$item['abst']}"/> <span class="spantip">é¼ æ ‡ç§»è‡³ç›®å½•åæ˜¾ç¤ºçš„å†…å®¹</span></td>
   </tr>
   <tr>
-    <td class="tablelt">¶ÔÓ¦Í¼±ê</td>
+    <td class="tablelt">å¯¹åº”å›¾æ ‡</td>
     <td class="tablert">
        <img src="{$vd['root']}content/mod_shared/skins/upload/{$item['pics']}" id="picsimg" border="0"/>
        <br/><input type="text" id="pics" name="pics" value="{$item['pics']}" size="25"/> 
     </td>
   </tr>
   <tr> 
-    <td width="10%" align="right" height="46">ÉÏ´«Í¼±ê£º</td>
+    <td width="10%" align="right" height="46">ä¸Šä¼ å›¾æ ‡ï¼š</td>
     <td width="90%" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=imgid&fun=imginfo&inputid=pics&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
     <div id="imgid"></div><div id="imgsize"></div>
@@ -85,7 +85,7 @@
   </tr>
   <!--}else{-->
   <tr>
-    <td class="tablelt">¿¨ÀàÃû³Æ</td>
+    <td class="tablelt">å¡ç±»åç§°</td>
     <td class="tablert">
       <input type="hidden" name="coupon" value="1"/>
       <input type="hidden" name="parentid" value="{$item['parentid']}"/>
@@ -93,76 +93,76 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÅÅÁĞĞòºÅ</td>
+    <td class="tablelt">æ’åˆ—åºå·</td>
     <td class="tablert">
       <input type="text" name="ordering" size="25" value="{$item['ordering']}"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">·ÑÂÊ</td>
+    <td class="tablelt">è´¹ç‡</td>
     <td class="tablert"><input type="text" name="fee" value="{$item['fee']}" size="25"/></td>
   </tr>
   <tr>
-    <td class="tablelt">±àÂë</td>
+    <td class="tablelt">ç¼–ç </td>
     <td class="tablert"><input type="text" name="code" value="{$item['code']}" size="25"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÊÇ·ñ¿ÉÓÃ</td>
+    <td class="tablelt">æ˜¯å¦å¯ç”¨</td>
     <td class="tablert">
-    <input type="checkbox" name="fork2k" value="1" class="checkbox"  {#ToggleCheck($item['fork2k'])}/>»»¿¨Õ¾¿É¼û
+    <input type="checkbox" name="fork2k" value="1" class="checkbox"  {#ToggleCheck($item['fork2k'])}/>æ¢å¡ç«™å¯è§
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ê¹ÓÃ·½Ê½</td>
+    <td class="tablelt">ä½¿ç”¨æ–¹å¼</td>
     <td class="tablert">
-    <input type="radio" name="gateway" value="1" class="checkbox" onclick="setct(1)" <!--if($item['gateway']==1){-->checked<!--}-->/>Íø¹Ø
-    <input type="radio" name="gateway" value="2" class="checkbox" onclick="setct(2)" <!--if($item['gateway']==2){-->checked<!--}-->/>ÊÖ¶¯
-    <input type="radio" name="gateway" value="3" class="checkbox" onclick="setct(3)" <!--if($item['gateway']==3){-->checked<!--}-->/>×Ô¶¨Òå
+    <input type="radio" name="gateway" value="1" class="checkbox" onclick="setct(1)" <!--if($item['gateway']==1){-->checked<!--}-->/>ç½‘å…³
+    <input type="radio" name="gateway" value="2" class="checkbox" onclick="setct(2)" <!--if($item['gateway']==2){-->checked<!--}-->/>æ‰‹åŠ¨
+    <input type="radio" name="gateway" value="3" class="checkbox" onclick="setct(3)" <!--if($item['gateway']==3){-->checked<!--}-->/>è‡ªå®šä¹‰
     </td>
   </tr>
   <tr <!--if($item['gateway']!=3){-->style="display:none;"<!--}--> id="cttr">
-    <td class="tablelt">³äÖµÕËºÅ</td>
+    <td class="tablelt">å……å€¼è´¦å·</td>
     <td class="tablert"><input type="text" name="czaccount" value="{$item['czaccount']}" size="25"/>
-      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>ĞèÒªÓ±ÏÈ¿¨¹ºÏµÍ³ÉóºËÍ¨¹ı²Å¿ÉÒÔ£¬·ñÔòÏµÍ³ÊÇ²»»á×Ô¶¯°ÑµãÊı³äÈëÄúÔ¤ÏÈÉèÖÃµÄÕËºÅµÄ£¬Äú¿ÉÒÔÔÚ¶ÔÓ¦µÄÃæÖµ´¦²ì¿´ÉóºË×´Ì¬<br/> ¶Ò»»ÀàÁĞ±í -> ÃæÖµ¹ÜÀí -> µã»÷±à¼­°´Å¥</p>
+      <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>éœ€è¦é¢–å…ˆå¡è´­ç³»ç»Ÿå®¡æ ¸é€šè¿‡æ‰å¯ä»¥ï¼Œå¦åˆ™ç³»ç»Ÿæ˜¯ä¸ä¼šè‡ªåŠ¨æŠŠç‚¹æ•°å……å…¥æ‚¨é¢„å…ˆè®¾ç½®çš„è´¦å·çš„ï¼Œæ‚¨å¯ä»¥åœ¨å¯¹åº”çš„é¢å€¼å¤„å¯Ÿçœ‹å®¡æ ¸çŠ¶æ€<br/> å…‘æ¢ç±»åˆ—è¡¨ -> é¢å€¼ç®¡ç† -> ç‚¹å‡»ç¼–è¾‘æŒ‰é’®</p>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¶ÔÓ¦Í¼±ê</td>
+    <td class="tablelt">å¯¹åº”å›¾æ ‡</td>
     <td class="tablert">
        <img src="{$vd['root']}content/mod_shared/skins/upload/{$item['pics']}" id="picsimg" border="0"/>
        <br/><input type="text" id="pics" name="pics" value="{$item['pics']}" size="25"/> 
     </td>
   </tr>
   <tr> 
-    <td class="tablelt">Ñ¡ÔñÍ¼±ê</td>
+    <td class="tablelt">é€‰æ‹©å›¾æ ‡</td>
     <td class="tablert">
        <div class="search_s">
          <span class="search_s1">
            <select class="search_select" onchange="setbankicon(this)">
-             <option value="pay_yd.gif" <!--if($item['pics']=='pay_yd.gif'){-->selected<!--}-->>ÉñÖİĞĞ³äÖµ¿¨</option>
-             <option value="pay_sd.gif" <!--if($item['pics']=='pay_sd.gif'){-->selected<!--}-->>Ê¢´óÓÎÏ·¿¨</option>
-             <option value="pay_5173.gif" <!--if($item['pics']=='pay_5173.gif'){-->selected<!--}-->>5173³äÖµ¿¨</option>
-             <option value="pay_rx.gif" <!--if($item['pics']=='pay_rx.gif'){-->selected<!--}-->>ÈÈÑª´«Ææ¿¨</option>
-             <option value="pay_lt.gif" <!--if($item['pics']=='pay_lt.gif'){-->selected<!--}-->>ÁªÍ¨³äÖµ¿¨</option>
-             <option value="pay_sh.gif" <!--if($item['pics']=='pay_sh.gif'){-->selected<!--}-->>ËÑºüÒ»¿¨Í¨</option>
-             <option value="pay_ms.gif" <!--if($item['pics']=='pay_ms.gif'){-->selected<!--}-->>Ä§ÊŞÊÀ½ç¿¨</option>
-             <option value="pay_qq.gif" <!--if($item['pics']=='pay_qq.gif'){-->selected<!--}-->>QQ±Ò¿¨</option>
-             <option value="pay_jw.gif" <!--if($item['pics']=='pay_jw.gif'){-->selected<!--}-->>¿¥ÍøÒ»¿¨Í¨</option>
-             <option value="pay_9y.gif" <!--if($item['pics']=='pay_9y.gif'){-->selected<!--}-->>¾ÃÓÎÒ»¿¨Í¨</option>
-             <option value="pay_wm.gif" <!--if($item['pics']=='pay_wm.gif'){-->selected<!--}-->>ÍêÃÀÒ»¿¨Í¨</option>
-             <option value="pay_sx.gif" <!--if($item['pics']=='pay_sx.gif'){-->selected<!--}-->>ÉùÑ¶Ö§¸¶</option>
-             <option value="pay_zt.gif" <!--if($item['pics']=='pay_zt.gif'){-->selected<!--}-->>Õ÷Í¾ÓÎÏ·¿¨</option>
-             <option value="pay_wy.gif" <!--if($item['pics']=='pay_wy.gif'){-->selected<!--}-->>ÍøÒ×Ò»¿¨Í¨</option>
-             <option value="pay_mb.gif" <!--if($item['pics']=='pay_mb.gif'){-->selected<!--}-->>Ä¿±êÒ»¿¨Í¨</option>
-             <option value="pay_js.gif" <!--if($item['pics']=='pay_mb.gif'){-->selected<!--}-->>½ğÉ½Ò»¿¨Í¨</option>
-             <option value="bank_no.gif" <!--if($item['pics']=='bank_no.gif'){-->selected<!--}-->>×Ô¶¨Òå..</option>
+             <option value="pay_yd.gif" <!--if($item['pics']=='pay_yd.gif'){-->selected<!--}-->>ç¥å·è¡Œå……å€¼å¡</option>
+             <option value="pay_sd.gif" <!--if($item['pics']=='pay_sd.gif'){-->selected<!--}-->>ç››å¤§æ¸¸æˆå¡</option>
+             <option value="pay_5173.gif" <!--if($item['pics']=='pay_5173.gif'){-->selected<!--}-->>5173å……å€¼å¡</option>
+             <option value="pay_rx.gif" <!--if($item['pics']=='pay_rx.gif'){-->selected<!--}-->>çƒ­è¡€ä¼ å¥‡å¡</option>
+             <option value="pay_lt.gif" <!--if($item['pics']=='pay_lt.gif'){-->selected<!--}-->>è”é€šå……å€¼å¡</option>
+             <option value="pay_sh.gif" <!--if($item['pics']=='pay_sh.gif'){-->selected<!--}-->>æœç‹ä¸€å¡é€š</option>
+             <option value="pay_ms.gif" <!--if($item['pics']=='pay_ms.gif'){-->selected<!--}-->>é­”å…½ä¸–ç•Œå¡</option>
+             <option value="pay_qq.gif" <!--if($item['pics']=='pay_qq.gif'){-->selected<!--}-->>QQå¸å¡</option>
+             <option value="pay_jw.gif" <!--if($item['pics']=='pay_jw.gif'){-->selected<!--}-->>éªç½‘ä¸€å¡é€š</option>
+             <option value="pay_9y.gif" <!--if($item['pics']=='pay_9y.gif'){-->selected<!--}-->>ä¹…æ¸¸ä¸€å¡é€š</option>
+             <option value="pay_wm.gif" <!--if($item['pics']=='pay_wm.gif'){-->selected<!--}-->>å®Œç¾ä¸€å¡é€š</option>
+             <option value="pay_sx.gif" <!--if($item['pics']=='pay_sx.gif'){-->selected<!--}-->>å£°è®¯æ”¯ä»˜</option>
+             <option value="pay_zt.gif" <!--if($item['pics']=='pay_zt.gif'){-->selected<!--}-->>å¾é€”æ¸¸æˆå¡</option>
+             <option value="pay_wy.gif" <!--if($item['pics']=='pay_wy.gif'){-->selected<!--}-->>ç½‘æ˜“ä¸€å¡é€š</option>
+             <option value="pay_mb.gif" <!--if($item['pics']=='pay_mb.gif'){-->selected<!--}-->>ç›®æ ‡ä¸€å¡é€š</option>
+             <option value="pay_js.gif" <!--if($item['pics']=='pay_mb.gif'){-->selected<!--}-->>é‡‘å±±ä¸€å¡é€š</option>
+             <option value="bank_no.gif" <!--if($item['pics']=='bank_no.gif'){-->selected<!--}-->>è‡ªå®šä¹‰..</option>
            </select>
          </span>
        </div>
     </td>
   </tr>
   <tr> 
-    <td width="10%" align="right" height="46">ÉÏ´«Í¼±ê£º</td>
+    <td width="10%" align="right" height="46">ä¸Šä¼ å›¾æ ‡ï¼š</td>
     <td width="90%" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=imgid&fun=imginfo&inputid=pics&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
     <div id="imgid"></div><div id="imgsize"></div>
@@ -172,8 +172,8 @@
   <tr>
     <td class="tablelt" style="height:80px"></td>
     <td class="tablert">
-      <input type="submit" value="ĞŞ ¸Ä &gt;&gt" class="btn"/>
-      <input type="reset" value="ÖØ ÖÃ" class="btn"/>
+      <input type="submit" value="ä¿® æ”¹ &gt;&gt" class="btn"/>
+      <input type="reset" value="é‡ ç½®" class="btn"/>
     </td>
   </tr>
 </table>
@@ -192,7 +192,7 @@
   var ctablenum = 2;
   function imginfo(imgsrc)
   {
-  document.getElementById("imgsize").innerHTML = "¸ß x ¿í£º" + imgsrc.height + " x " + imgsrc.width + "<br/>Í¼Æ¬´óĞ¡£º" + imgsrc.fileSize + " ×Ö½Ú"; 
+  document.getElementById("imgsize").innerHTML = "é«˜ x å®½ï¼š" + imgsrc.height + " x " + imgsrc.width + "<br/>å›¾ç‰‡å¤§å°ï¼š" + imgsrc.fileSize + " å­—èŠ‚"; 
   }
 </script>
 <script src="{$vd['sc']}js/content.js" type="text/javascript"></script>

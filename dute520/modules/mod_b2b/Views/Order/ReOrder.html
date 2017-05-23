@@ -1,64 +1,64 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="¶©µ¥ÁÐ±í"><font color="#000">¶©µ¥ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">¶©µ¥²¹µ¥</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´¶©µ¥Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <!--$item = $vd['item'];-->
 <!--if(isset($item['ptype'])){-->
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">¶©µ¥²¹µ¥</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
 <!--if($item['ptype'] > 0 && $item['ptype'] != 3 && $item['ptype'] < 99){-->
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="tablelt">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="tablert">{$item['pname']}</td>
   </tr>
   <tr>
-    <td class="tablelt">ÉÌÆ·ÀàÐÍ£º</td>
+    <td class="tablelt">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{#ProductType($item['ptype'])}</td>
   </tr>
   <tr>
-    <td class="tablelt">³äÖµÊýÁ¿£º</td>
+    <td class="tablelt">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['qty']}</td>
   </tr>
   <tr>
-    <td class="tablelt">³äÖµÕÊºÅ£º</td>
+    <td class="tablelt">ï¿½ï¿½Öµï¿½ÊºÅ£ï¿½</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <!--if($item['czarea1'] != ''){-->
   <tr>
-    <td class="tablelt">³äÖµÇøÓò£º</td>
+    <td class="tablelt">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea1'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czarea2'] != ''){-->
   <tr>
-    <td class="tablelt">³äÖµ·þÎñÆ÷£º</td>
+    <td class="tablelt">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea2'])}</td>
   </tr>
   <!--}-->
   <!--if($item['cztype'] != ''){-->
   <tr>
-    <td class="tablelt">¼Æ·Ñ·½Ê½£º</td>
+    <td class="tablelt">ï¿½Æ·Ñ·ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['cztype'])}</td>
   </tr>
   <!--}-->
   <!--if($item['czother'] != ''){-->
   <tr>
-    <td class="tablelt">ÕÊ»§ÀàÐÍ£º</td>
+    <td class="tablelt">ï¿½Ê»ï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{$item['czother']}</td>
   </tr>
   <!--}-->
   <tr>
-    <td class="tablelt" height="30px;">³äÖµ·´À¡ÐÅÏ¢£º</td>
+    <td class="tablelt" height="30px;">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</td>
     <td class="tablert">
     </td>
   </tr>
@@ -67,7 +67,7 @@
   <tr>
     <td style="padding:0px">
       <div id="result" align="center">
-      <br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈ£¡ÏµÍ³ÔòÕýÔÚÎªÄú<b>³äÖµ</b>ÖÐ)...</font>
+      <br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ï¿½ï¿½ï¿½ÔµÈ£ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½<b>ï¿½ï¿½Öµ</b>ï¿½ï¿½)...</font>
       </div>
     </td>
   </tr>
@@ -75,15 +75,15 @@
 <!--}else{-->
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="tablelt">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="tablert">{$item['pname']}</td>
   </tr>
   <tr>
-    <td class="tablelt">ÉÌÆ·ÀàÐÍ£º</td>
+    <td class="tablelt">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{#ProductType($item['ptype'])}</td>
   </tr>
   <tr>
-    <td class="tablelt">»»¹ºÊýÁ¿£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['qty']}</td>
   </tr>
   <tr>
@@ -94,7 +94,7 @@
   <tr>
     <td class="tablelt" colspan="2">
       <div id="result" align="center">
-      <div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈ£¡ÏµÍ³ÔòÕýÔÚÎªÄú<b>Ìá¿¨</b>ÖÐ)...</font></div>
+      <div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ï¿½ï¿½ï¿½ÔµÈ£ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½<b>ï¿½á¿¨</b>ï¿½ï¿½)...</font></div>
       </div>
     </td>
   </tr>
@@ -102,7 +102,7 @@
 <!--}-->
 <!--}else{-->
 <div id="result" align="center">
-<div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ÇëÉÔµÈÕýÔÚ<b>Ìá¿¨</b>ÖÐ(Èç¹ûÊÇ³äÖµÉÌÆ·£¬ÏµÍ³ÔòÕýÔÚÎªÄú<b>³äÖµ</b>ÖÐ)...</font></div>
+<div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½<b>ï¿½á¿¨</b>ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ç³ï¿½Öµï¿½ï¿½Æ·ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½<b>ï¿½ï¿½Öµ</b>ï¿½ï¿½)...</font></div>
 </div>
 <!--}-->
 
@@ -134,12 +134,12 @@ function loadXMLDoc()
   
   url="ordno="+escape("{$item['ordno']}");
 
-  // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+  // ï¿½ï¿½ï¿½ Mozillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ë£º
   if (window.XMLHttpRequest)
   {
     xmlhttp=new XMLHttpRequest();
   }
-  // Õë¶Ô IE µÄ´úÂë£º
+  // ï¿½ï¿½ï¿½ IE ï¿½Ä´ï¿½ï¿½ë£º
   else if (window.ActiveXObject)
   {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -154,32 +154,32 @@ function loadXMLDoc()
   }
   else
   {
-    alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+    alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½XMLHTTP")
   }
 }
 
 function state_Change()
 {
-  // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+  // ï¿½ï¿½ï¿½ xmlhttp ï¿½ï¿½Ê¾Îª "loaded"
   if (xmlhttp.readyState==4)
   {
-    // Èç¹ûÎª "OK"
+    // ï¿½ï¿½ï¿½Îª "OK"
     if (xmlhttp.status==200)
     {
-      // ÆäËû´úÂë..
+      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½..
       var ackdata=xmlhttp.responseText;
       ackparase(ackdata);
     }
     else
     {
-      document.getElementById("result").innerHTML="<div class='col'>È¡¿¨Ê§°Ü,ÇëÁªÏµ¹ÜÀíÔ±</div>";
+      document.getElementById("result").innerHTML="<div class='col'>È¡ï¿½ï¿½Ê§ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ô±</div>";
     }
   }
 }
 
 function ackparase(ackdata)
 {
-  //½âÎö·þÎñÆ÷·µ»ØµÄÊý¾Ý
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
   if (ackdata == 18)
   {
     setTimeout("loadXMLDoc()",1500);

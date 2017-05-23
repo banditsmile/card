@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">Ò³Ãæ¹ã¸æ¹ÜÀí</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ad_index" onFocus="this.blur()" title="²é¿´Ò³Ãæ¹ã¸æÏà¹ØÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">é¡µé¢å¹¿å‘Šç®¡ç†</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_ad_index" onFocus="this.blur()" title="æŸ¥çœ‹é¡µé¢å¹¿å‘Šç›¸å…³ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
@@ -15,12 +15,12 @@
 <div class="cwarpper1">
 <div class="ctitle">
   <div style="padding-left:5px;padding-bottom:8px;" >
-    ÇëÑ¡Ôñ¹ã¸æÀàĞÍ£º
+    è¯·é€‰æ‹©å¹¿å‘Šç±»å‹ï¼š
     <select name="cat" onchange="javascript:location.href='index.php?m=mod_b2b&c=Ad&pos=' + this.options[selectedIndex].value;" class="ubselect">
     {#option($vd['adtype'], $vd['pos'])}
     </select>
     <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
-      ±¾ÏµÍ³°üÀ¨ÓÑÇéÁ´½Ó£¬¸÷Àà¹ã¸æÍ¼Æ¬¶¼ÊÇ»ùÓÚ¹ã¸æÏµÍ³£¬ÇëÑ¡Ôñ¶ÔÓ¦µÄÏî½øÈë
+      æœ¬ç³»ç»ŸåŒ…æ‹¬å‹æƒ…é“¾æ¥ï¼Œå„ç±»å¹¿å‘Šå›¾ç‰‡éƒ½æ˜¯åŸºäºå¹¿å‘Šç³»ç»Ÿï¼Œè¯·é€‰æ‹©å¯¹åº”çš„é¡¹è¿›å…¥
     </p>
   </div>
 </div>
@@ -29,53 +29,53 @@
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      <img src="{$vd['sc']}images/add.gif" style="vertical-align:middle" border="0"/> Ìí¼Ó
+      <img src="{$vd['sc']}images/add.gif" style="vertical-align:middle" border="0"/> æ·»åŠ 
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">Í¼Æ¬<b></b></td>
+    <td width="15%" align="right" height="46">å›¾ç‰‡<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <br/><input type="text" id="ubzpic200" name="ubzpic" value="" size="34"/> 
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">Á´½ÓÎÄ×Ö</td>
+    <td width="15%" align="right" height="46">é“¾æ¥æ–‡å­—</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubztext" value="" size="34"/> 
-    ÎÄ×ÖÑÕÉ«£º
+    æ–‡å­—é¢œè‰²ï¼š
     <input type="text" id="textcolor200" name="ubztextcolor" value="" size="15" onkeyup="setcolor(this,200)"/> 
     <input id="colorexample200" type="text" size="1" readonly style="background:#6c6c6c">
     <img src="{$vd['sc']}images/16.gif" onclick="pickcolor(200)" align="absmiddle" style="cursor:pointer;"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">ÏÔÊ¾ÀàĞÍ</td>
+    <td width="15%" align="right" height="46">æ˜¾ç¤ºç±»å‹</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()"/> ÏÔÊ¾ÎÄ×Ö
-    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" checked/> ÏÔÊ¾Í¼Æ¬
+    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()"/> æ˜¾ç¤ºæ–‡å­—
+    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" checked/> æ˜¾ç¤ºå›¾ç‰‡
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">Á´½ÓÍøÖ·</td>
+    <td width="15%" align="right" height="46">é“¾æ¥ç½‘å€</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubzurl" value="" size="34"/> 
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">ÉÏ´«Í¼Æ¬<b></b></td>
+    <td width="15%" align="right" height="46">ä¸Šä¼ å›¾ç‰‡<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=ad200&fun=imginfo200&inputid=ubzpic200&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">²Ù×÷</td>
+    <td width="15%" align="right" height="46">æ“ä½œ</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" name="pos" value="{$vd['pos']}"/>
-    <input type="submit" value=" Ìá ½» &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" æ äº¤ &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">Í¼Æ¬Ô¤ÀÀ<b></b></td>
+    <td width="15%" align="right" height="46">å›¾ç‰‡é¢„è§ˆ<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="ad200"></div><div id="logoinfo200"></div></td>
   </tr>
@@ -86,7 +86,7 @@
 
 function imginfo200(imgsrc)
 {
-  document.getElementById("logoinfo200").innerHTML = "¸ß x ¿í£º" + imgsrc.height + " x " + imgsrc.width + "<br/>Í¼Æ¬´óĞ¡£º" + imgsrc.fileSize + " ×Ö½Ú"; 
+  document.getElementById("logoinfo200").innerHTML = "é«˜ x å®½ï¼š" + imgsrc.height + " x " + imgsrc.width + "<br/>å›¾ç‰‡å¤§å°ï¼š" + imgsrc.fileSize + " å­—èŠ‚"; 
 }
 
 </script>
@@ -97,7 +97,7 @@ function imginfo200(imgsrc)
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      <span style="float:right;"><a href="index.php?m=mod_b2b&c=Ad&a=Del&id={$item['id']}&pos={$vd['pos']}" onclick="return confirm('ÄúÈ·¶¨½øĞĞÉ¾³ı²Ù×÷Âğ£¿')">
+      <span style="float:right;"><a href="index.php?m=mod_b2b&c=Ad&a=Del&id={$item['id']}&pos={$vd['pos']}" onclick="return confirm('æ‚¨ç¡®å®šè¿›è¡Œåˆ é™¤æ“ä½œå—ï¼Ÿ')">
         <img src="{$vd['sc']}images/icon_trash.gif" border="0"/>
       </a>
       </span>
@@ -105,7 +105,7 @@ function imginfo200(imgsrc)
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">Í¼Æ¬<b></b></td>
+    <td width="15%" align="right" height="46">å›¾ç‰‡<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <!--$endpath=strtolower(end( explode( ".", $item['pic'] ) ));if( $endpath == 'swf' ){-->
     <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="180"><param name="movie" value="{$vd['root']}content/mod_shared/skins/upload/{$item['pic']}"><param name="quality" value="high"><embed src="{$vd['root']}content/mod_shared/skins/upload/{$item['pic']}" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash" type="application/x-shockwave-flash" width="480" height="180"></embed></object>
@@ -116,44 +116,44 @@ function imginfo200(imgsrc)
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">Á´½ÓÎÄ×Ö</td>
+    <td width="15%" align="right" height="46">é“¾æ¥æ–‡å­—</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubztext" value="{$item['text']}" size="34"/> 
-    ÎÄ×ÖÑÕÉ«£º
+    æ–‡å­—é¢œè‰²ï¼š
     <input type="text" id="textcolor{$i}" name="ubztextcolor" value="{$item['textcolor']}" size="15" onkeyup="setcolor(this,{$i})"/> 
     <input id="colorexample{$i}" type="text" size="1" readonly style="background:<!--echo $item['textcolor']==''?'#6c6c6c' : $item['textcolor']-->">
     <img src="{$vd['sc']}images/16.gif" onclick="pickcolor({$i})" align="absmiddle" style="cursor:pointer;"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">ÏÔÊ¾ÀàĞÍ</td>
+    <td width="15%" align="right" height="46">æ˜¾ç¤ºç±»å‹</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()" <!--if($item['ispic']==0){-->checked<!--}-->/> ÏÔÊ¾ÎÄ×Ö
-    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" <!--if($item['ispic']==1){-->checked<!--}-->/> ÏÔÊ¾Í¼Æ¬
+    <input type="radio" name="ispic" value="0" class="checkbox" onFocus="this.blur()" <!--if($item['ispic']==0){-->checked<!--}-->/> æ˜¾ç¤ºæ–‡å­—
+    <input type="radio" name="ispic" value="1" class="checkbox" onFocus="this.blur()" <!--if($item['ispic']==1){-->checked<!--}-->/> æ˜¾ç¤ºå›¾ç‰‡
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">Á´½ÓÍøÖ·</td>
+    <td width="15%" align="right" height="46">é“¾æ¥ç½‘å€</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" name="ubzurl" value="{$item['url']}" size="34"/> 
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">ÉÏ´«Í¼Æ¬<b></b></td>
+    <td width="15%" align="right" height="46">ä¸Šä¼ å›¾ç‰‡<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <iframe name="uploader" src="index.php?m=com_fs&c=fs&imgid=ad{$i}&fun=imginfo{$i}&inputid=ubzpic{$i}&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">²Ù×÷</td>
+    <td width="15%" align="right" height="46">æ“ä½œ</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" name="id" value="{$item['id']}"/>
     <input type="hidden" name="pos" value="{$vd['pos']}"/>
-    <input type="submit" value=" Ìá ½» &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" æ äº¤ &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">Í¼Æ¬Ô¤ÀÀ<b></b></td>
+    <td width="15%" align="right" height="46">å›¾ç‰‡é¢„è§ˆ<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="ad{$i}"></div><div id="logoinfo{$i}"></div></td>
   </tr>
@@ -163,7 +163,7 @@ function imginfo200(imgsrc)
 <script type="text/javascript">  
 function imginfo{$i}(imgsrc)
 {
-  document.getElementById("logoinfo" + {$i}).innerHTML = "¸ß x ¿í£º" + imgsrc.height + " x " + imgsrc.width + "<br/>Í¼Æ¬´óĞ¡£º" + imgsrc.fileSize + " ×Ö½Ú"; 
+  document.getElementById("logoinfo" + {$i}).innerHTML = "é«˜ x å®½ï¼š" + imgsrc.height + " x " + imgsrc.width + "<br/>å›¾ç‰‡å¤§å°ï¼š" + imgsrc.fileSize + " å­—èŠ‚"; 
 }
 </script>
 <!--$i++;}-->

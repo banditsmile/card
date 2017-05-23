@@ -41,7 +41,7 @@ class FsController extends Controller
 								$Ra5f961f14f = intval( request( "show" ) );
 								if ( $Ra5f961f14f == 1 )
 								{
-												header( "Content-type: text/html;charset=GB2312" );
+												header( "Content-type: text/html;charset=utf-8" );
 								}
 								if ( $R65dfacb399 == 0 )
 								{
@@ -131,7 +131,7 @@ class FsController extends Controller
 								$R6c5254d3dd = "../themes";
 								$R6a1a21af13 = factory::getfs( "zip" );
 								$R6a1a21af13->create_archive( $R6c5254d3dd."/".$R63bede6b19.".zip", $Re328da2d32 );
-								echo "Ñ¹ËõÍê³É¡£¡£±¸·Ýµ½Ä¿Â¼£º".$R6c5254d3dd;
+								echo "Ñ¹ï¿½ï¿½ï¿½ï¿½É¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½Ä¿Â¼ï¿½ï¿½".$R6c5254d3dd;
 				}
 
 				public function Zip( )
@@ -395,30 +395,30 @@ class FsController extends Controller
 
 				public function VipSetup( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R2a51483b14 = intval( request( "aid" ) );
 								if ( $R2a51483b14 <= 0 )
 								{
-												echo "´ËÓÃ»§²»Ö§³ÖVIPÁ¬Ëøµê";
+												echo "ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ö§ï¿½ï¿½VIPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								$R2097a8fddf = factory::getinstance( "agents" );
 								$agent = $R2097a8fddf->IAgent_Get( $R2a51483b14, "vipshop" );
 								if ( !isset( $agent['vipshop'] ) )
 								{
-												echo "ÓÃ»§²»´æÔÚ£¬ÎÞ·¨°²×°VIPÁ¬Ëøµê";
+												echo "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½×°VIPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								if ( $agent['vipshop'] == 0 )
 								{
-												echo "´ËÓÃ»§²»Ö§³ÖVIPÁ¬Ëøµê";
+												echo "ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ö§ï¿½ï¿½VIPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								$Rf3579f5c8c = factory::getinstance( "sys" );
 								$R25791b03ad = $Rf3579f5c8c->ISys_Get( $R2a51483b14, "aid, admdir" );
 								if ( !isset( $R25791b03ad['aid'] ) )
 								{
-												echo "ÇëÏÈÅäÖÃºÃÐÅÏ¢ÔÙ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ï¢ï¿½Ù°ï¿½×°";
 												exit( );
 								}
 								$R073c2bd914 = $R25791b03ad['admdir'];
@@ -429,12 +429,12 @@ class FsController extends Controller
 								}
 								if ( !file_exists( $R073c2bd914 ) )
 								{
-												echo "´´½¨VIPÄ¿Â¼Ê§°Ü£¬ÇëÖØÐÂ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½VIPÄ¿Â¼Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½×°";
 												exit( );
 								}
 								if ( file_exists( $R073c2bd914."libraries/user/vsn.php" ) )
 								{
-												echo "VIPÕ¾µãÒÑ¾­°²×°¹ýÁË£¡";
+												echo "VIPÕ¾ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½Ë£ï¿½";
 												exit( );
 								}
 								return 0;
@@ -442,12 +442,12 @@ class FsController extends Controller
 
 				public function GetVipIdByAid( $R2a51483b14 )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$Rf3579f5c8c = factory::getinstance( "sys" );
 								$R25791b03ad = $Rf3579f5c8c->ISys_Get( $R2a51483b14, "aid, admdir" );
 								if ( !isset( $R25791b03ad['aid'] ) )
 								{
-												echo "ÇëÏÈÅäÖÃºÃÐÅÏ¢ÔÙ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ï¢ï¿½Ù°ï¿½×°";
 												exit( );
 								}
 								$R073c2bd914 = $R25791b03ad['admdir'];
@@ -465,14 +465,14 @@ class FsController extends Controller
 
 				public function CheckVipVer( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R2a51483b14 = intval( request( "aid" ) );
 								$R3584859062 = $this->GetVipIdByAid( $R2a51483b14 );
 								$Rf3579f5c8c = factory::getinstance( "sys" );
 								$R25791b03ad = $Rf3579f5c8c->ISys_Get( $R2a51483b14, "aid, admdir" );
 								if ( !isset( $R25791b03ad['aid'] ) )
 								{
-												echo "ÇëÏÈÅäÖÃºÃÐÅÏ¢ÔÙ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ï¢ï¿½Ù°ï¿½×°";
 												exit( );
 								}
 								$R073c2bd914 = $R25791b03ad['admdir'];//testabc							
@@ -482,7 +482,7 @@ class FsController extends Controller
 								) );
 								if ( !isset( $R3db8f5c8bc['ver'] ) || $R3db8f5c8bc['ver'] == "" )
 								{
-												echo "ÄúÃ»ÓÐÈ¨ÏÞ½¨Á¢VIP";
+												echo "ï¿½ï¿½Ã»ï¿½ï¿½È¨ï¿½Þ½ï¿½ï¿½ï¿½VIP";
 												exit( );
 								}
 								include( "../".$R073c2bd914."/libraries/user/version.php" );
@@ -490,7 +490,7 @@ class FsController extends Controller
 								$Rd37eb5c3ee = $R3db8f5c8bc['ver'];
 								if ( $Rd37eb5c3ee <= $Rca6e06c0e4 )
 								{
-												echo "ÄúÒÑ¾­ÊÇ×îÐÂ°æ±¾£¬²»ÐèÒªÉý¼¶";
+												echo "ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
 								echo 0;
@@ -498,7 +498,7 @@ class FsController extends Controller
 
 				public function DownVip( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R2a51483b14 = intval( request( "aid" ) );
 								$R3584859062 = $this->GetVipIdByAid( $R2a51483b14 );
 								$this->DelZipFile( );
@@ -519,20 +519,20 @@ class FsController extends Controller
 
 				public function UnZipVip( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R2a51483b14 = intval( request( "aid" ) );
 								$Rf3579f5c8c = factory::getinstance( "sys" );
 								$R25791b03ad = $Rf3579f5c8c->ISys_Get( $R2a51483b14, "aid, admdir" );
 								if ( !isset( $R25791b03ad['aid'] ) )
 								{
-												echo "ÇëÏÈÅäÖÃºÃÐÅÏ¢ÔÙ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ï¢ï¿½Ù°ï¿½×°";
 												exit( );
 								}
 								$R073c2bd914 = $R25791b03ad['admdir'];
 								$R073c2bd914 = "../".$R073c2bd914."/";
 								if ( !file_exists( $R073c2bd914 ) )
 								{
-												echo "ÇëÏÈÅäÖÃºÃÐÅÏ¢ÔÙ°²×°";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½Ï¢ï¿½Ù°ï¿½×°";
 												exit( );
 								}
 								$Ra17333da96 = factory::getfs( "unzip" );
@@ -549,7 +549,7 @@ class FsController extends Controller
 								$R3d9a15f4b8 = "../".$R073c2bd914."/libraries/user/vsn.php";
 								if ( !file_exists( $R3d9a15f4b8 ) )
 								{
-												echo "ÄúµÄ´úÂëÎÄ¼þ²»È«£¡$R3d9a15f4b8";
+												echo "ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½È«ï¿½ï¿½$R3d9a15f4b8";
 												exit( );
 								}
 								$Rd383666215 = base64_encode( gzdeflate( gzdeflate( $R2a51483b14 ) ) );

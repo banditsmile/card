@@ -23,7 +23,7 @@ class ComplaintController extends Controller
 
 				public function Index( )
 				{
-								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«²¿</font>", "Î´´¦Àí", "<font color=\"#ff00ff\">´¦ÀíÖÐ</font>", "<font color=\"#ff0000\">ÒÑ´¦Àí</font>" );
+								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«ï¿½ï¿½</font>", "Î´ï¿½ï¿½ï¿½ï¿½", "<font color=\"#ff00ff\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">ï¿½Ñ´ï¿½ï¿½ï¿½</font>" );
 								$Ra3d21a857b = getvar( "msgfrom" );
 								$R180beb7e65 = getvar( "msgto" );
 								$R21784dec6e = intval( request( "msgtype" ) );
@@ -45,9 +45,9 @@ class ComplaintController extends Controller
 								$o00OO = $Oooo00( "Z3ppbmZsYXRl" );
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "caint" ) ) ) );
-								$R00be52aa45 = array( "other" => "ÀàÐÍ»òÎÊÌâ", "msgfrom" => "Í¶ËßÈË", "msgto" => "±»Í¶ËßÈË" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
-								$R2a754db770 = array( "", "<font color=\"#ff0000\">Î´´¦Àí</font>", "<font color=\"#ff00ff\">´¦ÀíÖÐ</font>", "<font color=\"#0000ff\">ÒÑ´¦Àí</font>" );
+								$R00be52aa45 = array( "other" => "ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½", "msgfrom" => "Í¶ï¿½ï¿½ï¿½ï¿½", "msgto" => "ï¿½ï¿½Í¶ï¿½ï¿½ï¿½ï¿½" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
+								$R2a754db770 = array( "", "<font color=\"#ff0000\">Î´ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#ff00ff\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#0000ff\">ï¿½Ñ´ï¿½ï¿½ï¿½</font>" );
 								$this->Assign( "mstate", $R2a754db770 );
 								$this->Assign( "cfarray", $R8dc7d3eb73 );
 								$this->Assign( "comefrom", intval( request( "comefrom", 0 ) ) );
@@ -63,13 +63,13 @@ class ComplaintController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -81,10 +81,10 @@ class ComplaintController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -95,7 +95,7 @@ class ComplaintController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -110,7 +110,7 @@ class ComplaintController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -137,7 +137,7 @@ class ComplaintController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -176,7 +176,7 @@ class ComplaintController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -207,7 +207,7 @@ class ComplaintController extends Controller
 								$R808b89ba0e = $this->hander->IMsg_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

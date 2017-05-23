@@ -1,432 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>¶©µ¥Í¶Ëß´¦Àí</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-	<!--$msg = $vd['msg'];-->
-	
-	<!--$pop=intval(request('pop'));$msgdirect=intval(request('msgdirect'));$reply=intval(request('reply'));-->
-	
-	<!--if($vd['str'] != 'Í¶Ëß'){--><?php
-	$id = intval(request('id'));
-	if($msg['id'] != $id)
-	{
-		foreach($vd['items'] as $item) 
-		{
-			if($item['id'] == $id)
-			{
-				$msg = $item;
-				break;
-			}
-		}
-	}
-	?>
-	
-	<!--if($reply == 0){-->
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-            <tbody><tr>
-                <td class="table1_left">
-                    ·¢ ĞÅ ÈË£º</td>
-                <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>
-            </tr>
-            <tr>
-                <td class="table1_left">
-                    ¶ÌĞÅ±êÌâ£º</td>
-                <td class="tdleft">
-                    {$msg['title']}</td>
-            </tr>
-            <tr>
-                <td class="table1_left">
-                    ¶ÌĞÅÄÚÈİ£º</td>
-                <td class="tdleft"><span class="tableright1">
-                  <textarea name="MessengerContent" cols="65" rows="7" class='tdleft' readonly="readonly"><!--echo $msg['content'];-->
-                  </textarea>
-                </span></td>
-            </tr>
-            <tr>
-                <td class="table1_left">
-                    ÊÕµ½Ê±¼ä£º</td>
-                <td class="tdleft">
-                    2013-11-11 18:06:36
-                </td>
-            </tr>
-            
-                <tr>
-                    <td class="table1_left">&nbsp;
-                        
-                    </td>
-                  <td class="tdleft">
-                    <input type="submit" name="Reply" value="ÒÑ¶Á" id="Reply" class="tijiao_input" style="margin-right: 5px;">
-                </tr>
-            
-            
-</tbody></table>
-	</td>
-	</tr>
-</table>
-	<!--}else{-->
-	<form name="messenger" method="post" action="index.php?m=mod_agent&c=Messenger&a=MessengerSave&parentid=0">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-      <tbody>
-        <tr>
-          <td class="table1_left"> ÊÕ ĞÅ ÈË£º</td>
-          <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>
-        </tr>
-        <tr>
-          <td class="table1_left"> ¶ÌĞÅ±êÌâ£º</td>
-          <td class="tdleft"> »Ø¸´:{$msg['title']}</td>
-        </tr>
-        <tr>
-          <td class="table1_left"> ¶ÌĞÅÄÚÈİ£º</td>
-          <td class="tdleft"><span class="tableright1">
-            <textarea name="content" cols="65" rows="7" class='tdleft' datatype="LimitB" min="1" max="450" msg="¶ÌĞÅÄÚÈİÎ´ÌîĞ´»ò¹ı³¤"><!--echo $msg['content'];-->
-<!--echo "\n\n";-->
-==========»Ø¸´ÄÚÈİÈçÏÂ==========
-</textarea>
-          </span></td>
-        </tr>
-        <tr>
-          <td class="table1_left"> ÊÕµ½Ê±¼ä£º</td>
-          <td class="tdleft"> 2013-11-11 18:06:36 </td>
-        </tr>
-        <tr>
-          <td class="table1_left">&nbsp;</td>
-            <td class="tableright1"><div align="left">
-              <input type="hidden" name="underlingid" value="{$vd['msgto']}" />
-              <input type="hidden" name="msgto" value="3"/>
-              <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />
-              <input type="hidden" name="msgcc_1" />
-              <input type="hidden" name="msgcc_2" />
-              <input type="hidden" name="msgstate" value="1" />
-              <input name="submit2" type="submit" class="tijiao_input" value="È·ÈÏ»Ø¸´" />
-              <input name="reset" type="reset" class="fanhui_input" value="ÖØĞÂÌîĞ´" />
-            </div></td>
-        </tr>
-      </tbody>
-	  </table></td>
-	</tr>
-</table>
-	
-	<!--}-->
-	
-	<!--}else{-->
-	
-	
-	<?php
-  $mstate = array('','<font color="#ff0000">Î´´¦Àí</font>','<font color="#ff00ff">´¦ÀíÖĞ</font>','<font color="#0000ff">ÒÑ´¦Àí</font>');
-  ?>
-  
-  <!--if($msgdirect == 0){-->
-  <!--if($pop==0){-->
-  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left">¶©µ¥ºÅ</td>
-		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Í¶Ëß½ÓÊÕÈË</td>
-		<td class="tableright1"><div align="left"><strong>
-		  <!--if($vd['aid'] > 0){-->
-		  ¹©»õÉÌ({#DisplayCode($msg['msgto'])})
-		  <!--}else{-->
-		  Æ½Ì¨¹ÜÀíÔ±
-		  <!--}-->
-		  </strong></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Í¶ËßÎÊÌâÀàĞÍ</td>
-		<td class="tableright1">
-		  
-		    <div align="left">
-		      <select name="QuestionTitle">
-		        <option value="{$msg['title']}" selected>{$msg['title']}</option>
-	          </select>
-            </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Ï£Íû´¦Àí´ëÊ©</td>
-		<td class="tableright1"><label for="treat0">
-          <div align="left">
-            <input type="radio" name="TreatType" value="{$msg['hope']}" id="radio" checked>
-            {$msg['hope']}</div>
-          </label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Í¶ËßÀàÈİ</td>
-		<td class="tableright1">
-			
-		    <div align="left">
-			    <textarea name="QuestionContent" cols="80" rows="5" class='tdleft' readonly>
-Ê±¼ä:{$msg['createdate']}Í¶ËßÄÚÈİ£º
-<!--echo $msg['content'];-->
-<!--echo "\n\n";-->
-<!--foreach($vd['items'] as $item) {-->
-<!--if($item['msgfrom'] == $msg['msgfrom']){-->
-Ê±¼ä:{$item['createdate']} ²¹³äÍ¶ËßÄÚÈİ{$msg['msgfrom']}£º
-<!--echo $item['content'];-->
-<!--echo "\n\n";-->
-<!--}-->
-<!--}-->
-			  </textarea>
-            </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">´¦Àí×´Ì¬</td>
-		<td class="tableright1"><div align="left"><b>
-		  <!--echo $mstate[$msg['msgstate']]-->
-		  </b></div></td>
-		</tr>
-		<!--if($msg['msgstate'] > 0 ){-->
-		<tr>
-		  <td class="table1_left">»Ø¸´ÄÚÈİ</td>
-		<td class="tableright1">
-          
-            <div align="left">
-              <textarea name="AnswerContent" cols="80" rows="5" class='tdleft' readonly>
-<!--foreach($vd['items'] as $item) {-->
-<!--if($item['msgfrom'] != $msg['msgfrom']){-->
-Ê±¼ä:{$item['createdate']}»Ø¸´µÄÄÚÈİ£º
-<!--echo $item['content'];-->
-<!--echo "\n\n";-->
-<!--$date=$item['createdate'];}}-->
-            </textarea>
-            </div></td>
-		</tr>
-		<!--}-->
-		<tr>
-		  <td class="table1_left">»Ø¸´Ê±¼ä</td>
-		<td class="tableright1"><!--if(isset($date)){echo $date;}-->
-		  <div align="left">
-		    <input name="button2" type="button" class="tijiao_input" value="·µ»ØÉÏÒ³" onClick="javascript:history.go(-1);">
-	      </div></td>
-		</tr>
-	  </table>
-	</td>
-	</tr>
-</table>
-	<br>
-	<div align=center></div>
-	<br>
-	<br>
-	
-	<!--}else{-->
-      </div>
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-<form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">
-      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left">¶©µ¥ºÅ</td>
-		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Í¶Ëß½ÓÊÕÈË</td>
-		<td class="tableright1"><div align="left"><strong>
-		  <!--if($vd['aid'] > 0){-->
-		  ¹©»õÉÌ({#DisplayCode($msg['msgto'])})
-		  <!--}else{-->
-		  Æ½Ì¨¹ÜÀíÔ±
-		  <!--}-->
-		  </strong></div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Í¶ËßÎÊÌâÀàĞÍ</td>
-		<td class="tableright1">
-		  <div align="left">
-		    <select name="QuestionTitle">
-		        <option value="{$msg['title']}" selected>{$msg['title']}</option>
-            </select>
-          </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Ï£Íû´¦Àí´ëÊ©</td>
-		<td class="tableright1"><label for="treat0">
-		  <div align="left">
-		    <input type="radio" name="hope" value="{$msg['hope']}" id="radio2" checked>
-	      {$msg['hope']}</div>
-		  </label></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">Ô­Í¶ËßÀàÈİ</td>
-		<td class="tableright1">
-			<div align="left">
-			  <textarea name="QuestionContent" cols="70" rows="5" class='tdleft' readonly>
-Ê±¼ä:{$msg['createdate']}Í¶ËßÄÚÈİ£º
-<!--echo $msg['content'];-->
-<!--echo "\n\n";-->
-<!--foreach($vd['items'] as $item) {-->
-<!--if($item['msgfrom'] == $msg['msgfrom']){-->
-Ê±¼ä:{$item['createdate']} ²¹³äÍ¶ËßÄÚÈİ{$msg['msgfrom']}£º
-<!--echo $item['content'];-->
-<!--echo "\n\n";-->
-<!--}-->
-<!--}-->
-			</textarea>
-		  </div></td>
-		</tr>
-
-		<tr>
-		  <td class="table1_left">²¹³äµÄÀàÈİ</td>
-		<td class="tableright1">
-          <div align="left">
-            <textarea name="content" cols="70" rows="5" class='tdleft' onFocus="javascript:this.value='';">ÇëÌîĞ´ĞèÒª²¹³äµÄÄÚÈİ</textarea>
-          </div></td>
-		</tr>
-		<tr>
-		  <td class="table1_left">&nbsp;</td>
-		<td class="tableright1">
-		  <div align="left">
-		    <input type="hidden" name="underlingid" value="{$vd['msgto']}" />
-		    <input type="hidden" name="msgto" value="3"/>
-		    <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}">
-		    <input type="hidden" name="msgcc_1" />
-	        <input type="hidden" name="msgcc_2" /> 
-		    <input type="hidden" name="msgstate" value="1" />
-		    <input name="submit" type="submit" class="tijiao_input" value="È·ÈÏ²¹³ä">
-		    <input name="reset2" type="reset" class="fanhui_input" value="ÖØĞÂÌîĞ´">
-	      </div></td>
-		</tr>
-  </table>
-</form>
-	</td>
-	</tr>
-	</table>
-	<!--}-->
-	
-	<!--}else{-->
-		<form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">
-		  <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">
-            <tr>
-              <td width="22%" class="table1_left">Í¶Ëß¿Í»§£º</td>
-              <td width="78%" align="left" class="tableright1"><div align="left">{#DisplayCode($msg['msgfrom'], 4)}</div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">Í¶ËßÊ±¼ä£º</td>
-              <td align="left" class="tableright1"><div align="left">{$msg['createdate']}</div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">ÎÊÌâÀàĞÍ£º</td>
-              <td align="left" class="tableright1"><div align="left">
-                <select name="select">
-                  <option value="{$msg['title']}">{$msg['title']}</option>
-                </select>
-              </div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">¶© µ¥ ºÅ£º</td>
-              <td align="left" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">Í¶ËßÄÚÈİ£º</td>
-              <td align="left" class="tableright1"><div align="left">
-                <textarea name="textarea" rows="5" cols="70" class="input1" readonly>
-<!--echo $msg['content'];-->
-<!--echo "\n\n";-->
-<!--foreach($vd['items'] as $item) {-->
-<!--if($item['msgfrom'] == $msg['msgfrom']){-->
-Ê±¼ä:{$item['createdate']} ²¹³äÍ¶ËßÄÚÈİ{$msg['msgfrom']}£º
-<!--echo $item['content'];-->
-<!--echo "\n\n";-->
-<!--}-->
-<!--}-->
-			  </textarea>
-              </div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">Ï£Íû´¦Àí·½Ê½£º</td>
-              <td align="left" class="tableright1"><div align="left"><strong><font color=#ff0000>{$msg['hope']}</font></strong>&nbsp;</div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">Ä¿Ç°×´Ì¬£º</td>
-              <td align="left" class="tableright1"><div align="left"><strong>
-                <!--echo $mstate[$msg['msgstate']]-->
-              </strong></div></td>
-            </tr>
-            <!--if($msg['msgstate'] > 1){-->
-            <tr style="display:none">
-              <td class="table1_left"></td>
-              <td class="tableright1"><div align="left">
-                <!--foreach($vd['items'] as $item) {-->
-                <!--if($item['msgfrom'] != $msg['msgfrom']){-->
-                <!--$date=$item['createdate'];$staffid=$item['staffid'];$aid=$item['aid'];$admnick=$item['admnick'];}}-->
-              </div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">ÉÏ´Î´¦ÀíÊ±¼ä£º</td>
-              <td align="left" class="tableright1"><div align="left">{$date}</div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">ÉÏ´Î´¦ÀíÔ±¹¤£º</td>
-              <td align="left" class="tableright1"><div align="left">
-                <!--if($staffid==0){-->
-                ×ÜÕÊºÅ
-                  <!--}else{-->
-                {$admnick}({#DisplayCode($staffid, 3)})
-                <!--}-->
-              </div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">ÉÏ´Î»Ø¸´ÄÚÈİ£º</td>
-              <td class="tableright1"><div align="left">
-                <textarea name="textarea" cols="70" rows="5" class='input' readonly>
-<!--foreach($vd['items'] as $item) {-->
-<!--if($item['msgfrom'] != $msg['msgfrom']){-->
-Ê±¼ä:{$item['createdate']}»Ø¸´µÄÄÚÈİ£º
-<!--echo $item['content'];-->
-<!--echo "\n\n";-->
-<!--$date=$item['createdate'];}}-->
-              </textarea>
-              </div></td>
-            </tr>
-            <!--}-->
-            <tr>
-              <td class="table1_left">±¾´Î»Ø¸´£º</td>
-              <td align="left" class="tableright1"><div align="left">
-                <textarea name="textarea" rows="5" cols="70" class="input"></textarea>
-              </div></td>
-            </tr>
-            <tr>
-              <td class="table1_left">´¦Àí×´Ì¬£º</td>
-              <td align="left" class="tableright1"><div align="left">
-                <input type="hidden" name="msgdirect" value="1" />
-                <input type="radio" name="msgstate" value="2" id="treatwith1" checked />
-                <font color="#0000ff"><u>ÊÜÀíÍ¶Ëß</u></font></div>
-              <label for="treatwith1"></label>
-                  <div align="left">
-                    <input type="radio" name="msgstate" value="3" id="treatwith2" />
-                    <font color="#ff0000"><u>×îÖÕ»Ø¸´Í¶Ëß</u></font></div>
-                <label for="treatwith2"></label></td>
-            </tr>
-            <tr>
-              <td class="table1_left">&nbsp;</td>
-              <td align="left" class="tableright1"><div align="left">
-                <input type="hidden" name="underlingid2" value="{$vd['msgto']}" />
-                <input type="hidden" name="msgto2" value="3"/>
-                <input type="hidden" size='57' maxlength='100' name="title2" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />
-                <input type="hidden" name="msgcc_12" />
-                <input type="hidden" name="msgcc_22" />
-                <input type="hidden" name="Id" value="1" />
-                <input type="hidden" name="SearchString" value="" />
-                <input type="submit" name="Submit" value="È·ÈÏ´¦Àí" class="tijiao_input" />
-                <input type="reset" name="reset3" value="ÖØĞÂÌîĞ´" class="fanhui_input" />
-              </div></td>
-            </tr>
-          </table>
-		</form>
-	
-	<!--}-->
-	
-	
-	<!--}-->
-	
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>è®¢å•æŠ•è¯‰å¤„ç†</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg">	<!--$msg = $vd['msg'];-->		<!--$pop=intval(request('pop'));$msgdirect=intval(request('msgdirect'));$reply=intval(request('reply'));-->		<!--if($vd['str'] != 'æŠ•è¯‰'){--><?php	$id = intval(request('id'));	if($msg['id'] != $id)	{		foreach($vd['items'] as $item) 		{			if($item['id'] == $id)			{				$msg = $item;				break;			}		}	}	?>		<!--if($reply == 0){-->      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">            <tbody><tr>                <td class="table1_left">                    å‘ ä¿¡ äººï¼š</td>                <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>            </tr>            <tr>                <td class="table1_left">                    çŸ­ä¿¡æ ‡é¢˜ï¼š</td>                <td class="tdleft">                    {$msg['title']}</td>            </tr>            <tr>                <td class="table1_left">                    çŸ­ä¿¡å†…å®¹ï¼š</td>                <td class="tdleft"><span class="tableright1">                  <textarea name="MessengerContent" cols="65" rows="7" class='tdleft' readonly="readonly"><!--echo $msg['content'];-->                  </textarea>                </span></td>            </tr>            <tr>                <td class="table1_left">                    æ”¶åˆ°æ—¶é—´ï¼š</td>                <td class="tdleft">                    2013-11-11 18:06:36                </td>            </tr>                            <tr>                    <td class="table1_left">&nbsp;                                            </td>                  <td class="tdleft">                    <input type="submit" name="Reply" value="å·²è¯»" id="Reply" class="tijiao_input" style="margin-right: 5px;">                </tr>                        </tbody></table>	</td>	</tr></table>	<!--}else{-->	<form name="messenger" method="post" action="index.php?m=mod_agent&c=Messenger&a=MessengerSave&parentid=0"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">      <tbody>        <tr>          <td class="table1_left"> æ”¶ ä¿¡ äººï¼š</td>          <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>        </tr>        <tr>          <td class="table1_left"> çŸ­ä¿¡æ ‡é¢˜ï¼š</td>          <td class="tdleft"> å›å¤:{$msg['title']}</td>        </tr>        <tr>          <td class="table1_left"> çŸ­ä¿¡å†…å®¹ï¼š</td>          <td class="tdleft"><span class="tableright1">            <textarea name="content" cols="65" rows="7" class='tdleft' datatype="LimitB" min="1" max="450" msg="çŸ­ä¿¡å†…å®¹æœªå¡«å†™æˆ–è¿‡é•¿"><!--echo $msg['content'];--><!--echo "\n\n";-->==========å›å¤å†…å®¹å¦‚ä¸‹==========</textarea>          </span></td>        </tr>        <tr>          <td class="table1_left"> æ”¶åˆ°æ—¶é—´ï¼š</td>          <td class="tdleft"> 2013-11-11 18:06:36 </td>        </tr>        <tr>          <td class="table1_left">&nbsp;</td>            <td class="tableright1"><div align="left">              <input type="hidden" name="underlingid" value="{$vd['msgto']}" />              <input type="hidden" name="msgto" value="3"/>              <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />              <input type="hidden" name="msgcc_1" />              <input type="hidden" name="msgcc_2" />              <input type="hidden" name="msgstate" value="1" />              <input name="submit2" type="submit" class="tijiao_input" value="ç¡®è®¤å›å¤" />              <input name="reset" type="reset" class="fanhui_input" value="é‡æ–°å¡«å†™" />            </div></td>        </tr>      </tbody>	  </table></td>	</tr></table>		<!--}-->		<!--}else{-->			<?php  $mstate = array('','<font color="#ff0000">æœªå¤„ç†</font>','<font color="#ff00ff">å¤„ç†ä¸­</font>','<font color="#0000ff">å·²å¤„ç†</font>');  ?>    <!--if($msgdirect == 0){-->  <!--if($pop==0){-->  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left">è®¢å•å·</td>		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>		</tr>		<tr>		  <td class="table1_left">æŠ•è¯‰æ¥æ”¶äºº</td>		<td class="tableright1"><div align="left"><strong>		  <!--if($vd['aid'] > 0){-->		  ä¾›è´§å•†({#DisplayCode($msg['msgto'])})		  <!--}else{-->		  å¹³å°ç®¡ç†å‘˜		  <!--}-->		  </strong></div></td>		</tr>		<tr>		  <td class="table1_left">æŠ•è¯‰é—®é¢˜ç±»å‹</td>		<td class="tableright1">		  		    <div align="left">		      <select name="QuestionTitle">		        <option value="{$msg['title']}" selected>{$msg['title']}</option>	          </select>            </div></td>		</tr>		<tr>		  <td class="table1_left">å¸Œæœ›å¤„ç†æªæ–½</td>		<td class="tableright1"><label for="treat0">          <div align="left">            <input type="radio" name="TreatType" value="{$msg['hope']}" id="radio" checked>            {$msg['hope']}</div>          </label></td>		</tr>		<tr>		  <td class="table1_left">æŠ•è¯‰ç±»å®¹</td>		<td class="tableright1">					    <div align="left">			    <textarea name="QuestionContent" cols="80" rows="5" class='tdleft' readonly>æ—¶é—´:{$msg['createdate']}æŠ•è¯‰å†…å®¹ï¼š<!--echo $msg['content'];--><!--echo "\n\n";--><!--foreach($vd['items'] as $item) {--><!--if($item['msgfrom'] == $msg['msgfrom']){-->æ—¶é—´:{$item['createdate']} è¡¥å……æŠ•è¯‰å†…å®¹{$msg['msgfrom']}ï¼š<!--echo $item['content'];--><!--echo "\n\n";--><!--}--><!--}-->			  </textarea>            </div></td>		</tr>		<tr>		  <td class="table1_left">å¤„ç†çŠ¶æ€</td>		<td class="tableright1"><div align="left"><b>		  <!--echo $mstate[$msg['msgstate']]-->		  </b></div></td>		</tr>		<!--if($msg['msgstate'] > 0 ){-->		<tr>		  <td class="table1_left">å›å¤å†…å®¹</td>		<td class="tableright1">                      <div align="left">              <textarea name="AnswerContent" cols="80" rows="5" class='tdleft' readonly><!--foreach($vd['items'] as $item) {--><!--if($item['msgfrom'] != $msg['msgfrom']){-->æ—¶é—´:{$item['createdate']}å›å¤çš„å†…å®¹ï¼š<!--echo $item['content'];--><!--echo "\n\n";--><!--$date=$item['createdate'];}}-->            </textarea>            </div></td>		</tr>		<!--}-->		<tr>		  <td class="table1_left">å›å¤æ—¶é—´</td>		<td class="tableright1"><!--if(isset($date)){echo $date;}-->		  <div align="left">		    <input name="button2" type="button" class="tijiao_input" value="è¿”å›ä¸Šé¡µ" onClick="javascript:history.go(-1);">	      </div></td>		</tr>	  </table>	</td>	</tr></table>	<br>	<div align=center></div>	<br>	<br>		<!--}else{-->      </div>	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft"><form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left">è®¢å•å·</td>		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>		</tr>		<tr>		  <td class="table1_left">æŠ•è¯‰æ¥æ”¶äºº</td>		<td class="tableright1"><div align="left"><strong>		  <!--if($vd['aid'] > 0){-->		  ä¾›è´§å•†({#DisplayCode($msg['msgto'])})		  <!--}else{-->		  å¹³å°ç®¡ç†å‘˜		  <!--}-->		  </strong></div></td>		</tr>		<tr>		  <td class="table1_left">æŠ•è¯‰é—®é¢˜ç±»å‹</td>		<td class="tableright1">		  <div align="left">		    <select name="QuestionTitle">		        <option value="{$msg['title']}" selected>{$msg['title']}</option>            </select>          </div></td>		</tr>		<tr>		  <td class="table1_left">å¸Œæœ›å¤„ç†æªæ–½</td>		<td class="tableright1"><label for="treat0">		  <div align="left">		    <input type="radio" name="hope" value="{$msg['hope']}" id="radio2" checked>	      {$msg['hope']}</div>		  </label></td>		</tr>		<tr>		  <td class="table1_left">åŸæŠ•è¯‰ç±»å®¹</td>		<td class="tableright1">			<div align="left">			  <textarea name="QuestionContent" cols="70" rows="5" class='tdleft' readonly>æ—¶é—´:{$msg['createdate']}æŠ•è¯‰å†…å®¹ï¼š<!--echo $msg['content'];--><!--echo "\n\n";--><!--foreach($vd['items'] as $item) {--><!--if($item['msgfrom'] == $msg['msgfrom']){-->æ—¶é—´:{$item['createdate']} è¡¥å……æŠ•è¯‰å†…å®¹{$msg['msgfrom']}ï¼š<!--echo $item['content'];--><!--echo "\n\n";--><!--}--><!--}-->			</textarea>		  </div></td>		</tr>		<tr>		  <td class="table1_left">è¡¥å……çš„ç±»å®¹</td>		<td class="tableright1">          <div align="left">            <textarea name="content" cols="70" rows="5" class='tdleft' onFocus="javascript:this.value='';">è¯·å¡«å†™éœ€è¦è¡¥å……çš„å†…å®¹</textarea>          </div></td>		</tr>		<tr>		  <td class="table1_left">&nbsp;</td>		<td class="tableright1">		  <div align="left">		    <input type="hidden" name="underlingid" value="{$vd['msgto']}" />		    <input type="hidden" name="msgto" value="3"/>		    <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}">		    <input type="hidden" name="msgcc_1" />	        <input type="hidden" name="msgcc_2" /> 		    <input type="hidden" name="msgstate" value="1" />		    <input name="submit" type="submit" class="tijiao_input" value="ç¡®è®¤è¡¥å……">		    <input name="reset2" type="reset" class="fanhui_input" value="é‡æ–°å¡«å†™">	      </div></td>		</tr>  </table></form>	</td>	</tr>	</table>	<!--}-->		<!--}else{-->		<form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">		  <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">            <tr>              <td width="22%" class="table1_left">æŠ•è¯‰å®¢æˆ·ï¼š</td>              <td width="78%" align="left" class="tableright1"><div align="left">{#DisplayCode($msg['msgfrom'], 4)}</div></td>            </tr>            <tr>              <td class="table1_left">æŠ•è¯‰æ—¶é—´ï¼š</td>              <td align="left" class="tableright1"><div align="left">{$msg['createdate']}</div></td>            </tr>            <tr>              <td class="table1_left">é—®é¢˜ç±»å‹ï¼š</td>              <td align="left" class="tableright1"><div align="left">                <select name="select">                  <option value="{$msg['title']}">{$msg['title']}</option>                </select>              </div></td>            </tr>            <tr>              <td class="table1_left">è®¢ å• å·ï¼š</td>              <td align="left" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>            </tr>            <tr>              <td class="table1_left">æŠ•è¯‰å†…å®¹ï¼š</td>              <td align="left" class="tableright1"><div align="left">                <textarea name="textarea" rows="5" cols="70" class="input1" readonly><!--echo $msg['content'];--><!--echo "\n\n";--><!--foreach($vd['items'] as $item) {--><!--if($item['msgfrom'] == $msg['msgfrom']){-->æ—¶é—´:{$item['createdate']} è¡¥å……æŠ•è¯‰å†…å®¹{$msg['msgfrom']}ï¼š<!--echo $item['content'];--><!--echo "\n\n";--><!--}--><!--}-->			  </textarea>              </div></td>            </tr>            <tr>              <td class="table1_left">å¸Œæœ›å¤„ç†æ–¹å¼ï¼š</td>              <td align="left" class="tableright1"><div align="left"><strong><font color=#ff0000>{$msg['hope']}</font></strong>&nbsp;</div></td>            </tr>            <tr>              <td class="table1_left">ç›®å‰çŠ¶æ€ï¼š</td>              <td align="left" class="tableright1"><div align="left"><strong>                <!--echo $mstate[$msg['msgstate']]-->              </strong></div></td>            </tr>            <!--if($msg['msgstate'] > 1){-->            <tr style="display:none">              <td class="table1_left"></td>              <td class="tableright1"><div align="left">                <!--foreach($vd['items'] as $item) {-->                <!--if($item['msgfrom'] != $msg['msgfrom']){-->                <!--$date=$item['createdate'];$staffid=$item['staffid'];$aid=$item['aid'];$admnick=$item['admnick'];}}-->              </div></td>            </tr>            <tr>              <td class="table1_left">ä¸Šæ¬¡å¤„ç†æ—¶é—´ï¼š</td>              <td align="left" class="tableright1"><div align="left">{$date}</div></td>            </tr>            <tr>              <td class="table1_left">ä¸Šæ¬¡å¤„ç†å‘˜å·¥ï¼š</td>              <td align="left" class="tableright1"><div align="left">                <!--if($staffid==0){-->                æ€»å¸å·                  <!--}else{-->                {$admnick}({#DisplayCode($staffid, 3)})                <!--}-->              </div></td>            </tr>            <tr>              <td class="table1_left">ä¸Šæ¬¡å›å¤å†…å®¹ï¼š</td>              <td class="tableright1"><div align="left">                <textarea name="textarea" cols="70" rows="5" class='input' readonly><!--foreach($vd['items'] as $item) {--><!--if($item['msgfrom'] != $msg['msgfrom']){-->æ—¶é—´:{$item['createdate']}å›å¤çš„å†…å®¹ï¼š<!--echo $item['content'];--><!--echo "\n\n";--><!--$date=$item['createdate'];}}-->              </textarea>              </div></td>            </tr>            <!--}-->            <tr>              <td class="table1_left">æœ¬æ¬¡å›å¤ï¼š</td>              <td align="left" class="tableright1"><div align="left">                <textarea name="textarea" rows="5" cols="70" class="input"></textarea>              </div></td>            </tr>            <tr>              <td class="table1_left">å¤„ç†çŠ¶æ€ï¼š</td>              <td align="left" class="tableright1"><div align="left">                <input type="hidden" name="msgdirect" value="1" />                <input type="radio" name="msgstate" value="2" id="treatwith1" checked />                <font color="#0000ff"><u>å—ç†æŠ•è¯‰</u></font></div>              <label for="treatwith1"></label>                  <div align="left">                    <input type="radio" name="msgstate" value="3" id="treatwith2" />                    <font color="#ff0000"><u>æœ€ç»ˆå›å¤æŠ•è¯‰</u></font></div>                <label for="treatwith2"></label></td>            </tr>            <tr>              <td class="table1_left">&nbsp;</td>              <td align="left" class="tableright1"><div align="left">                <input type="hidden" name="underlingid2" value="{$vd['msgto']}" />                <input type="hidden" name="msgto2" value="3"/>                <input type="hidden" size='57' maxlength='100' name="title2" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />                <input type="hidden" name="msgcc_12" />                <input type="hidden" name="msgcc_22" />                <input type="hidden" name="Id" value="1" />                <input type="hidden" name="SearchString" value="" />                <input type="submit" name="Submit" value="ç¡®è®¤å¤„ç†" class="tijiao_input" />                <input type="reset" name="reset3" value="é‡æ–°å¡«å†™" class="fanhui_input" />              </div></td>            </tr>          </table>		</form>		<!--}-->			<!--}-->	</body></html>

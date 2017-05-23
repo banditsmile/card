@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -18,8 +18,8 @@ PADDING:0 3px;
 <body>
 <form method="post" action="index.php?m=mod_b2b&c=card&a=save" name="cform" id="cform"> 
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">Ìí¼Ó¿¨ÃÜ</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´¶©µ¥Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
@@ -27,11 +27,11 @@ PADDING:0 3px;
 
 
 <div class="cwarpper1">
-<div class="ctitle">Ìí¼Ó¿¨ÃÜ</div>
+<div class="ctitle">ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr>
-      <td class="tablelt2">Ñ¡ÔñÉÌÆ·</td>
+      <td class="tablelt2">Ñ¡ï¿½ï¿½ï¿½ï¿½Æ·</td>
       <td class="tablert2">
         <select name="ubzpid" style="width:500px;">
           {#Option($vd['item'], $vd['pid'], 'pname', 'pid')}
@@ -43,22 +43,22 @@ PADDING:0 3px;
     <tr> 
       <td class="tablelt2">
         <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
-          <font color="#ff0000">Â¼ÈëÐëÖª£¡</font>
-          <font color="#ff0000">1¡¢</font>ÇëÔÚ±íµ¥ÖÐÊäÈëµã¿¨µÄ¿¨ºÅºÍÃÜÂë£¬µã¿¨ºÍÃÜÂëÖ®¼äÓÃ¿Õ¸ñ¸ô¿ª£¬×î¶à20¸ö¿Õ¸ñ£» ÀàËÆÈçÏÂ£º<br/>
+          <font color="#ff0000">Â¼ï¿½ï¿½ï¿½ï¿½Öªï¿½ï¿½</font>
+          <font color="#ff0000">1ï¿½ï¿½</font>ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¿¨ï¿½Ä¿ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ã¿¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ã¿Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½20ï¿½ï¿½ï¿½Õ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½<br/>
           111111 222222<br/>
           333333 444444<br/>
-          ÆäÖÐ×ó±ßÎª¿¨ºÅ,ÓÒ±ßµÄÎªÃÜÂë£¬»Ø³µºó±íÊ¾ÁíÍâÒ»×é<br/>
+          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½,ï¿½Ò±ßµï¿½Îªï¿½ï¿½ï¿½ë£¬ï¿½Ø³ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½<br/>
           
-          <font color="#ff0000">2¡¢</font>Èç¹ûÊÇ¿¨ÃÜ×éºÏ£¬¸ñÊ½Èç£º¿¨ºÅ+¿Õ¸ñ(Ò»¸ö»òÕß¶à¸ö¶¼¿ÉÒÔ)+ÃÜÂë<br/>
+          <font color="#ff0000">2ï¿½ï¿½</font>ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Ê½ï¿½ç£ºï¿½ï¿½ï¿½ï¿½+ï¿½Õ¸ï¿½(Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)+ï¿½ï¿½ï¿½ï¿½<br/>
           
-          <font color="#ff0000">3¡¢</font>²»ÄÜÊäÈëÈÎºÎ³ý×ÖÄ¸¡¢Êý×Ö»ò¡°-¡±Ö®ÍâµÄÈÎºÎ×Ö·û¡£<br/>
+          <font color="#ff0000">3ï¿½ï¿½</font>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎ³ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½-ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½Ö·ï¿½ï¿½ï¿½<br/>
           
-          <font color="#ff0000">4¡¢</font>¿¨ºÅºÍÃÜÂëµÄ³¤¶È½¨Òé¶¼²»³¬¹ý30Î»£¬ÊäÈëÍê³ÉºóÇë×ÐÏ¸ºË¶Ô£¬ÒÔÃâÖØ¸´»òÊä´í¡£<br/>
+          <font color="#ff0000">4ï¿½ï¿½</font>ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½È½ï¿½ï¿½é¶¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½30Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½Ë¶Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br/>
           
-          <font color="#ff0000">5¡¢</font>¿É´ÓÎÄ±¾ÎÄµµ»òExcelÖÐ¸´ÖÆ¿¨ºÅºÍÃÜÂë¡£<br/>
+          <font color="#ff0000">5ï¿½ï¿½</font>ï¿½É´ï¿½ï¿½Ä±ï¿½ï¿½Äµï¿½ï¿½ï¿½Excelï¿½Ð¸ï¿½ï¿½Æ¿ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ë¡£<br/>
           
-          <font color="#ff0000">6¡¢</font>Ã¿´Î×îºÃ²»Òª³¬¹ý200ÕÅµã¿¨£¬ÒÔÃâÒòÎªweb±íµ¥´«µÝÏÞÖÆµ¼ÖÂ³ö´í¡£<br/></p>
-        Â¼Èë¿¨ÃÜ
+          <font color="#ff0000">6ï¿½ï¿½</font>Ã¿ï¿½ï¿½ï¿½ï¿½Ã²ï¿½Òªï¿½ï¿½ï¿½ï¿½200ï¿½Åµã¿¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªwebï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½Â³ï¿½ï¿½ï¿½<br/></p>
+        Â¼ï¿½ë¿¨ï¿½ï¿½
       </td>
       <td class="tablert2" style="height:300px">
          <div style="display:none">
@@ -69,12 +69,12 @@ PADDING:0 3px;
       </td>
     </tr>
     <tr>
-      <td class="tablelt2">ÊäÈë¸ñÊ½</td>
+      <td class="tablelt2">ï¿½ï¿½ï¿½ï¿½ï¿½Ê½</td>
       <td class="tablert2">
         <select name="kmtype" style="width:150px;">
-          <option value="0">¿¨ºÅ£«ÃÜÂë</option>
-          <option value="1">Ö»ÓÐ¿¨ºÅ</option>
-          <option value="2">Ö»ÓÐÃÜÂë</option>
+          <option value="0">ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+          <option value="1">Ö»ï¿½Ð¿ï¿½ï¿½ï¿½</option>
+          <option value="2">Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
         </select>
         <font color="#FF0000">*</font>
       </td>
@@ -82,8 +82,8 @@ PADDING:0 3px;
     <tr>
       <td class="tablelt2"></td>
       <td class="tablert2" style="height:80px">
-        <input type="submit" value="Ìí¼Ó¿¨ÃÜ &gt;&gt" class="bigbtn"/>
-        <input type="reset" value="&lt; &lt; ÖØÐÂÌîÐ´" class="bigbtn"/>
+        <input type="submit" value="ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ &gt;&gt" class="bigbtn"/>
+        <input type="reset" value="&lt; &lt; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´" class="bigbtn"/>
       </td>
     </tr>
   </table>

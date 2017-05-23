@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
@@ -10,9 +10,9 @@
     <td width="50%" height="35">
       <span style="float:right">
       <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
-      <input type="submit" value="ÉÌÆ·ËÑË÷ &gt;&gt;" style="vertical-align:middle;"/>
+      <input type="submit" value="å•†å“æœç´¢ &gt;&gt;" style="vertical-align:middle;"/>
       </span>
-      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >ÉÌÆ·ÊôÐÔ×é±ð¹ÜÀí</span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >å•†å“å±žæ€§ç»„åˆ«ç®¡ç†</span>
     </td>
   </tr>
 </table>
@@ -20,9 +20,9 @@
 
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6"> 
   <tr> 
-    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">×éÃû</td>
-    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">¿É¼û</td>
-    <td width="20%" bgcolor="#f1f1f1" align="center" class="listhead">²Ù×÷</td>
+    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">ç»„å</td>
+    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">å¯è§</td>
+    <td width="20%" bgcolor="#f1f1f1" align="center" class="listhead">æ“ä½œ</td>
     <td width="20%" bgcolor="#f1f1f1" align="center" class="listhead"></td>
   </tr>
   <form name="form1" method="post" action="index.php?m=mod_b2b&c=product&a=propgroupsave">
@@ -31,7 +31,7 @@
     <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="visible" size="5"/></td>
     <td width="10%" bgcolor="#f1f1f1" align="center">
       <input type="hidden" name="maxid" value="{$vd['maxid']}" />
-      <input type="submit" name="Submit" value="Ìí ¼Ó"/>
+      <input type="submit" name="Submit" value="æ·» åŠ "/>
     </td>
     <td width="15%" bgcolor="#f1f1f1" align="center"></td>
   </tr>
@@ -43,11 +43,11 @@
     <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="visible" size="5" value="{$item['visible']}"/></td>
     <td width="10%" bgcolor="#f1f1f1" align="center">
     <input type="hidden" name="id" value="{$item['id']}" />
-    <input type="submit" name="Submit" value="ÐÞ ¸Ä" />
+    <input type="submit" name="Submit" value="ä¿® æ”¹" />
     </td>
     <td width="15%" bgcolor="#f1f1f1" align="center">
-      <a href="index.php?m=mod_b2b&c=product&a=propgroupdel&id={$item['id']}" onclick="return confirm('ÄúÈ·¶¨½øÐÐÉ¾³ý²Ù×÷Âð£¿')">
-      É¾³ý
+      <a href="index.php?m=mod_b2b&c=product&a=propgroupdel&id={$item['id']}" onclick="return confirm('æ‚¨ç¡®å®šè¿›è¡Œåˆ é™¤æ“ä½œå—ï¼Ÿ')">
+      åˆ é™¤
       </a>
     </td>
   </tr>
@@ -57,12 +57,12 @@
 <br/>
 <table width="100%" border="0" cellpadding="1" cellspacing="1" align="center">
   <tr> 
-    <td bgcolor="#f1f1f1">²Ù×÷×¢ÒâÊÂÏî¼°ËµÃ÷</td>
+    <td bgcolor="#f1f1f1">æ“ä½œæ³¨æ„äº‹é¡¹åŠè¯´æ˜Ž</td>
   </tr>
   <tr> 
     <td bgcolor="#f1f1f1"><font color="#ff0000">
-    ¡¤Çë½÷É÷ÐÞ¸ÄÕâÐ©²ÎÊý¡£<br/>
-    ¡¤"¿É¼û" À¸²ÎÊýËµÃ÷£º0£ºÖ»ÓÐ·¢²¼ÕßºÍ¹ÜÀíÕß¿É¼û£¬1£º¹ºÂòÕß¿É¼û£¬2£ºËùÓÐÈË¿É¼û¡£<br/>
+    ãƒ»è¯·è°¨æ…Žä¿®æ”¹è¿™äº›å‚æ•°ã€‚<br/>
+    ãƒ»"å¯è§" æ å‚æ•°è¯´æ˜Žï¼š0ï¼šåªæœ‰å‘å¸ƒè€…å’Œç®¡ç†è€…å¯è§ï¼Œ1ï¼šè´­ä¹°è€…å¯è§ï¼Œ2ï¼šæ‰€æœ‰äººå¯è§ã€‚<br/>
     </font></td>
   </tr>
 </table>

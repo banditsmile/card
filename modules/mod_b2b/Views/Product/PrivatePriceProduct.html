@@ -1,80 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>��Ʒ�۸��ܼ�</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>��Ʒ�۸��ܼ�</h2>
-  </div>
-  <ul>
-    <li><a href="index.php?m=mod_b2b&c=price"><span>ģ��۸����</span></a></li>
-    <li><a href="index.php?m=mod_b2b&c=price&a=AddRankTpl"><span>������۸�ģ��</span></a></li>
-    <li><a href="index.php?m=mod_b2b&c=product&a=AgentPrice"<span>��Ʒ�۸�����</a></li>
-	<li><a href="" class="on">��Ʒ�۸��ܼ�</a></li>
-  </ul>
-</div>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td class="tableleft">
-<form name="search" method="get" action="index.php">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-<tr>
-  <td class="table1_left"> �ؼ��֣� </td>
-<td width="78%" align="left" class="tableright1">
-  <div align="left">
-  <input type="hidden" name="m" value="mod_b2b"/>
-  <input type="hidden" name="c" value="product"/>
-  <input type="hidden" name="a" value="PrivatePriceProduct"/>
-  <input type="text" size="30" name="keywords" class='input0' value="">
-  </div></td>
-</tr>
-<tr>
-  <td class="table1_left"> ��ѯ���ͣ� </td>
-<td align="left" >
-  <div align="left">
-    <select name="stype" id="stype" class="search_select">
-      <option value="pname" selected>��Ʒ����</option>
-    </select>
-  </div></td>
-</tr>
-<tr>
-  <td class="table1_left"> </td>
-<td align="left" class="tableright1">
-  <div align="left">
-  <input type="submit" name="Submit" value="ȷ�ϲ�ѯ" class="tijiao_input">
-  <input type="reset" name="reset" value="���ò�ѯ" class="fanhui_input">
-  </div></td>
-</tr>
-</table>
-<br>
-</form>
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-      <tr>
-    <th width="10%" class="heardertop1">��ƷID</td>
-    <th width="50%" class="heardertop1">��Ʒ����</td>
-    <th width="10%" class="heardertop1">��Ʒ����</td>
-    <th width="10%" class="heardertop1">��ֵ</td>
-    <th width="10%" class="heardertop1">�ҵĽ���</td>
-    <th width="10%" class="heardertop1">�ܼ��趨</td>
-  <!--foreach($vd['items'] as $item) {-->
-	<tr class="trd">
-    <td>{$item['pid']}</td>
-    <td align="left">{$item['pname']}</td>
-    <td>{#ProductType($item['ptype'])}</td>
-    <td>{$item['listprice']}</td>
-    <td>{$item['cprice']}</td>
-    <td><a href="index.php?m=mod_b2b&amp;c=Price&amp;a=PrivatePriceAgentSet&amp;pid={$item['pid']}"><u>�ܼ��趨</u></a></td>
-  </tr>
-  <!--}-->
-</table>
-		<script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
-<div id="page">
-  <div align="right">{load(fpage)}</div>
-</div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>商品价格密价</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>商品价格密价</h2>  </div>  <ul>    <li><a href="index.php?m=mod_b2b&c=price"><span>模板价格管理</span></a></li>    <li><a href="index.php?m=mod_b2b&c=price&a=AddRankTpl"><span>单级别价格模板</span></a></li>    <li><a href="index.php?m=mod_b2b&c=product&a=AgentPrice"<span>商品价格设置</a></li>	<li><a href="" class="on">商品价格密价</a></li>  </ul></div><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tr><td class="tableleft"><form name="search" method="get" action="index.php"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0"><tr>  <td class="table1_left"> 关键字： </td><td width="78%" align="left" class="tableright1">  <div align="left">  <input type="hidden" name="m" value="mod_b2b"/>  <input type="hidden" name="c" value="product"/>  <input type="hidden" name="a" value="PrivatePriceProduct"/>  <input type="text" size="30" name="keywords" class='input0' value="">  </div></td></tr><tr>  <td class="table1_left"> 查询类型： </td><td align="left" >  <div align="left">    <select name="stype" id="stype" class="search_select">      <option value="pname" selected>商品名称</option>    </select>  </div></td></tr><tr>  <td class="table1_left"> </td><td align="left" class="tableright1">  <div align="left">  <input type="submit" name="Submit" value="确认查询" class="tijiao_input">  <input type="reset" name="reset" value="重置查询" class="fanhui_input">  </div></td></tr></table><br></form>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">      <tr>    <th width="10%" class="heardertop1">商品ID</td>    <th width="50%" class="heardertop1">商品名称</td>    <th width="10%" class="heardertop1">商品类型</td>    <th width="10%" class="heardertop1">面值</td>    <th width="10%" class="heardertop1">我的进价</td>    <th width="10%" class="heardertop1">密价设定</td>  <!--foreach($vd['items'] as $item) {-->	<tr class="trd">    <td>{$item['pid']}</td>    <td align="left">{$item['pname']}</td>    <td>{#ProductType($item['ptype'])}</td>    <td>{$item['listprice']}</td>    <td>{$item['cprice']}</td>    <td><a href="index.php?m=mod_b2b&amp;c=Price&amp;a=PrivatePriceAgentSet&amp;pid={$item['pid']}"><u>密价设定</u></a></td>  </tr>  <!--}--></table>		<script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script><script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> <div id="page">  <div align="right">{load(fpage)}</div></div></body></html>

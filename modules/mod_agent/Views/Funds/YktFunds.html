@@ -1,69 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>ƽ̨��ֵ����ֵ</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> ���߳�ֵ</h2>
-    <span class="setup_index">
-      <input id="lbtnLogin" type="checkbox" name="lbtnLogin" checked="checked" onClick="javascript:setTimeout(&#39;__doPostBack(\&#39;lbtnLogin\&#39;,\&#39;\&#39;)&#39;, 0)">
-      <label for="lbtnLogin">��¼����ҳ</label>
-    </span> </div>
-  <ul>
-    <li> <a id="lbtn23" href="../index.php?m=mod_agent&c=funds&a=AddFunds">���߳�ֵ</a></li>
-    <li> <a id="lbtn22" href="../index.php?m=mod_agent&c=Funds&a=BankFunds">���л���ֵ</a></li>
-    <li> <a id="lbtn21" class="on" href="#">��ֵ����ֵ</a></li>
-  </ul>
-</div>
-	
-		<form name="savecard" method="post" action="index.php?m=mod_agent&c=funds&a=AddFundsByYkt">
-                <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">
-			<tr>
-			  <td class="table1_left"> ��ֵ�����ţ� </td>
-			<td width="78%" class="tableright1"><div align="left">
-			  <input type="text" name="yktcard[]" size="30" maxlength="50" class="input0" datatype="NewUserName" msg="�������ֵ������">
-			  </div></td>
-			</tr>
-			<tr>
-			  <td height="24" class="table1_left"> ��ֵ�����룺 </td>
-			<td class="tableright1"><div align="left">
-			  <input type="password" name="yktpwd[]" size="30" maxlength="50" class="input0" datatype="NewUserName" msg="������俨������">
-			  </div></td>
-			</tr>
-			<tr>
-			  <td height="30" class="table1_left"> �� ֤ �룺 </td>
-			<td class="tableright1"><div align="left">
-			  <input type="text" name="randcode" size="6" maxlength="4" class="input0" dataType="LimitB" min="4" max="4" msg="��������֤��"><img src="index.php?m=mod_b2b&amp;a=randcode" alt="�������?����ˢ��" name="src" height="25" id="src" style="vertical-align:middle;cursor:pointer" onClick="this.src=this.src+'&amp;'+Math.random();"/>
-			  <span id="spanrandcode" style="color:#996600;cursor:pointer" onClick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>������</u></span> </div></td>
-			</tr>
-			<tr>
-			  <td class="table1_left"></td>
-			<td class="tableright1"><div align="left">
-			  <input name="submit" type="submit" class="tijiao_input" value="ȷ�ϳ�ֵ">
-			</div></td>
-			</tr>
-			<!--if(isset($vd['rights'][3]) && $vd['rights'][3]){-->
-      <tr>
-        <td height="30" class="tableleft1"> 
-          <div align="center" style="font-weight:bold">
-            <div align="right">ע��</div>
-          </div>        </td>
-        <td class="tableright1"> 
-          <div align="left">��ͳ�ֵ <font color="#ff0000"><b>{$vd['rights'][3]}</b></font>, ��ʹ����ֵ���� <font color="#ff0000"><b>{$vd['rights'][3]}</b></font> ��һ��ͨ��ֵ        </div></td>
-      </tr>
-      <!--}-->
-		  </table>
-</form>
-		</td>
-		</tr>
-		</table>
-		</li></ul>
-	
-	</div>
-    <div class="tishi" style="margin: 5px 0 0 0;"> <span>��ʾ��</span><a id="HyperLink1" href="{$vd['web']['ykttitle']}" target="_blank">��ֵ�������ַ��</a></div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <title>平台充值卡充值</title>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> 在线充值</h2>    <span class="setup_index">      <input id="lbtnLogin" type="checkbox" name="lbtnLogin" checked="checked" onClick="javascript:setTimeout(&#39;__doPostBack(\&#39;lbtnLogin\&#39;,\&#39;\&#39;)&#39;, 0)">      <label for="lbtnLogin">登录后到这页</label>    </span> </div>  <ul>    <li> <a id="lbtn23" href="../index.php?m=mod_agent&c=funds&a=AddFunds">在线充值</a></li>    <li> <a id="lbtn22" href="../index.php?m=mod_agent&c=Funds&a=BankFunds">银行汇款充值</a></li>    <li> <a id="lbtn21" class="on" href="#">充值卡充值</a></li>  </ul></div>			<form name="savecard" method="post" action="index.php?m=mod_agent&c=funds&a=AddFundsByYkt">                <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">			<tr>			  <td class="table1_left"> 充值卡卡号： </td>			<td width="78%" class="tableright1"><div align="left">			  <input type="text" name="yktcard[]" size="30" maxlength="50" class="input0" datatype="NewUserName" msg="请输入充值卡卡号">			  </div></td>			</tr>			<tr>			  <td height="24" class="table1_left"> 充值卡密码： </td>			<td class="tableright1"><div align="left">			  <input type="password" name="yktpwd[]" size="30" maxlength="50" class="input0" datatype="NewUserName" msg="请输入充卡卡密码">			  </div></td>			</tr>			<tr>			  <td height="30" class="table1_left"> 验 证 码： </td>			<td class="tableright1"><div align="left">			  <input type="text" name="randcode" size="6" maxlength="4" class="input0" dataType="LimitB" min="4" max="4" msg="请输入验证码"><img src="index.php?m=mod_b2b&amp;a=randcode" alt="看不清楚?请点击刷新" name="src" height="25" id="src" style="vertical-align:middle;cursor:pointer" onClick="this.src=this.src+'&amp;'+Math.random();"/>			  <span id="spanrandcode" style="color:#996600;cursor:pointer" onClick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>看不清</u></span> </div></td>			</tr>			<tr>			  <td class="table1_left"></td>			<td class="tableright1"><div align="left">			  <input name="submit" type="submit" class="tijiao_input" value="确认充值">			</div></td>			</tr>			<!--if(isset($vd['rights'][3]) && $vd['rights'][3]){-->      <tr>        <td height="30" class="tableleft1">           <div align="center" style="font-weight:bold">            <div align="right">注意</div>          </div>        </td>        <td class="tableright1">           <div align="left">最低充值 <font color="#ff0000"><b>{$vd['rights'][3]}</b></font>, 请使用面值超过 <font color="#ff0000"><b>{$vd['rights'][3]}</b></font> 的一卡通充值        </div></td>      </tr>      <!--}-->		  </table></form>		</td>		</tr>		</table>		</li></ul>		</div>    <div class="tishi" style="margin: 5px 0 0 0;"> <span>提示：</span><a id="HyperLink1" href="{$vd['web']['ykttitle']}" target="_blank">充值卡购买地址！</a></div></body></html>

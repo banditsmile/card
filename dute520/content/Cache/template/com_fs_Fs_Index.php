@@ -1,11 +1,11 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style type="text/css">
 body {
 BACKGROUND:#fff;
 MARGIN:0;
-FONT:normal 12px 宋体;
+FONT:normal 12px 锟斤拷锟斤拷;
 }
 
 input {
@@ -116,7 +116,7 @@ visibility:hidden;
   function ShowImg(obj, imgid)
   {
     if( !obj.value.match( /.jpg|.gif|.png|.bmp|.swf/i ) ){
-        alert('图片格式无效！');
+        alert('图片锟斤拷式锟斤拷效锟斤拷');
         return false;
     }
     
@@ -187,7 +187,7 @@ visibility:hidden;
   function SetFile(fname)
   {
     //get the name
-    document.getElementById("uploadresult").innerHTML = "上传成功!路径：" + fname;
+    document.getElementById("uploadresult").innerHTML = "锟较达拷锟缴癸拷!路锟斤拷锟斤拷" + fname;
     var temp = fname.split('/');
     window.parent.document.getElementById("<?php echo $vd['inputid']; ?>").value = temp[temp.length-1];
   }
@@ -196,8 +196,8 @@ visibility:hidden;
   <input id="txtFolder" type="hidden" value="<?php echo $vd['dirname']; ?>" name="txtFolder" />
   <input id="cmbType"   type="hidden" value="Image" name="cmbType" />
   <input id="txtFileUpload" type="file" name="NewFile" onchange="ShowImg(this, <?php echo $vd['imgid']; ?>)"/>
-  <input type="submit" value="上传" onclick="SetAction();"/>
-  <font color="#FF0000"><span id="uploadresult">* (请选择要上传的图片,然后点击上传按钮)</span></font>
+  <input type="submit" value="锟较达拷" onclick="SetAction();"/>
+  <font color="#FF0000"><span id="uploadresult">* (锟斤拷选锟斤拷要锟较达拷锟斤拷图片,然锟斤拷锟斤拷锟较达拷锟斤拷钮)</span></font>
 </form>
 <img id="preview_size_fake"/>
 <span id="eUrl" style="display:none"></span>

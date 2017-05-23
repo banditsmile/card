@@ -1,1017 +1,1839 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1">
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title id="AgentSiteName"></title>
-    <meta id="AgentDescription" name="description" content="������������ƽ̨��ʾվ - ����ȫ�����ϵ㿨����ƽ̨���ṩ�㿨�����ѡ�QQ�ҡ�QQҵ��ֱ�估���ܵ��ؼ���Ʒ��ͬʱ�ṩ���ʵ��ۺ��������ȫ�氲���������Ϲ�����Ȥ Powered by ���ƿ�"></meta>
-    <meta id="AgentKeyWords" name="keywords" content="��Ϸ�㿨,Q��Q��,��Ϸ��ֵ��,�绰��,�ֻ���ֵ��"></meta>
-    
-    <link href="http://www.liyunkm.com/webblack/css/global.css" rel="stylesheet" type="text/css" />
-    <link href="http://www.liyunkm.com/webblack/css/css.css" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript">
-        var AgentQian = "webblack";
-    </script>
-</head>
-<body id="nav_btn01">
-    <form name="loginForm" action="/index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
-
-<div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA4OTkwNTQ1MA9kFgoCAQ8WAh4JaW5uZXJodG1sBWDliKnkupHljaHnm5985Y2h55uf5o6S6KGM5qacfOesrOS4gOWNoeebn3zljaHnm5/ku6PnkIZ85Y2h55uf5bmz5Y+wfOWNoeebn+S5i+eItnzljaHkuZDotK3lubPlj7BkAgMPFgIeB2NvbnRlbnQFtALliKnkupHljaHnm5/lubPlj7DmmK/ljaHnm5/mjpLooYzmppznrKzkuIAs5piv5YWo5Zu95pyA5aSn5pyA5by65pyA5LiT5Lia55qE5Y2h55uf572R56uZLOS4gOS4quS4uueUqOaIt+aPkOS+m+acgOS+v+aNtyzov4XpgJ/lvIDljZXnp5LljZUs5pyA5LiT5Lia5pyN5Yqh55qE5Y2h55uf5bmz5Y+wLOS4muWKoTLmipjotbcs546w5q2j54Gr54iG5oub5pS25Y2h55uf5Luj55CG5ZWGLOivmumAgeS7o+eQhizkuJPms6jljaHnm5/mlbDlrZflubPlj7As5pyN5Yqh5bm/5aSn5Y2h55uf6KGM5Lia5Yib5Lia6ICFLOWFqOWbveefpeWQjeWTgeeJjGQCBQ8WAh8BBVjljaHnm5985Yip5LqR5Y2h55uffOWNoeebn+aOkuihjOamnHznrKzkuIDljaHnm5985Y2h55uf5Luj55CGfOWNoeebn+W5s+WPsHzljaHnm5/kuYvniLZ8ZAIJD2QWEGYPFgIeBXN0eWxlBWNiYWNrZ3JvdW5kOnVybCguLi9pbWFnZXMyL3d3d19saXl1bmttX2NvbS8zYzQzMzYwOWIxNWY0M2ViODIxNjJkZGYwNjJmZGU2ZS5wbmcpIG5vLXJlcGVhdCAyMHB4IDUwJTtkAgIPZBYCZg8WAh4EaHJlZgUXaHR0cDovL2xpeXVua20uMThrbS5jbi9kAgMPFgIeBFRleHQFowI8ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20udGFvYmFvLmNvbS8iIHJlbD0ibm9mb2xsb3ciPjxzcGFuPuaLjeaLjeWKoOasvuWumOe9kTwvc3Bhbj48L2E+PC9kZD48ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20udGFvYmFvLmNvbSAiIHJlbD0ibm9mb2xsb3ciPjxzcGFuPua3mOWuneWKoOasvuWumOe9kTwvc3Bhbj48L2E+PC9kZD48ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20uMThrbS5jbi9qaWZlbi8iIHJlbD0ibm9mb2xsb3ciPjxzcGFuPuenr+WIhuWFkeaNouWVhuW6lzwvc3Bhbj48L2E+PC9kZD5kAgQPFgIfAAWVGDxzY3JpcHQ+d2luZG93Ll9iZF9zaGFyZV9jb25maWc9eyJjb21tb24iOnsiYmRTbnNLZXkiOnt9LCJiZFRleHQiOiIiLCJiZE1pbmkiOiIyIiwiYmRNaW5pTGlzdCI6ZmFsc2UsImJkUGljIjoiIiwiYmRTdHlsZSI6IjAiLCJiZFNpemUiOiIxNiJ9LCJzbGlkZSI6eyJ0eXBlIjoic2xpZGUiLCJiZEltZyI6IjEiLCJiZFBvcyI6InJpZ2h0IiwiYmRUb3AiOiIxMDAifSwiaW1hZ2UiOnsidmlld0xpc3QiOlsicXpvbmUiLCJ0cXEiLCJ3ZWl4aW4iLCJ0cWYiLCJxcSIsInNxcSJdLCJ2aWV3VGV4dCI6IuWIhuS6q+WIsO+8miIsInZpZXdTaXplIjoiMTYifSwic2VsZWN0U2hhcmUiOnsiYmRDb250YWluZXJDbGFzcyI6bnVsbCwiYmRTZWxlY3RNaW5pTGlzdCI6WyJxem9uZSIsInRxcSIsIndlaXhpbiIsInRxZiIsInFxIiwic3FxIl19fTt3aXRoKGRvY3VtZW50KTBbKGdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF18fGJvZHkpLmFwcGVuZENoaWxkKGNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpKS5zcmM9J2h0dHA6Ly9iZGltZy5zaGFyZS5iYWlkdS5jb20vc3RhdGljL2FwaS9qcy9zaGFyZS5qcz92PTg5ODYwNTkzLmpzP2NkbnZlcnNpb249Jyt+KC1uZXcgRGF0ZSgpLzM2ZTUpXTs8L3NjcmlwdD4NCjxhIA0KPGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly9tYWlsLnFxLmNvbS9jZ2ktYmluL3FtX3NoYXJlP3Q9cW1fbWFpbG1lJmVtYWlsPXFjUEF5TWZPMnR6RndORGN4X25md05tSDJOaUh5c2JFIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7Ij48aW1nIHNyYz0iaHR0cDovL3Jlc2Nkbi5xcW1haWwuY29tL3poX0NOL2h0bWxlZGl0aW9uL2ltYWdlcy9mdW5jdGlvbi9xbV9vcGVuL2ljb19tYWlsbWVfMTIucG5nIi8+PC9hPg0KPGlmcmFtZSBpZD0icHJldmlld21jIiBzcmM9Imh0dHA6Ly9mb2xsb3cudi50LnFxLmNvbS9pbmRleC5waHA/Yz1mb2xsb3cmYT1xdWljayZuYW1lPXd3dzIyNTI1MTU3NTgmc3R5bGU9MSZ0PTEzNTM3ODQxMzY1MTUmZj0xIiB3aWR0aD0iMjI3IiBoZWlnaHQ9Ijc1IiBmcmFtZWJvcmRlcj0iMCIgc2Nyb2xsaW5nPSJubyIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIHN0eWxlPSJtYXJnaW46MCBhdXRvOyI+PC9pZnJhbWU+DQo8ZGl2IGlkPSJGbG93U3RhdGlzdGljczEiIHN0eWxlPSJ3aWR0aDogMHB4OyBoZWlnaHQ6IDBweDsgbWFyZ2luOiAwcHggYXV0bzsiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQo8IS0tDQphOmxpbmsgew0KY29sb3I6ICM2Njk5MzM7DQp0ZXh0LWRlY29yYXRpb246IG5vbmU7DQp9DQphOnZpc2l0ZWQgew0KdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KY29sb3I6ICMwMDAwRkY7DQp9DQphOmhvdmVyIHsNCnRleHQtZGVjb3JhdGlvbjogbm9uZTsNCmNvbG9yOiAjRkYwMDAwOw0KfQ0KYTphY3RpdmUgew0KdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KY29sb3I6ICNGRjAwRkY7DQp9DQpib2R5LHRkLHRoIHsNCmNvbG9yOiAjMDAwMEZGOw0KfQ0KLS0+DQo8L3N0eWxlPjxzcGFuIHN0eWxlPSJjb2xvcjogI0REMzAyMyI+DQo8c3BhbiBzdHlsZT0iZm9udC1zaXplOiAyNHB4Ij4NCjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDE0cHgiPg0KPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTZweCI+DQo8TUFSUVVFRSBzdHlsZT0iTEVGVDogMjcwcHg7IFBPU0lUSU9OOiBhYnNvbHV0ZTsgVE9QOiA1NXB4OyBXSURUSDogMTAwMHB4OyBIRUlHSFQ6IDI1cHgiIHNjcm9sbEFtb3VudD0zIHNjcm9sbERlbGF5PTEwIGRpcmVjdGlvbj1sZWZ0ID4NCjxzdHJvbmc+PGEgDQpocmVmPSJodHRwOi8vd3d3LmxpeXVua20uY29tL3dlYmJsYWNrL0hlbHAuYXNweCIgdGFyZ2V0PSJfYmxhbmsiPuaCqOWlvSzmrKLov47mnaXliLDliKnkupHljaHnm58sMjAxNOW5tOacgOe7meWKm+WNoeebn+W5s+WPsCzllYblk4HkuI3mlq3mm7TmlrAs6YCf5bqm5LiN5pat6LaF6LaKLOWUruWQjuS4jeaWreWKoOW8uizku7fmoLzkuI3mlq3liJvpgKDlhajnvZHmnIDkvY7ku7cs5oiR5Lus5pa96KGM5YWN6LS55Yi25bqmLOmAgeS7o+eQhizpgIHpkrss6YCB56uZ6ZW/LOWFqOe9keWUr+S4gOS4gOWutuWunuaWveWuouaIt+iHs+S4iueahOWNoeebn+W5s+WPsCzotoXotoroh6rlt7Es6LaF6LaK5qKm5oOz77yB5pCt5bu65YiG56uZLOWBmuiHquW3seeahOWNoeebn+W5s+WPsOWPqumcgDM1MOWFg+WNs+WPr+W+l+WIsO+8iOW5s+WPsOWItuW6pu+8muaJi+acuuWinuWAvOS4muWKoTPlsI/ml7blhoXmnKrlvIDljZXljrvlubPlj7Dnu7TmnYPlhajpop3pgIDmrL4tN+Wwj+aXtuWGheayoeacieihpeWNlSznlLPor7flubPlj7Dnu7TmnYPlhajpop3pgIDmrL4s5q2j5bi45oOF5Ya15oiR5Lus5bmz5Y+w5Y2V5Y2V56eS5ZOm77yB57uZ5Yqb77yB44CC44CCPC9hPjw+DQo8L01BUlFVRUU+PC9zcGFuPiA8L3NwYW4+IDwvc3Bhbj4gPC9zcGFuPjwvZGl2Pg0KDQo8c2NyaXB0PndpbmRvdy5fYmRfc2hhcmVfY29uZmlnPXsiY29tbW9uIjp7ImJkU25zS2V5Ijp7fSwiYmRUZXh0IjoiIiwiYmRNaW5pIjoiMiIsImJkTWluaUxpc3QiOmZhbHNlLCJiZFBpYyI6IiIsImJkU3R5bGUiOiIwIiwiYmRTaXplIjoiMTYifSwic2xpZGUiOnsidHlwZSI6InNsaWRlIiwiYmRJbWciOiIxIiwiYmRQb3MiOiJyaWdodCIsImJkVG9wIjoiMTAwLjUifSwiaW1hZ2UiOnsidmlld0xpc3QiOlsicXpvbmUiLCJzcXEiLCJ0cXEiLCJyZW5yZW4iLCJ3ZWl4aW4iLCJiZHhjIiwidHNpbmEiLCJoaSJdLCJ2aWV3VGV4dCI6IuWIhuS6q+WIsO+8mnFxIiwidmlld1NpemUiOiIxNiJ9LCJzZWxlY3RTaGFyZSI6eyJiZENvbnRhaW5lckNsYXNzIjpudWxsLCJiZFNlbGVjdE1pbmlMaXN0IjpbInF6b25lIiwic3FxIiwidHFxIiwicmVucmVuIiwid2VpeGluIiwiYmR4YyIsInRzaW5hIiwiaGkiXX19O3dpdGgoZG9jdW1lbnQpMFsoZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2hlYWQnKVswXXx8Ym9keSkuYXBwZW5kQ2hpbGQoY3JlYXRlRWxlbWVudCgnc2NyaXB0JykpLnNyYz0naHR0cDovL2JkaW1nLnNoYXJlLmJhaWR1LmNvbS9zdGF0aWMvYXBpL2pzL3NoYXJlLmpzP3Y9ODk4NjA1OTMuanM/Y2RudmVyc2lvbj0nK34oLW5ldyBEYXRlKCkvMzZlNSldOzwvc2NyaXB0PmQCBQ8WAh8ABZgJPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KdmFyIF9iZGhtUHJvdG9jb2wgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICIgaHR0cHM6Ly8iIDogIiBodHRwOi8vIik7DQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgiJTNDc2NyaXB0IHNyYz0nIiArIF9iZGhtUHJvdG9jb2wgKyAiaG0uYmFpZHUuY29tL2guanMlM0ZkNDE4MDY2MjcwOTRhZGIyNDNjZjJhZDQ3ODZiNzI3NScgdHlwZT0ndGV4dC9qYXZhc2NyaXB0JyUzRSUzQy9zY3JpcHQlM0UiKSk7DQo8L3NjcmlwdD4NCjxhIA0KaHJlZj0iaHR0cDovL3dlYnNjYW4uMzYwLmNuL2luZGV4L2NoZWNrd2Vic2l0ZS91cmwvd3d3LmxpeXVua20uY29tIj48aW1nIGJvcmRlcj0iMCIgc3JjPSJodHRwOi8vaW1nLndlYnNjYW4uMzYwLmNuL3N0YXR1cy9wYWkvaGFzaC83MjhjZTEzYTQ0NTAxMjcyY2IxMDhlMmI0NGQ1YjliNiIvPjwvYT4NCjxtZXRhIG5hbWU9ImNoaW5hei1zaXRlLXZlcmlmaWNhdGlvbiIgY29udGVudD0iZmFiNmUzYWUtMTU0NS00MWVhLWIwYTAtMjIxNDkxOTA0M2NkIiAvPg0KPGEgaHJlZj0iaHR0cDovL3poYW56aGFuZy5hbnF1YW4ub3JnL3BoeXNpY2FsL3JlcG9ydC8/ZG9tYWluPXd3dy5saXl1bmttLmNvbSIgbmFtZT0ieEtDNUdNSjFjWGJKSUtCUkJkVFVqZkdQbjVrYjZTRm55cTA5eFREdU83V2U0dXNzQXAiPjxpbWcgaGVpZ2h0PSI0NyIgc3JjPSJodHRwOi8vemhhbnpoYW5nLmFucXVhbi5vcmcvc3RhdGljL2NvbW1vbi9pbWFnZXMvemhhbnpoYW5nLnBuZyJhbHQ9IuWuieWFqOiBlOebn+ermemVv+W5s+WPsCIgLz48L2E+DQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+dmFyIGNuenpfcHJvdG9jb2wgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICIgaHR0cHM6Ly8iIDogIiBodHRwOi8vIik7ZG9jdW1lbnQud3JpdGUodW5lc2NhcGUoIiUzQ3NwYW4gaWQ9J2Nuenpfc3RhdF9pY29uXzEwMDAwNDU3MjQnJTNFJTNDL3NwYW4lM0UlM0NzY3JpcHQgc3JjPSciICsgY256el9wcm90b2NvbCArICJzMjIuY256ei5jb20vel9zdGF0LnBocCUzRmlkJTNEMTAwMDA0NTcyNCUyNm9ubGluZSUzRDElMjZzaG93JTNEbGluZScgdHlwZT0ndGV4dC9qYXZhc2NyaXB0JyUzRSUzQy9zY3JpcHQlM0UiKSk7PC9zY3JpcHQ+ZAIGDxYCHwAFYOWIqeS6keWNoeebn3zljaHnm5/mjpLooYzmppx856ys5LiA5Y2h55uffOWNoeebn+S7o+eQhnzljaHnm5/lubPlj7B85Y2h55uf5LmL54i2fOWNoeS5kOi0reW5s+WPsGQCBw8WAh8ABR7liKnkupHnvZHnu5zmioDmnK/mnInpmZDlhazlj7hkAggPFgIfAAUW6IuPSUNQ5aSHMTMwNjMwMDjlj7ctMWQCCw8WAh8ABaUGPGEgaHJlZj0iaHR0cDovL3d3dy5jaWt1NS5jb20iIHRpdGxlPSLor43lupPnvZEiIHRhcmdldD0iX2JsYW5rIj7or43lupPnvZE8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuenpsei5uZXQ+6L+e6YCa5LiW55WM5b+X6L6+5aSp5LiLPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3Ljk5OXRuYi5jb20+5aSn56CB5aWz6KOF5ZOB54mMPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3LnpneGN3Lm9yZz7mnLXku6Xlrpjmlrnml5foiLDlupc8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuZ29vZG5ld3N0YXJ0LmNvbT7og5bkurrmnI3ppbDnvZE8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuamlueXcuY29tPuWuieW5s+WQpzwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy53ZWl5aW5na2UubmV0PuWFjei0uTEwR+epuumXtDwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy5iYWliYW81OC5jb20+4pml55m+5a6d4pml5ZWG5Z+O4pmlPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3LnNvcGhwLm1sPue6pOiIkue+jjwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy50aWFubWFvbmV0Lm5ldD7lpKnnjKvnvZE8L2E+DQo8YSBocmVmPSJodHRwOi8vd3d3LjE4a213LmNvbS9zZF83OTkuaHRtIiB0YXJnZXQ9Il9ibGFuayI+PGltZyBzcmM9Imh0dHA6Ly93d3cuMThrbXcuY29tL2xvZ28ucG5nIiBhbHQ9IuW3suiiqzE45Y2h55uf5a+86Iiq5pS25b2VIiAvPjwvYT48YSBjbGFzcz0nanViYW8nIGhyZWY9J2h0dHA6Ly93d3cua2FsZWdvdS5jb20vanViYW8uaHRtJyB0YXJnZXQ9J19ibGFuayc+PGltZyBzcmM9Jy4uL2ltYWdlcy9pY29uX2p1YmFvLnBuZyc+PC9hPmRktwgLJMQ6DABP6WhTGqquzDF7ZBI=" />
-</div>
-
-    <div class="header">
-        <dl class="header">
-            <dt style="display: none;">��ӭ����admin<a href="###">�ҵ��ʻ�</a><a href="###" class="red_a">��ֵ</a><em>|</em><a
-                href="###">����0��</a><a href="###" class="phone_a">�ֻ���</a><a href="###">���ֶһ� </a>
-            </dt>
-            <dd>
-                <a href="javascript:" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(location.href);">
-                    ��Ϊ��ҳ</a><a onclick="window.external.addFavorite('http://'+document.domain, 
-
-document.title);" href="javascript:">�����ղ�</a><a  href="/index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">��������</a></dd>
-        </dl>
-    </div>
-    
-    <div class="header_c">
-        <div class="header_c_t">
-            <a href="index.php">
-                <div id="AgentLogo" class="logo" style="background:url(/content/mod_b2b/images/mylogo.gif) no-repeat 20px 50%;">
-                </div>
-            </a>
-            
-            <div class="header_r">
-                <ul class="h_tool_nav th red_link">
-                    <li id="liAgent" class="n_1"><a id="A1">����ƽ̨ </a></li>
-                    <li id="liYKT" class="n_2"><a href="http://www.xybss.com.cn/" id="YKTCncUrl" target="_blank">
-                        һ��ͨ</a></li>
-                </ul>
-            </div>
-            
-        </div>
-        
-    </div>
-    
-    <div class="nav">
-        <dl class="nav th">
-            <dd id="nav_hover01">
-                <a href="/">�� ҳ</a></dd>
-            <dd id="nav_hover02">
-                <a href="/index.php?m=mod_b2b&a=reg">�û�ע��</a></dd>
-            <dd id="nav_hover03">
-                <a href="/index.php?m=mod_b2b&c=article&a=home&name=%C5%FA%B7%A2%CF%B5%CD%B3%B9%AB%B8%E6">������Ϣ</a></dd>
-            <dd id="nav_hover04">
-                <a href="/index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">��������</a></dd>
-            <dd><a href="http://52yma.taobao.com/" rel="nofollow"><span>���ļӿ����</span></a></dd><dd><a href="http://52yma.taobao.com " rel="nofollow"><span>�Ա��ӿ����</span></a></dd><dd><a href="http://www.xybss.com.cn/" rel="nofollow"><span>���ֶһ��̵�</span></a></dd>
-        </dl>
-    </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
-<div class="clear_div2 center_bj">
-
-        <div class="clear_div2 h_one">
-
-            <script type="text/javascript" src="../js/jquery.js"></script>
-
-                <script type="text/javascript" src="../js/h_flash.js"></script>
-
-                <div class="tab h_flash">
-
-                    <script type="text/javascript">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title id="AgentSiteName"></title>
+
+    <meta id="AgentDescription" name="description" content="新云数卡销售平台演示站 - 最大、最安全的网上点卡交易平台，提供点卡、话费、QQ币、QQ业务直充及卡密等特价商品，同时提供优质的售后服务，让你全面安心享受网上购物乐趣 Powered by 新云卡"></meta>
+
+    <meta id="AgentKeyWords" name="keywords" content="游戏点卡,Q币Q钻,游戏充值卡,电话卡,手机充值卡"></meta>
+
+    
+
+    <link href="/Themes/webblack/css/global.css" rel="stylesheet" type="text/css" />
+
+    <link href="/Themes/webblack/css/css.css" rel="stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">
+
+        var AgentQian = "webblack";
+
+    </script>
+
+</head>
+
+<body id="nav_btn01">
+
+    <form name="loginForm" action="/index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
+
+
+
+<div>
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA4OTkwNTQ1MA9kFgoCAQ8WAh4JaW5uZXJodG1sBWDliKnkupHljaHnm5985Y2h55uf5o6S6KGM5qacfOesrOS4gOWNoeebn3zljaHnm5/ku6PnkIZ85Y2h55uf5bmz5Y+wfOWNoeebn+S5i+eItnzljaHkuZDotK3lubPlj7BkAgMPFgIeB2NvbnRlbnQFtALliKnkupHljaHnm5/lubPlj7DmmK/ljaHnm5/mjpLooYzmppznrKzkuIAs5piv5YWo5Zu95pyA5aSn5pyA5by65pyA5LiT5Lia55qE5Y2h55uf572R56uZLOS4gOS4quS4uueUqOaIt+aPkOS+m+acgOS+v+aNtyzov4XpgJ/lvIDljZXnp5LljZUs5pyA5LiT5Lia5pyN5Yqh55qE5Y2h55uf5bmz5Y+wLOS4muWKoTLmipjotbcs546w5q2j54Gr54iG5oub5pS25Y2h55uf5Luj55CG5ZWGLOivmumAgeS7o+eQhizkuJPms6jljaHnm5/mlbDlrZflubPlj7As5pyN5Yqh5bm/5aSn5Y2h55uf6KGM5Lia5Yib5Lia6ICFLOWFqOWbveefpeWQjeWTgeeJjGQCBQ8WAh8BBVjljaHnm5985Yip5LqR5Y2h55uffOWNoeebn+aOkuihjOamnHznrKzkuIDljaHnm5985Y2h55uf5Luj55CGfOWNoeebn+W5s+WPsHzljaHnm5/kuYvniLZ8ZAIJD2QWEGYPFgIeBXN0eWxlBWNiYWNrZ3JvdW5kOnVybCguLi9pbWFnZXMyL3d3d19saXl1bmttX2NvbS8zYzQzMzYwOWIxNWY0M2ViODIxNjJkZGYwNjJmZGU2ZS5wbmcpIG5vLXJlcGVhdCAyMHB4IDUwJTtkAgIPZBYCZg8WAh4EaHJlZgUXaHR0cDovL2xpeXVua20uMThrbS5jbi9kAgMPFgIeBFRleHQFowI8ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20udGFvYmFvLmNvbS8iIHJlbD0ibm9mb2xsb3ciPjxzcGFuPuaLjeaLjeWKoOasvuWumOe9kTwvc3Bhbj48L2E+PC9kZD48ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20udGFvYmFvLmNvbSAiIHJlbD0ibm9mb2xsb3ciPjxzcGFuPua3mOWuneWKoOasvuWumOe9kTwvc3Bhbj48L2E+PC9kZD48ZGQ+PGEgaHJlZj0iaHR0cDovL2xpeXVua20uMThrbS5jbi9qaWZlbi8iIHJlbD0ibm9mb2xsb3ciPjxzcGFuPuenr+WIhuWFkeaNouWVhuW6lzwvc3Bhbj48L2E+PC9kZD5kAgQPFgIfAAWVGDxzY3JpcHQ+d2luZG93Ll9iZF9zaGFyZV9jb25maWc9eyJjb21tb24iOnsiYmRTbnNLZXkiOnt9LCJiZFRleHQiOiIiLCJiZE1pbmkiOiIyIiwiYmRNaW5pTGlzdCI6ZmFsc2UsImJkUGljIjoiIiwiYmRTdHlsZSI6IjAiLCJiZFNpemUiOiIxNiJ9LCJzbGlkZSI6eyJ0eXBlIjoic2xpZGUiLCJiZEltZyI6IjEiLCJiZFBvcyI6InJpZ2h0IiwiYmRUb3AiOiIxMDAifSwiaW1hZ2UiOnsidmlld0xpc3QiOlsicXpvbmUiLCJ0cXEiLCJ3ZWl4aW4iLCJ0cWYiLCJxcSIsInNxcSJdLCJ2aWV3VGV4dCI6IuWIhuS6q+WIsO+8miIsInZpZXdTaXplIjoiMTYifSwic2VsZWN0U2hhcmUiOnsiYmRDb250YWluZXJDbGFzcyI6bnVsbCwiYmRTZWxlY3RNaW5pTGlzdCI6WyJxem9uZSIsInRxcSIsIndlaXhpbiIsInRxZiIsInFxIiwic3FxIl19fTt3aXRoKGRvY3VtZW50KTBbKGdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF18fGJvZHkpLmFwcGVuZENoaWxkKGNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpKS5zcmM9J2h0dHA6Ly9iZGltZy5zaGFyZS5iYWlkdS5jb20vc3RhdGljL2FwaS9qcy9zaGFyZS5qcz92PTg5ODYwNTkzLmpzP2NkbnZlcnNpb249Jyt+KC1uZXcgRGF0ZSgpLzM2ZTUpXTs8L3NjcmlwdD4NCjxhIA0KPGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly9tYWlsLnFxLmNvbS9jZ2ktYmluL3FtX3NoYXJlP3Q9cW1fbWFpbG1lJmVtYWlsPXFjUEF5TWZPMnR6RndORGN4X25md05tSDJOaUh5c2JFIiBzdHlsZT0idGV4dC1kZWNvcmF0aW9uOm5vbmU7Ij48aW1nIHNyYz0iaHR0cDovL3Jlc2Nkbi5xcW1haWwuY29tL3poX0NOL2h0bWxlZGl0aW9uL2ltYWdlcy9mdW5jdGlvbi9xbV9vcGVuL2ljb19tYWlsbWVfMTIucG5nIi8+PC9hPg0KPGlmcmFtZSBpZD0icHJldmlld21jIiBzcmM9Imh0dHA6Ly9mb2xsb3cudi50LnFxLmNvbS9pbmRleC5waHA/Yz1mb2xsb3cmYT1xdWljayZuYW1lPXd3dzIyNTI1MTU3NTgmc3R5bGU9MSZ0PTEzNTM3ODQxMzY1MTUmZj0xIiB3aWR0aD0iMjI3IiBoZWlnaHQ9Ijc1IiBmcmFtZWJvcmRlcj0iMCIgc2Nyb2xsaW5nPSJubyIgYWxsb3d0cmFuc3BhcmVuY3k9InRydWUiIHN0eWxlPSJtYXJnaW46MCBhdXRvOyI+PC9pZnJhbWU+DQo8ZGl2IGlkPSJGbG93U3RhdGlzdGljczEiIHN0eWxlPSJ3aWR0aDogMHB4OyBoZWlnaHQ6IDBweDsgbWFyZ2luOiAwcHggYXV0bzsiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQo8IS0tDQphOmxpbmsgew0KY29sb3I6ICM2Njk5MzM7DQp0ZXh0LWRlY29yYXRpb246IG5vbmU7DQp9DQphOnZpc2l0ZWQgew0KdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KY29sb3I6ICMwMDAwRkY7DQp9DQphOmhvdmVyIHsNCnRleHQtZGVjb3JhdGlvbjogbm9uZTsNCmNvbG9yOiAjRkYwMDAwOw0KfQ0KYTphY3RpdmUgew0KdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KY29sb3I6ICNGRjAwRkY7DQp9DQpib2R5LHRkLHRoIHsNCmNvbG9yOiAjMDAwMEZGOw0KfQ0KLS0+DQo8L3N0eWxlPjxzcGFuIHN0eWxlPSJjb2xvcjogI0REMzAyMyI+DQo8c3BhbiBzdHlsZT0iZm9udC1zaXplOiAyNHB4Ij4NCjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDE0cHgiPg0KPHNwYW4gc3R5bGU9ImZvbnQtc2l6ZTogMTZweCI+DQo8TUFSUVVFRSBzdHlsZT0iTEVGVDogMjcwcHg7IFBPU0lUSU9OOiBhYnNvbHV0ZTsgVE9QOiA1NXB4OyBXSURUSDogMTAwMHB4OyBIRUlHSFQ6IDI1cHgiIHNjcm9sbEFtb3VudD0zIHNjcm9sbERlbGF5PTEwIGRpcmVjdGlvbj1sZWZ0ID4NCjxzdHJvbmc+PGEgDQpocmVmPSJodHRwOi8vd3d3LmxpeXVua20uY29tL3dlYmJsYWNrL0hlbHAuYXNweCIgdGFyZ2V0PSJfYmxhbmsiPuaCqOWlvSzmrKLov47mnaXliLDliKnkupHljaHnm58sMjAxNOW5tOacgOe7meWKm+WNoeebn+W5s+WPsCzllYblk4HkuI3mlq3mm7TmlrAs6YCf5bqm5LiN5pat6LaF6LaKLOWUruWQjuS4jeaWreWKoOW8uizku7fmoLzkuI3mlq3liJvpgKDlhajnvZHmnIDkvY7ku7cs5oiR5Lus5pa96KGM5YWN6LS55Yi25bqmLOmAgeS7o+eQhizpgIHpkrss6YCB56uZ6ZW/LOWFqOe9keWUr+S4gOS4gOWutuWunuaWveWuouaIt+iHs+S4iueahOWNoeebn+W5s+WPsCzotoXotoroh6rlt7Es6LaF6LaK5qKm5oOz77yB5pCt5bu65YiG56uZLOWBmuiHquW3seeahOWNoeebn+W5s+WPsOWPqumcgDM1MOWFg+WNs+WPr+W+l+WIsO+8iOW5s+WPsOWItuW6pu+8muaJi+acuuWinuWAvOS4muWKoTPlsI/ml7blhoXmnKrlvIDljZXljrvlubPlj7Dnu7TmnYPlhajpop3pgIDmrL4tN+Wwj+aXtuWGheayoeacieihpeWNlSznlLPor7flubPlj7Dnu7TmnYPlhajpop3pgIDmrL4s5q2j5bi45oOF5Ya15oiR5Lus5bmz5Y+w5Y2V5Y2V56eS5ZOm77yB57uZ5Yqb77yB44CC44CCPC9hPjw+DQo8L01BUlFVRUU+PC9zcGFuPiA8L3NwYW4+IDwvc3Bhbj4gPC9zcGFuPjwvZGl2Pg0KDQo8c2NyaXB0PndpbmRvdy5fYmRfc2hhcmVfY29uZmlnPXsiY29tbW9uIjp7ImJkU25zS2V5Ijp7fSwiYmRUZXh0IjoiIiwiYmRNaW5pIjoiMiIsImJkTWluaUxpc3QiOmZhbHNlLCJiZFBpYyI6IiIsImJkU3R5bGUiOiIwIiwiYmRTaXplIjoiMTYifSwic2xpZGUiOnsidHlwZSI6InNsaWRlIiwiYmRJbWciOiIxIiwiYmRQb3MiOiJyaWdodCIsImJkVG9wIjoiMTAwLjUifSwiaW1hZ2UiOnsidmlld0xpc3QiOlsicXpvbmUiLCJzcXEiLCJ0cXEiLCJyZW5yZW4iLCJ3ZWl4aW4iLCJiZHhjIiwidHNpbmEiLCJoaSJdLCJ2aWV3VGV4dCI6IuWIhuS6q+WIsO+8mnFxIiwidmlld1NpemUiOiIxNiJ9LCJzZWxlY3RTaGFyZSI6eyJiZENvbnRhaW5lckNsYXNzIjpudWxsLCJiZFNlbGVjdE1pbmlMaXN0IjpbInF6b25lIiwic3FxIiwidHFxIiwicmVucmVuIiwid2VpeGluIiwiYmR4YyIsInRzaW5hIiwiaGkiXX19O3dpdGgoZG9jdW1lbnQpMFsoZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2hlYWQnKVswXXx8Ym9keSkuYXBwZW5kQ2hpbGQoY3JlYXRlRWxlbWVudCgnc2NyaXB0JykpLnNyYz0naHR0cDovL2JkaW1nLnNoYXJlLmJhaWR1LmNvbS9zdGF0aWMvYXBpL2pzL3NoYXJlLmpzP3Y9ODk4NjA1OTMuanM/Y2RudmVyc2lvbj0nK34oLW5ldyBEYXRlKCkvMzZlNSldOzwvc2NyaXB0PmQCBQ8WAh8ABZgJPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KdmFyIF9iZGhtUHJvdG9jb2wgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICIgaHR0cHM6Ly8iIDogIiBodHRwOi8vIik7DQpkb2N1bWVudC53cml0ZSh1bmVzY2FwZSgiJTNDc2NyaXB0IHNyYz0nIiArIF9iZGhtUHJvdG9jb2wgKyAiaG0uYmFpZHUuY29tL2guanMlM0ZkNDE4MDY2MjcwOTRhZGIyNDNjZjJhZDQ3ODZiNzI3NScgdHlwZT0ndGV4dC9qYXZhc2NyaXB0JyUzRSUzQy9zY3JpcHQlM0UiKSk7DQo8L3NjcmlwdD4NCjxhIA0KaHJlZj0iaHR0cDovL3dlYnNjYW4uMzYwLmNuL2luZGV4L2NoZWNrd2Vic2l0ZS91cmwvd3d3LmxpeXVua20uY29tIj48aW1nIGJvcmRlcj0iMCIgc3JjPSJodHRwOi8vaW1nLndlYnNjYW4uMzYwLmNuL3N0YXR1cy9wYWkvaGFzaC83MjhjZTEzYTQ0NTAxMjcyY2IxMDhlMmI0NGQ1YjliNiIvPjwvYT4NCjxtZXRhIG5hbWU9ImNoaW5hei1zaXRlLXZlcmlmaWNhdGlvbiIgY29udGVudD0iZmFiNmUzYWUtMTU0NS00MWVhLWIwYTAtMjIxNDkxOTA0M2NkIiAvPg0KPGEgaHJlZj0iaHR0cDovL3poYW56aGFuZy5hbnF1YW4ub3JnL3BoeXNpY2FsL3JlcG9ydC8/ZG9tYWluPXd3dy5saXl1bmttLmNvbSIgbmFtZT0ieEtDNUdNSjFjWGJKSUtCUkJkVFVqZkdQbjVrYjZTRm55cTA5eFREdU83V2U0dXNzQXAiPjxpbWcgaGVpZ2h0PSI0NyIgc3JjPSJodHRwOi8vemhhbnpoYW5nLmFucXVhbi5vcmcvc3RhdGljL2NvbW1vbi9pbWFnZXMvemhhbnpoYW5nLnBuZyJhbHQ9IuWuieWFqOiBlOebn+ermemVv+W5s+WPsCIgLz48L2E+DQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+dmFyIGNuenpfcHJvdG9jb2wgPSAoKCJodHRwczoiID09IGRvY3VtZW50LmxvY2F0aW9uLnByb3RvY29sKSA/ICIgaHR0cHM6Ly8iIDogIiBodHRwOi8vIik7ZG9jdW1lbnQud3JpdGUodW5lc2NhcGUoIiUzQ3NwYW4gaWQ9J2Nuenpfc3RhdF9pY29uXzEwMDAwNDU3MjQnJTNFJTNDL3NwYW4lM0UlM0NzY3JpcHQgc3JjPSciICsgY256el9wcm90b2NvbCArICJzMjIuY256ei5jb20vel9zdGF0LnBocCUzRmlkJTNEMTAwMDA0NTcyNCUyNm9ubGluZSUzRDElMjZzaG93JTNEbGluZScgdHlwZT0ndGV4dC9qYXZhc2NyaXB0JyUzRSUzQy9zY3JpcHQlM0UiKSk7PC9zY3JpcHQ+ZAIGDxYCHwAFYOWIqeS6keWNoeebn3zljaHnm5/mjpLooYzmppx856ys5LiA5Y2h55uffOWNoeebn+S7o+eQhnzljaHnm5/lubPlj7B85Y2h55uf5LmL54i2fOWNoeS5kOi0reW5s+WPsGQCBw8WAh8ABR7liKnkupHnvZHnu5zmioDmnK/mnInpmZDlhazlj7hkAggPFgIfAAUW6IuPSUNQ5aSHMTMwNjMwMDjlj7ctMWQCCw8WAh8ABaUGPGEgaHJlZj0iaHR0cDovL3d3dy5jaWt1NS5jb20iIHRpdGxlPSLor43lupPnvZEiIHRhcmdldD0iX2JsYW5rIj7or43lupPnvZE8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuenpsei5uZXQ+6L+e6YCa5LiW55WM5b+X6L6+5aSp5LiLPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3Ljk5OXRuYi5jb20+5aSn56CB5aWz6KOF5ZOB54mMPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3LnpneGN3Lm9yZz7mnLXku6Xlrpjmlrnml5foiLDlupc8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuZ29vZG5ld3N0YXJ0LmNvbT7og5bkurrmnI3ppbDnvZE8L2E+DQo8YSBocmVmPWh0dHA6Ly93d3cuamlueXcuY29tPuWuieW5s+WQpzwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy53ZWl5aW5na2UubmV0PuWFjei0uTEwR+epuumXtDwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy5iYWliYW81OC5jb20+4pml55m+5a6d4pml5ZWG5Z+O4pmlPC9hPg0KPGEgaHJlZj1odHRwOi8vd3d3LnNvcGhwLm1sPue6pOiIkue+jjwvYT4NCjxhIGhyZWY9aHR0cDovL3d3dy50aWFubWFvbmV0Lm5ldD7lpKnnjKvnvZE8L2E+DQo8YSBocmVmPSJodHRwOi8vd3d3LjE4a213LmNvbS9zZF83OTkuaHRtIiB0YXJnZXQ9Il9ibGFuayI+PGltZyBzcmM9Imh0dHA6Ly93d3cuMThrbXcuY29tL2xvZ28ucG5nIiBhbHQ9IuW3suiiqzE45Y2h55uf5a+86Iiq5pS25b2VIiAvPjwvYT48YSBjbGFzcz0nanViYW8nIGhyZWY9J2h0dHA6Ly93d3cua2FsZWdvdS5jb20vanViYW8uaHRtJyB0YXJnZXQ9J19ibGFuayc+PGltZyBzcmM9Jy4uL2ltYWdlcy9pY29uX2p1YmFvLnBuZyc+PC9hPmRktwgLJMQ6DABP6WhTGqquzDF7ZBI=" />
+
+</div>
+
+
+
+    <div class="header">
+
+        <dl class="header">
+
+            <dt style="display: none;">欢迎您，admin<a href="###">我的帐户</a><a href="###" class="red_a">充值</a><em>|</em><a
+
+                href="###">短信0条</a><a href="###" class="phone_a">手机版</a><a href="###">积分兑换 </a>
+
+            </dt>
+
+            <dd>
+
+                <a href="javascript:" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(location.href);">
+
+                    设为首页</a><a onclick="window.external.addFavorite('http://'+document.domain, 
+
+
+
+document.title);" href="javascript:">加入收藏</a><a  href="/index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">帮助中心</a></dd>
+
+        </dl>
+
+    </div>
+
+    
+    <div class="header_c">
+
+        <div class="header_c_t">
+
+            <a href="index.php">
+
+                <div id="AgentLogo" class="logo" style="background:url(/content/mod_b2b/images/mylogo.gif) no-repeat 20px 50%;">
+
+                </div>
+
+            </a>
+
+            
+            <div class="header_r">
+
+                <ul class="h_tool_nav th red_link">
+
+                    <li id="liAgent" class="n_1"><a id="A1">网吧平台 </a></li>
+
+                    <li id="liYKT" class="n_2"><a href="http://www.xybss.com.cn/" id="YKTCncUrl" target="_blank">
+
+                        一卡通</a></li>
+
+                </ul>
+
+            </div>
+
+            
+        </div>
+
+        
+    </div>
+
+    
+    <div class="nav">
+
+        <dl class="nav th">
+
+            <dd id="nav_hover01">
+
+                <a href="/">首 页</a></dd>
+
+            <dd id="nav_hover02">
+
+                <a href="/index.php?m=mod_b2b&a=reg">用户注册</a></dd>
+
+            <dd id="nav_hover03">
+
+                <a href="/index.php?m=mod_b2b&c=article&a=home&name=%C5%FA%B7%A2%CF%B5%CD%B3%B9%AB%B8%E6">公告信息</a></dd>
+
+            <dd id="nav_hover04">
+
+                <a href="/index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">帮助中心</a></dd>
+
+            <dd><a href="http://52yma.taobao.com/" rel="nofollow"><span>拍拍加款官网</span></a></dd><dd><a href="http://52yma.taobao.com " rel="nofollow"><span>淘宝加款官网</span></a></dd><dd><a href="http://www.xybss.com.cn/" rel="nofollow"><span>积分兑换商店</span></a></dd>
+
+        </dl>
+
+    </div>
+
+
+
+
+<div class="clear_div2 center_bj">
+
+
+
+        <div class="clear_div2 h_one">
+
+
+
+            <script type="text/javascript" src="../js/jquery.js"></script>
+
+
+
+                <script type="text/javascript" src="../js/h_flash.js"></script>
+
+
+
+                <div class="tab h_flash">
+
+
+
+                    <script type="text/javascript">
+
+
+
 var slideradv_jsdatas = [
-
-
-
 
-
-			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/111.jpg", AdLinkName: ""}
-
-
-
 
-
-
-
 
-
-
-
-			 ,
-
-
-
+
+
+
+
+
+
+			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/111.jpg", AdLinkName: ""}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			 ,
+
+
+
+
+
+
+
 			 
-
-			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/4.jpg", AdLinkName: ""}
-
-
-
 
-
-
-
 
-
-
-
-			 ,
-
-
-
+			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/4.jpg", AdLinkName: ""}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			 ,
+
+
+
+
+
+
+
 			 
-
-			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/6.jpg", AdLinkName: ""}
-
-
-
 
-
-
-
 
-
-
-
-			 ,
-
-
-
+			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/6.jpg", AdLinkName: ""}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			 ,
+
+
+
+
+
+
+
 			 
-
-			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/f6f4201fe6c34d51bd451ceb9db71298.jpg", AdLinkName: ""}
-
-
-
 
-
-];</script>
-
-                    <script type="text/javascript" src="../js/webjs/slideradv.js"></script>
-
-            </div>
-
-            
-
-            <div class="h_login">
-
-                <div class="tab_c_box h_login_box">
-
-                    <div>
-
-                        <dl class="clear_div h_login">
-
-                            <dt class="login_box1">
-
-                            <form name="loginForm" action="/index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
-
-                                <label>
-
-                                    <input type=text size=40 maxlength=50 name="aname" id="aname" class="login_text1" tabindex="1"  value="��¼"></label></dt>
-
-                            <dt class="login_box2">
-
-                              <label>
-
-                                    <input id="pwd" name="pwd" class="login_text1" value="����" onfocus="this.value='';" onblur="if(this.value==''){this.value='����'}" />
-
-                                    
-
-                                </label>
-
-                                   
-
-                            </dt> <dt class="login_box2">
-
-                              <label> <input type=text size="5" maxlength="6" name="verifycode" id="verifycode" class="input" tabindex="4">
-
-<img src="/index.php?m=mod_b2b&c=Cust&a=RandCode&t=0" id="src" align="absmiddle" height="20" width="60" alt="�������?����ˢ��" onClick="this.src=this.src+'&'+Math.random();"/></label> </dt>
-
-                        </dl>
-
-                        <dl class="clear_div h_login_safe">
-
-                            <table>
-
-                                <tr>
-
-                                    <td width="20">
-
-                                        <input type="checkbox" id="chkSafe" name="chkSafe" value="" onClick="chkChange()" />
-
-                                    </td>
-
-                                    <td width="105">
-
-                                        ��ȫ�ؼ���¼
-
-                                    </td>
-
-                                    <td>
-
-                                        <a href="/">�һ����룿</a>
-
-                                    </td>
-
-                                    <td>
-
-                                        <a href="/">�����</a>
-
-                                    </td>
-
-                                </tr>
-
-                            </table>
-
-                        </dl>
-
-                        <dl class="h_login_kj">
-
-                            <dd>
-
-                                <a href="/">
-
-                                    ��½��</a></dd>
-
-                            <dd>
-
-                                <a href="/">��ȫ�ؼ�</a></dd>
-
-                        </dl>
-
-                        <dl class="clear_div h_login_btn">
-
-                            <span class="l">
-
-                                <div id="logImg" class="loading" style="display: none">
-
-                                    <img style="margin-left: 10px;" src="../images/loading1.gif" /><span>���ڵ�¼��...</span>
-
-                                </div>
-
-                                <div id="myLog">
-
-                                    
-
-<input type="submit" class="login_btn1" name="Submit" value="��½" /></div>
-
-                            </span><span class="r">
-
-                                 <input type="button" value="���û�ע��" class="reg_btn1" onclick="javascript:location.href='/index.php?m=mod_b2b&a=reg';" /></span>
-
-                        </dl>
-
-                        <dl class="login_other">
-
-                           
-
-                            <dd>
-
-                                <a class="login_qq" href="/" target="_blank">
-
-                                    QQ</a></dd>
-
-                            <dd>
-
-                                <a class="login_sina" href="#" title="���ڿ�����">����</a></dd>
-
-                            <dd>
-
-                                <a class="login_taobao" href="#" title="���ڿ�����">�Ա�</a></dd>
-
-                        </dl>
-
-                    </div>
-
-                </div>
-
-                
-
-            </div>
-
-            
-
-
-
-
-
-
-
-                    
-
-        <div class="clear_div h_one">
-
-            
-
-            <div class="h_left">
-
-                <div class="h_left h_ann">
-
-                    <dl class="h_th">
-
-                        <dd class="th">
-
-                            ϵͳ����</dd><dt><a href="/">����+</a></dt></dl>
-
-                    <div class="gray_border">
-
-                        <ul id="newsList" class="clear_div h_ann">
-
-     
-
-    
-
-      <li><span style="float:right">01/21</span><a href="/article/198.html" target="_blank"  title="���ٷ������������������ɾ�Ӫ�ƽ�ʱ��"><font color="#000066">���ٷ������������������ɾ�Ӫ�ƽ�ʱ��</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">05/07</span><a href="/article/152.html" target="_blank"  title="������������PHP��ASPX���ĸ��ã���������Ϊ���˵"><font color="">������������PHP��ASPX���ĸ��ã���������..</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">05/07</span><a href="/article/151.html" target="_blank"  title="��������������˵ֱ���Ʒ��Ǯ��û�е�����ô��"><font color="#0066FF">��������������˵ֱ���Ʒ��Ǯ��û�е���..</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">05/07</span><a href="/article/150.html" target="_blank"  title="��������������˵��ֵδ�ɹ�����ҳ�ر�����ô�죿"><font color="#FF0000">��������������˵��ֵδ�ɹ�����ҳ�ر���..</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">05/06</span><a href="/article/212.html" target="_blank"  title="�����ƿ����ҽ����ǲ���һ����"><font color="#FF0000">�����ƿ����ҽ����ǲ���һ����</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">04/02</span><a href="/article/207.html" target="_blank"  title="�����ƿ������°汾4.02����˵��"><font color="">�����ƿ������°汾4.02����˵��</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">04/08</span><a href="/article/206.html" target="_blank"  title="�����ƿ����ٷ���վ�����˺�admin����admin"><font color="#FF0000">�����ƿ����ٷ���վ�����˺�admin����adm..</font></a></li> 
-
-     
-
-    
-
-      <li><span style="float:right">03/31</span><a href="/article/203.html" target="_blank"  title="�����ƿ���-��ʾվ-��������ϵͳ����"><font color="#FF0033">�����ƿ���-��ʾվ-��������ϵͳ����</font></a></li> 
-
- 
-
-                           
-
-                        </ul>
-
-                    </div>
-
-                    
-
-                </div>
-
-                
-
-                
-
-                <div class="h_left">
-
-                    <div class="clear_div h_brank">
-
-                        <dl class="h_th">
-
-                            <dd class="th">
-
-                                ������Ϣ</dd><dt><a href="/">����+</a></dt></dl>
-
-                        <div class="gray_border">
-
-                            <ul class="clear_div h_brank">
-
-                            
-
 
-
-					
-
-          <li><dl>
-
-  		    	<dt><img src="/content/mod_shared/skins/upload/bank_tenpay.gif" width="30" height="36"/></dt>
-
-  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>�Ƹ�ͨ</u></b></a>����������<br/>
-
-            936992497<br/>
-
-            �˻�������ϵ����<br/>
-
-  		    </li>
-
-  		    
-
-          
-
-					
-
-          <li><dl>
-
-  		    	<dt><img src="/content/mod_shared/skins/upload/bank_alipay.gif" width="30" height="36"/></dt>
-
-  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>֧����</u></b></a>����������<br/>
-
-            18338762664<br/>
-
-            �˻�������ϵ����<br/>
-
-  		    </li>
-
-  		    
-
-          
-
-					
-
-          <li><dl>
-
-  		    	<dt><img src="/content/mod_shared/skins/upload/bank_nh.gif" width="30" height="36"/></dt>
-
-  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>ũ�п�</u></b></a>����������<br/>
-
-            6228482382373970912<br/>
-
-            �˻�������ϵ����<br/>
-
-  		    </li>
-
-  		    
-
-          
-
-					
-
-          <li><dl>
-
-  		    	<dt><img src="/content/mod_shared/skins/upload/bank_yz.gif" width="30" height="36"/></dt>
-
-  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>������</u></b></a>����������<br/>
-
-            6210985131006973904<br/>
-
-            �˻�������ϵ����<br/>
-
-  		    </li>
-
-  		    
-
-          
-
-                              
-
-                            </ul>
-
-                      </div>
-
-                        
-
-                    </div>
-
-                    
-
-                    <div class="clear_div h_contact">
-
-                        <dl class="h_th">
-
-                            <dd class="th">
-
-                                ��ϵ����</dd><dt><a href="/">����+</a></dt></dl>
-
-                        <div class="gray_border">
-
-                            <ul class="clear_div th h_contact">
-
-                            
-
-          <li><dl><dt><img src='images/time.png' alt='������ѯʱ��' width='31' height='31'/></dt><dd>������ѯʱ��:<span class='tel'>9:00-23:00</span></dd></dl>   <em><span class="r"><input type="button" class="yan_qq" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&c=qqyz'"></span><span class="l"><input type="button" class="qq_contact" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&a=Dkf'"></em></li>  
-
-          
-  <li><dl><dt><img src='images/tel.png' alt='�绰' width='31' height='31' /></dt>
-
-          
-
-        <dd>�ͷ��绰: <span class='tel'>
-
-          18338762664</span><p></dd>    
-
-        <dd>�ӿ�绰: <span class='tel'>
-
-          18338762664</span><p></dd>    
-
-        <dd>Ͷ�ߵ绰: <span class='tel'>
-
-          18338762664</span><p></dd>    
-
-          
-
-          </dl></li>             
-
-                            
-
-                   </ul>
-
-                        </div>
-
-                        
-
-                    </div>
-
-                    
-
-                </div>
-
-            </div>
-
-            
-
-            
-
-            <div class="h_right">
-
-                <div class="h_right">
-
-
-
-                           
-
+			 {IsOtherUrl: 1, AdLinkUrl: "", AdLinkPicture: "/content/mod_shared/skins/upload/f6f4201fe6c34d51bd451ceb9db71298.jpg", AdLinkName: ""}
 
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-   
-
-
-
-<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd1.gif" alt='��������' width='269' height='64'/></a>
-
-
-
-
-
-
-
-    
-
-    
-
-    
-
-   
-
-
-
-<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd2.gif" alt='��������' width='269' height='64'/></a>
-
-
-
-
-
-
-
-    
-
-    
-
-    
-
-   
-
-
-
-<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd3.gif" alt='��������' width='269' height='64'/></a>
-
-
-
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-                   
-
-                </div>
-
+
+
+
+
+
+
+
+
+
+];</script>
+
+
+
+                    <script type="text/javascript" src="../js/webjs/slideradv.js"></script>
+
+
+
+            </div>
+
+
+
+            
+
+
+            <div class="h_login">
+
+
+
+                <div class="tab_c_box h_login_box">
+
+
+
+                    <div>
+
+
+
+                        <dl class="clear_div h_login">
+
+
+
+                            <dt class="login_box1">
+
+
+
+                            <form name="loginForm" action="/index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
+
+
+
+                                <label>
+
+
+
+                                    <input type=text size=40 maxlength=50 name="aname" id="aname" class="login_text1" tabindex="1"  value="登录"></label></dt>
+
+
+
+                            <dt class="login_box2">
+
+
+
+                              <label>
+
+
+
+                                    <input id="pwd" name="pwd" class="login_text1" value="密码" onfocus="this.value='';" onblur="if(this.value==''){this.value='密码'}" />
+
+
+
+                                    
+
+
+
+                                </label>
+
+
+
+                                   
+
+
+
+                            </dt> <dt class="login_box2">
+
+
+
+                              <label> <input type=text size="5" maxlength="6" name="verifycode" id="verifycode" class="input" tabindex="4">
+
+
+
+<img src="/index.php?m=mod_b2b&c=Cust&a=RandCode&t=0" id="src" align="absmiddle" height="20" width="60" alt="看不清楚?请点击刷新" onClick="this.src=this.src+'&'+Math.random();"/></label> </dt>
+
+
+
+                        </dl>
+
+
+
+                        <dl class="clear_div h_login_safe">
+
+
+
+                            <table>
+
+
+
+                                <tr>
+
+
+
+                                    <td width="20">
+
+
+
+                                        <input type="checkbox" id="chkSafe" name="chkSafe" value="" onClick="chkChange()" />
+
+
+
+                                    </td>
+
+
+
+                                    <td width="105">
+
+
+
+                                        安全控件登录
+
+
+
+                                    </td>
+
+
+
+                                    <td>
+
+
+
+                                        <a href="/">找回密码？</a>
+
+
+
+                                    </td>
+
+
+
+                                    <td>
+
+
+
+                                        <a href="/">解除绑定</a>
+
+
+
+                                    </td>
+
+
+
+                                </tr>
+
+
+
+                            </table>
+
+
+
+                        </dl>
+
+
+
+                        <dl class="h_login_kj">
+
+
+
+                            <dd>
+
+
+
+                                <a href="/">
+
+
+
+                                    登陆器</a></dd>
+
+
+
+                            <dd>
+
+
+
+                                <a href="/">安全控件</a></dd>
+
+
+
+                        </dl>
+
+
+
+                        <dl class="clear_div h_login_btn">
+
+
+
+                            <span class="l">
+
+
+
+                                <div id="logImg" class="loading" style="display: none">
+
+
+
+                                    <img style="margin-left: 10px;" src="../images/loading1.gif" /><span>正在登录中...</span>
+
+
+
+                                </div>
+
+
+
+                                <div id="myLog">
+
+
+
+                                    
+
+
+
+<input type="submit" class="login_btn1" name="Submit" value="登陆" /></div>
+
+
+
+                            </span><span class="r">
+
+
+
+                                 <input type="button" value="新用户注册" class="reg_btn1" onclick="javascript:location.href='/index.php?m=mod_b2b&a=reg';" /></span>
+
+
+
+                        </dl>
+
+
+
+                        <dl class="login_other">
+
+
+
+                           
+
+
+
+                            <dd>
+
+
+
+                                <a class="login_qq" href="/" target="_blank">
+
+
+
+                                    QQ</a></dd>
+
+
+
+                            <dd>
+
+
+
+                                <a class="login_sina" href="#" title="正在开发中">新浪</a></dd>
+
+
+
+                            <dd>
+
+
+
+                                <a class="login_taobao" href="#" title="正在开发中">淘宝</a></dd>
+
+
+
+                        </dl>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <dl class="r_th">
-
-                        <dd class="th">
-
-                            ������Ϣ</dd></dl>
-
-                    <div class="gray_bj">
-
-                        <ul id="helpList" class="clear_div h_help">
-
+
+
+            </div>
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+
+
+        <div class="clear_div h_one">
+
+
+
+            
+
+
+            <div class="h_left">
+
+
+
+                <div class="h_left h_ann">
+
+
+
+                    <dl class="h_th">
+
+
+
+                        <dd class="th">
+
+
+
+                            系统公告</dd><dt><a href="/">更多+</a></dt></dl>
+
+
+
+                    <div class="gray_border">
+
+
+
+                        <ul id="newsList" class="clear_div h_ann">
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">01/21</span><a href="/article/198.html" target="_blank"  title="【官方交流】怎样把握网吧经营黄金时期"><font color="#000066">【官方交流】怎样把握网吧经营黄金时期</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">05/07</span><a href="/article/152.html" target="_blank"  title="【新云数卡】PHP？ASPX？哪个好？蓝主在线为你解说"><font color="">【新云数卡】PHP？ASPX？哪个好？蓝主在线..</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">05/07</span><a href="/article/151.html" target="_blank"  title="【新云数卡】解说直充产品扣钱了没有到帐怎么办"><font color="#0066FF">【新云数卡】解说直充产品扣钱了没有到帐..</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">05/07</span><a href="/article/150.html" target="_blank"  title="【新云数卡】解说充值未成功可网页关闭了怎么办？"><font color="#FF0000">【新云数卡】解说充值未成功可网页关闭了..</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">05/06</span><a href="/article/212.html" target="_blank"  title="【新云卡】我仅仅是测试一下下"><font color="#FF0000">【新云卡】我仅仅是测试一下下</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">04/02</span><a href="/article/207.html" target="_blank"  title="【新云卡】更新版本4.02功能说明"><font color="">【新云卡】更新版本4.02功能说明</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">04/08</span><a href="/article/206.html" target="_blank"  title="【新云卡】官方主站测试账号admin密码admin"><font color="#FF0000">【新云卡】官方主站测试账号admin密码adm..</font></a></li> 
+
+
+
+     
+
+
+
+    
+
+
+
+      <li><span style="float:right">03/31</span><a href="/article/203.html" target="_blank"  title="【新云卡】-演示站-测试批发系统公告"><font color="#FF0033">【新云卡】-演示站-测试批发系统公告</font></a></li> 
+
+
+
  
-
-      <li>
-
-        <a href="/article/30.html" target="_blank" title="��Ϸ��ʹ��״̬��ѯ��ַһ����"> <font color="#FF0000">��Ϸ��ʹ��״̬��ѯ��ַһ����</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/51.html" target="_blank" title="��������������ô�죿"> <font color="">��������������ô�죿</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/50.html" target="_blank" title="��ҿ��������� "> <font color="">��ҿ��������� </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/49.html" target="_blank" title="��ô���󶨻����� "> <font color="">��ô���󶨻����� </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/48.html" target="_blank" title="��β鿴��ֵ��� "> <font color="">��β鿴��ֵ��� </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/47.html" target="_blank" title="��β鿴Ա������ "> <font color="">��β鿴Ա������ </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/43.html" target="_blank" title="���������ʽ𶳽᣿ "> <font color="">���������ʽ𶳽᣿ </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/42.html" target="_blank" title="���ж�������β�ѯ��"> <font color="">���ж�������β�ѯ��</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/41.html" target="_blank" title="����������ô�죿 "> <font color="">����������ô�죿 </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/40.html" target="_blank" title="��μ��˱�ƽ̨��Ϊ�߼������̣�"> <font color="">��μ��˱�ƽ̨��Ϊ�߼�������..</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/38.html" target="_blank" title="�������ʽ���ת������ô��"> <font color="">�������ʽ���ת������ô��</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/37.html" target="_blank" title="�ʺű����˸���ô�죿 "> <font color="">�ʺű����˸���ô�죿 </font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/35.html" target="_blank" title="ʲô�ǲ������Ϸ���"> <font color="">ʲô�ǲ������Ϸ���</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/34.html" target="_blank" title="Ϊʲô����ֲ��ܹ���������"> <font color="">Ϊʲô����ֲ��ܹ���������</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/33.html" target="_blank" title="��������֧�����ϣ���ô�죿"> <font color="">��������֧�����ϣ���ô�죿</font></a></li>
-
-      
-
-      <li>
-
-        <a href="/article/32.html" target="_blank" title="��Ϸ��ҷ��ͷ�ʽ"> <font color="">��Ϸ��ҷ��ͷ�ʽ</font></a></li>
-
-      
-
-                       
-
-                        </ul>
-
-                    </div>
-
+
+
+
+                           
+
+
+
+                        </ul>
+
+
+
+                    </div>
+
+
+
                     
-
-                </div>
-
+
+
+                </div>
+
+
+
                 
-
-            </div>
-
+
+
+                
+
+
+                <div class="h_left">
+
+
+
+                    <div class="clear_div h_brank">
+
+
+
+                        <dl class="h_th">
+
+
+
+                            <dd class="th">
+
+
+
+                                银行信息</dd><dt><a href="/">更多+</a></dt></dl>
+
+
+
+                        <div class="gray_border">
+
+
+
+                            <ul class="clear_div h_brank">
+
+
+
+                            
+
+
+
+
+
+
+					
+
+
+          <li><dl>
+
+
+
+  		    	<dt><img src="/content/mod_shared/skins/upload/bank_tenpay.gif" width="30" height="36"/></dt>
+
+
+
+  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>财付通</u></b></a>（河南商丘）<br/>
+
+
+
+            936992497<br/>
+
+
+
+            账户名：联系蓝主<br/>
+
+
+
+  		    </li>
+
+
+
+  		    
+
+
+          
+
+
+					
+
+
+          <li><dl>
+
+
+
+  		    	<dt><img src="/content/mod_shared/skins/upload/bank_alipay.gif" width="30" height="36"/></dt>
+
+
+
+  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>支付宝</u></b></a>（河南商丘）<br/>
+
+
+
+            18338762664<br/>
+
+
+
+            账户名：联系蓝主<br/>
+
+
+
+  		    </li>
+
+
+
+  		    
+
+
+          
+
+
+					
+
+
+          <li><dl>
+
+
+
+  		    	<dt><img src="/content/mod_shared/skins/upload/bank_nh.gif" width="30" height="36"/></dt>
+
+
+
+  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>农行卡</u></b></a>（河南商丘）<br/>
+
+
+
+            6228482382373970912<br/>
+
+
+
+            账户名：联系蓝主<br/>
+
+
+
+  		    </li>
+
+
+
+  		    
+
+
+          
+
+
+					
+
+
+          <li><dl>
+
+
+
+  		    	<dt><img src="/content/mod_shared/skins/upload/bank_yz.gif" width="30" height="36"/></dt>
+
+
+
+  		    	<a href="/index.php?m=mod_b2b&c=Article&a=more" target="_blank"><b><u>邮政卡</u></b></a>（河南商丘）<br/>
+
+
+
+            6210985131006973904<br/>
+
+
+
+            账户名：联系蓝主<br/>
+
+
+
+  		    </li>
+
+
+
+  		    
+
+
+          
+
+
+                              
+
+
+
+                            </ul>
+
+
+
+                      </div>
+
+
+
+                        
+
+
+                    </div>
+
+
+
+                    
+
+
+                    <div class="clear_div h_contact">
+
+
+
+                        <dl class="h_th">
+
+
+
+                            <dd class="th">
+
+
+
+                                联系我们</dd><dt><a href="/">更多+</a></dt></dl>
+
+
+
+                        <div class="gray_border">
+
+
+
+                            <ul class="clear_div th h_contact">
+
+
+
+                            
+
+
+
+          <li><dl><dt><img src='images/time.png' alt='在线咨询时间' width='31' height='31'/></dt><dd>在线咨询时间:<span class='tel'>9:00-23:00</span></dd></dl>   <em><span class="r"><input type="button" class="yan_qq" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&c=qqyz'"></span><span class="l"><input type="button" class="qq_contact" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&a=Dkf'"></em></li>  
+
+
+
+          
+
+  <li><dl><dt><img src='images/tel.png' alt='电话' width='31' height='31' /></dt>
+
+
+
+          
+
+
+
+        <dd>客服电话: <span class='tel'>
+
+
+          18338762664</span><p></dd>    
+
+
+
+        <dd>加款电话: <span class='tel'>
+
+
+          18338762664</span><p></dd>    
+
+
+
+        <dd>投诉电话: <span class='tel'>
+
+
+          18338762664</span><p></dd>    
+
+
+
+          
+
+
+
+          </dl></li>             
+
+
+
+                            
+
+
+
+                   </ul>
+
+
+
+                        </div>
+
+
+
+                        
+
+
+                    </div>
+
+
+
+                    
+
+
+                </div>
+
+
+
+            </div>
+
+
+
             
-
-        </div>
-
-    </div>
-
-    
-
-        <div class="clear_div2 h_link">
-
-        <div class="clear_div2 h_link_bj">
-
-            <dl class="h_link_th">
-
-                <dd class="th">
-
-                    ��������</dd></dl>
-
-            <ul class="clear_div h_link">
-
-            
-
-            
-
-            
-
+
+
             
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <li><a href="http://" target="_blank"><img src="/content/mod_shared/skins/upload/taobao.jpg" width="80" height="31"/></a></li>
-
-    
-
-    
-
-    
-
-    <li><a href="http://xybss.com.cn" target="_blank"><img src="/content/mod_shared/skins/upload/mylogo.gif" width="80" height="31"/></a></li>
-
-    
-
-    
-
-    
-
-    <li><a href="" target="_blank"><img src="/content/mod_shared/skins/upload/caifutong.gif" width="80" height="31"/></a></li>
-
-    
-
-    
-
-    
-
-    <li><a href="" target="_blank"><img src="/content/mod_shared/skins/upload/zhifubao.gif" width="80" height="31"/></a></li>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
- <script language="javascript" type="text/javascript" src="../images2/www_xybss_com_cn/js/friendlink.js"></script>
-
-                <script type="text/javascript" src="../js/webjs/friendlink.js"></script>
-
-            </ul>
-
-        </div>
-
+
+
+            <div class="h_right">
+
+
+
+                <div class="h_right">
+
+
+
+
+
+
+
+                           
+
+
+
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+   
+
+
+
+
+
+
+
+<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd1.gif" alt='新云数卡' width='269' height='64'/></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+    
+
+
+   
+
+
+
+
+
+
+
+<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd2.gif" alt='新云数卡' width='269' height='64'/></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+    
+
+
+   
+
+
+
+
+
+
+
+<a href="index.php" target="_blank"><img src="/content/mod_shared/skins/upload/hd3.gif" alt='新云数卡' width='269' height='64'/></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+                   
+
+
+
+                </div>
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <dl class="r_th">
+
+
+
+                        <dd class="th">
+
+
+
+                            帮助信息</dd></dl>
+
+
+
+                    <div class="gray_bj">
+
+
+
+                        <ul id="helpList" class="clear_div h_help">
+
+
+
+ 
+
+
+      <li>
+
+
+
+        <a href="/article/30.html" target="_blank" title="游戏卡使用状态查询地址一览表"> <font color="#FF0000">游戏卡使用状态查询地址一览表</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/51.html" target="_blank" title="购卡出现问题怎么办？"> <font color="">购卡出现问题怎么办？</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/50.html" target="_blank" title="外挂卡购买问题 "> <font color="">外挂卡购买问题 </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/49.html" target="_blank" title="怎么样绑定机器？ "> <font color="">怎么样绑定机器？ </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/48.html" target="_blank" title="如何查看充值结果 "> <font color="">如何查看充值结果 </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/47.html" target="_blank" title="如何查看员工利润 "> <font color="">如何查看员工利润 </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/43.html" target="_blank" title="如何申请解资金冻结？ "> <font color="">如何申请解资金冻结？ </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/42.html" target="_blank" title="银行订单号如何查询？"> <font color="">银行订单号如何查询？</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/41.html" target="_blank" title="忘记密码怎么办？ "> <font color="">忘记密码怎么办？ </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/40.html" target="_blank" title="如何加盟本平台成为高级代理商？"> <font color="">如何加盟本平台成为高级代理商..</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/38.html" target="_blank" title="当您的资金周转不开怎么办"> <font color="">当您的资金周转不开怎么办</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/37.html" target="_blank" title="帐号被盗了该怎么办？ "> <font color="">帐号被盗了该怎么办？ </font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/35.html" target="_blank" title="什么是参数不合法？"> <font color="">什么是参数不合法？</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/34.html" target="_blank" title="为什么会出现不能购买的情况？"> <font color="">为什么会出现不能购买的情况？</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/33.html" target="_blank" title="出现网上支付故障，怎么办？"> <font color="">出现网上支付故障，怎么办？</font></a></li>
+
+
+
+      
+
+
+      <li>
+
+
+
+        <a href="/article/32.html" target="_blank" title="游戏金币发送方式"> <font color="">游戏金币发送方式</font></a></li>
+
+
+
+      
+
+
+                       
+
+
+
+                        </ul>
+
+
+
+                    </div>
+
+
+
+                    
+
+
+                </div>
+
+
+
+                
+
+
+            </div>
+
+
+
+            
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    
+
+
+        <div class="clear_div2 h_link">
+
+
+
+        <div class="clear_div2 h_link_bj">
+
+
+
+            <dl class="h_link_th">
+
+
+
+                <dd class="th">
+
+
+
+                    友情链接</dd></dl>
+
+
+
+            <ul class="clear_div h_link">
+
+
+
+            
+
+
+
+            
+
+
+
+            
+
+
+
+            
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    <li><a href="http://" target="_blank"><img src="/content/mod_shared/skins/upload/taobao.jpg" width="80" height="31"/></a></li>
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    <li><a href="http://xybss.com.cn" target="_blank"><img src="/content/mod_shared/skins/upload/mylogo.gif" width="80" height="31"/></a></li>
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    <li><a href="" target="_blank"><img src="/content/mod_shared/skins/upload/caifutong.gif" width="80" height="31"/></a></li>
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    <li><a href="" target="_blank"><img src="/content/mod_shared/skins/upload/zhifubao.gif" width="80" height="31"/></a></li>
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+ <script language="javascript" type="text/javascript" src="../images2/www_xybss_com_cn/js/friendlink.js"></script>
+
+
+
+                <script type="text/javascript" src="../js/webjs/friendlink.js"></script>
+
+
+
+            </ul>
+
+
+
+        </div>
+
+
+
         
-
-    </div>
-
+
+
+    </div>
+
+
+
     
 <div class="clear_div2 footer">
         <dl class="clear_div footer">
-            <dt><span id="Technical" class="r"><a href="http://www.kmphb.com/" target="_blank"><img src="images/dkpt.png" alt="����" /></a></span><span id="RedShield" class="l"></span><span class="fl"><a href="index.php?m=mod_b2b&a=Dkf">��������</a>|<a href="index.php?m=mod_b2b&a=Dkf">��ϵ��ʽ</a>|<a
-                    href="index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">��������</a><br />
-                    &nbsp;&nbsp;��Ȩ���� &copy; <a id="Copyright">? Copyright ?  N-VAR-2011������������ƽ̨��ʾվ ��Ȩ����</a>��Ӫ�̣�<span id="OperatorName">������������ƽ̨��ʾվ</span> <a href="http://www.miibeian.gov.cn/" id="ICPNo" target="_blank">������</a></span></dt>
+            <dt><span id="Technical" class="r"><a href="http://www.kmphb.com/" target="_blank"><img src="images/dkpt.png" alt="卡盟" /></a></span><span id="RedShield" class="l"></span><span class="fl"><a href="index.php?m=mod_b2b&a=Dkf">关于我们</a>|<a href="index.php?m=mod_b2b&a=Dkf">联系方式</a>|<a
+                    href="index.php?m=mod_b2b&c=Article&a=Homecj&name=%C5%FA%B7%A2%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">帮助中心</a><br />
+                    &nbsp;&nbsp;版权所有 &copy; <a id="Copyright">? Copyright ?  N-VAR-2011新云数卡销售平台演示站 版权所有</a>运营商：<span id="OperatorName">新云数卡销售平台演示站</span> <a href="http://www.miibeian.gov.cn/" id="ICPNo" target="_blank">备案中</a></span></dt>
         </dl>
     </div>
     

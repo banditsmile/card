@@ -108,7 +108,7 @@ class HomeController extends Controller
 
 				public function Hourkf( )
 				{
-								$this->YktInit( "在线客服中心" );
+								$this->YktInit( "锟斤拷锟竭客凤拷锟斤拷锟斤拷" );
 							
 												$this->View( );
 								
@@ -132,7 +132,7 @@ class HomeController extends Controller
 								{
 												$this->Assign( "islogin", 0 );
 								}
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 							
 												$this->View( );
 								
@@ -173,13 +173,13 @@ class HomeController extends Controller
 								$Rcd67889baf = getvar( "ubzcity", "", "POST" );
 								$R7cf2762c01 = getvar( "ubzeshop", "", "POST" );
 								$R49904173b4 = getvar( "ubzidcard", "", "POST" );
-								$R07cdd73907 = iconv( "UTF-8", "gb2312//IGNORE", $R07cdd73907 );
-								$R3ff93324b3 = iconv( "UTF-8", "gb2312//IGNORE", $R3ff93324b3 );
-								$Rfddc2155d8 = iconv( "UTF-8", "gb2312//IGNORE", $Rfddc2155d8 );
-								$R6ae960df43 = iconv( "UTF-8", "gb2312//IGNORE", $R6ae960df43 );
-								$R72f6fd380c = iconv( "UTF-8", "gb2312//IGNORE", $R72f6fd380c );
-								$Rcd67889baf = iconv( "UTF-8", "gb2312//IGNORE", $Rcd67889baf );
-								$R7cf2762c01 = iconv( "UTF-8", "gb2312//IGNORE", $R7cf2762c01 );
+								$R07cdd73907 = iconv( "UTF-8", "utf-8//IGNORE", $R07cdd73907 );
+								$R3ff93324b3 = iconv( "UTF-8", "utf-8//IGNORE", $R3ff93324b3 );
+								$Rfddc2155d8 = iconv( "UTF-8", "utf-8//IGNORE", $Rfddc2155d8 );
+								$R6ae960df43 = iconv( "UTF-8", "utf-8//IGNORE", $R6ae960df43 );
+								$R72f6fd380c = iconv( "UTF-8", "utf-8//IGNORE", $R72f6fd380c );
+								$Rcd67889baf = iconv( "UTF-8", "utf-8//IGNORE", $Rcd67889baf );
+								$R7cf2762c01 = iconv( "UTF-8", "utf-8//IGNORE", $R7cf2762c01 );
 								$R6ae960df43 = str_replace( "|", "", $R6ae960df43 );
 								$R72f6fd380c = str_replace( "|", "", $R72f6fd380c );
 								$Rcd67889baf = str_replace( "|", "", $Rcd67889baf );
@@ -391,7 +391,7 @@ class HomeController extends Controller
 				public function SetArticle( )
 				{
 								$Rf6c76f0f72 = factory::getinstance( "articles" );
-								$this->Assign( "ann", $Rf6c76f0f72->IArticle_GetByName( "一卡通系统新闻公告", 6 ) );
+								$this->Assign( "ann", $Rf6c76f0f72->IArticle_GetByName( "一锟斤拷通系统锟斤拷锟脚癸拷锟斤拷", 6 ) );
 				}
 
 				public function SetAd( )

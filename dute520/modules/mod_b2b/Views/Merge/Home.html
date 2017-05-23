@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -14,47 +14,47 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <div id="content" class="cwarpper" style="position:relative">
 <div class="cbodyHead"></div>
 <div id="tab">
-<input type="button" value="����/����鵵"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Merge&a=Home'" class="tab_active" onFocus="this.blur()"/>
+<input type="button" value="订单/财务归档"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Merge&a=Home'" class="tab_active" onFocus="this.blur()"/>
 </div>
 
 <div class="cwarpper1" style="border-top:1px #ccc solid">
-<div class="ctitle">����/����鵵</div>
+<div class="ctitle">订单/财务归档</div>
 <div>
   <table border="0" class="ctable" bordercolor="#ededed">
   	<tr>
-      <td class="tablelt">�鵵ʱ��</td>
+      <td class="tablelt">归档时间</td>
       <td class="tablert">
       	<select name="endyear">
       	<!--$y=date('Y')+1;for($i=2004;$i<$y;$i++){-->
       	<option value="{$i}"<!--if($i==$y-1){--> selected<!--}-->>{$i}</option>
       	<!--}-->
-      	<select>��
+      	<select>年
       	<select name="endmon">
       	<!--for($i=1;$i<13;$i++){-->
       	<option value="{$i}">{$i}</option>
       	<!--}-->
-      	<select>�� ֮ǰ������
+      	<select>月 之前的数据
       </td>
     </tr>
     <!--if($vd['historydate'] != ''){-->
     <tr>
-      <td class="tablelt">���һ�ι鵵ʱ��</td>
+      <td class="tablelt">最后一次归档时间</td>
       <td class="tablert">
       	{$vd['historydate']}
       </td>
     </tr>
     <!--}-->
     <tr>
-      <td class="tablelt">˵��</td>
+      <td class="tablelt">说明</td>
       <td class="tablert">
-      	���Բ�����Ͷ�����ͬ�����й鵵���ɴ���ʷ�����в���[<span style="cursor:pointer;color:#0000ff" onclick="disp('jctip')"><u>�鿴����˵��</u></span>]
+      	将对财务表和订单表同步进行归档，可从历史数据中查找[<span style="cursor:pointer;color:#0000ff" onclick="disp('jctip')"><u>查看操作说明</u></span>]
       	<div id="jctip" style="display:none;font-size:12px;padding-top:10px">
-      	��̨�鿴��ʷ������������̨ -> ��ʷ����<br/>
-      	��̨�鿴��ʷ������Ʒ������������̨ -> �û� -> ������Ʒ����(��ʷ)<br/>
-      	��̨�鿴�û���ʷ�����������̨ -> �û� -> �û�������ʷ����<br/><br/>
+      	后台查看历史订单操作：后台 -> 历史订单<br/>
+      	后台查看历史自有商品订单操作：后台 -> 用户 -> 自有商品订单(历史)<br/>
+      	后台查看用户历史财务操作：后台 -> 用户 -> 用户帐务历史报表<br/><br/>
       	
-      	ǰ̨�ɷֱ�����Ӧ�ط����������ʷ���ݣ����Զ���ʾ��Ӧ������<br/><br/>
-      	������ѯ�ͷ����ٽ��й鵵�����������������
+      	前台可分别点击对应地方，如果有历史数据，会自动显示对应的连接<br/><br/>
+      	建议咨询客服后再进行归档操作，以免出现意外
       	</div>
       </td>
     </tr>
@@ -62,8 +62,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
     <td class="tablelt">
     </td>
     <td class="tablert" style="height:80px">
-      <input type="submit" value="ȷ�Ϲ鵵 &gt; &gt;" class="bigbtn"/>
-      <input type="reset" value="&lt; &lt; ������д" class="bigbtn"name="reset"/>
+      <input type="submit" value="确认归档 &gt; &gt;" class="bigbtn"/>
+      <input type="reset" value="&lt; &lt; 重新填写" class="bigbtn"name="reset"/>
     </td>
   </tr>
   </table>
@@ -80,11 +80,11 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 </form>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a> <span style="font-size:7px;">>></span> <font color="#000">���ݹ鵵</font></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_index" onFocus="this.blur()" title="�鿴ƽ̨������Ϣ��ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <font color="#000">数据归档</font></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_index" onFocus="this.blur()" title="查看平台基本信息相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >ҳ����������Ե�...</div>
+  <div id="loadcontent" >页面加载中请稍等...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 2;

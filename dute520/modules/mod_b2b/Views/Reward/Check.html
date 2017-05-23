@@ -1,26 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> Ò»¿¨Í¨ÊÖ¹¤·µµã½áËã</div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="²é¿´·ÖÀàÏà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="å›åˆ°åå°é¦–é¡µ"><font color="#000">æ¡Œé¢</font></a> <span style="font-size:7px;">>></span> ä¸€å¡é€šæ‰‹å·¥è¿”ç‚¹ç»“ç®—</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="æŸ¥çœ‹åˆ†ç±»ç›¸å…³å¸®åŠ©"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Reward&a=CheckOut">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">Ò»¿¨Í¨·µµãÊÖ¹¤½áËã</div>
+<div class="ctitle">ä¸€å¡é€šè¿”ç‚¹æ‰‹å·¥ç»“ç®—</div>
 <table border="0" id="ctable1" class="ctable">
   <tr>
-    <td class="tablelt">Ñ¡Ôñ¾­ÏúÉÌ£º</td>
+    <td class="tablelt">é€‰æ‹©ç»é”€å•†ï¼š</td>
     <td class="tablert">
     	<select name="aid" id="aid">
-    		<option value="0">ÇëÑ¡Ôñ´úÀíÉÌ</option>
+    		<option value="0">è¯·é€‰æ‹©ä»£ç†å•†</option>
     		<!--foreach($vd['agent'] as $item){-->
     		<option value="{$item['aid']}">{$item['company']}({$item['aid']})</option>
     		<!--}-->
@@ -28,14 +28,14 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÆğÊ¼Ê±¼ä£º</td>
+    <td class="tablelt">èµ·å§‹æ—¶é—´ï¼š</td>
     <td class="tablert">
       <input type="text" name="startdate" value="<!--echo date('Y-m-d').' 00:00:00';-->" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
       <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">½áÊøÊ±¼ä£º</td>
+    <td class="tablelt">ç»“æŸæ—¶é—´ï¼š</td>
     <td class="tablert">
       <input type="text" name="enddate" value="<!--echo date('Y-m-d').' 23:59:00';-->" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
       <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
@@ -43,27 +43,27 @@
   </tr>
   <tr>
     <td class="tablelt">
-      ÏµÍ³¼ÆËã³ö·µµã£º
+      ç³»ç»Ÿè®¡ç®—å‡ºè¿”ç‚¹ï¼š
     </td>
     <td class="tablert">
-      <input name="ar" id="ar" type="text" readonly style="background:#f0f0f0"/> {$vd['lang']['moneyunit']} <span style="color:#cccccc"></span><input type="button" value="¼ÆËã" class="button" onclick="getSum()"/>
+      <input name="ar" id="ar" type="text" readonly style="background:#f0f0f0"/> {$vd['lang']['moneyunit']} <span style="color:#cccccc"></span><input type="button" value="è®¡ç®—" class="button" onclick="getSum()"/>
     </td>
   </tr>
   <tr>
     <td class="tablelt">
-      Êµ¼Ê·µµã½ğ¶î£º
+      å®é™…è¿”ç‚¹é‡‘é¢ï¼š
     </td>
     <td class="tablert">
       <input name="ap" id="ap" type="text"/> {$vd['lang']['moneyunit']} <span style="color:#cccccc"></span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">·µµã±¸×¢£º</td>
+    <td class="tablelt">è¿”ç‚¹å¤‡æ³¨ï¼š</td>
     <td class="tablert"><textarea name="remarks" wrap="VIRTUAL" cols="30" rows="3" scrolling="yes" style="padding:5px"></textarea>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">×¢Òâ£º</td>
+    <td class="tablelt">æ³¨æ„ï¼š</td>
     <td class="tablert">
       
     </td>
@@ -71,8 +71,8 @@
   <tr>
     <td class="tablelt" style="height:80px"></td>
     <td class="tablert">
-      <input type="submit" value="·¢·Å·µµã &gt;&gt" class="btn"/>
-      <input type="reset" value="ÖØ ÖÃ" class="btn"/>
+      <input type="submit" value="å‘æ”¾è¿”ç‚¹ &gt;&gt" class="btn"/>
+      <input type="reset" value="é‡ ç½®" class="btn"/>
     </td>
   </tr>
 </table>
@@ -96,12 +96,12 @@ function getSum()
 {
   var xmlhttpsum = null;
   
-  // Õë¶Ô MozillaµÈä¯ÀÀÆ÷µÄ´úÂë£º
+  // é’ˆå¯¹ Mozillaç­‰æµè§ˆå™¨çš„ä»£ç ï¼š
   if (window.XMLHttpRequest)
   {
     xmlhttpsum=new XMLHttpRequest();
   }
-  // Õë¶Ô IE µÄ´úÂë£º
+  // é’ˆå¯¹ IE çš„ä»£ç ï¼š
   else if (window.ActiveXObject)
   {
     xmlhttpsum=new ActiveXObject("Microsoft.XMLHTTP");
@@ -113,7 +113,7 @@ function getSum()
   
   if(taid == 0)
   {
-  	alert("ÇëÏÈÑ¡Ôñ´úÀíÉÌ");
+  	alert("è¯·å…ˆé€‰æ‹©ä»£ç†å•†");
   	return;
   }
 
@@ -122,20 +122,20 @@ function getSum()
   if (xmlhttpsum!=null)
   {
     xmlhttpsum.onreadystatechange=function(){
-      // Èç¹û xmlhttp ÏÔÊ¾Îª "loaded"
+      // å¦‚æœ xmlhttp æ˜¾ç¤ºä¸º "loaded"
       if (xmlhttpsum.readyState==4)
       {
-        // Èç¹ûÎª "OK"
+        // å¦‚æœä¸º "OK"
         if (xmlhttpsum.status==200)
         {
-          // ÆäËû´úÂë..
+          // å…¶ä»–ä»£ç ..
           var ackdata=xmlhttpsum.responseText;
 
           $("ar").value = ackdata;
         }
         else
         {
-          alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+          alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")
         }
       }
     };
@@ -146,7 +146,7 @@ function getSum()
   }
   else
   {
-    alert("ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖXMLHTTP")
+    alert("æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒXMLHTTP")
   }
 }
 </script>

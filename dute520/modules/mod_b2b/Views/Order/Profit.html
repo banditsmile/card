@@ -1,7 +1,7 @@
 <!--$ishistory=intval(request('ishistory'));-->
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
@@ -9,10 +9,10 @@
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
     <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
-    <h3>ÏµÍ³´Ó{$vd['data']['yearfrom']}-{$vd['data']['monthfrom']}-{$vd['data']['dayfrom']}µ½ {$vd['data']['yearto']}-{$vd['data']['monthto']}-{$vd['data']['dayto']} ¶©µ¥Ã÷Ï¸±í</h3>
-    ¹²Ó¯Àû½ğ¶î£º <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
-    ¿¨ÃÜÀàÓ¯Àû£º<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
-    ·Ç¿¨ÃÜÀàÓ¯Àû£º<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
+    <h3>ç³»ç»Ÿä»{$vd['data']['yearfrom']}-{$vd['data']['monthfrom']}-{$vd['data']['dayfrom']}åˆ° {$vd['data']['yearto']}-{$vd['data']['monthto']}-{$vd['data']['dayto']} è®¢å•æ˜ç»†è¡¨</h3>
+    å…±ç›ˆåˆ©é‡‘é¢ï¼š <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
+    å¡å¯†ç±»ç›ˆåˆ©ï¼š<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
+    éå¡å¯†ç±»ç›ˆåˆ©ï¼š<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
     </td>
   </tr>
 </table> 
@@ -21,25 +21,25 @@
   <tr>
     <td height="35"  colspan="12" class="listhead" style="padding-top: 15px;">
     <form action="index.php?m=mod_b2b&c=order&a=profit&ishistory={$ishistory}"  method="post" name="form" >
-    ÈÕÆÚ´Ó
+    æ—¥æœŸä»
     <select name="yearfrom">
       {#Option($vd['y'], $vd['data']['yearfrom'])}
-    </select>Äê
+    </select>å¹´
     <select name="monthfrom">
       {#Option($vd['m'], $vd['data']['monthfrom'])}
-    </select>ÔÂ
+    </select>æœˆ
     <select name="dayfrom">
       {#Option($vd['d'], $vd['data']['dayfrom'])}
-    </select>ÈÕ µ½ <select name="yearto">
+    </select>æ—¥ åˆ° <select name="yearto">
       {#Option($vd['y'], $vd['data']['yearto'])}
-    </select>Äê
+    </select>å¹´
     <select name="monthto">
       {#Option($vd['m'], $vd['data']['monthto'])}
-    </select>ÔÂ
+    </select>æœˆ
     <select name="dayto">
       {#Option($vd['d'], $vd['data']['dayto'])}
-    </select>ÈÕ
-    <input type="submit" value="ÂíÉÏ²éÑ¯ &gt;&gt;"/>
+    </select>æ—¥
+    <input type="submit" value="é©¬ä¸ŠæŸ¥è¯¢ &gt;&gt;"/>
     </form>
     </td>
   </tr>
@@ -47,15 +47,15 @@
 <br/>
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
   <tr>
-    <td width="15%" align="center" height="35" class="listhead"><b>Ê±¼ä</b></td>
-    <td width="15%" align="center" height="35" class="listhead"><b>¶©µ¥ºÅ</b></td>
-    <td width="8%" align="center" height="35" class="listhead"><b>ÁãÊÛ¼Û</b></td>
-    <td width="8%" align="center" height="35" class="listhead"><b>½ø¼Û</b></td>
-    <td width="8%" align="center" height="35" class="listhead"><b>¶©¹ºÊıÁ¿</b></td>
-    <td width="8%" align="center" height="35" class="listhead"><b>×ÜÀûÈó</b></td>
-    <td width="10%" align="center" height="35" class="listhead"><b>ÏµÍ³ÀûÈó</b></td>
-    <td width="10%" align="center" height="35" class="listhead"><b>´úÀíÉÌÀûÈó</b></td>
-    <td align="center" height="35" class="listhead"><b>ÉÌÆ·</b></td>
+    <td width="15%" align="center" height="35" class="listhead"><b>æ—¶é—´</b></td>
+    <td width="15%" align="center" height="35" class="listhead"><b>è®¢å•å·</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>é›¶å”®ä»·</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>è¿›ä»·</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>è®¢è´­æ•°é‡</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>æ€»åˆ©æ¶¦</b></td>
+    <td width="10%" align="center" height="35" class="listhead"><b>ç³»ç»Ÿåˆ©æ¶¦</b></td>
+    <td width="10%" align="center" height="35" class="listhead"><b>ä»£ç†å•†åˆ©æ¶¦</b></td>
+    <td align="center" height="35" class="listhead"><b>å•†å“</b></td>
   </tr>
   <!--$sum_profit=0;$sum_agentprofit=0;foreach($vd['items'] as $item) {-->
   <tr>
@@ -75,7 +75,7 @@
   </tr>
   <!--$sum_profit+=$item['profit'];$sum_agentprofit+=$item['agentprofit'];}-->
   <tr>
-    <td  align="center" colspan="5"  style="color:#ff0000">±¾Ò³Í³¼Æ</td>
+    <td  align="center" colspan="5"  style="color:#ff0000">æœ¬é¡µç»Ÿè®¡</td>
     <td align="center" height="35"><!--echo round($sum_profit,3);--></td>
     <td align="center" height="35"><!--echo round($sum_profit-$sum_agentprofit,3);--></td>
     <td align="center" height="35"><!--echo round($sum_agentprofit,3);--></td>
@@ -83,7 +83,7 @@
     </td>
   </tr>
   <tr>
-    <td  align="center" colspan="5" style="color:#ff0000">²éÑ¯Í³¼Æ</td>
+    <td  align="center" colspan="5" style="color:#ff0000">æŸ¥è¯¢ç»Ÿè®¡</td>
     <td align="center" height="35">{$vd['allprofit']['profit']}</td>
     <td align="center" height="35"><!--echo round($vd['allprofit']['profit']-$vd['allprofit']['agentprofit'],3);--></td>
     <td align="center" height="35">{$vd['allprofit']['agentprofit']}</td>
@@ -92,15 +92,15 @@
   </tr>
   <tr>
     <td align="right" height="35" colspan="20">
-    <strong>±¾¼ÇÂ¼×Ü¼Æ <font color="#ff0000">{$vd['totlerow']}</font> Ìõ  µÚ {$vd['thispage']} Ò³</strong>/ ¹² {$vd['totlepage']} Ò³</strong>
+    <strong>æœ¬è®°å½•æ€»è®¡ <font color="#ff0000">{$vd['totlerow']}</font> æ¡  ç¬¬ {$vd['thispage']} é¡µ</strong>/ å…± {$vd['totlepage']} é¡µ</strong>
     </td>
   </tr>
   <tr>
     <td align="right" height="35" colspan="19">
     <form method="post" action="index.php?m=mod_b2b&c=order&a=profit&{$vd['op']}">
-      <input type="button" value="ÉÏÒ»Ò³ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['prepage']}&{$vd['op']}'"/>
-      <input type="button" value="ÏÂÒ»Ò³ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['nextpage']}&{$vd['op']}'"/>
-      µ½µÚ<input type="text" name="page" size="2" value="" class="txt"/>Ò³<input type="submit" value=" È· ¶¨ &gt;&gt;"/>
+      <input type="button" value="ä¸Šä¸€é¡µ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="ä¸‹ä¸€é¡µ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['nextpage']}&{$vd['op']}'"/>
+      åˆ°ç¬¬<input type="text" name="page" size="2" value="" class="txt"/>é¡µ<input type="submit" value=" ç¡® å®š &gt;&gt;"/>
     </form>
     </td>
   </tr>
@@ -109,9 +109,9 @@
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
     <td height="35"  colspan="12" style="padding-top: 10px;">
-    ¹²Ó¯Àû½ğ¶î£º <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
-    ÆäÖĞ·ÇÔÚÏß³äÖµ¿¨Ó¯Àû£º<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
-    ÔÚÏß³äÖµ¿¨ÀàÓ¯Àû£º<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
+    å…±ç›ˆåˆ©é‡‘é¢ï¼š <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
+    å…¶ä¸­éåœ¨çº¿å……å€¼å¡ç›ˆåˆ©ï¼š<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
+    åœ¨çº¿å……å€¼å¡ç±»ç›ˆåˆ©ï¼š<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
     </td>
   </tr>
 </table> 

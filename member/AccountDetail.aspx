@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>账户资料修改</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<title>锟剿伙拷锟斤拷锟斤拷锟睫革拷</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <head>
 <frameset rows="880,*" frameborder="on" border="0" framespacing="0">
  <frame src="/index.php?m=mod_agent&c=Home" name="topFrame" scrolling="yes" noresize="noresize" id="topFrame" />

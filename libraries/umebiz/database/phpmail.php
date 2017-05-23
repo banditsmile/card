@@ -43,7 +43,7 @@ class phpmail extends mysql
 								$body = eregi_replace( "{userpass}", $data['cpwd'], $body );
 								$body = eregi_replace( "{website}", $rs['website'], $body );
 								$body = eregi_replace( "{date}", date( "Y-m-d H-i-s" ), $body );
-								$mail->CharSet = "GB2312";
+								$mail->CharSet = "utf-8";
 								$mail->IsSMTP( );
 								$mail->Host = $rs['mailserver'];
 								$mail->SMTPDebug = 0;
@@ -57,7 +57,7 @@ class phpmail extends mysql
 								$mail->Subject = $rs['cregmailtitle'];
 								$mail->MsgHTML( $body );
 								$address = $data['cmail'];
-								$mail->AddAddress( $address, $rs['webname']."»áÔ±" );
+								$mail->AddAddress( $address, $rs['webname']."ï¿½ï¿½Ô±" );
 								if ( !$mail->Send( ) )
 								{
 												return 1;
@@ -104,14 +104,14 @@ class phpmail extends mysql
 												$cardrs = $this->SelectRecord( "cards" );
 												foreach ( $cardrs as $item )
 												{
-																$result .= "¿¨ºÅ£º".$item['cardnumber']."   ÃÜÂë£º".base64_decode( $item['cardpwd'] )."<br/>";
+																$result .= "ï¿½ï¿½ï¿½Å£ï¿½".$item['cardnumber']."   ï¿½ï¿½ï¿½ë£º".base64_decode( $item['cardpwd'] )."<br/>";
 												}
 								}
 								else
 								{
-												$result = "½»Ò×Íê³É";
+												$result = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 								}
-								$ptype = $orderrs['ptype'] == 0 || $orderrs['ptype'] == 3 || $orderrs['ptype'] == 100 || $orderrs['ptype'] == 101 ? "¿¨ÃÜÀà" : "·Ç¿¨ÃÜÀà";
+								$ptype = $orderrs['ptype'] == 0 || $orderrs['ptype'] == 3 || $orderrs['ptype'] == 100 || $orderrs['ptype'] == 101 ? "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" : "ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½";
 								$mail = new PHPMailer( );
 								$body = decodeubb( $rs['mailcontent'] );
 								$body = eregi_replace( "{ordno}", $data['ordno'], $body );
@@ -122,7 +122,7 @@ class phpmail extends mysql
 								$body = eregi_replace( "{result}", $result, $body );
 								$body = eregi_replace( "{website}", $rs['website'], $body );
 								$body = eregi_replace( "{date}", date( "Y-m-d H-i-s" ), $body );
-								$mail->CharSet = "GB2312";
+								$mail->CharSet = "utf-8";
 								$mail->IsSMTP( );
 								$mail->Host = $rs['mailserver'];
 								$mail->SMTPDebug = 0;
@@ -136,7 +136,7 @@ class phpmail extends mysql
 								$mail->Subject = $rs['mailtitle'];
 								$mail->MsgHTML( $body );
 								$address = $data['cmail'];
-								$mail->AddAddress( $address, $rs['webname']."¿Í»§" );
+								$mail->AddAddress( $address, $rs['webname']."ï¿½Í»ï¿½" );
 								if ( !$mail->Send( ) )
 								{
 												return 1;
@@ -169,7 +169,7 @@ class phpmail extends mysql
 								$body = eregi_replace( "{userpass}", $data['apwd'], $body );
 								$body = eregi_replace( "{website}", $rs['website'], $body );
 								$body = eregi_replace( "{date}", date( "Y-m-d H-i-s" ), $body );
-								$mail->CharSet = "GB2312";
+								$mail->CharSet = "utf-8";
 								$mail->IsSMTP( );
 								$mail->Host = $rs['mailserver'];
 								$mail->SMTPDebug = 0;
@@ -183,7 +183,7 @@ class phpmail extends mysql
 								$mail->Subject = $rs['aregmailtitle'];
 								$mail->MsgHTML( $body );
 								$address = $data['amail'];
-								$mail->AddAddress( $address, $rs['webname']."¾­ÏúÉÌ" );
+								$mail->AddAddress( $address, $rs['webname']."ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 								if ( !$mail->Send( ) )
 								{
 												return 1;

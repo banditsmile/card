@@ -1,34 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css"/>
 </head>
 <body>
 <?php $item = $vd['item']; ?>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Agent&a=index" title="ÓÃ»§ÁÐ±í"><font color="#000">ÓÃ»§ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ÓÃ»§ÐÅÏ¢ÐÞ¸Ä</span>(<a href="index.php?m=mod_b2b&c=Agent&a=detail&aid=<?php echo $item['aid']; ?>">Ë¢ÐÂ</a>)</div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´ÓÃ»§Ïà¹Ø°ïÖú"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Agent&a=index" title="ï¿½Ã»ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½Ã»ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½Þ¸ï¿½</span>(<a href="index.php?m=mod_b2b&c=Agent&a=detail&aid=<?php echo $item['aid']; ?>">Ë¢ï¿½ï¿½</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½Ã»ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=agent&a=update">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">ÓÃ»§ÐÅÏ¢ÐÞ¸Ä</div>
+<div class="ctitle">ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½Þ¸ï¿½</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
   <tr>
-    <td class="tablelt">ÉÌ¼ÒÃû£º</td>
+    <td class="tablelt">ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><?php echo $item['aname']; ?></td>
   </tr>
   <tr>
-    <td class="tablelt">µ±Ç°ÕÊÉÏÓà¶î£º</td>
+    <td class="tablelt">ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£º</td>
     <td class="tablert"><?php echo $item['aremain']; ?><?php echo $vd['lang']['moneyunit']; ?></td>
   </tr>
   <tr>
-    <td class="tablelt">ÓÃ»§»ý·Ö£º</td>
-    <td class="tablert"><?php echo $item['scored']; ?> µã</td>
+    <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ö£ï¿½</td>
+    <td class="tablert"><?php echo $item['scored']; ?> ï¿½ï¿½</td>
   </tr>
   <tr>
-    <td class="tablelt">×´Ì¬£º</td>
+    <td class="tablelt">×´Ì¬ï¿½ï¿½</td>
     <td class="tablert">
     <select name="frozen"  size="1">
       <?php (option($vd['frozen'], $item['frozen'])); ?>
@@ -36,100 +36,100 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÐÞ¸ÄµÇÂ¼ÃÜÂë£º</td>
+    <td class="tablelt">ï¿½Þ¸Äµï¿½Â¼ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
-    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="staffpwd" name="staffpwd" readonly /> <input type="checkbox" onclick="enable(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ÐÞ¸ÄÃÜÂë(½÷É÷Ê¹ÓÃ)</td>
+    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="staffpwd" name="staffpwd" readonly /> <input type="checkbox" onclick="enable(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)</td>
   </tr>
   <tr>
-    <td class="tablelt">È·ÈÏµÇÂ¼ÃÜÂë£º</td>
+    <td class="tablelt">È·ï¿½Ïµï¿½Â¼ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
     <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px" id="restaffpwd" name="restaffpwd" readonly /><span id="spanrestaffpwd"></span></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÐÞ¸Ä³¬¼¶ÃÜÂë£º</td>
+    <td class="tablelt">ï¿½Þ¸Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
-    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="superpwd" name="superpwd" readonly /> <input type="checkbox" onclick="enable1(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ÐÞ¸ÄÃÜÂë(½÷É÷Ê¹ÓÃ)</td>
+    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="superpwd" name="superpwd" readonly /> <input type="checkbox" onclick="enable1(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)</td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">È·ÈÏ³¬¼¶ÃÜÂë£º</td>
+    <td class="tablelt">È·ï¿½Ï³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
     <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px" id="resuperpwd" name="resuperpwd" readonly /><span id="spanrestaffpwd"></span></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÐÞ¸Ä½»Ò×ÃÜÂë£º</td>
+    <td class="tablelt">ï¿½Þ¸Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
-    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="tradepwd" name="tradepwd" readonly /> <input type="checkbox" onclick="enable2(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ÐÞ¸ÄÃÜÂë(½÷É÷Ê¹ÓÃ)</td>
+    <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px;" id="tradepwd" name="tradepwd" readonly /> <input type="checkbox" onclick="enable2(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½)</td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">È·ÈÏ½»Ò×ÃÜÂë£º</td>
+    <td class="tablelt">È·ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">
     <input type="password" style="font-weight:normal;background:#EAEAEA;width:147px" id="retradepwd" name="retradepwd" readonly /><span id="spanrestaffpwd"></span></td>
   </tr>
   <tr>
-    <td class="tablelt">ÕæÊµÐÕÃû£º</td>
+    <td class="tablelt">ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">
     <input type="hidden" name="ubzaname" size="24" value="<?php echo $item['aname']; ?>"/>
     <input type="text" name="ubzarealname" size="24" value="<?php echo $item['arealname']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">Ê¡ÊÐ£º</td>
+    <td class="tablelt">Ê¡ï¿½Ð£ï¿½</td>
     <td class="tablert">
-    <input type="text" name="prv" size="10" value="<?php echo $item['prv']; ?>"/> Ê¡/ÊÐ
-    <input type="text" name="city" size="10" value="<?php echo $item['city']; ?>"/> ÊÐ
+    <input type="text" name="prv" size="10" value="<?php echo $item['prv']; ?>"/> Ê¡/ï¿½ï¿½
+    <input type="text" name="city" size="10" value="<?php echo $item['city']; ?>"/> ï¿½ï¿½
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">¹«Ë¾£º</td>
+    <td class="tablelt">ï¿½ï¿½Ë¾ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="company" size="24" value="<?php echo $item['company']; ?>"/></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÍøµêµØÖ· £º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½Ö· ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="eshop" size="24" value="<?php echo $item['eshop']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">Éí·ÝÖ¤ºÅ£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½Ö¤ï¿½Å£ï¿½</td>
     <td class="tablert">
     <input type="text" name="idcard" size="24" value="<?php echo $item['idcard']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">µØÖ·£º</td>
+    <td class="tablelt">ï¿½ï¿½Ö·ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="ubzaaddr" size="24" value="<?php echo $item['aaddr']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÓÊ±à£º</td>
+    <td class="tablelt">ï¿½Ê±à£º</td>
     <td class="tablert">
     <input type="text" name="ubzzip" size="24" value="<?php echo $item['zip']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÓÊÏä£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ä£º</td>
     <td class="tablert">
     <input type="text" name="ubzamail" size="24" value="<?php echo $item['amail']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">µç»°£º</td>
+    <td class="tablelt">ï¿½ç»°ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="ubzatel" size="24" value="<?php echo $item['atel']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÊÖ»ú£º</td>
+    <td class="tablelt">ï¿½Ö»ï¿½ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="mobile" size="24" value="<?php echo $item['mobile']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">QQ£º</td>
+    <td class="tablelt">QQï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="ubzaqq" size="24" value="<?php echo $item['aqq']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">±¸×¢£º</td>
+    <td class="tablelt">ï¿½ï¿½×¢ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="remarks" size="24" value="<?php echo $item['remarks']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">ÓÃ»§¼¶±ð£º</td>
+    <td class="tablelt">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">
     <select name="ubzalv"  size="1">
       <?php (option($vd['rank'], $item['alv'], 'name', 'id')); ?>
@@ -137,112 +137,112 @@
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÉÌÆ··¢²¼ÉÏÏÞ£º</td>
+    <td class="tablelt">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ£ï¿½</td>
     <td class="tablert">
-    <input type="text" name="canadd" size="24" value="<?php echo $item['canadd']; ?>"/> ²»ÏÞÖÆµÄ»°£¬Ìî -1 ¼´¿É</td>
+    <input type="text" name="canadd" size="24" value="<?php echo $item['canadd']; ?>"/> ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ -1 ï¿½ï¿½ï¿½ï¿½</td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">¿ªÍ¨¹©»õÉÌ¹¦ÄÜ£º</td>
+    <td class="tablelt">ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½Ü£ï¿½</td>
     <td class="tablert">
-    <input type="radio" name="custom" value="-1" class="checkbox" onFocus="this.blur()" <?php if($item['custom']==-1){ ?>checked<?php } ?> > ²»¿ªÍ¨
-    <input type="radio" name="custom" value="1" class="checkbox" onFocus="this.blur()" <?php if($item['custom']==1){ ?>checked<?php } ?> > ¿ªÍ¨</td>
+    <input type="radio" name="custom" value="-1" class="checkbox" onFocus="this.blur()" <?php if($item['custom']==-1){ ?>checked<?php } ?> > ï¿½ï¿½ï¿½ï¿½Í¨
+    <input type="radio" name="custom" value="1" class="checkbox" onFocus="this.blur()" <?php if($item['custom']==1){ ?>checked<?php } ?> > ï¿½ï¿½Í¨</td>
   </tr>
   <?php $rights = explode(',',$item['rights'].',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0'); ?>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÓÃ»§ÉÏ¼¶±àºÅ£º</td>
+    <td class="tablelt">ï¿½Ã»ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½Å£ï¿½</td>
     <td class="tablert">
-    <input type="text" name="parentid" size="24" value="<?php echo $item['parentid']; ?>"/> Èç¹ûÐ´0Ôò±íÊ¾ÉÏ¼¶ÎªÏµÍ³</td>
+    <input type="text" name="parentid" size="24" value="<?php echo $item['parentid']; ?>"/> ï¿½ï¿½ï¿½Ð´0ï¿½ï¿½ï¿½Ê¾ï¿½Ï¼ï¿½ÎªÏµÍ³</td>
   </tr>
   <tr>
-    <td class="tablelt">×îµÍ³äÖµÊý¶î£º</td>
+    <td class="tablelt">ï¿½ï¿½Í³ï¿½Öµï¿½ï¿½ï¿½î£º</td>
     <td class="tablert">
-    <input type="text" name="lowczfunds" size="24" value="<?php echo $rights[3]; ?>"/> 0±íÊ¾²»ÏÞÖÆ</td>
+    <input type="text" name="lowczfunds" size="24" value="<?php echo $rights[3]; ?>"/> 0ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
   </tr>
   <tr<?php if(UB_B2B==0 || $vd['tbcz']==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">¿ªÍ¨ÌÔ±¦×Ô¶¯³äÖµ£º</td>
+    <td class="tablelt">ï¿½ï¿½Í¨ï¿½Ô±ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Öµï¿½ï¿½</td>
     <td class="tablert">
-    <input type="radio" name="tbcz" value="-1" class="checkbox" onFocus="this.blur()" <?php if($rights[4]==0){ ?>checked<?php } ?> > ²»¿ªÍ¨
-    <input type="radio" name="tbcz" value="1" class="checkbox" onFocus="this.blur()"  <?php if($rights[4]==1){ ?>checked<?php } ?> > ¿ªÍ¨</td>
+    <input type="radio" name="tbcz" value="-1" class="checkbox" onFocus="this.blur()" <?php if($rights[4]==0){ ?>checked<?php } ?> > ï¿½ï¿½ï¿½ï¿½Í¨
+    <input type="radio" name="tbcz" value="1" class="checkbox" onFocus="this.blur()"  <?php if($rights[4]==1){ ?>checked<?php } ?> > ï¿½ï¿½Í¨</td>
   </tr>
   <tr>
-    <td class="tablelt">È¨ÏÞÉèÖÃ£º</td>
+    <td class="tablelt">È¨ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½</td>
     <td class="tablert">
-      <input type="checkbox" value="1" name="yktcz" onFocus="this.blur()" <?php (ToggleCheck($rights[0])); ?> class="checkbox"/> ÔÊÐíÒ»¿¨Í¨³äÖµ 
-      <span <?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="selfcz" onFocus="this.blur()" <?php (ToggleCheck($rights[1])); ?> class="checkbox"/> ÔÊÐí×ÔÐÐ°ÑÀûÈó×ªÈëÓà¶î</span>
+      <input type="checkbox" value="1" name="yktcz" onFocus="this.blur()" <?php (ToggleCheck($rights[0])); ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½Öµ 
+      <span <?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="selfcz" onFocus="this.blur()" <?php (ToggleCheck($rights[1])); ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½</span>
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">³õÊ¼»¯¸öÐÔÉèÖÃ£º</td>
+    <td class="tablelt">ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½</td>
     <td class="tablert">
-      <input type="checkbox" value="1" name="initpersonfile" onFocus="this.blur()" class="checkbox"/> µ±ÓÃ»§µÄÉèÖÃµ¼ÖÂÎÞ·¨µÇÂ¼»òÕß²Ù×÷µÄÊ±ºò£¬²ÅÐèÒªÄú³õÊ¼»¯£¬·ñÔòÉ÷ÓÃ 
+      <input type="checkbox" value="1" name="initpersonfile" onFocus="this.blur()" class="checkbox"/> ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ß²ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò£¬²ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">½â³ý°ó¶¨£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ó¶¨£ï¿½</td>
     <td class="tablert">
-      <input type="checkbox" value="1" name="gotobindaid" onFocus="this.blur()" class="checkbox" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Security&a=Bind&aid=<?php echo $item['aid']; ?>&staffid=0'"/> ½â³ýÓÃ»§ÉèÖÃµÄÏà¹Ø°ó¶¨£¨ÈçÓ²¼þ°ó¶¨£¬ÃÜ±£°î¶¨£¬Ëæ»úÃÜÂë°ó¶¨µÈ£© 
+      <input type="checkbox" value="1" name="gotobindaid" onFocus="this.blur()" class="checkbox" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Security&a=Bind&aid=<?php echo $item['aid']; ?>&staffid=0'"/> ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ø°ó¶¨£ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ó¶¨£ï¿½ï¿½Ü±ï¿½ï¿½î¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó¶¨µÈ£ï¿½ 
     </td>
   </tr>
   <tr<?php if($vd['vipshop']==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">VIP·ÖÕ¾È¨ÏÞ£º</td>
+    <td class="tablelt">VIPï¿½ï¿½Õ¾È¨ï¿½Þ£ï¿½</td>
     <td class="tablert">
     <input type="checkbox" value="1" name="vipshop" onFocus="this.blur()"    <?php if($item['vipshop']==1){ ?>checked<?php } ?> class="checkbox"/> 
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÊÇ·ñ²âÊÔºÅ£º</td>
+    <td class="tablelt">ï¿½Ç·ï¿½ï¿½ï¿½ÔºÅ£ï¿½</td>
     <td class="tablert">
-    <input type="checkbox" value="1" name="istest" onFocus="this.blur()"    <?php if($item['istest']==1){ ?>checked<?php } ?> class="checkbox"/> Åú·¢Æ½Ì¨ÓÐÐ§,Èç¹û²âÊÔºÅµÄ»°,²»ÔÊÐí¹º¿¨,ÆäËü¹¦ÄÜÕý³£
+    <input type="checkbox" value="1" name="istest" onFocus="this.blur()"    <?php if($item['istest']==1){ ?>checked<?php } ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½Ð§,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔºÅµÄ»ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     </td>
   </tr>
   <tr>
-    <td class="tablelt">¾­ÏúÉÌÃûÂ¼£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½</td>
     <td class="tablert">
-      <span<?php if(UB_YKT==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forykt" onFocus="this.blur()" <?php (ToggleCheck($item['forykt'])); ?> class="checkbox"/> ¼ÓÈëÒ»¿¨Í¨Àà¾­ÏúÉÌÃûÂ¼ </span>
-      <span<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forb2b" onFocus="this.blur()" <?php (ToggleCheck($item['forb2b'])); ?> class="checkbox"/> ¼ÓÈëÅú·¢Àà¾­ÏúÉÌÃûÂ¼ </span>
-      <span<?php if(UB_B2C==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forb2c" onFocus="this.blur()" <?php (ToggleCheck($item['forb2c'])); ?> class="checkbox"/> ¼ÓÈëÁãÊÛÀà¾­ÏúÉÌÃûÂ¼ </span>
+      <span<?php if(UB_YKT==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forykt" onFocus="this.blur()" <?php (ToggleCheck($item['forykt'])); ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½à¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ </span>
+      <span<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forb2b" onFocus="this.blur()" <?php (ToggleCheck($item['forb2b'])); ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ </span>
+      <span<?php if(UB_B2C==0){ ?> style="display:none"<?php } ?>><input type="checkbox" value="1" name="forb2c" onFocus="this.blur()" <?php (ToggleCheck($item['forb2c'])); ?> class="checkbox"/> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ </span>
     </td>
   </tr>
   <tr style="display:none">
-    <td class="tablelt">Ò»¿¨Í¨¿¨ÃÜÉú³É£º</td>
+    <td class="tablelt">Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½</td>
     <td class="tablert">
-      <input type="checkbox" value="1" name="yktcreate" onFocus="this.blur()" <?php (ToggleCheck($rights[2])); ?> class="checkbox" onclick="javascript:alert('´ò¹´ºó£¬ÇëÎñ±ØÍ¬Ê±¹´Ñ¡¾­ÏúÉÌÃûÂ¼´¦µÄ¼ÓÈëÒ»¿¨Í¨Àà¾­ÏúÉÌÃûÂ¼£¬Í¬Ê±¾­ÏúÉÌ¹¦ÄÜ´¦µÄÒ»¿¨Í¨¹¦ÄÜÒ²Òª´ò¹´·½¿ÉÊ¹ÓÃ')"/> ÔÊÐíÇ°Ì¨×ÔÐÐÉú³ÉÒ»¿¨Í¨£¬Ò»¿¨Í¨±»Ê¹ÓÃºó×Ô¶¯¿Û³ý¿Í»§µÄÇ®
+      <input type="checkbox" value="1" name="yktcreate" onFocus="this.blur()" <?php (ToggleCheck($rights[2])); ?> class="checkbox" onclick="javascript:alert('ï¿½ò¹´ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½à¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½Ü´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ò²Òªï¿½ò¹´·ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½')"/> ï¿½ï¿½ï¿½ï¿½Ç°Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½Ê¹ï¿½Ãºï¿½ï¿½Ô¶ï¿½ï¿½Û³ï¿½ï¿½Í»ï¿½ï¿½ï¿½Ç®
     </td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">¿ª»§ÐÐ£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½</td>
     <td class="tablert">
     <input type="text" name="AccountBranch" size="24" value="<?php echo $item['AccountBranch']; ?>"/></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">ÒøÐÐÕÊºÅ£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ÊºÅ£ï¿½</td>
     <td class="tablert">
     <input type="text" name="AccountNo" size="24" value="<?php echo $item['AccountNo']; ?>"/></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">»§Ãû£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">
     <input type="text" name="AccountName" size="24" value="<?php echo $item['AccountName']; ?>"/></td>
   </tr>
   <tr<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-    <td class="tablelt">¿ª»§ËùÔÚµØ£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚµØ£ï¿½</td>
     <td class="tablert">
     <input type="text" name="BankAddress" size="24" value="<?php echo $item['BankAddress']; ?>"/></td>
   </tr>
   <tr>
-    <td class="tablelt">×îºóµÇÂ½IP£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Â½IPï¿½ï¿½</td>
     <td class="tablert"><?php echo $item['lastip']; ?></td>
   </tr>
   <tr>
-    <td class="tablelt">×îºóµÇÂ½Ê±¼ä£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Â½Ê±ï¿½ä£º</td>
     <td class="tablert"><?php echo $item['lastdate']; ?></td>
   </tr>
   <tr>
-    <td class="tablelt">×¢²áIP£º</td>
+    <td class="tablelt">×¢ï¿½ï¿½IPï¿½ï¿½</td>
     <td class="tablert"><?php echo $item['regip']; ?></td>
   </tr>
   <tr>
-    <td class="tablelt">×¢²áÊ±¼ä£º</td>
+    <td class="tablelt">×¢ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert"><?php echo $item['regdate']; ?></td>
   </tr>
 </table>
@@ -251,120 +251,120 @@
 <input type="hidden" value="<?php echo $item['aid']; ?>" name="aid" id="aid"/>
 </div>
 <div class="cwarpper1">
-<div class="ctitle">°´Ê±¼ä¶Î¶³½áÓÃ»§</div>
+<div class="ctitle">ï¿½ï¿½Ê±ï¿½ï¿½Î¶ï¿½ï¿½ï¿½ï¿½Ã»ï¿½</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
 	<tr>
-    <td class="tablelt">¶³½áÊ±¼ä¶Î£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î£ï¿½</td>
     <td class="tablert">
       <select name="frozenline" onchange="setfrozendate(this)">
-      	<option value="0">²»²Ù×÷</option>
+      	<option value="0">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
       	<option value="1">1Ð¡Ê±</option>
       	<option value="3">3Ð¡Ê±</option>
       	<option value="12">12Ð¡Ê±</option>
       	<option value="24">24Ð¡Ê±</option>
       	<option value="48">48Ð¡Ê±</option>
-      	<option value="72">3Ìì</option>
-      	<option value="360">15Ìì</option>
-      	<option value="720">1¸öÔÂ</option>
-      	<option value="1440">2¸öÔÂ</option>
-      	<option value="4320">6¸öÔÂ</option>
+      	<option value="72">3ï¿½ï¿½</option>
+      	<option value="360">15ï¿½ï¿½</option>
+      	<option value="720">1ï¿½ï¿½ï¿½ï¿½</option>
+      	<option value="1440">2ï¿½ï¿½ï¿½ï¿½</option>
+      	<option value="4320">6ï¿½ï¿½ï¿½ï¿½</option>
       </select>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">ÆðÊ¼Ê±¼ä£º</td>
+    <td class="tablelt">ï¿½ï¿½Ê¼Ê±ï¿½ä£º</td>
     <td class="tablert">
       <input type="text" class="myinput" style="font-weight:normal" name="fromdate" id="t1" size="20" value="<?php echo $item['fromdate']; ?>"/><img src="<?php echo $vd['sc']; ?>images/calender.gif" onclick="dateDialog('t1')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">½áÊøÊ±¼ä£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert">
       <input type="text" class="myinput" style="font-weight:normal" name="todate" id="t2" size="20" value="<?php echo $item['todate']; ?>"/><img src="<?php echo $vd['sc']; ?>images/calender.gif" onclick="dateDialog('t2')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">Ô­Òò£º</td>
+    <td class="tablelt">Ô­ï¿½ï¿½</td>
     <td class="tablert">
-      <input type="text" class="myinput" style="font-weight:normal" name="frozereason" size="20" value="<?php echo $item['frozereason']; ?>"/>Ð¡ÓÚ125¸ö×Ö
+      <input type="text" class="myinput" style="font-weight:normal" name="frozereason" size="20" value="<?php echo $item['frozereason']; ?>"/>Ð¡ï¿½ï¿½125ï¿½ï¿½ï¿½ï¿½
     </td>
   </tr>
 </table>
 </div>
 <?php
   $auright1 = array(
-  array(0,'¹º¿¨ÊÛÓÃ»§',1),
-  array(1,'½ø»õ¼ÇÂ¼²éÑ¯',1),
-  array(34,'ÏúÊÛ¼ÇÂ¼²éÑ¯',0),
-  array(3,'¸øÕË»§³äÖµ',0),
-  array(5,'²é¿´ÕË»§×Ê½ð±ä¶¯',0),
-  array(6,'×Ê½ðËø¶¨',0),
-  array(26,'½è¿î¹ÜÀí',0),
-  array(12,'²Ù×÷ÈÕÖ¾',0),
-  array(16,'ÔÚÏßÍ¶ËßÏµÍ³',1),
-  array(18,'Æ½Ì¨ÄÚ²¿¶ÌÐÅ',1),
-  array(19,'»ã¿îÍ¨ÖªÊé',0),
-  array(23,'Ô±¹¤ÕÊ»§¹ÜÀí',0),
-  array(11,'Ô±¹¤ÁãÊÛÀûÈó±¨±í',0),
-  array(35,'Ô±¹¤ÁãÊÛ¼ÛÉè¶¨',0),
-  array(38,'Ô±¹¤½áÕÊ¹ÜÀí',1),
-  array(20,'ÕÊ»§ÃÜÂëÉè¶¨',1),
-  array(15,'ÕË»§°²È«¼ì²é',1),
-  array(39,'IP¼°ËùÔÚµØ°²È«°ó¶¨',1),
-  array(40,'Ó²¼þÐÅÏ¢°²È«°ó¶¨',1),
-  array(41,'ÊÖ»úÁîÅÆ°²È«°ó¶¨',1),
-  array(42,'ÃÜ±£²úÆ·°²È«°ó¶¨',1),
-  array(52,'»ý·Ö¹ÜÀí',1),
+  array(0,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½',1),
+  array(1,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ¯',1),
+  array(34,'ï¿½ï¿½ï¿½Û¼ï¿½Â¼ï¿½ï¿½Ñ¯',0),
+  array(3,'ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½Öµ',0),
+  array(5,'ï¿½é¿´ï¿½Ë»ï¿½ï¿½Ê½ï¿½ä¶¯',0),
+  array(6,'ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(26,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(12,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾',0),
+  array(16,'ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ÏµÍ³',1),
+  array(18,'Æ½Ì¨ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½',1),
+  array(19,'ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½',0),
+  array(23,'Ô±ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(11,'Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó±¨±ï¿½',0),
+  array(35,'Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½ï¿½è¶¨',0),
+  array(38,'Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½',1),
+  array(20,'ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨',1),
+  array(15,'ï¿½Ë»ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½',1),
+  array(39,'IPï¿½ï¿½ï¿½ï¿½ï¿½ÚµØ°ï¿½È«ï¿½ï¿½',1),
+  array(40,'Ó²ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È«ï¿½ï¿½',1),
+  array(41,'ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Æ°ï¿½È«ï¿½ï¿½',1),
+  array(42,'ï¿½Ü±ï¿½ï¿½ï¿½Æ·ï¿½ï¿½È«ï¿½ï¿½',1),
+  array(52,'ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½',1),
   );
   
   if($vd['tbcz'] == 1)
   {
-  	$auright1[] = array(64,'ÌÔ±¦Ð¡µêÁÐ±í/¹Ò»ú',0);
-  	$auright1[] = array(65,'ÌÔ±¦Ð¡µêÌí¼Ó',0);
-  	$auright1[] = array(66,'ÌÔ±¦¶©µ¥¼ÇÂ¼',0);
+  	$auright1[] = array(64,'ï¿½Ô±ï¿½Ð¡ï¿½ï¿½ï¿½Ð±ï¿½/ï¿½Ò»ï¿½',0);
+  	$auright1[] = array(65,'ï¿½Ô±ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½',0);
+  	$auright1[] = array(66,'ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼',0);
   }
  
   $auright2 = array(
-  array(51,'¹ÜÀí¾­ÏúÉÌÏµÍ³',0),
-  array(4,'ÕË»§Óà¶îÏêÏ¸',0),
-  array(2,'ÐÞ¸ÄÏÂ¼Ò½ø¼Û',0),
-  array(9,'»®¿î¸øÏÂ¼¶¿Í»§',0),
-  array(13,'´ú×¢²áÏÂ¼¶ÕÊºÅ',0),
-  array(14,'ÏÂ¼¶¿Í»§µµ°¸¹ÜÀí',0),
-  array(28,'×ÔÓÐÉÌÆ··¢²¼Óë¹ÜÀí',0),
-  array(29,'×ÔÓÐÉÌÆ·Ìí¼Ó',0),
-  array(45,'×ÔÓÐÉÌÆ·¶¨¼Û',0),
-  array(31,'×ÔÓÐÉÌÆ·¿â´æ',0),
-  array(56,'×ÔÓÐÉÌÆ·³äÖµ¹ÜÀí',0),
-  array(44,'ÉÌÆ·ÏúÊÛ±¨±í²éÑ¯',0),
-  array(32,'ÏúÊÛÊÕÈëÈëÕÊ¼ÇÂ¼',0),
-  array(30,'ÏÂ¼¶¿Í»§¼Û¸ñ¹ÜÀí',0),
-  array(46,'ÏÂ¼¶¿Í»§¹º¿¨È¨ÏÞ',0),
-  array(47,'ÏÂ¼¶¿Í»§Ïû·Ñ¼ÇÂ¼',0),
-  array(48,'ÏÂ¼¶»ã¿îÍ¨ÖªÊé',0),
-  array(49,'ÒµÎñÔ±ÕÊ»§¹ÜÀí',0),
-  array(50,'ÒµÎñÔ±Òµ¼¨²éÑ¯',0),
-  array(57,'´úÀíÒ»¿¨Í¨ÁÐ±í',0),
-  array(58,'´úÀíÒ»¿¨Í¨»»¹º¼ÇÂ¼',0),
-  array(59,'»»¹ºÉÌÆ··µµã·ÑÂÊ',0),
-  array(60,'Ò»¿¨Í¨·µµãÃ÷Ï¸',0)
+  array(51,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³',0),
+  array(4,'ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸',0),
+  array(2,'ï¿½Þ¸ï¿½ï¿½Â¼Ò½ï¿½ï¿½ï¿½',0),
+  array(9,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Í»ï¿½',0),
+  array(13,'ï¿½ï¿½×¢ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Êºï¿½',0),
+  array(14,'ï¿½Â¼ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(28,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(29,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½',0),
+  array(45,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½',0),
+  array(31,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½',0),
+  array(56,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½',0),
+  array(44,'ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½Ñ¯',0),
+  array(32,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½Â¼',0),
+  array(30,'ï¿½Â¼ï¿½ï¿½Í»ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ï¿½',0),
+  array(46,'ï¿½Â¼ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½',0),
+  array(47,'ï¿½Â¼ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½Ñ¼ï¿½Â¼',0),
+  array(48,'ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Í¨Öªï¿½ï¿½',0),
+  array(49,'Òµï¿½ï¿½Ô±ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(50,'Òµï¿½ï¿½Ô±Òµï¿½ï¿½ï¿½ï¿½Ñ¯',0),
+  array(57,'ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ð±ï¿½',0),
+  array(58,'ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼',0),
+  array(59,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0),
+  array(60,'Ò»ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸',0)
   );
   
   if($vd['vipshop'] == 1)
   {
-  	$auright2[] = array(53,'VIPÆ½Ì¨ÉèÖÃ',0);
-    $auright2[] = array(62,'VIP·ç¸ñÑ¡Ôñ',0);
-    $auright2[] = array(63,'VIP·ç¸ñ×Ô¶¨Òå',0);
-    $auright2[] = array(54,'VIPÆ½Ì¨¹ã¸æ',0);
-    $auright2[] = array(55,'VIPÆ½Ì¨¹«¸æ',0);
+  	$auright2[] = array(53,'VIPÆ½Ì¨ï¿½ï¿½ï¿½ï¿½',0);
+    $auright2[] = array(62,'VIPï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½',0);
+    $auright2[] = array(63,'VIPï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½',0);
+    $auright2[] = array(54,'VIPÆ½Ì¨ï¿½ï¿½ï¿½',0);
+    $auright2[] = array(55,'VIPÆ½Ì¨ï¿½ï¿½ï¿½ï¿½',0);
   }
   
 ?>
 <div class="cwarpper1"<?php if(UB_B2B==0){ ?> style="display:none"<?php } ?>>
-<div class="ctitle">ÓÃ»§È¨ÏÞÉèÖÃ</div>
+<div class="ctitle">ï¿½Ã»ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
-  <tr><td colspan="4" style="background:#f8f8f8"><b>Ö±ÏúÉÌ¹¦ÄÜ£º</b></td></tr>
+  <tr><td colspan="4" style="background:#f8f8f8"><b>Ö±ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½Ü£ï¿½</b></td></tr>
   <?php $i=0;foreach($auright1 as $item){ ?>
   <?php if($i == 0){ ?>
   <tr>
@@ -383,7 +383,7 @@
   <?php } ?>
 </table>
 <table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
-  <tr><td colspan="4" style="background:#f8f8f8"><b>¾­ÏúÉÌ¹¦ÄÜ£º</b></td></tr>
+  <tr><td colspan="4" style="background:#f8f8f8"><b>ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½Ü£ï¿½</b></td></tr>
   <?php $i=0;foreach($auright2 as $item){ ?>
   <?php if($i == 0){ ?>
   <tr>
@@ -405,21 +405,21 @@
 </div>
 <div id="cdiv" style="position:absolute;bottom:45px;left:30px;;width:480px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ÇëÊäÈëºóÌ¨³äÖµÃÜÂë</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</div>
   <div style="float:right;"><img src="<?php echo $vd['sc']; ?>images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
     <table id="checktable" width="100%" style="border-collapse: collapse;">
       <tr>
-        <td width="25%"">ºóÌ¨³äÖµÃÜÂë</td>
+        <td width="25%"">ï¿½ï¿½Ì¨ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</td>
         <td width="75%"><input type="password" id="mytradepwd" name="mytradepwd" value=""/></td>
       </tr>
       <tr>
-        <td width="25%"">ÌáÊ¾</td>
-        <td width="75%" style="font-size:12px">ÊäÈë³äÖµÃÜÂëºó£¬²Å¿ÉÒÔÐÞ¸ÄÓÃ»§µÄÏà¹ØÐÅÏ¢</td>
+        <td width="25%"">ï¿½ï¿½Ê¾</td>
+        <td width="75%" style="font-size:12px">ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ó£¬²Å¿ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</td>
       </tr>
       <tr>
         <td width="25%" style="height:50px;"></td>
         <td width="75%">
-          <input type="submit" value="ÎÒÖªµÀ£¬È·ÈÏÌá½»" class="button"/> <input type="button" value="È¡Ïû" class="button" onclick="disp('cdiv')"/>
+          <input type="submit" value="ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½á½»" class="button"/> <input type="button" value="È¡ï¿½ï¿½" class="button" onclick="disp('cdiv')"/>
         </td>
       </tr>
     </table>
@@ -429,8 +429,8 @@
 </div>
 <div id="opcontent">
   <div class="optxt">
-    <input type="button" value="ÐÞ ¸Ä &gt;&gt;" name="b1" class="btn" onclick="disp('cdiv')" />
-    <input type="reset" value="ÖØ ÖÃ &gt;&gt;" name="b1" class="btn"/>
+    <input type="button" value="ï¿½ï¿½ ï¿½ï¿½ &gt;&gt;" name="b1" class="btn" onclick="disp('cdiv')" />
+    <input type="reset" value="ï¿½ï¿½ ï¿½ï¿½ &gt;&gt;" name="b1" class="btn"/>
   </div>
 </div>
 </form>
@@ -513,7 +513,7 @@
   
   function setArea(obj)
   {
-    if(obj.innerHTML == "ÇëÊäÈëÔ­Òò")
+    if(obj.innerHTML == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½")
     {
       obj.innerHTML = "";
     }
@@ -523,7 +523,7 @@
   {
     if(obj.innerHTML == "")
     {
-      obj.innerHTML = "ÇëÊäÈëÔ­Òò";
+      obj.innerHTML = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½";
     }
   }
   

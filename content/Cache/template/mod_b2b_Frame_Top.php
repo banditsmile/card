@@ -18,7 +18,7 @@
 
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
 
@@ -100,11 +100,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
           <div id="bannerid" class="banner">
 
-            <p class="hang1"> <a href="../../index.php" target="_blank">平台首页</a><em>|</em> <a href="/ykt" target="_blank">一卡通</a> <em>|</em><a href="#">积分频道</a> </p>
+            <p class="hang1"> <a href="../../index.php" target="_blank">平台锟斤拷页</a><em>|</em> <a href="/ykt" target="_blank">一锟斤拷通</a> <em>|</em><a href="#">锟斤拷锟斤拷频锟斤拷</a> </p>
 
 
 
-            <p class="hang2"> <span id="lblUserName">欢迎您，<span style="margin-top:20"><?php echo $vd['agent'][1]; ?></span></span> <em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Home">我的账户</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=staff&nrows=500">员工账户</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=security&a=check">安全设置</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=trade&tpl=history">资金明细</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=loan&a=Create">借款申请</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Messenger">站内短信(<span class="ye1" style="color:Red;" id="msgn">0</span>)条</b></a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Complaint">投诉反馈</a><em>|</em>[<a id="lbtnExit" href="../../index.php?m=mod_b2b&a=logout">退出</a>] </p>
+            <p class="hang2"> <span id="lblUserName">锟斤拷迎锟斤拷锟斤拷<span style="margin-top:20"><?php echo $vd['agent'][1]; ?></span></span> <em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Home">锟揭碉拷锟剿伙拷</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=staff&nrows=500">员锟斤拷锟剿伙拷</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=security&a=check">锟斤拷全锟斤拷锟斤拷</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=trade&tpl=history">锟绞斤拷锟斤拷细</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=loan&a=Create">锟斤拷锟斤拷锟斤拷锟�</a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Messenger">站锟节讹拷锟斤拷(<span class="ye1" style="color:Red;" id="msgn">0</span>)锟斤拷</b></a><em>|</em><a target="ifrpage" href="../../index.php?m=mod_agent&c=Complaint">投锟竭凤拷锟斤拷</a><em>|</em>[<a id="lbtnExit" href="../../index.php?m=mod_b2b&a=logout">锟剿筹拷</a>] </p>
 
 
 
@@ -118,23 +118,23 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
                         <div class="public_top_menu_ctn_bg">
 
-<li>客服一：<?php echo $vd['web']['wangwang']; ?></li>
+<li>锟酵凤拷一锟斤拷<?php echo $vd['web']['wangwang']; ?></li>
 
 
 
-<li>客服二：<?php echo $vd['web']['fax']; ?></li>
+<li>锟酵凤拷锟斤拷锟斤拷<?php echo $vd['web']['fax']; ?></li>
 
 
 
-<li class="qq">客服1：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $vd['web']['email']; ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $vd['web']['email']; ?>:51" alt="新云卡在线客服" title="新云卡在线客服"></a></li>
+<li class="qq">锟酵凤拷1锟斤拷<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $vd['web']['email']; ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $vd['web']['email']; ?>:51" alt="锟斤拷锟狡匡拷锟斤拷锟竭客凤拷" title="锟斤拷锟狡匡拷锟斤拷锟竭客凤拷"></a></li>
 
 
 
-<li class="qq">客服2：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $vd['web']['msn']; ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $vd['web']['msn']; ?>:51" alt="新云卡在线客服" title="新云卡在线客服"></a></li>
+<li class="qq">锟酵凤拷2锟斤拷<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $vd['web']['msn']; ?>&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:<?php echo $vd['web']['msn']; ?>:51" alt="锟斤拷锟狡匡拷锟斤拷锟竭客凤拷" title="锟斤拷锟狡匡拷锟斤拷锟竭客凤拷"></a></li>
 
 
 
-<li>工作时间：<?php echo $vd['web']['worktime']; ?></li>
+<li>锟斤拷锟斤拷时锟戒：<?php echo $vd['web']['worktime']; ?></li>
 
 
 
@@ -162,19 +162,19 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-              <li> <a id="lbtnMenu1" href="/index.php?m=mod_b2b&c=Frame&a=Top">网吧售卡中心</a></li>
+              <li> <a id="lbtnMenu1" href="/index.php?m=mod_b2b&c=Frame&a=Top">锟斤拷锟斤拷锟桔匡拷锟斤拷锟斤拷</a></li>
 
 
 
-              <li> <a id="lbtnMenu2" href="/index.php?m=mod_b2b&c=Dealer&a=Top">经销商系统</a></li>
+              <li> <a id="lbtnMenu2" href="/index.php?m=mod_b2b&c=Dealer&a=Top">锟斤拷锟斤拷锟斤拷系统</a></li>
 
 
 
-              <li> <a id="lbtnMenu3" href="/index.php?m=mod_b2b&c=Dealergong&a=Top">供货商系统</a></li>
+              <li> <a id="lbtnMenu3" href="/index.php?m=mod_b2b&c=Dealergong&a=Top">锟斤拷锟斤拷锟斤拷系统</a></li>
 
 
 
-              <li> <a id="lbtnMenu4" href="/index.php?m=mod_b2b&c=Card&a=Top">一卡通代理</a></li>
+              <li> <a id="lbtnMenu4" href="/index.php?m=mod_b2b&c=Card&a=Top">一锟斤拷通锟斤拷锟斤拷</a></li>
 
 
 
@@ -330,7 +330,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-    <li style="width: 130px"><a href="../index.php?m=mod_b2b&a=Home" target="ifrpage" style="width: 130px"> 购卡中心首页</a></li>
+    <li style="width: 130px"><a href="../index.php?m=mod_b2b&a=Home" target="ifrpage" style="width: 130px"> 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷页</a></li>
 
 
 
@@ -338,7 +338,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-    <li><a href="index.php?m=mod_b2b&c=Category" target="ifrpage">商品目录</a></li>
+    <li><a href="index.php?m=mod_b2b&c=Category" target="ifrpage">锟斤拷品目录</a></li>
 
 
 
@@ -346,7 +346,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-    <li><a href="../index.php?m=mod_agent&c=VOrder&ordstate=2" target="ifrpage">销售记录</a></li>
+    <li><a href="../index.php?m=mod_agent&c=VOrder&ordstate=2" target="ifrpage">锟斤拷锟桔硷拷录</a></li>
 
 
 
@@ -354,7 +354,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-    <li><a href="../index.php?m=mod_agent&c=trade&tpl=history" target="ifrpage">资金明细</a></li>
+    <li><a href="../index.php?m=mod_agent&c=trade&tpl=history" target="ifrpage">锟绞斤拷锟斤拷细</a></li>
 
 
 
@@ -366,7 +366,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-    <li class="qiehuan" id="mainmenu2"><span class="qh_name">当前栏目：</span><a href="javascript:" onclick="ShowMenu()"><span id="lblMenu">网吧售卡中心</span></a></li>
+    <li class="qiehuan" id="mainmenu2"><span class="qh_name">锟斤拷前锟斤拷目锟斤拷</span><a href="javascript:" onclick="ShowMenu()"><span id="lblMenu">锟斤拷锟斤拷锟桔匡拷锟斤拷锟斤拷</span></a></li>
 
 
 
@@ -432,7 +432,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
       var obj = $("msgn");
 
-      var content = "错误！"
+      var content = "锟斤拷锟斤拷"
 
       try{
 
@@ -550,11 +550,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                  <h2> <span class="yh">用户信息</span></h2>
+                  <h2> <span class="yh">锟矫伙拷锟斤拷息</span></h2>
 
 
 
-                  <h3 class="menutitle" onclick="UserPanelStatus(this)"> <span>用户信息</span></h3>
+                  <h3 class="menutitle" onclick="UserPanelStatus(this)"> <span>锟矫伙拷锟斤拷息</span></h3>
 
 
 
@@ -562,11 +562,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li>编 号：<?php echo $vd['agent'][7]; ?></li>
+                    <li>锟斤拷 锟脚ｏ拷<?php echo $vd['agent'][7]; ?></li>
 
 
 
-                    <li>级 别：<?php echo $vd['agent'][2]; ?></li>
+                    <li>锟斤拷 锟斤拷<?php echo $vd['agent'][2]; ?></li>
 
 
 
@@ -574,7 +574,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                      <div style="float: left"> 余 额：<span class="yue"><?php echo $vd['agent'][6]; ?></span>元</div>
+                      <div style="float: left"> 锟斤拷 锟筋：<span class="yue"><?php echo $vd['agent'][6]; ?></span>元</div>
 
 
 
@@ -582,7 +582,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                        <input name="button" type="button" class="shuaxin" id="RefreshImg" title="刷新余额" onclick="GetBalance()" />
+                        <input name="button" type="button" class="shuaxin" id="RefreshImg" title="刷锟斤拷锟斤拷锟�" onclick="GetBalance()" />
 
 
 
@@ -598,7 +598,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                      <div style="float: left"> 上 级：<span class="jifen"><?php echo $vd['agent'][4]; ?></span></div>
+                      <div style="float: left"> 锟斤拷 锟斤拷锟斤拷<span class="jifen"><?php echo $vd['agent'][4]; ?></span></div>
 
 
 
@@ -606,11 +606,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li>地 区：<?php echo $vd['agent'][3]; ?></li>
+                    <li>锟斤拷 锟斤拷锟斤拷<?php echo $vd['agent'][3]; ?></li>
 
 
 
-                    <li style="padding: 5px 0 4px 9px"><a href="index.php?m=mod_agent&c=funds&a=AddFunds" class="pay1" target="ifrpage"> 充值</a><a href="index.php?m=mod_agent&c=funds&a=tran" class="pay1" target="ifrpage">转账</a><a href="index.php?m=mod_agent&c=funds&a=detail" class="pay1" target="ifrpage" style="margin-right: 0">提现</a></li>
+                    <li style="padding: 5px 0 4px 9px"><a href="index.php?m=mod_agent&c=funds&a=AddFunds" class="pay1" target="ifrpage"> 锟斤拷值</a><a href="index.php?m=mod_agent&c=funds&a=tran" class="pay1" target="ifrpage">转锟斤拷</a><a href="index.php?m=mod_agent&c=funds&a=detail" class="pay1" target="ifrpage" style="margin-right: 0">锟斤拷锟斤拷</a></li>
 
 
 
@@ -634,7 +634,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                  <h3 class="menutitle"> <span>购买商品</span></h3>
+                  <h3 class="menutitle"> <span>锟斤拷锟斤拷锟斤拷品</span></h3>
 
 
 
@@ -642,15 +642,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_b2b&c=Category" target="ifrpage" onfocus="this.blur();">查看商品目录</a></li>
+                    <li class="li1"><a href="index.php?m=mod_b2b&c=Category" target="ifrpage" onfocus="this.blur();">锟介看锟斤拷品目录</a></li>
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_b2b&c=Fav" target="ifrpage" onfocus="this.blur();"> 我的收藏夹</a></li>
+                    <li class="li1"><a href="index.php?m=mod_b2b&c=Fav" target="ifrpage" onfocus="this.blur();"> 锟揭碉拷锟秸藏硷拷</a></li>
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_b2b&c=Category" target="ifrpage" onfocus="this.blur();">库存提取卡密</a></li>
+                    <li class="li1"><a href="index.php?m=mod_b2b&c=Category" target="ifrpage" onfocus="this.blur();">锟斤拷锟斤拷锟饺★拷锟斤拷锟�</a></li>
 
 
 
@@ -658,7 +658,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                  <h3 menuid="4" togglegroup="on" class="menutitle"> <span>网店对接</span></h3>
+                  <h3 menuid="4" togglegroup="on" class="menutitle"> <span>锟斤拷锟斤拷越锟�</span></h3>
 
 
 
@@ -666,7 +666,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li class="li1"><a href="../NoRight.php?r=102" target="ifrpage" onfocus="this.blur();">淘宝网店对接</a></li>
+                    <li class="li1"><a href="../NoRight.php?r=102" target="ifrpage" onfocus="this.blur();">锟皆憋拷锟斤拷锟斤拷越锟�</a></li>
 
 
 
@@ -674,7 +674,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                  <h3 menuid="2" togglegroup="on" class="menutitle"> <span>记录信息</span></h3>
+                  <h3 menuid="2" togglegroup="on" class="menutitle"> <span>锟斤拷录锟斤拷息</span></h3>
 
 
 
@@ -682,11 +682,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_agent&c=VOrder&ordstate=2" target="ifrpage" onfocus="this.blur();"> 销售记录查询</a></li>
+                    <li class="li1"><a href="index.php?m=mod_agent&c=VOrder&ordstate=2" target="ifrpage" onfocus="this.blur();"> 锟斤拷锟桔硷拷录锟斤拷询</a></li>
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_agent&c=trade&tpl=history" target="ifrpage" onfocus="this.blur();"> 账户资金明细</a></li>
+                    <li class="li1"><a href="index.php?m=mod_agent&c=trade&tpl=history" target="ifrpage" onfocus="this.blur();"> 锟剿伙拷锟绞斤拷锟斤拷细</a></li>
 
 
 
@@ -694,7 +694,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                  <h3 menuid="3" togglegroup="on" class="menutitle"> <span>帐户管理</span></h3>
+                  <h3 menuid="3" togglegroup="on" class="menutitle"> <span>锟绞伙拷锟斤拷锟斤拷</span></h3>
 
 
 
@@ -702,11 +702,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-                    <li class="li1"><a href="index.php?m=mod_b2b&c=price" target="ifrpage" onfocus="this.blur();"> 商品售价设置</a></li>
+                    <li class="li1"><a href="index.php?m=mod_b2b&c=price" target="ifrpage" onfocus="this.blur();"> 锟斤拷品锟桔硷拷锟斤拷锟斤拷</a></li>
 
 
 
-                    <li class="li1"><a href="/index.php?m=mod_agent&c=Check&a=Add" target="ifrpage" onfocus="this.blur();"> 员工结帐登记</a></li>
+                    <li class="li1"><a href="/index.php?m=mod_agent&c=Check&a=Add" target="ifrpage" onfocus="this.blur();"> 员锟斤拷锟斤拷锟绞登硷拷</a></li>
 
 
 
@@ -822,7 +822,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 
 
-try{Dialog.win({title:'平台公告',iframe:{src:'index.php?m=mod_ykt&c=home&a=close'},width:500,height:300});}catch(e){}parent.frames['ifrpage'].location.href='/index.php?m=mod_b2b&a=Home';//]]>
+try{Dialog.win({title:'平台锟斤拷锟斤拷',iframe:{src:'index.php?m=mod_ykt&c=home&a=close'},width:500,height:300});}catch(e){}parent.frames['ifrpage'].location.href='/index.php?m=mod_b2b&a=Home';//]]>
 
 
 
@@ -862,7 +862,7 @@ try{Dialog.win({title:'平台公告',iframe:{src:'index.php?m=mod_ykt&c=home&a=close
 
 
 
-                      <td width="40%" height="21" align="right"><?php  将此标记放在您希望显示like按钮的位置  ?>
+                      <td width="40%" height="21" align="right"><?php  锟斤拷锟剿憋拷欠锟斤拷锟斤拷锟较ｏ拷锟斤拷锟绞緇ike锟斤拷钮锟斤拷位锟斤拷  ?>
 
 
 
@@ -870,7 +870,7 @@ try{Dialog.win({title:'平台公告',iframe:{src:'index.php?m=mod_ykt&c=home&a=close
 
 
 
-                        <?php  将此代码放在适当的位置，建议在body结束前  ?>
+                        <?php  锟斤拷锟剿达拷锟斤拷锟斤拷锟斤拷实锟斤拷锟轿伙拷茫锟斤拷锟斤拷锟斤拷锟絙ody锟斤拷锟斤拷前  ?>
 
 
 
@@ -908,7 +908,7 @@ var bdShare_config = {
 
 
 
-	"likedText":"感谢您的支持",
+	"likedText":"锟斤拷谢锟斤拷锟斤拷支锟斤拷",
 
 
 
@@ -948,11 +948,11 @@ document.getElementById("bdlike_shell").src="http://bdimg.share.baidu.com/static
 
 
 
-                  <div class="ft2"> 　版权所有  <a id="Theme1_Copyright">Copyright 2013-2014 新云数卡</a>
+                  <div class="ft2"> 锟斤拷锟斤拷权锟斤拷锟斤拷  <a id="Theme1_Copyright">Copyright 2013-2014 锟斤拷锟斤拷锟斤拷锟斤拷</a>
 
 
 
-                      <p> 　运营商：<span id="OperatorName"><?php echo $vd['web']['webname']; ?></span></p><p> 　运备案号：<span id="OperatorName"><?php echo $vd['web']['beian']; ?></span></p>
+                      <p> 锟斤拷锟斤拷营锟教ｏ拷<span id="OperatorName"><?php echo $vd['web']['webname']; ?></span></p><p> 锟斤拷锟剿憋拷锟斤拷锟脚ｏ拷<span id="OperatorName"><?php echo $vd['web']['beian']; ?></span></p>
 
 
 

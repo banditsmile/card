@@ -27,7 +27,7 @@ class AreaController extends Controller
 								$R69f05bd302 = getvar( "game", "" );
 								if ( $R49bbbc2f6a == 0 )
 								{
-												$this->Alert( "Äú»¹Ã»ÓÐÅäÖÃÇø·þÄ£°å£¡ÇëÏÈÅäÖÃºÃºóÔÙÑ¡Ôò" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½å£¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃºÃºï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R69f05bd302 == "" )
@@ -40,7 +40,7 @@ class AreaController extends Controller
 								$R4fec707bc7 = intval( request( "istable" ) );
 								if ( $R4fec707bc7 == 1 )
 								{
-												header( "Content-type: text/html;charset=GB2312" );
+												header( "Content-type: text/html;charset=utf-8" );
 												$table = 1;
 								}
 								$Oooo00 = "base64_decode";
@@ -92,7 +92,7 @@ class AreaController extends Controller
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -104,10 +104,10 @@ class AreaController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -118,7 +118,7 @@ class AreaController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -133,7 +133,7 @@ class AreaController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -152,7 +152,7 @@ class AreaController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -191,7 +191,7 @@ class AreaController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -214,7 +214,7 @@ class AreaController extends Controller
 								$R808b89ba0e = $this->instance->IGameArea_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{
@@ -232,7 +232,7 @@ class AreaController extends Controller
 								$R124c4e44f6 = intval( request( "oldparentid" ) );
 								if ( trim( $name ) == "" )
 								{
-												$this->Alert( "Ãû³Æ²»ÄÜÎª¿Õ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( 0 < $R3584859062 && $R124c4e44f6 == 0 && 0 < $Rac9b8532b8 )
@@ -243,7 +243,7 @@ class AreaController extends Controller
 												$Re95f9154b7 = $this->instance->IGameArea_Get( $data );
 												if ( 0 < count( $Re95f9154b7 ) )
 												{
-																$this->Alert( "Ä¿Ç°ÉèÖÃµÄÏî»¹º¬ÓÐ·þÎñÆ÷£¬ÇëÏÈÉ¾³ýËûµ×ÏÂµÄ·þÎñÆ÷ÔÙ°ÑËû×ªµ½ÁíÍâÒ»¸öÇøÓòÏÂ£¡" );
+																$this->Alert( "Ä¿Ç°ï¿½ï¿½ï¿½Ãµï¿½ï¿½î»¹ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù°ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½" );
 																$this->HistoryGo( );
 												}
 								}
@@ -255,14 +255,14 @@ class AreaController extends Controller
 								if ( $R3584859062 == 0 )
 								{
 												$R808b89ba0e = $this->instance->IGameArea_Create( $data );
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 								}
 								else
 								{
 												$R808b89ba0e = $this->instance->IGameArea_Update( $data, $R3584859062 );
-												$R63bede6b19 = "±à¼­";
+												$R63bede6b19 = "ï¿½à¼­";
 								}
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦£¡", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=area&id=".$R49bbbc2f6a."&game=".$R69f05bd302 );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½ï¿½ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=area&id=".$R49bbbc2f6a."&game=".$R69f05bd302 );
 				}
 
 }

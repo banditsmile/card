@@ -25,7 +25,7 @@ class MsgController extends Controller
 
 				public function Create( )
 				{
-								$Raccfd28028 = getvar( "ubzmfrom", "ÇëÊäÈë¶Ô·½ÉÌ»§µÄ±àºÅ" );
+								$Raccfd28028 = getvar( "ubzmfrom", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½Ì»ï¿½ï¿½Ä±ï¿½ï¿½" );
 								$Rdcd9105806 = getvar( "ordno" );
 								$Rcfe474ce78 = intval( request( "mtype" ) );
 								if ( $Rdcd9105806 != "" )
@@ -37,7 +37,7 @@ class MsgController extends Controller
 												$R3db8f5c8bc = $Rbf38ef6cc6->IOrder_Get( $data );
 												if ( isset( $R3db8f5c8bc['errcode'] ) && $R3db8f5c8bc['errcode'] == "2" )
 												{
-																$this->Alert( "ÄúºÃ£¬·ïÏèÁªÊÛÏµÍ³ÉÏ±ßÉÐÎ´·¢ÏÖ´Ë¶©µ¥£¬ÎÞ·¨Ïò¹©»õÉÌÍ¶Ëß\\n\\n¿ÉÄÜ´Ë¶©µ¥»¹Î´·¢Éú½ø»õÐÐÎª£¬Çë½øÈë²ÆÎñ½øÐÐ²éÖ¤" );
+																$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ï±ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½Ö´Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ò¹©»ï¿½ï¿½ï¿½Í¶ï¿½ï¿½\\n\\nï¿½ï¿½ï¿½Ü´Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Ö¤" );
 																$this->HistoryGo( );
 												}
 												if ( isset( $R3db8f5c8bc['errcode'] ) && $R3db8f5c8bc['errcode'] == "1" )
@@ -46,15 +46,15 @@ class MsgController extends Controller
 												}
 												if ( $R3db8f5c8bc['item']['uid'] == $R3db8f5c8bc['item']['ubzuid'] )
 												{
-																$this->Alert( "²»ÄÜ×Ô¼º¸ø×Ô¼º·¢¶ÌÐÅ£¡" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½" );
 																$this->HistoryGo( );
 												}
 												$Raccfd28028 = $R3db8f5c8bc['item']['uid'];
 								}
 								$R5f1f0bee3a = getvar( "ubzmtitle" );
-								$Rd41ed45824 = array( "1" => "ÆÕÍ¨¶ÌÐÅ", "3" => "Í¶Ëß¶ÌÐÅ" );
-								$R60d44bd111 = array( "ÆäËüÎÊÌâ", "Ìá¿¨Ç°±»³äÖµ", "¿¨ºÅ»òÃÜÂë´íÎó", "³äÖµ³É¹¦Î´µ½ÕÊ", "Ìá¿¨ºó±»³äÖµ", "¼´Ìá¼´ÓÃ¾À·×", "Êµ¼Ê³äÖµÓëÉÌÆ·ËµÃ÷²»·û" );
-								$R76e9854dc9 = array( "ÆäËü", "´ú³ä", "²¹¿¨", "ÍËÇ®" );
+								$Rd41ed45824 = array( "1" => "ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "3" => "Í¶ï¿½ß¶ï¿½ï¿½ï¿½" );
+								$R60d44bd111 = array( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½á¿¨Ç°ï¿½ï¿½ï¿½ï¿½Öµ", "ï¿½ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Öµï¿½É¹ï¿½Î´ï¿½ï¿½ï¿½ï¿½", "ï¿½á¿¨ï¿½ó±»³ï¿½Öµ", "ï¿½ï¿½ï¿½á¼´ï¿½Ã¾ï¿½ï¿½ï¿½", "Êµï¿½Ê³ï¿½Öµï¿½ï¿½ï¿½ï¿½Æ·Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
+								$R76e9854dc9 = array( "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Ç®" );
 								$this->Assign( "tarray", $Rd41ed45824 );
 								$this->Assign( "carray", $R60d44bd111 );
 								$this->Assign( "hope", $R76e9854dc9 );
@@ -78,7 +78,7 @@ class MsgController extends Controller
 								}
 								$R36130a8639 = getvar( "optype", "r" );
 								$R7965cb3798 = getvar( "keywords", "" );
-								if ( $R7965cb3798 == "±êÌâ" )
+								if ( $R7965cb3798 == "ï¿½ï¿½ï¿½ï¿½" )
 								{
 												$R7965cb3798 = "";
 								}
@@ -96,7 +96,7 @@ class MsgController extends Controller
 								);
 								$this->FillPage( $data, $this->service->IMsg_Page( $data ) );
 								$this->Assign( "optype", $R36130a8639 );
-								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«²¿</font>", "ÆÕÍ¨¶ÌÐÅ", "<font color=\"#ff00ff\">ÏµÍ³¶ÌÐÅ</font>", "<font color=\"#ff0000\">Í¶Ëß¶ÌÐÅ</font>", "<font color=\"#ff0000\">µ÷¼Û¶ÌÐÅ</font>", "<font color=\"#ff0000\">¿â´æ¶ÌÐÅ</font>" );
+								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«ï¿½ï¿½</font>", "ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "<font color=\"#ff00ff\">ÏµÍ³ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">Í¶ï¿½ß¶ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">ï¿½ï¿½ï¿½Û¶ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>" );
 								$this->Assign( "tarray", $Rd41ed45824 );
 							
 												$this->view( );
@@ -105,7 +105,7 @@ class MsgController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
@@ -116,13 +116,13 @@ class MsgController extends Controller
 												"action" => $this->action[1]
 								);
 								$this->service->IMsg_Save( $data );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$this->view( "Index" );
 				}
 
 				public function Detail( )
 				{
-								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«²¿</font>", "ÆÕÍ¨¶ÌÐÅ", "<font color=\"#ff00ff\">ÏµÍ³¶ÌÐÅ</font>", "<font color=\"#ff0000\">Í¶Ëß¶ÌÐÅ</font>", "<font color=\"#ff0000\">µ÷¼Û¶ÌÐÅ</font>", "<font color=\"#ff0000\">¿â´æ¶ÌÐÅ</font>" );
+								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«ï¿½ï¿½</font>", "ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "<font color=\"#ff00ff\">ÏµÍ³ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">Í¶ï¿½ß¶ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">ï¿½ï¿½ï¿½Û¶ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>" );
 								$this->Assign( "tarray", $Rd41ed45824 );
 								$data = array(
 												"ubzmid" => intval( getvar( "ubzid" ) ),
@@ -163,24 +163,24 @@ class MsgController extends Controller
 								$R3db8f5c8bc = $this->service->IMsg_Save( $data );
 								if ( !isset( $R3db8f5c8bc['errcode'] ) )
 								{
-												$this->Alert( "·¢ËÍÊ§°Ü£ººÍÏµÍ³Í¨ÐÅÊ§°Ü£¬ÇëÖØÐÂ·¢ËÍ" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ÏµÍ³Í¨ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								if ( $R3db8f5c8bc['errcode'] == "0" )
 								{
-												$this->Alert( "·¢ËÍ³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Í³É¹ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=Msg&optype=s&ubzisreaded=2" );
 								}
 								else
 								{
-												$this->Alert( "·¢ËÍÊ§°Ü£º".$R3db8f5c8bc['content'] );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½".$R3db8f5c8bc['content'] );
 												$this->HistoryGo( );
 								}
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -192,10 +192,10 @@ class MsgController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -206,7 +206,7 @@ class MsgController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -221,7 +221,7 @@ class MsgController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -239,7 +239,7 @@ class MsgController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -285,7 +285,7 @@ class MsgController extends Controller
 								$R808b89ba0e = $this->instance->ICatalog_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

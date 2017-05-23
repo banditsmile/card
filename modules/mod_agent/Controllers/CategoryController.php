@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
 				public function Child( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$R3584859062 = intval( request( "id" ) );
 								if ( $R3584859062 == 0 )
 								{

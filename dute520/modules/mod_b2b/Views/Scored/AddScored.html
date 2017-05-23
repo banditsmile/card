@@ -1,36 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$temp = explode('|', $vd['sys']['pwdconfig']);-->
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=home" title=""><font color="#000">积分系统</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">赠送积分</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看用户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=home" title=""><font color="#000">锟斤拷锟斤拷系统</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">锟斤拷锟酵伙拷锟斤拷</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="锟介看锟矫伙拷锟斤拷匕锟斤拷锟�"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=Scored&a=ScoredSave">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">积分赠送</div>
+<div class="ctitle">锟斤拷锟斤拷锟斤拷锟斤拷</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
   <tr>
-    <td class="tablelt">选择用户：</td>
+    <td class="tablelt">选锟斤拷锟矫伙拷锟斤拷</td>
     <td class="tablert">
       <select name="aidmethod" onchange="settr(this)">
-        <option value="1">指定用户</option>
-        <option value="2">指定级别</option>
-        <option value="3">全体用户</option>
+        <option value="1">指锟斤拷锟矫伙拷</option>
+        <option value="2">指锟斤拷锟斤拷锟斤拷</option>
+        <option value="3">全锟斤拷锟矫伙拷</option>
       </select>
     </td>
   </tr>
   <tr id="tr_1_0">
-    <td class="tablelt">用户编号：</td>
+    <td class="tablelt">锟矫伙拷锟斤拷牛锟�</td>
     <td class="tablert"><input type="text" name="aid" size="20" value=""/></td>
   </tr>
   <tr id="tr_2_0" style="display:none">
-    <td class="tablelt">指定级别：</td>
+    <td class="tablelt">指锟斤拷锟斤拷锟斤拷</td>
     <td class="tablert">
       <select name="rank" >
         <!--foreach($vd['rank'] as $item){-->
@@ -40,31 +40,31 @@
     </td>
   </tr>
   <tr>
-    <td class="tablelt">数量：</td>
+    <td class="tablelt">锟斤拷锟斤拷锟斤拷</td>
     <td class="tablert">
-      <input type="text" name="ubzczvalue" size="20"/> <span class="spantip">扣积分的话话，这里填上对应负数即可，如 -10 表示扣款 10 {$vd['lang']['moneyunit']}</span>
+      <input type="text" name="ubzczvalue" size="20"/> <span class="spantip">锟桔伙拷锟街的伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟较讹拷应锟斤拷锟斤拷锟斤拷锟缴ｏ拷锟斤拷 -10 锟斤拷示锟桔匡拷 10 {$vd['lang']['moneyunit']}</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">赠送备注：</td>
+    <td class="tablelt">锟斤拷锟酵憋拷注锟斤拷</td>
     <td class="tablert">
       <div id="reason" style="padding:10px 0px;line-height:20px">
-        <input type="radio" name="remarks" value="普通赠送" class="checkbox" style="vertical-align:top" onclick="setCustom(0)" checked/> 普通赠送<br/>
-        <input type="radio" name="remarks" value="订单失败手工退还" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> 订单失败手工退还<br/>
-        <input type="radio" name="remarks" value="custom" class="checkbox" style="vertical-align:top" onclick="setCustom(1)"/> 自行输入<br/>
-        <textarea rows="3" name="remarks_custom" cols="28" id="remarks_custom" style="width:208px;display:none;color:#5c5c5c" onblur="setBlur(this)" onclick="setArea(this)">请输入原因</textarea>
+        <input type="radio" name="remarks" value="锟斤拷通锟斤拷锟斤拷" class="checkbox" style="vertical-align:top" onclick="setCustom(0)" checked/> 锟斤拷通锟斤拷锟斤拷<br/>
+        <input type="radio" name="remarks" value="锟斤拷锟斤拷失锟斤拷锟街癸拷锟剿伙拷" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> 锟斤拷锟斤拷失锟斤拷锟街癸拷锟剿伙拷<br/>
+        <input type="radio" name="remarks" value="custom" class="checkbox" style="vertical-align:top" onclick="setCustom(1)"/> 锟斤拷锟斤拷锟斤拷锟斤拷<br/>
+        <textarea rows="3" name="remarks_custom" cols="28" id="remarks_custom" style="width:208px;display:none;color:#5c5c5c" onblur="setBlur(this)" onclick="setArea(this)">锟斤拷锟斤拷锟斤拷原锟斤拷</textarea>
       </div>
     </td>
   </tr>
   <!--if($temp[0] == 1){-->
   <tr>
-    <td class="tablelt">后台充值密码：</td>
+    <td class="tablelt">锟斤拷台锟斤拷值锟斤拷锟诫：</td>
     <td class="tablert">
-      <input type="password" name="tradepwd" value=""> <span class="spantip">如果您不需要这些安全措施，您可以在常规管理中把他去掉</span>
+      <input type="password" name="tradepwd" value=""> <span class="spantip">锟斤拷锟斤拷锟斤拷锟斤拷锟揭拷锟叫╋拷锟饺拷锟绞╋拷锟斤拷锟斤拷锟斤拷锟斤拷诔锟斤拷锟斤拷锟斤拷锟叫帮拷锟斤拷去锟斤拷</span>
     </td>
   </tr>
   <tr>
-    <td class="tablelt">确认后台充值密码：</td>
+    <td class="tablelt">确锟较猴拷台锟斤拷值锟斤拷锟诫：</td>
     <td class="tablert">
       <input type="password" name="retradepwd" value=""> <span class="spantip"></span>
     </td>
@@ -77,13 +77,13 @@
 </div>
 <div id="opcontent">
   <div class="optxt">
-    <input type="submit" value="提 交 &gt;&gt;" name="b1" class="btn"/>
-    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+    <input type="submit" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="锟斤拷 锟斤拷 &gt;&gt;" name="b1" class="btn"/>
   </div>
 </div>
 </form>
 <div id="load" style="display:none;">
-  <div id="loadcontent" >页面加载中请稍等...</div>
+  <div id="loadcontent" >页锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷缘锟�...</div>
 </div>
 <script type="text/javascript">
   var ctablenum = 1;
@@ -143,7 +143,7 @@
   
   function setArea(obj)
   {
-    if(obj.innerHTML == "请输入原因")
+    if(obj.innerHTML == "锟斤拷锟斤拷锟斤拷原锟斤拷")
     {
       obj.innerHTML = "";
     }
@@ -153,7 +153,7 @@
   {
     if(obj.innerHTML == "")
     {
-      obj.innerHTML = "请输入原因";
+      obj.innerHTML = "锟斤拷锟斤拷锟斤拷原锟斤拷";
     }
   }
 </script>

@@ -1,80 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>·¢ËÍÃÜ±£¿¨ÉêÇë¶ÌĞÅ</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2> ·¢ËÍÃÜ±£¿¨ÉêÇë¶ÌĞÅ</h2>
-  </div>
-  </div>	
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td width="22%" height="30" class="table1_left">ÊÕ ĞÅ ÈË£º</td>
-		<td width="78%" class="tableright1">
-		  <div align="left">
-		    <select name="msgto" dataType="Require" msg="±ØĞëÒªÑ¡ÔñÊÕ¼şÈË" onChange="settr(this)">
-		        <option value="0" selected>Æ½Ì¨¹ÜÀíÔ±</option>
-		        <option value="2">ÄúµÄËùÓĞÏÂ¼¶¿Í»§</option>
-	          <!--if(count($vd['agents']) > 0){-->
-		            <option value="3" >Ö¸¶¨ÏÂ¼¶</option>
-              <!--}-->
-	          </select>
-	      </div></td>
-		</tr>
-		<tr id="underling" style="display:none">
-      <td height="30" class="table1_left">ÏÂ¼¶±àºÅ£º</td>
-      <td class="tableright1">
-        <div align="left">
-          <select name="underlingid">
-            <option value="0">ÇëÑ¡ÔñÄúµÄÏÂ¼¶±àºÅ</option>
-            <!--foreach($vd['agents'] as $item){-->
-            <option value="{$item['aid']}">{$item['company']}({#DisplayCode($item['aid'])})</option>
-            <!--}-->
-          </select>
-          </div></td>
-    </tr>
-		<tr>
-		<td height="30" class="table1_left">¶ÌĞÅ±êÌâ£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type='text' size='55' maxlength='100' name='title' class='input0' datatype="LimitB" min="1" max="90" msg="¶ÌĞÅ±êÌâÎ´ÌîĞ´»ò¹ı³¤" value="{$vd['msgtitle']}">
-		  </div></td>
-		</tr>
-		<tr>
-		<td class="table1_left">¶ÌĞÅÄÚÈİ£º</td>
-		<td class="tableright1"><div align="left">
-		  <textarea name="content" cols="60" rows="8" class='input' datatype="LimitB" min="1" max="450" msg="¶ÌĞÅÄÚÈİÎ´ÌîĞ´»ò¹ı³¤"></textarea>
-		  </div></td>
-		</tr>
-		<tr>
-		<td height="30" class="table1_left">&nbsp;</td>
-		<td class="tableright1">
-		  <div align="left">
-		    <input name="submit" type="submit" class="tijiao_input" value="È·ÈÏ·¢ËÍ">
-		    <input name="reset" type="reset" class="fanhui_input" value="ÖØĞÂÌîĞ´">
-	      </div></td>
-		</tr>
-		</table>
-</body>
-</html>
-<script type="text/javascript">
-  var $ = function(id){
-    return document.getElementById(id);
-  }
-  
-  function settr(obj){
-  	v = obj.options[obj.selectedIndex].value;
-
-    if(v == 3)
-    {
-      $("underling").style.display = "";
-    }
-    else
-    {
-      $("underling").style.display = "none";
-    }
-  }
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>å‘é€å¯†ä¿å¡ç”³è¯·çŸ­ä¿¡</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2> å‘é€å¯†ä¿å¡ç”³è¯·çŸ­ä¿¡</h2>  </div>  </div>	<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td width="22%" height="30" class="table1_left">æ”¶ ä¿¡ äººï¼š</td>		<td width="78%" class="tableright1">		  <div align="left">		    <select name="msgto" dataType="Require" msg="å¿…é¡»è¦é€‰æ‹©æ”¶ä»¶äºº" onChange="settr(this)">		        <option value="0" selected>å¹³å°ç®¡ç†å‘˜</option>		        <option value="2">æ‚¨çš„æ‰€æœ‰ä¸‹çº§å®¢æˆ·</option>	          <!--if(count($vd['agents']) > 0){-->		            <option value="3" >æŒ‡å®šä¸‹çº§</option>              <!--}-->	          </select>	      </div></td>		</tr>		<tr id="underling" style="display:none">      <td height="30" class="table1_left">ä¸‹çº§ç¼–å·ï¼š</td>      <td class="tableright1">        <div align="left">          <select name="underlingid">            <option value="0">è¯·é€‰æ‹©æ‚¨çš„ä¸‹çº§ç¼–å·</option>            <!--foreach($vd['agents'] as $item){-->            <option value="{$item['aid']}">{$item['company']}({#DisplayCode($item['aid'])})</option>            <!--}-->          </select>          </div></td>    </tr>		<tr>		<td height="30" class="table1_left">çŸ­ä¿¡æ ‡é¢˜ï¼š</td>		<td class="tableright1"><div align="left">		  <input type='text' size='55' maxlength='100' name='title' class='input0' datatype="LimitB" min="1" max="90" msg="çŸ­ä¿¡æ ‡é¢˜æœªå¡«å†™æˆ–è¿‡é•¿" value="{$vd['msgtitle']}">		  </div></td>		</tr>		<tr>		<td class="table1_left">çŸ­ä¿¡å†…å®¹ï¼š</td>		<td class="tableright1"><div align="left">		  <textarea name="content" cols="60" rows="8" class='input' datatype="LimitB" min="1" max="450" msg="çŸ­ä¿¡å†…å®¹æœªå¡«å†™æˆ–è¿‡é•¿"></textarea>		  </div></td>		</tr>		<tr>		<td height="30" class="table1_left">&nbsp;</td>		<td class="tableright1">		  <div align="left">		    <input name="submit" type="submit" class="tijiao_input" value="ç¡®è®¤å‘é€">		    <input name="reset" type="reset" class="fanhui_input" value="é‡æ–°å¡«å†™">	      </div></td>		</tr>		</table></body></html><script type="text/javascript">  var $ = function(id){    return document.getElementById(id);  }    function settr(obj){  	v = obj.options[obj.selectedIndex].value;    if(v == 3)    {      $("underling").style.display = "";    }    else    {      $("underling").style.display = "none";    }  }</script>

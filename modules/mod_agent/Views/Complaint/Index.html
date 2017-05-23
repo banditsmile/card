@@ -1,94 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Í¶Ëß·´À¡ÁĞ±í</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-	<!--if($vd['msgdirect']==1){--><!--}else{--><!--}-->
-	<!--$mst = intval(request('msgstate'));-->
-	<div class="new_qie">
-      <div class="new_qie2">
-        <h2> Í¶Ëß·´À¡ÁĞ±í</h2>
-        <p>&nbsp;</p>
-      </div>
-	  <ul>
-        <li><a href="index.php?m=mod_agent&c=Complaint&msgdirect={$vd['msgdirect']}">È«²¿Í¶Ëß</a></li>
-		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=1&msgdirect={$vd['msgdirect']}">Î´´¦Àí</a></li>
-		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=2&msgdirect={$vd['msgdirect']}">´¦ÀíÖĞ</a></li>
-		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=3&msgdirect={$vd['msgdirect']}">ÒÑ´¦Àí</a></li>
-</div>
-	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-		<form name="history" method="get" action="index.php">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		  <td class="table1_left" style="width: 25%"><span id="lab1">¶©µ¥ºÅ</span> </td>
-		<td width="78%" class="tableright1">
-			
-			  <div align="left">
-			    <input type="hidden" name="m" value="mod_agent"/>
-			    <input type="hidden" name="c" value="Complaint"/>
-			    <input type="hidden" name="stype" value="ordno"/>
-			    <input type="hidden" name="msgstate" value="{$mst}"/>
-			    <input type="hidden" name="msgdirect" value="{$vd['msgdirect']}"/>
-			    <input type='text' size='30' maxlength='30' name='keywords' class='input0' value="">
-	        </div></td>
-		<tr>
-		<td class="table1_left" style="width: 25%">&nbsp;</td>
-		<td class="tableright1">
-		  <div align="left">
-		    <input type="hidden" name="TreatWith" value="">
-		    <input type="submit" name="Submit2" value="È·ÈÏ²éÑ¯" class="tijiao_input"> 
-		    <input type="reset" name="reset" value="ÖØÖÃ²éÑ¯" class="fanhui_input">
-		    </div></td>
-		</tr>
-		</table>
-		</form>
-	</td>
-	</tr>
-	</table>
-	<br>
-	<?php
-	$mstate = array('','<font color="#ff0000">Î´´¦Àí</font>','<font color="#ff00ff">´¦ÀíÖĞ</font>','<font color="#0000ff">ÒÑ´¦Àí</font>');
-	?>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-		<tr>
-		<th width="16%" class="heardertop1">Í¶ËßÊ±¼ä</td>
-		<th width="12%" class="heardertop1">¶©µ¥ºÅ</td>
-		<th width="34%" class="heardertop1">ÀàĞÍ»òÎÊÌâ</td>
-		<th width="10%" class="heardertop1">´ëÊ©</td>
-		<th width="10%" class="heardertop1">´¦Àí×´Ì¬</td>
-		<th width="18%" class="heardertop1">¹ÜÀí</td>
-		<!--foreach($vd['items'] as $item) {-->
-	  	  	    <tr class="trd">
-		<td>{$item['createdate']}</td>
-		<td><a href="index.php?m=mod_agent&c=<!--if($vd['msgdirect']==1){-->A<!--}-->Order&a=<!--if($vd['msgdirect']==1){-->d<!--}else{-->n<!--}-->etail&msgdirect={$msgdirect}&ordno={$item['ordno']}"><u><strong>{$item['ordno']}</strong></u></a></td>
-		<td align=left>{$item['other']}</td>
-		<td>{$item['hope']}</td>
-		<td><b><!--echo $mstate[$item['msgstate']]--></b></td>
-		<td>
-			<!--if($vd['msgdirect']>0){-->
-			  <input type=button name=detail value=<!--if($item['msgstate']==1){-->ÊÜÀí<!--}else{-->»Ø¸´<!--}--> class=buttonnor onclick="javascript:location.href='index.php?m=mod_agent&c=Messenger&a=detail&msgdirect=1&id={$item['id']}';">
-			<!--}else{-->
-			<a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}"><img src="{$vd['content']}images/icon_ck.gif" align="absmiddle">²é¿´</a> <a href="javascript:openScript('index.php?m=mod_agent&c=Messenger&pop=1&a=detail&id={$item['id']}','complaint',600,500);"><img src="{$vd['content']}images/icon_law.gif" align="absmiddle"> <!--if($item['msgstate']==3){-->ÖØĞÂÌá½»<!--}else{-->²¹³ä<!--}--></a>
-		  <!--}-->
-		</td>
-		</tr>
-		<!--}-->
-		</table>
- <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
-    <div id="page" align="right">
-		{load(fpage)}
-	</div>
-	
-</body>
-</html>
-<script type="text/javascript"> 
-	function openScript(url,name,width,height)
-  {
-    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
-  }
-</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>æŠ•è¯‰åé¦ˆåˆ—è¡¨</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg">	<!--if($vd['msgdirect']==1){--><!--}else{--><!--}-->	<!--$mst = intval(request('msgstate'));-->	<div class="new_qie">      <div class="new_qie2">        <h2> æŠ•è¯‰åé¦ˆåˆ—è¡¨</h2>        <p>&nbsp;</p>      </div>	  <ul>        <li><a href="index.php?m=mod_agent&c=Complaint&msgdirect={$vd['msgdirect']}">å…¨éƒ¨æŠ•è¯‰</a></li>		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=1&msgdirect={$vd['msgdirect']}">æœªå¤„ç†</a></li>		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=2&msgdirect={$vd['msgdirect']}">å¤„ç†ä¸­</a></li>		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=3&msgdirect={$vd['msgdirect']}">å·²å¤„ç†</a></li></div>	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="history" method="get" action="index.php"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		  <td class="table1_left" style="width: 25%"><span id="lab1">è®¢å•å·</span> </td>		<td width="78%" class="tableright1">						  <div align="left">			    <input type="hidden" name="m" value="mod_agent"/>			    <input type="hidden" name="c" value="Complaint"/>			    <input type="hidden" name="stype" value="ordno"/>			    <input type="hidden" name="msgstate" value="{$mst}"/>			    <input type="hidden" name="msgdirect" value="{$vd['msgdirect']}"/>			    <input type='text' size='30' maxlength='30' name='keywords' class='input0' value="">	        </div></td>		<tr>		<td class="table1_left" style="width: 25%">&nbsp;</td>		<td class="tableright1">		  <div align="left">		    <input type="hidden" name="TreatWith" value="">		    <input type="submit" name="Submit2" value="ç¡®è®¤æŸ¥è¯¢" class="tijiao_input"> 		    <input type="reset" name="reset" value="é‡ç½®æŸ¥è¯¢" class="fanhui_input">		    </div></td>		</tr>		</table>		</form>	</td>	</tr>	</table>	<br>	<?php	$mstate = array('','<font color="#ff0000">æœªå¤„ç†</font>','<font color="#ff00ff">å¤„ç†ä¸­</font>','<font color="#0000ff">å·²å¤„ç†</font>');	?>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">		<tr>		<th width="16%" class="heardertop1">æŠ•è¯‰æ—¶é—´</td>		<th width="12%" class="heardertop1">è®¢å•å·</td>		<th width="34%" class="heardertop1">ç±»å‹æˆ–é—®é¢˜</td>		<th width="10%" class="heardertop1">æªæ–½</td>		<th width="10%" class="heardertop1">å¤„ç†çŠ¶æ€</td>		<th width="18%" class="heardertop1">ç®¡ç†</td>		<!--foreach($vd['items'] as $item) {-->	  	  	    <tr class="trd">		<td>{$item['createdate']}</td>		<td><a href="index.php?m=mod_agent&c=<!--if($vd['msgdirect']==1){-->A<!--}-->Order&a=<!--if($vd['msgdirect']==1){-->d<!--}else{-->n<!--}-->etail&msgdirect={$msgdirect}&ordno={$item['ordno']}"><u><strong>{$item['ordno']}</strong></u></a></td>		<td align=left>{$item['other']}</td>		<td>{$item['hope']}</td>		<td><b><!--echo $mstate[$item['msgstate']]--></b></td>		<td>			<!--if($vd['msgdirect']>0){-->			  <input type=button name=detail value=<!--if($item['msgstate']==1){-->å—ç†<!--}else{-->å›å¤<!--}--> class=buttonnor onclick="javascript:location.href='index.php?m=mod_agent&c=Messenger&a=detail&msgdirect=1&id={$item['id']}';">			<!--}else{-->			<a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}"><img src="{$vd['content']}images/icon_ck.gif" align="absmiddle">æŸ¥çœ‹</a> <a href="javascript:openScript('index.php?m=mod_agent&c=Messenger&pop=1&a=detail&id={$item['id']}','complaint',600,500);"><img src="{$vd['content']}images/icon_law.gif" align="absmiddle"> <!--if($item['msgstate']==3){-->é‡æ–°æäº¤<!--}else{-->è¡¥å……<!--}--></a>		  <!--}-->		</td>		</tr>		<!--}-->		</table> <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>    <div id="page" align="right">		{load(fpage)}	</div>	</body></html><script type="text/javascript"> 	function openScript(url,name,width,height)  {    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');  }</script>

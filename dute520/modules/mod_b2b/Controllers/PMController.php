@@ -23,7 +23,7 @@ class PMController extends Controller
 
 				public function Index( )
 				{
-								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«²¿</font>", "ÆÕÍ¨¶ÌÐÅ", "<font color=\"#ff00ff\">»ã¿î¶ÌÐÅ</font>", "<font color=\"#ff0000\">Í¶Ëß¶ÌÐÅ</font>" );
+								$Rd41ed45824 = array( "<font color=\"#cccccc\">È«ï¿½ï¿½</font>", "ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½", "<font color=\"#ff00ff\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>", "<font color=\"#ff0000\">Í¶ï¿½ß¶ï¿½ï¿½ï¿½</font>" );
 								$Ra3d21a857b = getvar( "msgfrom" );
 								$R180beb7e65 = getvar( "msgto" );
 								$R21784dec6e = intval( request( "msgtype" ) );
@@ -39,8 +39,8 @@ class PMController extends Controller
 								$data = array_merge( $data, $R1e3bc50f23[0], $R71a664ef8c );
 								$R4e420efcc3 = $this->hander->IMsg_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "title" => "±êÌâ", "msgfrom" => "·¢ÐÅÈË", "msgto" => "ÊÕÐÅÈË" );
-								$R8dc7d3eb73 = array( "0" => "ËùÓÐÆ½Ì¨", "1" => "Åú·¢", "2" => "ÁãÊÛ", "3" => "Ò»¿¨Í¨" );
+								$R00be52aa45 = array( "title" => "ï¿½ï¿½ï¿½ï¿½", "msgfrom" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "msgto" => "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
+								$R8dc7d3eb73 = array( "0" => "ï¿½ï¿½ï¿½ï¿½Æ½Ì¨", "1" => "ï¿½ï¿½ï¿½ï¿½", "2" => "ï¿½ï¿½ï¿½ï¿½", "3" => "Ò»ï¿½ï¿½Í¨" );
 								$this->Assign( "cfarray", $R8dc7d3eb73 );
 								$this->Assign( "comefrom", intval( getvar( "comefrom", 0 ) ) );
 								$this->Recycle( "msg", " msgtype=1 " );
@@ -80,7 +80,7 @@ class PMController extends Controller
 								$Rb9d4add894 = intval( request( "comefrom" ) );
 								if ( $Rb9d4add894 == 1 && 3 < $R180beb7e65 || 1 < $Rb9d4add894 && $R180beb7e65 < 4 )
 								{
-												$this->Alert( "Æ½Ì¨Ñ¡ÔñºÍ²ÎÊý²»Æ¥Åä£¬ÇëÖØÐÂÑ¡Ôñ" );
+												$this->Alert( "Æ½Ì¨Ñ¡ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								switch ( $R180beb7e65 )
@@ -107,13 +107,13 @@ class PMController extends Controller
 												$R180beb7e65 = intval( request( "cid" ) );
 												break;
 								default :
-												$this->Alert( "·Ç·¨²Ù×÷£¡" );
+												$this->Alert( "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 												break;
 								}
 								if ( $R180beb7e65 == 0 )
 								{
-												$this->Alert( "ÄúºÃ£¡²»ÄÜ×Ô¼º¸ø×Ô¼º·¢¶ÌÐÅ" );
+												$this->Alert( "ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$R06c518f70e = getvar( "title" );
@@ -148,7 +148,7 @@ class PMController extends Controller
 								$R808b89ba0e = $this->hander->IMsg_Create( $data );
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "¶ÌÏûÏ¢·¢²¼³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 												if ( $R21784dec6e == 1 )
 												{
 																$this->ScriptRedirect( "index.php?m=mod_b2b&c=PM&msgfrom=".$R2a51483b14 );
@@ -164,7 +164,7 @@ class PMController extends Controller
 								}
 								else
 								{
-												$this->Alert( "¶ÌÏûÏ¢·¢²¼Ê§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
@@ -194,15 +194,15 @@ class PMController extends Controller
 								}
 								if ( $R3db8f5c8bc['msgtype'] == 3 )
 								{
-												$R63bede6b19 = "Í¶Ëß";
+												$R63bede6b19 = "Í¶ï¿½ï¿½";
 								}
 								else if ( $R3db8f5c8bc['msgtype'] == 2 )
 								{
-												$R63bede6b19 = "»ã¿î";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 								}
 								else
 								{
-												$R63bede6b19 = "¶ÌÐÅ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 								}
 								$this->Assign( "str", $R63bede6b19 );
 								$this->Assign( "msg", $R3db8f5c8bc );
@@ -280,11 +280,11 @@ class PMController extends Controller
 								$R3584859062 = intval( getvar( "id" ) );
 								if ( $R3584859062 == 0 )
 								{
-												$this->Alert( "²ÎÊý´íÎó£¡ÇëÖØÐÂ²Ù×÷" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½" );
 												$this->HistoryGo( );
 								}
 								$this->hander->IMsg_Delete( $R3584859062 );
-								$this->Alert( "É¾³ý³É¹¦£¡" );
+								$this->Alert( "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½" );
 								$R7130865f2e = $_SERVER['HTTP_REFERER'];
 								$this->ScriptRedirect( $R7130865f2e );
 				}
@@ -298,10 +298,10 @@ class PMController extends Controller
 								echo $R2ade2b5cf6.".".$R2e081715dc;
 								$R9b252bf0a7 = doubleval( $R2ade2b5cf6.".".$R2e081715dc );
 								$R51c716b966 = $this->SetLang( 1 );
-								$R06c518f70e = "(".$Re5576d8e05.")±àºÅ".$R2a51483b14."»ã¿î".$R9b252bf0a7.$R51c716b966['moneyunit'];
+								$R06c518f70e = "(".$Re5576d8e05.")ï¿½ï¿½ï¿½".$R2a51483b14."ï¿½ï¿½ï¿½".$R9b252bf0a7.$R51c716b966['moneyunit'];
 								$R2c90a0c76d = getvar( "bank" );
 								$R5204d30600 = htmlspecialchars( getvar( "others" ) );
-								$Re82ee9b121 = $R2c90a0c76d."\\n\\n»ã¿î±¸×¢\\n".$R5204d30600."\\n\\n»ã¿î½ð¶î£º".$R51c716b966['moneysymbol'].$R9b252bf0a7.$R51c716b966['moneyunit']."\\n\\n»ã¿îÊ±¼ä£º".$Re5576d8e05;
+								$Re82ee9b121 = $R2c90a0c76d."\\n\\nï¿½ï¿½î±¸×¢\\n".$R5204d30600."\\n\\nï¿½ï¿½ï¿½ï¿½î£º".$R51c716b966['moneysymbol'].$R9b252bf0a7.$R51c716b966['moneyunit']."\\n\\nï¿½ï¿½ï¿½Ê±ï¿½ä£º".$Re5576d8e05;
 								$data = array(
 												"msgfrom" => 0,
 												"msgto" => $R180beb7e65,
@@ -317,25 +317,25 @@ class PMController extends Controller
 								$R808b89ba0e = $this->hander->IMsg_Create( $data );
 								if ( $R808b89ba0e )
 								{
-												$this->Alert( "»ã¿îÍ¨ÖªÊé·¢ËÍ³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Í¨Öªï¿½é·¢ï¿½Í³É¹ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=PM&msgtype=1&tpl=RemittanceIndex&msgfrom=".$R2a51483b14 );
 								}
 								else
 								{
-												$this->Alert( "»ã¿îÍ¨ÖªÊé·¢ËÍÊ§°Ü£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Í¨Öªï¿½é·¢ï¿½ï¿½Ê§ï¿½Ü£ï¿½" );
 												$this->HistoryGo( );
 								}
 				}
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -347,10 +347,10 @@ class PMController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -361,7 +361,7 @@ class PMController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -376,7 +376,7 @@ class PMController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -402,7 +402,7 @@ class PMController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -441,7 +441,7 @@ class PMController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -471,7 +471,7 @@ class PMController extends Controller
 								$R808b89ba0e = $this->hander->IMsg_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

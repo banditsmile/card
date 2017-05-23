@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 td{height:30px}
-.preview_fake{ /* 该对象用户在IE下显示预览图片 */
+.preview_fake{ /* 锟矫讹拷锟斤拷锟矫伙拷锟斤拷IE锟斤拷锟斤拷示预锟斤拷图片 */
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
 }
 .spantip{color:#ff0000}
@@ -12,8 +12,8 @@ td{height:30px}
 </head>
 <body>
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span><font color="#000">自定义模板</font></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看用户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="锟截碉拷锟斤拷台锟斤拷页"><font color="#000">锟斤拷锟斤拷</font></a> <span style="font-size:7px;">>></span><font color="#000">锟皆讹拷锟斤拷模锟斤拷</font></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="锟介看锟矫伙拷锟斤拷匕锟斤拷锟�"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="content" class="cwarpper"  style="position:relative">
 <div class="cbodyHead"></div>
@@ -31,22 +31,22 @@ td{height:30px}
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
 	<tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      全局背景
+      全锟街憋拷锟斤拷
     </td>
   </tr>
   <!--if($item['canedit'] == 0){-->
   <tr> 
-    <td colspan="2" style="color:#7b7b7b">当前使用的模板不支持自定义功能，您可以选择安装其他模板再进行操作</td>
+    <td colspan="2" style="color:#7b7b7b">锟斤拷前使锟矫碉拷模锟藉不支锟斤拷锟皆讹拷锟藉功锟杰ｏ拷锟斤拷锟斤拷锟斤拷选锟斤拷装锟斤拷锟斤拷模锟斤拷锟劫斤拷锟叫诧拷锟斤拷</td>
   </tr>
   <!--}else{-->
   <tr> 
-    <td width="15%" align="right" height="46">背景图片<b></b></td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <img src="{$vd['root']}content/{$item['m']}/images/{$item['bgname']}" border="0" height="47"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">背景颜色</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷色</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" id="textcolor200" name="ubztextcolor" value="" size="34" onkeyup="setcolor(this,200)"/> 
     <input id="colorexample200" type="text" size="1" readonly style="background:#6c6c6c">
@@ -54,7 +54,7 @@ td{height:30px}
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="15%" align="right" height="46">锟较达拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" id="needname0" name="needname0" size="34" value="{$item['bgname']}"/>
     <input type="hidden" id="ubzimagebody" name="ubzimage" size="34"/> 
@@ -64,17 +64,17 @@ td{height:30px}
   <tr> 
     <td width="15%" align="right" height="46"></td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <span class="spantip">注意：请先命名为 <b>{$item['bgname']}</b> 再上传</span>
+    <span class="spantip">注锟解：锟斤拷锟斤拷锟斤拷锟斤拷为 <b>{$item['bgname']}</b> 锟斤拷锟较达拷</span>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">操作</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" 锟斤拷 锟斤拷 &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="15%" align="right" height="46">图片预锟斤拷<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="logobody"></div><div id="logoinfobody"></div></td>
   </tr>
@@ -88,11 +88,11 @@ function imginfobody(imgsrc)
   filen = obj.document.getElementById("txtFileUpload").value;
 
 	if( !filen.match( /{$item['bgname']}/i ) ){
-    alert('图片格式无效，图片应该命名为{$item['bgname']}再上传！');
+    alert('图片锟斤拷式锟斤拷效锟斤拷图片应锟斤拷锟斤拷锟斤拷为{$item['bgname']}锟斤拷锟较达拷锟斤拷');
     return false;
   }
   
-  document.getElementById("logoinfobody").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+  document.getElementById("logoinfobody").innerHTML = "锟斤拷 x 锟斤拷" + imgsrc.height + " x " + imgsrc.width + "<br/>图片锟斤拷小锟斤拷" + imgsrc.fileSize + " 锟街斤拷"; 
 }
 </script>
 </div>
@@ -103,22 +103,22 @@ function imginfobody(imgsrc)
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
 	<tr>
     <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
-      底部背景
+      锟阶诧拷锟斤拷锟斤拷
     </td>
   </tr>
   <!--if($item['caneditf'] == 0){-->
   <tr> 
-    <td colspan="2" style="color:#7b7b7b">当前使用的模板不支持自定义功能，您可以选择安装其他模板再进行操作</td>
+    <td colspan="2" style="color:#7b7b7b">锟斤拷前使锟矫碉拷模锟藉不支锟斤拷锟皆讹拷锟藉功锟杰ｏ拷锟斤拷锟斤拷锟斤拷选锟斤拷装锟斤拷锟斤拷模锟斤拷锟劫斤拷锟叫诧拷锟斤拷</td>
   </tr>
   <!--}else{-->
   <tr> 
-    <td width="15%" align="right" height="46">背景图片<b></b></td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <img src="{$vd['root']}content/{$item['m']}/images/{$item['bgnamef']}" border="0" height="47"/>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">背景颜色</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷锟斤拷色</td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="text" id="textcolor100" name="ubztextcolor" value="" size="34" onkeyup="setcolor(this,100)"/> 
     <input id="colorexample100" type="text" size="1" readonly style="background:#6c6c6c">
@@ -126,7 +126,7 @@ function imginfobody(imgsrc)
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="15%" align="right" height="46">锟较达拷图片<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <input type="hidden" id="needname1" name="needname1" size="34" value="{$item['bgnamef']}"/>
     <input type="hidden" id="ubzimagefoot" name="ubzimage" size="34"/> 
@@ -136,17 +136,17 @@ function imginfobody(imgsrc)
   <tr> 
     <td width="15%" align="right" height="46"></td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <span class="spantip">注意：请先命名为 <b>{$item['bgnamef']}</b> 再上传</span>
+    <span class="spantip">注锟解：锟斤拷锟斤拷锟斤拷锟斤拷为 <b>{$item['bgnamef']}</b> 锟斤拷锟较达拷</span>
     </td>
   </tr>
   <tr>
-    <td width="15%" align="right" height="46">操作</td>
+    <td width="15%" align="right" height="46">锟斤拷锟斤拷</td>
     <td width="85%" style="padding-left: 10px" height="47">
-    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    <input type="submit" value=" 锟斤拷 锟斤拷 &gt;&gt;" name="B1" class="button"/>
     </td>
   </tr>
   <tr> 
-    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="15%" align="right" height="46">图片预锟斤拷<b></b></td>
     <td width="85%" style="padding-left: 10px" height="47">
     <div id="logofoot"></div><div id="logoinfofoot"></div></td>
   </tr>
@@ -160,11 +160,11 @@ function imginfofoot(imgsrc)
   filen = obj.document.getElementById("txtFileUpload").value;
 
 	if( !filen.match( /{$item['bgnamef']}/i ) ){
-    alert('图片格式无效，图片应该命名为{$item['bgnamef']}再上传！');
+    alert('图片锟斤拷式锟斤拷效锟斤拷图片应锟斤拷锟斤拷锟斤拷为{$item['bgnamef']}锟斤拷锟较达拷锟斤拷');
     return false;
   }
 
-  document.getElementById("logoinfofoot").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+  document.getElementById("logoinfofoot").innerHTML = "锟斤拷 x 锟斤拷" + imgsrc.height + " x " + imgsrc.width + "<br/>图片锟斤拷小锟斤拷" + imgsrc.fileSize + " 锟街斤拷"; 
 }
 </script>
 </div>
@@ -227,7 +227,7 @@ function checksumit(idx)
 	thisneedname = $("needname"+idx).value;
 	if($("ubzimagefoot").value != "" && $("ubzimagefoot").value != thisneedname)
 	{
-		alert('图片格式无效，图片应该命名为' + thisneedname + '再上传！');
+		alert('图片锟斤拷式锟斤拷效锟斤拷图片应锟斤拷锟斤拷锟斤拷为' + thisneedname + '锟斤拷锟较达拷锟斤拷');
 		return false;
 	}
 }

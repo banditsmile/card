@@ -32,7 +32,7 @@ class CatalogController extends Controller
 								$cphp0 = __FILE__;
 								eval( $o00OO( $ooOO00o( $this->comget( "lsssk" ) ) ) );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "name" => "Ãû³Æ", "keyword" => "¹Ø¼ü´Ê", "pinyin" => "Ê××ÖÄ¸", "ordering" => "ÅÅÐò" );
+								$R00be52aa45 = array( "name" => "ï¿½ï¿½ï¿½ï¿½", "keyword" => "ï¿½Ø¼ï¿½ï¿½ï¿½", "pinyin" => "ï¿½ï¿½ï¿½ï¿½Ä¸", "ordering" => "ï¿½ï¿½ï¿½ï¿½" );
 							
 												$this->Assign( "sarray", $R00be52aa45 );
 												$this->view( );
@@ -63,25 +63,25 @@ class CatalogController extends Controller
 								if ( $R3584859062 == 0 )
 								{
 												$this->instance->ICatalog_Create( $data );
-												$this->Alert( "Ìí¼Ó³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½Ó³É¹ï¿½ï¿½ï¿½" );
 								}
 								else
 								{
 												$this->instance->ICatalog_Update( $data, $R3584859062 );
-												$this->Alert( "¸üÐÂ³É¹¦£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½Â³É¹ï¿½ï¿½ï¿½" );
 								}
 								$this->ScriptRedirect( "index.php?m=mod_b2b&c=catalog" );
 				}
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -93,10 +93,10 @@ class CatalogController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -107,7 +107,7 @@ class CatalogController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -122,7 +122,7 @@ class CatalogController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -139,7 +139,7 @@ class CatalogController extends Controller
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -178,7 +178,7 @@ class CatalogController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -199,7 +199,7 @@ class CatalogController extends Controller
 								$R808b89ba0e = $this->instance->ICatalog_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

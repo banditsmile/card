@@ -1,85 +1,85 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <!--$item = $vd['order']['item'];-->  
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="»Øµ½ºóÌ¨Ê×Ò³"><font color="#000">×ÀÃæ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="¶©µ¥ÁÐ±í"><font color="#000">¶©µ¥ÁÐ±í</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">¶©µ¥ÏêÏ¸ÐÅÏ¢</span></div>
-<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="²é¿´¶©µ¥Ïà¹Ø°ïÖú"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="ï¿½Øµï¿½ï¿½ï¿½Ì¨ï¿½ï¿½Ò³"><font color="#000">ï¿½ï¿½ï¿½ï¿½</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½"><font color="#000">ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 <div>
     <form action="index.php?m=mod_b2b&c=order&a=check&ubzordno={$item['ordno']}" method="post">
       <table id="checktable" style="display:none" width="100%" style="border-collapse: collapse;">
         <!--if($item['ptype'] == 4 || $item['ptype'] == 5 ){-->
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />½»Ò×³É¹¦£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />ï¿½ï¿½ï¿½×³É¹ï¿½ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
-            ±íÊ¾³äÖµ³É¹¦£¬Çë½«½»Ò×¼ÇÂ¼Æ¾Ö¤¸´ÖÆÈëÏÂ±ß·½¿ò
+            ï¿½ï¿½Ê¾ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½ï¿½ë½«ï¿½ï¿½ï¿½×¼ï¿½Â¼Æ¾Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ß·ï¿½ï¿½ï¿½
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡Ïû½»Ò×£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
-            <div style="height:22px;"><input type="radio" value="Ã»ÓÐ¿â´æÁË£¬È¡Ïû½»Ò×" name="failreason" class="checkbox" />Ã»ÓÐ¿â´æÁË£¬È¡Ïû½»Ò×</div>
-            <div style="height:22px;"><input type="radio" value="ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨½»Ò×£¬ÇëÖØÐÂÌá½»¶©µ¥" name="failreason" class="checkbox" />ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨½»Ò×£¬ÇëÖØÐÂÌá½»¶©µ¥</div>
-            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>×ÔÐÐÊäÈë
+            <div style="height:22px;"><input type="radio" value="Ã»ï¿½Ð¿ï¿½ï¿½ï¿½Ë£ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />Ã»ï¿½Ð¿ï¿½ï¿½ï¿½Ë£ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)"/></div>
-            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡Ïû¶©µ¥ºóÊ±ºò»Ö¸´¼ÇÂ¼(ÈçÒ»¿¨Í¨»Ö¸´Ô­À´Óà¶î£¡¿Í»§»Ö¸´Óà¶î)£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû³äµ¥²ÅÉúÐ§</font></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â¼(ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½î£¡ï¿½Í»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Í¬Ê±Ñ¡ï¿½ï¿½È¡ï¿½ï¿½ï¿½äµ¥ï¿½ï¿½ï¿½ï¿½Ð§</font></div>
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3">½»Ò×¼ÇÂ¼Æ¾Ö¤£º</td>
+          <td class="tablelt" style="background:#F3F3F3">ï¿½ï¿½ï¿½×¼ï¿½Â¼Æ¾Ö¤ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
             <textarea rows="5" name="factoryreturn" cols="50"></textarea>
           </td>
         </tr>
         <!--}else if($item['ptype'] == 6){-->
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />´úÁ·Íê³É£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
-            ±íÊ¾³äÖµ³É¹¦£¬Çë½«´úÁ·Íê³ÉÆ¾Ö¤¸´ÖÆÈëÏÂ±ß·½¿ò
+            ï¿½ï¿½Ê¾ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½ï¿½ë½«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¾Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ß·ï¿½ï¿½ï¿½
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡Ïû´úÁ·£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
-            <div style="height:22px;"><input type="radio" value="ÈËÔ±²»×ã£¬ÎÞ·¨´úÁ·" name="failreason" class="checkbox" />ÈËÔ±²»×ã£¬ÎÞ·¨´úÁ·</div>
-            <div style="height:22px;"><input type="radio" value="ÓÉÓÚÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨´úÁ·£¬ÇëÖØÐÂÌá½»¶©µ¥" name="failreason" class="checkbox" />ÓÉÓÚÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨´úÁ·£¬ÇëÖØÐÂÌá½»¶©µ¥</div>
-            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>×ÔÐÐÊäÈë
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ã£¬ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ã£¬ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)"/></div>
-            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡Ïû¶©µ¥ºóÊ±ºò»Ö¸´¼ÇÂ¼(ÈçÒ»¿¨Í¨»Ö¸´Ô­À´Óà¶î£¡¿Í»§»Ö¸´Óà¶î)£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû³äµ¥²ÅÉúÐ§</font></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â¼(ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½î£¡ï¿½Í»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Í¬Ê±Ñ¡ï¿½ï¿½È¡ï¿½ï¿½ï¿½äµ¥ï¿½ï¿½ï¿½ï¿½Ð§</font></div>
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3">´úÁ·¼ÇÂ¼Æ¾Ö¤£º</td>
+          <td class="tablelt" style="background:#F3F3F3">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼Æ¾Ö¤ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
             <textarea rows="5" name="factoryreturn" cols="50"></textarea>
           </td>
         </tr>
         <!--}else{-->
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />³äÖµ³É¹¦£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="2" name="ordstate" class="checkbox" checked />ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
-            ±íÊ¾³äÖµ³É¹¦£¬Çë½«³§¼ÒµÄ³äÖµ¼ÇÂ¼¸´ÖÆÈëÏÂ±ß·½¿ò
+            ï¿½ï¿½Ê¾ï¿½ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½ï¿½ë½«ï¿½ï¿½ï¿½ÒµÄ³ï¿½Öµï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ß·ï¿½ï¿½ï¿½
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡Ïû³äÖµ£º</td>
+          <td class="tablelt" style="background:#F3F3F3"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>È¡ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
             <div style="height:22px;">
-            <input type="radio" value="³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎÞ·¨³äÖµ£¬ÇëÉÔºóÖØÐÂ¹ºÂò" name="failreason" class="checkbox" />³§ÉÌÏµÍ³³ö´í»òÎ¬»¤£¬ÎÞ·¨³äÖµ£¬ÇëÉÔºóÖØÐÂ¹ºÂò</div>
-            <div style="height:22px;"><input type="radio" value="³äÖµÕÊ»§²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò" name="failreason" class="checkbox" />³äÖµÕÊ»§²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò</div>
-            <div style="height:22px;"><input type="radio" value="³äÖµÇøÓò²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò" name="failreason" class="checkbox" />³äÖµÇøÓò²»·û£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÏÂµ¥¹ºÂò</div>
-            <div style="height:22px;"><input type="radio" value="ÉÌÆ·¿â´æ²»×ã£¬Çë´ýÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò" name="failreason" class="checkbox" />ÉÌÆ·¿â´æ²»×ã£¬Çë´ýÎÒÃÇ²¹³ä¿â´æºóÔÙ¹ºÂò</div>
-            <div style="height:22px;"><input type="radio" value="ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÌá½»¶©µ¥" name="failreason" class="checkbox" />ÓÉÓÚ³§ÉÌ»òÕßÒ»Ð©²»¿É¿ØÒòËØ£¬ÎÞ·¨³äÖµ£¬ÇëÖØÐÂÌá½»¶©µ¥</div>
-            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>×ÔÐÐÊäÈë
+            <input type="radio" value="ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½Öµï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½Öµï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½Öµï¿½ï¿½ï¿½ò²»·ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½Öµï¿½ï¿½ï¿½ò²»·ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½Æ·ï¿½ï¿½æ²»ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½Æ·ï¿½ï¿½æ²»ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½</div>
+            <div style="height:22px;"><input type="radio" value="ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½" name="failreason" class="checkbox" />ï¿½ï¿½ï¿½Ú³ï¿½ï¿½Ì»ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½É¿ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Þ·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)"/></div>
-            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡Ïû¶©µ¥ºóÊ±ºò»Ö¸´¼ÇÂ¼(ÈçÒ»¿¨Í¨»Ö¸´Ô­À´Óà¶î£¡¿Í»§»Ö¸´Óà¶î)£¬Í¬Ê±Ñ¡ÔñÈ¡Ïû³äµ¥²ÅÉúÐ§</font></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Â¼(ï¿½ï¿½Ò»ï¿½ï¿½Í¨ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½î£¡ï¿½Í»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Í¬Ê±Ñ¡ï¿½ï¿½È¡ï¿½ï¿½ï¿½äµ¥ï¿½ï¿½ï¿½ï¿½Ð§</font></div>
           </td>
         </tr>
         <tr>
-          <td class="tablelt" style="background:#F3F3F3">³§ÉÌ³äÖµ¼ÇÂ¼£º</td>
+          <td class="tablelt" style="background:#F3F3F3">ï¿½ï¿½ï¿½Ì³ï¿½Öµï¿½ï¿½Â¼ï¿½ï¿½</td>
           <td class="tablert" style="background:#F3F3F3">
             <textarea rows="5" name="factoryreturn" cols="50"></textarea>
           </td>
@@ -87,7 +87,7 @@
         <!--}-->
         <tr>
           <td class="tablelt" style="background:#F3F3F3;height:50px;"></td>
-          <td class="tablert" style="background:#F3F3F3"><input type="submit" value="±£´æ³äÖµ½á¹û" class="btn" onclick="return confirm('È·ÈÏ¸üÐÂ¶©µ¥×´Ì¬Ã´£¿Èç¹ûÈ¡Ïû¶©µ¥£¬ÇëÈ·ÈÏÊÇ·ñÐèÒª²¹»ØÓà¶î')"/> <input type="reset" value="ÖØÖÃ" class="btn"/> <input type="button" value="È¡Ïû" class="btn" onclick="viewaction()"/></td>
+          <td class="tablert" style="background:#F3F3F3"><input type="submit" value="ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½" class="btn" onclick="return confirm('È·ï¿½Ï¸ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬Ã´ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½')"/> <input type="reset" value="ï¿½ï¿½ï¿½ï¿½" class="btn"/> <input type="button" value="È¡ï¿½ï¿½" class="btn" onclick="viewaction()"/></td>
         </tr>
       </table>
       </form>
@@ -97,78 +97,78 @@
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">»ù±¾ÐÅÏ¢ ¶©µ¥ºÅ£º{$item['ordno']} ({#OrderState($item['ordstate'], $item['ptype'])})</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½{$item['ordno']} ({#OrderState($item['ordstate'], $item['ptype'])})</div>
 <div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">ÉÌÆ·Ãû³Æ£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½</td>
     <td class="tablert"><b>{$item['pname']}</b></td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶©¹ºÊýÁ¿£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['qty']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÉÌÆ·µ¥¼Û£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Û£ï¿½</td>
     <td class="tablert">{$item['cprice']} Ôª</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶©¹º×Ü½ð¶î£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½î£º</td>
     <td class="tablert">{$item['dollars']} Ôª</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¶©¹ºÈÕÆÚ£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½</td>
     <td class="tablert">{$item['orddate']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¹©»õÀ´Ô´£º</td>
-    <td class="tablert"><font color="#0000ff"><b><!--if($item['sup'] == 0) {-->±¾µØ¹©»õ<!--}else{-->ÁªÊÛÏµÍ³¹©»õ<!--}--></b></font></td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½</td>
+    <td class="tablert"><font color="#0000ff"><b><!--if($item['sup'] == 0) {-->ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½<!--}else{-->ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½<!--}--></b></font></td>
   </tr>
   <!--if($item['ordstate'] != 2 && isset($vd['suporder']['item']['ubzerrcontent'])){-->
   <tr>
-    <td class="tablelt" height="50px">ÁªÊÛÏµÍ³·´À¡£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><font color="#0000ff"><b>{$vd['suporder']['item']['ubzerrcontent']}</b></font></td>
   </tr>
   <!--}-->
   <!--if($item['ptype'] == 4 || $item['ptype'] == 5){-->
   <tr>
-    <td class="tablelt">½»Ò×·½Ê½£º</td>
+    <td class="tablelt">ï¿½ï¿½ï¿½×·ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert"><textarea name="ubzabst" wrap="VIRTUAL" cols="50" rows="5" scrolling="yes" style="padding:5px">{$item['tradeterm']}</textarea></td>
   </tr>
   <!--}-->
   <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->
   <tr>
-    <td class="tablelt" height="50px">ÓÎÏ·ÓÃ»§Ãû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ï·ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">³äÖµÇøÓò£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea1'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">³äÖµ·þÎñÆ÷£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea2'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¼Æ·Ñ·½Ê½£º</td>
+    <td class="tablelt" height="50px">ï¿½Æ·Ñ·ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['cztype'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÕÊºÅÀàÐÍ£º</td>
+    <td class="tablelt" height="50px">ï¿½Êºï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{#CzText($item['czother'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">´¦ÀíÊ±¼ä£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert">{$item['dealdate']}</td>
   </tr>
   <!--if($item['ordstate'] == -1) {-->
   <tr>
-    <td class="tablelt" height="50px">Ê§°ÜÔ­Òò£º</td>
-    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ÒÑ¾­ÍË¿î</b>]<!--}-->{$item['failreason']}</font></td>
+    <td class="tablelt" height="50px">Ê§ï¿½ï¿½Ô­ï¿½ï¿½</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ï¿½Ñ¾ï¿½ï¿½Ë¿ï¿½</b>]<!--}-->{$item['failreason']}</font></td>
   </tr>
   <!--}-->
   <tr>
-    <td class="tablelt" height="50px">³§¼Ò·´À¡£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
   </tr>
   <!--}-->
@@ -179,14 +179,14 @@
 
 <!--if($item['ptype'] == 6) {-->
 <div class="cwarpper1">
-<div class="ctitle">´úÁ·½ø¶È</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</div>
 <form action="index.php?m=mod_b2b&c=order&a=powerlvsave&ordno={$item['ordno']}" method="post"> 
 <div>
 <table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td style="width:15%;background:#F8FAFC;font-weight:bold;padding-left:5px;">Â¼ÈëÔ±</td>
-    <td style="width:55%;background:#F8FAFC;font-weight:bold;padding-left:5px;">½ø¶È</td>
-    <td style="width:30%;background:#F8FAFC;font-weight:bold;padding-left:5px;">Â¼ÈëÊ±¼ä</td>
+    <td style="width:15%;background:#F8FAFC;font-weight:bold;padding-left:5px;">Â¼ï¿½ï¿½Ô±</td>
+    <td style="width:55%;background:#F8FAFC;font-weight:bold;padding-left:5px;">ï¿½ï¿½ï¿½ï¿½</td>
+    <td style="width:30%;background:#F8FAFC;font-weight:bold;padding-left:5px;">Â¼ï¿½ï¿½Ê±ï¿½ï¿½</td>
   </tr>
   <!--foreach($vd['order']['powerlv'] as $powerlv) {-->
   <tr>
@@ -198,7 +198,7 @@
   <tr>
     <td style="width:15%;padding-left:5px;"><input type="text" name="inputer" style="width:98%"/></td>
     <td style="width:55%;padding-left:5px;"><input type="text" name="schedule" style="width:98%"/></td>
-    <td style="width:30%;padding-left:5px;"><input type="submit" value="Ìí¼Ó½ø¶È" class="btn" /></td>
+    <td style="width:30%;padding-left:5px;"><input type="submit" value="ï¿½ï¿½Ó½ï¿½ï¿½ï¿½" class="btn" /></td>
   </tr>
 </table>
 
@@ -206,49 +206,49 @@
 </form>
 </div>
 <div class="cwarpper1">
-<div class="ctitle">´úÁ·ÐÅÏ¢</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</div>
 <div>
 <table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">´úÁ·ÕÊºÅ£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ÊºÅ£ï¿½</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">µÇÂ¼ÃÜÂë£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ë£º</td>
     <td class="tablert">{$item['acountpwd']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">´úÁ·½ÇÉ«£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½</td>
     <td class="tablert">{$item['rolename']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ËùÔÚÇøÓò£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea1'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ËùÔÚ·þÎñÆ÷£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea2'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¼Æ·Ñ·½Ê½£º</td>
+    <td class="tablelt" height="50px">ï¿½Æ·Ñ·ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['cztype'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÕÊºÅÀàÐÍ£º</td>
+    <td class="tablelt" height="50px">ï¿½Êºï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{#CzText($item['czother'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">´¦ÀíÊ±¼ä£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert">{$item['dealdate']}</td>
   </tr>
   <!--if($item['ordstate'] == -1) {-->
   <tr>
-    <td class="tablelt" height="50px">Ê§°ÜÔ­Òò£º</td>
-    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ÒÑ¾­ÍË¿î</b>]<!--}-->{$item['failreason']}</font></td>
+    <td class="tablelt" height="50px">Ê§ï¿½ï¿½Ô­ï¿½ï¿½</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ï¿½Ñ¾ï¿½ï¿½Ë¿ï¿½</b>]<!--}-->{$item['failreason']}</font></td>
   </tr>
   <!--}-->
   <tr>
-    <td class="tablelt" height="50px">³§¼Ò·´À¡£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
   </tr>
 </table>
@@ -258,41 +258,41 @@
   
 <!--if($item['ptype'] == 4 || $item['ptype'] == 5) {-->
 <div class="cwarpper1">
-<div class="ctitle">¹ºÂòÕßÕÊºÅÏà¹ØÐÅÏ¢</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</div>
 <div>
 <table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">ÓÎÏ·½ÇÉ«Ãû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ï·ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['czaccount']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ËùÔÚÇøÓò£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea1'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ËùÔÚ·þÎñÆ÷£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['czarea2'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">¼Æ·Ñ·½Ê½£º</td>
+    <td class="tablelt" height="50px">ï¿½Æ·Ñ·ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#CzText($item['cztype'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÕÊºÅÀàÐÍ£º</td>
+    <td class="tablelt" height="50px">ï¿½Êºï¿½ï¿½ï¿½ï¿½Í£ï¿½</td>
     <td class="tablert">{#CzText($item['czother'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">´¦ÀíÊ±¼ä£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º</td>
     <td class="tablert">{$item['dealdate']}</td>
   </tr>
   <!--if($item['ordstate'] == -1) {-->
   <tr>
-    <td class="tablelt" height="50px">Ê§°ÜÔ­Òò£º</td>
-    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ÒÑ¾­ÍË¿î</b>]<!--}-->{$item['failreason']}</font></td>
+    <td class="tablelt" height="50px">Ê§ï¿½ï¿½Ô­ï¿½ï¿½</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>ï¿½Ñ¾ï¿½ï¿½Ë¿ï¿½</b>]<!--}-->{$item['failreason']}</font></td>
   </tr>
   <!--}-->
   <tr>
-    <td class="tablelt" height="50px">³§¼Ò·´À¡£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
   </tr>
 </table>
@@ -303,18 +303,18 @@
 <!--if($item['ptype'] == 0 || $item['ptype'] > 99 || $item['ptype'] == 3) {-->
 <!--if(count($vd['order']['carditem']) > 0){-->
 <div class="cwarpper1">
-<div class="ctitle">¿¨ÃÜÏêÏ¸ÐÅÏ¢£º</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
   <tr>
     <td style="width:50%;background:#F8FAFC;font-weight:bold;padding-left:5px;">
       <!--if($item['ptype'] == 3){-->
-      ºÅÂë
+      ï¿½ï¿½ï¿½ï¿½
       <!--}else{-->
-      ¿¨ºÅ
+      ï¿½ï¿½ï¿½ï¿½
       <!--}-->
     </td>
-    <td style="width:50%;background:#F8FAFC;font-weight:bold;padding-left:5px;">ÃÜÂë</td>
+    <td style="width:50%;background:#F8FAFC;font-weight:bold;padding-left:5px;">ï¿½ï¿½ï¿½ï¿½</td>
   </tr>
   <!--foreach($vd['order']['carditem'] as $card) {-->
   <tr>
@@ -329,23 +329,23 @@
 <!--}-->
 
 <div class="cwarpper1">
-<div class="ctitle">Âò¼ÒÐÅÏ¢£º</div>
+<div class="ctitle">ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">µç»°£º</td>
+    <td class="tablelt" height="50px">ï¿½ç»°ï¿½ï¿½</td>
     <td class="tablert">{$item['ctel']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÓÊÏä£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ä£º</td>
     <td class="tablert">{$item['cmail']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">ÐÕÃû£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
     <td class="tablert">{$item['crealname']}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">À´Ô´IP£º</td>
+    <td class="tablelt" height="50px">ï¿½ï¿½Ô´IPï¿½ï¿½</td>
     <td class="tablert">{$item['cip']}</td>
   </tr>
 </table>
@@ -353,15 +353,15 @@
 </div>
 
 <div class="cwarpper1">
-<div class="ctitle">Ö§¸¶ÐÅÏ¢£º</div>
+<div class="ctitle">Ö§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½</div>
 <div>
 <table border="1" id="ctable4" class="ctable" bordercolor="#86B9D6">
   <tr>
-    <td class="tablelt" height="50px">Ö§¸¶·½Ê½£º</td>
+    <td class="tablelt" height="50px">Ö§ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½</td>
     <td class="tablert">{#GetPayment($item['payment'],$item['ordno'])}</td>
   </tr>
   <tr>
-    <td class="tablelt" height="50px">Ö§¸¶×´Ì¬£º</td>
+    <td class="tablelt" height="50px">Ö§ï¿½ï¿½×´Ì¬ï¿½ï¿½</td>
     <td class="tablert"><b>{#OrderState($item['ordstate'], $item['ptype'])}</b></td>
   </tr>
 </table>
@@ -376,9 +376,9 @@
 <div id="opcontent">
   
   <div class="optxt">
-    <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3) {--><input type="button" onclick="viewaction()" value="´¦Àí´Ë¶©µ¥" class="btn"/><!--}-->
-    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=order&a=del&ubzordno={$item['ordno']}'" value="É¾³ý´Ë¶©µ¥" class="btn"/>
-    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=order&a=reorder&ordno={$item['ordno']}'" value="¶©µ¥²¹µ¥" class="btn"/>
+    <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3) {--><input type="button" onclick="viewaction()" value="ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½" class="btn"/><!--}-->
+    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=order&a=del&ubzordno={$item['ordno']}'" value="É¾ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½" class="btn"/>
+    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=order&a=reorder&ordno={$item['ordno']}'" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="btn"/>
   </div>
 </div>
 <script type="text/javascript">

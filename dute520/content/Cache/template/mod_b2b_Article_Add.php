@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $vd['sc']; ?>css/main.css"/>
 <style type="text/css">
 td{white-space:normal;overflow:auto;text-overflow:none;}
@@ -9,8 +9,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 <body>
 <form method="post" action="index.php?m=mod_b2b&c=Article&a=Save" name="cform" id="cform">
 <div id="titleDiv">
-<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="╩ь╣╫╨Сл╗йврЁ"><font color="#000">вюцФ</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Article" title="ндубап╠М"><font color="#000">ндубап╠М</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">лМ╪сндуб</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_article_index" onFocus="this.blur()" title="╡И©╢ндубоЮ╧ь╟ОжЗ"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left"><a href="index.php?a=home"><img src="<?php echo $vd['sc']; ?>images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="О©╫ь╣О©╫О©╫О©╫л╗О©╫О©╫рЁ"><font color="#000">О©╫О©╫О©╫О©╫</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Article" title="О©╫О©╫О©╫О©╫О©╫п╠О©╫"><font color="#000">О©╫О©╫О©╫О©╫О©╫п╠О©╫</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">О©╫О©╫О©╫О©╫О©╫О©╫О©╫</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_article_index" onFocus="this.blur()" title="О©╫И©╢О©╫О©╫О©╫О©╫О©╫О©╫ь╟О©╫О©╫О©╫"><img src="<?php echo $vd['sc']; ?>images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <div id="contentTip" style="display:none;"></div>
 <div id="content" class="cwarpper">
@@ -18,23 +18,23 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 
 <div class="cwarpper1">
-<div class="ctitle">ндуб╩Ы╠╬пео╒</div>
+<div class="ctitle">О©╫О©╫О©╫б╩О©╫О©╫О©╫О©╫О©╫о╒</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr>
       <td class="tablelt">
-        ндубжВлБё╨
+        О©╫О©╫О©╫О©╫О©╫О©╫О©╫Бё╨
       </td>
       <td class="tablert">
         <input name="title" type="text" class="input" size="40" value="">
-        <input type="checkbox" class="checkbox" onclick="setdisplay(this)" onFocus="this.blur()" id="istitlelink"/> ╠ЙлБв╙оРфДкЭ╣ьж╥
-        <input type="checkbox" class="checkbox" name="stick" value="1" onFocus="this.blur()"/> жц╤╔
-        <input type="checkbox" class="checkbox" name="hidden" value="1" onFocus="this.blur()"/> рЧ╡ь
+        <input type="checkbox" class="checkbox" onclick="setdisplay(this)" onFocus="this.blur()" id="istitlelink"/> О©╫О©╫О©╫О©╫в╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╥
+        <input type="checkbox" class="checkbox" name="stick" value="1" onFocus="this.blur()"/> О©╫ц╤О©╫
+        <input type="checkbox" class="checkbox" name="hidden" value="1" onFocus="this.blur()"/> О©╫О©╫О©╫О©╫
       </td>
     </tr>
     <tr> 
       <td class="tablelt">
-        жВлБяуи╚ё╨
+        О©╫О©╫О©╫О©╫О©╫О©╫и╚О©╫О©╫
       </td>
       <td class="tablert">
         <input type="text" id="titlecolor" name="titlecolor" value="" size="10" onkeyup="setcolor(this)"/> 
@@ -44,8 +44,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
     </tr>
     <tr id="titlelink" style="display:none"> 
       <td class="tablelt">
-        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>╣Ц╩Вилф╥╨Сё╛╩Аж╠╫св╙хКуБ╦Ж╣ьж╥ё╛хГ╧Ш╡╩оКв╙оРё╛нЯ╠ьаТ©у</p>
-        в╙оР╣ьж╥ё╨
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>О©╫О©╫О©╫О©╫О©╫ф╥О©╫Сё╛╩О©╫ж╠О©╫О©╫в╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫в╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫</p>
+        в╙О©╫О©╫О©╫ж╥О©╫О©╫
       </td>
       <td class="tablert">
         <input name="titlelink" type="text" class="input" size="50" value=""> 
@@ -53,7 +53,7 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td class="tablelt">
-        я║тЯюЮпмё╨
+        я║О©╫О©╫О©╫О©╫О©╫мёО©╫
       </td>
       <td class="tablert">
         <select name="boardid">
@@ -66,29 +66,29 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 </div>
 
 <div class="cwarpper1" id="seo">
-<div class="ctitle">кякВсе╩╞</div>
+<div class="ctitle">О©╫О©╫О©╫О©╫О©╫е╩О©╫</div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
     <tr> 
       <td class="tablelt">
-        ндубрЁцФ╠ЙлБё╨
+        О©╫О©╫О©╫О©╫рЁО©╫О©╫О©╫О©╫Бё╨
       </td> 
-      <td class="tablert"><input type="text" name="webtitle" value="" size="34"/> <span class="spantip">(аТ©утРд╛хоотй╬ндубжВлБ)</span></td>
+      <td class="tablert"><input type="text" name="webtitle" value="" size="34"/> <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫О©╫О©╫О©╫й╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
       <td class="tablelt">
-        META_KEYWORDS(рЁцФ╧ь╪Э╢й)
+        META_KEYWORDS(рЁО©╫О©╫ь╪О©╫О©╫О©╫)
       </td>
       <td class="tablert">
         <textarea rows="3" name="meta_keywords" cols="28" style="width:195px;"></textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дKEYWORDSдзхщ)</span></td>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫KEYWORDSО©╫О©╫О©╫О©╫)</span></td>
     </tr>
     <tr> 
-      <td class="tablelt">META_DESCRIPTION(рЁцФцХйЖ)
+      <td class="tablelt">META_DESCRIPTION(рЁО©╫О©╫О©╫О©╫О©╫О©╫)
       </td>
       <td class="tablert">
         <textarea rows="3" name="meta_description" cols="28" style="width:195px;"></textarea>
-        <span class="spantip">(аТ©утРд╛хо╪лЁп╩Ы╠╬иХжцжп╣дDESCRIPTIONдзхщ)</span>
+        <span class="spantip">(О©╫О©╫О©╫О©╫О©╫О©╫д╛О©╫о╪лЁп╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╣О©╫DESCRIPTIONО©╫О©╫О©╫О©╫)</span>
       </td>
     </tr>
   </table>
@@ -98,8 +98,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
 
 <div class="cwarpper1" id="mycontent">
 <div class="ctitle">
-  ндубдзхщ
-  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">хГ╧ШдЗр╙╠╬╣ьио╢╚м╪ф╛ё╛гК╠ёж╓╧Б╠Й╥ежцсз╡ЕхКн╩жцё╛ты╣Ц╩Вио╢╚╟╢е╔</p>
+  О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">О©╫О©╫О©╫О©╫О©╫р╙О©╫О©╫О©╫О©╫О©╫о╢О©╫м╪ф╛О©╫О©╫О©╫К╠ёж╓О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╡О©╫О©╫О©╫н╩О©╫цёО©╫О©╫ы╣О©╫О©╫О©╫о╢О©╫О©╫О©╫е╔</p>
 </div>
 <div>
   <table border="0" id="ctable2" class="ctable" bordercolor="#ededed" style="border:0px">
@@ -121,8 +121,8 @@ td{white-space:normal;overflow:auto;text-overflow:none;}
     <input type="hidden" id="webdir" value="<?php echo $vd['webdir']; ?>"/>
     <input type="hidden" id="website" value="<?php echo $vd['website']; ?>"/>
     <input type="hidden" id="connecter" value="<?php echo $vd['connecter']; ?>"/>
-    <input type="submit" value="лМ╪сндуб" class="btn"/>
-    <input type="reset" value="жьжц" class="btn"/>
+    <input type="submit" value="О©╫О©╫О©╫О©╫О©╫О©╫О©╫" class="btn"/>
+    <input type="reset" value="О©╫О©╫О©╫О©╫" class="btn"/>
   </div>
 </div>
 </form>
@@ -158,7 +158,7 @@ function setdisplay(obj)
 function CheckForm()
 {
   if (document.addNEWS.bt.value.length == 0) {
-    alert("аТятжВлБц╩сплНп╢.");
+    alert("О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫п╢.");
     document.addNEWS.title.focus();
     return false;
   }

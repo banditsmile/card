@@ -1,15 +1,15 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 </head>
 <body>
 <table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
   <tr>
     <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
-      <h3><!--if($vd['aid'] == ''){-->ËùÓĞ<!--}else{-->±àºÅÎª <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}-->¾­ÏúÉÌ´úÀíÀûÈó±¨±í)</h3>
-      ¡º<!--if($vd['aid'] != ''){-->±àºÅÎª <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}--><strong>ÉÌ»§Óà¶î <font color="#ff0000">{$vd['remain']}</font> {$vd['lang']['moneyunit']}  
-      ´úÀí»ñµÃ×ÜÀûÈóÎª <font color="#ff0000">{$vd['record']['income']}</font> {$vd['lang']['moneyunit']}  </strong>¡»
+      <h3><!--if($vd['aid'] == ''){-->æ‰€æœ‰<!--}else{-->ç¼–å·ä¸º <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}-->ç»é”€å•†ä»£ç†åˆ©æ¶¦æŠ¥è¡¨)</h3>
+      ã€<!--if($vd['aid'] != ''){-->ç¼–å·ä¸º <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}--><strong>å•†æˆ·ä½™é¢ <font color="#ff0000">{$vd['remain']}</font> {$vd['lang']['moneyunit']}  
+      ä»£ç†è·å¾—æ€»åˆ©æ¶¦ä¸º <font color="#ff0000">{$vd['record']['income']}</font> {$vd['lang']['moneyunit']}  </strong>ã€
     </td>
   </tr>
 </table>
@@ -18,26 +18,26 @@
   <tr>
     <td height="35"  colspan="12" class="listhead" style="padding-top: 15px;">
     <form action="index.php?m=mod_b2b&c=trade&tpl=agentorderprofit&{$vd['op']}"  method="post" name="form" >
-    ÉÌ¼Ò±àºÅ£º<input type="text" name="aid" size="10"/>
-    ÈÕÆÚ´Ó
+    å•†å®¶ç¼–å·ï¼š<input type="text" name="aid" size="10"/>
+    æ—¥æœŸä»
     <select name="yearfrom">
       {#Option($vd['y'], $vd['data']['yearfrom'])}
-    </select>Äê
+    </select>å¹´
     <select name="monthfrom">
       {#Option($vd['m'], $vd['data']['monthfrom'])}
-    </select>ÔÂ
+    </select>æœˆ
     <select name="dayfrom">
       {#Option($vd['d'], $vd['data']['dayfrom'])}
-    </select>ÈÕ µ½ <select name="yearto">
+    </select>æ—¥ åˆ° <select name="yearto">
       {#Option($vd['y'], $vd['data']['yearto'])}
-    </select>Äê
+    </select>å¹´
     <select name="monthto">
       {#Option($vd['m'], $vd['data']['monthto'])}
-    </select>ÔÂ
+    </select>æœˆ
     <select name="dayto">
       {#Option($vd['d'], $vd['data']['dayto'])}
-    </select>ÈÕ
-    <input type="submit" value="ÂíÉÏ²éÑ¯ &gt;&gt;"/>
+    </select>æ—¥
+    <input type="submit" value="é©¬ä¸ŠæŸ¥è¯¢ &gt;&gt;"/>
     </form>
     </td>
   </tr>
@@ -46,31 +46,31 @@
 <table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
   <tr>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>ÉÌ¼Ò±àºÅ</b></td>
+      <b>å•†å®¶ç¼–å·</b></td>
     <td width="15%" align="center" height="35" class="listhead">
-      <b>¶©µ¥ºÅ</b></td>
+      <b>è®¢å•å·</b></td>
     <td width="10%" align="center" height="35" class="listhead">
-      <b>¾­ÏúÉÌ½ø¼Û</b></td>
+      <b>ç»é”€å•†è¿›ä»·</b></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>ÏÂ¼Ò±àºÅ</b></td>
+      <b>ä¸‹å®¶ç¼–å·</b></td>
     <td width="8%" align="center" height="35" class="listhead">
-      <b>ÏÂ¼Ò¹º¼Û</b></td>
+      <b>ä¸‹å®¶è´­ä»·</b></td>
     <td width="6%" align="center" height="35" class="listhead">
-      <b>¹ºÂòÁ¿</b></td>
+      <b>è´­ä¹°é‡</b></td>
     <td width="6%" align="center" height="35" class="listhead">
-      <b>¾»ÀûÈó</b></td>
+      <b>å‡€åˆ©æ¶¦</b></td>
     <td width="6%" align="center" height="35" class="listhead">
-      <b>½»Ò×Ç°</b></td>
+      <b>äº¤æ˜“å‰</b></td>
     <td width="6%" align="center" height="35" class="listhead">
-      <b>½»Ò×ºó</b></td>
+      <b>äº¤æ˜“å</b></td>
     <td width="17%" align="center" height="35" class="listhead">
-      <b>ËµÃ÷</b></td>
+      <b>è¯´æ˜</b></td>
     <td width="10%" align="center" height="35" class="listhead">
-      <b>Ê±¼ä</b></td>
+      <b>æ—¶é—´</b></td>
   </tr>
   <!--if($vd['totlerow'] == 0) {-->
   <tr>
-    <td align="right" height="35" colspan="20">ÄúÑ¡ÔñµÄÊ±¼ä¶Î»¹Ã»ÓĞ·¢ÉúÈÎºÎ½»Ò×</td>
+    <td align="right" height="35" colspan="20">æ‚¨é€‰æ‹©çš„æ—¶é—´æ®µè¿˜æ²¡æœ‰å‘ç”Ÿä»»ä½•äº¤æ˜“</td>
   </tr>
   <!--}-->
   <!--$profit = 0;foreach($vd['items'] as $item) {-->
@@ -95,13 +95,13 @@
   </tr>
   <!--$profit=$profit+$item['income'];}-->
   <tr>
-    <td  align="center" colspan="6">±¾Ò³Í³¼Æ</td>
+    <td  align="center" colspan="6">æœ¬é¡µç»Ÿè®¡</td>
     <td align="center" height="35"><!--echo round($profit,3);--></td>
     <td align="center" colspan="4">
     </td>
   </tr>
   <tr>
-    <td  align="center" colspan="6">²éÑ¯Í³¼Æ</td>
+    <td  align="center" colspan="6">æŸ¥è¯¢ç»Ÿè®¡</td>
     <td align="center" height="35">
     <!--echo round($vd['record']['income'],3);-->
     </td>
@@ -110,15 +110,15 @@
   </tr>
   <tr>
     <td align="right" height="35" colspan="20">
-    <strong>±¾¼ÇÂ¼×Ü¼Æ <font color="#ff0000">{$vd['totlerow']}</font> Ìõ  µÚ {$vd['thispage']} Ò³</strong>/ ¹² {$vd['totlepage']} Ò³</strong>
+    <strong>æœ¬è®°å½•æ€»è®¡ <font color="#ff0000">{$vd['totlerow']}</font> æ¡  ç¬¬ {$vd['thispage']} é¡µ</strong>/ å…± {$vd['totlepage']} é¡µ</strong>
     </td>
   </tr>
   <tr>
     <td align="right" height="35" colspan="19">
     <form method="post" action="index.php?m=mod_b2b&c=trade&tpl=agentorderprofit&{$vd['op']}">
-      <input type="button" value="ÉÏÒ»Ò³ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['prepage']}&{$vd['op']}'"/>
-      <input type="button" value="ÏÂÒ»Ò³ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['nextpage']}&{$vd['op']}'"/>
-      µ½µÚ<input type="text" name="page" size="2" value="" class="txt"/>Ò³<input type="submit" value=" È· ¶¨ &gt;&gt;"/>
+      <input type="button" value="ä¸Šä¸€é¡µ &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="ä¸‹ä¸€é¡µ &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['nextpage']}&{$vd['op']}'"/>
+      åˆ°ç¬¬<input type="text" name="page" size="2" value="" class="txt"/>é¡µ<input type="submit" value=" ç¡® å®š &gt;&gt;"/>
     </form>
     </td>
   </tr>

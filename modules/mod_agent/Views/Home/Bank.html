@@ -1,116 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ÒøĞĞÕËºÅ¹ÜÀí</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="main5" id="main5">
-<script language="JavaScript">
-	</script>
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>ÒøĞĞÕËºÅÉèÖÃ</h2>
-  </div>
-  <ul>
-    <li><a href="index.php?m=mod_agent&amp;c=Home">ÕËºÅĞÅÏ¢</a></li>
-    <li><a href="index.php?m=mod_agent&c=Home&a=Self">ÕË»§¼ä×ª¿î</a></li>
-    <li><a href="" class="on">ÒøĞĞÕËºÅ</a>
-      <script language="JavaScript">function selectbanktype(i)
-	{
-	var kk,vv,jj;
-	vv="BankType"+i;
-	kk=eval('document.modify3.BankType'+i+'.value')
-	if(kk=='×Ô¶¨ÒåÀàĞÍ')
-	{
-	document.getElementById("banktypeselect" + i).style.display="none";
-	document.getElementById("banknameedit" + i).style.display="block";
-	}
-	else
-	{
-	document.getElementById("banktypeselect" + i).style.display="block";
-	document.getElementById("banknameedit" + i).style.display="none";
-	document.getElementById("AccountBranch" + i).value = kk;
-	}
-	}
-	  </script>
-    </li>
-  </ul>
-</div>
-<form name="modify3" method="post" action="index.php?m=mod_agent&c=Home&a=BankSave">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<tr>
-		<td class="table1_left">»ã¿îÕÊ»§£º</td>
-		<td width="78%">
-    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
-		<tr>
-		<th width="35%" class="heardertop1">ÒøĞĞÀàĞÍ</td>
-		<th width="15%" class="heardertop1">¿ª»§µØ</td>
-		<th width="35%" class="heardertop1">ÒøĞĞÕÊºÅ</td>
-		<th width="15%" class="heardertop1">³Ö¿¨ÈË</td>
-		</tr>
-		<?php
-		$tbanks = 'Å©ÒµÒøĞĞ,¹¤ÉÌÒøĞĞ,½¨ÉèÒøĞĞ,ÕĞÉÌÒøĞĞ,½»Í¨ÒøĞĞ,ÖĞ¹úÒøĞĞ,ĞËÒµÒøĞĞ,»ªÏÄÒøĞĞ,ÃñÉúÒøĞĞ,ÓÊÕş´¢Ğî,ÉÌÒµÒøĞĞ,¹ã·¢ÒøĞĞ,Éî·¢ÒøĞĞ,ÆÖ·¢ÒøĞĞ,¹â´óÒøĞĞ,ÖĞĞÅÒøĞĞ,±±¾©ÒøĞĞ,ÉÏº£ÒøĞĞ,ÄÏ¾©ÒøĞĞ,Û´ÖİÒøĞĞ,ÕãÉÌÒøĞĞ,Äş²¨ÒøĞĞ,ĞÅÓÃÉç,Ö§¸¶±¦,²Æ¸¶Í¨,×Ô¶¨ÒåÀàĞÍ';
-		$banks = explode(',', $tbanks);
-		?>
-		<!--$i=0;foreach($vd['items'] as $item){-->
-		<tr>
-<td class="table1_l1eft">
-		<div id="banktypeselect{$i}"<!--if(strpos($tbanks,$item['AccountBranch']) === false){--> style="display:none;"<!--}-->><select id="BankType{$i}" onChange="javascrip:selectbanktype('{$i}');">
-		<!--foreach($banks as $bank){-->
-		<option value="{$bank}"<!--if($bank == $item['AccountBranch']){--> selected<!--}-->>{$bank}</option>
-		<!--}-->
-		</select>
-		</div>
-		<div id="banknameedit{$i}" <!--if(strpos($tbanks,$item['AccountBranch']) !== false){--> style="display:none;"<!--}-->><input type="text" class='input' id="AccountBranch{$i}" name="AccountBranch[]" value="{$item['AccountBranch']}" size="11" maxlength="10" value="Å©ÒµÒøĞĞ" require="false" datatype="LimitB" min="1" max="10" msg="×Ô¶¨ÒåÒøĞĞÃû³ÆÌîĞ´±ØĞëĞ¡ÓÚ5¸öºº×Ö" onfocus="javascript:this.value='';"></div>
-		</td>
-		<td class="table1_l1eft"><div align="center"><input type="hidden" value="{$item['id']}" name="id[]"/><input type="text" class='input' name="Address[]" value="{$item['Address']}" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="¿ª»§µØ±ØĞëÌîĞ´"></td>
-		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" value="{$item['AccountNO']}" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="ÕÊºÅ±ØĞëÌîĞ´"></td>
-		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" value="{$item['AccountName']}" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="³Ö¿¨ÈËĞÕÃû±ØĞëÌîĞ´"></td>
-		</tr>
-		<!--$i++;}-->
-		
-		<!--for($j=$i; $j<5; $j++){-->
-		<tr>
-<td class="table1_l1eft"><div align="center">
-		<div id="banktypeselect{$j}"><select id="BankType{$j}" onChange="javascrip:selectbanktype('{$j}');">
-		<!--foreach($banks as $bank){-->
-		<option value="{$bank}">{$bank}</option>
-		<!--}-->
-		</select>
-		</div>
-		<div id="banknameedit{$j}" style="display:none;"><div align="center"><input type="text" class='input' id="AccountBranch{$j}" name="AccountBranch[]" size="11" maxlength="10" value="Å©ÒµÒøĞĞ" require="false" datatype="LimitB" min="1" max="10" msg="×Ô¶¨ÒåÒøĞĞÃû³ÆÌîĞ´±ØĞëĞ¡ÓÚ5¸öºº×Ö" onFocus="javascript:this.value='';"></div>
-		</td>
-		<td class="table1_l1eft"><div align="center"><input type="hidden" value="0" name="id[]"/><input type="text" class='input' name="Address[]" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="¿ª»§µØ±ØĞëÌîĞ´"></td>
-		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="ÕÊºÅ±ØĞëÌîĞ´"></td>
-		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="³Ö¿¨ÈËĞÕÃû±ØĞëÌîĞ´"></td>
-		</tr>
-		<!--}-->
-		
-		
-		</table>
-		</td>
-		</tr>
-		<tr>
-		<td class="table1_left">ÊäÈë³¬¼¶ÃÜÂë£º</td>
-		<td class="tableright1"><div align="left">
-		  <input type="password" name="superpwd" size="40" class='input0'/>
-		  </div></td>
-		</tr>
-		
-		<tr>
-		<td class="table1_left"></td>
-		<td class="tableright1"><div align="left">
-		  <input type="submit" name="submit" value="Íê³ÉĞŞ¸Ä" class="tijiao_input"> 
-		  <input type="reset" name="reset" value="ÖØĞÂÌîĞ´" class="fanhui_input" tabindex="27">
-		  </div></td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-	</form>
-	</div>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>é“¶è¡Œè´¦å·ç®¡ç†</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="main5" id="main5"><script language="JavaScript">	</script><div class="new_qie">  <div class="new_qie2">    <h2>é“¶è¡Œè´¦å·è®¾ç½®</h2>  </div>  <ul>    <li><a href="index.php?m=mod_agent&amp;c=Home">è´¦å·ä¿¡æ¯</a></li>    <li><a href="index.php?m=mod_agent&c=Home&a=Self">è´¦æˆ·é—´è½¬æ¬¾</a></li>    <li><a href="" class="on">é“¶è¡Œè´¦å·</a>      <script language="JavaScript">function selectbanktype(i)	{	var kk,vv,jj;	vv="BankType"+i;	kk=eval('document.modify3.BankType'+i+'.value')	if(kk=='è‡ªå®šä¹‰ç±»å‹')	{	document.getElementById("banktypeselect" + i).style.display="none";	document.getElementById("banknameedit" + i).style.display="block";	}	else	{	document.getElementById("banktypeselect" + i).style.display="block";	document.getElementById("banknameedit" + i).style.display="none";	document.getElementById("AccountBranch" + i).value = kk;	}	}	  </script>    </li>  </ul></div><form name="modify3" method="post" action="index.php?m=mod_agent&c=Home&a=BankSave"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<tr>		<td class="table1_left">æ±‡æ¬¾å¸æˆ·ï¼š</td>		<td width="78%">    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">		<tr>		<th width="35%" class="heardertop1">é“¶è¡Œç±»å‹</td>		<th width="15%" class="heardertop1">å¼€æˆ·åœ°</td>		<th width="35%" class="heardertop1">é“¶è¡Œå¸å·</td>		<th width="15%" class="heardertop1">æŒå¡äºº</td>		</tr>		<?php		$tbanks = 'å†œä¸šé“¶è¡Œ,å·¥å•†é“¶è¡Œ,å»ºè®¾é“¶è¡Œ,æ‹›å•†é“¶è¡Œ,äº¤é€šé“¶è¡Œ,ä¸­å›½é“¶è¡Œ,å…´ä¸šé“¶è¡Œ,åå¤é“¶è¡Œ,æ°‘ç”Ÿé“¶è¡Œ,é‚®æ”¿å‚¨è“„,å•†ä¸šé“¶è¡Œ,å¹¿å‘é“¶è¡Œ,æ·±å‘é“¶è¡Œ,æµ¦å‘é“¶è¡Œ,å…‰å¤§é“¶è¡Œ,ä¸­ä¿¡é“¶è¡Œ,åŒ—äº¬é“¶è¡Œ,ä¸Šæµ·é“¶è¡Œ,å—äº¬é“¶è¡Œ,é„å·é“¶è¡Œ,æµ™å•†é“¶è¡Œ,å®æ³¢é“¶è¡Œ,ä¿¡ç”¨ç¤¾,æ”¯ä»˜å®,è´¢ä»˜é€š,è‡ªå®šä¹‰ç±»å‹';		$banks = explode(',', $tbanks);		?>		<!--$i=0;foreach($vd['items'] as $item){-->		<tr><td class="table1_l1eft">		<div id="banktypeselect{$i}"<!--if(strpos($tbanks,$item['AccountBranch']) === false){--> style="display:none;"<!--}-->><select id="BankType{$i}" onChange="javascrip:selectbanktype('{$i}');">		<!--foreach($banks as $bank){-->		<option value="{$bank}"<!--if($bank == $item['AccountBranch']){--> selected<!--}-->>{$bank}</option>		<!--}-->		</select>		</div>		<div id="banknameedit{$i}" <!--if(strpos($tbanks,$item['AccountBranch']) !== false){--> style="display:none;"<!--}-->><input type="text" class='input' id="AccountBranch{$i}" name="AccountBranch[]" value="{$item['AccountBranch']}" size="11" maxlength="10" value="å†œä¸šé“¶è¡Œ" require="false" datatype="LimitB" min="1" max="10" msg="è‡ªå®šä¹‰é“¶è¡Œåç§°å¡«å†™å¿…é¡»å°äº5ä¸ªæ±‰å­—" onfocus="javascript:this.value='';"></div>		</td>		<td class="table1_l1eft"><div align="center"><input type="hidden" value="{$item['id']}" name="id[]"/><input type="text" class='input' name="Address[]" value="{$item['Address']}" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="å¼€æˆ·åœ°å¿…é¡»å¡«å†™"></td>		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" value="{$item['AccountNO']}" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="å¸å·å¿…é¡»å¡«å†™"></td>		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" value="{$item['AccountName']}" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="æŒå¡äººå§“åå¿…é¡»å¡«å†™"></td>		</tr>		<!--$i++;}-->				<!--for($j=$i; $j<5; $j++){-->		<tr><td class="table1_l1eft"><div align="center">		<div id="banktypeselect{$j}"><select id="BankType{$j}" onChange="javascrip:selectbanktype('{$j}');">		<!--foreach($banks as $bank){-->		<option value="{$bank}">{$bank}</option>		<!--}-->		</select>		</div>		<div id="banknameedit{$j}" style="display:none;"><div align="center"><input type="text" class='input' id="AccountBranch{$j}" name="AccountBranch[]" size="11" maxlength="10" value="å†œä¸šé“¶è¡Œ" require="false" datatype="LimitB" min="1" max="10" msg="è‡ªå®šä¹‰é“¶è¡Œåç§°å¡«å†™å¿…é¡»å°äº5ä¸ªæ±‰å­—" onFocus="javascript:this.value='';"></div>		</td>		<td class="table1_l1eft"><div align="center"><input type="hidden" value="0" name="id[]"/><input type="text" class='input' name="Address[]" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="å¼€æˆ·åœ°å¿…é¡»å¡«å†™"></td>		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="å¸å·å¿…é¡»å¡«å†™"></td>		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="æŒå¡äººå§“åå¿…é¡»å¡«å†™"></td>		</tr>		<!--}-->						</table>		</td>		</tr>		<tr>		<td class="table1_left">è¾“å…¥è¶…çº§å¯†ç ï¼š</td>		<td class="tableright1"><div align="left">		  <input type="password" name="superpwd" size="40" class='input0'/>		  </div></td>		</tr>				<tr>		<td class="table1_left"></td>		<td class="tableright1"><div align="left">		  <input type="submit" name="submit" value="å®Œæˆä¿®æ”¹" class="tijiao_input"> 		  <input type="reset" name="reset" value="é‡æ–°å¡«å†™" class="fanhui_input" tabindex="27">		  </div></td>		</tr>		</table>	</td>	</tr>	</table>	</form>	</div></body></html>

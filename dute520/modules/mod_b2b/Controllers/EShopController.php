@@ -28,7 +28,7 @@ class EShopController extends Controller
 								$data = array_merge( $data, $R71a664ef8c );
 								$R4e420efcc3 = $this->instance->ISys_Page( $data );
 								$this->FillPage( $data, $R4e420efcc3 );
-								$R00be52aa45 = array( "webname" => "µêÃû", "aid" => "µêÖ÷", "website" => "ÍøÕ¾µØÖ·" );
+								$R00be52aa45 = array( "webname" => "ï¿½ï¿½ï¿½ï¿½", "aid" => "ï¿½ï¿½ï¿½ï¿½", "website" => "ï¿½ï¿½Õ¾ï¿½ï¿½Ö·" );
 								$this->Assign( "sarray", $R00be52aa45 );
 							
 												$this->view( );
@@ -73,7 +73,7 @@ class EShopController extends Controller
 												$data['admdir'] = getvar( "admdir", "" );
 												if ( $data['admdir'] == "" )
 												{
-																$this->Alert( "ÇëÌîÈë×ÓÄ¿Â¼" );
+																$this->Alert( "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼" );
 																$this->HistoryGo( );
 												}
 												$R20fd65e9c7 = array( );
@@ -89,7 +89,7 @@ class EShopController extends Controller
 																}
 												}
 												$R808b89ba0e = $this->instance->ISys_Create( $R20fd65e9c7 );
-												$R63bede6b19 = "Ìí¼Ó";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½";
 												$this->CopyAd( $R2a51483b14 );
 								}
 								else
@@ -101,12 +101,12 @@ class EShopController extends Controller
 												$data['website'] = $R8607b50296;
 												$data['admdir'] = getvar( "admdir", "admin" );
 												$data['b2bmenu'] = htmlspecialchars( $R2fd57a2d0b );
-												$R63bede6b19 = "¸üÐÂ";
+												$R63bede6b19 = "ï¿½ï¿½ï¿½ï¿½";
 												$R808b89ba0e = $this->instance->ISys_Update( $data, $R3584859062 );
 												$this->SaveB2BMenu( );
 								}
 								$this->UpdateCache( "vip" );
-								$this->go( $R808b89ba0e, $R63bede6b19."³É¹¦", $R63bede6b19."Ê§°Ü", "index.php?m=mod_b2b&c=EShop" );
+								$this->go( $R808b89ba0e, $R63bede6b19."ï¿½É¹ï¿½", $R63bede6b19."Ê§ï¿½ï¿½", "index.php?m=mod_b2b&c=EShop" );
 				}
 
 				public function SaveB2bMenu( )
@@ -259,7 +259,7 @@ class EShopController extends Controller
 												"url" => "index.php",
 												"ispic" => 0,
 												"textcolor" => "#ff0000",
-												"text" => "»¶Ó­¹âÁÙ",
+												"text" => "ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½",
 												"editdate" => date( "Y-m-d H-i-s" ),
 												"pos" => 108
 								);
@@ -269,7 +269,7 @@ class EShopController extends Controller
 												"url" => "index.php",
 												"ispic" => 1,
 												"textcolor" => "#ff0000",
-												"text" => "Íø°É»î¶¯",
+												"text" => "ï¿½ï¿½ï¿½É»î¶¯",
 												"editdate" => date( "Y-m-d H-i-s" ),
 												"pos" => 103
 								);
@@ -279,7 +279,7 @@ class EShopController extends Controller
 												"url" => "index.php",
 												"ispic" => 1,
 												"textcolor" => "#ff0000",
-												"text" => "Íø°É»î¶¯",
+												"text" => "ï¿½ï¿½ï¿½É»î¶¯",
 												"editdate" => date( "Y-m-d H-i-s" ),
 												"pos" => 103
 								);
@@ -323,13 +323,13 @@ class EShopController extends Controller
 								$Re8bade8a5f = getvar( "adminname" );
 								if ( trim( $Re8bade8a5f ) == "" )
 								{
-												$this->Alert( "¹ÜÀíÔ±Ãû×Ö²»ÄÜÎª¿Õ£¡" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½Îªï¿½Õ£ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=EShop" );
 								}
 								$Rfc5c48c798 = factory::getinstance( "master" );
 								if ( $Rfc5c48c798->IMaster_IsExist( $Re8bade8a5f ) )
 								{
-												$this->Alert( "¹ÜÀíÔ±ÒÑ¾­´æÔÚ£¬ÇëÑ¡ÔñÆäËûÃû×Ö" );
+												$this->Alert( "ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" );
 												$this->ScriptRedirect( "index.php?m=mod_b2b&c=EShop" );
 								}
 								global $masterid;
@@ -344,13 +344,13 @@ class EShopController extends Controller
 
 				public function Table( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$this->Index( );
 				}
 
 				public function Deals( )
 				{
-								header( "Content-type: text/html;charset=GB2312" );
+								header( "Content-type: text/html;charset=utf-8" );
 								$tpl = getvar( "tpl" );
 								$this->View( $tpl );
 				}
@@ -362,10 +362,10 @@ class EShopController extends Controller
 								$R244f38266c = getvar( "val" );
 								if ( $param == "" || $R3584859062 == 0 )
 								{
-												echo "²ÎÊý´íÎó£¡";
+												echo "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 												exit( );
 								}
-								$R244f38266c = iconv( "UTF-8", "gb2312//IGNORE", $R244f38266c );
+								$R244f38266c = iconv( "UTF-8", "utf-8//IGNORE", $R244f38266c );
 								$data = array(
 												$param => $R244f38266c
 								);
@@ -377,7 +377,7 @@ class EShopController extends Controller
 								}
 								else
 								{
-												echo "ÐÞ¸ÄÊ§°Ü£¡".$param.$R244f38266c;
+												echo "ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½".$param.$R244f38266c;
 								}
 				}
 
@@ -393,7 +393,7 @@ class EShopController extends Controller
 								}
 								else
 								{
-												echo "¼ÇÂ¼»¹Ô­Ê§°Ü£¡";
+												echo "ï¿½ï¿½Â¼ï¿½ï¿½Ô­Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -428,12 +428,12 @@ class EShopController extends Controller
 												}
 												else
 												{
-																echo "É¾³ýÊ§°Ü£¡";
+																echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 												}
 								}
 								else
 								{
-												echo "É¾³ýÊ§°Ü£¡";
+												echo "É¾ï¿½ï¿½Ê§ï¿½Ü£ï¿½";
 								}
 				}
 
@@ -472,7 +472,7 @@ class EShopController extends Controller
 								{
 												if ( $R3456919727 == "" )
 												{
-																echo "ÇëÏÈÑ¡ÔñÐÐ";
+																echo "ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½";
 																exit( );
 												}
 												$Rb7492a73f7 = "id in (".$R3456919727.")";
@@ -493,7 +493,7 @@ class EShopController extends Controller
 								$R808b89ba0e = $this->instance->ISys_DeleteByStr( $Rb7492a73f7, $data );
 								if ( !$R808b89ba0e )
 								{
-												echo "É¾³ýÊ§°Ü!";
+												echo "É¾ï¿½ï¿½Ê§ï¿½ï¿½!";
 								}
 								else
 								{

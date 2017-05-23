@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>ÁªÏµÐÅÏ¢</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>è”ç³»ä¿¡æ¯</title>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style type="text/css">
 body{padding:5px;overflow:auto}
@@ -14,48 +14,48 @@ td{height:22px;}
 <!--$item=$vd['item']['item'];-->
 <table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">
   <tr>
-    <td height="35"  colspan="2" class="listhead texttle">¶©µ¥ÏêÏ¸ÐÅÏ¢</td>
+    <td height="35"  colspan="2" class="listhead texttle">è®¢å•è¯¦ç»†ä¿¡æ¯</td>
   </tr>
   <tr>
-    <td width="30%" align="right" style="padding: 5px">¶©µ¥ºÅ£º</td>
-    <td width="68%" style="padding: 5px">{$item['ubzordno']} <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['uid']}&ordno={$item['ubzordno']}&mtype=3&frm=1">Í¶Ëß</a> <!--if($item['uid'] == $vd['ubzuid'] || $item['uid'] != $item['ubzuid']){--><!--if($item['cancelqty'] < $item['ubzqty'] ){--><a href="javascript:disp('cdiv')">ÍË¿î</a><!--}--><!--}--></td>
+    <td width="30%" align="right" style="padding: 5px">è®¢å•å·ï¼š</td>
+    <td width="68%" style="padding: 5px">{$item['ubzordno']} <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['uid']}&ordno={$item['ubzordno']}&mtype=3&frm=1">æŠ•è¯‰</a> <!--if($item['uid'] == $vd['ubzuid'] || $item['uid'] != $item['ubzuid']){--><!--if($item['cancelqty'] < $item['ubzqty'] ){--><a href="javascript:disp('cdiv')">é€€æ¬¾</a><!--}--><!--}--></td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">ÉÌÆ·Ãû³Æ£º</td>
+    <td align="right" style="padding: 5px">å•†å“åç§°ï¼š</td>
     <td style="padding: 5px">{$item['ubzpname']}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">ÉÌÆ·ÀàÐÍ£º</td>
+    <td align="right" style="padding: 5px">å•†å“ç±»åž‹ï¼š</td>
     <td style="padding: 5px">{#ProductType($item['ubzptype'])}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">¹©»õÉÌ£º</td>
+    <td align="right" style="padding: 5px">ä¾›è´§å•†ï¼š</td>
     <td style="padding: 5px">{$item['uid']}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">½ø»õÉÌ£º</td>
+    <td align="right" style="padding: 5px">è¿›è´§å•†ï¼š</td>
     <td style="padding: 5px">{$item['ubzuid']}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">½ø»õÊ±¼ä£º</td>
+    <td align="right" style="padding: 5px">è¿›è´§æ—¶é—´ï¼š</td>
     <td style="padding: 5px">{$item['ubzorddate']}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">½ø»õÁ¿£º</td>
+    <td align="right" style="padding: 5px">è¿›è´§é‡ï¼š</td>
     <td style="padding: 5px">{$item['ubzqty']}</td>
   </tr>
   <tr>
-    <td align="right" style="padding: 5px">½ø»õ¼Û£º</td>
+    <td align="right" style="padding: 5px">è¿›è´§ä»·ï¼š</td>
     <td style="padding: 5px"><!--echo round($item['ubzsupdollars']/$item['ubzqty'], 3);--></td>
   </tr>
   <!--if($item['cancelqty'] > 0) {-->
   <tr>
-    <td align="right" style="padding: 5px">ÍË¿î×´¿ö£º</td>
+    <td align="right" style="padding: 5px">é€€æ¬¾çŠ¶å†µï¼š</td>
     <td style="padding: 5px">
     	<!--if($item['cancelqty'] == $item['ubzqty'] ){-->
-    	<font color="#ff0000">ÒÑ¾­È«¶îÍË¿î</font>
+    	<font color="#ff0000">å·²ç»å…¨é¢é€€æ¬¾</font>
     	<!--}else{-->
-    	<font color="#ff0000">²¿·ÖÍË¿î ÊýÁ¿£º<b>{$item['cancelqty']}</b></font>
+    	<font color="#ff0000">éƒ¨åˆ†é€€æ¬¾ æ•°é‡ï¼š<b>{$item['cancelqty']}</b></font>
     	<!--}-->
     </td>
   </tr>
@@ -65,14 +65,14 @@ td{height:22px;}
     <td colspan="2">
       <table border="1" width="98%" style="border-collapse: collapse;line-height:25px;margin:10px 0px;" bordercolor="#cccccc">
         <tr class="tabletitle" style="background:#f0f0f0">
-          <td width="33%" style="padding: 3px" align="center">¹©¿¨ÉÌ</td>
-          <td width="33%" style="padding: 3px" align="center"><!--if($item['ubzptype'] == 3) {-->ºÅÂë<!--}else{-->¿¨ºÅ<!--}--> </td>
-          <td width="33%" style="padding: 3px" align="center">ÃÜÂë</td>
+          <td width="33%" style="padding: 3px" align="center">ä¾›å¡å•†</td>
+          <td width="33%" style="padding: 3px" align="center"><!--if($item['ubzptype'] == 3) {-->å·ç <!--}else{-->å¡å·<!--}--> </td>
+          <td width="33%" style="padding: 3px" align="center">å¯†ç </td>
         </tr>
         <!--if($item['cancelqty'] > 0) {-->
         <tr>
           <td colspan="3">
-            <font color="#cccccc"><b>¶©µ¥ÎÞÐ§£¬ÒÑ¾­<!--if($item['cancelqty'] == $item['ubzqty'] ){-->È«¶î<!--}else{-->²¿·Ö<!--}-->ÍË¿î</b></font>
+            <font color="#cccccc"><b>è®¢å•æ— æ•ˆï¼Œå·²ç»<!--if($item['cancelqty'] == $item['ubzqty'] ){-->å…¨é¢<!--}else{-->éƒ¨åˆ†<!--}-->é€€æ¬¾</b></font>
           </td>
         </tr>
         <!--}else{-->
@@ -101,45 +101,45 @@ td{height:22px;}
   
   <!--if($item['ubzptype'] == 1 || $item['ubzptype'] == 2) {-->
   <tr>
-    <td class="buylt">ÓÎÏ·ÓÃ»§Ãû£º</td>
+    <td class="buylt">æ¸¸æˆç”¨æˆ·åï¼š</td>
     <td class="buyrt">{$item['ubzczacount']}</td>
   </tr>
   <!--if($item['ubzczarea1'] != ''){-->
   <tr>
-    <td class="buylt">³äÖµÇøÓò£º</td>
+    <td class="buylt">å……å€¼åŒºåŸŸï¼š</td>
     <td class="buyrt">{$item['ubzczarea1']}</td>
   </tr>
   <!--}-->
   <!--if($item['ubzczarea2'] != ''){-->
   <tr>
-    <td class="buylt">³äÖµ·þÎñÆ÷£º</td>
+    <td class="buylt">å……å€¼æœåŠ¡å™¨ï¼š</td>
     <td class="buyrt">{$item['ubzczarea2']}</td>
   </tr>
   <!--}-->
   <!--if($item['ubzcztype'] != ''){-->
   <tr>
-    <td class="buylt">¼Æ·Ñ·½Ê½£º</td>
+    <td class="buylt">è®¡è´¹æ–¹å¼ï¼š</td>
     <td class="buyrt">{$item['ubzcztype']}</td>
   </tr>
   <!--}-->
   <!--if($item['ubzczother'] != ''){-->
   <tr>
-    <td class="buylt">ÕÊºÅÀàÐÍ£º</td>
+    <td class="buylt">å¸å·ç±»åž‹ï¼š</td>
     <td class="buyrt">{$item['ubzczother']}</td>
   </tr>
   <!--}-->
   <tr>
-    <td class="buylt">³äÖµ½á¹û£º</td>
+    <td class="buylt">å……å€¼ç»“æžœï¼š</td>
     <td class="buyrt">
     	<!--if($item['cancelqty'] > 0) {-->
-    	<font color="#cccccc"><b>¶©µ¥ÎÞÐ§£¬ÒÑ¾­<!--if($item['cancelqty'] == $item['ubzqty'] ){-->È«¶î<!--}else{-->²¿·Ö<!--}-->ÍË¿î</b></font>
+    	<font color="#cccccc"><b>è®¢å•æ— æ•ˆï¼Œå·²ç»<!--if($item['cancelqty'] == $item['ubzqty'] ){-->å…¨é¢<!--}else{-->éƒ¨åˆ†<!--}-->é€€æ¬¾</b></font>
     	<!--}else{-->
     	
       <!--if($item['ubzordcheck'] == 0) {-->
-      <font color="#ff0000"><b>ÕýÔÚ³äÖµÖÐ
+      <font color="#ff0000"><b>æ­£åœ¨å……å€¼ä¸­
       <!--}-->
       <!--if($item['ubzordcheck'] == 1) {-->
-      <font color="#0000ff"><b>ÒÑ¾­³äÖµ³É¹¦
+      <font color="#0000ff"><b>å·²ç»å……å€¼æˆåŠŸ
       <!--}-->
       </b></font>
       
@@ -149,7 +149,7 @@ td{height:22px;}
   <!--}-->
   <!--if($item['ubzerrcontent'] != ''){-->
   <tr>
-    <td class="buylt">·´À¡ÐÅÏ¢£º</td>
+    <td class="buylt">åé¦ˆä¿¡æ¯ï¼š</td>
     <td class="buyrt">{$item['ubzerrcontent']}</td>
   </tr>
   <!--}-->
@@ -159,12 +159,12 @@ td{height:22px;}
 <!--if($item['cancelqty'] < $item['ubzqty'] ){-->
 <div id="cdiv" style="position:absolute;top:45px;left:30px;;width:380px;display:none">
   <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
-  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">ÍË¿î</div>
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">é€€æ¬¾</div>
   <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
   <form id="cform" method="post" action="index.php?m=mod_b2b&c=SOrder&a=Cancel">
     <table id="checktable" width="100%" style="border-collapse: collapse;">
       <tr>
-        <td width="25%"">ÍË¿îÊýÁ¿</td>
+        <td width="25%"">é€€æ¬¾æ•°é‡</td>
         <td width="75%"><input type="text" id="ubzqty" name="ubzqty" value="{$item['ubzqty']}"/></td>
       </tr>
       <tr>
@@ -175,7 +175,7 @@ td{height:22px;}
         	<input type="hidden" name="cancelqty" value="{$item['cancelqty']}"/>
         	<input type="hidden" name="uidb" value="{$item['uid']}"/>
         	<input type="hidden" name="uida" value="{$item['ubzuid']}"/>
-          <input type="submit" value="È·ÈÏÍË¿î" class="button"/> <input type="button" value="È¡Ïû" class="button" onclick="disp('cdiv')"/>
+          <input type="submit" value="ç¡®è®¤é€€æ¬¾" class="button"/> <input type="button" value="å–æ¶ˆ" class="button" onclick="disp('cdiv')"/>
         </td>
       </tr>
     </table>

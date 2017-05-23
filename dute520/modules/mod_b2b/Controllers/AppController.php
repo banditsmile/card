@@ -42,7 +42,7 @@ class AppController extends Controller
 								$Ra5f961f14f = intval( request( "show" ) );
 								if ( $Ra5f961f14f == 1 )
 								{
-												header( "Content-type: text/html;charset=GB2312" );
+												header( "Content-type: text/html;charset=utf-8" );
 								}
 								$data = array(
 												"page" => intval( getvar( "page", 1 ) ),

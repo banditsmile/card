@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
 <style>
 .search_select {
@@ -37,67 +37,67 @@
 <!--$item = $vd['item'];-->
 <div id="titleDiv">
 <div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div>
-<div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="�ص���̨��ҳ"><font color="#000">����</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=EShop" title="�������б�"><font color="#000">��վ�б�</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['webname']}</span></div>
-<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_eshop_index" onFocus="this.blur()" title="�鿴��������ذ���"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+<div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=EShop" title="连锁店列表"><font color="#000">分站列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['webname']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_eshop_index" onFocus="this.blur()" title="查看连锁店相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
 </div>
 <form id="cform" method="post" action="index.php?m=mod_b2b&c=EShop&a=Save">
 <div id="content" class="cwarpper">
 <div class="cbodyHead"></div>
 <div class="cwarpper1">
-<div class="ctitle">��վ��Ϣ�޸�</div>
+<div class="ctitle">分站信息修改</div>
 <table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
   <tr>
-     <td class="tablelt">���</td>
+     <td class="tablelt">店标</td>
      <td class="tablert">
       <img src="{$vd['root']}{$item['admdir']}/content/mod_b2b/images/mylogo.gif" border="0"/>
      </td>
   </tr>
   <tr>
-    <td class="tablelt">��վ���</td>
+    <td class="tablelt">分站编号</td>
     <td class="tablert">{$item['id']}</td>
   </tr>
   <tr>
-    <td class="tablelt">��վ����</td>
+    <td class="tablelt">分站名称</td>
     <td class="tablert"><input type="text" name="webname" size="25" value="{$item['webname']}" style="background:#f0f0f0" readonly/></td>
   </tr>
   <tr>
-    <td class="tablelt">�������</td>
+    <td class="tablelt">代理编号</td>
     <td class="tablert"><input type="text" name="aid" size="25" value="{$item['aid']}" style="background:#f0f0f0" readonly/></td>
   </tr>
   <tr>
-    <td class="tablelt">��վ��ַ</td>
+    <td class="tablelt">分站网址</td>
     <td class="tablert"><input type="text" name="website" size="25" value="{$item['website']}" /></td>
   </tr>
   <tr>
-    <td class="tablelt">ϵͳ��Ŀ¼</td>
+    <td class="tablelt">系统子目录</td>
     <td class="tablert"><input type="text" name="admdir" size="25" value="{$item['admdir']}" style="background:#f0f0f0" readonly/></td>
   </tr>
   <tr>
-      <td class="tablelt">��ʼ����</td>
+      <td class="tablelt">起始日期</td>
       <td class="tablert">
         <input type="text" name="startdate" size="25" value="{$item['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
         <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
       </td>
     </tr>
     <tr>
-      <td class="tablelt">��������</td>
+      <td class="tablelt">结束日期</td>
       <td class="tablert">
         <input type="text" name="enddate" size="25" value="{$item['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
         <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
       </td>
     </tr>
   <tr>
-      <td class="tablelt">����ǰ̨����</td>
+      <td class="tablelt">批发前台导航</td>
       <td class="tablert">
         <textarea rows="5" name="b2bmenu" cols="15" style="width:358px;">{$item['b2bmenu']}</textarea>
-        <br/><span class="spantip">�س�����һ�飬ÿһ����"|"������"|"ǰ���ǲ˵�����α�ʾ�Ƿ��´��ڴ�,0��ʾԭ���ڣ�1��ʾ�´��ڣ����һ��"|"�����ǲ˵���Ӧ������</span>
+        <br/><span class="spantip">回车代表一组，每一组用"|"隔开，"|"前面是菜单，其次表示是否新窗口打开,0表示原窗口，1表示新窗口，最后一个"|"后面是菜单对应的链接</span>
       </td>
     </tr>
   <tr>
     <td class="tablelt""></td>
     <td class="tablert">
-      <input type="submit" value="�� ��" class="button"/>
-      <input type="button" value="ȡ ��" onclick="disp('adddiv')" class="button"/>
+      <input type="submit" value="修 改" class="button"/>
+      <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
     </td>
   </tr>
 </table>
@@ -115,7 +115,7 @@
   var ctablenum = 2;
   function imginfo(imgsrc)
   {
-  document.getElementById("imgsize").innerHTML = "�� x ����" + imgsrc.height + " x " + imgsrc.width + "<br/>ͼƬ��С��" + imgsrc.fileSize + " �ֽ�"; 
+  document.getElementById("imgsize").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
   }
 </script>
 <script src="{$vd['sc']}js/content.js" type="text/javascript"></script>

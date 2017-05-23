@@ -1,117 +1,1 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>Ä£°å¼Û¸ñ¹ÜÀí</title>
-    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
-    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
-<body class="mainbg">
-<div class="new_qie">
-  <div class="new_qie2">
-    <h2>Ä£°å¼Û¸ñ¹ÜÀí</h2>
-  </div>
-  <ul>
-    <li><a href="" class="on">Ä£°å¼Û¸ñ¹ÜÀí</a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=price&amp;a=AddRankTpl"><span>µ¥¼¶±ð¼Û¸ñÄ£°å</span></a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=AgentPrice"><span >ÉÌÆ·¼Û¸ñÉèÖÃ</span></a></li>
-    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>ÉÌÆ·¼Û¸ñÃÜ¼Û</span></a></li>
-  </ul>
-</div>
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="tableleft">
-		<form name="bulletin" method="post" action="index.php?m=mod_b2b&c=Price&a=Save">
-<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
-		<?php foreach($vd['items'] as $item) { ?>
-    <tr>
-      <td class="table1_left"><?php echo $item['name']; ?>£º</span></td>
-      <td width="78%" class="tableright1">
-      	<div align="left">
-      	  <input name="id[]" type="hidden" value="<?php echo $item['id']; ?>"/>
-		  <select name="priceplan_<?php echo $item['id']; ?>"onChange="set(this, <?php echo $item['id']; ?>)">
-      	    <option value="1"
-      	    <?php if($item['priceplan']==1){ ?>
-      	     selected
-      	    <?php } ?>
-      	    >·½°¸Ò»(ÀûÈóÕÛ¿Û)
-      	    </option>
-      	    <option value="2"
-      	    <?php if($item['priceplan']==2){ ?>
-      	     selected
-      	    <?php } ?>
-      	    >·½°¸¶þ(Ö±½ÓÀÛ¼Ó)
-      	    </option>
-      	    <option value="3"
-      	    <?php if($item['priceplan']==3){ ?>
-      	     selected
-      	    <?php } ?>
-      	    >·½°¸Èý(ÃæÖµÕÛ¿Û)
-      	    </option>
-    	    </select>
-      	  ¼Û¸ñ = 
-      	  <input name="discout_<?php echo $item['id']; ?>" type="text" size="5" value="<?php echo $item['discout']; ?>" />
-      	  <span id="std_<?php echo $item['id']; ?>"><?php echo $item['char']; ?> 
-      	    <?php if($item['priceplan']==1){ ?>
-      	    x (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) + ÎÒµÄ½ø»õ¼Û
-      	    <?php } ?>
-      	    <?php if($item['priceplan']==2){ ?>
-      	    + ÎÒµÄ½ø»õ¼Û
-      	    <?php } ?>
-      	     <?php if($item['priceplan']==3){ ?>
-      	    x ÃæÖµ + ÎÒµÄ½ø»õ¼Û
-      	    <?php } ?>
-    	    </span> </div></td>
-    </tr>
-    <?php } ?>
-    <tr>
-     <td class="table1_left"> Ïà¹ØËµÃ÷£º </td>
-      <td width="78%" class="tableright1">
-      	<div align="left"><br/>
-    	  </div>
-      	<p align="left"> ·½°¸Ò»(ÀûÈóÕÛ¿Û)£º¶ÔÓ¦¼¶±ð¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) x ±ÈÀý</p>
-        <p align="left">&nbsp;</p>
-        <p align="left"> ·½°¸¶þ(Ö±½ÓÀÛ¼Ó)£º¶ÔÓ¦¼¶±ð¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + ±ÈÀý</p>
-        <p align="left">&nbsp;</p>
-        <p align="left"> ·½°¸Èý(ÃæÖµÕÛ¿Û)£º¶ÔÓ¦¼¶±ð¼Û¸ñ = ÎÒµÄ½ø»õ¼Û + ÃæÖµ x ±ÈÀý</p>
-        <div align="left"><br/>      
-        </div></td>
-    </tr>
-		<tr>
-		  <td class="table1_left">&nbsp;</td>
-		<td height="30" class="tableright1"><div align="left">
-		  <input type="submit" value="È·ÈÏÉèÖÃ" class="tijiao_input" name="submit">
-		  <input type="reset" value="ÖØÐÂÌîÐ´" class="fanhui_input" name="reset">
-		  </div></td>
-		</tr>
-		</table>
-		</form>
-	</td>
-	</tr>
-</table>
-<script type="text/JavaScript">
-var $ = function(id){
-	return document.getElementById(id);
-}
-
-function set(obj, idx)
-{
-	val = obj.options[obj.selectedIndex].value;
-	str = "";
-	if(val == "1")
-	{
-		str = "% x (ÃæÖµ - ÎÒµÄ½ø»õ¼Û) + ÎÒµÄ½ø»õ¼Û";
-	}
-  else if(val == "2")
-  {
-  	str = "<?php echo $vd['lang']['moneyunit']; ?> + ÎÒµÄ½ø»õ¼Û";
-  }
-  else
-	{
-		str = "% x ÃæÖµ + ÎÒµÄ½ø»õ¼Û";
-	}
-	
-	$("std_"+idx).innerHTML = str;
-}
-</script>
-</body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    <title>Ä£ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ï¿½</title>    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" /><body class="mainbg"><div class="new_qie">  <div class="new_qie2">    <h2>Ä£ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ï¿½</h2>  </div>  <ul>    <li><a href="" class="on">Ä£ï¿½ï¿½Û¸ï¿½ï¿½ï¿½ï¿½</a></li>    <li><a href="index.php?m=mod_b2b&amp;c=price&amp;a=AddRankTpl"><span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½Ä£ï¿½ï¿½</span></a></li>    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=AgentPrice"><span >ï¿½ï¿½Æ·ï¿½Û¸ï¿½ï¿½ï¿½ï¿½ï¿½</span></a></li>    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>ï¿½ï¿½Æ·ï¿½Û¸ï¿½ï¿½Ü¼ï¿½</span></a></li>  </ul></div><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">	<tr>	<td class="tableleft">		<form name="bulletin" method="post" action="index.php?m=mod_b2b&c=Price&a=Save"><table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">		<?php foreach($vd['items'] as $item) { ?>    <tr>      <td class="table1_left"><?php echo $item['name']; ?>ï¿½ï¿½</span></td>      <td width="78%" class="tableright1">      	<div align="left">      	  <input name="id[]" type="hidden" value="<?php echo $item['id']; ?>"/>		  <select name="priceplan_<?php echo $item['id']; ?>"onChange="set(this, <?php echo $item['id']; ?>)">      	    <option value="1"      	    <?php if($item['priceplan']==1){ ?>      	     selected      	    <?php } ?>      	    >ï¿½ï¿½ï¿½ï¿½Ò»(ï¿½ï¿½ï¿½ï¿½ï¿½Û¿ï¿½)      	    </option>      	    <option value="2"      	    <?php if($item['priceplan']==2){ ?>      	     selected      	    <?php } ?>      	    >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ö±ï¿½ï¿½ï¿½Û¼ï¿½)      	    </option>      	    <option value="3"      	    <?php if($item['priceplan']==3){ ?>      	     selected      	    <?php } ?>      	    >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Öµï¿½Û¿ï¿½)      	    </option>    	    </select>      	  ï¿½Û¸ï¿½ =       	  <input name="discout_<?php echo $item['id']; ?>" type="text" size="5" value="<?php echo $item['discout']; ?>" />      	  <span id="std_<?php echo $item['id']; ?>"><?php echo $item['char']; ?>       	    <?php if($item['priceplan']==1){ ?>      	    x (ï¿½ï¿½Öµ - ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½) + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½      	    <?php } ?>      	    <?php if($item['priceplan']==2){ ?>      	    + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½      	    <?php } ?>      	     <?php if($item['priceplan']==3){ ?>      	    x ï¿½ï¿½Öµ + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½      	    <?php } ?>    	    </span> </div></td>    </tr>    <?php } ?>    <tr>     <td class="table1_left"> ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ </td>      <td width="78%" class="tableright1">      	<div align="left"><br/>    	  </div>      	<p align="left"> ï¿½ï¿½ï¿½ï¿½Ò»(ï¿½ï¿½ï¿½ï¿½ï¿½Û¿ï¿½)ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ = ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½ + (ï¿½ï¿½Öµ - ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½) x ï¿½ï¿½ï¿½ï¿½</p>        <p align="left">&nbsp;</p>        <p align="left"> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ö±ï¿½ï¿½ï¿½Û¼ï¿½)ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ = ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½</p>        <p align="left">&nbsp;</p>        <p align="left"> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Öµï¿½Û¿ï¿½)ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ = ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½Öµ x ï¿½ï¿½ï¿½ï¿½</p>        <div align="left"><br/>              </div></td>    </tr>		<tr>		  <td class="table1_left">&nbsp;</td>		<td height="30" class="tableright1"><div align="left">		  <input type="submit" value="È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" class="tijiao_input" name="submit">		  <input type="reset" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´" class="fanhui_input" name="reset">		  </div></td>		</tr>		</table>		</form>	</td>	</tr></table><script type="text/JavaScript">var $ = function(id){	return document.getElementById(id);}function set(obj, idx){	val = obj.options[obj.selectedIndex].value;	str = "";	if(val == "1")	{		str = "% x (ï¿½ï¿½Öµ - ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½) + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½";	}  else if(val == "2")  {  	str = "<?php echo $vd['lang']['moneyunit']; ?> + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½";  }  else	{		str = "% x ï¿½ï¿½Öµ + ï¿½ÒµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½";	}		$("std_"+idx).innerHTML = str;}</script></body></html>
