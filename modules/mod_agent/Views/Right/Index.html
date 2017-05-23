@@ -1,0 +1,95 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 下属客户管理 >> 下属客户档案管理</span></div>
+	
+	<div id="hearder"><span>下属客户帐户档案管理</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="query" method="get" action="index.php">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">关键字：</td>
+		<td width="78%" align="left" class="tableright1"><input type="text" size="30" name="keywords" class='input' value=""></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询类型：</td>
+		<td align="left" class="tableright1">
+		<select name="stype">
+		<option value="aid" >客户编号</option>
+		<option value="aname" >用户名</option>
+		<option value="company" >商户名称</option>
+		<option value="arealname" >联系人</option>
+		<option value="aqq" >联系QQ</option>
+		<option value="atel" >联系电话</option>
+		<option value="mobile" >手机号码</option>
+		</select></td>
+		</tr>
+		<tr>
+		<td height="26" class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1">
+			<input type="hidden" name="m" value="mod_agent">
+			<input type="hidden" name="c" value="Underling">
+			<input type="submit" name="Submit" value="确认查询" class="button">
+		<input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+			
+		<tr>
+		<td width="8%" class="heardertop1">编号</td>
+		<td width="10%" class="heardertop1">用户名</td>
+		<td width="30%" class="heardertop1">商户名称</td>
+		<td width="10%" class="heardertop1">用户级别</td>
+		<td width="10%" class="heardertop1">联系人</td>
+		<td width="6%" class="heardertop1">状态</td>
+		<td width="10%" class="heardertop1">余额</td>
+		<td width="10%" class="heardertop1">消费</td>
+		<td width="6%" class="heardertop1">权限</td>
+		</tr>
+		
+		<tr>
+		<td width="8%" class="heardertop1">编号</td>
+		<td width="10%" class="heardertop1">用户名</td>
+		<td width="18%" class="heardertop1">商户名称</td>
+		<td width="9%" class="heardertop1">用户级别</td>
+		<td width="8%" class="heardertop1">联系人</td>
+		<td width="10%" class="heardertop1">联系QQ</td>
+		<td width="10%" class="heardertop1">手机号码</td>
+		<td width="12%" class="heardertop1">联系电话</td>
+		<td width="5%" class="heardertop1">状态</td>
+		<td width="5%" class="heardertop1">下级</td>
+		<td width="5%" class="heardertop1">管理</td>
+		</tr>
+		
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td>{$item['aid']}</td>
+		<td>{$item['aname']}</td>
+		<td align=left>{$item['company']}</td>
+		<td>{$item['rank']}</td>
+		<td>{$item['arealname']}</td>
+		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+		<td>{$item['aremain']}</td>
+		<td>{$item['acsmp']}</td>
+		<td><a href="index.php?m=mod_agent&c=underling&a=detail&aid={$item['aid']}"><u>管理</u></a></td>
+		</tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,199 @@
+<html>
+<head>
+  <title>收件箱</title>
+  <link href="{$vd['sc']}css/globle.css" rel="stylesheet" type="text/css">
+  <link href="{$vd['sc']}css/skin_blue.css" rel="stylesheet" type="text/css"/>
+
+  <script language="JavaScript">
+
+  var gSid = "bBsiQoXFdwwIDeBhwxFFundDreAPSToF";
+  var gSelectCount = 0;
+  var gOffsetCount = 0;
+  var gSelectIndex = -1;
+  var gCount = -1;
+  var gObject = {};
+  var gInfoConfirm = [
+    '如果删除，这些邮件将无法恢复。您确定吗？',
+    '所选邮件将被移动到垃圾邮件夹。通过举报可以协助我们更有效的抵制垃圾邮件，感谢您。',
+    '所选邮件将被移动到收件箱。'
+  ];
+  var gInfoWarning = [
+    '请选择要删除的邮件',
+    '请选择要移动的邮件',
+    '请选择要标记的邮件',
+    '请选择要举报并删除的邮件',
+    '请选择要移动到收件箱的邮件'
+  ];
+  var gInfoSelectGroup = ['选中该组所有邮件','取消该组所有邮件'];
+
+  </script>
+
+
+</head>
+<body class="All_C_Page Inbox">
+
+  
+<form id="oFormMessage" method="post" action="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1">
+  <input id="oFormAction" type="hidden" />
+  <div class="ContentWp">
+    <div class="ContentThemeWp">
+      <div class="gTitle">
+      <b class="mTT">收件箱</b>&nbsp;&nbsp;(共&nbsp;<b id="oTotal">78</b>&nbsp;封，其中&nbsp;
+      <a title="" href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&flag=read:false">未读邮件</a>&nbsp;
+      <b class="fnt_Red" id="oTotalUnRead">6</b>&nbsp;封)
+      </div>
+      <div class="gToolbar gTbrTop">
+      <input action="move" type="button" class="Btn BtnNml ImpBtn" value='删 除' overClass="Btn BtnHv ImpBtn" outClass="Btn BtnNml ImpBtn" onMouseDown="this.className='Btn BtnHv BtnDw ImpBtn'" hidefocus="ture" />
+      <input action="reportYes" type="button" class="Btn BtnNml" value='举报垃圾邮件' overClass="Btn BtnHv" outClass="Btn BtnNml" onMouseDown="this.className='Btn BtnHv BtnDw'" hidefocus="ture" />
+      <select action="mark" class="Sel"><option value="none" selected="true">标记为...</option>
+      <option value="read:true">&nbsp;&nbsp;已读邮件</option><option value="read:false">&nbsp;&nbsp;未读邮件</option>
+      <option value="none" class="SelOptLine">-------------</option>
+      <option value="priority:1">&nbsp;&nbsp;紧急邮件</option>
+      </select>
+      <select action="move" class="Sel">
+      <option value="none" selected="true">移动到...</option>
+      </select>
+      <select action="view" class="Sel" url="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1">
+      <option value="none" selected="true">查看...</option>
+      </select>
+      
+      <div class="Extra">
+      <span class="Txt">
+      <span class="Unable">首页</span>&nbsp;&nbsp;
+      <span class="Unable">上页</span>&nbsp;&nbsp;
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&page_no=2">下页</a>&nbsp;&nbsp;
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&page_no=4">末页</a></span>
+      <select action="page" class="SelA" style="margin-right:0px" url="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1">
+      <option value="1" selected>1/4</option>
+      <option value="2">2/4</option>
+      <option value="3">3/4</option>
+      <option value="4">4/4</option>
+      </select>
+      </div>
+      </div>
+      
+      <div class="Ibx_Main_Wp">
+      <table id="oTableHead" class="Ibx_gTable F2Img Ibx_gTable_TT">
+      <tbody>
+      <tr>
+      <th class="Ibx_Th_F"></th>
+      <th>哈哈</th>
+      <th class="Ibx_Th_Chkbx"><input id="oFormCheckAll" type="checkbox" title='全选/不选　本页所有邮件' /></th>
+      <th class="Ibx_Th_icoInfo"><b class="icoIbx" title='邮件类型'></b></th>
+      <th class="Ibx_Th_From">
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&order=from" title="点击可按此排序">发件人</a>
+      </th>
+      <th class="Ibx_Th_icoFlag">
+      <b class="icoIbx" title='邮件标签'></b>
+      </th>
+      <th class="Ibx_Th_Subject">
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&order=subject" title="点击可按此排序">主题</a>
+      </th>
+      <th class="Ibx_Th_Date">
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&order=date" title="点击可按此排序">日期<b class="icoIbx icoDown"></b></a>
+      </th>
+      <th class="Ibx_Th_icoATCM">
+      <b class="icoIbx" title='附件标识'></b>
+      </th>
+      <th class="Ibx_Th_Size">
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&order=size" title="点击可按此排序">大小</a>
+      </th>
+      </tr>
+
+      <tbody>
+      </table>
+      
+      <div class="Ibx_Lst_dWp dWpOpen">
+      <h4 class="Ibx_Lst_dTT" action="list">
+      <a action="toggle" href="javascript:void(0)" title="展开/隐藏" class="icoIbx"></a>
+      <span class="Txt">日期：今天&nbsp;<span style="display:none">(<a href="javascript:void(0)" title="选中该组所有邮件" key="oTableCOUNT0" action="select">
+      <span id="oSpanCOUNT0">0</span>封</a>)</span>
+      </span>
+      </h4>
+      
+      <table class="Ibx_gTable Ibx_gTable_Con" id="oTableCOUNT0" action="list">
+      <tbody>
+      <!--foreach($vd['items'] as $item) {-->
+      <tr class="I_Mark0 I_UnRd">
+      <td class="Ibx_Td_F">&nbsp;</td>
+      <td>标题</td>
+      <td class="Ibx_Td_Chkbx">
+      <input name="mid" read="false" index="0" time="1242352111000" value="{$item['pid']}" type="checkbox" title="选择/不选" />
+      </td>
+      <td class="Ibx_Td_icoInfo"><b class="icoIbx " title="未读(点击设为已读)" type="markread"></b></td>
+      <td class="Ibx_Td_From" title=""><a href="#">ltdnsl</a>
+      </td>
+      <td class="Ibx_Td_icoFlag" title="未分类"><b class="icoIbx"></b></td>
+      <td class="Ibx_Td_Subject" title="重置密码"><a href="#">{$item['pname']}</a></td><td class="Ibx_Td_Date" title="2009年5月15日 9:48(五)">09:48(五)
+      </td>
+      <td class="Ibx_Td_icoATCM"></td><td class="Ibx_Td_Size"><span title="2,219 字节">2 K</span>
+      </td>
+      </tr>
+      <!--}-->
+      <tbody>
+      </table>
+      </div>
+      <script>
+      try{(function(){
+        var o=$('oSpanCOUNT0');
+        o.innerHTML='1';
+        o.parentNode.parentNode.style.display=''})()
+        }catch(e){}
+      </script>
+      <div class="Ibx_Lst_dWp dWpOpen">
+      <h4 class="Ibx_Lst_dTT" action="list">
+      <a action="toggle" href="javascript:void(0)" title="展开/隐藏" class="icoIbx"></a>
+      <span class="Txt">日期：昨天&nbsp;
+      <span style="display:none">(<a href="javascript:void(0)" title="选中该组所有邮件" key="oTableCOUNT1" action="select"><span id="oSpanCOUNT1">0</span>封</a>)
+      </span>
+      </span>
+      </h4>
+      
+      </div>
+      <h4 class="Ibx_Lst_bExtra" id="oH4Check">
+      选择：<a href="javascript:void(0)" type="all">全部</a>&nbsp;-&nbsp;<a href="javascript:void(0)" type="unread">未读</a>&nbsp;-&nbsp;<a href="javascript:void(0)" type="read">已读</a>&nbsp;-&nbsp;<a href="javascript:void(0)" type="reverse">反选</a>&nbsp;-&nbsp;<a href="javascript:void(0)" type="no">不选</a>
+      </h4>
+      </div>
+      
+      <div class="gToolbar gTbrBtm">
+      <input action="move" type="button" class="Btn BtnNml ImpBtn" value='删 除' overClass="Btn BtnHv ImpBtn" outClass="Btn BtnNml ImpBtn" onMouseDown="this.className='Btn BtnHv BtnDw ImpBtn'" hidefocus="ture" />
+      <input action="reportYes" type="button" class="Btn BtnNml" value='举报垃圾邮件' overClass="Btn BtnHv" outClass="Btn BtnNml" onMouseDown="this.className='Btn BtnHv BtnDw'" hidefocus="ture" />
+      <select action="mark" class="Sel">
+      <option value="none" selected="true">标记为...</option>
+      </select>
+      <select action="move" class="Sel">
+      <option value="none" selected="true">移动到...</option>
+      </select>
+      
+      <select action="view" class="Sel" url="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1">
+      <option value="none" selected="true">查看...</option>
+      </select>
+      
+      <div class="Extra">
+      <span class="Txt">
+      <span class="Unable">首页</span>&nbsp;&nbsp;<span class="Unable">上页</span>&nbsp;&nbsp;
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&page_no=2">下页</a>&nbsp;&nbsp;
+      <a href="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1&page_no=4">末页</a></span>
+        <select action="page" class="SelA" style="margin-right:0px" url="list.jsp?sid=bBsiQoXFdwwIDeBhwxFFundDreAPSToF&fid=1&fr=folder1">
+          <option value="1" selected>1/4</option>
+          <option value="2">2/4</option>
+          <option value="3">3/4</option>
+          <option value="4">4/4</option>
+        </select>
+      </div>
+      </div>
+      </div>
+      </div>
+      </form>
+      <script language="JavaScript" src="http://mimg.126.net/p/jy3style/js/0905120920/list.js"></script>
+      <script language="JavaScript">
+        if(typeof fGetNewTime == "function" && window.top != window)
+        {
+          window.fNewMail = fNewMailInsert;window.fNewTime = fGetNewTime
+        }
+      </script>
+  
+  
+
+</body>
+</html>

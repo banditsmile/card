@@ -1,0 +1,254 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<!--if($vd['inrecycle']==0){-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=product&{$vd['op']}" title="点击重新获取商品列表资料" onClick="loadDisp(1)"><font color="#000"><!--if($vd['allaid']==1){-->自有<!--}-->商品列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onMouseOver="this.className='iconbg4'" onMouseOut="this.className='titleOp4'" onClick="delAllSubmit('delitems')"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量删除</div></samp>
+  </div>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onMouseOut="if(editRealtime) return;this.className='titleOp4'" onClick="batchEdit(this)"><samp title="批量修改所选项的记录">
+    <div style="padding-top:10px;padding-left:10px;">实时修改</div></samp>
+  </div>
+  <div class="titleOp4" onMouseOver="this.className='iconbg4'" onMouseOut="this.className='titleOp4'" onClick="loadDisp(1);window.location='?m=mod_b2b&c=PS&tpl=NoStocks&ptype=-1&aid=-1&nrows=2000'"><samp title="如果您缺货商品过多，请不要点这个按钮，此功能对电脑资源消耗过多，有可能会造成浏览器假死">
+    <div style="padding-top:10px;padding-left:10px;">缺货信息</div></samp>
+  </div>
+  <div class="titleOp2" onMouseOver="this.className='iconbg2'" onMouseOut="this.className='titleOp2'" onClick="tableRefresh()" style="margin-right:7px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onMouseOver="this.className='iconbg4'" onMouseOut="this.className='titleOp4'" onClick="loadDisp(1);window.location='?m=mod_b2b&c=product&inrecycle=1&ptype=-1&aid=-1&allaid={$vd['allaid']}'" style="width:100px"><samp title="进入商品回收箱">
+    <div style="padding-top:10px;padding-left:3px;">回收箱<span class="fixie8">(</span><!--if($vd['recycle_num']){--><span id="recycle">{$vd['recycle_num']}</span><!--}else{--><span id="recycle">空</span><!--}--><span class="fixie8">)</span></div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=product&allaid={$vd['allaid']}&aid={$vd['aid']}" method="post" style="margin:0px 0px 0px 0px;" onSubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['carray'], $vd['stype'])}
+    </select>
+    <select name="ptype" style="vertical-align:middle;font-size:14px;">
+      <option value="-1">所有类型</option>
+      {#Option($vd['sarray'], $vd['ptype'])}
+    </select>
+    <input type="submit" value="搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+<!--}else{-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=product&ptype=-1&aid=-1&allaid={$vd['allaid']}" title="商品列表" onClick="loadDisp(1)"><font color="#000"><!--if($vd['allaid']==1){-->自有<!--}-->商品列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">回收箱</span>(共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_product_index" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onMouseOver="this.className='iconbg4'" onMouseOut="this.className='titleOp4'" onClick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的会员记录,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp2" onMouseOver="this.className='iconbg2'" onMouseOut="this.className='titleOp2'" onClick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp2" onMouseOver="this.className='iconbg2'" onMouseOut="this.className='titleOp2'" onClick="delAllSubmit('restore')"><samp title="还原回收箱状态">
+    <div style="padding-top:10px;padding-left:9px;font-weight:bold">还原</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=product&inrecycle=1&allaid={$vd['allaid']}&aid={$vd['aid']}" method="post" style="margin:0px 0px 0px 0px;" onSubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['carray'], $vd['stype'])}
+    </select>
+    <select name="ptype" style="vertical-align:middle;font-size:14px;">
+      <option value="-1">所有类型</option>
+      {#Option($vd['sarray'], $vd['ptype'])}
+    </select>
+    <input type="submit" value="搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+<!--}-->
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=product" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="pname" id="pname" onFocus='this.blur()'/>商品名称<br/>
+  <input type="checkbox" name="id[]" value="ptagname" id="ptagname" onFocus='this.blur()'/>商品标签<br/>
+  <input type="checkbox" name="id[]" value="pid" id="pid" onFocus='this.blur()'/>编号<br/>
+  <!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><span<!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="aid" id="aid" onFocus='this.blur()'/>商品所属<br/></span>
+  <!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><span<!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="pfee" id="pfee" onFocus='this.blur()'/>给系统提成<br/></span>
+  <!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><span<!--if(!UB_B2B||$vd['allaid']==0){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="tosys" id="tosys" onFocus='this.blur()'/>销售对象<br/></span>
+  <input type="checkbox" name="id[]" value="ordering" id="ordering" onFocus='this.blur()'/>排序<br/>
+  <input type="checkbox" name="id[]" value="pinyin" id="pinyin" onFocus='this.blur()'/>拼音<br/>
+  <input type="checkbox" name="id[]" value="addstocks" id="addstocks" onFocus='this.blur()'/>添加库存<br/>
+  <input type="checkbox" name="id[]" value="sellyd" id="sellyd" onFocus='this.blur()'/>昨日销售<br/>
+  <input type="checkbox" name="id[]" value="tptype" id="tptype" onFocus='this.blur()'/>商品类型<br/>
+  <!--if(!UB_B2B){--> style="display:none"<!--}-->><span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="forb2b" id="forb2b" onFocus='this.blur()'/>批发是否购买<br/></span>
+  <!--if(!UB_B2C){--> style="display:none"<!--}-->><span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="forshop" id="forshop" onFocus='this.blur()'/>零售是否可购买<br/></span>
+  <!--if(!UB_YKT){--> style="display:none"<!--}-->><span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="forykt" id="forykt" onFocus='this.blur()'/>一卡通是否可购买<br/></span>
+  <input type="checkbox" name="id[]" value="sell" id="sell" onFocus='this.blur()'/>上架状态<br/>
+  <input type="checkbox" name="id[]" value="new" id="new" onFocus='this.blur()'/>新品状态<br/>
+  <input type="checkbox" name="id[]" value="hot" id="hot" onFocus='this.blur()'/>热卖状态<br/>
+  <input type="checkbox" name="id[]" value="remd" id="remd" onFocus='this.blur()'/>推荐状态<br/>
+  <input type="checkbox" name="id[]" value="tag" id="tag" onFocus='this.blur()'/>新手推荐<br/></span>
+  <!--if(!UB_YKT){--> style="display:none"<!--}-->><span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="ykttag" id="ykttag" onFocus='this.blur()'/>一卡通前台标签<br/></span>
+  <!--if(!UB_YKT){--> style="display:none"<!--}-->><span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="yktpoints" id="yktpoints" onFocus='this.blur()'/>一卡通所需点数<br/></span>
+  <!--if(!UB_YKT){--> style="display:none"<!--}-->><span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="yktcard" id="yktcard" onFocus='this.blur()'/>一卡通特征码<br/></span>
+  <input type="checkbox" name="id[]" value="sup" id="sup" onFocus='this.blur()'/>供货状态<br/>
+  <!--if(!UB_B2B){--> style="display:none"<!--}-->><span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="checked" id="checked" onFocus='this.blur()'/>审核状态<br/></span>
+  <input type="checkbox" name="id[]" value="html" id="html" onFocus='this.blur()'/>静态页面<br/>
+  <!--if(!UB_YKT){--> style="display:none"<!--}-->><span<!--if(!UB_YKT){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="ad" id="ad" onFocus='this.blur()'/>商品页面广告<br/></span>
+  <!--if(!UB_B2C){--> style="display:none"<!--}-->><span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="review" id="review" onFocus='this.blur()'/>商品评论查看<br/></span>
+  <input type="checkbox" name="id[]" value="copy" id="copy" onFocus='this.blur()'/>复制商品<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onClick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onClick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onClick="CheckAll(this)" onFocus='this.blur()'/></td>
+<!--//thead-->
+<td width="200px"><span class="canedit">商品名称</span></td>
+<td width="40px"><b>编号</b></td>
+<!--if(UB_B2B&&$vd['allaid']==1){--><td width="65px"><b>所属</b></td><!--}-->
+<!--if(UB_B2B&&$vd['allaid']==1){--><td width="65px"><span class="canedit">销售对象</span></td><!--}-->
+<td width="65px"><b>商品类型</b></td>
+<!--if(UB_B2C){--><td width="22px"><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1&stype=forshop&keywords=1"><span class="canedit"><u>零</u></span></a></td><!--}-->
+<td width="22px"><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1&stype=sell&keywords=1"><span class="canedit"><u>卖</u></span></a></td>
+<!--if(UB_YKT){--><td width="200px"><span class="canedit">一卡通标签</span></td><!--}-->
+<!--if(UB_YKT){--><td width="80px"><span class="canedit">一卡通点数</span></td><!--}-->
+<!--if(UB_YKT){--><td width="80px"><span class="canedit">一卡通绑定</span></td><!--}-->
+<td width="22px"><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1&stype=sup&keywords=1"><span class="canedit"><u>供</u></span></a></td>
+<!--if(UB_B2B){-->
+<td width="22px"><a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1&stype=checked&keywords=1"><span class="canedit"><u>审</u></span></a></td><!--}-->
+<td width="35px"><b>静态</b></td>
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/rmb.png"/>
+    </td>
+    <td width="22px">编</td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif"/>
+      <!--}-->
+    </td>
+    
+    <td class="endtd">
+      <div class="infoicon" onClick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=product&a=ItemDeal" onSubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onMouseOver="setoverbg(this)" onMouseOut="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['pid']}" class="checkbox" value="{$item['pid']}" onClick="CheckThis(this)" onFocus='this.blur()'></input>    </td>
+<!--//tbody-->
+<td width="200px"><nobr><samp title="{$item['pname']}"><span onClick="toInput(this,{$item['pid']},'pname')">{$item['pname']}</span></samp></nobr></td>
+<td width="40px">{$item['pid']}</td>
+<!--if(UB_B2B&&$vd['allaid']==1){--><td width="65px"><a href="index.php?m=mod_b2b&c=PS&stype=aid&keywords={$item['aid']}"><font color="#ff0000">{#DisplayCode($item['aid'])}</font></a></td><!--}-->
+<!--if(UB_B2B&&$vd['allaid']==1){--><td width="65px"><!--if($item['tosys']==1){--><font color="#ff0000">全体用户</font><!--}else{-->下级用户<!--}--></td><!--}-->
+<td width="65px">{#ProductType($item['ptype'])}</td>
+<!--if(UB_B2C){--><td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['forshop'])}" onClick="toToggle(this,{$item['pid']},'forshop')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td><!--}-->
+<td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['sell'])}" onClick="toToggle(this,{$item['pid']},'sell')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td>
+<!--if(UB_YKT){--><td width="200px"><nobr><samp title="{$item['ykttag']}"><span onClick="toInput(this,{$item['pid']},'ykttag')">{$item['ykttag']}</span></samp></nobr></td><!--}-->
+<!--if(UB_YKT){--><td width="80px"><nobr><samp title="{$item['yktpoints']}"><span onClick="toInput(this,{$item['pid']},'yktpoints')">{$item['yktpoints']}</span></samp></nobr></td><!--}-->
+<!--if(UB_YKT){--><td width="80px"><nobr><samp title="{$item['yktcard']}"><span onClick="toInput(this,{$item['pid']},'yktcard')">{$item['yktcard']}</span></samp></nobr></td><!--}-->
+<td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['sup'])}" onFocus="this.blur()"/></td>
+<!--if(UB_B2B){--><td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['checked'])}" onClick="toToggle(this,{$item['pid']},'checked')" alt="点击此图片即可修改状态！请务必保证您已经设置供货价格！" onFocus="this.blur()" class="mousehand"/></td><!--}-->
+<td width="35px"><a href="index.php?m=mod_b2b&c=PS&a=Html&pid={$item['pid']}&catid={$item['catid']}&oldcatid={$item['catid']}&oldpinyin={$item['pinyin']}&pinyin={$item['pinyin']}">生成</a></td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=order&stype=pid&keywords={$item['pid']}&aid=-1&by=1&allaid={$vd['allaid']}" title="查看销售情况" onClick="loadDisp(1)"><img src="{$vd['sc']}images/rmb.png"/></a>    </td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=PS&a=detail&ubzpid={$item['pid']}" title="编辑商品" target="_blank" onClick="loadDisp(1)">编</a>    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onClick="delSubmit({$item['pid']},'delitems')" alt="删除商品,可以从回收恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onClick="delSubmit({$item['pid']},'destroyitems')" alt="销毁商品,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+      <!--}-->    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=PS&a=deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=product&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=product&{$vd['op']}" style="margin:0px;" onSubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(4,132);
+totleRows = {$vd['totlerow']};
+<!--if($vd['inrecycle']){-->
+deltxt  = "如果销毁商品记录么,商品相关信息也会被销毁(包括订单信息，充值信息，留言信息等),且无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+<!--}else{-->
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除商品,商品相关信息也会被删除(包括订单信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+<!--}-->
+thisdel = 0;
+statistics = 0;
+var resizeidx = 1;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('pname','pid','aid','tosys','tptype','forshop','sell','ykttag','yktpoints','yktcard','sup','checked','html');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

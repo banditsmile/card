@@ -1,0 +1,81 @@
+{load(fhead)}
+<body class="service">
+<!--$str='';$order = $vd['item'];-->
+<div id="mainhearder"><span>您的位置：直销商管理系统 >> 积分管理 >> 订单详细</span></div>
+<div id="hearder"><span>订单详细&nbsp;&nbsp;(订单号：{$order['ordno']})</span></div>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td class="tableleft">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+    <tr>
+      <td colspan="4" class="heardertop">　商品详细</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1">商品名称：</td>
+      <td width="32%" align="left" class="tableright1">{$order['pname']}</td>
+      <td width="18%" class="tableleft1">兑换积分：</td>
+      <td width="32%" align="left" class="tableright1"><!--echo $order['scored'] / $order['qty'];--> 点</td>
+    </tr>
+    <tr>
+      <td colspan="4" class="heardertop">　订单详细</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1"><font color=#ff0000>购买数量：</font></td>
+      <td width="32%" align="left" class="tableright1">{$order['qty']}(个)</td>
+      <td width="18%" class="tableleft1"><font color=#ff0000>消耗积分：</font></td>
+      <td width="32%" align="left" class="tableright1">{$order['scored']} 点</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1">兑换时间：</td>
+      <td width="32%" align="left" class="tableright1">{$order['createdate']}</td>
+      <td width="18%" class="tableleft1">处理时间：</td>
+      <td width="32%" align="left" class="tableright1">{$order['dealdate']}&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1">兑换策略：</td>
+      <td width="32%" align="left" class="tableright1">{$vd['method'][$order['method']]}</td>
+      <td width="18%" class="tableleft1">订单状态：</td>
+      <td width="32%" align="left" class="tableright1"><strong><!--if($order['ordstate']==1){--><font color="#0000ff">处理中</font><!--}else if($order['ordstate']==-1){--><font color="#cccccc">无效</font><!--}else{--><font color="#008800">已处理</font><!--}--></strong></td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1">操作员：</td>
+      <td width="32%" align="left" class="tableright1"><!--if($order['staffid'] > 0){-->员工({#DisplayCode($order['staffid'])})<!--}else{-->总帐号<!--}--></td>
+      <td width="18%" class="tableleft1">&nbsp;<!--if($order['failreason']!=''){-->处理说明：<!--}--></td>
+      <td width="32%" align="left" class="tableright1" style="color:#ff0000">
+        <!--if($order['failreason']!=''){-->
+        <!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}-->
+        <!--}-->&nbsp;
+      </td>
+    </tr>
+    
+    <!--if($order['method']==1){-->
+    <tr>
+      <td colspan="4" class="heardertop">　收货信息</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1" height="50px">姓名：</td>
+      <td colspan=3 align="left" class="tableright1">{$order['realname']}</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1" height="50px">地址：</td>
+      <td colspan=3 align="left" class="tableright1">{$order['addr']}</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1" height="50px">电话：</td>
+      <td colspan=3 align="left" class="tableright1">{$order['tel']}</td>
+    </tr>
+    <tr>
+      <td width="18%" class="tableleft1" height="50px">邮编：</td>
+      <td colspan=3 align="left" class="tableright1">{$order['zip']}</td>
+    </tr>
+    <!--}-->
+  </table>
+  </td>
+  </tr>
+  </table>
+  <br/>
+  <input type="button" name="close" value="关闭本页" class="button" onclick="javascript:window.close()">
+</div>
+</body>
+</html>

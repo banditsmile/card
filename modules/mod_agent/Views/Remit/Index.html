@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title></title>
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+			<div class="new_qie">
+          <div class="new_qie2">
+                <h2>
+                    下级汇款通知书处理</h2>
+            </div>
+            </div>
+        <table width="100%" cellpadding="2" cellspacing="1" class="table1">
+          <tr>
+            <td width="15%" class="table1_left"> 下级客户：</td>
+            <td class="tdleft"><span class="tableright1">
+              <input type="text" size="30" name="keywords" class='input' value="" />
+            </span></td>
+          </tr>
+          <tr>
+            <td class="table1_left"> 商品类型</td>
+            <td class="tdleft"><span class="tableright1">
+              <input type="hidden" name="m" value="mod_agent" />
+              <input type="hidden" name="c" value="Remit" />
+              <select name="stype">
+                <option value="msgfrom" >客户编号</option>
+                <option value="hope" >商户名称</option>
+                <option value="ordno" >汇款金额</option>
+              </select>
+              <select name="msgstate">
+                <option value="0" >全部状态</option>
+                <option value="1" >未处理</option>
+                <option value="3" >已处理</option>
+              </select>
+            </span></td>
+          </tr>
+          <tr>
+            <td class="table1_left">订单状态</td>
+            <td class="tdleft"><span class="tableright1">
+              <input type="text" name="startdate2" value="{$vd['startdate']}" class="search_inputdate" id="startdate2"/>
+              <strong>至</strong>
+              <input type="text" name="enddate2" value="{$vd['enddate']}" class="search_inputdate" id="enddate2"/>
+            </span></td>
+          </tr>
+          <tr>
+            <td class="table1_left">查询时间段 </td>
+            <td class="tdleft"><input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+                <strong>至</strong>
+              <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/></td>
+          </tr>
+          <tr>
+            <td class="table1_left"></td>
+            <td class="tdleft"><label><span class="tableright1">
+            <input type="submit" name="Submit" value=" " class="input_s" />
+            </span></label></td>
+          </tr>
+        </table>
+		</br>
+        <table width="100%" cellpadding="0" cellspacing="1" class="table1">
+            <tr class="tr1">
+                <th width="16%">
+                    汇款时间                </th>
+                <th width="27%">
+                    汇款下属客户                </th>
+                <th width="11%">
+                    汇款金额                </th>
+                <th width="11%">
+                    汇至银行                </th>
+                <th width="11%">
+                    汇款账户                </th>
+                <th width="7%">
+                    账户名
+				<th width="17%">处理</th>            
+           <!--$dollar_sum = 0;foreach($vd['items'] as $item) {-->
+  	      <tr class="trd">
+		<!--$tmp=explode('|',$item['other']);$bank=isset($tmp[0])?$tmp[0]:'&nbsp;';$account=isset($tmp[1])?$tmp[1]:'&nbsp;';$accountname=isset($tmp[2])?$tmp[2]:'&nbsp;';-->
+		<td>{$item['otherdate']}</td>
+		<td>{$item['hope']}({#DisplayCode($item['msgfrom'])})</td>
+		<td>{$item['ordno']}</td>
+		<td>{$bank}</td>
+		<td>{$account}</td>
+		<td>{$accountname}</td>
+		<td>
+			<!--if($item['msgstate']==1){-->
+			<input name="button1" type="button" class="buttonadd" value="处理" style="cursor:pointer" onClick="location.href='index.php?m=mod_agent&c=Remit&a=Deal&id={$item['id']}';">
+		  <!--}else{-->
+		  <input name="button1" type="button" disabled class="buttonadd" value="已处理" />
+		  <!--}-->
+		</td>
+		</tr>
+		<!--}-->
+		</table>
+				 <div align="right">
+				   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+				 {load(fpage)}
+                 <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+			     </div>
+			</html>

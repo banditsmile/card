@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>个性化设置</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 个性化设置</h2>
+  </div>
+  <ul>
+     <li><a href="index.php?m=mod_agent&amp;c=Home">账号信息</a></li>
+    <li><a href="" class="on">账户间转款</a></li>
+    <li><a href="index.php?m=mod_agent&amp;c=Home&amp;a=Bank">银行账号</a></li>
+  </ul>
+</div>
+<div class="main5" id="main5">
+	
+	<form name="modify2" method="post" action="index.php?m=mod_agent&c=Home&a=SelfSave">
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<!--$temp = explode('|', $vd['data']['websetting']);$cout=count($temp);-->
+	<input type="hidden" id="websetting" name="websetting" value="{$vd['data']['websetting']}"/>
+	<td class="tableleft">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%" rowspan="9" align="right" class="table1_left">个性设置：</td>
+		<td width="78%" class="tableright1"><div align="left"><input type="checkbox" value="0" 
+		  
+		    <!--if($cout > 0){ToggleCheck($temp[0]);}-->
+		    onclick="set(this)"/>
+		    购买点卡的时候显示进货价格</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="1" 
+      
+        <!--if($cout > 1){ToggleCheck($temp[1]);}-->
+        onclick="set(this)"/>
+        显示账户余额</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="9" 
+      
+        <!--if($cout > 9){ToggleCheck($temp[9]);}-->
+        onclick="set(this)"/>
+        显示当前欠款</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="10" 
+      
+        <!--if($cout > 10){ToggleCheck($temp[10]);}-->
+        onclick="set(this)"/>
+        显示信用额度</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="2" 
+      
+        <!--if($cout > 2){ToggleCheck($temp[2]);}-->
+        onclick="set(this)"/>
+        显示我的上级经销商</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="3" 
+      
+        <!--if($cout > 3){ToggleCheck($temp[3]);}-->
+        onclick="set(this)"/>
+        允许建立员工销售账号</td></tr>
+    
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="6" 
+      
+        <!--if($cout > 6){ToggleCheck($temp[6]);}-->
+        onclick="set(this)"/>
+        允许使用登录器登录</td></tr>
+    
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="8" 
+      
+        <!--if($cout > 8){ToggleCheck($temp[8]);}-->
+        onclick="set(this)"/>
+        购卡时候输入交易密码</td></tr>
+    <tr><td class="tableright1"><div align="left"><input type="checkbox" value="11" 
+      
+        <!--if($cout > 11){ToggleCheck($temp[11]);}-->
+        onclick="set(this)"/>
+        允许总帐号售卡时修改零售价格</td></tr>
+
+		<tr>
+		<td class="table1_left">输入超级密码：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="password" name="superpwd" size="30" class='input0'/>
+		  </div></td>
+		</tr>
+		
+		<tr>
+		<td class="table1_left"></td>
+		<td class="tableright1"><div align="left">
+		  <input type="submit" name="submit" value="完成修改" class="tijiao_input"> 
+		  <input type="reset" name="reset" value="重新填写" class="fanhui_input" tabindex="10">
+		  </div></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+</div>
+	<script type="text/javascript">
+	function implode(str, myarray)
+  {
+  	var thisstr = "";
+  	for(i=0;i<myarray.length;i++)
+  	{
+  		thisstr = thisstr + myarray[i] + "|";
+  	}
+  	return thisstr;
+  }
+	var mywebsetting = new Array(<!--array_pop($temp);echo implode(',', $temp);if(count($temp)==0){echo '0,0,0,0,0,0,0,0,0,0,0,0';} if(count($temp)<12){-->,0,0,0,0,0,0<!--}-->);
+	function set(obj)
+  {
+  	mywebsetting[obj.value] = obj.checked ? 1 : 0;
+  	document.getElementById("websetting").value = implode("|", mywebsetting);
+  }
+	</script>
+</body>
+</html>

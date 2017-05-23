@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['order']['item'];-->  
+
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&by=1" title="订单列表"><font color="#000">订单列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">订单详细信息</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+
+<div id="adddiv" style="position:absolute;top:30px;left:30px;;width:780px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">处理订单</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+    <form action="index.php?m=mod_b2b&c=order&a=check&ubzordno={$item['ordno']}" method="post">
+      <table id="checktable" width="100%" style="border-collapse: collapse;">
+        <!--if($item['ptype'] == 4 || $item['ptype'] == 5 ){ -->
+        <tr>
+          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />交易成功：</td>
+          <td width="75%">
+            表示充值成功，请将交易记录凭证复制入下边方框
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>取消交易：</td>
+          <td width="75%">
+            <div style="height:22px;"><input type="radio" value="没有库存了，取消交易" name="failreason" class="checkbox" />没有库存了，取消交易</div>
+            <div style="height:22px;"><input type="radio" value="由于厂商或者一些不可控因素，无法交易，请重新提交订单" name="failreason" class="checkbox" />由于厂商或者一些不可控因素，无法交易，请重新提交订单</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>自行输入
+            <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)"/></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">取消订单后时候恢复记录(如一卡通恢复原来余额！客户恢复余额)，同时选择取消充单才生效</font></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%">交易记录凭证：</td>
+          <td width="75%">
+            <textarea rows="5" name="factoryreturn" cols="50"></textarea>
+          </td>
+        </tr>
+        <!--}else if($item['ptype'] == 6){-->
+        <tr>
+          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />代练完成：</td>
+          <td width="75%">
+            表示充值成功，请将代练完成凭证复制入下边方框
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>取消代练：</td>
+          <td width="75%">
+            <div style="height:22px;"><input type="radio" value="人员不足，无法代练" name="failreason" class="checkbox" />人员不足，无法代练</div>
+            <div style="height:22px;"><input type="radio" value="由于一些不可控因素，无法代练，请重新提交订单" name="failreason" class="checkbox" />由于一些不可控因素，无法代练，请重新提交订单</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>自行输入
+            <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)"/></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom"/><font color="#ff0000">取消订单后时候恢复记录(如一卡通恢复原来余额！客户恢复余额)，同时选择取消充单才生效</font></div>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%">代练记录凭证：</td>
+          <td width="75%">
+            <textarea rows="5" name="factoryreturn" cols="50"></textarea>
+          </td>
+        </tr>
+        <!--}else{-->
+        <tr>
+          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />充值成功：</td>
+          <td width="75%">
+            表示充值成功，请将厂家的充值记录复制入下边方框
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>取消充值：</td>
+          <td width="75%" style="font-size:12px">
+            <!--foreach($vd['ect'] as $ectitem){-->
+            <div style="height:22px;"><input type="radio" value="{$ectitem}" name="failreason" class="checkbox" />{$ectitem}</div>
+            <!--}-->
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/>自行输入
+            <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" style="vertical-align:middle"/></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>已经交易完成的订单，如果您取消并退款，系统会退款购买人相应的余额，各个代理商的提成是不会退还的，如果您需要退掉代理提成，需要手工进行处理，请悉知</p><font color="#ff0000">取消订单后时候恢复记录(如一卡通恢复原来余额！客户恢复余额)，同时选择取消充单才生效</font></div>
+            <div style="height:22px;display:none" id="tradepwd">请输入后台充值密码：<input type="password" name="tradepwd" />
+          </td>
+        </tr>
+        <!--if($item['aid'] > 0){-->
+        <tr>
+          <td width="25%">注意：</td>
+          <td width="75%">
+            <font color="#ff0000"><b>本订单为经销商自有订单,建议不要通过后台进行操作,以免造成不必要错误</b></font>
+          </td>
+        </tr>
+        <!--}-->
+        <tr>
+          <td width="25%">厂商充值记录：</td>
+          <td width="75%">
+            <textarea rows="5" name="factoryreturn" cols="50"></textarea>
+          </td>
+        </tr>
+        
+        <!--}-->
+        <tr>
+          <td width="25%" style="height:50px;"></td>
+          <td width="75%"><input type="hidden" name="ishistory" value="<!--echo intval(request('ishistory'));-->"/><input type="submit" value="保存充值结果" class="button" onclick="return confirm('确认更新订单状态么？如果取消订单，请确认是否需要补回余额')"/> <input type="reset" value="重置" class="button"/> <input type="button" value="取消" class="button" onclick="disp('adddiv')"/> <input type="button" value="编辑默认失败原因" class="button" onclick="disp('adddiv'),disp('cdiv')"/></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+<div id="cdiv" style="position:absolute;top:30px;left:30px;;width:580px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">注：回车表示另外一个错误</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('cdiv')" style="cursor:pointer"/></div>
+    <form action="index.php?m=mod_b2b&c=order&a=EctSave&ordno={$item['ordno']}" method="post">
+      <table id="checktable" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td width="25%">失败原因：</td>
+          <td width="75%">
+            <textarea rows="5" name="ordererrcontent" cols="50"><!--echo implode("\n",$vd['ect']);--></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%" style="height:50px;"></td>
+          <td width="75%"><input type="submit" value="提交保存" class="button" onclick="return confirm('您确认保存么')"/> <input type="reset" value="重置" class="button"/> <input type="button" value="取消" class="button" onclick="disp('cdiv')"/></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+<div id="canceldiv" style="position:absolute;top:30px;left:30px;;width:580px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">取消订单并退款</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('canceldiv')" style="cursor:pointer"/></div>
+    <form action="index.php?m=mod_b2b&c=order&a=CancelOrder&ubzordno={$item['ordno']}" method="post">
+      <table id="checktable" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td width="25%">失败原因：</td>
+          <td width="75%">
+          	<input type="text" name="failreason" style="width:300px"/>
+          </td>
+        </tr>
+        <tr>
+          <td width="25%">后台充值密码：</td>
+          <td width="75%">
+          	<input type="password" name="tradepwd" />
+          </td>
+        </tr>
+        <tr>
+          <td width="25%" style="height:50px;"></td>
+          <td width="75%"><input type="submit" value="提交" class="button" onclick="return confirm('您确认取消订单并退款么')"/> <input type="reset" value="重置" class="button"/> <input type="button" value="取消" class="button" onclick="disp('canceldiv')"/></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">基本信息 订单号：{$item['ordno']} ({#OrderState($item['ordstate'], $item['ptype'])})</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">商品名称：</td>
+    <td class="tablert"><b>{$item['pname']}</b></td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">订购数量：</td>
+    <td class="tablert">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">商品单价：</td>
+    <td class="tablert">{$item['cprice']} {$vd['lang']['moneyunit']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">订购总金额：</td>
+    <td class="tablert">{$item['dollars']} {$vd['lang']['moneyunit']}</td>
+  </tr>
+  <!--if($item['payment'] == 96){-->
+  <tr>
+    <td class="tablelt" height="50px">注：</td>
+    <td class="tablert"><font color="#ff0000">本订单是采用积分兑换的方式下单，下单时不扣用户余额，只扣其积分</font></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="50px">订购日期：</td>
+    <td class="tablert">{$item['orddate']}</td>
+  </tr>
+  
+  <tr>
+    <td class="tablelt" height="50px">供货来源：</td>
+    <td class="tablert"><font color="#0000ff"><b><!--if($item['sup'] == -1) {-->本地供货<!--}else{-->联售系统供货<!--}--></b></font></td>
+  </tr>
+  <!--if($item['ordstate'] != 2 && isset($vd['suporder']['item']['ubzerrcontent'])){-->
+  <tr>
+    <td class="tablelt" height="50px">联售系统反馈：</td>
+    <td class="tablert"><font color="#0000ff"><b>{$vd['suporder']['item']['ubzerrcontent']}</b></font></td>
+  </tr>
+  <!--}-->
+  <!--if($item['ptype'] == 4 || $item['ptype'] == 5){-->
+  <tr>
+    <td class="tablelt">交易方式：</td>
+    <td class="tablert"><textarea name="ubzabst" wrap="VIRTUAL" cols="50" rows="5" scrolling="yes" style="padding:5px">{$item['tradeterm']}</textarea></td>
+  </tr>
+  <!--}-->
+  <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->
+  <tr>
+    <td class="tablelt" height="50px">游戏用户名：</td>
+    <td class="tablert">{$item['czaccount']}</td>
+  </tr>
+  <!--if(isset($item['thisgame']) && $item['thisgame'] != ''){-->
+  <tr>
+    <td class="tablelt"><!--if($item['namehide']=='thisgame'){-->登陆密码<!--}else{-->充值产品<!--}-->：</td>
+    <td class="tablert">{#CzText($item['thisgame'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czarea1'] != ''){-->
+  <tr>
+    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->登陆密码<!--}else{-->充值区域<!--}-->：</td>
+    <td class="tablert">{#CzText($item['czarea1'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czarea2'] != ''){-->
+  <tr>
+    <td class="tablelt"><!--if($item['namehide']=='czarea1'){-->登陆密码<!--}else{-->充值服务器<!--}-->：</td>
+    <td class="tablert">{#CzText($item['czarea2'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['cztype'] != ''){-->
+  <tr>
+    <td class="tablelt">
+    	<!--if(strpos($item['cztype'], '::') > 0){-->
+        <!--$mytemp = explode('::', $item['cztype']);$item['cztype']=$mytemp[1];-->
+        {$mytemp[0]}：
+      <!--}else{-->
+      
+      <!--if($item['namehide']=='cztype'){-->登陆密码<!--}else{-->计费方式<!--}-->：
+      
+      <!--}-->
+    </td>
+    <td class="tablert">{#CzText($item['cztype'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czother'] != ''){-->
+  <tr>
+    <td class="tablelt">
+    	<!--if(strpos($item['czother'], '::') > 0){-->
+        <!--$mytemp = explode('::', $item['czother']);$item['czother']=$mytemp[1];-->
+        {$mytemp[0]}：
+      <!--}else{-->
+      
+      <!--if($item['namehide']=='czother'){-->登陆密码<!--}else{-->帐号类型<!--}-->：
+      
+      <!--}-->
+    </td>
+    <td class="tablert">{#CzText($item['czother'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['acountpwd'] != ''){-->
+  <tr>
+    <td class="tablelt">
+    	<!--if(strpos($item['acountpwd'], '::') > 0){-->
+        <!--$mytemp = explode('::', $item['acountpwd']);$item['acountpwd']=$mytemp[1];-->
+        {$mytemp[0]}：
+      <!--}else{-->
+      
+      <!--if($item['namehide']=='acountpwd'){-->登陆密码<!--}else{-->其他信息<!--}-->：
+      
+      <!--}-->
+    </td>
+    <td class="tablert">{$item['acountpwd']}</td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="50px">处理时间：</td>
+    <td class="tablert">{$item['dealdate']}</td>
+  </tr>
+  <!--if($item['ordstate'] == -1) {-->
+  <tr>
+    <td class="tablelt" height="50px">失败原因：</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>已经退款</b>]<!--}-->{$item['failreason']}</font></td>
+  </tr>
+  <!--}-->
+  
+  <!--if($item['factoryreturn'] != '') {-->
+  <tr>
+    <td class="tablelt" height="50px">厂家反馈：</td>
+    <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
+  </tr>
+  <!--}-->
+  
+  <!--}-->
+  <!--if($item['others'] != '') {-->
+  <tr>
+    <td class="tablelt" height="50px">购卡备注：</td>
+    <td class="tablert"><textarea rows="5" cols="50">{$item['others']}</textarea></td>
+  </tr>
+  <!--}-->
+  <!--if($item['remarks'] != '') {-->
+  <tr>
+    <td class="tablelt" height="50px">订单备注：</td>
+    <td class="tablert">{$item['remarks']}</td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+
+
+<!--if($item['ptype'] == 6) {-->
+<div class="cwarpper1">
+<div class="ctitle">代练进度</div>
+<form action="index.php?m=mod_b2b&c=order&a=powerlvsave&ordno={$item['ordno']}" method="post"> 
+<div>
+<table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td style="width:15%;background:#F8FAFC;font-weight:bold;padding-left:5px;">录入员</td>
+    <td style="width:55%;background:#F8FAFC;font-weight:bold;padding-left:5px;">进度</td>
+    <td style="width:30%;background:#F8FAFC;font-weight:bold;padding-left:5px;">录入时间</td>
+  </tr>
+  <!--foreach($vd['order']['powerlv'] as $powerlv) {-->
+  <tr>
+    <td style="width:15%;padding-left:5px;">{$powerlv['inputer']}</td>
+    <td style="width:55%;padding-left:5px;">{$powerlv['schedule']}</td>
+    <td style="width:30%;padding-left:5px;">{$powerlv['createdate']}</td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td style="width:15%;padding-left:5px;"><input type="text" name="inputer" style="width:98%"/></td>
+    <td style="width:55%;padding-left:5px;"><input type="text" name="schedule" style="width:98%"/></td>
+    <td style="width:30%;padding-left:5px;"><input type="submit" value="添加进度" class="btn" /></td>
+  </tr>
+</table>
+
+</div>
+</form>
+</div>
+<div class="cwarpper1">
+<div class="ctitle">代练信息</div>
+<div>
+<table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">代练帐号：</td>
+    <td class="tablert">{$item['czaccount']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">登录密码：</td>
+    <td class="tablert">{$item['acountpwd']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">代练角色：</td>
+    <td class="tablert">{$item['rolename']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">所在区域：</td>
+    <td class="tablert">{#CzText($item['czarea1'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">所在服务器：</td>
+    <td class="tablert">{#CzText($item['czarea2'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">计费方式：</td>
+    <td class="tablert">{#CzText($item['cztype'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">帐号类型：</td>
+    <td class="tablert">{#CzText($item['czother'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">处理时间：</td>
+    <td class="tablert">{$item['dealdate']}</td>
+  </tr>
+  <!--if($item['ordstate'] == -1) {-->
+  <tr>
+    <td class="tablelt" height="50px">失败原因：</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>已经退款</b>]<!--}-->{$item['failreason']}</font></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="50px">厂家反馈：</td>
+    <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
+  </tr>
+</table>
+</div>
+</div>
+<!--}-->
+  
+<!--if($item['ptype'] == 4 || $item['ptype'] == 5) {-->
+<div class="cwarpper1">
+<div class="ctitle">购买者帐号相关信息</div>
+<div>
+<table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">游戏角色名：</td>
+    <td class="tablert">{$item['czaccount']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">所在区域：</td>
+    <td class="tablert">{#CzText($item['czarea1'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">所在服务器：</td>
+    <td class="tablert">{#CzText($item['czarea2'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">计费方式：</td>
+    <td class="tablert">{#CzText($item['cztype'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">帐号类型：</td>
+    <td class="tablert">{#CzText($item['czother'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">处理时间：</td>
+    <td class="tablert">{$item['dealdate']}</td>
+  </tr>
+  <!--if($item['ordstate'] == -1) {-->
+  <tr>
+    <td class="tablelt" height="50px">失败原因：</td>
+    <td class="tablert"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>已经退款</b>]<!--}-->{$item['failreason']}</font></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="50px">厂家反馈：</td>
+    <td class="tablert"><textarea rows="5" cols="50">{$item['factoryreturn']}</textarea></td>
+  </tr>
+</table>
+</div>
+</div>
+<!--}-->
+  
+<!--if($item['ptype'] == 0 || $item['ptype'] > 99 || $item['ptype'] == 3) {-->
+<!--if(count($vd['order']['carditem']) > 0){-->
+<div class="cwarpper1">
+<div class="ctitle">卡密详细信息：</div>
+<div>
+<table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td style="width:50%;background:#F8FAFC;font-weight:bold;padding-left:5px;">
+      <!--if($item['ptype'] == 3){-->
+      号码
+      <!--}else{-->
+      卡号
+      <!--}-->
+    </td>
+    <td style="width:50%;background:#F8FAFC;font-weight:bold;padding-left:5px;">密码</td>
+  </tr>
+  <!--foreach($vd['order']['carditem'] as $card) {-->
+  <tr>
+    <td style="width:50%;padding-left:5px;">{$card['cardnumber']}</td>
+    <td style="width:50%;padding-left:5px;">{$card['cardpwd']}</td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+<!--}-->
+<!--}-->
+
+<div class="cwarpper1">
+<div class="ctitle">买家信息：</div>
+<div>
+<table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">来自平台：</td>
+    <td class="tablert"><b>{#ComeFrom($item['comefrom'])}平台</b></td>
+  </tr>
+  <!--if($item['comefrom'] == 4){-->
+  <tr>
+    <td class="tablelt" height="50px">{#ComeFrom($item['comefrom'])}订单号：</td>
+    <td class="tablert"><!--if(isset($vd['tborder']['tbordno'])){-->{$vd['tborder']['tbordno']}<!--}--></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="50px">用户名：</td>
+    <td class="tablert">{$item['aname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">操作员：</td>
+    <td class="tablert">{$item['cname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">电话：</td>
+    <td class="tablert">{$item['ctel']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">邮箱：</td>
+    <td class="tablert">{$item['cmail']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">姓名：</td>
+    <td class="tablert">{$item['crealname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">来源IP：</td>
+    <td class="tablert">{$item['cip']}</td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">支付信息：</div>
+<div>
+<table border="1" id="ctable4" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">支付方式：</td>
+    <td class="tablert">{#GetPayment($item['payment'],$item['ordno'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">支付状态：</td>
+    <td class="tablert"><b>{#OrderState($item['ordstate'], $item['ptype'])}</b></td>
+  </tr>
+  <!--if($item['scored'] > 0 && $item['payment'] != 96){-->
+  <tr>
+    <td class="tablelt">赠送积分：</td>
+    <td class="tablert">{$item['scored']} 点</td>
+  </tr>
+  <!--}-->
+  <!--if($item['admname'] != ''){-->
+  <tr>
+    <td class="tablelt">代充管理员：</td>
+    <td class="tablert"><b>{$item['admname']}</b></td>
+  </tr>
+  <!--}-->
+</table>
+<input type="hidden" value="{$item['cid']}" name="ubzcid" id="ubzcid"/>
+</table>
+</div>
+</div>
+
+<!--if($item['payment'] > 99 && count($vd['order']['yktitem']) > 0) {-->
+<div class="cwarpper1">
+<div class="ctitle">对应的一卡通信息：</div>
+<div>
+<table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td style="width:25%;background:#F8FAFC;font-weight:bold;padding-left:5px;">
+      名称
+    </td>
+    <td style="width:25%;background:#F8FAFC;font-weight:bold;padding-left:5px;">
+      一卡通卡号
+    </td>
+    <td style="width:25%;background:#F8FAFC;font-weight:bold;padding-left:5px;">一卡通密码</td>
+    <td style="width:20%;background:#F8FAFC;font-weight:bold;padding-left:5px;">当前状态</td>
+  </tr>
+  <!--foreach($vd['order']['yktitem'] as $card) {-->
+  <tr>
+    <td style="width:25%;padding-left:5px;">{$card['pname']}</td>
+    <td style="width:25%;padding-left:5px;"><a href="index.php?m=mod_b2b&c=trade&a=state&keywords={$card['cardnumber']}" title="查看卡状态">{$card['cardnumber']}</a></td>
+    <td style="width:25%;padding-left:5px;">{$card['cardpwd']}</td>
+    <td style="width:20%;padding-left:5px;">{#YktCardState($card['cardok'])} <!--if($item['payment'] > 101){-->[<a href="#" target="_blank">验证</a>]<!--}--></td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+<!--}-->
+
+
+<div class="cwarpper1">
+<div class="ctitle">其他信息：</div>
+<div>
+<table border="1" id="ctable4" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">供货来源：</td>
+    <td class="tablert"><!--if($item['aid'] > 0){-->经销商({#DisplayCode($item['aid'])})<!--}else{-->系统<!--}--></td>
+  </tr>
+  <tr>
+    <td class="tablelt">进货成本：</td>
+    <td class="tablert"><!--echo $item['price']*$item['qty'];--></td>
+  </tr>
+  <tr>
+    <td class="tablelt">总利润：</td>
+    <td class="tablert">{$item['profit']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">平台<!--if($item['aid'] > 0){-->提成<!--}else{-->利润<!--}-->：</td>
+    <td class="tablert"><!--echo round(($item['profit'] - $item['agentprofit']), 3)--></td>
+  </tr>
+  <tr>
+    <td class="tablelt">买家上级所得提成总额：</td>
+    <td class="tablert">{$item['agentprofit']}</td>
+  </tr>
+  <!--if($item['aid'] > 0){-->
+  <tr>
+    <td class="tablelt">供货商所得：</td>
+    <td class="tablert">{$item['ownermoney']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">手续费率：</td>
+    <td class="tablert"><!--echo $item['fee']*100;-->%</td>
+  </tr>
+  <tr>
+    <td class="tablelt">手续费金额：</td>
+    <td class="tablert"><!--echo round(($item['dollars'] * $item['fee']), 3)--></td>
+  </tr>
+  <tr>
+    <td class="tablelt">供货商利润：</td>
+    <td class="tablert">{$item['ownerprofit']}</td>
+  </tr>
+  <!--}-->
+</table>
+<input type="hidden" value="{$item['cid']}" name="ubzcid" id="ubzcid"/>
+</table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <!--if($item['ptype'] > 0 && $item['ptype'] < 99 && $item['ptype'] != 3 ) {-->
+    
+    <!--if($item['sup'] == 1 && $item['ordstate'] == 1) {-->
+    <!--if( !isset($vd['suporder']['item']['ubzordno'])  ){-->
+    <input type="button" onclick="disp('adddiv')" value="可能未去提货!自行处理" class="btn"/>
+    <!--}-->
+    <!--}else{-->
+    <input type="button" onclick="disp('adddiv')" value="处理此订单" class="btn" <!--if($vd['myadm'] == 0 && $item['ordstate'] == 2){-->disabled<!--}-->/>
+    <!--}-->
+    <!--}else{-->
+    <!--if( ($item['ordstate'] == 2) || ($item['ordstate'] == 1 && $item['sup'] == 0) ) {-->
+    <input type="button" onclick="disp('canceldiv')" value="取消订单并退款" class="btn"/>
+    <!--}-->
+    <!--if($item['sup'] == 1 && $item['ordstate'] == 1) {-->
+    <!--if( !isset($vd['suporder']['item']['ubzordno'])  ){-->
+    <input type="button" onclick="disp('canceldiv')" value="可能未去提货!自行取消订单" class="btn"/>
+    <!--}}-->
+    <!--}-->
+    <!--if($item['ordstate'] == 1 || ($item['comefrom']==2 && $item['ordstate'] < 2 && $item['ordstate'] > -1)) {--><input type="button" onclick="ReOrder()" value="订单补单" class="btn"/><!--}-->
+    <!--if($item['sup'] == 1 && $item['ordstate'] == 2) {--><input type="button" onclick="javascript:loadDisp(1);window.location.href='index.php?m=mod_b2b&c=Msg&a=Create&ordno={$item['ordno']}&mtype=3'" value="向供货商投诉此订单" class="btn"/><!--}-->
+  </div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >正在补单中...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 4;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  
+  function set(obj)
+  {
+    $("custom").value = obj.value;
+    $("custom").checked = true;
+  }
+  
+  function setrollback()
+  {
+    $("rollback").checked = true;
+    $("tradepwd").style.display = "";
+  }
+  
+  function dispTrade()
+  {
+    $("tradepwd").style.display = $("rollback").checked ? "" : "none";
+  }
+  
+  //订单补单
+  var xmlhttp2;
+  
+  function loadXMLDoc()
+  {
+    xmlhttp2=null;
+    var url=null;
+    
+    url = "ordno="+escape("{$item['ordno']}");
+    
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp2=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (xmlhttp2!=null)
+    {
+      xmlhttp2.onreadystatechange=function(){
+        if (xmlhttp2.readyState==4)
+        {
+          // 如果为 "OK"
+          if (xmlhttp2.status==200)
+          {
+            // 其他代码..
+            var ackdata=xmlhttp2.responseText;
+            //解析服务器返回的数据
+            if (ackdata == "1")
+            {
+              setTimeout("loadXMLDoc()",1500);
+            }
+            else if(ackdata == "-2")
+            {
+              loadDisp(0);
+              alert("订单不存在！");
+            }
+            else
+            {
+              setLoad("补单完成！");
+              loadDisp(1);
+              window.location.reload();
+            }
+          }
+        }
+      };
+      xmlhttp2.open("post", "index.php?m=mod_b2b&c=Order&a=GetState", true);
+      xmlhttp2.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp2.send(url);
+    }
+    else
+    {
+      setLoad("您的浏览器不支持XMLHTTP");
+      loadDisp(1);
+    }
+  }
+  
+  function ReOrder()
+  {
+    setLoad("<img src='{$vd['sc']}images/loading.gif'/> 正在补单中...");
+    loadDisp(1);
+        
+    xmlhttp2=null;
+    var url=null;
+    
+    url = "ordno="+escape("{$item['ordno']}")+"&ishistory=<!--echo intval(request('ishistory'));-->";
+    
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp2=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (xmlhttp2!=null)
+    {
+      xmlhttp2.onreadystatechange=function(){
+        if (xmlhttp2.readyState==4)
+        {
+          // 如果为 "OK"
+          if (xmlhttp2.status==200)
+          {
+            // 其他代码..
+            var ackdata=xmlhttp2.responseText;
+            //解析服务器返回的数据
+            if (ackdata == "0")
+            {
+              loadXMLDoc();
+            }
+            else if(ackdata == "-1")
+            {
+              loadDisp(0);
+              alert("订单不存在！");
+            }
+            else if(ackdata == "2")
+            {
+              loadDisp(0);
+              alert("订单已经处理，无需再补单！");
+            }
+            else if(ackdata == "-4")
+            {
+              loadDisp(0);
+              alert("商品库存不足！");
+            }
+            else if(ackdata == "-2")
+            {
+              loadDisp(0);
+              alert("网站未知原因导致数据更新失败！请重新点补单");
+            }
+            else
+            {
+              loadDisp(0);
+              alert("非法订单！");
+            }
+          }
+        }
+      };
+      xmlhttp2.open("post", "index.php?m=mod_b2b&c=Order&a=ReOrder", true);
+      xmlhttp2.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp2.send(url);
+    }
+    else
+    {
+      loadDisp(0);
+      alert("您的浏览器不支持XMLHTTP");
+    }
+  }
+</script>
+</body>
+</html>

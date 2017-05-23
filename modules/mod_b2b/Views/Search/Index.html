@@ -1,0 +1,88 @@
+{load(head)}
+<div id="listLeft">
+  <div class="listtitle">
+      <span style="padding:0px 5px">显示方式：<img src="{$vd['content']}images/list.gif" onclick="ubshowtype('list')" class="hand" align="absMiddle" alt="" /></span>
+      <img src="{$vd['content']}images/windows.gif" onclick="ubshowtype('windows')" class="hand" align="absMiddle"  alt=""/>  每页显示数量：<a href="#" onclick="listnum(10)"><strong>10</strong></a> |<a href="#" onclick="listnum(25)">25</a> | <a href="#" onclick="listnum(50)">50</a> | <a href="#" onclick="listnum(100)">100</a>
+      <span style="padding-left:80px">商品排序方式：<select id="resort" onchange="sortonchang()">
+      <option id="sort1" value="" selected="selected">请选择排序方式</option>
+      <option id="sort2" value="1">按我的购买价格排序：最低价优先</option>
+      <option id="sort3" value="2">按商品人气排序：最高人气优先</option>
+      <option id="sort4" value="3">按商品类型排序：在线卡密优先</option>
+      <option id="sort5" value="5">按商品名称排序：拼音序列优先</option>
+    </select></span>
+  </div>
+  <ul class="boxContent bx1">
+    <li style="width:16%;"><div style="text-align:center"><strong>商品图片</strong></div></li>
+    <li style="width:68%;"><strong><span style="padding-left:5px">商品信息</span></strong></li>
+    <li style="width:10%;"><div style="text-align:center"><strong><a href="#" onclick="sort('ubzptype','text')">商品类型</a></strong></div></li>
+  </ul>
+  <div style="border-bottom:1px solid #BDE3F6;height:5px;"></div>
+  <!--foreach($vd['items'] as $item) {-->
+  <ul class="boxContent bx2">
+    <li style="width:16%;">
+    	<a href="{$vd['root']}product\{$item['pid']}.html"><img src="{$vd[content]}picture\{$item['imagesmall']}" border="0" width="110" /></a>
+    </li>
+    <li style="width:68%">
+    <p><font color='#ff6c00'>[<!--if($item['ptype'] == 0){-->卡密商品<!--}--><!--if($item['ptype'] == 1){-->自动充值<!--}--><!--if($item['ptype'] == 2){-->代充商品<!--}-->]</font>
+    <a href="{$vd['root']}product\{$item['pid']}.html">{$item['pname']}</a>	
+    </p>
+    <p>
+    市场价：{$item['listprice']}{$vd['lang']['moneyunit']}
+    本站价：{$item['cprice1']}{$vd['lang']['moneyunit']}</span>
+    vip:{$item['cprice2']}{$vd['lang']['moneyunit']}
+    </p>
+    </li>
+    <li style="width:10%"><div style="text-align:center"><!--if($item['ptype'] == 0){-->卡密商品<!--}--><!--if($item['ptype'] == 1){-->自动充值<!--}--><!--if($item['ptype'] == 2){-->代充商品<!--}--></div></li>
+  </ul>
+  <!--}-->
+  <xsl:for-each select="channel/globeitem">
+  <ul class="boxContent" style="height:19px;border:none;">
+    <li style="width:90%">
+    <div style="float:right">
+    <form method="post" action="?c=search&{$vd['limitstr']}">
+    <strong>第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页 
+    <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?c=search&{$vd['limitstr']}&page={$vd['prepage']}'"/>
+    <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?c=search&{$vd['limitstr']}&page={$vd['nextpage']}'"/>
+    到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" class="button" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </div>
+    </li>
+  </ul>
+</div>
+
+<div id="listRight">
+  <div class="col">
+  <h3>您当前正在搜索：{$vd['key']}</h3>
+  </div>
+  <p></p>
+  <div class="col">
+    <h3>高级搜索</h3>
+    <div class="form1"><form name='nouse' action="{$vd['root']}index.php?c=search"  method="post" >
+    <ul>
+      <li>
+        <input id="km" type="radio" value="0" name="ptype" />卡密商品
+        <input id="cz" type="radio" value="1" name="ptype" />自动充值
+      </li>
+      <li>
+        <input id="sd" type="radio" value="2" name="ptype" />手动代充
+      </li>
+      <li class="li_line"> </li>
+      <li>市场价格范围 </li>
+      <li>
+        <input id="begprice" size="4" name="begprice" value="{$vd['begprice']}"/>{$vd['lang']['moneyunit']}至
+        <input id="endprice" size="5" name="endprice" value="{$vd['endprice']}"/>{$vd['lang']['moneyunit']} 
+      </li>
+      <li class="li_line"> </li>
+      <li>关键词:<br />
+        <input name="keywords" type="text" size="15"  value="{$vd['key']}" />
+      </li>
+      <li style="PADDING-TOP: 12px">
+        <input type="submit" value="搜索" class="button" />
+        <input type="reset" value="重置"  class="button" />
+      </li>
+    </ul></form>
+    </div>
+  </div>
+</div>
+<script src="{$vd['content']}js\search.js"></script>
+{load(foot)}

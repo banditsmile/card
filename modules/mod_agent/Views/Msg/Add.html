@@ -1,0 +1,83 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+  <form method="post" action="index.php?m=mod_agent&c=msg&a=save">
+  <table class="contentTable">
+  	<tr>
+      <td colspan="2" class="tabletitle"> <b>发送短消息</b></td>
+    </tr>
+    <tr>
+      <td class="buylt">主题：</td>
+      <td class="buyrt"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title" value="{$vd['msgtitle']}"/></td>
+    </tr>
+    <!--if(0) {-->
+    <tr>
+      <td class="buylt">收信人：</td>
+      <td class="buyrt">
+      	<input type="radio" value="0" id="msgto0" name="msgto" checked style="cursor:pointer"/>老板
+      </td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td class="buylt">收信人：</td>
+      <td class="buyrt">
+      	<input type="radio" value="0" id="msgto0" name="msgto" checked onclick="setval(this)" style="cursor:pointer"/>系统
+      	<input type="radio" value="1" id="msgto1" name="msgto" onclick="setval(this)" style="cursor:pointer"/>我的上级
+      	<input type="radio" value="2" id="msgto2" name="msgto" onclick="setval(this)" style="cursor:pointer"/>所有直属下级
+      	<input type="radio" value="3" id="msgto3" name="msgto" onclick="setval(this)" style="cursor:pointer"/>指定直属下级
+      </td>
+    </tr>
+    <tr id="underling" style="display:none">
+      <td class="buylt">下级编号：</td>
+      <td class="buyrt">
+      	<select name="underlingid">
+      	<option value="0">请选择您的下级编号</option>
+      	{#Option($vd['agents'],0,'aid','aid')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">内容：</td>
+      <td class="buyrt">
+      <textarea name="content" wrap="VIRTUAL" cols="60" rows="10" scrolling="yes" class="mytextarea"></textarea>
+      <span id="spanstaffpwd"></span></td>
+    </tr>
+    <tr>
+      <td class="buylt">是否弹出：</td>
+      <td class="buyrt">
+      	<input type="checkbox" value="1" name="checktradepwd" /> 收件人浏览器弹出信息
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt" height="50px"></td>
+      <td class="buyrt">
+      	<input type="hidden" name="msgtype" value="{$vd['msgtype']}"/>
+      	<input type="submit" id="mysubmit" value="马上发送" class="button mysubmit"/> 
+      	<input type="reset" value="重新填写" class="button myreset"/></td>
+    </tr>
+  </table>
+  </form>
+</div>
+<script type="text/javascript">
+	var $ = function(id){
+		return document.getElementById(id);
+	}
+	
+	function setval(obj){
+		if(obj.value == 3)
+		{
+			$("underling").style.display = "";
+		}
+	  else if(obj.value == 5)
+		{
+			$("underling").style.display = "none";
+		}
+	  else
+		{
+			$("underling").style.display = "none";
+		}
+	}
+</script>
+{load(foot)}

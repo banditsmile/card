@@ -1,0 +1,420 @@
+{load(fhead)}
+<body class="service">
+<!--$str='';$order = $vd['order']['item'];-->
+<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 订单详细</span></div>
+<div id="hearder"><span>订单详细&nbsp;&nbsp;(订单号：{$order['ordno']})</span></div>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td class="tableleft">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+<tr>
+<td colspan="4" class="heardertop">　商品详细</td>
+</tr>
+<tr>
+<td width="18%" class="tableleft1">商品名称：</td>
+<td width="32%" align="left" class="tableright1">{$order['pname']}</td>
+<td width="18%" class="tableleft1">商品类型：</td>
+<td width="32%" align="left" class="tableright1">{#ProductType($order['ptype'])}</td>
+</tr>
+<tr>
+<td width="18%" class="tableleft1">商品面值：</td>
+<td width="32%" align="left" class="tableright1">{$vd['lang']['moneysymbol']}{$order['listprice']}</td>
+<td width="18%" class="tableleft1">客服方式：</td>
+<td width="32%" align="left" class="tableright1"><div style="word-break:break-all;"><!--if(isset($vd['supinfo']['aqq'])&&$vd['supinfo']['aqq'] != ''){-->QQ：{$vd['supinfo']['aqq']} <!--}--><!--if(isset($vd['supinfo']['aqq'])&&$vd['supinfo']['mobile'] != ''){-->手机：{$vd['supinfo']['mobile']}<!--}-->&nbsp;</div></td>
+</tr>
+
+<tr>
+<td colspan="4" class="heardertop">　订单详细</td>
+</tr>
+<!--if(intval(request('in')) == 1){-->
+<tr>
+<td width="18%" class="tableleft1"><font color=#ff0000>购买数量：</font></td>
+<td width="32%" align="left" class="tableright1">{$order['qty']}(个)</td>
+<td width="18%" class="tableleft1"><font color=#ff0000>购买金额：</font></td>
+<td width="32%" align="left" class="tableright1">{$vd['lang']['moneysymbol']}{$order['cprice']}×{$order['qty']}(个)={$vd['lang']['moneysymbol']}{$order['dollars']}</td>
+</tr>
+<tr>
+<td width="18%" class="tableleft1"><font color=#ff0000>销售金额：</font></td>
+<td width="32%" align="left" class="tableright1">{$vd['lang']['moneysymbol']}{$order['buyerprice']}×{$order['qty']}(个)={$vd['lang']['moneysymbol']}<!--echo $order['qty']*$order['buyerprice'];--></td>
+<td width="18%" class="tableleft1"><font color=#ff0000>销售利润：</font></td>
+<td width="32%" align="left" class="tableright1">{$vd['lang']['moneysymbol']}<!--echo $order['qty']*$order['buyerprice'] - $order['dollars'];--></td>
+</tr>
+<!--}else{-->
+<tr>
+<td width="18%" class="tableleft1"><font color=#ff0000>购买数量：</font></td>
+<td width="32%" align="left" class="tableright1">{$order['qty']}(个)</td>
+<td width="18%" class="tableleft1"><font color=#ff0000>销售金额：</font></td>
+<td width="32%" align="left" class="tableright1">{$vd['lang']['moneysymbol']}{$order['buyerprice']}×{$order['qty']}(个)={$vd['lang']['moneysymbol']}<!--echo $order['qty']*$order['buyerprice'];--></td>
+</tr>
+<!--}-->
+<tr>
+<td width="18%" class="tableleft1">购买时间：</td>
+<td width="32%" align="left" class="tableright1">{$order['orddate']}</td>
+<td width="18%" class="tableleft1">销售时间：</td>
+<td width="32%" align="left" class="tableright1">{$order['dealdate']}&nbsp;</td>
+</tr>
+<tr>
+<td width="18%" class="tableleft1">帐户类型：</td>
+<td width="32%" align="left" class="tableright1">{#Operator($vd['agent'][0], $order['cname'], $vd['agent'][9])}</td>
+<td width="18%" class="tableleft1">订单状态：</td>
+<td width="32%" align="left" class="tableright1"><strong>{#OrderState($order['ordstate'],$order['ptype'])}</strong></td>
+</tr>
+<tr>
+<td width="18%" class="tableleft1">购买备注：</td>
+<td width="32%" align="left" class="tableright1"><textarea name="buynote" cols="45" rows="3" class="input" readonly>{$order['others']}</textarea></td>
+<td width="18%" class="tableleft1">操作IP：</td>
+<td width="32%" align="left" class="tableright1">{$order['cip']}</td>
+</tr>
+
+
+<!--if($order['ptype'] == 0 || $order['ptype'] == 3 || $order['ptype'] > 99) {-->
+<tr>
+  <td width="50%" align="center" colspan="2" class="heardertop1"><!--if($order['ptype'] == 3) {-->号码<!--}else{-->卡号<!--}-->(点击卡号即可复制，<span onclick="copyAllToClipboard()" style="cursor:pointer;color:#ff0000">点此全部复制</span>) </td>
+  <td width="50%" align="center" colspan="2" class="heardertop1">密码</td>
+</tr>
+<tr>
+<!--foreach($vd['order']['carditem'] as $card) {-->
+<tr>
+  <td width="50%" style="padding: 5px;" align="center" colspan="2">
+  	<span onclick="copyToClipboard('{$card['cardnumber']}')" style="cursor:pointer">{$card['cardnumber']}</span>
+  </td>
+  <td width="50%" style="padding: 5px" align="center" colspan="2">
+  	<span onclick="copyToClipboard('{$card['cardpwd']}')" style="cursor:pointer">{$card['cardpwd']}</span>
+  </td>
+</tr>
+<!--$str .= $card['cardnumber']. "  " .$card['cardpwd']."\\r\\n";}-->
+<!--}-->
+<tr>
+<td colspan="4" class="heardertop">　购买内容&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<!--if($order['ptype'] == 1 || $order['ptype'] == 2) {-->
+<tr>
+  <td width="18%" class="tableleft1">游戏用户名：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><b><font color="#0000ff">{$order['czaccount']}</font></b></td>
+</tr>
+<!--if(isset($order['thisgame']) && $order['thisgame'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1"><!--if($order['namehide']=='thisgame'){-->登陆密码<!--}else{-->充值产品<!--}-->：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='thisgame'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['thisgame'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['czarea1'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1"><!--if($order['namehide']=='czarea1'){-->登陆密码<!--}else{-->充值区域<!--}-->：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='czarea1'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['czarea1'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['czarea2'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1"><!--if($order['namehide']=='czarea2'){-->登陆密码<!--}else{-->充值服务器<!--}-->：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='czarea2'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['czarea2'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['cztype'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1">
+  	<!--if(strpos($order['cztype'], '::') > 0){-->
+      <!--$mytemp = explode('::', $order['cztype']);$order['cztype']=$mytemp[1];-->
+      {$mytemp[0]}：
+    <!--}else{-->
+    
+    <!--if($order['namehide']=='cztype'){-->登陆密码<!--}else{-->计费方式<!--}-->：
+    
+    <!--}-->
+  </td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='cztype'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['cztype'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['czother'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1">
+  	<!--if(strpos($order['czother'], '::') > 0){-->
+      <!--$mytemp = explode('::', $order['czother']);$order['czother']=$mytemp[1];-->
+      {$mytemp[0]}：
+    <!--}else{-->
+    
+    <!--if($order['namehide']=='czother'){-->登陆密码<!--}else{-->帐号类型<!--}-->：
+    
+    <!--}-->
+  </td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='czother'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['czother'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['acountpwd'] != ''){-->
+<tr>
+  <td width="18%" class="tableleft1">
+  	<!--if(strpos($order['acountpwd'], '::') > 0){-->
+      <!--$mytemp = explode('::', $order['acountpwd']);$order['acountpwd']=$mytemp[1];-->
+      {$mytemp[0]}：
+    <!--}else{-->
+    
+    <!--if($order['namehide']=='acountpwd'){-->登陆密码<!--}else{-->其他信息<!--}-->：
+    
+    <!--}-->
+  </td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><!--if($order['namehide']=='acountpwd'){--><font color="#888888">*客户密码隐藏*</font><!--}else{-->{#CzText($order['acountpwd'])}<!--}--></td>
+</tr>
+<!--}-->
+<!--}-->
+<!--if($order['ptype'] == 0 || $order['ptype'] == 3 || $order['ptype'] > 99) {-->
+<!--if($order['failreason']!=''){-->
+<tr>
+  <td width="18%" class="tableleft1">相关说明：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1" style="color:#ff0000"><!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['factoryreturn']!=''){-->
+<tr>
+  <td width="18%" class="tableleft1">系统反馈：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1" style="color:#0000ff">{$order['factoryreturn']}</td>
+</tr>
+<!--}-->
+<!--}-->
+<!--if($order['ptype'] == 2 || $order['ptype'] == 1) {-->
+<tr>
+  <td width="18%" class="tableleft1">充值结果：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1">
+  	<!--if($order['ordstate'] == -1) {-->
+  	<font color="#ff0000"><b>充值失败，<!--if($order['rollback'] == 1) {-->已经退还余额，<!--}-->请重新下订单</b></font>
+  	<!--}-->
+  	<!--if($order['ordstate'] == 1 || $order['ordstate'] == 3) {-->
+  	<img src="{$vd['content']}images/loading.gif" /><b>已经提交系统充值，本页会即时更新结果，请留意（如长时间未反应请手动刷新本页面）</b>
+  	<!--}-->
+  	<!--if($order['ordstate'] == 2) {-->
+  	<font color="#0000ff"><b>已经充值成功，请玩家查询游戏时间，处理成功</b></font>
+  	<!--}-->
+  	</td>
+</tr>
+<!--if($order['failreason']!=''){-->
+<tr>
+  <td width="18%" class="tableleft1">充值说明：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1" style="color:#ff0000"><!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td>
+</tr>
+<!--}-->
+<!--if($order['factoryreturn']!=''){-->
+<tr>
+  <td width="18%" class="tableleft1">厂家反馈：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1" style="color:#0000ff">{$order['factoryreturn']}</td>
+</tr>
+<!--}-->
+<!--}-->
+<!--if($order['ptype'] == 0 || $order['ptype'] > 99){-->
+<tr>
+  <td width="18%" class="tableleft1">充值网址：</td>
+  <td colspan=3 width="82%" align="left" class="tableright1"><a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a>&nbsp;</td>
+</tr>
+<!--}-->
+
+
+<tr>
+<td colspan="4" class="heardertop">　订单管理</td>
+</tr>
+
+<tr>
+<td width="18%" class="tableleft1">打印订单：</td>
+<td colspan=3 width="82%" align="left" class="tableright1"><input type="button" name="printorder" value="打印订单" class="button2" onclick="javascript:openScript('index.php?m=mod_agent&c=Order&a=MyPrint&ordno={$order['ordno']}','print',550,350);"></td>
+</tr>
+
+<tr>
+<td width="18%" class="tableleft1">订单投诉：</td>
+<td colspan=3 width="82%" align="left" class="tableright1">
+	<!--if(isset($vd['forpitts']) && $vd['forpitts'] == 1 && $order['ptype'] == 2){-->
+  系统管理员设置了不允许投诉！
+  <!--}else{-->
+  <!--if($order['ordstate'] == 1 || $order['ordstate'] == 3 || $order['ordstate'] == -1) {-->
+  订单状态暂时不允许投诉！
+  <!--}else{-->
+  <input type="button" name="complaint" value="投诉订单" class="button3" onclick="javascript:openScript('index.php?m=mod_agent&c=complaint&a=Add&ptype={$order['ptype']}&ordno={$order['ordno']}&aid={$order['aid']}','complaint',600,450);">
+  <!--}-->
+  <!--}-->
+</td>
+</tr>
+
+<tr>
+<td width="100%" colspan=4 align=center>
+	<!--if(isset($vd['continue']) && $vd['continue']==1){-->
+	<input type="button" name="goback" value="继续购买本商品" class="button2" onclick="javascript:window.location.href='{#ProductLink($order['pid'])}'">
+	<!--}else{-->
+	<input type="button" name="goback" value="返回上页" class="button2" onclick="javascript:history.go(-1);">
+	<!--}-->
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+<script type="text/javascript">  
+<!--if($order['ordstate']==1 || $order['ordstate']==3 ){-->
+var xmlhttp;
+
+loadXMLDoc();
+
+function loadXMLDoc()
+{
+  xmlhttp=null;
+  var url=null;
+  
+  url = "ordno="+escape("{$order['ordno']}");
+  
+  <!--if($order['sup']==1){-->
+  url = url + "&sign="+escape("{$vd['sign']}");
+  <!--}-->
+  // 针对 Mozilla等浏览器的代码：
+  if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+  if (xmlhttp!=null)
+  {
+    xmlhttp.onreadystatechange=state_Change;
+    xmlhttp.open("post", "index.php?m=mod_agent&c=order&a=GetState", true);
+    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.send(url);
+  }
+  else
+  {
+    alert("您的浏览器不支持XMLHTTP")
+  }
+}
+
+function state_Change()
+{
+  // 如果 xmlhttp 显示为 "loaded"
+  if (xmlhttp.readyState==4)
+  {
+    // 如果为 "OK"
+    if (xmlhttp.status==200)
+    {
+      // 其他代码..
+      var ackdata=xmlhttp.responseText;
+      ackparase(ackdata);
+    }
+  }
+}
+
+function ackparase(ackdata)
+{
+  //解析服务器返回的数据
+  if (ackdata == "1" || ackdata == "3")
+  {
+    setTimeout("loadXMLDoc()",1500);
+  }
+  else if(ackdata == "-2")
+  {
+  	alert('订单不存在！');
+  	window.close();
+  }
+  else
+  {
+    window.location.reload();
+  }
+}
+<!--}-->
+
+function copyAllToClipboard()
+{
+	var str = "{$str}";
+	copyToClipboard(str);
+}
+
+function copyToClipboard(text){
+	
+  if(text==null||text=='undefined')
+  return;
+  
+  if (window.clipboardData)
+  {
+    window.clipboardData.setData("Text", text);
+  }
+  else if (window.netscape)
+  {
+  netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
+  var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+  if (!clip) return;
+
+  var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+  if (!trans) return;
+  trans.addDataFlavor('text/unicode');
+  
+  var str = new Object();
+  var len = new Object();
+  
+  var str = Components.classes["@mozilla.org/supports-string;1"]
+               .createInstance(Components.interfaces.nsISupportsString);
+  
+  var copytext=text;
+  
+  str.data=copytext;
+  
+  trans.setTransferData("text/unicode",str,copytext.length*2);
+  
+  var clipid=Components.interfaces.nsIClipboard;
+  
+  if (!clip) return ;
+  
+  clip.setData(trans,null,clipid.kGlobalClipboard);
+  
+  }
+  
+  alert("已复制成功，请直接粘贴\n"+text);
+}
+
+function disp(id)
+{
+	dp = document.getElementById(id).style.display;
+	document.getElementById(id).style.display = dp == "" ? "none" : "";
+}
+
+function SendFetion()
+{
+	var xmlhttp3 = null;
+	url = "ordno="+escape("{$order['ordno']}");
+	// 针对 Mozilla等浏览器的代码：
+  if (window.XMLHttpRequest)
+  {
+    xmlhttp3=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttp3=new ActiveXObject("Microsoft.xmlhttp");
+  }
+
+  if (xmlhttp3!=null)
+  {
+    xmlhttp3.onreadystatechange=function(){
+    	if (xmlhttp3.readyState==4)
+      {
+        // 如果为 "OK"
+        if (xmlhttp3.status==200)
+        {
+        	
+        }
+      }
+    };
+    xmlhttp3.open("post", "index.php?m=mod_agent&c=order&a=SendFetion", true);
+    xmlhttp3.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp3.send(url);
+  }
+  else
+  {
+    alert("您的浏览器不支持xmlhttp")
+  }
+}
+
+SendFetion();
+
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+</script>
+</body>
+</html>

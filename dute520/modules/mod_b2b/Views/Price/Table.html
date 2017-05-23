@@ -1,0 +1,48 @@
+<!--if($vd['totlerow'] == 0) {-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+</table>
+<!--}-->
+<form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=customer&a=ItemDeal" onsubmit="return Check();">
+<table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['pid']}" class="checkbox" value="{$item['pid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="200px"><span onclick="toInput(this,{$item['pid']},'pname')">{$item['pname']}</span></td>
+<td width="65px">{#ProductType($item['ptype'])}</td>
+<td width="50px">[<a href="?m=mod_b2b&c=product&a=PP&pid={$item['pid']}"><font color="#00875A">密价</font></a>]</td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=order&ubzcname={$item['pname']}&aid=-1" title="查看消费"><img src="{$vd['sc']}images/rmb.png"/></a>
+    </td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=customer&a=detail&ubzpid={$item['pid']}" title="编辑商品"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['pid']},'delitems')" alt="删除用户,可以从回收恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['pid']},'destroyitems')" alt="销毁用户,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+      <!--}-->
+    </td>
+    <td width="38px">
+      <a href="?m=mod_b2b&c=sup&a=sup&ubzpid={$item['pid']}">
+      <font color="#00875A">管理</font>
+      </a> 
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->

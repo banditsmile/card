@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>详细结果</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">
+  <tr>
+    <td width="50%" height="35" class="listhead">
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >完成一卡通卡密生成操作</span>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">
+  <tr>
+    <td height="35"  colspan="12" style="font-size:13px;line-height:25px;padding-left:5px;">
+      已经成功添加<font color="#ff0000"><b> {$vd['succ']} </b></font>个<b> {$vd['yktprice']}{$vd['lang']['moneyunit']}</b> <!--if($vd['ptype']==100){-->一卡通兑换专用卡<!--}else{-->一卡通充值专用卡<!--}-->，
+      <font color="#ff0000"> {$vd['fail']} </font>个卡号因为已经存在而入库失败<br/>
+      <!--if($vd['iswrite']<3){-->
+      [1] <a href="{$vd['href']}.txt" target="_blank"/><font color="#008800">马上下载文件"{$vd['filename']}.txt"</font></a><br/>
+      [2] <a href="index.php?m=mod_b2b&c=ykt&a=DeleteFile&filename={$vd['href']}"/><font color="#ff0000">删除文件"{$vd['filename']}.txt"</font></a><br/>
+      <font color="#6c6c6c">注：为了安全起见请下载文件后，把原始文件删除掉</font><br/>
+      <!--}-->
+    </td>
+  </tr>
+</table>
+</body>
+</html>

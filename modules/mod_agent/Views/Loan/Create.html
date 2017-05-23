@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>账户间转款</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>借款申请</h2>
+  </div>
+  <ul>
+      <li><a href="" class="on">借款申请</a></li>
+    <li><a href="index.php?m=mod_agent&c=Loan">全部记录</a></li>
+  </ul>
+</div>
+<form name="checkout" method="post" action="index.php?m=mod_agent&c=Loan&a=Save">
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<!--$item=$vd['item'];-->
+    <tr>
+      <td class="table1_left" style="width: 25%">公司名</span></td>
+      <td width="80%" class="tableright1"><div align="left"> {$item['company']}({#displayCode($item['aid'])})</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">账户可用余额</span> </td>
+      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['aremain']} {$vd['lang']['moneyunit']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">目前欠款</span> </td>
+      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['arrears']} {$vd['lang']['moneyunit']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">信用额度</span> </td>
+      <td width="80%" class="tableright1" style="color:#ff0000"><div align="left">{$item['credit']} {$vd['lang']['moneyunit']} (如果您欠款数目小于这个数值且正在跟系统借款，您的申请会自动完成)</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">向别人借钱</span> </td>
+      <td width="80%" class="tableright1">
+        
+          <div align="left">
+            <input type="text" class="tdleft" style="font-weight:normal" name="dollars" size="24"/> 
+            {$vd['lang']['moneyunit']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">操作类型</span> </td>
+      <td width="80%" class="tableright1">
+        
+          <div align="left">
+            <input type="radio" name="thisaction" value="21"  onclick="set(1)"/>
+            借钱给别人 
+            <input type="radio" name="thisaction" value="22" checked onClick="set(0)"/>
+            向别人借钱</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">对方编号</span> </td>
+      <td width="80%" class="tdleft">
+        
+          <div align="left">
+            <input type="text" class="tdleft" style="font-weight:normal" name="otherside" id="otherside" size="24"/> 
+            <span id="spansys">
+              <input type="checkbox" name="issys" id="issys" value="1" onClick="setotherside(this)"/>
+            系统</span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">约定还款</span> </td>
+      <td width="80%" class="tableright1">
+        
+        <div align="left">
+  <input type="text" class="tdleft" style="font-weight:normal" name="deadline" id="deadline" size="24" value="<!--echo date("Y-m-d H:i:s" , strtotime("30 days"));-->
+  " style="vertical-align:middle"/></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">超级密码</span> </td>
+      <td width="80%" class="tableright1">
+        
+          <div align="left">
+            <input type="password" class="tdleft" style="font-weight:normal" name="superpwd" size="24"/>
+          </div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">操作原因</span> </td>
+      <td width="80%" class="tableright1">
+      	
+      	    <div align="left">
+      	      <textarea name="reason" cols="50" rows="5" scrolling="yes" style="padding:5px"></textarea>
+   	        </div></td>
+    </tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">&nbsp;</td>
+		<td class="tableright1">
+		  
+		    <div align="left">
+		      <input type="hidden" name="Login_my" value="37126884">
+		      <input type="submit" name="submit" value="确认提交" class="tijiao_input" tabindex="16"> 
+		      <input type="reset" name="reset" value="重新填写" class="fanhui_input" tabindex="17">
+	        </div></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</form>
+<script type="text/javascript">
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+	function set(flag)
+	{
+		//loanTable.rows[7].style.display = flag ? "" : "none";
+		$("loanlable").innerHTML = flag ? "借钱给别人" : "向别人借钱";
+		
+		    
+    $("issys").checked = false;
+    $("otherside").style.background = "#fff";
+    $("otherside").disabled = false;
+    
+    $("spansys").style.display = flag ? "none" : "";
+
+	}
+	
+	function setotherside(obj)
+	{
+		if(obj.checked)
+		{
+			$("otherside").value = "";
+			$("otherside").style.background = "#f0f0f0";
+			$("otherside").disabled = true;
+		}
+	  else
+		{
+			$("otherside").style.background = "#fff";
+			$("otherside").disabled = false;
+		}
+	}
+</script>	
+</body>
+</html>

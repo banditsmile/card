@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+#kftable{background:#fff}
+#kftable td{font-size:12px;padding:3px;}
+</style>
+</head>
+<body>
+<form method="post" action="index.php?m=mod_b2b&c=bd&a=Save" name="cform" id="cform"> 
+<div id="contentTip" style="display:none;"></div>
+<div id="content" class="cwarpper" style="position:relative">
+<div class="cbodyHead"></div>
+
+<div class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle">业务类型设置</div>
+<div>
+  <table border="0" class="ctable" bordercolor="#ededed">
+  	<tr>
+      <td class="tablelt">前台补单地址</td>
+      <td class="tablert"><a href="../index.php?m=mod_b2b&c=bd" target="_blank"><u>点击打开</u></a></td>
+    </tr>
+    <tr>
+      <td class="tablelt">业务类型</td>
+      <td class="tablert">
+      	<textarea rows="10" name="cztype" cols="60" style="width:308px;margin-top:5px;margin-bottom:5px">{$vd['bd']}</textarea> 回车代表一组
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">补单提醒</div>
+<div>
+  <table border="0" class="ctable" bordercolor="#ededed">
+    <tr>
+      <td class="tablelt">提醒内容</td>
+      <td class="tablert">
+      	<textarea rows="10" name="bdtip" cols="60" style="width:308px;margin-top:5px;margin-bottom:5px">{$vd['bdtip']}</textarea>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="submit" value=" 修 改 " class="btn"/>
+    <input type="reset" value=" 重 置 " class="btn"/>
+  </div>
+</div>
+</form>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <font color="#000">补单系统设置</font></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_index" onFocus="this.blur()" title="查看平台基本信息相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  
+</script>
+</body>
+</html>

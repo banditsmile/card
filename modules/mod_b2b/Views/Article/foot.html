@@ -1,0 +1,40 @@
+<!--if($g_action == 'Index' && $g_controller == 'Home'){}else{-->
+<script type="text/javascript"> 
+  window.onload = window.onresize = function(){
+    docWidOrg = document.documentElement.clientWidth;  
+ 
+    if(docWidOrg < 1003)
+    {
+      document.body.style.width = 1003 + "px";
+      docWidOrg = 1003;
+    }
+    else
+    {
+      document.body.style.width = "100%";
+    }
+ 
+    if(document.getElementById("ubMid"))
+    {
+      docWid = docWidOrg * 0.93 - 258 - 180 - 18;
+      document.getElementById("ubMid").style.width = docWid + "px";
+    }
+    
+    if(document.getElementById("ubtwoRight") && navigator.appVersion.indexOf("MSIE 6.0") < 0)
+    {
+      docWid = docWidOrg * 0.93 - 180 - 10;
+      document.getElementById("ubtwoRight").style.width = docWid + "px";
+    }
+  };
+</script>
+<!--}-->
+</div>
+</div>
+<div class="foot">
+		<div class="gs">
+			<a href=http://www.hnaic.gov.cn/ target=_bank><img src={$vd['content']}images/gongshang.gif border=0 width=35 height=42></a>
+      <a href=http://www.hngawj.net/ target=_bank><img src={$vd['content']}images/wangjing.gif border=0 width=42 height=42></a>
+		</div>
+  <div class="webinfo">
+		版权所有  2014 {$vd['web']['webname']}<br/>地址：{$vd['web']['address']}<br/>ICP备案号：<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a><br/>
+	  　本平台由<a href="http://www.xybss.com.cn/">蓝主</a>提供技术 京ICP证030173号</div>
+	</div>

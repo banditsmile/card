@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{height:30px}
+.preview_fake{ /* 该对象用户在IE下显示预览图片 */
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+}
+.spantip{color:#ff0000}
+</style>
+</head>
+<body>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span><font color="#000">自定义模板</font></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看用户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="content" class="cwarpper"  style="position:relative">
+<div class="cbodyHead"></div>
+<div id="tab">
+<!--$i=0;foreach($vd['logo'] as $item){-->
+<input type="button" value="{$item['name']}"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Theme&f={$item['f']}'" class="<!--if($vd['f']==$item['f']){-->tab_active<!--}else{-->tab_normal<!--}-->" onFocus="this.blur()"/>
+<!--}-->
+</div>
+
+<!--$i=0;foreach($vd['logo'] as $item){-->
+<!--if($item['f'] == $vd['f']){-->
+<div class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle"></div>
+<form method="post" action="index.php?m=mod_b2b&c=Theme&a=Save&f={$item['f']}" name="cform" id="cform" onsubmit="checksumit(0)">
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+	<tr>
+    <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
+      全局背景
+    </td>
+  </tr>
+  <!--if($item['canedit'] == 0){-->
+  <tr> 
+    <td colspan="2" style="color:#7b7b7b">当前使用的模板不支持自定义功能，您可以选择安装其他模板再进行操作</td>
+  </tr>
+  <!--}else{-->
+  <tr> 
+    <td width="15%" align="right" height="46">背景图片<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <img src="{$vd['root']}content/{$item['m']}/images/{$item['bgname']}" border="0" height="47"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" align="right" height="46">背景颜色</td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="text" id="textcolor200" name="ubztextcolor" value="" size="34" onkeyup="setcolor(this,200)"/> 
+    <input id="colorexample200" type="text" size="1" readonly style="background:#6c6c6c">
+    <img src="{$vd['sc']}images/16.gif" onclick="pickcolor(200)" align="absmiddle" style="cursor:pointer;"/>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="hidden" id="needname0" name="needname0" size="34" value="{$item['bgname']}"/>
+    <input type="hidden" id="ubzimagebody" name="ubzimage" size="34"/> 
+    <iframe name="bodyiframe" id="bodyiframe" src="index.php?m=com_fs&c=fs&imgid=logo{$i}&fun=imginfobody&inputid=ubzimagebody&d=1&mod={$item['m']}" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46"></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <span class="spantip">注意：请先命名为 <b>{$item['bgname']}</b> 再上传</span>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" align="right" height="46">操作</td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <div id="logobody"></div><div id="logoinfobody"></div></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<script type="text/javascript">
+function imginfobody(imgsrc)
+{
+	obj  = document.all ? window.frames["bodyiframe"] : window.document.getElementById("bodyiframe").contentWindow;
+  filen = obj.document.getElementById("txtFileUpload").value;
+
+	if( !filen.match( /{$item['bgname']}/i ) ){
+    alert('图片格式无效，图片应该命名为{$item['bgname']}再上传！');
+    return false;
+  }
+  
+  document.getElementById("logoinfobody").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+}
+</script>
+</div>
+
+<div class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle"></div>
+<form method="post" action="index.php?m=mod_b2b&c=Theme&a=Save&f={$item['f']}&pos=1" name="cform" id="cform" onsubmit="return checksumit(1)">
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+	<tr>
+    <td align="center" height="35" colspan="2" class="listhead" style="text-align:left;font-weight:bold;padding-left:10px;color:#ff0000">
+      底部背景
+    </td>
+  </tr>
+  <!--if($item['caneditf'] == 0){-->
+  <tr> 
+    <td colspan="2" style="color:#7b7b7b">当前使用的模板不支持自定义功能，您可以选择安装其他模板再进行操作</td>
+  </tr>
+  <!--}else{-->
+  <tr> 
+    <td width="15%" align="right" height="46">背景图片<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <img src="{$vd['root']}content/{$item['m']}/images/{$item['bgnamef']}" border="0" height="47"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" align="right" height="46">背景颜色</td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="text" id="textcolor100" name="ubztextcolor" value="" size="34" onkeyup="setcolor(this,100)"/> 
+    <input id="colorexample100" type="text" size="1" readonly style="background:#6c6c6c">
+    <img src="{$vd['sc']}images/16.gif" onclick="pickcolor(100)" align="absmiddle" style="cursor:pointer;"/>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46">上传图片<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="hidden" id="needname1" name="needname1" size="34" value="{$item['bgnamef']}"/>
+    <input type="hidden" id="ubzimagefoot" name="ubzimage" size="34"/> 
+    <iframe id="footiframe" name="footiframe" src="index.php?m=com_fs&c=fs&imgid=logofoot&fun=imginfofoot&inputid=ubzimagefoot&d=1&mod={$item['m']}" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#ffffff"></iframe>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46"></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <span class="spantip">注意：请先命名为 <b>{$item['bgnamef']}</b> 再上传</span>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%" align="right" height="46">操作</td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <input type="submit" value=" 提 交 &gt;&gt;" name="B1" class="button"/>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" align="right" height="46">图片预览<b></b></td>
+    <td width="85%" style="padding-left: 10px" height="47">
+    <div id="logofoot"></div><div id="logoinfofoot"></div></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<script type="text/javascript">
+function imginfofoot(imgsrc)
+{
+	obj  = document.all ? window.frames["footiframe"] : window.document.getElementById("footiframe").contentWindow;
+  filen = obj.document.getElementById("txtFileUpload").value;
+
+	if( !filen.match( /{$item['bgnamef']}/i ) ){
+    alert('图片格式无效，图片应该命名为{$item['bgnamef']}再上传！');
+    return false;
+  }
+
+  document.getElementById("logoinfofoot").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+}
+</script>
+</div>
+
+<!--$i++;}}-->
+
+
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+
+  </div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 1;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/JavaScript">
+function pickcolor(id) 
+{
+  var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");
+  if (color != null) 
+  {
+    $("colorexample"+id).style.backgroundColor = color;
+    $("textcolor"+id).value = color;
+  }
+}
+function setcolor(obj,id)
+{
+  if(obj.value.length == 7)
+  {
+    $("colorexample"+id).style.backgroundColor = obj.value;
+  }
+}
+
+function resizeImg(obj,w,h)
+{
+  var imgHeight = obj.height;
+  var imgWidth  = obj.width;
+  
+  if(imgHeight < imgWidth)
+  {
+    if(imgWidth > w)
+    {
+      obj.style.width = w + "px";
+    }
+  }
+  else
+  {
+    if(imgHeight > h)
+    {
+      obj.style.height = h + "px";
+    }
+  }
+}
+
+function checksumit(idx)
+{
+	thisneedname = $("needname"+idx).value;
+	if($("ubzimagefoot").value != "" && $("ubzimagefoot").value != thisneedname)
+	{
+		alert('图片格式无效，图片应该命名为' + thisneedname + '再上传！');
+		return false;
+	}
+}
+</script>
+</body>
+</html>

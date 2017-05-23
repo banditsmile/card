@@ -1,0 +1,116 @@
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span><font color="#000">货源列表(关键词：<!--echo getVar('keywords');-->)</font> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=sup&optype=pidsearch&tpl=simple" method="post" style="margin:0px 0px 0px 0px;" >
+    <input type="text" name="keywords" size="16" value="" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    价格从<input id="begsupprice" size="5" name="begsupprice" style="vertical-align:middle;" />到<input id="endsupprice" size="5" name="endsupprice" style="vertical-align:middle;" /> <select name="ptype" style="font-size:14px;vertical-align:middle;"><option value="">所有商品</option><option value="0">卡密商品</option><option value="1">自动商品</option><option value="2">手动代充</option></select>
+    <input type="submit" value="货源搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="45px"><b>编号</b></td>
+    <td width="325px"><b>商品名称</b></td>
+    <td width="70px"><b>商品类型</b></td>
+    <td width="70px"><b>最低售价</b></td>
+    <td width="55px"><b>面值</b></td>
+    <td width="55px"><b>进货价</b></td>
+    <td width="50px"><b>库存</b></td>
+    <td width="70px"><b>进货审核</b></td>
+    <td width="35px"><b>对接</b></td>
+    <td width="70px"><b>供货商</b></td>
+    <td class="endtd"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div></td>
+  </tr>
+</table>
+<div id="content">
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">非有效商户无法查询！</td>
+  </tr>
+  </table>
+  <!--}-->
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="45px">{$item['ubzpid']}</td>
+    <td width="325px" style="font-size:12px;">
+    <a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetProduct&ubzpid={$item['ubzpid']}','',692,413);" title="{$item['ubzpname']}"/><font color="#00875A">{$item['ubzpname']}</font></a>
+    </td>
+    <td width="70px">{#ProductTypeByText($item['ubzptype'])}</td>
+    <td width="70px">{$item['ubzctrlprice']}</td>
+    <td width="55px">{$item['ubzlistprice']}</td>
+    <td width="55px">{$item['ubzsupprice']}</td>
+    <td width="50px"><!--if($item['ubzstocks'] == '缺货'){--><font color="#ff0000"><!--}else{--><font color="#0000ff"><!--}-->{$item['ubzstocks']}</font></td>
+    <td width="70px">{#SupCheck($item['ubzsupcheck'])}</td>
+    <td width="35px">
+      <a href="javascript:tosup({$item['ubzpid']},'{$item['ubzpname']}');">
+        <font color="#00875A">对接</font>
+      </a>
+    </td>
+    <td width="70px">
+      <a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzpid={$item['ubzpid']}&ubzuuid={$item['ubzsupid']}','',692,372);">
+      <font color="#00875A">信息</font></a>/<a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzsupid']}"><font color="#00875A">留言</font></a>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+</table>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+</div>
+<input type="hidden" value="index.php?m=mod_b2b&c=sup&a=index&{$vd['op']}" id="url"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=sup&a=index&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="10" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var resizeidx = 1;
+  function tosup(ubzpid, ubzpname)
+  {
+    var myurl = "index.php?m=mod_b2b&c=sup&a=SupLink&ubzpid=" + ubzpid + "&ubzpname=" + encodeURIComponent(ubzpname);
+    openScript(myurl, '', 750, 508);
+  }
+  
+  function openScript(url,name,width,height)
+  {
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=no');
+  }
+  function showadv(obj)
+  {
+    if(obj.checked)
+    {
+      document.getElementById("advsearch").style.display="";
+    }
+    else
+    {
+      document.getElementById("advsearch").style.display="none";
+    }
+  }
+</script>
+<script src="{$vd['sc']}js/table.js" type="text/javascript"></script>
+
+</body>
+</html>

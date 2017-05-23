@@ -1,0 +1,251 @@
+/* Umebiz@CSSTidy 1.2: Sun, 11 May 2008 03:18:11 +0000 */
+* {
+LIST-STYLE:none;
+MARGIN:0;
+PADDING:0;
+}
+
+body {
+FONT-SIZE:12px;
+SCROLLBAR-FACE-COLOR:#E0E0E0;
+SCROLLBAR-HIGHLIGHT-COLOR:#f0f0f0;
+SCROLLBAR-SHADOW-COLOR:#E0E0E0;
+SCROLLBAR-DARKSHADOW-COLOR:#E0E0E0;
+SCROLLBAR-3DLIGHT-COLOR:#E0E0E0;
+SCROLLBAR-ARROW-COLOR:#fff;
+SCROLLBAR-TRACK-COLOR:#f0f0f0;
+LINE-HEIGHT:140%;
+FONT-FAMILY:Tahoma,SimSun,Arial;
+PADDING:0;
+margin:10px auto;
+margin-top:0px;
+color:#666666;
+}
+
+a:link {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#000;
+}
+
+a:visited {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#963;
+}
+
+a:hover {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:underline;
+FONT-SIZE:9pt;
+COLOR:#666;
+}
+
+a:active {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#F93;
+}
+
+#topheader {
+  BACKGROUND:#F4F3F2 url(../images/ytbg.gif);HEIGHT: 30px;MARGIN: 0px auto;;
+}
+
+#topheader #headertab{
+  width:950px;MARGIN: 0px auto 5px;PADDING-RIGHT: 0px; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px
+}
+
+#ubtop {
+width:530px;
+height:60px;
+MARGIN:5px auto;
+overflow:hidden; 
+}
+
+
+.buy{background:url(../images/buy_01_1.gif) repeat-y;width:100%}
+.buy_01{
+height:40px;
+width:526px;
+border-left:1px #ff6c00 solid;
+border-right:1px #ff6c00 solid;
+}
+.buy_01_tip{padding-top:0px;text-align:right;padding-right:20px;margin:5px auto;margin-bottom:0px;background:url(../images/buy_01_tip.gif) no-repeat;height:42px;width:500px;border-bottom:1px #DEDEDE solid;}
+
+.buy_01_tip_ok{background:url(../images/buy_01_tip_ok.gif) no-repeat;}
+.buy_01_tip_wait{background:url(../images/buy_01_tip_wait.gif) no-repeat;}
+.buy_01_tip_fail{background:url(../images/buy_01_tip_fail.gif) no-repeat;}
+
+.btitle{color:#00AAFF;font-weight:bold;font-size:14px;margin-top:10px;margin-bottom:5px}
+.web{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:250px;line-height:28px;}
+
+.button2 {
+color:#ccc
+}
+
+.pdesc{height:100px;overflow:auto;width:250px}
+
+.waitstatus{float:left;height:36px;}
+
+.input {
+border:#bac0c3 1px solid;
+width:180px;
+padding:5px;
+FONT-SIZE: 12px; 
+VERTICAL-ALIGN: middle; 
+COLOR: #000000; 
+FONT-FAMILY: Tahoma, Verdana, Georgia, Courier, Simsun; 
+BACKGROUND-COLOR: #f9fbfd;
+}
+
+
+.buylt{width:30%;padding:3px;text-align:right;font-size:14px;}
+.buyrt{width:70%;padding:3px;text-align:left}
+.ltjs{width:30%;padding:3px;text-align:right;font-size:14px;}
+.rtjs{width:70%;padding:2px;text-align:left;border-left:0px #3cb9ff solid;}
+.tbody{
+border:#ff6c00 1px solid;
+border-top:none;
+background: url("../images/yktbg.bmp") no-repeat 290px 50px;;
+width:528px;
+margin:0px auto;
+}
+
+.fbody{
+border:#ff6c00 1px solid;
+border-top:none;
+border-bottom:none;
+width:526px;
+text-align:center;
+margin:0px auto;
+}
+
+.redbold{
+color:#ff0000;font-weight:bold
+}
+
+.headbg {
+background: url("../images/ykttopbg.gif") repeat-x;
+height:40px;
+margin:0px auto;
+width:526px;
+border-left:1px #ff6c00 solid;
+border-right:1px #ff6c00 solid;
+}
+
+.titlefont{
+FONT-SIZE: 14px; 
+font-weight:bold;
+COLOR: #fff; 
+FONT-FAMILY: Arial, Helvetica, sans-serif;
+padding-top:10px;
+}
+
+.button {
+BORDER-RIGHT:#ccc 1px solid;
+BORDER-TOP:#ccc 1px solid;
+BACKGROUND:url("../images/header.gif");
+BORDER-LEFT:#ccc 1px solid;
+BORDER-BOTTOM:#ccc 1px solid;
+PADDING:2px 3px 0px 3px;
+MARGIN:0 5px 0 0;
+WIDTH:80px;
+HEIGHT:30px;
+CURSOR:pointer;
+}
+
+.warper{
+border:8px #f4f4f4 solid;
+margin:0px auto;
+width:528px;
+background:#fff
+}
+
+.righttext{float:right;width:210px;padding:5px 2px;padding-top}
+
+#kfcbdiv{
+position:absolute;top:100px;left:-156px;width:185px;height:500px;
+background:url(../images/kfcb.gif) no-repeat
+}
+
+#kfcbdiv .im{
+margin-top:40px;
+width:160px;
+height:260px;
+}
+
+#kfcbdiv .im div{
+float:left;
+padding-left:40px;
+}
+
+#kfcbdiv .im h3{
+padding-top:3px;
+margin:0px;
+font-size:12px;
+color:#555
+}
+
+#kfcbdiv .rxtel{
+margin-top:40px;
+margin-top:40px;
+width:160px;
+text-align:center
+}
+
+#kfcbdiv .tstel{
+margin-top:30px;
+width:160px;
+text-align:center
+}
+
+.palertdiv{
+position:absolute;top:80px;left:65px;width:411px;z-index:999;
+}
+.oalertdiv{
+position:absolute;top:130px;left:65px;width:380px;z-index:999;
+}
+.alertdivwaper{
+padding:0px;border:5px #f0f0f0 solid;_height:50px;min-height:50px;
+}
+.alertdivcnt{
+border:0px #ddd solid;_height:150px;min-height:150px;background:url(../images/tipwincnt.gif) repeat-y
+}
+
+.alertdivinnerwaper{
+border:0px #ddd solid;height:30px;background:url(../images/tipwin.gif) no-repeat left top;
+}
+
+.alertdivbottom{
+border:0px #ddd solid;height:5px;background:url(../images/tipwin.gif) no-repeat left bottom;
+}
+.alertclose{
+float:right;widht:100%;padding-top:10px;padding-right:12px;
+}
+.alerttxt{
+color:#ff6c00;padding:12px;font-size:12px;line-height:20px;
+}
+.alertck{
+margin-top:7px;margin-left:15px
+}
+
+#foot {color:#aaaaaa}
+
+#foot a:link {
+COLOR:#aaaaaa;
+}
+
+#foot a:visited {
+COLOR:#aaaaaa;
+}
+
+#foot a:hover {
+COLOR:#aaaaaa;
+}
+
+#foot a:active {
+COLOR:#aaaaaa;
+}

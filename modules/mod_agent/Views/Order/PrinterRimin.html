@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="Description" content="{$vd['web']['description']}" />
+<title>批发平台-{$vd['web']['title']}</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{font-family: Arial,sans-serif;color: #333;line-height: 130%;	margin: 0px;padding: 0px;font-size:12px;}
+td{line-height:130%;}
+body,tr,td,th{font-family: Arial,sans-serif,Verdana,宋体;color:#666;font-size:12px;}
+</style>
+</head> 
+<body leftmargin="0" topmargin="0">
+<!--$str='';$order = $vd['order']['item'];-->
+<table width="140" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr><td align=center>{$vd['web']['webname']}欢迎您</td></tr>
+  <tr><td align=left><b>**************************************</b></td></tr>
+  <tr><td align=left>商品：{$order['pname']}</td></tr>
+  <tr><td align=left>数量：<strong>{$order['qty']}</strong> 个</td></tr>
+  <tr><td align=left>单价：{$order['buyerprice']}{$vd['lang']['moneyunit']}</td></tr>
+  <tr><td align=left>金额：<!--echo round($order['buyerprice'] * $order['qty']);-->{$vd['lang']['moneyunit']}</td></tr>
+  <tr><td align=left>时间：<!--echo date("Y-m-d H:i:s");--></td></tr>
+  <!--if($order['ptype']==1 || $order['ptype']==2){-->
+  <tr><td align=center>========购买内容==========</td></tr>
+  
+  
+  <!--if($order['failreason']!=''){-->
+  <tr><td align=left>充值说明：<!--if($order['ordstate'] == -1) {-->{$order['failreason']}<!--}--></td></tr>
+  <!--}-->
+  
+  <!--if($order['factoryreturn']!=''){-->
+  <tr><td align=left>厂家反馈：</td>
+    <td colspan=3 align="left" style="color:#0000ff">{$order['factoryreturn']}</td></tr>
+  <!--}-->
+  
+  <!--if($order['ptype'] == 0 || $order['ptype'] > 99){-->
+  <tr><td align=left>充值网址：<a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a>&nbsp;</td></tr>
+  <!--}-->
+  <tr><td align=left>游戏用户名：{$order['czaccount']}</td></tr>
+  
+  <!--if($order['czarea1'] != ''){-->
+  <tr><td align=left>充值区域：{#CzText($order['czarea1'])}</td></tr>
+  <!--}-->
+  
+  <!--if($order['czarea2'] != ''){-->
+  <tr><td align=left>充值服务器：{#CzText($order['czarea2'])}</td></tr>
+  <!--}-->
+  
+  <!--if($order['cztype'] != ''){-->
+  <tr><td align=left>计费方式：{#CzText($order['cztype'])}</td></tr>
+  <!--}-->
+  
+  <!--if($order['czother'] != ''){-->
+  <tr><td align=left>帐号类型：{#CzText($order['czother'])}</td></tr>
+  <!--}-->
+  <tr><td align=left>充值结果：<font color="#ff0000"><b>
+     	<!--if($order['ordstate'] == -1) {-->
+     	充值失败，<!--if($order['rollback'] == 1) {-->已经退还余额，<!--}-->
+     	<!--}-->
+     	<!--if($order['ordstate'] == 1) {-->
+     	已经提交系统充值<br/>
+     	<!--}-->
+     	<!--if($order['ordstate'] == 2) {-->
+     	已经充值成功
+     	<!--}-->
+     	</b></font></td></tr>
+  <tr><td align=left>充值时间：{$order['dealdate']}</td></tr>
+  <!--}else{-->
+  <tr><td align=center>======卡号=====密码======</td></tr>
+  <!--foreach($vd['order']['carditem'] as $card) {-->
+  <tr><td align=center>{$card['cardnumber']}　{$card['cardpwd']}</td></tr>
+  <!--}-->
+  <tr><td align=left><b>**************************************</b></td></tr>
+  <!--}-->
+  <tr>
+  <td align=center><input type="button" name="buyagain" value="打印" onclick="javascript:print();"> <input type="button" name="buyagain" value="关闭" onclick="javascript:window.close();"></td>
+  </tr>
+</table>
+</body>
+</html>

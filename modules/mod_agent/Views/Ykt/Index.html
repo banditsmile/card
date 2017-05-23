@@ -1,0 +1,107 @@
+<link href="http://www.elingka.com/css/h_skin1/common.css" rel="stylesheet" type="text/css">
+<link href="http://www.elingka.com/css/h_skin1/page.css" rel="stylesheet" type="text/css">
+{load(fhead)}
+		  <div class="new_qie">
+            <div class="new_qie2">
+              <h2> 我的账户信息</h2>
+            </div>
+	      </div>
+<fieldset id="fieldset1">
+<form name="modify1" method="post" action="index.php?m=mod_agent&c=home&a=save">
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">        
+<div align="left">
+  <legend><span>基本资料</span></legend>
+  </div>
+</div>
+<div class="main5" id="main5">
+  <table cellspacing="0" cellpadding="0" class="table88">
+    <tbody>
+      <tr>
+        <td class="td1"> 客户编号： </td>
+        <td>{$vd['agent'][7]}</td>
+      </tr>
+      <tr>
+        <td class="td1"> 登陆账号： </td>
+        <td><span id="lblCustomerName">{$vd['data']['aname']}</span> </td>
+      </tr>
+      <tr>
+        <td class="td1"> 真实姓名： </td>
+        <td><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcrealname' value="{$vd['data']['arealname']}" class='input' datatype="LimitB" min="1" max="100" msg="联系地址必须在100个汉字之内" tabindex="3" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1"> 公 司 名： </td>
+        <td><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcompany' value="{$vd['data']['company']}" class='input' datatype="LimitB" min="1" max="100" msg="联系地址必须在100个汉字之内" tabindex="3" />
+        </span></td>
+      </tr>
+
+      <tr>
+        <td class="td1"> 注册地区： </td>
+        <td><input type="hidden" name="prv" size="10" value="{$vd['data']['prv']}"/>
+                <input type="hidden" name="city" size="10" value="{$vd['data']['city']}"/>
+            {$vd['data']['prv']}{$vd['data']['city']} </td>
+      </tr>
+      <tr>
+        <td class="td1"> 手机号码： </td>
+        <td><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcmobile' value="{$vd['data']['mobile']}" class='input' datatype="Mobile" msg="手机号码不正确" tabindex="2" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1"> 电子邮箱： </td>
+        <td><span id="lblEmail"></span><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcmail' value="{$vd['data']['amail']}" class='input' datatype="Email" msg="电子邮箱格式不符" tabindex="5" />
+        </span></td>
+      </tr>
+
+      <tr>
+        <td class="td1"> 联系电话： </td>
+        <td><span id="lblPhone"></span><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzctel' value="{$vd['data']['atel']}" class='input' datatype="Phone" msg="联系电话不符合要求" tabindex="1" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1"> 联系QQ： </td>
+        <td><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcqq' value="{$vd['data']['aqq']}" class='input' datatype="QQ" msg="QQ号码不符合要求" tabindex="4" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1"> 联系地址： </td>
+        <td><span id="lblAddress"></span><span class="tableright1">
+          <input type='text' size='30' maxlength='50' name='ubzcaddr' value="{$vd['data']['aaddr']}" class='input' datatype="LimitB" min="1" max="100" msg="联系地址必须在100个汉字之内" tabindex="3" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1">输入超级密码：</td>
+        <td><span class="tableright1">
+          <input type="password" name="superpwd" size="30" class='input'/>
+        </span></td>
+      </tr>
+      <tr>
+        <td class="td1"></td>
+        <td><a href="javascript:void(0)">
+          <label><span class="tableright1">
+          <input type="submit" name="submit" value="完成修改" tabindex="7" />
+          </span></label>
+        </a><em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'修改登录密码',iframe:{src:'index.php?m=mod_agent&a=ModifyPass'},width:600,height:300});"> <span id="modifypwd">修改登录密码</span></a><em>|</em><a href="javascript:" onclick="parent.Dialog.win({title:'修改交易密码',iframe:{src:'index.php?m=mod_agent&a=TradePass'},width:600,height:300});"> <span id="modifytradepwd">修改交易密码</span></a> </td>
+      </tr>
+      <tr>
+        <td class="td1"> 关联QQ号： </td>
+        <td><span id="lblOAuthQQ"></span>{$vd['data']['aqq']} </td>
+      </tr>
+      <tr>
+        <td class="td1"> 关联淘宝账号： </td>
+        <td><span id="lblOAuthTaoBao">未关联</span>&nbsp; </td>
+      </tr>
+      <tr>
+        <td class="td1"> 关联新浪微博账号： </td>
+        <td><span id="lblOAuthSina">未关联</span>&nbsp; </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>后台系统</title>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<style tyle="text/css">
+body{
+margin:0px;
+padding:0px;
+height:100%;
+background:url('{$vd['sc']}images/leftbg.gif') repeat-y right top;/* ff中 height:100%无效 用此背景兼容ff*/
+font-size:12px;
+}
+a {
+COLOR:#135294;
+TEXT-DECORATION:none;
+}
+
+a:hover {
+COLOR:#f60;
+TEXT-DECORATION:underline;
+}
+.leftbg{
+height:100%;
+width:160px;
+}
+
+.lefttopbg{
+background:url('{$vd['sc']}images/left1.gif') no-repeat right top;
+height:45px;
+color:#5c5c5c;
+font-weight:bold;
+}
+
+.toptext{
+padding:8px 0px 0px 18px;
+float:left;
+}
+
+.topright{
+padding-right:8px;
+float:right;
+}
+
+#leftmenu{
+padding-top:8px;
+background:url('{$vd['sc']}images/lefttitle.gif') no-repeat right top;
+height:100%;
+text-align:left;
+}
+
+#leftmenu ul,#leftmenu li{padding:0px; margin:0px;}
+#leftmenu li a{font-size:12px; display:block; height:30px; line-height:28px; color:#000;padding-left:18px;}
+#leftmenu li a:link,#leftmenu li a:visited,#leftmenu li a:hover{color:#000;}
+#leftmenu li.mymibu a:link,#leftmenu li.mymibu a:visited{background:url('{$vd['sc']}images/leftactive.gif') no-repeat right top;}
+
+</style>
+</head>
+<script style="text/javascript">
+  var thisactive = "0_0";
+  function set(obj){
+  document.getElementById(thisactive).className = "";
+  obj.className = "mymibu";
+  thisactive = obj.id;
+  topobj  = document.all ? window.parent.frames["frmtop"] : window.parent.document.getElementById("frmtop").contentWindow;
+  topobj.loading();
+  }
+</script>
+<body>
+  <div class="leftbg">
+    <div class="lefttopbg">
+      <div class="toptext">快速链接</div>
+      <div class="topright">
+        <img src="{$vd['sc']}images/member.gif"/>
+      </div>
+    </div>
+    <div id="leftmenu">
+      <ul>
+      	<!--$i=0;foreach($vd['left'] as $item){-->
+        <li id="0_{$i}" onclick="set(this)"<!--if($i==0){--> class="mymibu"<!--}-->><a href="{$item['url']}" target="frmright" onFocus="this.blur()">{$item['txt']}</a></li>
+        <!--$i++;}-->
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

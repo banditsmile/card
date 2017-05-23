@@ -1,0 +1,65 @@
+{load(head)}
+<object id="t1" codeBase="{$vd['sc']}tools/umebiz.cab" classid="CLSID:B8748B60-E34D-42AA-9309-8012CA4964AC" height=0 width=0 ></object>
+<input type="hidden" id="mac" name="mac" value=""/>
+<input type="hidden" id="hde" name="hde"  value=""/>
+<input type="hidden" id="cpu" name="cpu"  value=""/>
+<?php
+   $fp = fopen($vd['sc']."tools/root.cer", "r");
+   $cert = fread($fp, 8192);
+   fclose($fp);
+?> 
+<script type="text/JavaScript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+window.parent.document.getElementById("mac").value = document.all.t1.GetMacAddr;	
+window.parent.document.getElementById("cpu").value = document.all.t1.GetCpuId;	
+window.parent.document.getElementById("hde").value = document.all.t1.GetHDE;	
+$("mac").value = document.all.t1.GetMacAddr;
+$("cpu").value = document.all.t1.GetCpuId;
+$("hde").value = document.all.t1.GetHDE;
+if($("mac").value == "" || $("mac").value == "undefined")
+{
+  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');
+}
+
+</script>
+<script language="vbscript">
+ON ERROR resume next
+sPKCS7=""
+sPKCS7=sPKCS7 & "-----BEGIN CERTIFICATE-----" & vbcrlf
+sPKCS7=sPKCS7 & "MIIDszCCApugAwIBAgIIJOG9OEqVKfgwDQYJKoZIhvcNAQEFBQAwZzELMAkGA1UE" & vbcrlf
+sPKCS7=sPKCS7 & "BhMCQ04xEDAOBgNVBAgTB0JlaWppbmcxEDAOBgNVBAcTB0JlaWppbmcxDjAMBgNV" & vbcrlf
+sPKCS7=sPKCS7 & "BAoTBUNBMzY1MSQwIgYDVQQDExtDQTM2NSBGcmVlIFJvb3QgQ2VydGlmaWNhdGUw" & vbcrlf
+sPKCS7=sPKCS7 & "HhcNMDEwNTEyMDg0MDQxWhcNMzEwNTA1MDg0MDQxWjBnMQswCQYDVQQGEwJDTjEQ" & vbcrlf
+sPKCS7=sPKCS7 & "MA4GA1UECBMHQmVpamluZzEQMA4GA1UEBxMHQmVpamluZzEOMAwGA1UEChMFQ0Ez" & vbcrlf
+sPKCS7=sPKCS7 & "NjUxJDAiBgNVBAMTG0NBMzY1IEZyZWUgUm9vdCBDZXJ0aWZpY2F0ZTCCASIwDQYJ" & vbcrlf
+sPKCS7=sPKCS7 & "KoZIhvcNAQEBBQADggEPADCCAQoCggEBAOUJiqnKIVBDD5tPkx7i4vZh/mB3j+es" & vbcrlf
+sPKCS7=sPKCS7 & "yP5py6xw7f2wD2FKWEx/LU0HmcZOUEkZR+e0d72gF135rB5fs4R/vW47vkFP70yW" & vbcrlf
+sPKCS7=sPKCS7 & "duk3Q98qeEBiCWj1oIqu63insQL2qJJ9+5xD3S38AWqxTpXzGLTrpvuJMNwAKJWq" & vbcrlf
+sPKCS7=sPKCS7 & "5RSMIbFl/yoCpgfVz+iIGP9gjf/+PJOF08ii6BOZFygRGkWY0c2PiuyBOXnyZccS" & vbcrlf
+sPKCS7=sPKCS7 & "NWFIVoWkRT4RyUU1ojjdbVj5zer0roHaCpkTRREf7+ZC3gUXEJOu2V7Mqp7oKPq/" & vbcrlf
+sPKCS7=sPKCS7 & "ZaslorsB1sKMyXWBWwIL9MsdHKlGYRdFDwW7FSbK/ifRFErOnk+6xzECAwEAAaNj" & vbcrlf
+sPKCS7=sPKCS7 & "MGEwHQYDVR0OBBYEFP5hdKPBS60rwHHDpaJMAAPZIMMcMA4GA1UdDwEB/wQEAwIB" & vbcrlf
+sPKCS7=sPKCS7 & "BjAfBgNVHREEGDAWhhRodHRwOi8vd3d3LmNhMzY1LmNvbTAPBgNVHRMBAf8EBTAD" & vbcrlf
+sPKCS7=sPKCS7 & "AQH/MA0GCSqGSIb3DQEBBQUAA4IBAQDMipz61e91bQhVeGXC9CdnG+DBoHWw2Lxs" & vbcrlf
+sPKCS7=sPKCS7 & "pbRLq3BXKh05uhJ2fvP50aqLOJV4iw5qb6YITW8LvSYf6tfgXPj+axwP84ukBgYg" & vbcrlf
+sPKCS7=sPKCS7 & "29FcfWbVKW6PxQllGTi2LgvExTp6Aq8HTDDri5ElUItvGtDRAjKNgTASemzDtpuf" & vbcrlf
+sPKCS7=sPKCS7 & "OIFhom9Y6JPkxUfOSOWHfV18Tx2X5OJLcD/hqp5cb6f5C9YN6kl4Jz7/kZO1aiP0" & vbcrlf
+sPKCS7=sPKCS7 & "0Vmdf5wqLLavqEozhg0ZNbdgzvVJnleGpFYnj2ZbKLcdm7wUl0/JfC4/wIfRaSTB" & vbcrlf
+sPKCS7=sPKCS7 & "6k0u/zp4yTkexhb1rOVHKdHUIyC3/uq4afQcSwGTA1Hb47+jtdOd" & vbcrlf
+sPKCS7=sPKCS7 & "-----END CERTIFICATE-----" & vbcrlf
+<?php
+    $newcert = "sPKCS7=\"\"\r\n";
+    $line=strtok($cert,"\r\n");
+    while($line)
+    {
+     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";
+     $line=strtok("\r\n");
+    }
+    echo $newcert;
+?> 
+XEnroll.InstallPKCS7 sPKCS7 
+</script>
+
+{load(foot)}

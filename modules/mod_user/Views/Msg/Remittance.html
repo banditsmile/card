@@ -1,0 +1,113 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+  <form action="index.php?m=mod_user&c=msg&a=RemittanceSave"  method="post" name="form" >
+  <table border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td colspan="2"  style="padding-left:15px;"> <b>填写汇款通知书</b></td>
+    </tr>
+    <tr>
+      <td class="buylt">
+        汇款对像选择：
+      </td>
+      <td class="buyrt">
+        <select name="msgto">
+          <option value="">网站系统运营商(页面公布的汇款账号)</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">
+        汇款银行类型：
+      </td>
+      <td class="buyrt">
+        <table border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+          <tr class="tabletitle">
+            <td width="10%" align="center" height="35">
+              选择</td>
+            <td width="15%" align="center" height="35">
+              开户行</td>
+            <td width="25%" align="center" height="35">
+              银行账号</td>
+            <td width="15%" align="center" height="35">
+              户名</td>
+            <td width="15%" align="center" height="35">
+              开户地</td>
+            <td width="20%" align="center" height="35">
+              其他说明</td>
+          </tr>
+          <!--foreach($vd['banks'] as $item) {-->
+          <tr>
+            <td width="10%" align="center" height="35">
+              <input type="radio" name="bank" value="开户行：{$item['AccountBranch']}，账户：{$item['AccountNO']}，户名：{$item['AccountName']}"/></td>
+            <td width="15%" align="center" height="35">
+              {$item['AccountBranch']}</td>
+            <td width="25%" align="center" height="35">
+              {$item['AccountNO']}</td>
+            <td width="15%" align="center" height="35">
+              {$item['AccountName']}</td>
+            <td width="15%" align="center" height="35">
+              {$item['Address']}</td>
+            <td width="20%" align="center" height="35">
+              {$item['other']}</td>
+          </tr>
+          <!--}-->
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">
+        汇款金额：
+      </td>
+      <td class="buyrt">
+        {$vd['lang']['moneysymbol']}<input name="dollars1" size="10"/>.<input name="dollars2" size="2" value="00"/>{$vd['lang']['moneyunit']}
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">
+        汇出时间：
+      </td>
+      <td class="buyrt">
+      <select name="year">
+        {#Option($vd['y'], date('Y'))}
+      </select>年
+      <select name="month">
+        {#Option($vd['m'], date('m'))}
+      </select>月
+      <select name="day">
+        {#Option($vd['d'], date('d'))}
+      </select>日
+      <select name="hour">
+        {#Option($vd['h'], date('h'))}
+      </select>时
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">汇款备注：</td>
+      <td class="buyrt"><textarea name="others" wrap="VIRTUAL" cols="60" rows="5" scrolling="yes" style="padding:5px"></textarea><br/>
+      <font color="#ff0000">如果是网上转账或支付宝/财付通/百付通网上转账的，请将相应的转账记录粘贴提交，以便我们尽快为您处理</font>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">注意事项：</td>
+      <td class="buyrt">
+      <font color="#ff0000">请确认已经成功汇款再填写这个单子，如果乱提交耽误我们财务人员的工作，我们将冻结您的账号使用权限，谢谢配合。</font>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">
+      </td>
+      <td class="buyrt">
+        <input type="submit" value="马上发送汇款通知书 &gt;&gt;" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+</td>
+</tr>
+</table>
+{load(foot)}

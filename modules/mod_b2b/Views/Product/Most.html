@@ -1,0 +1,119 @@
+{load(fhead)}
+<script language="JavaScript" src="{$vd['content']}js/loadgameindex.js"></script>
+<link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
+    <link href="http://www.elingka.com/css/h_skin1/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 商品按目录分类</h2>
+    <span class="setup_index" style="margin-right: 15px;">
+      <label for="lbtnLogin"></label>
+    </span></div>
+  <ul>
+    <li><a href="#" class="on">商品按目录分类</a></li>
+    <li><a href="{$vd['root']}index.php?m=mod_b2b&c=product&a=most&nrows=5000">商品按字母分类</a></li>
+  </ul>
+</div>
+<div id="search">
+			<div id="searchlist" style="DISPLAY:none;">
+			<table id="listtb" border="0" cellpadding="0" cellspacing="0" width="100%">
+			</table>
+			</div>
+			<form name="form1" method="get" action="{$vd['root']}index.php">
+			<input name="keywords" id="gametype" type="text" class="input" size="33" value="" onKeyUp="vkeyup()">
+			<input type="hidden" name="stype" value="pname"/>
+			<input type="hidden" name="m" value="mod_b2b"/>
+			<input type="hidden" name="c" value="product"/>
+			<select name="typesearch" id="typesearch" class="search_select">
+    	  <option value="product" selected>搜索商品</option>
+    	  <option value="category">搜索分类</option>
+    	</select>
+			<input type="image" src="{$vd['content']}images/icon_search.gif" border="0" align="absmiddle">　　　　　　<input onClick="showExchgMoney(this.checked);" id="IsDisplayPrice" type="checkbox"><label for="IsDisplayPrice"><strong style="color:#FF0000">显示购价</strong></label>
+			</form>
+</div>
+    <script type="text/javascript">
+		function showExchgMoney(checkedIn)
+		{
+		for(var i=0;i<productTable.rows.length;i++)
+		productTable.rows[i].cells[6].style.display=checkedIn?"":"none";
+		}
+		</script>
+		<form name="form2" method="post" action="?Action=Del">
+		<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+		<td class="tableleft">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table" id="productTable">
+			<tr>
+			<td width="8%" class="heardertop1">购买次数</td>
+			<td width="48%" class="heardertop1">商品名称</td>
+			<td width="4%" class="heardertop1">
+        介绍</td>
+      <td width="4%" class="heardertop1">
+        客服</td>
+      <td width="4%" class="heardertop1">
+        收藏</td>
+			<td width="8%" class="heardertop1">面值</td>
+			<td width="8%" class="heardertop1" style="display:none">购买价格</td>
+			<td width="8%" class="heardertop1">库存状态</td>
+			<td width="8%" class="heardertop1">购买</td>
+			</tr>
+			<!--foreach($vd['items'] as $item) {-->
+			<tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">
+			<td>{$item['count']}次</td>
+			<td height="30px" align="left" style="<!--if($item['isbold']==1){-->font-weight:bold;<!--}-->padding-left:3px;color:<!--echo $item['namecolor']==''?'#660000':$item['namecolor'];-->"><a href="javascript:openScript('{#ProductLink($item['pid'])}','',780,580,'{$item['pid']}');"><strong>{$item['pname']}<!--if($item['owner']>0 && $item['owner'] != $vd['vip']){--><img src="{$vd['content']}images/own.gif" title="自有商品"/><!--}--></strong></a>
+			</td>
+			<td>
+      	<img src="{$vd['content']}images/icon_productxx.gif" title="商品介绍" style="cursor:pointer" onClick="GetPinfo({$item['pid']},1)"/>
+      	<div id="psupinfo{$item['pid']}" style="display:none;" class="gysxx">
+			  </div>
+			  <div id="pinfo{$item['pid']}" style="display:none;" class="cpxx">
+			  </div>
+      </td>
+      <td><img src="{$vd['content']}images/icon_ghs.gif" title="供货商联系方式"  style="cursor:pointer" onClick="GetPinfo({$item['pid']},0)"/></td>
+      <td><a href="index.php?m=mod_b2b&c=Fav&a=Save&pid={$item['pid']}"><img src="{$vd['content']}images/icon_add.gif"/></a></td>
+			<td>{$vd['lang']['moneysymbol']}<!--echo sprintf('%.2f',$item['listprice']);--></td>
+			<td style="display:none;color:#ff0000;font-weight:bold">{$vd['lang']['moneysymbol']}<span id="price_{$item['pid']}">{$item['cprice']}</span></td>
+			<td style="font-weight:bold"><span id="stock_{$item['pid']}">{$item['stocks']}</span></td>
+			<td><a href="javascript:openScript('{#ProductLink($item['pid'])}','',780,580,'{$item['pid']}');"><img src="{$vd['content']}images/buy{$item['ptype']}.gif"/></a></td>
+			</tr>
+			<!--}-->
+			</table>
+		</td>
+		</tr>
+		</table>
+	</div>
+	</div>
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}"/>
+<input type="hidden" id="pids" name="pids" value="{$vd['pids']}"/>
+<script src="{$vd['content']}js/pinfo.js"></script>
+<script type="text/javascript">
+
+function openScript(url,name,width,height,id)
+{
+	if($("stock_" + id).innerText == "库存不足")
+	{
+		alert('您好，商品库存不足，请联系管理员上货');
+	}
+  else
+	{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+  }
+}
+
+if(getCookie('umebiz_com_0') == "1")
+{
+	obj = $("IsDisplayPrice");
+	obj.checked = true;
+	setCookie('priceshow', 1, 1);
+}
+
+obj = $("IsDisplayPrice");
+if(getCookie('priceshow') == 1)
+{
+	obj.checked = true;
+	showExchgMoney(obj.checked)
+}
+
+</script>
+</body>
+</html>

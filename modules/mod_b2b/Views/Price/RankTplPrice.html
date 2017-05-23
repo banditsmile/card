@@ -1,0 +1,147 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+	<div id="adddiv" style="position:absolute;top:100px;left:530px;;width:380px;display:none">
+	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">添加单级别价格模板</div>
+	<div style="float:right;"><img src="{$vd['content']}images/destroy.gif" onclick="disp('adddiv','',0,0,0,0)" style="cursor:pointer"/></div>
+	<form name="form1" method="post" action="index.php?m=mod_b2b&c=Price&a=TplSave" id="tform" style="clear:both;">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="30%" height="30px">模板名称</td>
+      <td width="70%"><input type="text" name="name" id="name" style="widht:150px;"/></td>
+    </tr>
+    <tr>
+      <td width="30%" height="30px">适用用户级别</td>
+      <td width="70%">
+      	<select name="rankid" id="rankid" style="vertical-align:middle;font-size:14px;width:150px;">
+      	{#option($vd['rank'], 0, 'name', 'id')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%" height="30px">复制原模板价格</td>
+      <td width="70%">
+      	<select name="parentid" id="parentid" style="vertical-align:middle;font-size:14px;width:150px;">
+      	<option value="0">不复制原模板价格</option>
+      	{#option($vd['items'], 0, 'name', 'id')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+    	<td width="30%" height="50px"></td>
+      <td width="70%">
+      	<input type="hidden" value="0" name="oldparentid" id="oldparentid"/>
+      	<input type="hidden" value="0" name="id" id="id"/>
+      	<input type="submit" value="添 加" class="button"/>
+      	<input type="button" value="取 消" onclick="disp('adddiv','',0,0,0,0)" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+  </div>
+	<div class="welcometext" style="border-bottom:0px #e4eaf0 solid;"><a href="index.php?m=mod_b2b&c=price">标准模板设置</a> | 单级别价格模板 | <a href="index.php?m=mod_b2b&c=Price&a=Agent">下属客户套用模板</a> </div>
+  <table border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+	<tr>
+		<td colspan="7" height="40px">
+		  <div style="float:right">
+		  	<a href="#" onclick="disp('adddiv','',0,0,0,0)">添加新的单级别价格模板</a>
+		  </div>
+			<div>
+      </div>
+		</td>
+	</tr>
+	<tr class="tabletitle">
+    <td width="5%" align="center">
+      编号</td>
+    <td width="45%" align="center">
+      模板名称</td>
+    <td width="15%" align="center">
+      适用级别</td>
+    <td width="15%" align="center">
+      设定模板价格</td>
+    <td width="10%" align="center">
+      套用客户</td>
+    <td width="5%" align="center">
+      <img src="{$vd['content']}images/icon_edit.gif"/></td>
+    <td width="5%" align="center">
+      <img src="{$vd['content']}images/destroy.gif"/></td>
+  </tr>
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="5%" align="center" height="35" bgcolor="#FFFFFF">{$item['id']}</td>
+    <td width="45%" align="center" height="35" bgcolor="#FFFFFF">{$item['name']}</td>
+    <td width="15%" align="center">
+    	{#TxtByOption($vd['rank'], $item['rankid'], 'name', 'id')}
+    </td>
+    <td width="15%" align="center">
+    	<a href="index.php?m=mod_b2b&c=product&a=RankTplPrice&pricetpl={$item['id']}&name=<!--echo urlencode($item['name']);-->">
+      [<font color="#ff0000">设定模板价格</font>]
+      </a>
+    </td>
+    <td width="10%" align="center">
+    	<a href="index.php?m=mod_b2b&c=Price&a=Agent&pricetpl={$item['id']}">
+      [<font color="#0000ff">套用客户</font>]
+      </a>
+    </td>
+    <td width="5%" align="center">
+    	<a href="#" title="编辑模板" onclick="disp('adddiv', '{$item['name']}', {$item['rankid']}, {$item['parentid']}, {$item['parentid']}, {$item['id']})"><img src="{$vd['content']}images/icon_edit.gif"  border="0"/>
+    </td>
+    <td width="5%" align="center">
+    	<a href="index.php?m=mod_b2b" title="删除分类"><img src="{$vd['content']}images/destroy.gif" border="0" style="cursor:pointer"/></a>
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="12">
+    <form method="post" action="index.php?m=mod_b2b&c=Price&a=RankTpl&{$vd['op']}">
+      <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=Price&a=RankTpl&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=Price&a=RankTpl&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</div>
+<script type="text/javascript">
+	var $=function(id){
+		return document.getElementById(id);
+	}
+	
+	function disp(idx,val1,val2,val3,val4,val5)
+	{
+		$("name").value = val1;
+		
+		len = $("rankid").length;
+
+		for(i=0; i<len; i++)
+		{
+			val = $("rankid").options[i].value;
+			if(val2 == val)
+			{
+				$("rankid").options[i].selected = true;
+			}
+		}
+		
+		len = $("parentid").length;
+		
+		for(i=0; i<len; i++)
+		{
+			val = $("parentid").options[i].value;
+			if(val3 == val)
+			{
+				$("parentid").options[i].selected = true;
+			}
+		}
+		
+		$("oldparentid").value = val4;
+		$("id").value = val5;
+		
+		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+	}
+</script>
+{load(foot)}

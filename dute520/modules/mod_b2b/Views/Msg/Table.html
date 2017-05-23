@@ -1,0 +1,37 @@
+<!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Msg&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['ubzid']}" class="checkbox" value="{$item['ubzid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="70px">{$item['ubzmfrom']}</td>
+<td width="35px"><!--if($item['ubzisreaded'] == 0){--><font color="#ff00ff">未读</font><!--}else{--><font color="#cccccc">已读</font><!--}--></td>
+<td width="450px"><nobr><a href="index.php?m=mod_b2b&c=msg&a=detail&ubzid={$item['ubzid']}&optype={$vd['optype']}"><!--if($item['ubzisreaded'] == 0){--><font color="#00875A">{$item['ubzmtitle']}</font><!--}else{--><font color="#cccccc">{$item['ubzmtitle']}</font><!--}--></a></nobr></td>
+<td width="70px">{$item['ubzmto']}</td>
+<td width="70px"><nobr><a href="index.php?m=mod_b2b&c=Msg&mtype={$item['ubzmtype']}&optype={$vd['optype']}&ubzisreaded=2">{$vd['tarray'][$item['ubzmtype']]}</a></nobr></td>
+<td width="130px">{$item['ubzmdate']}</td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Msg&a=Detail&ubzid={$item['ubzid']}&optype={$vd['optype']}" title="查看短信" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['ubzid']},'destroyitems')" alt="销毁短信,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>

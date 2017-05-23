@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>银行账号管理</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="main5" id="main5">
+<script language="JavaScript">
+	</script>
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>银行账号设置</h2>
+  </div>
+  <ul>
+    <li><a href="index.php?m=mod_agent&amp;c=Home">账号信息</a></li>
+    <li><a href="index.php?m=mod_agent&c=Home&a=Self">账户间转款</a></li>
+    <li><a href="" class="on">银行账号</a>
+      <script language="JavaScript">function selectbanktype(i)
+	{
+	var kk,vv,jj;
+	vv="BankType"+i;
+	kk=eval('document.modify3.BankType'+i+'.value')
+	if(kk=='自定义类型')
+	{
+	document.getElementById("banktypeselect" + i).style.display="none";
+	document.getElementById("banknameedit" + i).style.display="block";
+	}
+	else
+	{
+	document.getElementById("banktypeselect" + i).style.display="block";
+	document.getElementById("banknameedit" + i).style.display="none";
+	document.getElementById("AccountBranch" + i).value = kk;
+	}
+	}
+	  </script>
+    </li>
+  </ul>
+</div>
+<form name="modify3" method="post" action="index.php?m=mod_agent&c=Home&a=BankSave">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td class="table1_left">汇款帐户：</td>
+		<td width="78%">
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+		<tr>
+		<th width="35%" class="heardertop1">银行类型</td>
+		<th width="15%" class="heardertop1">开户地</td>
+		<th width="35%" class="heardertop1">银行帐号</td>
+		<th width="15%" class="heardertop1">持卡人</td>
+		</tr>
+		<?php
+		$tbanks = '农业银行,工商银行,建设银行,招商银行,交通银行,中国银行,兴业银行,华夏银行,民生银行,邮政储蓄,商业银行,广发银行,深发银行,浦发银行,光大银行,中信银行,北京银行,上海银行,南京银行,鄞州银行,浙商银行,宁波银行,信用社,支付宝,财付通,自定义类型';
+		$banks = explode(',', $tbanks);
+		?>
+		<!--$i=0;foreach($vd['items'] as $item){-->
+		<tr>
+<td class="table1_l1eft">
+		<div id="banktypeselect{$i}"<!--if(strpos($tbanks,$item['AccountBranch']) === false){--> style="display:none;"<!--}-->><select id="BankType{$i}" onChange="javascrip:selectbanktype('{$i}');">
+		<!--foreach($banks as $bank){-->
+		<option value="{$bank}"<!--if($bank == $item['AccountBranch']){--> selected<!--}-->>{$bank}</option>
+		<!--}-->
+		</select>
+		</div>
+		<div id="banknameedit{$i}" <!--if(strpos($tbanks,$item['AccountBranch']) !== false){--> style="display:none;"<!--}-->><input type="text" class='input' id="AccountBranch{$i}" name="AccountBranch[]" value="{$item['AccountBranch']}" size="11" maxlength="10" value="农业银行" require="false" datatype="LimitB" min="1" max="10" msg="自定义银行名称填写必须小于5个汉字" onfocus="javascript:this.value='';"></div>
+		</td>
+		<td class="table1_l1eft"><div align="center"><input type="hidden" value="{$item['id']}" name="id[]"/><input type="text" class='input' name="Address[]" value="{$item['Address']}" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="开户地必须填写"></td>
+		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" value="{$item['AccountNO']}" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="帐号必须填写"></td>
+		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" value="{$item['AccountName']}" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="持卡人姓名必须填写"></td>
+		</tr>
+		<!--$i++;}-->
+		
+		<!--for($j=$i; $j<5; $j++){-->
+		<tr>
+<td class="table1_l1eft"><div align="center">
+		<div id="banktypeselect{$j}"><select id="BankType{$j}" onChange="javascrip:selectbanktype('{$j}');">
+		<!--foreach($banks as $bank){-->
+		<option value="{$bank}">{$bank}</option>
+		<!--}-->
+		</select>
+		</div>
+		<div id="banknameedit{$j}" style="display:none;"><div align="center"><input type="text" class='input' id="AccountBranch{$j}" name="AccountBranch[]" size="11" maxlength="10" value="农业银行" require="false" datatype="LimitB" min="1" max="10" msg="自定义银行名称填写必须小于5个汉字" onFocus="javascript:this.value='';"></div>
+		</td>
+		<td class="table1_l1eft"><div align="center"><input type="hidden" value="0" name="id[]"/><input type="text" class='input' name="Address[]" size="10" maxlength="20" require="false" datatype="LimitB" min="1" max="20" msg="开户地必须填写"></td>
+		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountNO[]" size="35" maxlength="30" require="false" datatype="LimitB" min="1" max="30" msg="帐号必须填写"></td>
+		<td class="table1_l1eft"><div align="center"><input type="text" class='input' name="AccountName[]" size="10" maxlength="10" require="false" datatype="LimitB" min="2" max="10" msg="持卡人姓名必须填写"></td>
+		</tr>
+		<!--}-->
+		
+		
+		</table>
+		</td>
+		</tr>
+		<tr>
+		<td class="table1_left">输入超级密码：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="password" name="superpwd" size="40" class='input0'/>
+		  </div></td>
+		</tr>
+		
+		<tr>
+		<td class="table1_left"></td>
+		<td class="tableright1"><div align="left">
+		  <input type="submit" name="submit" value="完成修改" class="tijiao_input"> 
+		  <input type="reset" name="reset" value="重新填写" class="fanhui_input" tabindex="27">
+		  </div></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+</body>
+</html>

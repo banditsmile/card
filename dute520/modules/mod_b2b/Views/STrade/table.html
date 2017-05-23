@@ -1,0 +1,31 @@
+<!--if($vd['totlerow'] == 0) {-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+</table>
+<!--}-->
+<form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=customer&a=ItemDeal" onsubmit="return Check();">
+<table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['ubzordno']}" class="checkbox" value="{$item['ubzordno']}" onclick="CheckThis(this)" onFocus='this.blur()'/>
+    </td>
+<!--//tbody-->
+<td width="130px"><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ubzordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)">{$item['ubzordno']}</a></td>
+<td width="140px">{$item['ubztrddate']}</td>
+<td width="60px">{$item['ubzexpend']}</td>
+<td width="60px">{$item['ubzincome']}</td>
+<td width="70px">{$item['ubzremain']}</td>
+<td width="22px"><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ubzordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a></td>
+<td width="250px"><nobr><samp title="{$item['ubztrddcrp']}">{$item['ubztrddcrp']}</samp></nobr></td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>

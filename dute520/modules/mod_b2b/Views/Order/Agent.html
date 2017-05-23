@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<script src="{$vd['sc']}js/transport.js" type="text/javascript"></script>
+<script src="{$vd['sc']}js/utils.js" type="text/javascript"></script>
+<script src="{$vd['sc']}js/ui.js" type="text/javascript"></script>
+</head>
+<body>
+<form action="index.php?m=mod_b2b&c=order&a=agent" method="post" style="margin:5px 0px;">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right">
+      <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
+      <input type="submit" value="自有商品订单搜索 &gt;&gt;" style="vertical-align:middle;"/>
+      </span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >
+        经销商自有商品销售订单列表
+      </span>
+    </td>
+  </tr>
+</table>
+</form>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">经销商</font></td>
+    <td width="5%" align="center" height="35" class="listhead">
+      <font color="#ff0000">费率</font></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">提成</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">订单号</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">姓名</font></td>
+    <td width="16%" align="center" height="35" class="listhead">
+      <font color="#ff0000">定购商品</font></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">QQ</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">支付方式</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">定购数量</font></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">总金额</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">订单状态</font></td>
+    <td width="9%" align="center" height="35" class="listhead">
+      <font color="#ff0000">日期</font></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">详细</font></td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">您还没有订单信息</td>
+  </tr>
+  <!--}-->
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="6%" align="center" height="35">{$item['company']}</td>
+    <td width="5%" align="center" height="35">{$item['pfee']}%</td>
+    <td width="6%" align="center" height="35">{$item['pfee'] * $item['dollars'] / 100} {$vd['lang']['moneyunit']}</td>
+    <td width="8%" align="center" height="35">{$item['ordno']}</td>
+    <td width="8%" align="center" height="35">{$item['cname']}</td>
+    <td width="16%" align="center" height="35">{$item['pname']}</td>
+    <td width="6%" align="center" height="35">{$item['cqq']}</td>
+    <td width="8%" align="center" height="35">{$item['payment']}</td>
+    <td width="8%" align="center" height="35">{$item['qty']}</td>
+    <td width="6%" align="center" height="35">{$item['dollars']}{$vd['lang']['moneyunit']}</td>
+    <td width="8%" align="center" height="35">{#OrderState($item['ordstate'], $item['ptype'])}</td>
+    <td width="9%" align="center" height="35">{$item['orddate']}</td>
+    <td width="6%" align="center" height="35"><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}">详细</a></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="19">
+    <form method="post" action="index.php?m=mod_b2b&c=order&a=agent&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=order&a=agent&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=order&a=agent&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

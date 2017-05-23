@@ -1,0 +1,40 @@
+<!--if($vd['totlerow'] == 0) {-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+</table>
+<!--}-->
+<form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Article&a=ItemDeal" onsubmit="return Check();">
+<table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="300px"><nobr><samp title="{$item['title']}"><span onclick="toInput(this,{$item['id']},'title')">{$item['title']}</span></samp></nobr></td>
+<td width="100px">{$item['tick']}</td>
+<td width="150px">{$item['ndate']}</td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Article&a=Detail&id={$item['id']}" title="编辑文章"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['id']},'delitems')" alt="删除文章,可以从回收恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁文章,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+      <!--}-->
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->

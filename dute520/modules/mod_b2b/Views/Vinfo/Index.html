@@ -1,0 +1,190 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <font color="#000">来访数据</font> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    说明:<br/>
+    人数：主要根据电脑来统计，只要电脑不同，就添加计数<br/>
+    IP：主要根据IP地址来统计<br/>
+    由于国内大部分是adsl，ip是变化的，所以可以参考人数来考量自己网站的访问信息
+    <br/>
+  </p>
+  <font color="#ff6c00">总记录</font></a> <span style="color:#ff0000;font-weight:bold">{$vd['totlerow']}</span> 条
+  <font color="#ff6c00">今日IP</font></a> <span style="color:#ff0000;font-weight:bold">{$vd['vdata']['dayip']}</span> 个
+  <font color="#ff6c00">总IP</font></a> <span style="color:#ff0000;font-weight:bold">{$vd['vdata']['totleip']}</span> 个  
+  <font color="#ff6c00">今日人数</font></a> <span style="color:#ff0000;font-weight:bold">{$vd['vdata']['dayvsn']}</span> 个
+  <font color="#ff6c00">总人数</font></a> <span style="color:#ff0000;font-weight:bold">{$vd['vdata']['totlevsn']}</span> 个
+  
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div style="float:right"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_Vinfo_index" onFocus="this.blur()" title="查看类目相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div style="float:left;padding-top:1px;padding-left:10px;">
+      
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=vinfo" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    到 <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value="搜索" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=Tpl&tpl=vinfo" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="vip" id="vip" class="checkbox" onFocus='this.blur()'/> 操作ＩＰ<br/>
+  <input type="checkbox" name="id[]" value="vcount" id="vcount" class="checkbox" onFocus='this.blur()'/> ＩＰ次数<br/>
+  <input type="checkbox" name="id[]" value="vref" id="vref" class="checkbox" onFocus='this.blur()'/> 来源网址<br/>
+  <input type="checkbox" name="id[]" value="vsn" id="vsn" class="checkbox" onFocus='this.blur()'/> 机器序号<br/>
+  <input type="checkbox" name="id[]" value="vsncount" id="vsncount" class="checkbox" onFocus='this.blur()'/> 机器访数<br/>
+  <input type="checkbox" name="id[]" value="vname" id="vname" class="checkbox" onFocus='this.blur()'/> 操作用户<br/>
+  <input type="checkbox" name="id[]" value="vgo" id="vgo" class="checkbox" onFocus='this.blur()'/> 操作页面<br/>
+  <input type="checkbox" name="id[]" value="vreq" id="vreq" class="checkbox" onFocus='this.blur()'/> 页面内容<br/>
+  <input type="checkbox" name="id[]" value="vdate" id="vdate" class="checkbox" onFocus='this.blur()'/> 操作时间<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+<!--//thead-->
+<td width="130px"><b>操作ＩＰ</b></td>
+<td width="70px"><b>ＩＰ访数</b></td>
+<td width="150px"><b>来源网址</b></td>
+<td width="70px"><b>机器序号</b></td>
+<td width="70px"><b>机器访数</b></td>
+<td width="70px"><b>操作用户</b></td>
+<td width="150px"><b>操作页面</b></td>
+<td width="150px"><b>访问时间</b></td>
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif"/>
+    </td>
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Vinfo&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+ 
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="130px"><a href="index.php?m=mod_b2b&c=vinfo&stype=vip&keywords={$item['vip']}">{$item['vip']}</a></td>
+<td width="70px">{$item['vcount']}</td>
+<td width="150px"><input type="text" value="{$item['vref']}" size="20"/></td>
+<td width="70px"><a href="index.php?m=mod_b2b&c=vinfo&stype=vsn&keywords={$item['vsn']}">{$item['vsn']}</a></td>
+<td width="70px">{$item['vsncount']}</td>
+<td width="70px">{$item['vname']}</td>
+<td width="150px"><input type="text" value="{$item['vgo']}" size="20"/></td>
+<td width="150px">{$item['vdate']}</td>
+<!--//endtbody-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁类目记录后,是无法恢复的,只能重新添加" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=Vinfo&a=Deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Vinfo&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Vinfo&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(1,29);
+totleRows = {$vd['totlerow']};
+deltxt  = "销毁类目后,是无法恢复的您确定进行销毁操作吗？";
+thisaction = "销毁";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 3;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('vip','vcount','vref','vsn','vsncount','vname','vgo','vdate');
+<!--//endtinfo-->
+function pickcolor(id) 
+{
+  var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");
+  if (color != null) 
+  {
+    $("colorexample"+id).style.backgroundColor = color;
+    $("textcolor"+id).value = color;
+  }
+}
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

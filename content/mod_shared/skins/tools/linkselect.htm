@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<script language=JavaScript>
+<!-- 
+function GetQueryString(name) 
+{
+     var reg  =   new   RegExp("(^|&)"+     name     +"=([^&]*)(&|$)"); 
+     var r    =     window.location.search.substr(1).match(reg); 
+     if (r!=null)   return     unescape(r[2]);   return   null; 
+}
+function ret() {
+    MouseClick(document.getElementById("txt").value);
+}
+function MouseClick( color ) {
+    window.returnValue = color;
+    window.close();
+}
+
+function getValueIE8(obj)
+{
+  obj.select();
+  return document.selection.createRange().text;
+}
+-->
+</script>
+<input type="text" id="txt"/> <input type="button" value="È·¶¨" onclick="ret()"/>
+</body>
+</html>

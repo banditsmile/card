@@ -1,0 +1,277 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<!--if($vd['inrecycle']==0){-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=PM&{$vd['op']}" title="点击重新获取站内信列表资料" onclick="loadDisp(1)"><font color="#000">站内信列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_index" onFocus="this.blur()" title="查看站内信相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('delitems')"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量删除</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()" style="margin-right:7px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="loadDisp(1);window.location='?m=mod_b2b&c=PM&inrecycle=1&by=1'"><samp title="进入站内信回收箱">
+    <div style="padding-top:10px;padding-left:3px;">回收箱<span class="fixie8">(</span><!--if($vd['recycle_num']){--><span id="recycle">{$vd['recycle_num']}</span><!--}else{--><span id="recycle">空</span><!--}--><span class="fixie8">)</span></div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=PM&by=1" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="16" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <select name="msgtype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['tarray'], $vd['msgtype'])}
+    </select>
+    <input type="submit" value=" 搜  索 " style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="disp('adddiv')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+<!--}else{-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=PM&a=index" title="站内信列表" onclick="loadDisp(1)"><font color="#000">站内信列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">回收箱</span>(共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看站内信相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的会员记录,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="delAllSubmit('restore')"><samp title="还原回收箱状态">
+    <div style="padding-top:10px;padding-left:9px;font-weight:bold">还原</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=PM&inrecycle=1&by=1" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <select name="msgtype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['tarray'], $vd['msgtype'])}
+    </select>
+    <input type="submit" value=" 搜  索 " style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="disp('adddiv')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+<!--}-->
+<div id="contentTip" style="display:none;"></div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:320px;display:none">
+  <div class="popbg">
+  <div class="poptitle">高级搜索</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form action="index.php?m=mod_b2b&c=PM" method="post" onsubmit="return searchSubmit()" style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%">起始日期</td>
+      <td width="75%">
+        <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">终止日期</td>
+      <td width="75%">
+        <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">关键词</td>
+      <td width="75%">
+        <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">搜索类型</td>
+      <td width="75%">
+        <select name="stype" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['sarray'], $vd['stype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">短信类型</td>
+      <td width="75%">
+        <select name="msgtype" style="vertical-align:middle;font-size:14px;">
+          {#Option($vd['tarray'], $vd['msgtype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">对应平台</td>
+      <td width="75%">
+        <select name="comefrom" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['cfarray'], $vd['comefrom'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%">
+        <input type="hidden" value="inrecycle" value="{$vd['inrecycle']}"/>
+        <input type="submit" value="搜 索" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=PM" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="createdate" id="createdate" onFocus='this.blur()'/> 发信时间<br/>
+  <input type="checkbox" name="id[]" value="title" id="title" onFocus='this.blur()'/> 标题<br/>
+  <input type="checkbox" name="id[]" value="isreaded" id="isreaded" onFocus='this.blur()'/> 状态<br/>
+  <input type="checkbox" name="id[]" value="msgto" id="msgto" onFocus='this.blur()'/> 收信人<br/>
+  <input type="checkbox" name="id[]" value="msgfrom" id="msgfrom" onFocus='this.blur()'/> 发信人<br/>
+  <input type="checkbox" name="id[]" value="msgtype" id="msgtype" onFocus='this.blur()'/> 短信类型<br/>
+  <span<!--if(UB_B2C+UB_YKT+UB_B2B==1){--> style="display:none"<!--}-->><input type="checkbox" name="id[]" value="platform" id="platform" onFocus='this.blur()'/> 平台<br/></span>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+<!--//thead-->
+<td width="140px"><b>发信时间</b></td>
+<td width="200px"><b>标题</b></td>
+<td width="35px"><b>状态</b></td>
+<td width="85px"><b>收信人</b></td>
+<td width="80px"><b>发信人</b></td>
+<td width="70px"><b>短信类型</b></td>
+<!--if(UB_B2B+UB_YKT+UB_B2C>1){--><td width="50px"><b>平台</b></td><!--}-->
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_view.gif"/>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif"/>
+      <!--}-->
+      
+    </td>
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=PM&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="140px">{$item['createdate']}</td>
+<td width="200px"><nobr><a href="index.php?m=mod_b2b&c=PM&a=Detail&id={$item['id']}" ><!--if($item['isreaded'] == 1){--><font color="#cccccc">{$item['title']}</font><!--}else{-->{$item['title']}<!--}--></a></nobr></td>
+<td width="35px"><a href="index.php?m=mod_b2b&c=PM&isreaded={$item['isreaded']}&by=1" ><!--if($item['isreaded'] == 1){--><font color="#cccccc">已读</font><!--}else{-->未读<!--}--></a></td>
+<td width="85px"><!--if($item['msgto'] == 999999){--><font color="#0099cc"><!--if($item['msgcc'] == 'allunderling'){-->所有直属下家<!--}--><!--if($item['msgcc'] == 'all'){-->所有经销商<!--}--></font><!--}else{--><!--if($item['msgto'] < 0){--><font color="#ff00ff">员工({#DisplayCode((0-$item['msgto']),2)})</font><!--}else{--><font color="#ff0000">{#DisplayCode($item['msgto'],4)}</font><!--}--><!--}--></td>
+<td width="80px"><a href="index.php?m=mod_b2b&c=PM&msgfrom={$item['msgfrom']}&by=1"><!--if($item['msgfrom'] < 0){--><font color="#ff00ff">员工({#DisplayCode((0-$item['msgfrom']),2)})</font><!--}else{--><font color="#ff0000">{#DisplayCode($item['msgfrom'],4)}</font><!--}--></a></td>
+<td width="70px"><a href="index.php?m=mod_b2b&c=PM&msgtype={$item['msgtype']}&by=1">{$vd['tarray'][$item['msgtype']]}</a></td>
+<!--if(UB_B2B+UB_YKT+UB_B2C>1){--><td width="50px"><a href="index.php?m=mod_b2b&c=PM&comefrom={$item['comefrom']}&by=1&inrecycle={$vd['inrecycle']}" onclick="loadDisp(1)">{#ComeFrom($item['comefrom'])}</a></td><!--}-->
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=PM&a=Detail&id={$item['id']}" title="查看短信" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['id']},'delitems')" alt="删除站内信,可以从回收恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁站内信,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+      <!--}-->
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=PM&a=Deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=PM&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=PM&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(2,58);
+totleRows = {$vd['totlerow']};
+<!--if($vd['inrecycle']){-->
+deltxt  = "如果销毁站内信记录么,将无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+<!--}else{-->
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除站内信,站内信相关信息也会被删除(包括订单信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+<!--}-->
+sc = "{$vd['sc']}";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 2;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('createdate','title','isreaded','msgto','msgfrom','msgtype','platform');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

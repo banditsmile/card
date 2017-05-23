@@ -1,0 +1,520 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<title>新云数卡销售系统后台</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<style type="text/css">
+
+
+
+    <title>
+
+	新云卡用户后台登录
+
+</title>
+
+    <style media="all" type="text/css">
+
+	
+
+        html,body,form{
+
+            height: 100%;/*设置html和body的width和height为100%，可使全屏生效*/
+
+            width: 100%;
+
+            margin: 0; 
+
+	        padding:0;/*设置上下左右的相对位置为0，可避免超出范围出现滚动条*/
+
+	        overflow-x:hidden;overflow-y:hidden;
+
+        }
+
+		body {
+
+	        font:14px/1.5 microsoft yahei, sans-serif,\5b8b\4f53;
+
+	        color: #333;
+
+	        background:url(images/login_bg2.gif) #f8ffff repeat-x top;
+
+            white-space: nowrap;/*设置white-space:nowrap，同时在相对参照元素中线居中时设定display:inline-block，可避免浏览器缩放时，垂直居中的容器换行*/
+
+        }
+
+        a:link {color:#999; text-decoration: none; }
+
+        a:visited {color:#666;text-decoration: none; } 
+
+        a:hover {text-decoration :underline;}	
+
+		
+
+        .verticalAlign {
+
+            vertical-align: middle;/*设置vertical-align: middle，可使此和同一级别元素中线对齐*/
+
+            height: 100%;
+
+            width: 0px;    /*设置width:0px，可使此元素不显示，只为页面容器整体垂直对齐作参照*/
+
+            border: none;
+
+            padding: 0px;
+
+            margin: 0px 0px 0px -5px;/*设置mrgin-right:-5px，避免容器横向超出*/
+
+            display: inline-block;/*div内联不换行，ie8和ie9不识别带*的样式，只执行第一个display，ie6和ie7识别带*的样式，执行第二个display和zoom*/
+
+            *display:inline;/*ie6和ie7兼容display: inline-block，以【*display:inline;*zoom:1;】代替*/
+
+            *zoom:1;
+
+        }
+
+        .divAll{
+
+            width: 100%;
+
+            height: auto;
+
+            vertical-align: middle;/*设置vertical-align: middle，相对同一级别元素中线对齐*/
+
+            margin: 0px;
+
+            border: none;
+
+            padding: 0px;
+
+            display: inline-block;/*div内联不换行，ie8和ie9不识别带*的样式，只执行第一个display，ie6和ie7识别带*的样式，执行第二个display和zoom*/
+
+            *display:inline;/*ie6和ie7兼容display: inline-block，以【*display:inline;*zoom:1;】代替*/
+
+            *zoom:1;
+
+            text-align: center
+
+        }        
+
+        .divTop {
+
+            width: 800px;
+
+            min-width: 800px;
+
+            margin:auto;
+
+            display: block;/*div内联换行*/
+
+	        text-align:right;
+
+	        height:35px;
+
+	        line-height:35px;
+
+        }        
+
+        .divTop a {padding:5px;color:#333;margin-left:5px;}
+
+        .divBody{
+
+            font-size:14px;
+
+        }
+
+        .divBottom {
+
+            width: 800px;
+
+            min-width: 800px;
+
+	        margin:auto;
+
+            height: 100px;
+
+            display: block;  
+
+			color:#888;
+
+        }
+
+        .divBottom a{
+
+            color:#888;
+
+        }
+
+        .beijing {padding-top:30px;padding-bottom:10px;width:800px;height:343px;margin:auto;}
+
+        .bj1,.bj2,.bj3 {float:left;width:218px;height:343px;}
+
+        .bj1 {background:url(images/login_bg1.png) #f0f3ec no-repeat;}
+
+        .bj2 {width:364px;background:url(images/login_bg2.png) #f0f3ec no-repeat;}
+
+		.bj2 table {width:100%;}
+
+		.bj2 td {padding:2px;}
+
+        .bj3 {background:url(images/login_bg3.png) #f0f3ec no-repeat;}		
+
+		.input1 {
+
+            transition: all 0.30s ease-in-out;
+
+            -webkit-transition: all 0.30s ease-in-out;
+
+            -moz-transition: all 0.30s ease-in-out;
+
+            border: #ccc 1px solid;
+
+            border-radius: 3px;
+
+            outline: none;
+
+            width:160px;
+
+			height:30px;line-height:30px;
+
+			padding:0 5px;
+
+			background:url(images/inputdi.png) no-repeat 0 0;
+
+        }
+
+        .input1:focus {
+
+            border:#35a5e5 1px solid;
+
+            box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+
+            -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+
+            -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+
+        }
+
+        .tdleft {width:35%;text-align:right;line-height:35px;}
+
+        .tdright {width:65%;text-align:left;line-height:35px;}
+
+        .login-b, .login-b2, .login-b3{
+
+	        background-image: url(images/b2.gif);
+
+	        background-position: 0px 0px;
+
+	        float: left;
+
+	        height: 32px;
+
+	        width: 82px;
+
+	        display: block;
+
+	        border:0;
+
+	        background-repeat: no-repeat;
+
+	        cursor:pointer!important;
+
+	        cursor:hand;margin:8px 0;
+
+        }
+
+        .login-b2{
+
+	        background-position: 0px -33px;
+
+        }
+
+        .login-b3{
+
+	        background-position: 0px -66px;
+
+        }
+
+        .login_error_tip{
+
+            color:red;
+
+            padding-right:15px;
+
+            font-weight:bold;
+
+            
+
+        }
+
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+
+
+    <script type="text/javascript">
+
+        function OpenLayer(url){
+
+            if(document.readyState == "complete"){
+
+                 AlertLayer(url);
+
+            }else{
+
+                setTimeout(function(){OpenLayer(url);},100);
+
+            }
+
+        }
+
+        
+
+        function AlertLayer(url){
+
+            $.layer({
+
+                     type: 2,
+
+                     title: ['动态口令',true],
+
+                     iframe: {src: url},
+
+                     area: ['460px','280px'],
+
+                     offset: ['220px','50%'],
+
+					 loading : {type : 0}
+
+             });
+
+        }
+
+        
+
+         String.prototype.Trim = function()
+
+                                {
+
+                                    return  this.replace(/(^\s*)|(\s*$)/g,  "");
+
+                                }
+
+        function ShowAlert(code,errorMsg){
+
+            var login_error_tip = document.getElementById('login_error_tip');
+
+            switch(code){
+
+                case -1:
+
+                case -2:
+
+                case -3:
+
+                case -4:
+
+                    login_error_tip.innerHTML = errorMsg;
+
+                break;
+
+            }
+
+        }
+
+        
+
+        function CheckLogin(){
+
+            var flag = true;
+
+            if(document.getElementById('txtUserName')){
+
+                if(document.getElementById('txtUserName').value.Trim() == ''){
+
+                    ShowAlert(-1,"登录名必填");
+
+                    flag = false;
+
+                    return flag;
+
+                }
+
+            }
+
+            if(document.getElementById('txtUserPassword')){
+
+                if(document.getElementById('txtUserPassword').value.Trim() == ''){
+
+                    ShowAlert(-1,"密码必填");
+
+                    flag = false;
+
+                    return flag;
+
+                }
+
+            }
+
+            if(document.getElementById('txtCheckCode')){
+
+                if(document.getElementById('txtCheckCode').value.Trim() == ''){
+
+                    ShowAlert(-2,"验证码必填");
+
+                    flag = false;
+
+                    return flag;
+
+                }
+
+            }
+
+            return flag;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <form method="post" action="index.php?m=mod_home&a=save" name="form1">
+
+<div>
+
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk1NzIxMzI5MmRkzQ0ly61QkWQ53Bn1jo0X3Y9mzbA=" />
+
+</div>
+
+
+
+<div>
+
+
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQKsnL+oDwKl1bKzCQK9wKW7DAKY2YWXBgKC3IeGDM0KIw+0nkyZUr5PklGhATOkpW/E" />
+
+</div>
+
+        <div class="verticalAlign">
+
+        </div>
+
+        <div class="divAll">
+
+            <div class="divTop">
+
+                　<a href="javascript:" onclick="window.external.AddFavorite(location.href,document.title);">
+
+                    收藏本页</a><a href="http://xybss.com.cn" target="_blank">新云数卡</a><a href="http://52yma.taobao.com"
+
+                        target="_blank">旗下淘宝</a></div>
+
+            <div class="divBody">
+
+                <div class="beijing">
+
+                    <div class="bj1">
+
+                    </div>
+
+                    <div class="bj2">
+
+                        <table cellspacing="1" cellpadding="3" border="0">
+
+                            <tr>
+
+                                <td colspan="2" style="height: 90px; text-align: center;">
+
+                                    <img alt="Ekakm" src="images/logo.gif" style="width: 161px; height: 43px; border: 0px none;
+
+                                        margin-top: 20px; margin-left:auto; margin-right:auto; margin-bottom:0" /></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="tdleft">
+
+                                    用户名：</div></td>
+
+  <td width="77%" height="39" align="left"> <input name="adminname" type="text" class="input_1" id="adminname" style="width:160px" onBlur="CheckMobile()"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="tdleft">
+
+                                    密 码：</div></td>       
+
+  <td height="37" align="left"><input name="adminpass" type="password" class="input_2" id="password4" style="width:160px;"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="tdleft">
+
+                                    验证码：</div></td>       
+
+  <td height="40" align="left" valign="top">
+
+  <input name="VerifyCode" type="text" class="input_1" id="VerifyCode" size="10" maxlength="10" style="width:70px;">
+
+  <img src="../index.php?a=RandCode&t=1" alt="看不清楚?请点击刷新" name="src" width="100" height="38" id="src" style="vertical-align:middle;" onClick="this.src=this.src+'&'+Math.random();"> <span style="color:#996600;cursor:pointer" onClick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><br>
+
+  
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="tdleft">
+
+                                    
+
+                                </td>
+
+                                <td colspan="2" class="tdright">
+
+                                    <input type="submit" name="btnLogin" value="" onclick="return CheckLogin();" id="btnLogin" class="login-b" onmouseover="this.className='login-b2'" onmousedown="this.className='login-b3'" onmouseout="this.className='login-b'" />
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="2" align="right"><span id="login_error_tip" class="login_error_tip"></span></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    <div class="bj3">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="divBottom">Copyright 2008-2014  <a href="http://xybss.com.cn" target="_blank">新云数卡 版权所有</a>
+
+                　</div>
+
+        </div>
+
+    
+
+
+

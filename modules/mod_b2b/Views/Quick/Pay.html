@@ -1,0 +1,118 @@
+{load(fhead)}
+<script type="text/javascript">
+  function $(id){
+    return document.getElementById(id);
+  }
+</script>
+<!--$item = $vd['item'];-->
+<body class="mainbg">
+<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 我要进货 >> 购卡填单</span></div>
+<div id="hearder"><span>购买订单</span></div>
+  <form name="submitform" id="submitform" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=pay" onsubmit="return checksubmit()">
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="buylt">购买商品：</td>
+      <td class="buyrt">{$vd['pname']}</td>
+    </tr>
+    <!--if($vd['pname'] == 'QQ服务直充'){-->
+    <tr>
+      <td class="buylt">开通服务：</td>
+      <td class="buyrt"style="color:#0000ff">{$vd['ubzcztypetxt']}</td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td class="buylt">{$vd['lbaccname']}：</td>
+      <td class="buyrt" style="color:#ff0000;font-size:16px;FONT-FAMILY:Verdana, Arial, Helvetica, sans-serif;">{$vd['account']}</td>
+    </tr>
+    <tr>
+      <td class="buylt">{$vd['lbname']}：</td>
+      <td class="buyrt" >
+        <span style="font-size:16px;color:#0000ff"><!--if($vd['pname'] == '话费直充'){-->{$item['listprice']}<!--}else{-->{$vd['qty']}<!--}--></span> {$vd['unit']}
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">售玩家单价：</td>
+      <td class="buyrt">
+        {$vd['priceforplayer']} {$vd['lang']['moneyunit']}
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">应收玩家金额：</td>
+      <td class="buyrt">
+        {$vd['dollarsforplayer']} {$vd['lang']['moneyunit']}
+      </td>
+    </tr>
+    <tr id="tradepwdtr" style="display:none">
+      <td class="buylt">交易密码：</td>
+      <td class="buyrt"><input type="password" id="tradepwd" name="tradepwd" size="16" class="input"/></td>
+    </tr>
+  </table>
+  <input id="ubzqty" name="ubzqty" type="hidden" value="{$vd['qty']}"/>
+  <input id="ubzczacount" name="ubzczacount" type="hidden"  class="input" value="{$vd['account']}"/>
+  <input id="ubzreczacount" name="ubzreczacount" type="hidden"  class="input"  value="{$vd['account']}"/>
+  <input type="hidden" id="priceforplayer" name="priceforplayer" value="{$vd['priceforplayer']}" />
+  <input type="hidden" id="dollarsforplayer"  name="dollarsforplayer" value="{$vd['dollarsforplayer']}"  />
+  <input id="ubzcprice" name="oneprice" type="hidden" />
+  <input id="ubzdollars" name="ubzdollars" type="hidden" />
+  <input id="tprice" name="tprice" type="hidden" />
+  <input id="ubzptype" name="ubzptype" type="hidden" value="{$item['ptype']}"/>
+  <input id="ubzpid" name="ubzpid" type="hidden" value="{$item['pid']}"/>
+  <input id="ubzqtylist" name="ubzqtylist" type="hidden" value="{$item['qtylist']}"/>
+  <input id="ubzqtymin" name="ubzqtymin" type="hidden" value="{$item['qtymin']}"/>
+  <input id="ubzqtymax" name="ubzqtymax" type="hidden" value="{$item['qtymax']}"/>
+  <input id="ubzidlable" name="ubzidlable" type="hidden" value="{$item['idlable']}"/>
+  <input id="ubzdisparea" name="ubzdisparea" type="hidden" value="{$item['disparea']}"/>
+  <input id="ubzdispserv" name="ubzdispserv" type="hidden" value="{$item['dispserv']}"/>
+  <input id="scoredpid" name="scoredpid" type="hidden" value="0"/>
+  <input id="ubzcname" name="ubzcname" type="hidden" value=""/>
+  <input id="ubzunit" name="ubzunit" type="hidden" value="{$item['unit']}"/>
+  <input id="ubzcztype" name="ubzcztype" type="hidden" value="{$vd['ubzcztype']}"/>
+<br>
+<input name="Submit" type="Submit" class="button" value="确认购买" id="btnsubmit">　
+<input name="goback" type="button" class="button" value="重新购买" onclick="javascript:self.close();">
+<br><br>
+</form>
+
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}"/>
+</body>
+</html>
+<script type="text/javascript">
+	function getCookie(c_name)
+  {
+    if (document.cookie.length>0)
+    {
+      c_start=document.cookie.indexOf(c_name + "=");
+      if (c_start!=-1)
+      {
+        c_start=c_start + c_name.length+1;
+        c_end=document.cookie.indexOf(";",c_start);
+        if (c_end==-1) c_end=document.cookie.length;
+        return unescape(document.cookie.substring(c_start,c_end));
+      }
+    }
+    return "";
+  }
+
+  if(getCookie('umebiz_com_8') == "1")
+  {
+    obj = $("tradepwdtr");
+    obj.style.display = "";
+  }
+  
+  function checksubmit()
+	{
+		if($("tradepwdtr").style.display == "")
+		{
+			vtradepwd = $("tradepwd").value;
+			if(vtradepwd == "")
+		  {
+		  	alert("请先输入交易密码");
+		  	return false;
+		  }
+		}
+		
+		return true;
+	}
+	
+</script>
+

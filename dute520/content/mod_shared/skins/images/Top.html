@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>后台系统</title>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<style tyle="text/css">
+body{
+margin:0px;
+padding:0px;
+font-family:Arial,Helvetica,sans-serif;
+}
+.topbg{
+	height:135px;
+	width:100%;
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	background-image: url(http://yuchen.121ka.net/admin_xitong/content/mod_shared/skins/images/topbg.gif);
+}
+
+#topleft{
+	height:70px;
+	width:88px;
+	float:left;
+	color: #FFFFFF;
+}
+
+.logo{
+position:absolute;top:15px;left:15px;font-size:15px;font-weight:bold;color:#E13800
+}
+
+.logo a{TEXT-DECORATION:none;color:#E13800}
+
+.master{
+position:absolute;top:39px;left:15px;font-size:13px;color:#E13800
+}
+
+#ann{position:absolute;top:10px;left:190px;}
+.ann_iframe{width:180px;height:20px;}
+
+#annicon{position:absolute;top:6px;left:166px;}
+
+#sysmsg{
+	position:absolute;
+	top:29px;
+	left:1069px;
+}
+#sysmsg a{color:#5c5c5c;font-size:12px;TEXT-DECORATION:none;}
+#sysmsg a:hover{color:#FF7C00;}
+
+#sms{
+	position:absolute;
+	top:28px;
+	left:1041px;
+}
+
+#other{
+	position:absolute;
+	top:5px;
+	right:76px;
+	font-size:12px;
+	height: 18px;
+}
+#other a{color:#5c5c5c;font-size:12px;TEXT-DECORATION:none;}
+#other a:hover{color:#FF7C00;}
+
+#toptbg {position:absolute;top:0px;left:0px;background:url({$vd['sc']}images/ys.gif) no-repeat;width:187px;height:71px;}
+
+.cblack{font-size:12px;color:#000}
+.cblack a{TEXT-DECORATION:none;}
+.Tab{
+	text-align:left;
+	font-size:13px;
+	overflow: hidden;
+	float: left;
+}
+.Tab ul{
+	margin:0px;
+	margin-top:99px;
+	padding:0px;
+	list-style-type:none;
+}
+.Tab ul li{float:left;padding:5px 3px 0 6px;width:58px;margin-left:-1px;margin-right:8px;}
+.Tab ul li {
+	color:#666;
+	line-height:22px;
+	text-decoration:none;
+	text-align:center;
+}
+.Tab ul li { no-repeat;color:#FF0;}
+.Tab ul li a{
+	color:#FFFFFF;
+	font-weight:bold;
+	TEXT-DECORATION:none;
+}
+
+</style>
+</head>
+<body>
+  <bgsound id="snd" loop="2" src="">
+  <div id="toptbg"></div>
+  <div class="topbg">
+    
+    <div id="topleft">
+      <div class="logo"></div>
+    </div>
+    <div class="Tab" style="border:0px;">
+      <ul id="tab"></ul>
+    </div>
+    <div id="sms"><img src="{$vd['sc']}images/sms.gif" alt="相关短信息"/></div>
+    <div id="sysmsg"></div>
+    <div id="other">前台：<!--if(UB_YKT){--><a href="<!--if($vd['yktsite']==''){-->../<!--if(UB_DEFAULT != 'ykt'){-->ykt<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">一卡通系统 </a><!--}--><!--if(UB_B2B){--> <a href="../<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">批发系统</a><!--}--><!--if(UB_B2C){--> <a href="<!--if($vd['b2csite']==''){-->../<!--if(UB_DEFAULT != 'b2c'){-->b2c<!--}--><!--}else{-->{$vd['yktsite']}<!--}-->" target="_blank">零售</a><!--}--></div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+  var TempStr = '<!--echo $vd['tempstr'];-->';
+  
+  var $ = function(id){return document.getElementById(id);}
+  var Menu_1  = TempStr.split("||");
+  var Menu_2;
+  var htmlstr = "";
+  var childs  = Array();
+  var i = 0, j = 0;
+  for (i = 0; i < Menu_1.length; i++) 
+  {
+    Menu_2 = Menu_1[i].split("@@");
+    htmlstr += "<li onclick='setleft(this)' id='" + i + "'>" + Menu_2[0] +  "</li>";
+    
+    childs[i] = "<ul>";
+    for (j = 0; j < Menu_2.length; j++)
+    {
+      if(j == 0)
+      {
+        childs[i] += '<li id="' + i + '_' + j + '" onclick="set(this)" class="mymibu">' + Menu_2[j] + '</li>';
+      }
+      else
+      {
+        childs[i] += '<li id="' + i + '_' + j + '" onclick="set(this)">' + Menu_2[j] + '</li>';
+      }
+    }
+    childs[i] += "</ul>";
+    
+  }
+  $("tab").innerHTML = htmlstr;
+  
+  function setleft(obj)
+  {
+  	
+    leftobj  = document.all ? window.parent.frames["frmleft"] : window.parent.document.getElementById("frmleft").contentWindow;
+    leftobj.document.getElementById("leftmenu").innerHTML = childs[obj.id];
+    leftobj.thisactive = obj.id + "_0";
+    loading();
+  }
+
+  function loading()
+  {
+    rightobj = document.all ? window.parent.frames["frmright"] : window.parent.document.getElementById("frmright").contentWindow;
+    //rightobj.src = "loading.html";
+    rightobj.document.write('<body style="BACKGROUND:#fff;font-size:12px;"><div style="position:absolute;top:10%;left:30%;text-align:center;"><div style="padding:30px 5px;background:#FFF4E9;border:1px #FFDDDB solid;width:230px;color:#DF7939"><div style="padding-bottom:8px"><img src="{$vd['sc']}images/js_loader.gif"></div>如果过长时间没反应,请重新点击链接</div></div></body>');
+  }
+  
+  function CacheUpdate()
+  {
+    var xmlcu;
+    try{
+      xmlcu=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlcu=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlcu.onreadystatechange=function(){}
+    xmlcu.open("post", "index.php?m=mod_home&c=home&a=TimeCache", true);
+    xmlcu.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlcu.send('');
+  }
+  
+  CacheUpdate();
+  setInterval(CacheUpdate, 5000);
+  
+  function GetText()
+  {
+    var xmlhttp;
+    var obj = document.getElementById("sysmsg");
+    try{
+      xmlhttp=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4){
+        if (xmlhttp.status==200){
+          var data=xmlhttp.responseText;
+          if(data != "" ){
+             obj.innerHTML = data;
+          }
+        }
+      }
+    }
+    xmlhttp.open("post", "index.php?m=mod_home&c=home&a=GetText", true);
+    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.send('');
+  }
+  
+  GetText();
+  
+  function HideLeft()
+  {
+    obj = window.parent.frames["merchantFrameset"];
+    if(obj.cols == "160,*")
+    {
+      obj.cols = "0,*";
+      $("topleft").style.background = "none";
+      $("toptbg").style.background = "none";
+    }
+    else
+    {
+      obj.cols = "160,*";
+      $("topleft").style.background = "url('{$vd['sc']}images/topleftbg.gif') no-repeat right bottom";
+      $("toptbg").style.background = "url({$vd['sc']}images/ys.gif) no-repeat";
+    }
+  }
+  
+//mysysmsg = setInterval(GetText, 240000);
+  
+  function OrderAlert()
+  {
+    var xmlhttp2;
+    var obj = document.getElementById("sysmsg");
+    try{
+      xmlhttp2=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp2.onreadystatechange=function(){
+      if (xmlhttp2.readyState==4){
+        if (xmlhttp2.status==200){
+          var data=xmlhttp2.responseText;
+          if(data != "" && data > 0){
+            if($("notdealorder")){
+             $("notdealorder").innerHTML = data;
+            }
+            //开始响铃
+            playSound("{$vd['sc']}images/ring.wav");
+          }
+        }
+      }
+    }
+    xmlhttp2.open("post", "index.php?m=mod_home&c=home&a=getnotdealorder", true);
+    xmlhttp2.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp2.send('e=1');
+  }
+  
+  function playSound(src) { 
+    var _s = $("snd"); 
+    if(src!='' && typeof src!=undefined) { 
+      _s.src = src; 
+    } 
+  } 
+  
+  <!--$temp = explode('|', $vd['sys']['config']);$cout=count($temp);-->
+  <!--if($cout > 14 && $temp[13] == 1){-->
+  setInterval(OrderAlert, <!--echo $temp[14] * 1000;-->);
+  <!--}-->
+  
+  function InitWeb()
+  {
+    var xmliw;
+    try{
+      xmliw=new XMLHttpRequest();
+    }
+    catch(e){
+      xmliw=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmliw.onreadystatechange=function(){}
+    xmliw.open("post", "index.php?m=mod_home&c=home&a=InitWeb", true);
+    xmliw.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmliw.send('');
+  }
+  
+  InitWeb();
+  
+</script>

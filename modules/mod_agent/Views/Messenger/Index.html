@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>站内短信</title>
+    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
+    <link href="http://www.elingka.com/css/h_skin1/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 站内短信</h2>
+  </div>
+  <ul>
+    <li><a href="" class="on">收件箱</a></li>
+  </ul>
+</div>
+<form action="index.php?m=mod_agent&amp;c=Messenger&amp;a=Add&amp;a=MessengerDel" method="post" name="messenger" id="messenger">
+<script type="text/javascript"> 
+function CheckOthers(form)
+{
+	for (var i=0;i<form.elements.length;i++)
+	{
+		var e = form.elements[i];
+			if (e.checked==false)
+			{
+				e.checked = true;
+			}
+			else
+			{
+				e.checked = false;
+			}
+	}
+}
+
+function CheckAll(form)
+{
+	for (var i=0;i<form.elements.length;i++)
+	{
+		var e = form.elements[i];
+			e.checked = true
+	}
+}
+</script>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+  <tr>
+    <th width="5%" class="heardertop1">选定</td>
+    <th width="16%" class="heardertop1">发送时间</td>
+    <th width="35%" class="heardertop1">短信标题</td>
+    <th width="20%" class="heardertop1">发送人</td>
+    <th width="8%" class="heardertop1">状态</td>
+    <th width="16%" class="heardertop1">短信管理</td> 
+  <!--foreach($vd['items'] as $item) {-->
+    <tr class="trd">
+    <td><input type="checkbox" name="id[]" value="{$item['id']}" /></td>
+    <td>{$item['createdate']}</td>
+    <td align="left"><a href="index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;id={$item['id']}">{$item['title']}</a></td>
+    <td><!--if($item['msgfrom'] < 0){-->
+        <font color="#ff00ff">员工({#DisplayCode((0-$item['msgfrom']),2)})</font>
+        <!--}else{-->
+        <!--if($item['msgfrom'] == $vd['agent'][4]){-->
+        <font color="#0000ff">
+          <!--if($item['msgfrom']==0){-->
+          平台管理员
+          <!--}else{-->
+          上家({#DisplayCode($item['msgfrom'],4)})
+          <!--}-->
+      </font>
+        <!--}else{-->
+        <font color="#ff0000">{#DisplayCode($item['msgfrom'],4)}</font>
+        <!--}-->
+        <!--}-->    </td>
+    <td><!--if($item['myreaded'] > 0 || ($item['isreaded'] == 1 && $item['msgto'] == $vd['agent'][7])) {-->
+        <font color="#0000ff">已读</font>
+        <!--}else{-->
+        <font color="#ff0000">未读</font>
+        <!--}-->    </td>
+    <td><a href="javascript:" onClick="parent.Dialog.win({title:'查看站内短信',iframe:{src:'index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}'},width:600,height:300});"> 查看</a> <a href="javascript:" onClick="parent.Dialog.win({title:'回复站内短信',iframe:{src:'index.php?m=mod_agent&amp;c=Messenger&amp;a=detail&amp;reply=1&amp;id={$item['id']}'},width:600,height:300});">回复</a></td>
+  </tr>
+
+  <!--}-->
+</table>
+		 		   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+                   <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+                   <div align="left">
+				   </br/>
+                     <input name="button1" type="button" class="tijiao_input" value="发送" onclick="javascript:location.href='index.php?m=mod_agent&amp;c=Messenger&amp;a=Add';" />
+                     <input name="submit" type="submit" class="fanhui_input" value="删除" />
+                     <input name="selectall" type="button" class="tijiao_input" value="全选" onclick="CheckAll(this.form)" />
+                     <input name="selectother" type="button" class="tijiao_input" value="反选" onclick="CheckOthers(this.form)" />
+                   </div>
+</body>
+</html>

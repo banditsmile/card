@@ -1,0 +1,62 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统</a> >> 安全管理 >> 帐户密码设定</span></div>
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&a=ModifyPass';"><span class="mm">登陆密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=SuperPass';"><span class="mm">超级密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=TradePass';"><span class="mm">交易密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=RandPass';" class=hover><span class="mm">随机登录密码设定</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	
+	<form name="modify" method="post" action="index.php?m=mod_agent&c=home&a=RandSave">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1"><strong>启用随机登录密码：</strong></td>
+		<td width="78%" class="tableright1"><input type="radio" name="randcheck" value="0" <!--if($vd['rs']['randcheck']==0){--> checked<!--}--> id="nobind"><label for="nobind"><strong><font color=#ff0000>不启用</font></strong></label> <input type="radio" name="randcheck" value="1" id="yesbind" <!--if($vd['rs']['randcheck']==1){--> checked<!--}--> /><label for="yesbind"><strong><font color=#0000ff>启用</font></strong></label></td>
+		</tr>
+		<tr>
+		<td class="tableleft1"><strong>插入位置：</strong></td>
+		<td class="tableright1"><input type="radio" name="randpos" value="0" <!--if($vd['rs']['randpos']==0){-->checked<!--}--> onclick="javascript:document.all.txtrandpos.disabled=true;" id="zqm"><label for="zqm">登录密码的<font color="#FF0000">最前面</font></label> <input type="radio" name="randpos" value="999" <!--if($vd['rs']['randpos']==999){-->checked<!--}--> onclick="javascript:document.all.txtrandpos.disabled=true;" id="zhm"><label for="zhm">登录密码的<font color="#FF0000">最后面</font></label> <input type="radio" name="randpos" value="2" <!--if($vd['rs']['randpos'] > 0 && $vd['rs']['randpos'] < 999){-->checked<!--}--> onclick="javascript:document.all.txtrandpos.disabled=false;" id="zdy"><label for="zdy"><font color="#FF0000">自定义位置</font> 第 <input type="text" Class="input1" name="txtrandpos" id="txtrandpos" size="4" maxlength="2" value="<!--if($vd['rs']['randpos'] > 0 && $vd['rs']['randpos'] < 999){echo $vd['rs']['randpos'];}else{echo 2;}-->" <!--if($vd['rs']['randpos'] > 0 && $vd['rs']['randpos'] < 999){--><!--}else{-->disabled<!--}--> />位 前面</label></td>
+		</tr>
+		<tr>
+		<td class="tableleft1"><strong>组合公式：</strong></td>
+		<td class="tableright1"><strong>加法：</strong><br>
+			<!--$gs1 = array('第1位 加 第2位','第1位 加 第3位','第1位 加 第4位','第2位 加 第3位','第2位 加 第4位','第3位 加 第4位');-->
+			<!--$gs2 = array('第1位 乘 第2位','第1位 乘 第3位','第1位 乘 第4位','第2位 乘 第3位','第2位 乘 第4位','第3位 乘 第4位');-->
+			<!--$i=1;foreach($gs1 as $item){-->
+			<input type="radio" name="randtype" value="{$i}" id="rt{$i}" <!--if($vd['rs']['randtype']==$i || ($vd['rs']['randtype']=='' && $i==1)){-->checked<!--}--> /><label for="rt{$i}">{$item}</label> 
+			<!--if($i%2==0){--><br/><!--}-->
+			<!--$i++;}-->
+			<br/><strong>乘法：</strong><br>
+			<!--foreach($gs2 as $item){-->
+			<input type="radio" name="randtype" value="{$i}" id="rt{$i}" <!--if($vd['rs']['randtype']==$i){-->checked<!--}--> /><label for="rt{$i}">{$item}</label> 
+			<!--if($i%2==0){--><br/><!--}-->
+			<!--$i++;}-->
+		</tr>
+		<tr>
+		<td class="tableleft1"><strong>使用说明：</strong></td>
+		<td class="tableright1">1、当启用了随机登录密码后在下次登录系统时务必使用相应的设置规则登录系统，如登录密码为：abcdefg，登录密码的最前面即在字母&quot;a&quot;的前面,如果是最后面即在字母&quot;g&quot;后面填写，如果是相应位数后面，即从第一个字符开始计算，如果是第3位，即字母&quot;c&quot;前面，因为&quot;c&quot;是第3个字符。<br>2、如果根据附加码计算出的结果小于10的话，则在相应的结果前加“0”，比如登录时附加码是&quot;1034&quot;的话，根据相应选择的计算公式来计算随机密码的部分，如第1位加第2位即1+0=1，由于小于10，即在1前面加0即输入&quot;01&quot;即可。如果第2位乘第3位，即0*3=0，由于小于10，即输入&quot;00&quot;即可，以此类推。<br>3、总账号和员工账号是分开设置，总账号设置表示总账号使用此规则，员工账号设置表示员工账号遵守此规则。</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">帐户交易密码：</td>
+		<td class="tableright1"><input type="password" name="tradepwd" size="30" class='input'/></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input name="submit" type="submit" class="button" value="确认设定"> <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	
+	</div>
+</form>
+</body>
+</html>

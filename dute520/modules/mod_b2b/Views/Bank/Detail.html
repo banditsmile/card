@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style>
+.search_select {
+  width: 154px;
+  color: #555;
+  height:24px;
+  margin: -1px;
+  border: 0px solid #B5B8C8;
+  font-size: 14px;
+  background: #FFF;
+}
+.search_s {
+   width: 152px;
+   height:20px;
+   float:left;
+   padding: 2px;
+   margin: 6px 0 0 0px;
+   overflow: hidden;
+   border: 1px solid #80CCFF;
+   background: #fff;
+}
+.search_s1 {
+   width: 152px;
+   height:20px;
+   float:left;
+   margin: 0;
+   overflow: hidden;
+   background: #fff;
+}
+</style>
+</head>
+<body>
+<!--$item = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Bank" title="汇款银行列表"><font color="#000">汇款银行列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$item['AccountBranch']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_bank_index" onFocus="this.blur()" title="查看汇款银行相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Bank&a=Save">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">汇款银行信息修改</div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+      <td class="tablelt">开户行</td>
+      <td class="tablert"><input type="text" name="AccountBranch" size="25" value="{$item['AccountBranch']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">银行卡号</td>
+    <td class="tablert"><input type="text" name="AccountNO" size="25" value="{$item['AccountNO']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">户名</td>
+    <td class="tablert"><input type="text" name="AccountName" size="25" value="{$item['AccountName']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">开户地</td>
+    <td class="tablert"><input type="text" name="Address" size="25" value="{$item['Address']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">其他说明</td>
+    <td class="tablert"><input type="text" name="other" size="25" value="{$item['other']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">银行网址</td>
+    <td class="tablert"><input type="text" name="banksite" size="25" value="{$item['banksite']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">银行图标</td>
+    <td class="tablert">
+       <img src="{$vd['root']}content/mod_shared/skins/upload/{$item['bankicon']}" id="bankiconimg" border="0"/>
+       <br/><input type="text" id="bankicon" name="bankicon" value="{$item['bankicon']}" size="25"/> 
+    </td>
+  </tr>
+  <tr>
+      <td class="tablelt">相关属性</td>
+      <td class="tablert">
+        <input type="checkbox" name="settle" value="1" class="checkbox" {#ToggleCheck($item['settle'])}/>用于结算 
+        <input type="checkbox" name="remit" value="1" class="checkbox" {#ToggleCheck($item['remit'])}/>用于汇款 
+      </td>
+    </tr>
+  <tr> 
+    <td class="tablelt">选择图标</td>
+    <td class="tablert">
+       <div class="search_s">
+         <span class="search_s1">
+           <select class="search_select" onchange="setbankicon(this)">
+              <option value="bank_gh.gif" <!--if($item['bankicon']=='bank_gh.gif'){-->selected<!--}-->>工商银行</option>
+             <option value="bank_js.gif" <!--if($item['bankicon']=='bank_js.gif'){-->selected<!--}-->>建设银行</option>
+             <option value="bank_nh.gif" <!--if($item['bankicon']=='bank_nh.gif'){-->selected<!--}-->>农业银行</option>
+             <option value="bank_yz.gif" <!--if($item['bankicon']=='bank_yz.gif'){-->selected<!--}-->>邮政绿卡</option>
+             <option value="bank_zh.gif" <!--if($item['bankicon']=='bank_zh.gif'){-->selected<!--}-->>招商银行</option>
+             <option value="bank_jh.gif" <!--if($item['bankicon']=='bank_jh.gif'){-->selected<!--}-->>交通银行</option>
+             <option value="bank_zg.gif" <!--if($item['bankicon']=='bank_zg.gif'){-->selected<!--}-->>中国银行</option>
+             <option value="bank_gf.gif" <!--if($item['bankicon']=='bank_gf.gif'){-->selected<!--}-->>广东发展银行</option>
+             <option value="bank_pf.gif" <!--if($item['bankicon']=='bank_pf.gif'){-->selected<!--}-->>上海浦东发展银行</option>
+             <option value="bank_sf.gif" <!--if($item['bankicon']=='bank_sf.gif'){-->selected<!--}-->>深圳发展银行</option>
+             <option value="bank_ms.gif" <!--if($item['bankicon']=='bank_ms.gif'){-->selected<!--}-->>中国民生银行</option>
+             <option value="bank_zx.gif" <!--if($item['bankicon']=='bank_zx.gif'){-->selected<!--}-->>中信银行</option>
+             <option value="bank_xy.gif" <!--if($item['bankicon']=='bank_xy.gif'){-->selected<!--}-->>兴业银行</option>
+             <option value="bank_gd.gif" <!--if($item['bankicon']=='bank_gd.gif'){-->selected<!--}-->>光大银行</option>
+             <option value="bank_hx.gif" <!--if($item['bankicon']=='bank_hx.gif'){-->selected<!--}-->>华夏银行</option>
+             <option value="bank_alipay.gif" <!--if($item['bankicon']=='bank_alipay.gif'){-->selected<!--}-->>支付宝</option>
+             <option value="bank_tenpay.gif" <!--if($item['bankicon']=='bank_tenpay.gif'){-->selected<!--}-->>财付通</option>
+             <option value="bank_no.gif" <!--if($item['bankicon']=='bank_no.gif'){-->selected<!--}-->>普通图标..</option>
+           </select>
+         </span>
+       </div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="10%" align="right" height="46">上传图标：</td>
+    <td width="90%" height="47">
+    <iframe name="uploader" src="index.php?m=com_fs&c=Fs&imgid=imgid&fun=imginfo&inputid=bankicon&d=2" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
+    <div id="imgid"></div><div id="imgsize"></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt""></td>
+    <td class="tablert">
+      <input type="submit" value="修 改" class="button"/>
+      <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+    </td>
+  </tr>
+</table>
+<input type="hidden" value="{$item['id']}" name="id" id="id"/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+  function imginfo(imgsrc)
+  {
+  document.getElementById("imgsize").innerHTML = "高 x 宽：" + imgsrc.height + " x " + imgsrc.width + "<br/>图片大小：" + imgsrc.fileSize + " 字节"; 
+  }
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function setbankicon(obj)
+  {
+    val = obj.value;
+    $("bankiconimg").src = "{$vd['root']}content/mod_shared/skins/upload/" + val;
+    $("bankicon").value = val;
+  }
+</script>
+</body>
+</html>

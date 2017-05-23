@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>编辑价格模板</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>编辑价格模板</h2>
+  </div>
+  <ul>
+    <li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">添加价格模板</span></a></li>
+    <li><a href="" class="on" >价格模板列表</span></a></li>
+    <li><a href="index.php?m=mod_b2b&c=price&a=Agent">单级别价格模板</a></li>
+  </ul>
+</div>
+	<td class="tableleft">
+		<form name="bulletin" method="post" action="index.php?m=mod_b2b&c=Price&a=TplSave">
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%"class="table1_left">价格模板名称：</td>
+		<td width="78%" class="tableright1"><div align="left">
+		  <input type="text" class="input" name="name" maxlength="25" size="30" value="{$vd['rs']['name']}" dataType="LimitB" min="1" max="25" msg="模板名称必须填写">
+		  </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">模板客户级别：</td>
+		<td class="tableright1">
+		  <div align="left">
+		    <select name="rankid" id="rankid">
+		      
+      {#option($vd['rank'], $vd['rs']['rankid'], 'name', 'id')}
+      
+	        </select>
+	        </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">复制原模板价格：</td>
+		<td class="tableright1">
+		  <div align="left">
+		    <select name="parentid" id="parentid">
+		      <option value="0">不复制原模板价格</option>
+		      
+      {#option($vd['items'], $vd['rs']['id'], 'name', 'id')}
+      
+	        </select>
+	        </div></td>
+		</tr>
+		<tr>
+		<td height="30" align="center" class="table1_left">&nbsp;</td>
+		<td height="30" class="tableright1">
+		  <div align="left">
+		    <input type="hidden" value="{$vd['rs']['parentid']}" name="oldparentid" id="oldparentid"/>
+		    <input type="hidden" value="{$vd['rs']['id']}" name="id" id="id"/>
+		    <input type="submit" value="确认添加" class="tijiao_input" name="submit">
+		    <input type="reset" value="重新填写" class="fanhui_input" name="reset">
+	      </div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	
+</body>
+</html>

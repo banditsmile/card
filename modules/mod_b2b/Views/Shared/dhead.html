@@ -1,0 +1,60 @@
+<?php
+if($vd['mygid'] < 2)
+{
+  echo '<script type="text/javascript">alert("非经销商级别以上的用户您无权浏览此页")</script>';
+  echo '<script type="text/javascript">window.location=("index.php?m=mod_b2b&c=Home&a=Home")</script>';
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="Description" content="{$vd['web']['description']}" />
+<title>{$vd['web']['title']} - 经销商系统</title>
+<link rel="stylesheet" type="text/css" href="{$vd['content']}css/{$vd['css']}.css" />
+<link rel="shortcut icon" href="{$vd['content']}images/favicon.ico" type="image/x-icon"/>
+<script type="text/javascript" src="{$vd['content']}js/utils.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  docWidOrg = document.documentElement.clientWidth;    
+  if(docWidOrg < 1003)
+  {
+    document.body.style.width = 1003 + "px";
+  }
+  else
+  {
+    document.body.style.width = "100%";
+  }
+</script>
+<div id="shop">
+<div id="top" style="MARGIN-TOP:0px;">
+<div id="logobg">
+<div style="width:230px;float:left;"><img src="{$vd['content']}images/mylogo.gif"/></div>  
+<div style="float:right;">
+  
+</div>
+</div>
+
+</div>
+</div>
+<!--if(isset($vd['agent'])){-->
+<div class="dkf1" id="dkfdiv" onmouseover="setkf(1,event,this)" onmouseout="setkf(0,event,this)"></div>
+<!--}-->
+<div class="dkf1" id="dkfdiv" onmouseover="setkf(1,event,this)" onmouseout="setkf(0,event,this)"></div>
+<div class="headTab">
+  <ul>
+    <li><a <!--if($g_controller=='Dealer'&&$g_action=='Home'){-->class="on"<!--}--> href="index.php?m=mod_b2b&c=Dealer&a=Home">首页</a></li>
+    <li class="bian"><a <!--if($g_controller=='underling'&&$g_action=='Index'){-->class="on"<!--}--> href="index.php?m=mod_agent&c=underling">档案管理</a></li>
+    <li class="bian"><a <!--if($g_controller=='Price'){-->class="on"<!--}--> href="index.php?m=mod_b2b&c=Price">价格管理</a></li>
+    <li class="bian"><a <!--if($g_controller=='Funds'&&$g_action=='Tran'){-->class="on"<!--}--> href="index.php?m=mod_agent&c=funds&a=tran">划款给下级</a></li>
+    <li class="bian"><a <!--if($g_controller=='Trade'&&request('tpl')=='profit'){-->class="on"<!--}--> href="index.php?m=mod_agent&c=trade&tpl=profit&tradetype=11">销售提成</a></li>
+    <li class="bian"><a <!--if($g_controller=='Funds'&&$g_action=='Detail'){-->class="on"<!--}--> href="index.php?m=mod_agent&c=funds&a=detail">提成转余额</a></li>
+    <li class="bian"><a href="{$vd['root']}index.php?m=mod_b2b&c=Home&a=Home">直销系统</a></li>
+  </ul>
+</div>
+<div id="ubtop">
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}"/>
+<div id="ubmain">
+<script type="text/javascript" src="{$vd['content']}js/dkf.js"></script>

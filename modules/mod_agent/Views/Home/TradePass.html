@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>修改登录密码</title>
+<link href="../index/css/pop.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="neirong">
+	<form name="modify" method="post" action="index.php?m=mod_agent&c=home&a=SaveTradePwd">
+<div></div>
+
+<table cellspacing="1" cellpadding="2" class="table1">
+            
+                <tbody><tr>
+                    <td class="table1_left" style="width: 25%">
+                        <span id="Lab1">原交易密码</span>                    </td>
+                    <td class="tdleft"><span class="tableright1">
+                      <input type="password" class="input0" id="apwd" name="apwd"/>
+                    </span></td>
+                </tr>
+            <input type="hidden" name="TradePassword" id="TradePassword">
+            <tr>
+                <td class="table1_left">
+                    <span id="newtradepwd">新交易密码:</span>                </td>
+                <td class="tdleft"><span class="tableright1">
+                  <input type="password" class="input0" id="tradepwd" name="tradepwd"/>
+                  </span>
+                  <input type="hidden" name="NewTradePassword" id="NewTradePassword">
+                <span class="zs">不可与登录密码相同，建议数字+字母混合。</span>                </td></tr>
+            <tr>
+                <td class="table1_left">
+                    <span id="checknewtradepwd">确认新交易密码:</span>                </td>
+                <td class="tdleft"><span class="tableright1">
+                  <input type="password" class="input0" id="retradepwd" name="retradepwd" />
+                  </span>
+                <input type="hidden" name="CheckNewTradePassword" id="CheckNewTradePassword">                </td></tr>
+            <tr>
+                <td class="table1_left">&nbsp;              </td>
+                <td class="tdleft"><label>
+                  <input name="Submit" type="submit" class="tijiao_input" value="提交" />
+                </label></td>
+            </tr>
+        </tbody></table>
+        <input type="hidden" name="HFrk" id="HFrk" value="815678B59CEEE97AB610FB01EC79A779">
+        <input type="hidden" name="HFrki" id="HFrki">
+        <input type="hidden" id="rk" value="815678B59CEEE97AB610FB01EC79A779">
+        <input type="hidden" id="rki" value="">
+        <input type="hidden" name="ksign" id="ksign" value="">
+        <script language="javascript" type="text/javascript">
+            function _setvalue(v) {
+                document.getElementById("rki").value = v;
+            }
+            function _getvalue() {
+                return document.getElementById("rki").value;
+            }
+            function _getvalue2() {
+                return document.getElementById("rk").value;
+            }
+            function Setrk(v) {
+                document.getElementById("rk").value = v;
+                document.getElementById("HFrk").value = v;
+            }
+            var objse1, objse2, objse3;
+            var BrowserIsChrome = 0;
+            function f() {
+                if (document.getElementById("TradePasswordObj") != null) {
+                    objse1 = document.getElementById("TradePasswordObj");
+                    objse1.s1(document);
+                }
+                
+                objse2 = document.getElementById("NewTradePasswordObj");
+                objse2.s1(document);
+                objse3 = document.getElementById("CheckNewTradePasswordObj");
+                objse3.s1(document);
+            }
+            function GetObjInfor() {
+                var a;
+                var b;
+                var c;
+                if (BrowserIsChrome == 0) {
+                    if (document.getElementById("TradePasswordObj") != null) {
+                        a = document.getElementById("TradePasswordObj").value;
+                    }
+                    b = document.getElementById("NewTradePasswordObj").value;
+                    c = document.getElementById("CheckNewTradePasswordObj").value;
+                }
+                else {
+                if (document.getElementById("TradePasswordObj") != null) {
+                    a = document.getElementById("embed1").value;
+                    }
+                    b = document.getElementById("embed2").value;
+                    c = document.getElementById("embed3").value;
+                }
+                if (a == "") {
+                    alert("原交易密码为空！");
+                    return false;
+                }
+                if (b == "") {
+                    alert("新交易密码为空！");
+                    return false;
+                }
+                if (c == "") {
+                    alert("确认新交易密码为空！");
+                    return false;
+                }
+
+                document.getElementById("TradePassword").value = a;
+                document.getElementById("NewTradePassword").value = b;
+                document.getElementById("CheckNewTradePassword").value = c;
+                return true;
+            }
+            if (SCBrowserCompatible.isChrome()) {
+                var str1 = new Array();
+                str1.push("<EMBED id=\"embed1\" TYPE=\"application/x-klgedit\" Worder=\"0\" width=\"135\" height=\"23\" ETYPE=1 />");
+                BrowserIsChrome = 1;
+                str1 = str1.join("");
+                document.getElementById("tdSafeCont").innerHTML = str1;
+                document.getElementById("tdSafeCont1").innerHTML = "<EMBED id=\"embed2\" TYPE=\"application/x-klgedit\" Worder=\"0\" width=\"135\" height=\"23\" ETYPE=1 />";
+                document.getElementById("tdSafeCont2").innerHTML = "<EMBED id=\"embed3\" TYPE=\"application/x-klgedit\" Worder=\"0\" width=\"135\" height=\"23\" ETYPE=1 />";
+            }
+            else {
+                f();
+            }
+        </script>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Setrk('815678B59CEEE97AB610FB01EC79A779');//]]>
+</script>
+</form>
+    </div>
+
+
+</body></html>

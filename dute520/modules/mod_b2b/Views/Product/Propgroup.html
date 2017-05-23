@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<form action="index.php?m=mod_b2b&c=product&a=simple" method="post" style="margin:5px 0px;">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right">
+      <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
+      <input type="submit" value="商品搜索 &gt;&gt;" style="vertical-align:middle;"/>
+      </span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >商品属性组别管理</span>
+    </td>
+  </tr>
+</table>
+</form>
+
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6"> 
+  <tr> 
+    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">组名</td>
+    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">可见</td>
+    <td width="20%" bgcolor="#f1f1f1" align="center" class="listhead">操作</td>
+    <td width="20%" bgcolor="#f1f1f1" align="center" class="listhead"></td>
+  </tr>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=product&a=propgroupsave">
+  <tr>
+    <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="name" size="22"/></td>
+    <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="visible" size="5"/></td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+      <input type="hidden" name="maxid" value="{$vd['maxid']}" />
+      <input type="submit" name="Submit" value="添 加"/>
+    </td>
+    <td width="15%" bgcolor="#f1f1f1" align="center"></td>
+  </tr>
+  </form>
+  <!--foreach($vd['propgroups'] as $item) {-->
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=product&a=propgroupsave">
+  <tr>
+    <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="name" size="22" value="{$item['name']}"/></td>
+    <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="visible" size="5" value="{$item['visible']}"/></td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+    <input type="hidden" name="id" value="{$item['id']}" />
+    <input type="submit" name="Submit" value="修 改" />
+    </td>
+    <td width="15%" bgcolor="#f1f1f1" align="center">
+      <a href="index.php?m=mod_b2b&c=product&a=propgroupdel&id={$item['id']}" onclick="return confirm('您确定进行删除操作吗？')">
+      删除
+      </a>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+</table>
+<br/>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center">
+  <tr> 
+    <td bgcolor="#f1f1f1">操作注意事项及说明</td>
+  </tr>
+  <tr> 
+    <td bgcolor="#f1f1f1"><font color="#ff0000">
+    ·请谨慎修改这些参数。<br/>
+    ·"可见" 栏参数说明：0：只有发布者和管理者可见，1：购买者可见，2：所有人可见。<br/>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>

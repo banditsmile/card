@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Product&ptype=-1&aid=-1" title="商品列表"><font color="#000">商品列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">添加直储帐号</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_esales_add" onFocus="this.blur()" title="添加直储帐号"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=esales&a=save">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div id="template">
+<div class="ctitle">添加直储帐号</div>
+<table border="0" id="ctable1" class="ctable">
+  <tr>
+    <td class="buylt"></td>
+    <td class="buyrt"><img src="{$vd['sc']}images/load.gif" style="vertical-align:middle;"/> 正在加载中模板...
+    </td>
+  </tr>
+</table>
+</div>
+<input type="hidden" id="ubzpid" name="ubzpid" value="{$item['pid']}"/>
+<input type="hidden" id="ubzpname" name="ubzpname" value="{$item['pname']}"/>
+<input type="hidden" id="thispwd" value=""/>
+<input type="hidden" id="thismechant" value=""/>
+<input type="hidden" id="thistpl" value=""/>
+<input type="hidden" id="thisothers" value=""/>
+<input type="hidden" id="thisstocks" value=""/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+  </div>
+</div>
+</form>
+<span id="tpljs"></span>
+{$vd['js']}
+
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >添加充值模板</span>
+    </td>
+  </tr>
+</table>
+<form method="post" action="index.php?m=mod_b2b&c=game&a=TplSave">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="34%" align="right" style="padding: 5px">手工充值模板名称：</td>
+    <td width="64%" style="padding: 5px">
+      <input type="text" name="name" size="24" /> 添加商品时候，可以根据这个名称选择手动充值模板
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="padding: 5px">计费方式类型：</td>
+    <td style="padding: 5px">
+    <select name="chargetype">
+      {#Option($vd['chargetype'], 0, 'name', 'value')}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td width="34%" align="right" style="padding: 5px">自定义计费：</td>
+    <td width="64%" style="padding: 5px">
+    <input type="text" name="mychargetype" size="24" value=""/>多种选择请用半角逗号隔开，如：计点,包月,充币等等
+    </td>
+  </tr>
+  <tr>
+    <td width="34%" align="right" style="padding: 5px">帐户类型：</td>
+    <td width="64%" style="padding: 5px">
+    <input type="text" name="accounttype" size="24" value=""/>多种选择请用半角逗号隔开，如：盛大通行证,游戏账号，无选择不用填
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="padding: 5px">是否需要输入密码：</td>
+    <td style="padding: 5px">
+    <input type="radio" name="pwdneed" size="24" value="1" class="checkbox"/> 需要 <input type="radio" class="checkbox" name="pwdneed" size="24" value="0" checked/> 不需要
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="padding: 5px">充值区域类型：</td>
+    <td style="padding: 5px">
+      <select name="areadisp">
+        <option value="0" selected>无充值区域选择</option>
+        <option value="1">有充值区域选择</option>
+        <option value="2">购买客户自行输入</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="padding: 5px">充值服务器类型：</td>
+    <td style="padding: 5px">
+      <select name="servdisp">
+        <option value="0" selected>无充值服务器选择</option>
+        <option value="1">有充值服务器选择</option>
+        <option value="2">购买客户自行输入充值服务器</option>
+      </select>主要用于部分游戏充值时需要选择具体哪组服务器
+    </td>
+  </tr>
+  <tr>
+    <td align="right" style="padding: 5px">是否共享给自由商品：</td>
+    <td style="padding: 5px">
+      <select name="shared">
+      <option value="0">不共享给自有商品</option>
+      <option value="1" selected>共享给自有商品</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+    <input type="submit" value="添 加 &gt;&gt;" name="b1"/></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

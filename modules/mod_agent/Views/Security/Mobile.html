@@ -1,0 +1,188 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<!--$item=$vd['item'];-->
+<div class="ubtwoRight" id="ubtwoRight">
+	<div id="adddiv" style="position:absolute;top:200px;left:430px;;width:380px;display:none">
+  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">请输入手机号</div>
+  	<div style="float:right;"><img src="{$vd['content']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="25%" align="center"></td>
+        <td width="75%"><input type="text" name="mobiletmp" id="mobiletmp" size="25" class="myinput" /></td>
+      </tr>
+      <tr>
+      	<td width="25%"></td>
+        <td width="75%" style="height:50px">
+        	<input type="button" value="下一步" class="button" onclick="sendmobile(0)"/>
+        	<input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+        </td>
+      </tr>
+      <tr id="sendtip" style="display:none">
+        <td width="25%" align="center"></td>
+        <td width="75%">验证码正在发送中... 请不要关闭或取消窗口</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+  <div id="sfdiv" style="position:absolute;top:200px;left:430px;;width:380px;display:none">
+  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">请输入收到的验证码</div>
+  	<div style="float:right;"><img src="{$vd['content']}images/destroy.gif" onclick="disp('sfdiv')" style="cursor:pointer"/></div>
+  	<form method="post" action="index.php?m=mod_agent&c=security&a=BindMobile">
+  	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="25%" align="center"></td>
+        <td width="75%"><input type="hidden" name="mobile" id="mobile"><input type="text" name="verifycode" id="verifycode" size="25" class="myinput" /></td>
+      </tr>
+      <tr>
+      	<td width="25%"></td>
+        <td width="75%" style="height:50px">
+        	<input type="hidden" value="0" name="v" id="v"/>
+        	<input type="submit" value="提交绑定" class="button" id="sfsub"/>
+        	<input type="button" value="取 消" onclick="disp('sfdiv')" class="button"/>
+        </td>
+      </tr>
+    </table>
+    </form>
+    </div>
+  </div>
+	<div class="welcometext" style="">
+		手机令牌：<!--if($item['mobilecheck']==1){-->已绑定
+		<div style="padding-top:10px"><input type="button" value="解除绑定" onclick="sendmobile(1)" class="button" style="cursor:pointer">
+		<span id="sendtip1" style="display:none;margin-left:15px;font-size:12px;color:#5c5c5c">验证码正在发送中... 请稍等片刻</span>
+		</div>
+		<!--}else{-->未绑定
+		<div style="padding-top:10px"><input type="button" value="开始绑定" onclick="disp('adddiv')" class="button" style="cursor:pointer"> </div>
+		<!--}-->
+	</div>
+  <div class="cbox">
+    <ul>
+      <li>
+      	（1）<b>什么是手机令牌？手机令牌可以做什么？</b>
+				<p>手机令牌是账号安全的一个密保手段，他会在手机上显示6位动态密码，前台可以自行绑定。绑定成功后用户可以通过验证密保卡坐标检查登录信息，保证账号安全，还可以通过密保卡验证付款等安全服务。</p> 
+			</li>
+    </ul>
+    <ul>
+      <li>
+      	（2）<b>手机令牌收费吗？</b>
+				 <p>手机令牌是免费的，目前不收取您的任何费用<br />
+			</li>
+    </ul>
+    <ul>
+      <li>
+      	（3）<b>手机令牌和密保卡的区别？</b>
+				 <p>手机令牌与密保卡两者都具有帐号安全保护功能，且使用时都是验证随机数字，区别在于令牌需在手机上使用，密保卡可以是实物卡或电子密保卡图片。相比之下，手机更贴近于个人，对安全更有保障，但是令牌是在发送过程中有时候会受到网络的影响，令牌不能即时到达手机，而是延迟几秒，所以请各位根据情况设置即可。</p>
+			</li>
+    </ul>
+    <ul>
+      <li>
+      	（4）<b>申请令牌需要注意什么？</b>
+				 <p><font color="#ff0000">目前申请手机令牌绑定之前需要和管理员联系一下，方可申请，否则有可能您会收不到验证码而导致绑定失败</font><br />
+			</li>
+    </ul>
+  </div>
+  <iframe name="gethard" id="gethard" width="0" height="0" style="border:0" src=""></iframe>
+</div>
+<input type="hidden" id="tmac" name="tmac"  value=""/>
+<script type="text/JavaScript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+function disp(idx)
+{
+	$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+}
+
+function sendmobile(val)
+{
+	if(val)
+  {
+	  $("sendtip1").style.display = "";
+  }
+  else
+	{
+		$("sendtip").style.display = "";
+  }
+	
+	if (window.XMLHttpRequest)
+  {
+    xmlhttpsm=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttpsm=new ActiveXObject("Microsoft.xmlhttp");
+  }
+  
+	webroot    = $("webdir").value;
+	mymobile   = $("mobiletmp").value;
+	myurl      = webroot + "index.php?m=mod_agent&c=Security&a=Fetion";
+	
+  if (xmlhttpsm!=null)
+  {
+    xmlhttpsm.onreadystatechange=function(){
+      if (xmlhttpsm.readyState==4)
+      {
+        if (xmlhttpsm.status==200)
+        {
+        	var ackdata=xmlhttpsm.responseText;
+          if(ackdata != "0")
+          {
+          	//disp('adddiv');
+          	//disp('sfdiv');
+          	if(val)
+          	{
+          		alert("验证码发送失败，请重新点击解除绑定");
+          	}
+            else
+          	{
+        		  alert("验证码发送失败，请重新点击下一步");
+        	  }
+          }
+          else
+        	{
+        		if(val)
+          	{
+        		  $('sfsub').value = "解除绑定";
+        	  }
+        	  else
+        		{
+        			disp('adddiv');
+        			$("mobile").value = mymobile;
+        		}
+       
+        	  disp('sfdiv');
+        	  if(val)
+            {
+	            $("sendtip1").style.display = "none";
+            }
+            else
+	          {
+	          	$("sendtip").style.display = "none";
+            }
+            
+            $("v").value = val;
+        	}
+        }
+        else
+        {
+          alert("发送失败，请重新点击下一步");
+        }
+      }
+    };
+
+    xmlhttpsm.open("post", myurl, true);
+    xmlhttpsm.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttpsm.send('val=' + val + '&mobile=' + mymobile);
+  }
+  else
+  {
+    alert("您的浏览器不支持xmlhttp")
+  }
+}
+</script>
+
+{load(foot)}

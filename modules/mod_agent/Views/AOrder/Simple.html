@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="../index/css/Horizontal.css" type="text/css" rel="stylesheet">
+<head>
+<title>商品销售报表查询</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../index/css/common.css" type="text/css" rel="stylesheet">
+<link href="../index/css/page.css" type="text/css" rel="stylesheet">
+    <form name="query" METHOD=get ACTION="index.php" id="advsearch">
+    <!--$ptype=request('ptype');$ordstate=request('ordstate');-->
+      <div class="new_qie">
+        <div class="new_qie2">
+          <h2>商品销售报表查询</h2>
+        </div>
+        <ul><li><a href="" class="on">商品销售报表查询</a></li>
+          <li><a href="index.php?m=mod_agent&amp;c=AOrder&amp;&amp;a=Simple&amp;optype=km">虚拟卡密交易记录</a></li>
+        </ul>
+      </div>
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+    	<!--$vhistory=$vd['ishistory']==1?0:1;if($vd['hashistory'] == 1){-->
+  	  <tr>
+        <td class="table1_left">&nbsp;        </td>
+        <td class="11">
+        	<div align="left">
+        	  <input type="hidden" name="ishistory" value="{$vd['ishistory']}" />
+        	    <a href="index.php?m=mod_agent&c=AOrder&a=Simple&ishistory={$vhistory}"><font color="#ff0000"><u>
+       	        <!--if($vd['ishistory']==0){-->
+       	        历史数据查询
+       	        <!--}else{-->
+       	        回到当前数据查询
+       	        <!--}-->
+        </u></font></a>   	        </div></td>
+      </tr>
+      <!--}-->
+      <tr>
+      <td class="table1_left">
+        商品类型：      </td>
+      <td class="buyrt">
+        <div align="left">
+          <select name="ptype" onChange="setk(this)">
+            <option value="">所有</option>
+            <option value="km" 
+            <!--if($ptype=='km'){-->
+            selected
+            <!--}-->
+            >虚拟卡密
+            </option>
+            <option value="sd" 
+            <!--if($ptype=='sd'){-->
+            selected
+            <!--}-->
+            >充值商品
+            </option>
+          </select>
+        </div></td>
+    </tr>
+    <tr id="stypetr" style="<!--if($ptype !='km' && $ptype !='sd'){-->display:none<!--}-->">
+      <td class="table1_left"><span id="stypelabel"><!--if($ptype=='sd'){-->充值帐号：<!--}else if($ptype=='km'){-->卡号密码<!--}--></span></td>
+      <td class="buyrt"><div align="left">
+        <input type="hidden" id="stype" name="stype" value="<!--if($ptype=='sd'){-->czaccount<!--}else if($ptype=='km'){-->cardnumber<!--}else{-->pname<!--}-->">
+        <input type="text" size="22" name="keywords"  id="tkeywords" value="{$vd['kw']}">
+        <span id="stypetip">
+          <!--if($ptype=='km'){-->
+          &nbsp;格式：卡号|密码
+          <!--}-->
+      </span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left">
+        订单类型：      </td>
+      <td class="buyrt">
+        <div align="left">
+          <select name="ordstate">
+            <option value="">所有</option>
+            <option value="2" 
+            <!--if($ordstate==2){-->
+            selected
+            <!--}-->
+            >成功订单
+            </option>
+            <option value="-1" 
+            <!--if($ordstate==-1){-->
+            selected
+            <!--}-->
+            >失败订单
+            </option>
+            <option value="1" 
+            <!--if($ordstate==1){-->
+            selected
+            <!--}-->
+            >处理中订单
+            </option>
+          </select>
+        </div></td>
+    </tr>
+    <tr>
+      <td class="table1_left">
+        时间段：      </td>
+      <td class="buyrt">
+        <div align="left">
+          <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+          <img src="{$vd['content']}images/calender.gif" onClick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+          <b>到 -></b>
+          <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>
+      <img src="{$vd['content']}images/calender.gif" onClick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>        </div></td>
+    </tr>
+
+    <tr>
+    <td height="30" class="table1_left">&nbsp;</td>
+    <td class="tableright1">
+      <div align="left">
+        <input type="hidden" name="m" value="mod_agent"/>
+        <input type="hidden" name="c" value="AOrder"/>
+        <input type="hidden" name="a" value="Simple"/>
+        <input type="hidden" id="export" name="export" value="0"/>
+        <input type="submit" value="" class="input_s" onClick="setAct(0)"/>
+      </div></td>
+    </tr>
+    </table>
+  </form>
+  </td>
+  </tr>
+  </table>
+  <br>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+    <tr>
+    <th width="16%" class="heardertop1">销售时间</td>
+    <th width="22%" class="heardertop1">商品名称</td>
+    <th width="8%" class="heardertop1">商品类型</td>
+    <th width="15%" class="heardertop1">购买客户</td>
+    <th width="6%" class="heardertop1">数量</td>
+    <th width="8%" class="heardertop1">销售单价</td>
+    <th width="8%" class="heardertop1">销售金额</td>
+    <th width="11%" class="heardertop1">状态</td>
+    <th width="6%" class="heardertop1">详细</td>
+    </tr>
+    <!--$dollars_sum = 0;$moneyfee_sum = 0;$qty_sum = 0;$agentprofit_sum = 0;$ownermoney_sum = 0;foreach($vd['items'] as $item) {-->
+		  	  	    <tr class="trd">
+    <td>{$item['orddate']}</td>
+    <td >{$item['pname']}</td>
+    <td>{#ProductType($item['ptype'])}</td>
+    <td >{$item['company']}({#DisplayCode($item['cid'])})</td>
+    <td>{$item['qty']}个</td>
+    <td>{$item['cprice']}</td>
+    <td>{$item['dollars']}</td>
+    <td>{#OrderState($item['ordstate'],$item['ptype'])}</td>
+    <td><input type="button" name="detail" class="buttonnor" value="详细" onClick="javascript:location.href='index.php?m=mod_agent&c=AOrder&a=detail&ordno={$item['ordno']}';"></td>
+    </tr>
+    <!--$dollars_sum=$dollars_sum+$item['dollars'];$moneyfee_sum=$moneyfee_sum+$item['moneyfee'];$qty_sum=$qty_sum+$item['qty'];$agentprofit_sum=$agentprofit_sum+$item['agentprofit'];$ownermoney_sum=$ownermoney_sum+$item['ownermoney']; }-->
+    
+    
+    <tr class=thr><td align=center>本页合计：</td><td colspan=3>&nbsp;</td><td align=center>{$qty_sum}</td><td>&nbsp;</td><td align=center>{$dollars_sum}</td><td colspan=2>&nbsp;</td></tr><tr class=thr><td align=center>查询总计：</td><td colspan=3>&nbsp;</td><td align=center>{$vd['tradedata']['qty_sum']}&nbsp;</td><td>&nbsp;</td><td align=center>{$vd['tradedata']['dollars_sum']}&nbsp;</td><td colspan=2>&nbsp;</td></tr>
+    </table>
+		 <div align="right">
+		   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+         <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+  </td>
+  </tr>
+  </table>
+  <div id="page">
+    {load(fpage)}
+  </div>
+  
+</body>
+</html>
+<script type="text/javascript">
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+
+
+function setk(obj)
+{
+  v = obj.options[obj.selectedIndex].value;
+  $("tkeywords").value = "";
+  if(v == "")
+  {
+    $("stypetr").style.display = "none";
+    $("stype").value = "pname";
+  }
+  else if(v == "km")
+  {
+    $("stypetr").style.display = "";
+    $("stype").value = "cardnumber";
+    $("stypelabel").innerHTML = "卡号密码：";
+    $("stypetip").innerHTML = "&nbsp;格式：卡号|密码";
+  }
+  else if(v == "sd")
+  {
+    $("stypetr").style.display = "";
+    $("stype").value = "czaccount";
+    $("stypelabel").innerHTML = "充值帐号：";
+    $("stypetip").innerHTML = "";
+  }
+}
+function setAct(v)
+{
+	$("export").value = v;
+	if(v > 0)
+	{
+	  $("advsearch").submit();
+	}
+}
+
+         </script>
+         </div>
+    

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>设定商品购买价格</title>
+<link href="../index/css/common.css" rel="stylesheet" type="text/css">
+<link href="../index/css/page.css" rel="stylesheet" type="text/css"><body class="mainbg">
+<!--$p = $vd['product']; -->
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>{$vd['underling']['aname']}客户密价设定</h2>
+  </div>
+</div>	
+<form name="search" method="get" action="index.php">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">关键字：</td>
+		<td width="78%" align="left" class="tableright1"><input type="text" size="30" name="keywords" class='input' value=""></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询类型：</td>
+		<td align="left" class="tableright1">
+		<select name="stype">
+		<option value="pname">商品名称</option>
+		<option value="pid">商品编号</option>
+		<option value="listprice">商品面值</option>
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1">
+		<input type="hidden" name="aid" value="{$vd['aid']}"/>
+		<input type="hidden" name="m" value="mod_b2b"/>
+	  <input type="hidden" name="c" value="product"/>
+		<input type="hidden" name="a" value="PrivatePriceProductSet"/>
+		<input type="submit" name="Submit" value="确认查询" class="button">
+		<input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+	  <br>
+	</form>
+	<form name="setup" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=PrivatePriceProductSave">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr>
+		<td width="9%" class="heardertop1">商品ID</td>
+		<td width="25%" class="heardertop1">商品名称</td>
+		<td width="8%" class="heardertop1">商品类型</td>
+		<td width="8%" class="heardertop1">面值</td>
+		<td width="10%" class="heardertop1">我的进价</td>
+		<td width="10%" class="heardertop1">客户当前购价</td>
+		<td width="15%" class="heardertop1">密价设定</td>
+		<td width="10%" class="heardertop1">差价</td>
+		<td width="5%" class="heardertop1">操作</td>
+		</tr>
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">
+		<td>{$item['pid']}</td>
+		<td align=left>{$item['pname']}</td>
+		<td>{#ProductType($item['ptype'])}</td>
+		<td>{$item['listprice']}</td>
+		
+		<td>{$item['cprice']}</td>
+		<td>{$item['underlingprice']}</td>
+		<td>
+			  <input type="hidden" name="oldprice_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+      	<input type="hidden" name="pid[]" value="{$item['pid']}"/>
+      	<input type="hidden" name="myprice_{$item['pid']}" value="{$item['cprice']}"/>
+        <input type="text" size="8" class="input1" name="price_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+		</td>
+		<td><!--if(isset($vd['parray'][$item['pid']])){echo round(($vd['parray'][$item['pid']]-$item['cprice']), 3);}else{echo '--';}--></td>
+    <td><a href="index.php?m=mod_b2b&c=price&a=PrivatePriceAgentDel&pid={$item['pid']}&aid={$vd['aid']}">清除</a></td>
+		</tr>
+    <!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+		{load(fpage)}
+	</div>
+	<input type="hidden" name="aid" value="{$vd['aid']}"/>
+	<input type="submit" name="Submit" value="确认设置" class="button">
+	<input type="reset" name="reset" value="重新填写" class="button">
+	<br><br>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead texttle">产品管理(一卡通页面主要显示这些名称)</td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="11%" height="35" class="listhead">
+    <p align="center">产品名称</td>
+    <td width="5%" height="35" class="listhead">
+    <p align="center">排序</td>
+    <td width="5%" height="35" class="listhead">
+    <p align="center">首字母</td>
+    <td width="8%" height="35" class="listhead">
+    <p align="center">颜色</td>
+    <td width="6%" height="35" class="listhead">
+    <p align="center">卡种</td>
+    <td width="10%" height="35" class="listhead">
+    <p align="center">卡种操作</td>
+    <td width="5%" align="center" height="35" class="listhead">
+      上架</font>
+    </td>
+    <td width="5%" align="center" height="35" class="listhead">
+      新品</font>
+    </td>
+    <td width="5%" align="center" height="35" class="listhead">
+      新手</font>
+    </td>
+    <td width="5%" align="center" height="35" class="listhead">
+      推荐</font>
+    </td>
+    <td width="5%" align="center" height="35" class="listhead">
+      热卖</font>
+    </td>
+    <td width="6%" align="center" height="35" class="listhead">
+      促销</font>
+    </td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <font color="#ff0000">首列</font>
+    </td>
+    <td width="6%" height="35" class="listhead">
+    <p align="center">编辑</td>
+    <td width="4%" height="35" class="listhead">
+    <p align="center">操作</td>
+    <td width="4%" height="35" class="listhead">
+    <p align="center">广告</td>
+  </tr>
+  <form action="index.php?m=mod_b2b&c=ykt&a=ProductSave" method="post">
+  <tr>
+    <td width="11%" align="center" height="35"><input type="text" name="yktpname" size="15" value=""/></td>
+    <td width="5%" align="center" height="35"><input type="text" name="ordering" size="2"/></td>
+    <td width="5%" align="center" height="35"><input type="text" name="letter" size="2"/></td>
+    <td width="8%" align="center" height="35"><input type="text" size="8" name="color" value="#000000"/></td>
+    <td width="6%" height="35"></td>
+    <td width="10%" height="35"></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="sell" value="1" class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="new" value="1" class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="tag" value="1" class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="recommand" value="1" class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="hot" value="1" class="checkbox"/></td>
+    <td width="6%" align="center" height="35"><input type="checkbox" name="sale" value="1" class="checkbox"/></td>
+    <td width="6%" align="center" height="35"><input type="checkbox" name="first" value="1" class="checkbox"/></td>
+    <td width="6%" align="center" height="35"><input type="submit" value="添加"/></td>
+    <td width="4%" align="center" height="35"></td>
+    <td width="4%" align="center" height="35"></td>
+  </tr>
+  </form>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">您还没有添加任何文章分类</td>
+  </tr>
+  <!--}-->
+  <!--foreach($vd['items'] as $item) {-->
+  <form action="index.php?m=mod_b2b&c=ykt&a=ProductSave&id={$item['yktpid']}" method="post" >
+  <tr>
+    <td width="11%" align="center" height="35"><input type="text" name="yktpname" size="15" value="{$item['yktpname']}"/></td>
+    <td width="5%" align="center" height="35"><input type="text" name="ordering" value="{$item['ordering']}" size="2"/></td>
+    <td width="5%" align="center" height="35"><input type="text" name="letter" value="{$item['letter']}" size="2"/></td>
+    <td width="8%" align="center" height="35"><input type="text" size="8" name="color" value="{$item['color']}"/></td>
+    <td width="6%" align="center" height="35">{$item['childs']}</td>
+    <td width="10%" align="center" height="35">
+      [<a href="index.php?m=mod_b2b&c=ykt&a=ChildAdd&id={$item['yktpid']}"><font color="#0000ff">添加</font></a>/<a href="index.php?m=mod_b2b&c=ykt&a=childs&id={$item['yktpid']}"><font color="#ff0000">查看</font></a>]
+    </td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="sell" value="1" {#ToggleCheck($item['sell'])} class="checkbox"/></td> 
+    <td width="5%" align="center" height="35"><input type="checkbox" name="new" value="1" {#ToggleCheck($item['new'])} class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="tag" value="1" {#ToggleCheck($item['tag'])} class="checkbox"/></td> 
+    <td width="5%" align="center" height="35"><input type="checkbox" name="recommand" value="1" {#ToggleCheck($item['recommand'])} class="checkbox"/></td>
+    <td width="5%" align="center" height="35"><input type="checkbox" name="hot" value="1" {#ToggleCheck($item['hot'])} class="checkbox"/></td> 
+    <td width="6%" align="center" height="35"><input type="checkbox" name="sale" value="1" {#ToggleCheck($item['sale'])} class="checkbox"/></td>
+    <td width="6%" align="center" height="35"><input type="checkbox" name="first" value="1" {#ToggleCheck($item['first'])} class="checkbox"/></td>
+    <td width="6%"  align="center" height="35"><input type="submit" value="编辑"/></td>
+    <td width="4%" align="center" height="35">
+      <a href="index.php?m=mod_b2b&c=ykt&a=ProductDel&id={$item['yktpid']}">删除</a>
+    </td>
+    <td width="4%" align="center" height="35">
+      <a href="index.php?m=mod_b2b&c=ad&pos={$item['yktpid']+5000}">管理</a>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="19">
+    <form method="post" action="index.php?m=mod_b2b&c=ykt&a=product&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ykt&a=product&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ykt&a=product&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+<script language="JavaScript">
+function CheckAll(form) {
+  for (var i=0;i<form.elements.length;i++) {
+    var e = form.elements[i];
+    if (e.name != 'chkall') e.checked = form.chkall.checked; 
+  }
+}
+</script>

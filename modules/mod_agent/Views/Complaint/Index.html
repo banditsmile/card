@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>投诉反馈列表</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+	<!--if($vd['msgdirect']==1){--><!--}else{--><!--}-->
+	<!--$mst = intval(request('msgstate'));-->
+	<div class="new_qie">
+      <div class="new_qie2">
+        <h2> 投诉反馈列表</h2>
+        <p>&nbsp;</p>
+      </div>
+	  <ul>
+        <li><a href="index.php?m=mod_agent&c=Complaint&msgdirect={$vd['msgdirect']}">全部投诉</a></li>
+		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=1&msgdirect={$vd['msgdirect']}">未处理</a></li>
+		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=2&msgdirect={$vd['msgdirect']}">处理中</a></li>
+		<li><a href="index.php?m=mod_agent&c=Complaint&msgstate=3&msgdirect={$vd['msgdirect']}">已处理</a></li>
+</div>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="history" method="get" action="index.php">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		  <td class="table1_left" style="width: 25%"><span id="lab1">订单号</span> </td>
+		<td width="78%" class="tableright1">
+			
+			  <div align="left">
+			    <input type="hidden" name="m" value="mod_agent"/>
+			    <input type="hidden" name="c" value="Complaint"/>
+			    <input type="hidden" name="stype" value="ordno"/>
+			    <input type="hidden" name="msgstate" value="{$mst}"/>
+			    <input type="hidden" name="msgdirect" value="{$vd['msgdirect']}"/>
+			    <input type='text' size='30' maxlength='30' name='keywords' class='input0' value="">
+	        </div></td>
+		<tr>
+		<td class="table1_left" style="width: 25%">&nbsp;</td>
+		<td class="tableright1">
+		  <div align="left">
+		    <input type="hidden" name="TreatWith" value="">
+		    <input type="submit" name="Submit2" value="确认查询" class="tijiao_input"> 
+		    <input type="reset" name="reset" value="重置查询" class="fanhui_input">
+		    </div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<?php
+	$mstate = array('','<font color="#ff0000">未处理</font>','<font color="#ff00ff">处理中</font>','<font color="#0000ff">已处理</font>');
+	?>    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+		<tr>
+		<th width="16%" class="heardertop1">投诉时间</td>
+		<th width="12%" class="heardertop1">订单号</td>
+		<th width="34%" class="heardertop1">类型或问题</td>
+		<th width="10%" class="heardertop1">措施</td>
+		<th width="10%" class="heardertop1">处理状态</td>
+		<th width="18%" class="heardertop1">管理</td>
+		<!--foreach($vd['items'] as $item) {-->
+	  	  	    <tr class="trd">
+		<td>{$item['createdate']}</td>
+		<td><a href="index.php?m=mod_agent&c=<!--if($vd['msgdirect']==1){-->A<!--}-->Order&a=<!--if($vd['msgdirect']==1){-->d<!--}else{-->n<!--}-->etail&msgdirect={$msgdirect}&ordno={$item['ordno']}"><u><strong>{$item['ordno']}</strong></u></a></td>
+		<td align=left>{$item['other']}</td>
+		<td>{$item['hope']}</td>
+		<td><b><!--echo $mstate[$item['msgstate']]--></b></td>
+		<td>
+			<!--if($vd['msgdirect']>0){-->
+			  <input type=button name=detail value=<!--if($item['msgstate']==1){-->受理<!--}else{-->回复<!--}--> class=buttonnor onclick="javascript:location.href='index.php?m=mod_agent&c=Messenger&a=detail&msgdirect=1&id={$item['id']}';">
+			<!--}else{-->
+			<a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}"><img src="{$vd['content']}images/icon_ck.gif" align="absmiddle">查看</a> <a href="javascript:openScript('index.php?m=mod_agent&c=Messenger&pop=1&a=detail&id={$item['id']}','complaint',600,500);"><img src="{$vd['content']}images/icon_law.gif" align="absmiddle"> <!--if($item['msgstate']==3){-->重新提交<!--}else{-->补充<!--}--></a>
+		  <!--}-->
+		</td>
+		</tr>
+		<!--}-->
+		</table>
+ <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+    <div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>
+<script type="text/javascript"> 
+	function openScript(url,name,width,height)
+  {
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+  }
+</script>

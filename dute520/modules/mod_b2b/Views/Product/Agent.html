@@ -1,0 +1,220 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<script src="{$vd['sc']}js/transport.js" type="text/javascript"></script>
+<script src="{$vd['sc']}js/utils.js" type="text/javascript"></script>
+<script src="{$vd['sc']}js/ui.js" type="text/javascript"></script>
+</head>
+<body>
+<form action="index.php?m=mod_b2b&c=product&a=agent" method="post" style="margin:5px 0px;">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right">
+      <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
+      <input type="submit" value="自有商品搜索 &gt;&gt;" style="vertical-align:middle;"/>
+      </span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >
+        经销商自有商品列表
+      </span>
+    </td>
+  </tr>
+</table>
+</form>
+鼠标移动到商品的对应属性，点击会有意想不到的效果，操作完成后，需要重新<a href="index.php?m=mod_b2b&c=html&a=home" alt="生成首页静态页面">生成首页静态页面</a>，前台方可显示效果
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <form name="form" method="post" action="index.php?m=mod_b2b&c=product&a=ItemDeal" onsubmit="return Check();">
+  <tr>
+    <td width="20" align="center" height="35" class="listhead">
+      <input name="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this.form)"/></td>
+    <td width="134" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品<br/>名称</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">发布<br/>人</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">审<br/>核</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">手续<br/>费</font></td> 
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">库<br/>存</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">昨日<br/>售出</font></td>
+    <td width="54" align="center" height="35" class="listhead">
+      <font color="#ff0000">进<br/>价</font></td>
+    <td width="51" align="center" height="35" class="listhead">
+      <font color="#ff0000">零售<br/>价</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">库存<br/>金额</font></td>
+    <td width="90" align="center" height="35" class="listhead">
+      <font color="#ff0000">库存<br/>操作</font></td>
+    <td width="35" align="center" height="35" class="listhead">
+      <font color="#ff0000">类<br/>型</font></td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|0" alt="点击查看所有上架商品">上<br/>架</a></font>
+    </td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|1" alt="点击查看所有新品">新<br/>品</a></font>
+    </td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|2" alt="点击查看所有新手商品">新<br/>手</a></font>
+    </td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|3" alt="点击查看所有推荐商品">推<br/>荐</a></font>
+    </td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|4" alt="点击查看所有热卖商品">热<br/>卖</a></font>
+    </td>
+    <td width="30" align="center" height="35" class="listhead">
+      <font color="#ff0000"><a href="?m=mod_b2b&c=product&optype=1|5" alt="点击查看所有促销商品">促<br/>销</a></font>
+    </td>
+    <td width="58" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品<br/>操作</font></td>
+    <td width="35" align="center" height="35" class="listhead">
+      <b><font color="#ff0000">进<br/>货</font></b></td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">没有您要找的商品，请重新操作</td>
+  </tr>
+  <!--}-->
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="20" align="center" height="35">
+      <input type="checkbox" name="id[]" class="checkbox" value="{$item['pid']}"></input>
+    </td>
+    <td width="134" align="center" height="35">
+      <span onclick="uideal.edit(this,0,{$item['pid']})"> {$item['pname']}</span>
+    </td>
+    <td width="70" align="center" height="35">{$item['company']}</td>
+    <td width="70" align="center" height="35">{$item['pcheck']}</td>
+    <td width="70" align="center" height="35">{$item['pfee']}</td>
+    <td width="70" align="center" height="35">{$item['stocks']}</td>
+    <td width="70" align="center" height="35">{$item['sellyd']}</td>
+    <td width="54" align="center" height="35">
+      <span onclick="uideal.edit(this,1,{$item['pid']})"> {$item['price']}</span>
+    </td>
+    <td width="51" align="center" height="35">
+      <span onclick="uideal.edit(this,2,{$item['pid']})"> {$item['listprice']}</span>
+    </td>
+    <td width="70" align="center" height="35">{$item['stockscash']}</td>
+    <td width="90" align="center" height="35">{#PCardsPtype($item['ptype'], $item['pid'])}</td>
+    </td>
+    <td width="35" align="center" height="35">{#ProductType($item['ptype'])}</td>
+    <td width="30" align="center" height="35"> 
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['sell'])}" onclick="uideal.toggle(this,5,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="30" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['new'])}" onclick="uideal.toggle(this,4,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="30" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['tag'])}" onclick="uideal.toggle(this,3,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="30" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['remd'])}" onclick="uideal.toggle(this,6,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="30" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['hot'])}" onclick="uideal.toggle(this,7,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="30" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['sale'])}" onclick="uideal.toggle(this,8,{$item['pid']})" alt="点击此图片即可修改状态" class="mousehand" />
+    </td>
+    <td width="58" align="center" height="35">
+      <a href="?m=mod_b2b&c=product&a=detail&ubzpid={$item['pid']}">
+      <img src="{$vd['sc']}images/icon_edit.gif" alt="查看编辑" border="0"/></a>
+      <a href="?m=mod_b2b&c=product&a=del&ubzpid={$item['pid']}" onClick="return confirm('您确定进行删除操作吗？')">
+          <img src="{$vd['sc']}images/icon_trash.gif" alt="删除商品" border="0"/>
+      </a>
+    </td>
+    <td width="35" align="center" height="35">
+      <a href="?m=mod_b2b&c=sup&a=sup&ubzpid={$item['pid']}">
+      <font color="#00875A">管理</font>
+      </a>   
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="left" height="35" colspan="9">
+      <select name="act" size="1">
+        <option select="selected" value="0">选择操作</option>
+        <option select="selected" value="4|1">新品</option>
+        <option select="selected" value="4|0">取消新品</option>
+        <option select="selected" value="5|1">上架</option>
+        <option select="selected" value="5|0">下架</option>
+        <option select="selected" value="3|1">新手</option>
+        <option select="selected" value="3|0">取消新手</option>
+        <option select="selected" value="6|1">推荐</option>
+        <option select="selected" value="6|0">取消推荐</option>
+        <option select="selected" value="7|1">热卖</option>
+        <option select="selected" value="7|0">取消热卖</option>
+        <option select="selected" value="8|1">促销</option>
+        <option select="selected" value="8|0">取消促销</option>
+      </select>
+      <input type="submit" value=" 执 行 &gt;&gt;"/>
+    </td>
+    <td align="right" height="35" colspan="11">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  </form>
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <form method="post" action="index.php?m=mod_b2b&c=product&a=agent&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=product&a=agent&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=product&a=agent&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td>
+    <b>操作小提示</b>
+    <font color="#FF6600"><br/>
+    1.直接点击对应商品的 "商品名称"，"进价"和"零售价"可以直接修改其属性<br/>
+    2.直接点击对应商品的 "上架"，"新品"，"新手"，"推荐"，"热卖"和"促销" 的图片即可直接修改其对应的状态<br/>
+    3.以上操作完成后，需要重新<a href="index.php?m=mod_b2b&c=html&a=home" alt="生成首页静态页面">生成首页静态页面</a>，前台方可显示效果
+    </font>
+    <br/>
+    <b>商品列表说明</b>
+      <font color="#FF6600"><br/>
+      ·商品名称：商品的名称<br/>
+      ·库    存：自己的库存量<br/>
+      ·昨日售出：商品昨日成功出售量<br/>
+      ·进    价：商品进货价<br/>
+      ·零 售 价：商品零售价<br/>
+      ·库存金额：自己的库存 X 商品进货价<br/>
+      ·库    存：点击既可导入卡密(支持批量导入)<br/>
+      ·编辑库存：编辑对应商品的库存,包括删除,浏览,修改卡密<br/>
+      ·状    态：商品的状态,是销售还是下架<br/>
+      ·类    型：商品的类型,有卡密/代充/自动充值,代充和自动充值正在完善中,请随时关注颖先卡购开发进度<br/>
+      ·商品操作：删除/编辑对应商品<br/>
+    </font>
+    </td>
+  </tr>
+</table>
+<script language="Javascript">
+document.onmousemove=function(e)
+{
+  var obj = Utils.srcElement(e);
+  if (typeof(obj.onclick) == 'function' && obj.onclick.toString().indexOf('uideal.edit') != -1)
+  {
+    obj.title = '单击修改详细内容';
+    obj.style.cssText = 'background: #278296;';
+    obj.onmouseout = function(e)
+    {
+      this.style.cssText = '';
+    }
+  }
+}
+function CheckAll(form) {
+  for (var i=0;i<form.elements.length;i++) {
+    var e = form.elements[i];
+    if (e.name != 'chkall') e.checked = form.chkall.checked; 
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<title>商品进货对接</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+body{padding:0px;}
+td{height:22px;}
+</style>
+</head>
+<body>
+<form name="form1" method="post" action="index.php?m=mod_b2b&c=sup&a=save&frm=1" target="frmimport" id="cform" style="padding:5px;">
+<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid;">
+  <tr>
+    <td height="35"  colspan="2" class="listhead texttle">商品进货对接</td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">搜索货源：</td>
+    <td width="80%" style="padding: 5px">
+    <input type="text" id="spnamekey" name="spnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="搜索" onclick="loadSupProduct(1)" class="button"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">当前供货商品编号：</td>
+    <td width="80%" style="padding: 5px" id="supinfo">
+    <input type="text" name="ubzspid" size="5" value="{$vd['suppid']}"/><span id="otherinfo" style="padding-left:5px;"></span>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">当前供货商品名称：</td>
+    <td width="80%" style="padding: 5px" id="simplepid">{$vd['suppname']}</td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">供货优先级：</td>
+    <td width="80%" style="padding: 5px">
+    <input type="text" name="ubzspri" size="20" value="1"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">搜索我的商品：</td>
+    <td width="80%" style="padding: 5px">
+    <input type="text" id="pnamekey" name="pnamekey" size="20" value=""/><span style="padding-left:5px;"></span><input type="button" value="搜索" onclick="DispSelectZone()" class="button"/> 如果显示所有商品，输入空格即可
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">选择我的商品：</td>
+    <td width="80%" style="padding: 5px">
+      <select id="ubzpid" name="ubzpid" onchange="ShowImportList(this)" style="width:350px;">
+        {#Option($vd['item'], 0, 'pname', 'pid')}
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="right" style="padding: 5px">操作：</td>
+    <td width="80%" style="padding: 5px">
+    <input type="submit" value="确认对接 &gt; &gt;" style='font-weight:bold;font-size:14px' class="button" tabindex="21"/>
+    <span style="padding-left:5px;"></span>
+    <input type="reset" value="&lt; &lt; 重新填写" style='font-weight:bold;font-size:14px' class="button" name="reset" tabindex="22"/>
+    </td>
+  </tr>
+</table>
+</form>
+<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:5px #fff solid;margin-top:10px;">
+  <tr>
+    <td style="height:200px;padding-left:1px;background:#f6f6f6;">
+      <iframe frameBorder="0" width="100%" height="100%" id="frmimport" scrolling="no" name="frmimport" src="" allowTransparency="true" style="padding:0px;"></iframe>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+  var $ = function(id) {
+    return document.getElementById(id);
+  }
+  var tmp;
+  var i = 0;
+  var pArray = new Array();
+  
+  pidLength = $("ubzpid").length;
+  
+  for(i = 0; i < pidLength; i++)
+  {
+    /*
+    tmp   = $("ubzpid").options[i].text;
+    tchar = getFrist(tmp);
+    stext = getFrist(tmp) + tmp
+    pArray[i] = new Array($("ubzpid").options[i].value, stext);
+    */
+    pArray[i] = new Array($("ubzpid").options[i].value, $("ubzpid").options[i].text);
+    //$("ubzpid").options[i].text = stext;
+  }
+  
+  
+  function ShowImportList(obj)
+  {
+    $("frmimport").src = "index.php?m=mod_b2b&c=sup&a=FrmSup&ubzpid=" + $("ubzpid").options[$("ubzpid").selectedIndex].value + "&b=" + Math.random();
+  }
+  
+  function DispSelectZone()
+  {
+    $("ubzpid").length = 0;
+    var keys = trim($("pnamekey").value);
+    
+    for(i = 0; i < pidLength; i++)
+    {
+      if(pArray[i][1].toLowerCase().indexOf(keys)>-1)
+      {
+        $("ubzpid").options[$("ubzpid").length] = new Option(pArray[i][1], pArray[i][0]);
+      }
+    }
+  }
+      
+  //------------- 
+  //去掉字串左边的空格 
+  function lTrim(str) 
+  { 
+    if (str.charAt(0) == " ") 
+    { 
+      //如果字串左边第一个字符为空格 
+      str = str.slice(1);//将空格从字串中去掉 
+      //这一句也可改成 str = str.substring(1, str.length); 
+      str = lTrim(str); //递归调用 
+    } 
+    return str; 
+  } 
+  
+  //去掉字串右边的空格 
+  function rTrim(str) 
+  { 
+    var iLength; 
+    
+    iLength = str.length; 
+    if (str.charAt(iLength - 1) == " ") 
+    { 
+      //如果字串右边第一个字符为空格 
+      str = str.slice(0, iLength - 1);//将空格从字串中去掉 
+      //这一句也可改成 str = str.substring(0, iLength - 1); 
+      str = rTrim(str); //递归调用 
+    } 
+    return str; 
+  } 
+  
+  //去掉字串两边的空格 
+  function trim(str) 
+  { 
+    return lTrim(rTrim(str)); 
+  } 
+
+  
+  function getFrist(s)
+  {
+    var a=["啊a","吧b","擦c","嗒d","额e","发f","嘎g","哈h","击j","卡k","拉l","妈m","哪n","哦o","趴p","七q","惹r","撒s","他t","挖w","西x","压y","咋z"];
+    var fststr = s.charAt(0)
+    if(!isChinese(fststr))
+    {
+      return "";
+    }
+    
+    a.push(fststr);
+    a.sort(function(A,B){return A.localeCompare(B)});
+    for(var i = 0; i < 24; i++)
+    {
+      if(a[i] == fststr)
+      {
+        if(i == 0)
+        {
+          return "a-";
+        }
+        
+        if(i == 23)
+        {
+          return "z-";
+        }
+        
+        return a[i-1].charAt(1) + "-";
+      }
+    }
+    
+    return "z-";
+  }
+  
+  function IsDigit(cCheck) 
+  { 
+    return (('0'<=cCheck) && (cCheck<='9')); 
+  } 
+  function IsAlpha(cCheck) 
+  { 
+    return ((('a'<=cCheck) && (cCheck<='z')) || (('A'<=cCheck) && (cCheck<='Z'))) ;
+  } 
+  
+  function isChinese(str)
+  { 
+    var badChar ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+    badChar += "abcdefghijklmnopqrstuvwxyz"; 
+    badChar += "0123456789"; 
+    badChar += " "+"　";//半角与全角空格 
+    badChar += "`~!@#$%^&()-_=+]\\\\|:;\\\\\<,>?/";//不包含*或.的英文符号
+    if(""==str){ 
+      return false; 
+      } 
+    for(var i=0;i<str.length;i++){ 
+      var c = str.charAt(i);//字符串str中的字符 
+      if(badChar.indexOf(c) > -1){ 
+        return false; 
+        } 
+    } 
+    return true; 
+  } 
+  
+  //搜索供货商品
+  function loadSupProduct(page)
+  {
+    xmlhttp=null;
+    var url=null;
+    
+    url="page=" + page + "&keywords="+encodeURIComponent($("spnamekey").value);
+  
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (xmlhttp!=null)
+    {
+      xmlhttp.onreadystatechange=state_Change;
+      xmlhttp.open("post", "index.php?m=mod_b2b&c=sup&a=SimplePid", true);
+      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp.send(url);
+    }
+    else
+    {
+      alert("您的浏览器不支持XMLHTTP")
+    }
+  }
+  
+  function state_Change()
+  {
+    // 如果 xmlhttp 显示为 "loaded"
+    if (xmlhttp.readyState==4)
+    {
+      // 如果为 "OK"
+      if (xmlhttp.status==200)
+      {
+        // 其他代码..
+        var ackdata=xmlhttp.responseText;
+        $("simplepid").innerHTML = ackdata;
+        tmp = $("ubzsupinfo").options[$("ubzsupinfo").selectedIndex].value.split("|");
+        $("ubzspid").value = tmp[0];
+        $("otherinfo").innerHTML = tmp[1];
+      }
+      else
+      {
+        $("simplepid").innerHTML="<div class='col'>失败，重新链接</div>";
+      }
+    }
+  }
+  
+  function ShowSupInfo(obj)
+  {
+    tmp = obj.options[obj.selectedIndex].value.split("|");
+    $("ubzspid").value = tmp[0];
+    $("otherinfo").innerHTML = tmp[1];
+  }
+  
+  function iEvent(sType,oInput)
+  {
+    switch (sType){
+      case "focus" :
+        oInput.isfocus = true;
+        oInput.style.backgroundColor='#FFFFD8';
+      case "mouseover" :
+        oInput.style.borderColor = '#99E300';
+        break;
+      case "blur" :
+        oInput.isfocus = false;
+        oInput.style.backgroundColor="";
+      case "mouseout" :
+        if(!oInput.isfocus){
+          oInput.style.borderColor='#A1BCA3';
+        }
+        break;
+    }
+  }
+  
+  function setTableInput()
+  {
+    if(!$("cform"))
+    {
+      return;
+    }
+    myform  = $("cform");
+    formlen = myform.elements.length;
+    if(formlen == 0)
+    {
+      return;
+    }
+    
+    for (var i=0;i<myform.elements.length;i++) {
+      var e = myform.elements[i];
+      if (e.type == 'text') 
+      {
+        e.onmouseover=function(){ iEvent('mouseover',this)};
+        e.onfocus = function(){ iEvent('focus',this)};
+        e.onblur =function(){iEvent('blur',this)};
+        e.onmouseout=function(){ iEvent('mouseout',this)};
+      }
+    }
+  }
+  setTableInput();
+  //搜索结束
+</script>

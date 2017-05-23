@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>发送下级汇款通知书</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<div class="new_qie">
+  <div class="new_qie2">
+                <h2>
+                    发送下级汇款通知书　　
+                      <select name="msgto" onchange="javascript:location.href='index.php?m=mod_agent&amp;c=Remit&amp;a=Add&amp;msgto=' + this.options[this.selectedIndex].value" style="vertical-align:middle">
+                        <option value="{$vd['masterid']}" 
+                        <!--if($msgto==0 || $msgto == $vd['masterid']){-->
+                         selected 
+                        <!--}-->
+                        >平台管理员
+                        </option>
+                        <!--if($vd['parentid'] > 0 && $vd['parentid'] != $vd['masterid']){-->
+                        <option value="{$vd['parentid']}" 
+                        <!--if($msgto == $vd['parentid']){-->
+                         selected 
+                        <!--}-->
+                        >上家({#DisplayCode($vd['parentid'])})
+                        </option>
+                        <!--}-->
+                            </select>
+                </h2>
+  </div>
+</div>
+	  <form name="remitnote" method="post" action="index.php?m=mod_agent&c=Remit&a=RemittanceSave" onSubmit="return Validator.Validate(this,3)">
+	<!--$msgto = intval(request('msgto'));-->
+	<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+	<tr>
+	<td width="20%" class="table1_left"> 银行帐号：</td>
+	<td width="80%" style="padding:5px">
+                <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<th width="10%" class="heardertop1">选择</td>
+		<th width="20%" class="heardertop1">银行类型</td>
+		<th width="15%" class="heardertop1">账户名</td>
+		<th width="35%" class="heardertop1">银行账号</td>
+		<th width="20%" class="heardertop1">开户地</td>
+		<!--foreach($vd['banks'] as $item) {-->
+		<tr class="trd">
+		<!--if($item['AccountBranch'] != '' && $item['AccountNO'] != ''){-->
+		<td align=center>
+		<input type="radio" name="AccountId" value="5" id="account5" <!--if($item['id'] == $vd['id']){-->checked<!--}--> onclick="setbank('{$item['AccountBranch']}','{$item['AccountNO']}','{$item['AccountName']}')"></td>
+		<!--if($item['id'] == $vd['id']){-->
+		<script type="text/javascript">
+			setbank('{$item['AccountBranch']}','{$item['AccountNO']}','{$item['AccountName']}');
+		</script>
+		<!--}-->
+		<td><label for="account5">{$item['AccountBranch']}</label></td>
+		<td><label for="account5">{$item['AccountName']}</label></td>
+		<td><label for="account5">{$item['AccountNO']}</label></td>
+		<td><label for="account5">{$item['Address']}</label></td>
+		</tr>
+		<!--}}-->
+		</table>
+		  	        <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+	</td>
+	</tr>
+	<tr>
+	<td width="20%" class="table1_left"> 汇款金额：</td>
+	<td width="80%" class="tableright1"><div align="left">{$vd['lang']['moneysymbol']}
+	  <input type="text" name="dollars1" size='10' maxlength='10' class='bginput' datatype="Integer" msg="汇款金额的{$vd['lang']['moneyunit']}及以上部分输入错误">
+	  .
+	  <input type="text" name="dollars2" size='2' maxlength='2' class='bginput' value="00" datatype="Integer" msg="汇款金额的角或分部分输入错误">
+	  </div></td>
+	</tr>
+	<tr>
+	<td width="20%" class="table1_left"> 汇出时间：</td>
+	<td width="80%" class="tableright1">
+	  <div align="left">
+	    <select name="year">
+	      
+    	{#Option($vd['y'], date('Y'))}
+    
+	      </select>
+	    年
+	    <select name="month">
+	      
+    	{#Option($vd['m'], date('m'))}
+    
+	      </select>
+	    月
+	    <select name="day">
+	      
+    	{#Option($vd['d'], date('d'))}
+    
+	      </select>
+	    日
+	    <select name="hour">
+	      
+    	{#Option($vd['h'], date('h'))}
+    
+	      </select>
+      时      </div></td>
+	</tr>
+	<tr>
+	<td width="20%" class="table1_left">汇款备注：</td>
+	<td width="80%" class="tableright1"><div align="left">
+	  <textarea name="others" cols="75" rows="5" class='input' require="false" datatype="LimitB" max="1000" msg="汇款备注太长"></textarea>
+	  </div></td>
+	</tr>
+	<tr>
+	<td width="20%" class="table1_left">注意事项：</td>
+	<td width="80%" class="tableright1"><div align="left"><font color="#ff0000">1、如果是网上转帐的，务必将相应的转账记录粘贴提交，以便我们尽快核实处理；<br>
+	  1、请在完成汇款后填写，如未汇款发送通知书的，影响平台财务人员的工作，我们将冻结您的账号使用权限；<br>
+	  3、请尽量以您的商户编号的末尾两位做为汇款零头，以方便我们区分汇款对像，提高加款及时性。</font> </div></td>
+	</tr>
+	<tr>
+	<td width="20%" class="table1_left">&nbsp;</td>
+	<td width="80%" align="left" class="tableright1">
+	
+	  <div align="left">
+	    <input name="submit" type="submit" class="tijiao_input" value="确认发送">
+	    <input name="reset" type="reset" class="fanhui_input" value="重新填写">
+        </div></td>
+	</tr>
+	</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+  </div>
+</div>
+</body>
+</html>

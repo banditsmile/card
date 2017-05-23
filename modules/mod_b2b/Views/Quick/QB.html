@@ -1,0 +1,206 @@
+{load(fhead)}
+<style type="text/css">
+	.input{margin:5px;}
+	.buylt{text-align:center;font-weight:bold}
+	select{margin:5px}
+</style>
+<body class="mainbg">
+	 <div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 我要进货 >> 便民中心</span></div>
+	 <div id="tabs5">
+	 	<ul class="menu5" id="menu5">
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick';"><span class="type">话费直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick&a=QB';" class="hover"><span class="letters">QQ币直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick&a=Yw'"><span class="oftens">QQ服务直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Category'"><span class="oftens">其他游戏</span></li>
+     </ul>
+   </div>
+  
+	 <div id="buycard">
+		<div id="buycardmain">
+      <form action="index.php?m=mod_b2b&c=Quick&a=Pay" method="post" target="_blank" onsubmit="return checksubmit()">
+      <table class="contentTable" border="1">
+        <tr>
+          <td colspan="2" class="tabletitle"> <b>QQ币直充</b></td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">QQ号</div>
+          </td>
+          <td class="buyrt"> 
+            <input type="text" id="account" name="account" class="input" value="" maxlength="10" onblur="checkmobile();" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" onkeyup="value=value.replace(/[^\d]/g,'')" />
+            <span id="mobiletip" style="color:#ff0000"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">再输入一次</div>
+          </td>
+          <td class="buyrt"> 
+            <input type="text" id="reaccount" name="reaccount" class="input" value="" maxlength="10" onblur="recheckmobile()" onpaste="return false" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" onkeyup="value=value.replace(/[^\d]/g,'')" />
+            <span id="remobiletip"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">充值数量</div>
+          </td>
+          <td class="buyrt" id="qtytext"> 
+            <select name="ubzqty" id="ubzqty" style="margin:5px;" onchange="ChangeNum()">
+            	<option value="0">请选择</option>
+            	<!--for($i=5;$i<501;$i++){-->
+            	<option value="{$i}">{$i} Q币</option>
+            	<!--}-->
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">单个Q币进货价</div></td>
+          <td class="buyrt"><font color="#ff0000" onmouseover="showcprice(1)" onmouseout="showcprice(0)" style="padding-left:5px">鼠标移此</font> <span id="cprice" class="cprice" style="display:none">读取中..</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">售玩家单价</div></td>
+          <td class="buyrt"><input type="text" id="priceforplayer" class="input" name="priceforplayer" value="1" style="width:100px;<!--if($vd['modifyright'] == 0){-->background:#f0f0f0<!--}-->" onkeyup="ChangeNum()" class="input" <!--if($vd['modifyright'] == 0){-->readOnly<!--}--> /> {$vd['lang']['moneyunit']}</td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">应收玩家金额</div></td>
+          <td class="buyrt"><input type="text" id="dollarsforplayer" class="input" name="dollarsforplayer" value="1" style="width:100px;background:#f0f0f0" class="input" readOnly /> {$vd['lang']['moneyunit']}</td>
+        </tr>
+        <tr> 
+          <td class="buylt"></td>
+          <td class="buyrt" height="50px" style="padding-left:9px">
+          <input type="hidden" id="listprice" name="tlistprice" value="1"/>
+          <input type="hidden" id="ubzpid" name="ubzpid" value="{$vd['pid']}"/>
+          <input type="hidden" id="pname" name="pname" value="QQ币直充"/>
+          <input type="hidden" id="lbname" name="lbname" value="充值数量"/>
+          <input type="hidden" id="lbaccname" name="lbaccname" value="QQ号"/>
+          <input type="hidden" id="unit" name="unit" value="个Q币"/>
+          <input id="ubzmaxqty" name="ubzmaxqty" type="hidden" value="0"/>
+          <input id="ubzcztype" name="ubzcztype" type="hidden" value="1||Q币充值"/>
+          <input type="submit" value="确认提交 &gt; &gt;" style="font-weight:bold;font-size:14px" class="button" tabindex="21" />
+          </td>
+        </tr>
+      </table>
+      </form>
+			
+		</div>
+	 </div>
+</body>
+</html>
+<script type="text/javascript">
+	
+	function checksubmit()
+	{
+		vaccount   = $("account").value;
+		vreaccount = $("reaccount").value;
+		vlistprice = $("tlistprice").value; 
+    vubzmaxqty = $("ubzmaxqty").value; 
+    vqty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+
+ 	  if(vaccount.length > 3){
+ 	  	if(!/^[0-9]{1,10}$/.test(vaccount)){
+ 	  		$("mobiletip").innerHTML='<font color="red">&emsp;您填写的不是QQ号</font>'
+ 	  	}
+ 	  }else{
+ 	  	$("mobiletip").innerHTML = '<font color="red">&emsp;请输入要充值的QQ号</font>';
+ 	  	return false;
+ 	  }
+ 	  
+		if(vaccount != vreaccount)
+		{
+			$("remobiletip").innerHTML='<font color="red">&emsp;输入的QQ号不一致</font>';
+			return false;
+		}
+		
+		if(vqty <= 0)
+		{
+			alert("请先选择充值数量");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	function getcprice()
+	{
+		pid = $("ubzpid").value;
+		
+		var xmlg;
+    var obj = document.getElementById("cprice");
+    
+    try{
+      xmlg=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlg=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlg.onreadystatechange=function(){
+      if (xmlg.readyState==4){
+        if (xmlg.status==200){
+          var data=xmlg.responseText;
+
+          if(data != "" ){
+           	 tmp = data.split("|");
+             obj.innerHTML = "<b>" + tmp[0] + "</b>{$vd['lang']['moneyunit']}";
+          }
+        }
+      }
+    }
+    xmlg.open("post", "index.php?m=mod_b2b&c=Quick&a=GetCPrice", true);
+    xmlg.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlg.send('pid=' + pid);
+	}
+	
+	function showcprice(flag){
+    $("cprice").style.display = (flag == 1)? "" : "none";
+  }
+  
+  function checkmobile()
+  {
+  	var mobile = $("account").value;
+  	
+ 	  if(mobile.length > 3){
+
+ 	  	if(!/^[0-9]{1,10}$/.test(mobile)){
+ 	  		$("mobiletip").innerHTML='<font color="red">&emsp;您填写的不是QQ号</font>'
+ 	  	}else{
+ 	  		$("mobiletip").innerHTML = "";
+ 	  	}
+ 	  }else{
+ 	  	$("mobiletip").innerHTML = '<font color="red">&emsp;请输入要充值的QQ号</font>';
+ 	  }
+  }
+  
+  function recheckmobile()
+  {
+  	mobile1 = $("account").value;
+  	mobile2 = $("reaccount").value;
+  	
+  	if(mobile1 != mobile2)
+  	{
+  		$("remobiletip").innerHTML='<font color="red">&emsp;输入的QQ号不一致</font>'
+  	}
+    else
+  	{
+  		$("remobiletip").innerHTML='';
+  	}
+  }
+  
+  function ChangeNum()
+  {
+  	vqty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+  	
+  	if($("priceforplayer").value < 0)
+  	{
+  		alert('价格不能小于0');
+  		$("priceforplayer").focus();
+  		return;
+  	}
+
+  	if($("priceforplayer").value != '')
+  	{
+  	  $("dollarsforplayer").value = vqty * $("priceforplayer").value;
+  	}
+  }
+	getcprice();
+</script>

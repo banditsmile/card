@@ -1,0 +1,84 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 下属客户管理 >> 下属客户价格管理 >> 客户密价管理</span></div>
+	<div id="type">
+		<ul>
+			<li><a href="index.php?m=mod_b2b&c=product&a=PrivatePriceProduct"><span class=type>按商品设定</span></a></li><li><span class=type>按客户设定</span></li>
+		</ul>
+	</div>
+	
+	<div id="hearder"><span>按客户设定</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="search" method="get" action="index.php">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">关键字：</td>
+		<td width="78%" align="left" class="tableright1">
+			<input type="hidden" name="pid" value="{$vd['pid']}"/>
+			<input type="hidden" name="m" value="mod_b2b"/>
+			<input type="hidden" name="c" value="price"/>
+			<input type="hidden" name="a" value="PrivatePriceAgent"/>
+			<input type="text" size="30" name="keywords" class='input' value="">
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询类型：</td>
+		<td align="left" class="tableright1">
+		        <select name="stype" id="stype" class="search_select">
+    			  <option value="aname" selected>下家用户名</option>
+    			  <option value="aid">下家编号</option>
+    		    </select>
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1">
+		<input type="submit" name="Submit" value="确认查询" class="button">
+		<input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr>
+		<td width="10%" class="heardertop1">编号</td>
+		<td width="13%" class="heardertop1">用户名</td>
+		<td width="25%" class="heardertop1">商户名称</td>
+		<td width="10%" class="heardertop1">用户级别</td>
+		<td width="8%" class="heardertop1">联系人</td>
+		<td width="6%" class="heardertop1">状态</td>
+		<td width="10%" class="heardertop1">余额</td>
+		<td width="10%" class="heardertop1">消费</td>
+		<td width="8%" class="heardertop1">密价设定</td>
+		</tr>
+		
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td>{$item['aid']}</td>
+		<td>{$item['aname']}</td>
+		<td align=left>{$item['company']}</td>
+		<td>{#TxtByOption($vd['rank'], $item['alv'], 'name', 'id')}</td>
+		<td>{$item['arealname']}</td>
+		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+		<td>{$item['aremain']}</td>
+		<td>{$item['acsmp']}</td>
+		<td><a href="index.php?m=mod_b2b&c=Product&a=PrivatePriceProductSet&aid={$item['aid']}"><u>密价设定</u></a></td>
+		</tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+		{load(fhead)}
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="Description" content="{$vd['web']['description']}" />
+<title>{$vd['web']['title']}</title>
+<link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub2009.css" />
+<link rel="shortcut icon" href="{$vd['content']}images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="ubtop">
+  <div style="float:left;width:250px;">
+    <img src="{$vd['content']}images/logo.gif" alt="" />
+    <div id="userzone">欢迎您 {$vd['data']['aname']}！[<a href="index.php?m=mod_user&c=Login&a=logout&ret={$vd['root']}<!--if(UB_DEFAULT=='b2c'||UB_DEFAULT=='ykt'){--><!--}else if(UB_DEFAULT=='b2c'){-->b2c<!--}else{-->ykt<!--}-->">退出</a>] </div>
+  </div>
+  <div style="float:right;width:660px;">
+    <div id="nav">
+      <!--if(UB_B2B){--><span><a href="{$vd['root']}<!--if($vd['vip'] > 0){-->index.php?m=mod_<!--}--><!--if(UB_DEFAULT=='b2b'){--><!--}else{-->b2b<!--}-->" target="_blank">批发网站</a></span><!--}-->
+      <!--if(UB_B2C){--><span><a href="{$vd['root']}<!--if($vd['vip'] > 0){-->index.php?m=mod_<!--}--><!--if(UB_DEFAULT=='b2c'){--><!--}else{-->b2c<!--}-->" target="_blank">零售网站</a></span><!--}-->
+      <!--if(UB_YKT){--><span><a href="{$vd['root']}<!--if($vd['vip'] > 0){-->index.php?m=mod_<!--}--><!--if(UB_DEFAULT=='ykt'){--><!--}else{-->ykt<!--}-->" target="_blank">一卡通网站</a></span><!--}-->
+      <span><a href="index.php?m=mod_article" target="_blank">新手帮助</a></span>
+      <span class="end"><a href="index.php?m=mod_article" target="_blank">常见问题</a></span>
+    </div>
+    <div>
+    <form name="form2" action="index.php?m=mod_b2c&c=product" method="post" class="topsearch" target="_blank">
+      <input id="query" name="keywords" type="text"  autocomplete="off"  onfocus="SetFocus(this)" onblur="SetBlur(this)" value="请输入商品关键词" class="topinput" />
+      <input value="商品搜索" class="btns" type="submit"/>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="ubmain">
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}">
+<p></p>
+<script>
+  var def = "请输入商品关键词";
+  function SetFocus(e){
+    
+  if(e.value == def) {
+    e.value='';
+  }
+  e.style.color="#ff6600";
+  }
+  
+  function SetBlur(e){
+    if(e.value == "") {
+      e.value = def;
+      e.style.color="#908f8f";
+    }
+  }
+</script>

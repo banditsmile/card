@@ -1,0 +1,65 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 销售记录 >> 员工结帐管理</span></div>
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=lock';" class="hover"><span class="xg">资金锁定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory';"><span class="jl">全部记录</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory&thisaction=2';"><span class="jl">冻结记录</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory&thisaction=1';"><span class="jl">解冻记录</span></li>
+	</ul>
+	</div>
+	<div class="main5" id="main5">
+	<form name="checkout" method="post" action="index.php?m=mod_agent&c=funds&a=locksave">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<!--$item=$vd['item'];-->
+    <tr>
+      <td width="20%" align="right" class="tableleft1">公司名：</td>
+      <td width="80%" class="tableright1">{$item['company']}({#displayCode($item['aid'])})</td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">帐户可用余额：</td>
+      <td width="80%" class="tableright1" style="color:#ff0000">&nbsp;<b>{$item['aremain']}</b> {$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">自己冻结资金：</td>
+      <td width="80%" class="tableright1" style="color:#ff0000">&nbsp;<b>{$item['selffrozenfunds']}</b> {$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">操作金额：</td>
+      <td width="80%" class="tableright1"><input type="text" class="input" style="font-weight:normal" name="dollars" size="24"/>{$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">操作类型：</td>
+      <td width="80%" class="tableright1"><input type="radio" name="thisaction" value="2" checked />冻结 <input type="radio" name="thisaction" value="1"/>解冻</td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">超级密码：</td>
+      <td width="80%" class="tableright1"><input type="password" class="input" style="font-weight:normal" name="superpwd" size="24"/></td>
+    </tr>
+    <tr>
+      <td width="20%" align="right" class="tableleft1">操作原因：</td>
+      <td width="80%" class="tableright1">
+      	<textarea name="reason" cols="50" rows="5" scrolling="yes" style="padding:5px"></textarea>
+      </td>
+    </tr>
+    
+		<tr>
+		<td align="right" class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input type="hidden" name="Login_my" value="37126884"><input type="submit" name="submit" value="确认提交" class="button" tabindex="16"> <input type="reset" name="reset" value="重新填写" class="button" tabindex="17"></td>
+		</tr>
+		<tr>
+      <td width="20%" align="right" class="tableleft1">&nbsp;</td>
+      <td width="80%" class="tableright1" style="padding:5px"><p>请注意：为加强您的帐户资金安全,强烈建议您在下班前自行锁定帐户资金,避免因帐号密码被盗造成损失,在上班之后可自行将资金解锁,恢复正常使用。</p>帐户总金额 = 帐户可用余额 + 自己冻结资金 + 交易冻结资金 + 系统冻结资金 + 上级冻结资金</td>
+    </tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	
+</body>
+</html>

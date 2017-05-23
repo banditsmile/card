@@ -1,0 +1,63 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 服务与支持 >> 平台内部短信</span></div>
+	
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&c=Messenger';" ><span class="type">收到的短信列表</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=Messenger&a=Mon'" class=hover><span class="type">发送的短信列表</span></li>
+		</ul>
+	</div>
+
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" cellspacing=0 cellpadding=0 border=0 class="table">
+		<tr>
+		<td width="16%" class="heardertop1">发送时间</td>
+		<td width="40%" class="heardertop1">短信标题</td>
+		<td width="20%" class="heardertop1">收信人</td>
+		<td width="8%" class="heardertop1">状态</td>
+		<td width="16%" class="heardertop1">短信管理</td>
+		</tr>
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td>{$item['createdate']}</td>
+		<td align=left><a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}">{$item['title']}</a></td>
+		<td>
+			<!--if($item['msgto'] == 999999){-->
+        <!--if($item['msgcc'] == 'allunderling'){-->所有下家<!--}-->
+        <!--if($item['msgcc'] == 'allstaff'){-->所有员工<!--}-->
+      <!--}else{-->
+        <!--if($item['msgto'] < 0){-->
+        <font color="#ff00ff">员工({#DisplayCode((0-$item['msgto']),2)})</font>
+        <!--}else{-->
+          <!--if($item['msgto'] == $vd['agent'][4]){-->
+            <font color="#0099cc">上家({#DisplayCode($item['msgto'],4)})</font>
+          <!--}else{-->
+            <font color="#ff0000">{#DisplayCode($item['msgto'],4)}</font>
+          <!--}-->
+        <!--}-->
+      <!--}-->
+		</td>
+		<td>
+			<!--if($item['isreaded'] == 1){-->
+      <font color=#0000ff>已读</font>
+      <!--}else{-->
+      <font color=#ff0000>未读</font>
+      <!--}-->
+		</td>
+		<td><a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}"><img src="{$vd['content']}images/icon_ck.gif" align="absmiddle" border=0>查看</a> <a href="index.php?m=mod_agent&c=Messenger&a=detail&id={$item['id']}"><img src="{$vd['content']}images/icon_hf.gif" align="absmiddle" border=0>补充</a></td>
+		</tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+		{load(fpage)}
+	</div>
+
+
+</body>
+</html>

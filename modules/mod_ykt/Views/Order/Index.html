@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>充值结果</title>
+</head>
+<style>
+body {
+WIDTH:100%;
+FONT-SIZE:80%;
+BACKGROUND:#FCFCFC;
+LINE-HEIGHT:140%;
+PADDING:0
+}
+div.col {
+WIDTH:300px;
+HEIGHT:120px;
+BACKGROUND:#F8F8F8;
+BORDER:solid 1px #8FBFE7;
+PADDING:.5em
+}
+
+a:link {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#000;
+}
+
+a:visited {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#963;
+}
+
+a:hover {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:underline;
+FONT-SIZE:9pt;
+COLOR:#666;
+}
+
+a:active {
+FONT-FAMILY:verdana,arial,helvetica,sans-serif;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#F93;
+}
+
+input,textarea {
+border:#bac0c3 1px solid;
+width:180px;
+padding:2px;
+FONT-SIZE: 12px; 
+VERTICAL-ALIGN: middle; 
+COLOR: #000000; 
+FONT-FAMILY: Tahoma, Verdana, Georgia, Courier, Simsun; 
+BACKGROUND-COLOR: #f9fbfd;
+}
+
+
+.buylt{width:30%;padding:3px;text-align:center;height:30px;}
+.buyrt{width:70%;padding:3px;text-align:left}
+.ltjs{width:30%;padding:3px;text-align:right}
+.rtjs{width:70%;padding:2px;text-align:left;border-left:0px #3cb9ff solid;}
+.tbody{
+border:#F8BF23 3px solid;
+border-top:none;
+background: url("{$vd['content']}images/yktbg.bmp") no-repeat 290px 50px;;
+width:532px;
+margin:0px auto;
+}
+
+.fbody{
+border:#F8BF23 3px solid;
+border-top:none;
+border-bottom:none;
+width:526px;
+margin:0px auto;
+}
+
+.redbold{
+color:#ff0000;font-weight:bold
+}
+
+.headbg {
+background: url("{$vd['content']}images/ykttopbg.bmp") repeat-x;
+height:40px;
+margin:0px auto;
+width:526px;
+border-left:3px #F8BF23 solid;
+border-right:3px #F8BF23 solid;
+}
+
+#logo{
+background: url("{$vd['content']}images/mylogo.gif") no-repeat 0px 10px;;
+height:80px;
+margin:0px auto;
+width:526px;
+border:3px #F8BF23 solid;
+border-bottom:none;
+}
+
+.titlefont{
+FONT-SIZE: 18px; 
+COLOR: #333; 
+FONT-FAMILY: 黑体,宋体,Arial, Helvetica, sans-serif;
+padding-top:10px;
+}
+
+.button {
+BORDER-RIGHT:#ccc 1px solid;
+BORDER-TOP:#ccc 1px solid;
+BACKGROUND:url({$vd['content']}images/header.gif);
+BORDER-LEFT:#ccc 1px solid;
+BORDER-BOTTOM:#ccc 1px solid;
+PADDING:2px 3px 0px 3px;
+MARGIN:0 5px 0 0;
+WIDTH:80px;
+HEIGHT:30px;
+CURSOR:pointer;
+}
+</style>
+<body>
+<!--$item = $vd['item'];-->
+<!--if(isset($item['ptype'])){-->
+<div id="logo">
+  
+</div>
+<!--if($item['ptype'] > 0){-->
+<div class="headbg">
+  <div class="titlefont" align="center">一卡通换购商品详细订单</div>
+</div>
+<table id="orderTable" class="tbody">
+  <tr>
+    <td class="buylt">商品名称：</td>
+    <td class="buyrt">{$item['pname']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">商品类型：</td>
+    <td class="buyrt">{#ProductType($item['ptype'])}</td>
+  </tr>
+  <tr>
+    <td class="buylt">充值数量：</td>
+    <td class="buyrt">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">充值帐号：</td>
+    <td class="buyrt">{$item['czaccount']}</td>
+  </tr>
+  <!--if($item['czarea1'] != ''){-->
+  <tr>
+    <td class="buylt">充值区域：</td>
+    <td class="buyrt">{#CzText($item['czarea1'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czarea2'] != ''){-->
+  <tr>
+    <td class="buylt">充值服务器：</td>
+    <td class="buyrt">{#CzText($item['czarea2'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['cztype'] != ''){-->
+  <tr>
+    <td class="buylt">计费方式：</td>
+    <td class="buyrt">{#CzText($item['cztype'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czother'] != ''){-->
+  <tr>
+    <td class="buylt">帐户类型：</td>
+    <td class="buyrt">{#CzText($item['czother'])}</td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="buylt" height="30px;">充值反馈信息：</td>
+    <td class="buyrt">
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt" colspan="2">
+      <div id="result" align="center">
+      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等！系统则正在为您<b>充值</b>中)...</font></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">复制地址以后查询：</td>
+    <td class="buyrt"><input id="pagehref" type="text" size="65" class="Index_font3"  readonly value="" onMouseMove="this.select()"/>  <font color="#6c6c6c">右击->复制->记事本保存</font></td>
+  </tr>
+  <tr>
+    <td class="buylt" colspan="2" align="center" style="border-top:1px #ccc dashed;height:50px;">
+      <input type="button" value="投诉本订单" onclick="view();" class="button">
+      <input type="button" value="回到首页" onclick="window.location='index.html'" class="button">
+      <input type="button" value="充值结果" onClick="window.location.reload()" class="button">
+      <input type="button" value="关闭页面" onclick="window.close();" class="button">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-top:1px #ccc dashed;">
+      <form action="index.php?m=mod_ykt&c=order&a=complaint" method="post" target="_blank">
+        <table id="complainttable" width="100%" style="display:none">
+          <tr>
+            <td class="buylt">标题：</td>
+            <td class="buyrt"><input type="text" name="title" value="投诉订单{$item['ordno']}"/></td>
+          </tr>
+          <tr>
+            <td class="buylt">内容：</td>
+            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">请在投诉内容里边附上联系方式</font></td>
+          </tr>
+          <tr>
+            <td class="buylt">内容：</td>
+            <td class="buyrt"><input type="submit" value="提交投诉内容"  class="button"></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+<!--}else{-->
+<div class="headbg">
+  <div class="titlefont" align="center">一卡通换购卡密商品详细订单</div>
+</div>
+<table id="orderTable" class="tbody">
+  <tr>
+    <td class="buylt">商品名称：</td>
+    <td class="buyrt">{$item['pname']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">商品类型：</td>
+    <td class="buyrt">{#ProductType($item['ptype'])}</td>
+  </tr>
+  <tr>
+    <td class="buylt">换购数量：</td>
+    <td class="buyrt">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="buylt" colspan="2" align="center" >
+      <div style="border-bottom:1px #ccc dashed;height:20px;"></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt" colspan="2">
+      <div id="result" align="center">
+      <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等！系统则正在为您<b>提卡</b>中)...</font></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">复制地址以后查询：</td>
+    <td class="buyrt"><input id="pagehref" type="text" size="65" class="Index_font3"  readonly value="" onMouseMove="this.select()"/>  </td>
+  </tr>
+  <tr>
+    <td class="buylt" colspan="2" align="center" style="border-top:1px #ccc dashed;height:50px;">
+      <input type="button" value="投诉本订单" onclick="view();" class="button">
+      <input type="button" value="回到首页" onclick="window.location='index.html'" class="button">
+      <input type="button" value="关闭页面" onclick="window.close();" class="button">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border-top:1px #ccc dashed;">
+      <form action="index.php?m=mod_ykt&c=order&a=complaint" method="post" target="_blank">
+        <table id="complainttable" width="100%" style="display:none">
+          <tr>
+            <td class="buylt">标题：</td>
+            <td class="buyrt"><input type="text" name="title" value="投诉订单{$item['ordno']}"/></td>
+          </tr>
+          <tr>
+            <td class="buylt">内容：</td>
+            <td class="buyrt"><textarea rows="5" name="content" cols="250"></textarea><br/><font color="#6c6c6c">请在投诉内容里边附上联系方式</font></td>
+          </tr>
+          <tr>
+            <td class="buylt">内容：</td>
+            <td class="buyrt"><input type="submit" value="提交投诉内容"  class="button"></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+  </tr>
+</table>
+<!--}-->
+<!--}else{-->
+<div id="result" align="center">
+<div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等正在<b>提卡</b>中(如果是充值商品，系统则正在为您<b>充值</b>中)...</font></div>
+</div>
+<!--}-->
+<script type="text/javascript">
+var xmlhttp;
+
+loadXMLDoc();
+
+function loadXMLDoc()
+{
+  xmlhttp=null;
+  var url=null;
+  
+  url="BillNo="+escape("{$vd['url']['BillNo']}");
+  url=url+"&PayWay="+escape("{$vd['url']['PayWay']}");
+  url=url+"&Amount="+escape("{$vd['url']['Amount']}");
+  url=url+"&Signature="+escape("{$vd['url']['Signature']}");
+  url=url+"&Succ="+escape("{$vd['url']['Succ']}");
+  url=url+"&BuyerIP="+escape("{$vd['url']['BuyerIP']}");
+
+  // 针对 Mozilla等浏览器的代码：
+  if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+  if (xmlhttp!=null)
+  {
+    xmlhttp.onreadystatechange=state_Change;
+    xmlhttp.open("post", "index.php?m=mod_ykt&c=order&a=respond", true);
+    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.send(url);
+  }
+  else
+  {
+    alert("您的浏览器不支持XMLHTTP")
+  }
+}
+
+function state_Change()
+{
+  // 如果 xmlhttp 显示为 "loaded"
+  if (xmlhttp.readyState==4)
+  {
+    // 如果为 "OK"
+    if (xmlhttp.status==200)
+    {
+      // 其他代码..
+      var ackdata=xmlhttp.responseText;
+      ackparase(ackdata);
+    }
+    else
+    {
+      window.location.reload();
+      document.getElementById("result").innerHTML="<div class='col'>通讯失败,您可以刷新本页继续等待结果或者直接联系管理员</div>";
+    }
+  }
+}
+
+function ackparase(ackdata)
+{
+  //解析服务器返回的数据
+  if (ackdata == 18)
+  {
+    setTimeout("loadXMLDoc()",1500);
+  }
+  else
+  {
+    document.getElementById("result").innerHTML=ackdata;
+  }
+}  
+
+var isview = 0;
+function view()
+{
+  if(isview == 0)
+  {
+    document.getElementById("complainttable").style.display = "";
+    isview = 1;
+  }
+  else
+  {
+    document.getElementById("complainttable").style.display = "none";
+    isview = 0;
+  }
+}
+
+initInfo();
+function initInfo()
+{
+  pagehref.value = document.location.href;
+}
+
+</script>
+</body>
+</html>

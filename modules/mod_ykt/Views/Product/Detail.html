@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="Description" content="{$vd['web']['description']}" />
+<link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub-buy.css" />
+<title>{$vd['web']['title']}</title>
+<style type="text/css">
+  .buylt{font-size:14px;}
+  td{height:25px}
+</style>
+</head>
+
+<body>
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}">
+<input type="hidden" id="platform" value="ykt"/>
+<script src="{$vd['root']}{$vd['sc']}js/web.js" type="text/javascript"></script>
+<form method="post" action="{$vd['root']}index.php?m=mod_ykt&c=Pay" onsubmit="return checksubmit()">
+<div id="append_parent"></div>
+<div id="topheader">
+  <div id="headertab">
+    <span style="float:right">
+      <script src="{$vd['content']}js/cust.js"></script>
+      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">卡状态查询</a> &nbsp;
+      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">卡余额互转</a> &nbsp;
+      <img src="{$vd['content']}images/icon_kt.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=Show" target="_blank">卡图展示</a> &nbsp;
+      <img src="{$vd['content']}images/icon_bz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">客户服务</a> &nbsp;
+      <img src="{$vd['content']}images/icon_jxs.gif" align="absmiddle"> <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">经销商</a>
+    </span>
+    <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{$vd['web']['website']}');" class="top"> 
+      设为首页</a> |
+      <a href=javascript:window.external.AddFavorite('{$vd['web']['website']}','{$vd['web']['webname']}') class="top">添加到收藏</a>
+  </div>
+</div>
+<div id="ubtop">
+  <div style="float:left;width:230px;">
+    <img src="{$vd['imgurl']}{$vd['content']}images/mylogo.gif" alt="" border="0" height="60"/>
+  </div>
+  <div class="righttext">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;height:60px;">
+        <tr>
+            <td align="right" class="black">
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">返回首页</a> |
+                <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">重新选卡</a> |
+                <a href="javascript:window.location.reload();">刷新本页</a>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
+<!--$item = $vd['item'];-->
+<div class="warper">
+<div class="headbg" style="position:relative">
+  <div class="titlefont" align="center"><!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--></div>
+  <!--if($item['palert'] != ''){-->
+  <div id="orderalertdiv" class="palertdiv" style="display:none">
+    <div class="alertdivwaper">
+    <div class="alertdivinnerwaper">
+    <div class="alertclose"><img src="{$vd['content']}images/tipcls.gif" onclick="disp('orderalertdiv')" style="cursor:pointer"/></div>
+    <input type="checkbox" class="alertck" onclick="oDisp()" /><br/>
+    </div>
+    <div class="alertdivcnt">
+    <p class="alerttxt" >{#ubbcode($item['palert'])}</p>
+    </div>
+    <div class="alertdivbottom"></div>
+    </div>
+  </div>
+  <!--}-->
+</div>
+<!--if($vd['adstr'] != ''){-->
+<style type="text/css">
+	.palertdiv{top:220px;}
+</style>
+<div class="fbody">
+  <script language="JavaScript" type="text/javascript" src="{$vd['root']}{$vd['sc']}js/swfobject.js"></script>
+  <script language="JavaScript" type="text/javascript" src="{$vd['root']}{$vd['sc']}js/flash.js"></script>
+  <script language="javascript" type="text/javascript">
+  writeflashhtml("_swf={$vd['root']}{$vd['sc']}flash/flash.swf", "_width=524", "_height=143" ,"_wmode=transparent","_flashvars={$vd['adstr']}&borderwidth=524&borderheight=125&textheight=0");
+  </script>
+</div>
+<!--}-->
+<!--$proptmp=array();if(isset($item['prop']) && $item['prop'] != '' && $item['prop'] != 'NULL'){;$proptmp = unserialize($item['prop']);}-->
+<table id="orderTable" class="tbody">
+  <tr>
+    <td class="buylt">点卡类型：</td>
+    <td class="buyrt">
+     <select id="pname" onchange="setpoints(this)" style="VERTICAL-ALIGN: middle;font-size:12px;width:185px;">
+     <!--if(isset($proptmp['yktnoothers']) && $proptmp['yktnoothers'] == 1){-->
+     <option value="{$vd['defaultval']}"><!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--></option>
+     <!--}else{-->
+     {#Option($vd['relateitem'],$vd['defaultval'],'text','value')}
+     <!--}-->
+     </select>
+     需 <span id="pointneed" class="redbold"><!--if( $item['ptype'] == 3 && $item['disparea'] == 1 ){-->{$item['listprice']}<!--}else{-->--<!--}--></span> {$vd['lang']['moneyunit']}
+  </tr>
+  
+  <tr>
+    <td class="buylt">库存状态：</td>
+    <td class="buyrt"><span id="thisstock">读取中..</span></td>
+  </tr>
+  <tr>
+    <td class="buylt">商品类型：</td>
+    <td class="buyrt">{#ProductType($item['ptype'])} &nbsp;<!--if($item['quickuse']==1 && $item['quickusetime'] > 0){--><font color="#ff0000"><b>请购买后{$item['quickusetime']}小时内使用</b></font><!--}--></td>
+  </tr>
+  <!--if( $item['buylit'] == 1 ){-->
+  <!--$proptmp=array();if(isset($item['prop']) && $item['prop'] != ''){;$proptmp = unserialize($item['prop']);}-->
+  <tr>
+    <td class="buylt"><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->禁止购买<!--}else{-->开放购买<!--}-->：</td>
+    <td class="buyrt">
+      <font color="#ff0000"><b>每天{$item['buylitstardate']}时到{$item['buylitenddate']}</b></font> <font color="#0000ff"><b><!--if(isset($proptmp['buylitobject']) && $proptmp['buylitobject']==0){-->禁止购买<!--}else{-->开放购买<!--}--></b></font>
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="buylt">一卡通卡号：</td>
+    <td class="buyrt"><input type="text" name="yktcard[]" class="input"/> <span style="color:#996600;cursor:pointer" onclick="moreykt(this);">[ + ]多个一卡通</span></td>
+  </tr>
+  <tr>
+    <td class="buylt">一卡通密码：</td>
+    <td class="buyrt"><input type="password" name="yktpwd[]"  class="input"/></td>
+  </tr>
+  
+  
+  <!--if( $item['ptype'] == 1 || $item['ptype'] == 2){-->
+  <tr>
+  <td class="buylt">充值{$item['idlable']}：</td>
+  <td class="buyrt"><input id="ubzczacount" name="ubzczacount" type="text"  class="input"/> *</td>
+  </tr>
+  <tr>
+  <td class="buylt">重复{$item['idlable']}：</td>
+  <td class="buyrt"><input id="ubzreczacount" name="ubzreczacount" type="text"  class="input" /> *</td>
+  </tr>
+  <!--}-->
+  <input type="hidden" id="ubztpl" value="{$vd['item']['cztpl']}" />
+  <!--if( isset($vd['xml']) && $vd['xml'] == 1){-->
+  <!--if($vd['vip'] > 0){-->
+  <!--$sc=str_replace(VROOT.'/','',$vd['sc']);-->
+  <!--}else{-->
+  <!--$sc=$vd['sc'];-->
+  <!--}-->
+  <input type="hidden" id="ubzsystpl" value="{$vd['item']['syscztpl']}" />
+  <input type="hidden" id="tpldir" value="{$vd['root']}{$sc}" />
+  <script type="text/javascript" src="{$vd['root']}{$sc}systpl/czui.js"></script>
+  <!--}-->
+  <!--if( isset($vd['extcontent']) ){-->
+  {$vd['extcontent']}
+  <!--}-->
+  <!--if( isset($vd['tplcontent']) ){-->
+  {$vd['tplcontent']}
+  <!--}-->
+  <!--if( $item['ptype'] == 3 && $item['disparea'] == 1 ){-->
+  <tr>
+    <td class="buylt">选择{$item['idlable']}：</td>
+    <td class="buyrt">
+    <div id="cardsdiv">--</div>
+    <select style="display:none" id="ubzqty" name="ubzqty"><option value="1">1</option></select>
+    </td>
+  </tr>
+  <!--}else{-->
+  <!--if(!isset($vd['xml']) || (isset($vd['xml'])&&$vd['xml']==0)){-->
+  <tr>
+    <td class="buylt">购买数量：</td>
+    <td class="buyrt">
+      <select name="ubzqty" id="ubzqty" onchange="ChangeNum()">
+        <option value="0">请选择</option>
+        <!--if( isset($vd['qtylist']) ){-->
+        {$vd['qtylist']}
+        <!--}-->
+      </select>
+    </td>
+  </tr>
+  <!--}-->
+  <!--}-->
+  
+  <tr>
+    <td class="buylt" valign="top" style="padding-top:8px;">验证码：</td>
+    <td class="buyrt">
+      <input type="text" name="randcode" id="randcode" class="input"  style="width:80px"/>
+      <div style="padding-top:3px;">
+      <img src="{$vd['root']}index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="看不清楚?请点击刷新" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/> <span style="color:#996600;cursor:pointer" onclick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>看不清</u></span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt"></td>
+    <td class="buyrt"><input type="image" src="{$vd['content']}images/<!--if($item['ptype'] == 0 || $item['ptype'] == 3){-->buykm.gif<!--}else{-->buycz.gif<!--}-->" style="border:none;padding:0px;"/></td>
+  </tr>
+  <!--if($vd['dispbuyer']){-->
+  <tr>
+    <td class="buylt">Email电子信箱：</td>
+    <td class="buyrt"><input type="text" name="ubzcmail" id="ubzcmail" class="input" /> <font color="#996600">有效Email可获得促销信息！</font></td>
+  </tr>
+  <tr>
+    <td class="buylt">联系QQ：</td>
+    <td class="buyrt"><input type="text" name="ubzcqq" id="ubzcqq" class="input" /> <font color="#996600">有问题时可以和您联系！</font></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td colspan="2" style="background:#E8E8E8;height:25px;font-weight:bold;text-align:center">产品介绍</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:5px 5px 20px 5px;">{#ubbcode($item['pdesc'])}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:" style="border-top:1px #ccc dashed">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tbody>
+              <tr>
+                  <td width="5%" height="25" align="middle">
+                      <img height="18" src="{$vd['content']}images/jt.gif" width="18"></td>
+                  <td>
+                      <a href="{$item['web']}" target="_blank">官网首页</a></td>
+                  <td width="5%">
+                      <img height="18" src="{$vd['content']}images/jt.gif" width="18"></td>
+                  <td>
+                      <a target="_blank">账户管理</a></td>
+                  <td width="6%">
+                      <img height="18" src="{$vd['content']}images/jt.gif" width="18" /></td>
+                  <td>
+                      <a target="_blank">计费说明</a></td>
+                  <td width="5%">
+                      <img height="18" src="{$vd['content']}images/jt.gif" width="18" /></td>
+                  <td>
+                      <a href="{$vd['root']}<!--echo UB_DEFAULT ? '':'ykt';-->" target="_blank">回网站首页</a></td>
+              </tr>
+          </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+<table style="width:540px;margin:0 auto;" border="0" cellpadding="0" cellspacing="0" id="foot">
+  <tr>
+    <td style="padding:10px;text-align:left;line-height:20px;float:left" valign="top">
+      {$vd['sips']}
+    </td>
+    <td style="padding:10px;text-align:right;line-height:20px;">
+      版权所有 &copy; 2004-2011 {$vd['web']['webname']}<br>ICP备案号：<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a>
+    </td>
+  </tr>
+</table>
+<input id="ubzcprice" name="oneprice" type="hidden" value="{$item['listprice']}"/>
+  <input id="ubzdollars" name="ubzdollars" type="hidden" value="{$item['listprice']}"/>
+  <input type="hidden" id="tprice" name="tprice" value="{$item['listprice']}"/>
+  <input id="ubzptype" name="ubzptype" type="hidden" value="{$item['ptype']}"/>
+  <input id="ubzpid" name="ubzpid" type="hidden" value="{$item['pid']}"/>
+  <input id="ubzqtylist" name="ubzqtylist" type="hidden" value="{$item['qtylist']}"/>
+  <input id="ubzqtymin" name="ubzqtymin" type="hidden" value="{$item['qtymin']}"/>
+  <input id="ubzqtymax" name="ubzqtymax" type="hidden" value="{$item['qtymax']}"/>
+  <input id="ubzidlable" name="ubzidlable" type="hidden" value="{$item['idlable']}"/>
+  <input id="ubzdisparea" name="ubzdisparea" type="hidden" value="{$item['disparea']}"/>
+  <input id="ubzdispserv" name="ubzdispserv" type="hidden" value="{$item['dispserv']}"/>
+  <input id="ubzcname" name="ubzcname" type="hidden" value=""/>
+  <input id="ubzunit" name="ubzunit" type="hidden" value="{$item['unit']}"/>
+</form>
+
+<!--if($vd['dispkf']){-->
+<div id="kfcbdiv" onmouseover="setLeft('-8px')" onmouseout="setLeft('-156px')">
+  <div class="im">
+    <div>
+      <!--for($j=0;$j<1;$j++){-->
+      <!--if(isset($vd['qq'][$j])&&count($vd['qq'][$j]) > 0){-->
+      <h3>客服QQ：</h3>
+      <!--for($i=0;$i<count($vd['qq'][$j]);$i++){-->
+        <a href="tencent://message/?uin={$vd['qq'][$j][$i]}&Site={$vd['web']['webname']}&Menu=yes" target="_blank">
+        <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="点击这里给我发消息" />
+        </a><br/>
+      <!--}-->
+      <!--}-->
+      <!--}-->
+  
+      <!--for($j=0;$j<1;$j++){-->
+      <!--if(isset($vd['wangwang'][$j])&&count($vd['wangwang'][$j]) > 0){-->
+      <h3>客服旺旺：</h3>
+      <!--for($i=0;$i<count($vd['wangwang'][$j]);$i++){-->
+        <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1">
+          <img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1" alt="点击这里给我发消息" />
+        </a><br/>
+      <!--}-->
+      <!--}-->
+      <!--}-->
+  
+      <!--for($j=0;$j<1;$j++){-->
+      <!--if(isset($vd['hi'][$j])&&count($vd['hi'][$j]) > 0){-->
+      <h3>客服Hi：</h3>
+      <!--for($i=0;$i<count($vd['hi'][$j]);$i++){-->
+        <a href="baidu://message/?id={$vd['hi'][$j][$i]}">
+          <img src="http://tieba.baidu.com/tb/img/hi/hiOnline.gif" border="0">
+        </a> <br/>
+      <!--}-->
+      <!--}-->
+      <!--}-->
+    </div>
+  </div>
+  <div class="rxtel">
+    <!--for($j=0;$j<1;$j++){-->
+    <!--if(isset($vd['tel'][$j])&&count($vd['tel'][$j]) > 0){-->
+      {$vd['tel'][0][0]}
+    <!--}-->
+    <!--}-->
+  </div>
+  <div class="tstel">
+    <!--for($j=0;$j<1;$j++){-->
+    <!--if(isset($vd['tel'][0][1])){-->
+      {$vd['tel'][0][1]}
+    <!--}-->
+    <!--}-->
+  </div>
+</div>
+<!--}-->
+<script type="text/javascript">
+var $ = function(id){
+  return document.getElementById(id);
+}
+function disp(id)
+{
+  ste = $(id).style.display;
+  $(id).style.display = ste == "" ? "none" : ""; 
+}
+function offdisp(id)
+{
+  ste = $(id).style.display;
+  $(id).style.display = "none"; 
+}
+<!--if($item['palert'] != ''){-->
+  function oDisp()
+  {
+    setCookie("umebiz_productalertykt_{$item['pid']}",1,365);
+  }
+  
+  if(getCookie("umebiz_productalertykt_{$item['pid']}") == 0)
+  {
+    disp('orderalertdiv');
+    //setTimeout("offdisp('orderalertdiv')",15000);
+  }
+
+  function getCookie(c_name)
+  {
+    if (document.cookie.length>0)
+    {
+      c_start=document.cookie.indexOf(c_name + "=");
+      if (c_start!=-1)
+      {
+        c_start=c_start + c_name.length+1;
+        c_end=document.cookie.indexOf(";",c_start);
+        if (c_end==-1) c_end=document.cookie.length;
+        return unescape(document.cookie.substring(c_start,c_end));
+      }
+    }
+    return "";
+  }
+  
+  function setCookie(c_name,value,expiredays)
+  {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+expiredays);
+    document.cookie=c_name+ "=" +escape(value)+
+    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+  }
+<!--}-->
+
+<!--if($vd['dispkf']){-->
+function setLeft(v)
+{
+  $("kfcbdiv").style.left = v;
+}
+
+window.onscroll= function setScl()
+{
+  $("kfcbdiv").style.top = document.documentElement.scrollTop + 100 + "px";
+}
+<!--}-->
+
+var ishtml = "<!--echo UB_HTML&&$vd['vip']==0 ? 1 : 0;-->"
+
+var ykt = 6;
+var no  = 2;
+var inityktrow = 0;
+
+function moreykt(obj)
+{
+  <!--if(isset($proptmp['yktmaxnum'])&&$proptmp['yktmaxnum'] > 0){-->
+  if(no > {$proptmp['yktmaxnum']})
+  {
+    alert('您好，本商品设置为一次最多{$proptmp['yktmaxnum']}张');
+    return;
+  }
+  <!--}-->
+  if(inityktrow == 0)
+  {
+    ykt = obj.parentNode.parentNode.rowIndex;
+    inityktrow = 1;
+  }
+  ykt = ykt + 2;
+  AddElement(ykt, no);
+  no  = no  + 1;
+}
+
+function AddElement(row,index) {
+    var i = index;
+    obj = $("orderTable");
+    var newRow = obj.insertRow(row); 
+    c1 = newRow.insertCell(-1);
+    c1.className = "buylt";
+    c1.innerHTML = "卡号"+i+"：";
+    c2 = newRow.insertCell(-1);
+    c2.className = "buyrt";
+    c2.innerHTML = "<input type='text' name='yktcard[]' class='input'/>";
+    
+    newRow = obj.insertRow(row+1); 
+    c1 = newRow.insertCell(-1);
+    c1.className = "buylt";
+    c1.innerHTML = "密码"+i+"：";
+    c2 = newRow.insertCell(-1);
+    c2.className = "buyrt";
+    c2.innerHTML = "<input type='text' name='yktpwd[]'  class='input'/>";
+    
+}
+
+function setqty(obj)
+{
+  var tmp = (obj.options[obj.selectedIndex].value).split("|");
+
+  var qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+  var points = tmp[0] * qty;
+
+  $("pointneed").innerHTML = points;
+}
+
+function setpoints(obj)
+{
+  var tmp = (obj.options[obj.selectedIndex].value).split("|");
+  /*
+  if(tmp[2] == 0)
+  {
+    var qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+    var points = tmp[0] * qty;
+
+    $("pointneed").innerHTML = points;
+    $("ubzpid").value = tmp[1];
+  }
+  else*/
+  {
+    if(ishtml == "1")
+    {
+      window.location.href = "{$vd['root']}ykt/p" + tmp[1] + ".html";
+    }
+    else
+    {
+      window.location.href = "{$vd['root']}ykt/i.php?"+tmp[1];
+    }
+  }
+}
+
+  var IMGDIR = "{$vd['content']}images";
+  
+  FadeObjects = new Object();
+  FadeTimers = new Object();
+
+  function Fade(object, destOp, rate, delta)
+  {
+    if (!document.all) return;
+    if (object != "[object]")
+    {  
+       setTimeout("Fade("+object+","+destOp+","+rate+","+delta+")",0);
+       return;
+    }
+        
+    clearTimeout(FadeTimers[object.sourceIndex]);
+    
+    diff = destOp-object.filters.alpha.opacity;
+    direction = 1;
+    if (object.filters.alpha.opacity > destOp)
+    {
+      direction = -1;
+    }
+    delta=Math.min(direction*diff,delta);
+    object.filters.alpha.opacity+=direction*delta;
+
+    if (object.filters.alpha.opacity != destOp)
+    {
+      FadeObjects[object.sourceIndex]=object;
+      FadeTimers[object.sourceIndex]=setTimeout("Fade(FadeObjects["+object.sourceIndex+"],"+destOp+","+rate+","+delta+")",rate);
+    }
+  }
+
+  function MM_displayStatusMsg(msgStr) 
+  { 
+    status=msgStr;
+    document.MM_returnValue = true;
+  }
+  
+  function checksubmit()
+  {
+  	if($("ubzqty"))
+  	{}
+    else
+  	{
+  		alert("请先选择充值游戏！");
+      return false;
+  	}
+    qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+    if(qty <= 0)
+    {
+    	alert("请先选择数量！");
+      return false;
+    }
+    
+    
+    <!--if($item['ptype'] == 1 || $item['ptype'] == 2 || $item['ptype'] == 4 || $item['ptype'] == 5 || $item['ptype'] == 6) {-->
+    tt1 = $("ubzczacount").value;
+    tt2 = $("ubzreczacount").value;
+    if(tt1 == "")
+    {
+      $("ubzczacount").focus();
+      alert("充值帐号不能为空！");
+      return false;
+    }
+    
+    if(tt1 !== tt2)
+    {
+      $("ubzreczacount").focus();
+      alert("两次帐号输入不一致，请重新输入");
+      return false;
+    }
+    
+    //看看是不是有需要自动检查的东西
+    if( $("needinput") )
+    {
+      nv = $("needinput").value;
+      nlabel = $("needinputlabel").value;
+      ntype = $("needinputtype").value;
+      if(nv != "" && nlabel != "" && ntype != "")
+      {
+        nvarr = nv.split(",");
+        nlabelarr = nlabel.split(",");
+        ntypearr = ntype.split(",");
+        nvlen = nvarr.length;
+        for(i = 0; i < nvlen; i++)
+        {
+          if($(nvarr[i]) && $(nvarr[i]).value == "")
+          {
+            altstr = ntypearr[i] == "radio" || ntypearr[i] == "select" ? "选择"  : "输入";
+            altstr = "请您" + altstr + nlabelarr[i];
+            alert(altstr);
+            return false;
+          }
+        }
+      }
+    }
+    <!--}-->
+    
+    if($("randcode").value == "")
+    {
+      $("randcode").focus();
+      alert("请您输入验证码！");
+      return false;
+    }
+
+    if (qty>0)
+    {
+      var str = "确认购买 <!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--> "+ qty +" 个吗？并请注意以下购买注意事项：\n\n\n1、本商品一经购买无法退换货，请注意不要选择错误；";
+      
+      if(confirm(str))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    else
+    {
+      alert("请先选择数量！");
+      return false;
+    }
+  }
+  
+</script>
+<script src="{$vd['content']}js/buy.js"></script>
+<script src="{$vd['content']}js/prdzone.js"></script>
+</body>
+</html>

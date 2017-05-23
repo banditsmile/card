@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Category" title="选择需要设置的权限对象"><font color="#000">商品购买权限设置</font></a>
+</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="查看分类相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Right&a=Right">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+
+<div class="cwarpper1">
+<div class="ctitle">
+  请选择您需要设置的权限 
+</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">设置的类别</td>
+    <td class="tablert">
+      <select name="agent" onchange="setParam(this)" style="width:150px">
+        <option value="0">请选择设置的对象</option>
+        <!--if(UB_B2C||UB_B2B){--><option value="1">给用户设置购买权限</option><!--}-->
+        <!--if(UB_YKT){--><option value="2">给一卡通设置购买权限</option><!--}-->
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">设置的对象</td>
+    <td class="tablert">
+      <select name="param" id="param" onchange="setidx(this)" style="width:150px">
+        <option value="">请选择设置的对象</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt"><span id="label">--</span></td>
+    <td class="tablert">
+      <input type="text" name="idx" value="" size="20" id="idx" style="width:143px"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">是否允许购买</td>
+    <td class="tablert">
+      <input type="radio" name="isok" value="1" class="checkbox" checked />是 
+      <input type="radio" name="isok" value="-1" class="checkbox"/>否
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="submit" value="马上设置 &gt;&gt" class="btn"/>
+    <input type="reset" value="重 置" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  agenttxt = Array("用户编号","用户所在级别","用户所在组");
+  agentval = Array("aid","alv","gid");
+  
+  ykttxt   = Array("一卡通面值","一卡通批次","一卡通编号","一卡通特征码");
+  yktval   = Array("yktprice","yktgroup","yktid","yktcode");
+  
+  function setParam(obj)
+  {
+    val          = obj.value;
+    o            = $("param");
+    o.length     = 0;
+    o.options[0] = new Option("请选择设置的对象", "");
+    len          = val == 1 ? agentval.length : yktval.length;
+    
+    $("idx").value = "";
+    $("label").innerHTML = "--";
+    
+    for(i = 0; i < len; i++)
+    {
+      if(val == 1)
+      {
+        o.options[o.length] = new Option(agenttxt[i], agentval[i]);
+      }
+      else if(val == 2)
+      {
+        o.options[o.length] = new Option(ykttxt[i],   yktval[i]);
+      }
+      else
+      {
+        break;
+      }
+    }
+  }
+  
+  function setidx(obj)
+  {
+    val = obj.value;
+    if(val != "")
+    {
+      $("label").innerHTML = obj.options[obj.selectedIndex].text;
+    }
+    else
+    {
+      $("label").innerHTML = "--";
+    }
+    $("idx").value = "";
+  }
+</script>
+</body>
+</html>

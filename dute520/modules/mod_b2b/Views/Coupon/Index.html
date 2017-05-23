@@ -1,0 +1,234 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<!--if($vd['inrecycle']==0){-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Category&a=coupon" title="兑换类" onclick="loadDisp(1)"><font color="#000">兑换类列表</font></a></span> <span style="font-size:7px;">>></span> <font color="#ff6c00"><b>{$vd['parent']['name']}</b></font> 面值列表 (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('delitems')"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:3px;">批量删除</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="loadDisp(1);window.location='?m=mod_b2b&c=coupon&catid={$vd['parent']['id']}&inrecycle=1'"><samp title="进入商品回收箱">
+    <div style="padding-top:10px;padding-left:3px;">回收箱(<!--if($vd['recycle_num']){--><span id="recycle" style="color:#ff0000;font-weight:bold">{$vd['recycle_num']}</span><!--}else{--><span id="recycle" style="color:#008800;font-weight:bold">空</span><!--}-->)</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:7px;padding-left:9px;"><img src="{$vd['sc']}images/add.gif" style="vertical-align:middle"/> 添加</div></samp>
+  </div>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="batchEdit(this)"><samp title="批量修改所选项的记录">
+    <div style="padding-top:10px;padding-left:8px;">实时修改</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    
+  </div>
+</div>
+<!--}else{-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Category&a=coupon" title="兑换类" onclick="loadDisp(1)"><font color="#000">兑换类管理</font></a></span> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=coupon&catid={$vd['parent']['id']}" onclick="loadDisp(1)"><font color="#000">{$vd['parent']['name']}</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">回收箱</span>(共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的会员记录,再点此按钮">
+    <div style="padding-top:10px;padding-left:3px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="delAllSubmit('restore')"><samp title="还原回收箱状态">
+    <div style="padding-top:10px;padding-left:9px;font-weight:bold">还原</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    
+  </div>
+</div>
+<!--}-->
+
+<div id="adddiv" style="position:absolute;top:50px;left:230px;;width:380px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">添加<font color="#ff6c00">{$vd['parent']['name']}</font>面值</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Coupon&a=Save" id="tform" style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%">面值</td>
+      <td width="75%"><input type="text" name="ubzlistprice" size="25" onkeyup="setpname(this)"/></td>
+    </tr>
+    <tr>
+      <td width="25%">对应名称</td>
+      <td width="75%"><input type="text" name="ubzpname" id="ubzpname" size="25"/></td>
+    </tr>
+    <tr>
+      <td width="25%">是否可用</td>
+      <td width="75%">
+      <input type="checkbox" name="sell" value="1" class="checkbox" checked />
+      </td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%">
+        <input type="hidden" value="{$vd['parent']['id']}" name="catid"/>
+        <input type="submit" value="添 加" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=coupon" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="tpname" id="tpname" class="checkbox" onFocus='this.blur()'/> 商品名称<br/>
+  <input type="checkbox" name="id[]" value="tlistprice" id="tlistprice" class="checkbox" onFocus='this.blur()'/> 面值<br/>
+  <input type="checkbox" name="id[]" value="tsell" id="tsell" class="checkbox" onFocus='this.blur()'/> 使用状态<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+<!--//thead-->
+<td width="200px"><span class="canedit">名称</span></td>
+<td width="150px"><span class="canedit">面值</span></td>
+<td width="35px"><span class="canedit">使用</span></td>
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/rmb.png"/>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif"/>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif"/>
+      <!--}-->
+    </td>
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=coupon&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['pid']}" class="checkbox" value="{$item['pid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="200px"><nobr><span onclick="toInput(this,{$item['pid']},'pname')">{$item['pname']}</span></nobr></td>
+<td width="150px"><nobr><span onclick="toInput(this,{$item['pid']},'listprice')">{$item['listprice']}</span></nobr></td>
+<td width="35px"><img src="{$vd['sc']}{#ToggleImgSrc($item['sell'])}" onclick="toToggle(this,{$item['pid']},'sell')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=order&ubzcname={$item['pname']}&aid=-1" title="查看支付情况" onclick="loadDisp(1)"><img src="{$vd['sc']}images/rmb.png"/></a>
+    </td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Coupon&a=detail&pid={$item['pid']}" title="编辑商品" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['pid']},'delitems')" alt="删除商品,可以从回收恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['pid']},'destroyitems')" alt="销毁商品,相关信息也会被销毁,无法恢复" style="cursor:pointer"/>
+      <!--}-->
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=PS&a=deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Coupon&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=coupon&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(3,87);
+totleRows = {$vd['totlerow']};
+<!--if($vd['inrecycle']){-->
+deltxt  = "如果销毁商品记录么,商品相关信息也会被销毁(包括订单信息，充值信息，留言信息等),且无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+<!--}else{-->
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除商品,商品相关信息也会被删除(包括订单信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+<!--}-->
+thisdel = 0;
+statistics = 0;
+var resizeidx = 1;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('tpname','tlistprice','tsell');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function setpname(obj)
+  {
+    $("ubzpname").value = "{$vd['parent']['name']}"+obj.value+"{$vd['lang']['moneyunit']}";
+  }
+</script>
+</html>
+<!--}-->

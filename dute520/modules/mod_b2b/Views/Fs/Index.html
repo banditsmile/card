@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
+<style type="text/css">
+td{height:30px}
+#dig td{padding-left:0px}
+#dig1 td{padding-left:0px}
+</style>
+</head>
+
+<body>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
+  <tr>
+    <td width="40%" height="28" class="listhead">
+    <span>→开始进行软件升级</span></td>
+    <td width="59%" class="listhead" style="border-right:1px #ccc solid">
+    <div align="right">
+      <a target="_blank" href="../index.php" >
+      <span class="style11">升级帮助</span>&nbsp;</a></div>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="0" width="100%" style="border-collapse: collapse;">
+  <tr>
+    <td width="100%" style="padding-left:0px;">
+      <table border="0" width="100%" style="border-collapse: collapse;padding-right:20px;border:1px #ccc solid;background:#F0F0F0">
+        <tr>
+          <td width="20%" style="border-right:0px #fff solid">当前版本</td>
+          <td width="80%" style="border-right:1px #ccc solid">{$vd['version']} </td>
+        </tr>
+        <tr>
+          <td width="20%" style="border-right:0px #fff solid">最新版本</td>
+          <td width="80%" style="border-right:1px #ccc solid">{$vd['newversion']} <a href="#" onclick="upgrade()">升级</a></td>
+        </tr>
+        <tr>
+          <td width="20%" style="border-right:0px #fff solid;border-bottom:1px #ccc solid">开发商</td>
+          <td width="80%" style="border-right:1px #ccc solid;border-bottom:1px #ccc solid">
+			<a target="_blank" href="http://www.kamengwang.net">卡盟网</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div id="result" style="font-size:15px;color:#ff0000;margin-top:20px;">
+  <div id="err" style="margin-top:5px"></div>
+  <div id="downloadinfo" style="margin-top:5px"></div>
+  <div id="unzipinfo" style="margin-top:5px"></div>
+  <div id="updateinfo" style="margin-top:5px"></div>
+  <div id="upgradeinfo" style="margin-top:5px"></div>
+  <div id="delfileinfo" style="margin-top:5px"></div>
+  <div id="resultinfo" style="margin-top:5px"></div>
+</div>
+<input type="hidden" id="succimg" name="succimg" value="{$vd['sc']}images/succ.gif"/>
+<input type="hidden" id="failimg" name="failimg" value="{$vd['sc']}images/fail.gif"/>
+<input type="hidden" id="errimg" name="errimg"  value="{$vd['sc']}images/err.gif"/>
+<input type="hidden" id="loadimg" name="loadimg" value="{$vd['sc']}images/load.gif"/>
+<input type="hidden" id="alertimg" name="alertimg" value="{$vd['sc']}images/alert.gif"/>
+<input type="hidden" id="path" name="path" value='<!--echo urlencode("update/update.zip");-->'/>
+
+</body>
+<script type="text/javascript">
+  var need = "{$vd['need']}";
+  
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  
+  function upgrade()
+  {
+    if(checkversion())
+    {
+      $("downloadinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> 正在下载升级包...！";
+      loadXMLDoc("index.php?m=mod_b2b&c=fs&a=down", "downloadinfo", '升级包下载完成..！', '升级包下载失败..！', '由于某种原因导致升级包下载失败..！', 1);
+    }
+    else
+    {
+      $("err").innerHTML = "<img src='" + $("alertimg").value + "'/> 当前版本已经是最新版，不需要升级！";
+    }
+  }
+  
+  function checkversion()
+  {
+    return need=="1" ? true : false;
+  }
+  
+  function getXMLHander()
+  {
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    return xmlhttp;
+  }
+  
+  function loadXMLDoc(url, id, txt_succ, txt_fail, txt_err, step)
+  {
+    xmlhttp = getXMLHander();
+    
+    if (xmlhttp!=null)
+    {
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState==4)
+        {
+          if (xmlhttp.status==200)
+          {
+            var ackdata=xmlhttp.responseText;
+            if(ackdata == 0 || ackdata == "0")
+            {
+              $(id).innerHTML = "<img src='" + $("succimg").value + "'/> " + txt_succ + "！";
+              nextstep(step);
+            }
+            else
+            {
+              alert(ackdata);
+              $(id).innerHTML = "<img src='" + $("failimg").value + "'/> " + txt_fail + "！";
+            }
+          }
+          else
+          {
+            $(id).innerHTML = "<img src='" + $("errimg").value + "'/> " + txt_err + "！";
+          }
+        }
+      }
+      xmlhttp.open("post", url, true);
+      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp.send('');
+    }
+    else
+    {
+      alert("您的浏览器不支持XMLHTTP，无法完成本次操作")
+    }
+  }
+  
+  function nextstep(step)
+  {
+    switch(step)
+    {
+      case 1:
+        //unzip
+        //loadXMLDoc(url, id, txt_succ, txt_fail, txt_err, step);
+        $("unzipinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> 正在安装升级包...！";
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=UnZip&issys=1&path="+$("path").value, "unzipinfo", '升级包安装完成..！', '升级包安装失败..！', '由于某种原因导致升级包安装失败..！', 2);
+        break;
+      case 2:
+        //更新数据库
+        $("upgradeinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> 正在升级数据库...！";
+        loadXMLDoc("update/upgrade.php", "upgradeinfo", '数据库升级完成..！', '数据库升级失败..！', '由于某种原因导致数据库升级失败..！', 3);
+        break;
+      case 3:
+        //deletefile
+        $("delfileinfo").innerHTML = "<img src='" + $("loadimg").value + "'/> 开始删除安装包...！";
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "delfileinfo", '安装包删除完成..！', '安装包删除失败..！', '由于某种原因导致升级包安装失败..！', 4);
+        break;
+      default:
+        $("resultinfo").innerHTML = "<img src='" + $("succimg").value + "'/> 颖先卡购系统升级程序完成，您可以关闭此页了！<br/><a href='update/update.txt' target='_blank'>查看本次升级内容...</a>";
+        break;
+    }
+  }
+</script>
+</html>

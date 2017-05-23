@@ -1,0 +1,58 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<form method="post" action="index.php?m=mod_user&c=msg&a=save">
+  <table border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td colspan="2" style="padding-left:15px;"> <b>发送短消息</b></td>
+    </tr>
+    <tr>
+      <td class="buylt">主题：</td>
+      <td class="buyrt"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title" value="{$vd['msgtitle']}"/></td>
+    </tr>
+    <!--if(0) {-->
+    <tr>
+      <td class="buylt">收信人：</td>
+      <td class="buyrt">
+        <input type="radio" value="0" id="msgto0" name="msgto" checked style="cursor:pointer"/>老板
+      </td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td class="buylt">收信人：</td>
+      <td class="buyrt">
+        <input type="radio" value="0" id="msgto0" name="msgto" checked  style="cursor:pointer"/> 系统管理员
+      </td>
+    </tr>
+    <tr id="underling" style="display:none">
+      <td class="buylt">下级编号：</td>
+      <td class="buyrt">
+        <select name="underlingid">
+        <option value="0">请选择您的下级编号</option>
+        {#Option($vd['agents'],0,'aid','aid')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">内容：</td>
+      <td class="buyrt">
+      <textarea name="content" wrap="VIRTUAL" cols="60" rows="10" scrolling="yes" class="mytextarea"></textarea>
+      <span id="spanstaffpwd"></span></td>
+    </tr>
+    <tr>
+      <td class="buylt" height="50px"></td>
+      <td class="buyrt">
+        <input type="hidden" name="msgtype" value="{$vd['msgtype']}"/>
+        <input type="submit" id="mysubmit" value="马上发送" class="button mysubmit"/> 
+        <input type="reset" value="重新填写" class="button myreset"/></td>
+    </tr>
+  </table>
+  </form>
+</td>
+</tr>
+</table>
+{load(foot)}

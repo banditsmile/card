@@ -1,0 +1,99 @@
+{load(head)}
+<body>
+<div class="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=ykt&{$vd['op']}" title="点击重新获取卡密列表资料" onclick="loadDisp(1)"><font color="#000">卡密列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle">
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>  
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=ykt&a=card" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="16" value="" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <input type="submit" value="商品搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="200px"><b>商品名称</b></td>
+    <td width="75px"><b>商品类型</b></td>
+    <td width="75px"><b>商品面值</b></td>
+    <td width="65px"><b>进货价</b></td>
+    <td width="22px"><b>卖</b></td>
+    <td width="80px"><b>是否已定价</b></td>
+    <td width="75px"><b>价格设定</b></td>
+    <td width="80px"><b>是否有密价</b></td>
+    <td width="75px"><b>客户密价</b></td>
+    <td class="endtd"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div></td>
+  </tr>
+</table>
+<div id="content">
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="200px"><nobr><samp title="{$item['pname']}">{$item['pname']}</samp></nobr></td>
+    <td width="75px">{#ProductType($item['ptype'])}</td>
+    <td width="75px">{$item['listprice']}</td>
+    <td width="65px">{$item['price']}</td>
+    <td width="22px">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['sell'])}"/>
+    </td>
+    <td width="80px">
+      <!--if($item['priceset'] > 0){--> 已定价 <!--}else{--> <font color="#cccccc">未定价</font> <!--}-->
+    </td>
+    <td width="75px">
+      [<a href="?m=mod_b2b&c=product&a=price&pid={$item['pid']}">
+      <font color="#00875A">定价</font>
+      </a>]
+    </td>
+    <td width="80px">
+      <!--if($item['privatepriceset'] > 0){--> 有密价 <!--}else{--> <font color="#cccccc">无密价</font> <!--}-->
+    </td>
+    <td width="75px">
+      [<a href="?m=mod_b2b&c=product&a=PrivatePrice&pid={$item['pid']}">
+      <font color="#00875A">密价</font>
+      </a>]
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+</table>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+</div>
+<input type="hidden" value="index.php?m=mod_b2b&c=ykt&a=table&{$vd['op']}" id="url"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" colspan="20">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=ykt&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var resizeidx = 0;
+</script>
+<script src="{$vd['sc']}js/table.js" type="text/javascript"></script>
+</body>
+</html>

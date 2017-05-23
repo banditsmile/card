@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+      <h3>商品二级类别列表</h3>
+      『<a href="?m=mod_b2b&c=category">一级分类</a> / <a href="?m=mod_b2b&c=category">二级分类</a> / <a href="?m=mod_b2b&c=catalog">首页类目</a> / <a href="?m=mod_b2b&c=product">所有商品</a>』
+    </td>
+  </tr>
+</table> 
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td colspan="4" align="left">
+    上级分类列表：
+    <select name="cat" onchange="javascript:location.href='index.php?m=mod_b2b&c=category&a=subcat&grandfatherid={$vd['grandfatherid']}&parentid=' + this.options[selectedIndex].value;" class="wenbenkuang">
+    <option value="">选择您要进入上级分类</option>
+    {#option($vd['cat'], $vd['parentid'], 'catname', 'catid')}
+    </select>
+    </td>
+  </tr>
+</table> 
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6"> 
+  <tr> 
+    <td width="30%" bgcolor="#f1f1f1" align="center" class="listhead">分类名称</td>
+    <td width="19%" bgcolor="#f1f1f1" align="center" class="listhead">分类排序</td>
+    <td width="17%" bgcolor="#f1f1f1" align="center" class="listhead">分类颜色</td>
+    <td width="17%" bgcolor="#f1f1f1" align="center" class="listhead">确定操作</td>
+    <td width="17%" bgcolor="#f1f1f1" align="center" class="listhead"></td>
+  </tr>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=category&a=save&optype=2">
+  <tr>
+    <td width="30%" bgcolor="#f1f1f1" align="center"><input type="text" name="catname" size="22"/></td>
+    <td width="19%" bgcolor="#f1f1f1" align="center"><input type="text" name="catorder" size="16"/></td>
+    <td width="17%" bgcolor="#f1f1f1" align="center"><input type="text" name="catcolor" size="16"/></td>
+    <td width="17%" bgcolor="#f1f1f1" align="center"><input type="hidden" name="grandfatherid" value="{$vd['grandfatherid']}" /><input type="hidden" name="parentid" size="16" value="{$vd['parentid']}"/><input type="submit" name="Submit" value="添 加"/></td>
+    <td width="17%" bgcolor="#f1f1f1" align="center"></td>
+  </tr>
+  </form>
+  <!--foreach($vd['items'] as $item) {-->
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=category&a=save">
+  <tr>
+    <td width="30%" bgcolor="#f1f1f1" align="center">
+    <input type="text" name="catname" size="22" value="{$item['catname']}" />
+    </td>
+    <td width="19%" bgcolor="#f1f1f1" align="center">
+    <input type="text" name="catorder" size="16" value="{$item['catorder']}" />
+    </td>
+    <td width="17%" bgcolor="#f1f1f1" align="center">
+    <input type="text" name="catcolor" size="16" value="{$item['catcolor']}" />
+    </td>
+    <td width="17%" bgcolor="#f1f1f1" align="center">
+    <input type="hidden" name="catid" value="{$item['catid']}" />
+    <input type="hidden" name="grandfatherid" value="{$vd['grandfatherid']}" />
+    <input type="hidden" name="parentid" value="{$item['parentid']}" />
+    <input type="submit" name="Submit" value="修 改" />
+    </td>
+    <td width="17%" bgcolor="#f1f1f1" align="center">
+      <a href="index.php?m=mod_b2b&c=category&a=del&optype=2&catid={$item['catid']}&parentid={$item['parentid']}" onclick="return confirm('如果删除了二级分类,和二级级分类关联的商品/商品进货信息也都会被删除,您确定进行删除操作吗？')">
+      删除
+      </a>
+      <a href="index.php?m=mod_b2b&c=category&a=subcat&optype=2&grandfatherid={$item['parentid']}&parentid={$item['catid']}">
+      管理下级分类
+      </a>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+</table>
+<br/>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center">
+  <tr> 
+    <td bgcolor="#f1f1f1">操作注意事项及说明</td>
+  </tr>
+  <tr> 
+    <td bgcolor="#f1f1f1"><font color="#ff0000">
+    ·请先选择对应大类，然后再进行添加操作，否则添加是无效的。<br/>
+    ·请注意分类名称不要含有非法字符。<br/>
+    ·增加常用分类时，如果没有选择此小类所属大类为常用分类，则被列为"其它"分类。<br/>
+    ·进行删除操作的同时，会删除此分类下的所有商品。
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>

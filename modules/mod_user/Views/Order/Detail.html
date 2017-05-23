@@ -1,0 +1,96 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+<!--$item = $vd['order']['item'];-->
+  <tr class="tabletitle">
+    <td colspan="2" align="center" height="35"><b>订单号：{$item['ordno']} ({#OrderState($item['ordstate'],$item['ptype'])})</b></td>
+  </tr>
+  <tr bgcolor="#ffffff" height="30">
+    <td width="50%">订购日期：{$item['orddate']}</td>
+    <td width="50%">姓名：{$item['crealname']}</td>
+  </tr>
+  <tr bgcolor="#ffffff" height="30">
+    <td>电话：{$item['ctel']}</td>
+    <td>E-mail：{$item['cmail']}</td>
+  </tr>
+  <tr bgcolor="#ffffff" height="30">
+    <td>卡号名称：{$item['pname']}</td>
+    <td>订购数量：{$item['qty']}</td>
+  </tr>
+  <tr bgcolor="#ffffff" height="30">
+    <td>卡号单价：{$item['cprice']}</td>
+    <td>订购总金额：{$item['dollars']}</td>
+  </tr>
+  <!--if($item['ptype'] > 0) {-->
+  <tr bgcolor="#ffffff" height="30">
+    <td>游戏用户名：{$item['czaccount']}</td>
+    <td>服务器所在区：{$item['czarea2']}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['ptype'] == 0) {-->
+  <!--foreach($vd['order']['carditem'] as $card) {-->
+  <tr bgcolor="#ffffff" height="30">
+    <td>卡号：<font color="#ff0000">{$card['cardnumber']}</font>
+    <input type="button" name="copyCard" value="&lt; &lt; 复制卡号" style="font-weight:bold;font-size:13px" onclick="copyToClipboard('{$card['cardnumber']}')"></input>
+    </td>
+    <td>密码：<font color="#ff0000">{$card['cardpwd']}</font>
+    <input type="button" name="copyPassword" value="&lt; &lt; 复制密码" style="font-weight:bold;font-size:13px" onclick="copyToClipboard('{$card['cardpwd']}')"></input>
+    </td>
+  </tr>
+  <!--}-->
+  <!--}-->
+</table>
+</form>
+</td>
+</tr>
+</table>
+{load(foot)}
+
+<script type="text/javascript">  
+function copyToClipboard(text){
+  if(text==null||text=='undefined')
+  return;
+      
+  if (window.clipboardData)
+  {
+    window.clipboardData.setData("Text", text);
+  }
+  else if (window.netscape)
+  {
+  netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
+  var clip = Components.classes['@mozilla.org/widget/clipboard;1']
+                .createInstance(Components.interfaces.nsIClipboard);
+  if (!clip) return;
+  var trans = Components.classes['@mozilla.org/widget/transferable;1']
+                 .createInstance(Components.interfaces.nsITransferable);
+  if (!trans) return;
+  trans.addDataFlavor('text/unicode');
+  
+  var str = new Object();
+  var len = new Object();
+  
+  var str = Components.classes["@mozilla.org/supports-string;1"]
+               .createInstance(Components.interfaces.nsISupportsString);
+  
+  var copytext=text;
+  
+  str.data=copytext;
+  
+  trans.setTransferData("text/unicode",str,copytext.length*2);
+  
+  var clipid=Components.interfaces.nsIClipboard;
+  
+  if (!clip) return ;
+  
+  clip.setData(trans,null,clipid.kGlobalClipboard);
+  
+  }
+  window.alert("已复制成功，请直接粘贴");
+}
+
+</script>

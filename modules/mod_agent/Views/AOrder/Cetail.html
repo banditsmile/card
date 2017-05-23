@@ -1,0 +1,196 @@
+{load(fhead)}
+<body class="mainbg">
+  <!--$item = $vd['order']['item'];-->
+  <div id="hearder"><span class="<!--if($item['ordstate'] == -1){-->shibai<!--}else if($item['ordstate'] == 2){-->wancheng<!--}else{-->jiazai<!--}-->">手工商品代充&nbsp;&nbsp;(订单号：{$item['ordno']})</span></div>
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  <td class="tableleft">
+      
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+    <tr>
+      <td class="buylt1">商品名称：</td>
+      <td colspan=3 class="buyrt3">{$item['pname']}({$item['pid']})</td>
+    </tr>
+    <tr>
+      <td class="buylt1">充值数量：</td>
+      <td colspan=3 class="buyrt3">{$item['qty']}(个)</td>
+    </tr>
+    
+    <!--if($item['ptype'] == 1 || $item['ptype'] == 2) {-->
+    <tr>
+      <td class="buylt1">游戏用户名：</td>
+      <td colspan=3 class="buyrt3"><b><font color="#0000ff">{$item['czaccount']}</font></b></td>
+    </tr>
+    <!--if(isset($item['thisgame']) && $item['thisgame'] != ''){-->
+    <tr>
+      <td class="buylt1"><!--if($item['namehide']=='thisgame'){-->登陆密码<!--}else{-->充值产品<!--}-->：</td>
+      <td colspan=3 class="buyrt3">{#CzText($item['thisgame'])}</td>
+    </tr>
+    <!--}-->
+    <!--if($item['czarea1'] != ''){-->
+    <tr>
+      <td class="buylt1"><!--if($item['namehide']=='czarea1'){-->登陆密码<!--}else{-->充值区域<!--}-->：</td>
+      <td colspan=3 class="buyrt3">{#CzText($item['czarea1'])}</td>
+    </tr>
+    <!--}-->
+    <!--if($item['czarea2'] != ''){-->
+    <tr>
+      <td class="buylt1"><!--if($item['namehide']=='czarea1'){-->登陆密码<!--}else{-->充值服务器<!--}-->：</td>
+      <td colspan=3 class="buyrt3">{#CzText($item['czarea2'])}</td>
+    </tr>
+    <!--}-->
+    <!--if($item['cztype'] != ''){-->
+    <tr>
+      <td class="buylt1">
+      	<!--if(strpos($item['cztype'], '::') > 0){-->
+      	  <!--$mytemp = explode('::', $item['cztype']);$item['cztype']=$mytemp[1];-->
+      	  {$mytemp[0]}：
+      	<!--}else{-->
+      	
+      	<!--if($item['namehide']=='cztype'){-->登陆密码<!--}else{-->计费方式<!--}-->：
+      	
+      	<!--}-->
+      </td>
+      <td colspan=3 class="buyrt3">{#CzText($item['cztype'])}</td>
+    </tr>
+    <!--}-->
+    <!--if($item['czother'] != ''){-->
+    <tr>
+      <td class="buylt1">
+      	<!--if(strpos($item['czother'], '::') > 0){-->
+      	  <!--$mytemp = explode('::', $item['czother']);$item['czother']=$mytemp[1];-->
+      	  {$mytemp[0]}：
+      	<!--}else{-->
+      	
+      	<!--if($item['namehide']=='czother'){-->登陆密码<!--}else{-->帐号类型<!--}-->：
+      	
+      	<!--}-->
+      </td>
+      <td colspan=3 class="buyrt3">{#CzText($item['czother'])}</td>
+    </tr>
+    <!--}-->
+    
+    <!--if($item['acountpwd'] != ''){-->
+    <tr>
+      <td class="buylt1">
+      	<!--if(strpos($item['acountpwd'], '::') > 0){-->
+      	  <!--$mytemp = explode('::', $item['acountpwd']);$item['acountpwd']=$mytemp[1];-->
+      	  {$mytemp[0]}：
+      	<!--}else{-->
+      	
+      	<!--if($item['namehide']=='acountpwd'){-->登陆密码<!--}else{-->其他信息<!--}-->：
+      	
+      	<!--}-->
+      </td>
+      <td colspan=3 class="buyrt3">{$item['acountpwd']}</td>
+    </tr>
+    <!--}-->
+    <!--if($item['others'] != '') {-->
+    <tr>
+      <td class="buylt1">购卡备注：</td>
+      <td colspan=3 class="buyrt3"><textarea rows="5" cols="50">{$item['others']}</textarea></td>
+    </tr>
+    <!--}-->
+    <!--if($item['ordstate'] == -1) {-->
+    <tr>
+      <td class="buylt1">失败原因：</td>
+      <td colspan=3 class="buyrt3"><font color="#ff0000"><!--if($item['rollback'] == 1){-->[<b>已经退款</b>]<!--}-->{$item['failreason']}</font></td>
+    </tr>
+    <!--}-->
+    <!--if($item['admname'] != ''){-->
+    <tr>
+      <td class="buylt1">订单代处理：</td>
+      <td colspan=3 class="buyrt3"><b>平台管理员</b></td>
+    </tr>
+    <!--}-->
+    <!--if($item['opname'] != ''){-->
+    <tr>
+      <td class="buylt1">代充帐号：</td>
+      <td colspan=3 class="buyrt3"><b>{$item['opname']}</b></td>
+    </tr>
+    <!--}-->
+    <!--}-->
+    <form action="index.php?m=mod_agent&c=AOrder&a=check&ubzordno={$item['ordno']}&isc=<!--echo intval(request('isc'));-->" method="post">
+    <tr>
+      <td class="buylt1"><input type="radio" value="2" name="ordstate" class="checkbox" checked />充值成功：</td>
+      <td colspan=3 class="buyrt3">
+        表示充值成功，请将厂家的充值记录复制入下边方框
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt1"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>取消充值：</td>
+      <td colspan=3 class="buyrt3">
+        <div style="height:22px;">
+        <input type="radio" value="厂商系统出错或维护，无法充值，请稍后重新购买" name="failreason" class="checkbox" />厂商系统出错或维护，无法充值，请稍后重新购买</div>
+        <div style="height:22px;"><input type="radio" value="充值帐户不符，无法充值，请重新下单购买" name="failreason" class="checkbox" />充值帐户不符，无法充值，请重新下单购买</div>
+        <div style="height:22px;"><input type="radio" value="充值区域不符，无法充值，请重新下单购买" name="failreason" class="checkbox" />充值区域不符，无法充值，请重新下单购买</div>
+        <div style="height:22px;"><input type="radio" value="商品库存不足，请待我们补充库存后再购买" name="failreason" class="checkbox" />商品库存不足，请待我们补充库存后再购买</div>
+        <div style="height:22px;"><input type="radio" value="由于厂商或者一些不可控因素，无法充值，请重新提交订单" name="failreason" class="checkbox" />由于厂商或者一些不可控因素，无法充值，请重新提交订单</div>
+        <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom"/>自行输入
+        <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" class="myinput" style="color:#555"/></div>
+        <div style="height:22px;" style="display:none"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" id="custom" onclick="dispTrade()" /><font color="#ff0000">取消订单后时候恢复记录(客户恢复余额)，同时选择取消充单才生效</font></div>
+        <div style="height:22px;display:none" id="tradepwd">请输入您的超级密码：<input type="password" name="superpwd" />
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt1">厂商充值记录：</td>
+      <td colspan=3 class="buyrt3">
+        <textarea rows="5" name="factoryreturn" cols="50"></textarea>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="buylt1">客户名称：</td>
+      <td colspan=3 class="buyrt3">{$item['company']}({#DisplayCode($item['cid'])})</td>
+    </tr>
+    <tr>
+      <td class="buylt1">客户IP地址</td>
+      <td colspan=3 class="buyrt3">{$item['cip']}</td>
+    </tr>
+    <tr>
+      <td class="buylt1">销售时间：</td>
+      <td colspan=3 class="buyrt3">{$item['orddate']}</td>
+    </tr>
+    <tr>
+      <td class="buylt1" style="height:50px;">&nbsp;</td>
+      <td colspan=3 class="buyrt3"><input type="submit" value="确认提交" class="button" onclick="return confirm('确认更新订单状态么？如果取消订单，请确认是否需要补回余额')"/> <input type="reset" value="重置" class="button"/> <input type="button" name="goback" value="返回上页" class="button" onclick="javascript:history.go(-1);"></td>
+    </tr>
+  </table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+  function openScript(url,name,width,height)
+  {
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+  }
+  
+  var $ = function(id)
+  {
+    return document.getElementById(id);
+  }
+  function disp(id)
+  {
+    $(id).style.display = $(id).style.display == "" ? "none" : "";
+  }
+  
+  function set(obj)
+  {
+    $("custom").value = obj.value;
+    $("custom").checked = true;
+  }
+  
+  function setrollback()
+  {
+    $("rollback").checked = true;
+    $("tradepwd").style.display = "";
+  }
+  
+  function dispTrade()
+  {
+    $("tradepwd").style.display = $("rollback").checked ? "" : "none";
+  }
+</script>
+

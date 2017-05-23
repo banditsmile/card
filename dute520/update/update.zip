@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>有米埠点卡系统 - 点卡平台程序开发商 - http://www.umebiz.com</title>
+<meta name="Keywords" content="点卡平台程序开发 点卡直储 卡密转自动系统 SUP平台 点卡进货 供货" />
+<meta name="Description" content="有米埠主要运营三类产品：1、点卡平台程序的开发 2、点卡直储，卡密转自动系统的开发 3、运营联售平台，实现商户间进货和供货目前联售平台内活跃商户5000多家，2000多家供货商，供货商多为省级代理或者经销商" />
+<link rel="stylesheet" type="text/css" href="content/mod_article/css/ubcms.css" />
+</head>
+<body>
+<div class="top1">
+<div class="top">
+	<div class="logo"><img src="content/mod_article/images/logo.jpg"/></div>
+  <div class="mer">商业用户<font color="#0376C3">[<a href="index.php?a=login">登录</a>]</font> <font color="#0376C3">[<a href="index.php?a=reg">注册</a>]</font> </div>
+</div>
+<div class="nav">
+	<div class="tabLeft"></div>
+	<ul>
+	  <li><a class="on" href="">首页</a></li>
+	  <li class="bian" style="width:80px"><a  href="article/4.html" onfocus="this.blur()">云产品</a></li>
+	  <li class="bian" style="width:80px"><a  href="article/6.html" onfocus="this.blur()">子站</a></li>
+	  <li class="bian"><a  href="article/17.html" onfocus="this.blur()">SUP渠道</a></li>
+	  <li class="bian" style="width:80px"><a  href="article/19.html" onfocus="this.blur()">合作</a></li>
+	  <li class="bian"><a  href="article/21.html" onfocus="this.blur()">联系我们</a></li>
+	  <li class="bian w120"><a href="article/50.html" onfocus="this.blur()">客服真伪查询</a></li>
+	  <li class="bian w120"><a href="http://umebiz.com/index.php?a=yun" onfocus="this.blur()">云版本鉴别</a></li>
+	  <li class="bian"><a href="http://umebiz.com/index.php?a=demo" onfocus="this.blur()">申请演示站</a></li>
+	</ul>
+  <div class="tabRight"></div>
+</div>
+</div>
+<div id="main1">
+<input type="hidden" id="webdir" name="webdir" value="/"/> 
+    <div id="tab">
+    <div id="content_box">
+
+    		阳春三月,官方招商,优惠多多,让您马上有钱
+      
+    </div>
+    <ul id="menu_bar">
+       
+    </ul>
+    <div id="sup_bar" style="display:block">
+      <div class="content">
+        <iframe frameborder="0"  scrolling="no" src="http://user.umebiz.com/sup.asp" allowtransparency="true" class="ann_iframe"></iframe>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  var pos = 0;
+  var auto_lis = "";
+  var iv = "";
+
+  var changeTab = function (obj)
+  {
+    var lis = document.getElementById("menu_bar").getElementsByTagName("li");
+    var divs = document.getElementById("content_box").getElementsByTagName("div");
+
+    for(var i=0;i<lis.length;i++)
+      lis[i].className = (lis[i]==obj)?"sel":"";
+
+    for(var i=0;i<divs.length;i++)
+    {
+      divs[i].className = (obj._no==i)?"show":"";
+    }
+  };
+  
+
+  function loadtab()
+  {
+  var autoMaq = function () {
+    changeTab(auto_lis[pos++]);
+    if (pos == auto_lis.length) pos = 0;
+  };
+
+  
+    var lis = document.getElementById("menu_bar").getElementsByTagName("li");  
+    for(var i=0;i<lis.length;i++)
+    {
+    lis[i].style.cursor = "hand";
+      lis[i]._no = i;    
+      lis[i].onmouseover = function ()
+      {
+        changeTab(this);
+    pos = this._no;
+    window.clearInterval(iv);
+      };
+    lis[i].onmouseout = function () {
+      iv = window.setInterval(autoMaq, 3000);      
+    };
+    }
+  auto_lis = document.getElementById("menu_bar").getElementsByTagName("li");
+  iv = window.setInterval(autoMaq, 3000);
+  }; 
+  //loadtab();
+  
+</script>
+<div class="shell1">
+<div class="shell">
+	<div class="metro-col1">
+		<div class="metro">
+      <span class="s24">云1</span><br/> 
+      适合小型规模经销商、代理商 <br/> 
+      <span class="fright">查看演示  <span class="s24"><a href="article/4.html" onfocus="this.blur()">详细</a></span></span>
+		</div>
+	</div>
+	<div class="metro-col2">
+		<div class="metro">
+      <span class="s24">云2</span><br/> 
+      适合中、小型规模经销商、代理商 <br/> 
+      <span class="fright">查看演示  <span class="s24"><a href="article/4.html" onfocus="this.blur()">详细</a></span></span>
+		</div>
+	</div>
+	<div class="metro-col3">
+		<div class="metro">
+      <span class="s24">云3 </span><br/> 
+      适合中、大型经销商、代理商、运营商 <br/> 
+      <span class="fright">查看演示  <span class="s24"><a href="article/4.html" onfocus="this.blur()">详细</a></span> </span>
+		</div>
+	</div>
+</div>
+
+<div style="width:630px;float:left">
+
+	<div class="titleBg"><b>公司新闻</b></div>
+  <div class="cn">
+  	<ul>
+  		  		<li><a href="index.php?a=yun" target="_blank" title="有米埠官方云版本鉴别"><font color="#FF0033">有米埠官方云版本鉴别</font></a></li>
+  		  		<li><a href="http://www.umebiz.com/index.php?a=demo" target="_blank" title="官方云演示自动申请地址"><font color="#FF0000">官方云演示自动申请地址</font></a></li>
+  		  		<li><a href="article/58.html" title="[官方声明] 警惕他人冒充有米埠搭建云版本"><font color="#0000CC">[官方声明] 警惕他人冒充有米埠搭建云版本</font></a></li>
+  		  		<li><a href="article/56.html" title="有米埠云版本简介"><font color="">有米埠云版本简介</font></a></li>
+  		  		<li><a href="article/4.html" target="_blank" title="免费为其他平台转数据"><font color="#FF0000">免费为其他平台转数据</font></a></li>
+  		  		<li><a href="/article/4.html" target="_blank" title="有米埠云版本正式上线啦"><font color="#0000FF">有米埠云版本正式上线啦</font></a></li>
+  		  		<li><a href="http://umebiz.com/article/44.html" target="_blank" title="售前常见问题FAQ"><font color="">售前常见问题FAQ</font></a></li>
+  		  		<li><a href="article/43.html" title="有米埠增设客服投诉功能"><font color="">有米埠增设客服投诉功能</font></a></li>
+  		  		<li><a href="article/41.html" title="如何访问演示系统的后台"><font color="">如何访问演示系统的后台</font></a></li>
+  		  		<li><a href="article/32.html" title="关于如何申请供货商的再次声明"><font color="">关于如何申请供货商的再次声明</font></a></li>
+  		  	</ul>
+  </div>
+
+</div>
+<div style="width:310px;float:right">
+	<div class="titleBg"><b>有米埠主营产品</b></div>
+  <div class="cn1">
+  	<ul>
+  		<li class="c1">
+  			<img src="content/mod_article/images/company.gif" style="border:2px #ccc solid"/>
+  		</li>
+  		<li class="c2">
+  			<ul>
+  				<li>点卡平台程序的开发</li>
+  				<li>点卡直储，卡密转自动系统的开发</li>
+  				<li>运营点卡联售平台，实现商户间进货和供货</li>
+  			</ul>
+  		</li>
+  	</ul>
+  </div>
+
+  <div class="kf">
+  	<div class="kftxt">
+  		<a href="http://wpa.qq.com/msgrd?V=1&Uin=309270929&Site=有米埠小A&Menu=yes" target="_blank">
+       <img border="0" src="http://wpa.qq.com/pa?p=1:309270929:3" alt="点击这里给我发消息" />
+      </a>
+      <a href="http://wpa.qq.com/msgrd?V=1&Uin=714944251&Site=有米埠客服&Menu=yes" target="_blank">
+       <img border="0" src="http://wpa.qq.com/pa?p=1:714944251:3" alt="点击这里给我发消息" />
+      </a>
+  	</div>
+  </div>
+</div>
+</div>
+ 
+</div>
+ 
+<div class="foot">
+	<div class="copyright_v2">
+	<em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="content/mod_article/images/cyberpolice.gif" align="absmiddle" /></a></em>
+	<em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="content/mod_article/images/pawz.gif" align="absmiddle" /></a></em>
+	<a href="article/20.html">关于我们</a> <font color="#cccccc">|</font> <a href="article/28.html">相关法律</a> <font color="#cccccc">|</font> <a href="article/21.html">联系我们</a> <font color="#cccccc">|</font> <a href="http://www.miibeian.gov.cn/" target="_blank">苏ICP备08002180号</a>
+  <br/>有米埠(http://www.umebiz.com) - 专注于点卡平台程序的开发商<small class="f-left">&copy; Copyright 2008-2013 Umebiz Inc.</small>
+	</div>
+</div>
+<script src="content/mod_shared/skins/js/web.js" type="text/javascript"></script>
+</body>
+</html>

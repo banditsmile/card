@@ -1,0 +1,92 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+	<div class="rstitle">短消息列表</div>
+  <table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td width="47%" align="center" height="35">
+        标题</td>
+      <td width="15%" align="center" height="35">
+      	<!--if($vd['msgtype'] == 'send'){-->
+        收信人
+        <!--}else{-->
+        发信人
+        <!--}-->
+      </td>
+      <td width="20%" align="center" height="35">
+        加入时间</td>
+      <td width="18%" align="center" height="35">
+        操作</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr>
+      <td width="47%" align="left" height="35" style="padding-left:3px;">
+      	<!--if($vd['msgtype'] == 'send'){-->
+          <!--if($item['isreaded'] == 1){-->
+      	  <font color="#cccccc">{$item['title']}</font>
+      	  <!--}else{-->
+          {$item['title']}
+      	  <!--}-->
+        <!--}else{-->
+          <!--if($item['myreaded'] > 0 || ($item['isreaded'] == 1 && $item['msgto'] == $vd['agent'][7])) {-->
+      	  <font color="#cccccc">{$item['title']}</font>
+      	  <!--}else{-->
+          {$item['title']}
+      	  <!--}-->
+        <!--}-->
+        
+      	
+      </td>
+      <td width="15%" align="center" height="35">
+      	<!--if($vd['msgtype'] == 'send'){-->
+      	  <!--if($item['msgto'] == 999999){-->
+      	    <!--if($item['msgcc'] == 'allunderling'){-->所有下家<!--}-->
+      	    <!--if($item['msgcc'] == 'allstaff'){-->所有员工<!--}-->
+      	  <!--}else{-->
+      	    <!--if($item['msgto'] < 0){-->
+      	    <font color="#ff00ff">员工({#DisplayCode((0-$item['msgto']),2)})</font>
+      	    <!--}else{-->
+      	      <!--if($item['msgto'] == $vd['agent'][4]){-->
+      	        <font color="#0099cc">上家({#DisplayCode($item['msgto'],4)})</font>
+      	      <!--}else{-->
+                <font color="#ff0000">{#DisplayCode($item['msgto'],4)}</font>
+              <!--}-->
+            <!--}-->
+          <!--}-->
+        <!--}else{-->
+          <!--if($item['msgfrom'] < 0){-->
+      	  <font color="#ff00ff">员工({#DisplayCode((0-$item['msgfrom']),2)})</font>
+      	  <!--}else{-->
+              <!--if($item['msgfrom'] == $vd['agent'][4]){-->
+      	        <font color="#0099cc">上家({#DisplayCode($item['msgfrom'],4)})</font>
+      	      <!--}else{-->
+                <font color="#ff0000">{#DisplayCode($item['msgfrom'],4)}</font>
+              <!--}-->
+          <!--}-->
+        <!--}-->
+      </td>
+      <td width="20%" align="center" height="35">{$item['createdate']}</td>
+      <td width="18%" align="center" height="35">
+        [<a href="index.php?m=mod_agent&c=msg&a=detail&id={$item['id']}" >
+        <font color="#0000ff">查看回复</font>
+        </a>][<a href="index.php?m=mod_agent&c=msg&a=del&id={$item['id']}" onclick="return confirm('您确定进行删除操作吗？')">
+        <font color="#0000ff">删除</font>
+        </a>]
+      </td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td align="right" height="35" colspan="12">
+      <form method="post" action="index.php?m=mod_agent&c=msg&{$vd['op']}">
+        <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+        <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_agent&c=msg&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+        <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_agent&c=msg&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+        到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+      </form>
+      </td>
+    </tr>
+  </table>
+</div>
+{load(foot)}

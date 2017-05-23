@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<style type="text/css">
+body {
+BACKGROUND:#fff;
+MARGIN:0;
+FONT:normal 12px 宋体;
+}
+
+input {
+border:1px solid #ccc;
+height:22px;
+font-size:12px;
+color:#252728;
+padding:3px 0px 0px 6px;
+BACKGROUND:#fff;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+  function BuildBaseUrl( command )
+  {
+    var sUrl =
+      document.getElementById('cmbConnector').value +
+      '?Command=' + command +
+      '&Type=' + document.getElementById('cmbType').value +
+      '&CurrentFolder=' + encodeURIComponent(document.getElementById('txtFolder').value) ;
+    return sUrl ;
+  }
+  
+  function SetFrameUrl( url )
+  {
+    document.getElementById('eRunningFrame').src = url ;
+  
+    document.getElementById('eUrl').innerHTML = url ;
+  }
+  
+  function GetFolders()
+  {
+    SetFrameUrl( BuildBaseUrl( 'GetFolders' ) ) ;
+    return false ;
+  }
+  
+  function GetFoldersAndFiles()
+  {
+    SetFrameUrl( BuildBaseUrl( 'GetFoldersAndFiles' ) ) ;
+    return false ;
+  }
+  
+  function CreateFolder()
+  {
+    var sFolder = prompt( 'Type the folder name:', 'Test Folder' ) ;
+  
+    if ( ! sFolder )
+      return false ;
+  
+    var sUrl = BuildBaseUrl( 'CreateFolder' ) ;
+    sUrl += '&NewFolderName=' + encodeURIComponent( sFolder ) ;
+  
+    SetFrameUrl( sUrl ) ;
+    return false ;
+  }
+  
+  function OnUploadCompleted( errorNumber, fileName )
+  {
+    switch ( errorNumber )
+    {
+      case 0 :
+        SetFile(fileName);
+        //alert( 'File uploaded with no errors' ) ;
+        break ;
+      case 201 :
+        GetFoldersAndFiles() ;
+        SetFile(fileName);
+        //alert( 'A file with the same name is already available. The uploaded file has been renamed to "' + fileName + '"' ) ;
+        break ;
+      case 202 :
+        alert( 'Invalid file' ) ;
+        break ;
+      default :
+        alert( 'Error on file upload. Error number: ' + errorNumber ) ;
+        break ;
+    }
+  }
+  
+  this.frames.frmUpload = this ;
+  
+  function SetAction()
+  {
+    var sUrl = BuildBaseUrl( 'FileUpload' ) ;
+    document.getElementById('eUrl').innerHTML = sUrl ;
+    document.getElementById('frmUpload').action = sUrl ;
+  }
+  
+  function ShowImg(imgpath, imgid)
+  {
+    window.parent.document.getElementById(imgid).innerHTML = "<img src='" + imgpath + "' onload='{$vd['fun']}(this)'/>";
+  }
+  
+  function SetFile(fname)
+  {
+    //get the name
+    document.getElementById("uploadresult").innerHTML = "上传成功!路径：" + fname;
+    var temp = fname.split('/');
+    window.parent.document.getElementById("{$vd['inputid']}").value = temp[temp.length-1];
+  }
+</script>
+<form id="frmUpload" action="" target="eRunningFrame" method="post" enctype="multipart/form-data">
+  <input id="txtFolder" type="hidden" value="{$vd['dirname']}" name="txtFolder" />
+  <input id="cmbType"   type="hidden" value="Image" name="cmbType" />
+  <input id="txtFileUpload" type="file" name="NewFile" onchange="ShowImg(this.value, {$vd['imgid']})"/>
+  <input type="submit" value="上传" onclick="SetAction();"/>
+  <font color="#FF0000"><span id="uploadresult">* (请选择要上传的图片,然后点击上传按钮)</span></font>
+</form>
+<span id="eUrl" style="display:none"></span>
+<iframe id="eRunningFrame" src="javascript:void(0)" name="eRunningFrame" width="100%" style="display:none"></iframe>
+<span id="eUrl" style="display:none"></span>
+<input type="hidden" id="cmbConnector" name="cmbConnector" value="{$vd['connecter']}" />
+</body>
+</html>

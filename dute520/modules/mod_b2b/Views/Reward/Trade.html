@@ -1,0 +1,274 @@
+
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=trade&{$vd['op']}" title="点击重新获取订单列表资料" onclick="loadDisp(1)"><font color="#000">订单列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=Reward&a=trade" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    到 <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    <input type="text" name="keywords" size="16" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value="搜索" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="disp('adddiv')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+
+<div id="contentTip" style="display:none;"></div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:320px;display:none">
+  <div class="popbg">
+  <div class="poptitle">高级搜索</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form action="index.php?m=mod_b2b&c=Reward&a=trade" method="post" onsubmit="return searchSubmit()" style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%">起始日期</td>
+      <td width="75%">
+        <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="tstartdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('tstartime')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">终止日期</td>
+      <td width="75%">
+        <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="tenddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('tendtime')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">关键词</td>
+      <td width="75%">
+        <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">搜索类型</td>
+      <td width="75%">
+        <select name="stype" style="vertical-align:middle;font-size:14px;">
+          {#Option($vd['sarray'], $vd['stype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">交易类型</td>
+      <td width="75%">
+        <select name="tradetype" style="vertical-align:middle;font-size:14px;">
+          {#Option($vd['tradetypes'], $vd['tradetype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">对应平台</td>
+      <td width="75%">
+        <select name="comefrom" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['cfarray'], $vd['comefrom'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">状态</td>
+      <td width="75%">
+        <select name="state" style="vertical-align:middle;font-size:14px;">
+        <option value="-2">所有</option>
+        <option value="-1">无效</option>
+        <option value="5" selected >有效</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%">
+        <input type="hidden" value="inrecycle" value="{$vd['inrecycle']}"/>
+        <input type="submit" value="搜 索" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=Reward&v=Trade" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="view" id="view" class="checkbox" onFocus='this.blur()'/> 查看交易<br/>
+  <input type="checkbox" name="id[]" value="ordno" id="ordno" class="checkbox" onFocus='this.blur()'/> 订单号<br/>
+  <input type="checkbox" name="id[]" value="orddate" id="orddate" class="checkbox" onFocus='this.blur()'/> 时间<br/>
+  <input type="checkbox" name="id[]" value="income" id="income" class="checkbox" onFocus='this.blur()'/> 消耗金额<br/>
+  <input type="checkbox" name="id[]" value="tbindaid" id="tbindaid" class="checkbox" onFocus='this.blur()'/> 经销商ID<br/>
+  <input type="checkbox" name="id[]" value="treward" id="treward" class="checkbox" onFocus='this.blur()'/> 应返点<br/>
+  <input type="checkbox" name="id[]" value="trealreward" id="trealreward" class="checkbox" onFocus='this.blur()'/> 实返点<br/>
+  <input type="checkbox" name="id[]" value="tcheckout" id="tcheckout" class="checkbox" onFocus='this.blur()'/> 已结算<br/>
+  <input type="checkbox" name="id[]" value="tcheckoutdate" id="tcheckoutdate" class="checkbox" onFocus='this.blur()'/> 返点日期<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" disabled id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+    <td width="200px"><b>一卡通卡号</b></td>
+    <td width="280px"><b>兑换商品</b></td>
+<!--//thead-->
+<td width="22px"><!--$view=1;--><img src="{$vd['sc']}images/icon_view.gif"/></td>
+<td width="140px"><!--$orddate=1;--><b>交易时间</b></td>
+<td width="100px"><!--$income=1;--><!--$income=1;--><b>消耗金额</b></td>
+<td width="70px"><!--$tbindaid=1;--><b>经销商ID</b></td>
+<td width="100px"><!--$treward=1;--><b>应返点</b></td>
+<td width="100px"><!--$trealreward=1;--><b>实返点</b></td>
+<td width="70px"><!--$tcheckout=1;--><b>已结算</b></td>
+<td width="140px"><!--$tcheckoutdate=1;--><b>返点日期</b></td>
+<!--//endthead-->
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=trade&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--$profit = 0;$sum_outcome=0;$sum_reward=0;$sum_realreward=0;foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" disabled name="id[]" id="idchk_{$item['tid']}" class="checkbox" value="{$item['tid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+    <td width="200px">{$item['yktnumber']}</td>
+    <td width="150px">{$item['content']}</td>
+
+<!--//tbody-->
+<td width="22px"><!--$view=1;--><!--if($item['tradetype'] == 99 || $item['tradetype'] == 101){--><font color="#2e2e2e">无</font><!--}else{--><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a><!--}--></td>
+<td width="140px"><!--$orddate=1;-->{$item['createdate']}</td>
+<td width="100px"><!--$income=1;-->{$item['outcome']}</td>
+<td width="70px"><!--$tbindaid=1;-->{$item['bindaid']}</td>
+<td width="100px"><!--$treward=1;-->{$item['reward']}</td>
+<td width="100px"><!--$trealreward=1;-->{$item['realreward']}</td>
+<td width="70px"><!--$tcheckout=1;--><img src="{$vd['sc']}{#ToggleImgSrc($item['checkout'])}"  onFocus="this.blur()" /></td>
+<td width="140px"><!--$tcheckoutdate=1;-->{$item['checkoutdate']}</td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--if($item['state'] > 0){-->
+  <!--$profit=$profit+$item['income'];$sum_outcome=$sum_outcome+$item['outcome'];$sum_reward=$sum_reward+$item['reward'];$sum_realreward=$sum_realreward+$item['realreward'];}-->
+  <!--}-->
+  <!--if($vd['totlerow'] > 0) {-->
+  <tr>
+  	
+    <td></td>
+    <td>本页统计</td>
+    <td></td>
+    <!--if(isset($view)){--><td width="22px"></td><!--}-->
+    <!--if(isset($ordno)){--><td width="150px"></td><!--}-->
+    <!--if(isset($orddate)){--><td width="140px"></td><!--}-->
+    <!--if(isset($income)){--><td width="100px"><!--echo round($sum_outcome,3);--></td><!--}-->
+    <!--if(isset($tbindaid)){--><td width="70px"></td><!--}-->
+    <!--if(isset($treward)){--><td width="100px"><!--echo round($sum_reward,3);--></td><!--}-->
+    <!--if(isset($trealreward)){--><td width="100px"><!--echo round($sum_realreward,3);--></td><!--}-->
+    <!--if(isset($tcheckout)){--><td width="70px"></td><!--}-->
+    <!--if(isset($tcheckoutdate)){--><td width="140px"></td><!--}-->
+    <td class="endtd" ></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>查询统计</td>
+    <td></td>
+    <!--if(isset($view)){--><td width="22px"></td><!--}-->
+    <!--if(isset($ordno)){--><td width="150px"></td><!--}-->
+    <!--if(isset($orddate)){--><td width="140px"></td><!--}-->
+    <!--if(isset($income)){--><td width="100px"><!--echo round($vd['record']['outcome'],3);--></td><!--}-->
+    <!--if(isset($tbindaid)){--><td width="70px"></td><!--}-->
+    <!--if(isset($treward)){--><td width="100px"><!--echo round($vd['record']['reward'],3);--></td><!--}-->
+    <!--if(isset($trealreward)){--><td width="100px"><!--echo round($vd['record']['realreward'],3);--></td><!--}-->
+    <!--if(isset($tcheckout)){--><td width="70px"></td><!--}-->
+    <!--if(isset($tcheckoutdate)){--><td width="140px"></td><!--}-->
+    <td class="endtd" ></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=trade&a=deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Reward&a=trade&istable=1&state=<!--echo request('state');-->&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Reward&a=trade&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(0,0);
+totleRows = {$vd['totlerow']};
+deltxt  = "销毁订单将无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+thisdel = 0;
+onedel  = 0;
+sc = "{$vd['sc']}";
+statistics = 2;
+var resizeidx = 2;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('view','orddate','income','tbindaid','treward','trealreward','tcheckout','tcheckoutdate');
+<!--//endtinfo-->
+function openScript(url,name,width,height)
+{
+  var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=no');
+}
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

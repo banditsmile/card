@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+td p{display:none}
+td P.show {
+  DISPLAY: block
+}
+td STRONG {
+CURSOR:pointer;
+COLOR:#0197c9;
+PADDING:0 3px; 
+}
+.preview_fake{
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+}
+</style>
+</head>
+<body>
+<!--$item = $vd['item'];--> 
+<form method="post" action="index.php?m=mod_b2b&c=ScoredProduct&a=save" name="cform" id="cform" onsubmit="return checkform()"> 
+<div id="content" class="cwarpper" style="position:relative;overflow-y:scroll;">
+<div class="cbodyHead"></div>
+
+<div id="t0" class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle">填写基本信息 </div>
+<div>
+<table border="0" id="ctable1" class="ctable" style="border:0px;background:none">
+  <tr>
+    <td width="235px" valign="top" style="overflow:hidden;">
+      <input type="hidden" id="ubzimage" name="ubzimage" value="{$item['thumb']}"/>
+      <div id="pic" class="ctablePic preview_fake">
+        
+      </div>
+      <div id="ctableThumb" class="ctableThumb preview_fake">
+      </div>
+      <div class="ctableUpload">
+      <iframe name="uploader" src="index.php?m=com_fs&c=fs&a=vu&imgid=image&fun=imginfo&inputid=ubzimage" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#f0f0f0"></iframe>
+      </div>
+    </td>
+    <td valign="top">
+      <table border="1" width="100%" class="ctable2" bordercolor="#ededed">
+        <tr>
+          <td class="tablelt2"><span class="name">兑换策略：</span></td>
+          <td class="tablert2">
+            <select name="method" onchange="setmethod(this)">
+              <option value="1"<!--if($item['method']==1){--> selected<!--}-->>实物兑换</option>
+              <option value="2"<!--if($item['method']==2){--> selected<!--}-->>兑换金钱(转入余额)</option>
+              <option value="3"<!--if($item['method']==3){--> selected<!--}-->>兑换商品</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="trparam"<!--if($item['method']==1){--> style="display:none"<!--}-->>
+          <td class="tablelt2"><span class="name" id="paramlabel"><!--if($item['method']==3){-->兑换商品编号<!--}else{-->可兑换金额<!--}--></span>：</td>
+          <td class="tablert2">
+            <input type="text" id="param" name="param" size="10" value="{$item['param']}" /> <span class="spantip" id="paramspan"><!--if($item['method']==3){-->输入您需要兑换的商品对应的编号<!--}else{-->单位(元)<!--}--></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2">积分商品名称：</td>
+          <td class="tablert2">
+            <input type="text" name="pname" id="pname" size="50" value="{$item['pname']}"/><font color="#FF0000"> *</font>
+          </td>
+        </tr>
+        <tr> 
+          <td class="tablelt2"><span class="name">批发系统所需积分：</span></td>
+          <td class="tablelr2" style="line-height:25px;">
+            <input type="text" name="scored" id="scored" size="10" value="{$item['scored']}"/><font color="#FF0000"> * </font><span class="tip"></span><br/> 
+          </td>
+        </tr>
+        <tr> 
+          <td class="tablelt2"><span class="name">零售系统所需积分：</span></td>
+          <td class="tablelr2" style="line-height:25px;">
+            <input type="text" name="scoredb2c" id="scoredb2c" size="10" value="{$item['scoredb2c']}"/><font color="#FF0000"> * </font><span class="tip"></span><br/> 
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2"><span class="name">可换数量：</span></td>
+          <td class="tablert2">
+            <input type="text" name="stocks" size="10" value="{$item['stocks']}" />
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2"><span class="name">库存单位：</span></td>
+          <td class="tablert2">
+            <input type="text" size="10" name="unit" value="{$item['unit']}" />
+          </td>
+        </tr>
+        <tr> 
+          <td class="tablelt">
+            商品排列顺序：
+          </td>
+          <td class="tablert">
+            <input type="text" name="ordering" size="10" value="0"/>
+          </td>
+        </tr> 
+        <tr>
+          <td class="tablelt">
+            购买权限：</td>
+          <td class="tablert">
+            <span<!--if(!UB_B2C){--> style="display:none"<!--}-->><input type="checkbox" name="forb2c" value="1" class="checkbox"  {#ToggleCheck($item['forb2c'])} onFocus="this.blur()"/>零售系统可购买</span> 
+            <span<!--if(!UB_B2B){--> style="display:none"<!--}-->><input type="checkbox" name="forb2b" value="1" class="checkbox"   {#ToggleCheck($item['forb2b'])} onFocus="this.blur()"/>批发系统可购买</span> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cwarpper1" id="t5">
+<div class="ctitle">
+  商品介绍
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">如果您要本地上传图片，请保证光标放置于插入位置，再点击上传按钮</p>
+</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed" style="border:0px">
+    <tr> 
+      <td style="padding:0px;overflow:hidden">
+        <textarea name="pdesc" id="pdesc" cols="67" rows="2" style="display:none">{$item['pdesc']}</textarea>
+        <iframe ID="Editor" name="Editor" src="{$vd['sc']}ubb/edit.htm?id=pdesc" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" style="height:418px;width:100%; background-color:#D9EEF9"></iframe>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+   
+<div class="cwarpper1" id="t7">
+<div class="ctitle">商品操作者相关信息</div>
+<div>
+  <table border="0"  class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">创建时间：</td>
+      <td class="tablert"><input type="text" name="ubzaddeddate" value="{$item['createdate']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">创建人：</td>
+      <td class="tablert"><input type="text" name="ubzaddedby" value="{$item['createby']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">创建人IP：</td>
+      <td class="tablert"><input type="text" name="ubzaddedip" value="{$item['createip']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">上次编辑：</td>
+      <td class="tablert"><input type="text" name="ubzeditdate" value="{$item['editdate']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">编辑人：</td>
+      <td class="tablert"><input type="text" name="ubzeditby" value="{$item['editby']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">编辑人IP：</td>
+      <td class="tablert"><input type="text" name="ubzeditip" value="{$item['editip']}" size="34"/> </td>
+    </tr>
+  </table>
+</div>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="hidden" value="{$item['pid']}" name="pid"/>
+    <input type="submit" value="编辑积分商品" class="btn"/>
+    <input type="reset" value="重置" class="btn"/>
+  </div>
+</div>
+</form>
+<input type="hidden" id="webdir" value="{$vd['webdir']}"/>
+<input type="hidden" id="website" value="{$vd['website']}"/>
+<input type="hidden" id="connecter" value="{$vd['connecter']}"/>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=Home"><font color="#000">积分系统</a></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">编辑积分商品</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var notlocal = 0;
+  var allpic = $("ubzimage").value;
+  if(allpic == "")  
+  {
+    notlocal = 0;
+  }
+  else
+  {
+    notlocal = allpic.split(",").length;
+  }
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript" src="{$vd['sc']}js/product.js"></script>
+<script type="text/javascript">
+  
+  function setmethod(obj)
+  {
+  	vmethod = obj.options[obj.selectedIndex].value;
+  	
+  	if(vmethod == 3)
+  	{
+  		$("trparam").style.display = "";
+  		$("paramlabel").innerHTML = "兑换商品编号";
+  		$("paramspan").innerHTML = "输入您需要兑换的商品对应的编号";
+  	}
+    else if(vmethod == 2)
+  	{
+  		$("trparam").style.display = "";
+  		$("paramlabel").innerHTML = "可兑换金额";
+  		$("paramspan").innerHTML = "单位(元)";
+  	}
+  	else if(vmethod == 1)
+  	{
+  		$("trparam").style.display = "none";
+  	}
+  }
+  
+  function checkform()
+  {
+    if($("ubzpname").value=="")
+    {
+      alert("商品名称不能为空！");
+      $("ubzpname").focus();
+      return false;
+    }
+    
+    if($("scored").value=="")
+    {
+      alert("所需积分不能为空！");
+      $("scored").focus();
+      return false;
+    }
+  }
+  function initPic()
+  {
+    var allpic = $("ubzimage").value;
+    if(allpic == "")  
+    {
+      return;
+    }
+    var iarray = allpic.split(",");
+    var ilen   = iarray.length;
+    
+    if (window.XMLHttpRequest) 
+    {
+      if(!window.ActiveXObject)
+      {
+        for(i = 0; i < ilen; i++)
+        {
+          var imgpath  = "{$vd['root']}content/mod_shared/skins/picture/" + iarray[i];
+          var newimgid = creatDiv();
+          if(i == 0)
+          {
+            $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='imginfo(this)'/>";
+          }
+          else
+          {
+            $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='resizeImg(this,40,40)'/>";
+          } 
+        }
+      } 
+      else 
+      {
+        for(i = 0; i < ilen; i++)
+        {
+          var imgpath  = "{$vd['root']}content/mod_shared/skins/picture/" + iarray[i];
+          var newimgid = creatDiv();
+          if(i == 0)
+          {
+            $("pic").innerHTML = "<img src='" + imgpath + "' onload='imginfo(this)'/>";
+          }
+          $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='resizeImg(this,40,40)'/>";
+          
+          /*
+          if(i == 0)
+          {
+            $("pic").filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = imgpath;
+          }
+          $(newimgid).filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = imgpath;*/
+        }
+      }
+    }
+    else
+    {
+      for(i = 0; i < ilen; i++)
+      {
+        var imgpath  = "{$vd['root']}content/mod_shared/skins/picture/" + iarray[i];
+        var newimgid = creatDiv();
+        if(i == 0)
+        {
+          $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='imginfo(this)'/>";
+        }
+        else
+        {
+          $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='resizeImg(this,40,40)'/>";
+        } 
+      }
+    }
+  }
+  initPic();
+</script>
+
+</body>
+</html>

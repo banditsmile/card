@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+      <h3><!--if($vd['aid'] == ''){-->所有<!--}else{-->编号为 <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}-->经销商代理利润报表)</h3>
+      『<!--if($vd['aid'] != ''){-->编号为 <font color="#ff00ff">{#DisplayCode($vd['aid'])}</font> <!--}--><strong>商户余额 <font color="#ff0000">{$vd['remain']}</font> {$vd['lang']['moneyunit']}  
+      代理获得总利润为 <font color="#ff0000">{$vd['record']['income']}</font> {$vd['lang']['moneyunit']}  </strong>』
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 15px;">
+    <form action="index.php?m=mod_b2b&c=trade&tpl=agentorderprofit&{$vd['op']}"  method="post" name="form" >
+    商家编号：<input type="text" name="aid" size="10"/>
+    日期从
+    <select name="yearfrom">
+      {#Option($vd['y'], $vd['data']['yearfrom'])}
+    </select>年
+    <select name="monthfrom">
+      {#Option($vd['m'], $vd['data']['monthfrom'])}
+    </select>月
+    <select name="dayfrom">
+      {#Option($vd['d'], $vd['data']['dayfrom'])}
+    </select>日 到 <select name="yearto">
+      {#Option($vd['y'], $vd['data']['yearto'])}
+    </select>年
+    <select name="monthto">
+      {#Option($vd['m'], $vd['data']['monthto'])}
+    </select>月
+    <select name="dayto">
+      {#Option($vd['d'], $vd['data']['dayto'])}
+    </select>日
+    <input type="submit" value="马上查询 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="8%" align="center" height="35" class="listhead">
+      <b>商家编号</b></td>
+    <td width="15%" align="center" height="35" class="listhead">
+      <b>订单号</b></td>
+    <td width="10%" align="center" height="35" class="listhead">
+      <b>经销商进价</b></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <b>下家编号</b></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <b>下家购价</b></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <b>购买量</b></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <b>净利润</b></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <b>交易前</b></td>
+    <td width="6%" align="center" height="35" class="listhead">
+      <b>交易后</b></td>
+    <td width="17%" align="center" height="35" class="listhead">
+      <b>说明</b></td>
+    <td width="10%" align="center" height="35" class="listhead">
+      <b>时间</b></td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">您选择的时间段还没有发生任何交易</td>
+  </tr>
+  <!--}-->
+  <!--$profit = 0;foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="8%" align="center" height="35"><a href="index.php?m=mod_b2b&c=trade&tradetype=11&tpl=agentorderprofit&aid={$item['aid']}"><font color="#ff0000">{#DisplayCode($item['aid'])}</font></a></td>
+    <td width="15%" align="center" height="35">
+      <!--if($item['tradetype'] == 99){-->
+      <font color="#2e2e2e">{$item['ordno']}</font>
+      <!--}else{-->
+      <a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}"><font color="#0000ff">{$item['ordno']}</font></a>
+      <!--}-->
+    </td>
+    <td width="10%" align="center" height="35">{$item['price']}</td>
+    <td width="8%" align="center" height="35"><a href="index.php?m=mod_b2b&c=trade&tradetype=11&tpl=agentorderprofit&aid={$item['otherside']}"><font color="#ff0000">{#DisplayCode($item['otherside'])}</font></a></td>
+    <td width="8%" align="center" height="35">{$item['listprice']}</td>
+    <td width="6%" align="center" height="35">{$item['qty']}</td>
+    <td width="6%" align="center" height="35">{$item['income']}</td>
+    <td width="6%" align="center" height="35">{$item['fbt']}</td>
+    <td width="6%" align="center" height="35">{$item['fat']}</td>
+    <td width="17%" align="center" height="35">{$item['content']}</td>
+    <td width="10%" align="center" height="35">{$item['createdate']}</td>
+  </tr>
+  <!--$profit=$profit+$item['income'];}-->
+  <tr>
+    <td  align="center" colspan="6">本页统计</td>
+    <td align="center" height="35"><!--echo round($profit,3);--></td>
+    <td align="center" colspan="4">
+    </td>
+  </tr>
+  <tr>
+    <td  align="center" colspan="6">查询统计</td>
+    <td align="center" height="35">
+    <!--echo round($vd['record']['income'],3);-->
+    </td>
+    <td align="center" colspan="4">
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="19">
+    <form method="post" action="index.php?m=mod_b2b&c=trade&tpl=agentorderprofit&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=trade&tpl=agentorderprofit&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

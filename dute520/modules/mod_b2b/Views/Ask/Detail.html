@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="{$vd['sc']}css/main.css" type="text/css">
+<title>后台管理</title>
+</head>
+<body>
+<!--$item=$vd['item'];-->
+<form name="addNEWS" method="post" action="index.php?m=mod_b2b&c=ask&a=save">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td align="center" colspan="2" class="listhead texttle">用户留言</td>
+  </tr>
+  <tr> 
+    <td height="40" width="80" align="right">
+      留言用户：
+    </td>
+    <td height="40" align="left">{$item['author']}
+    </td>
+  </tr>
+  <tr> 
+    <td height="40" width="80" align="right">
+      留言主题：
+    </td>
+    <td height="40" align="left">{$item['title']}
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="40" width="80" align="right">
+      留言内容：
+    </td>
+    <td height="25" valign="top"  bgcolor="#F5FBFF"> {$item['content']}
+　  </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="40" width="80" align="right">
+      回复留言：
+    </td>
+    <td height="25" valign="top"  bgcolor="#F5FBFF"> 
+      <textarea name="reply" cols="67" rows="5" >{$item['reply']}</textarea>
+　  </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30" align="center" colspan="2" bgcolor="#F5FBFF"> 
+      <input type="hidden" name="id" value="{$item['id']}">
+      <input type="submit" name="Submit" value=" 提 交 " class="input">　 
+      <input type="reset" name="Submit2" value=" 重 置 " class="input"> 
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+<script language = "JavaScript">
+function CheckForm()
+{
+  if (document.addNEWS.bt.value.length == 0) {
+    alert("留言主题没有填写.");
+    document.addNEWS.title.focus();
+    return false;
+  }
+
+  return true;
+}
+</script>

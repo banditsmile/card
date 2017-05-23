@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>账户间转款</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+  <form name="form1" method="post" action="?Action=ToUpDisplay">
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>全部记录</h2>
+  </div>
+  <ul>
+    <li><a href="index.php?m=mod_agent&c=loan&a=Create" >借款申请</a></li>
+    <li><a href="" class="on">全部记录</a></li>
+  </ul>
+</div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:380px;display:none">
+  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">输入密码确认</div>
+  	<div style="float:right;"><img src="{$vd['content']}images/icon_del.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>
+  	<form name="form1" method="post" action="index.php?m=mod_agent&c=Loan" id="tform" style="clear:both">
+  	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="25%" height="35px" align="center">超级密码</td>
+        <td width="75%"><input type="password" class="myinput" style="font-weight:normal" name="superpwd" size="24"/></td>
+      </tr>
+      <tr>
+      	<td width="25%"></td>
+        <td width="75%">
+        	<input type="hidden" name="ordno" id="ordno" value="" />
+        	<input type="hidden" name="a"  id="a" value=""/>
+        	<input type="submit" value="提 交" class="button"/>
+        	<input type="button" value="取 消" onClick="disp('adddiv')" class="button"/>
+        </td>
+      </tr>
+    </table>
+    </form>
+    </div>
+</div>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+      <tr>
+      <th width="14%" class="heardertop1"> 借据</td>
+      <th width="9%" class="heardertop1"> 类型</td>
+      <th width="9%" class="heardertop1"> 金额({$vd['lang']['moneyunit']})</td>
+      <th width="10%" class="heardertop1"> 原因</td>
+      <th width="8%" class="heardertop1"> 对方</td>
+      <th width="11%" class="heardertop1"> 借款时间</td>
+      <th width="11%" class="heardertop1"> 约定还款</td>
+      <th width="9%" class="heardertop1"> 已还</td>
+      <th width="11%" class="heardertop1"> 还款日期</td>
+      <th width="8%" class="heardertop1"> 操作</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">
+      <td>{$item['ordno']}</td>
+      <td>{#TradeType($item['thisaction'])}</td>
+      <td style="color:#0000ff;font-weight:bold">{$item['dollars']}</td>
+      <td>{$item['reason']}&nbsp;</td>
+      <td>{#DisplayCode($item['otherside'])}</td>
+      <td>{$item['createdate']}&nbsp;</td>
+      <td>{$item['deadline']}&nbsp;</td>
+      <td style="color:#ff0000;font-weight:bold">{$item['payback']}&nbsp;</td>
+      <td>{$item['paybackdate']}&nbsp;</td>
+      <td><!--if($item['thisaction'] == 21){-->
+          <!--if($item['state'] == 0){-->
+          <a href="#" onClick="setaction('{$item['ordno']}', 'CheckIn')"><font color="#ff00ff">同意</font> / <a href="#" onclick="setaction('{$item['ordno']}', 'Refuse')"><font color="#ff0000">拒绝</font></a>
+          <!--}else if($item['state'] == 1){-->
+          <a href="index.php?m=mod_agent&c=Loan&a=Urge&ordno={$item['ordno']}"><font color="#ff00ff">追债</font></a>
+          <!--}else if($item['state'] == -1){-->
+          <font color="#cccccc">已拒绝</font>
+          <!--}else{-->
+          <font color="#0000ff">已还款</font>
+          <!--}-->
+          <!--}else{-->
+          <!--if($item['state'] == 0){-->
+          <font color="#ff0000">等待</font>
+          <!--}else if($item['state'] == 1){-->
+          <a href="#" onClick="setaction('{$item['ordno']}', 'Repayment')"><font color="#ff00ff">还款</font></a>
+          <!--}else if($item['state'] == -1){-->
+          <font color="#cccccc">已拒绝</font>
+          <!--}else{-->
+          <font color="#0000ff">已还款</font>
+          <!--}-->
+          <!--}-->
+          </font> </td>
+    </tr>
+    <!--}-->
+  </table>
+  </td>
+  
+  </tr>
+  
+    </table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	</form>
+	
+	<br>
+	<br>
+<script type="text/javascript">
+	var $=function(id){
+		return document.getElementById(id);
+	}
+	
+	function setaction(ordno,act)
+	{
+		$("ordno").value = ordno;
+		$("a").value = act;
+		disp('adddiv');
+	}
+	
+	function disp(idx)
+	{
+		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+	}
+</script>
+</body>
+</html>
+

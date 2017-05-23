@@ -1,0 +1,329 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<!--if($vd['inrecycle']==0){-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=ykt&{$vd['op']}" title="点击重新获取一卡通卡密列表资料" onclick="loadDisp(1)"><font color="#000">一卡通卡密列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看一卡通卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('delitems')"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量删除</div></samp>
+  </div>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="batchEdit(this)" style="margin-right:7px"><samp title="批量修改所选项的记录">
+    <div style="padding-top:10px;padding-left:10px;">实时修改</div></samp>
+  </div>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="disp('adddiv1')" style="margin-right:7px"><samp title="批量修改所选项的记录">
+    <div style="padding-top:10px;padding-left:10px;">修改售价</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()" style="margin-right:7px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="loadDisp(1);window.location='?m=mod_b2b&c=ykt&inrecycle=1&by=1'" style="width:100px"><samp title="进入一卡通卡密回收箱">
+    <div style="padding-top:10px;padding-left:3px;">回收箱<span class="fixie8">(</span><!--if($vd['recycle_num']){--><span id="recycle">{$vd['recycle_num']}</span><!--}else{--><span id="recycle">空</span><!--}--><span class="fixie8">)</span></div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=ykt&by=1" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="16" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value=" 搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="disp('adddiv')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+<!--}else{-->
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=ykt&by=1" title="一卡通卡密列表" onclick="loadDisp(1)"><font color="#000">一卡通卡密列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">回收箱</span>(共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看一卡通卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的会员记录,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="delAllSubmit('restore')"><samp title="还原回收箱状态">
+    <div style="padding-top:10px;padding-left:9px;font-weight:bold">还原</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=ykt&inrecycle=1&by=1" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value=" 搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="disp('adddiv')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+<!--}-->
+<div id="contentTip" style="display:none;"></div>
+<div id="adddiv1" style="position:absolute;top:100px;left:230px;;width:320px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">按批次修改售价</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv1')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Ykt&a=EditPrice" id="tform" style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%">批次</td>
+      <td width="75%"><input type="text" name="group" size="25"/></td>
+    </tr>
+    <tr>
+      <td width="25%">新售价</td>
+      <td width="75%"><input type="text" name="newcprice" size="25"/></td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%">
+        <input type="submit" value="修 改" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv1')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;width:330px;display:none">
+  <div class="popbg">
+  <div class="poptitle">高级搜索</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form action="index.php?m=mod_b2b&c=Ykt" method="post" onsubmit="return searchSubmit()" style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="30%">起始日期</td>
+      <td width="70%">
+        <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">终止日期</td>
+      <td width="70%">
+        <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+        <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">关键词</td>
+      <td width="70%">
+        <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">搜索类型</td>
+      <td width="70%">
+        <select name="stype" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['sarray'], $vd['stype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">售出状态</td>
+      <td width="70%">
+        <select name="optype" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['ssellstate'], $vd['sellstate'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">卡密状态</td>
+      <td width="70%">
+        <select name="cardok" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['scardstate'], $vd['cardstate'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">一卡通类型</td>
+      <td width="70%">
+        <select name="ptype" style="vertical-align:middle;font-size:14px;">
+        {#Option($vd['sptype'], $vd['ptype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%"></td>
+      <td width="70%">
+        <input type="hidden" value="inrecycle" value="{$vd['inrecycle']}"/>
+        <input type="submit" value="搜 索" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=ykt" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="pname" id="pname" onFocus='this.blur()'/>商品名称<br/>
+  <input type="checkbox" name="id[]" value="pid" id="pid" onFocus='this.blur()'/>商品编号<br/>
+  <input type="checkbox" name="id[]" value="cardgroup" id="cardgroup" onFocus='this.blur()'/>批次<br/>
+  <input type="checkbox" name="id[]" value="cprice" id="cprice" onFocus='this.blur()'/>售价<br/>
+  <input type="checkbox" name="id[]" value="cardnumber" id="cardnumber" onFocus='this.blur()'/>卡号<br/>
+  <input type="checkbox" name="id[]" value="cardpwd" id="cardpwd" onFocus='this.blur()'/>密码<br/>
+  <input type="checkbox" name="id[]" value="view" id="view" onFocus='this.blur()'/>查看订单<br/>
+  <input type="checkbox" name="id[]" value="ordno" id="ordno" onFocus='this.blur()'/>对应订单号<br/>
+  <input type="checkbox" name="id[]" value="hassold" id="hassold" onFocus='this.blur()'/>是否售出<br/>
+  <input type="checkbox" name="id[]" value="tcardok" id="tcardok" onFocus='this.blur()'/>状态<br/>
+  <input type="checkbox" name="id[]" value="money" id="money" onFocus='this.blur()'/>卡余额<br/>
+  <input type="checkbox" name="id[]" value="addfunds" id="addfunds" onFocus='this.blur()'/>补充余额<br/>
+  <input type="checkbox" name="id[]" value="addeddate" id="addeddate" onFocus='this.blur()'/>添加时间<br/>
+  <input type="checkbox" name="id[]" value="orddate" id="orddate" onFocus='this.blur()'/>售出时间<br/>
+  <input type="checkbox" name="id[]" value="bindaid" id="bindaid" onFocus='this.blur()'/>代理商编号<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+<!--//thead-->
+<td width="250px"><b>商品名称</b></td>
+<td width="65px"><b>商品编号</b></td>
+<td width="35px"><b>批次</b></td>
+<td width="60px"><span class="canedit">售价</span></td>
+<td width="150px"><b>卡号</b></td>
+<td width="60px"><b>密码</b></td>
+<td width="22px"><img src="{$vd['sc']}images/icon_view.gif"/></td>
+<td width="150px"><b>订单号</b></td>
+<td width="70px"><b>是否售出</b></td>
+<td width="50px"><b>状态</b></td>
+<td width="70px"><b>卡余额</b></td>
+<td width="22px">款</td>
+<td width="60px"><span class="canedit">代理商</span></td>
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif"/>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif"/>
+      <!--}-->
+    </td>
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=ykt&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="250px"><nobr><samp title="{$item['pname']}">{$item['pname']}</samp></nobr></td>
+<td width="65px">{$item['pid']}</td>
+<td width="35px">{$item['cardgroup']}</td>
+<td width="60px"><span onclick="toInput(this,'{$item['id']}','cprice')">{$item['cprice']}</span></td>
+<td width="150px"><a href="index.php?m=mod_b2b&c=trade&a=state&keywords={$item['cardnumber']}">{$item['cardnumber']}</a></td>
+<td width="60px">已加密</td>
+<td width="22px"><!--if($item['ordno'] != ''){--><!--if($item['ptype']==101){--><a href="index.php?m=mod_b2b&c=trade&a=state&keywords={$item['cardnumber']}"><img src="{$vd['sc']}images/icon_view.gif"/></a><!--}else{--><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a><!--}--><!--}else{--><font color="#cccccc">无</font><!--}--></td>
+<td width="150px"><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)">{$item['ordno']}</a></td>
+<td width="70px"><!--if($item['ordno'] == ''){--><a href="index.php?m=mod_b2b&c=Ykt&by=1&optype=s&inrecycle={$vd['inrecycle']}" title="点击查看对应状态卡密"><font color="#008800">未售出</font></a><!--}else{--><a href="index.php?m=mod_b2b&c=Ykt&by=1&optype=f&inrecycle={$vd['inrecycle']}" title="点击查看对应状态卡密"><font color="#ff0000">已售出</font></a><!--}--></td>
+<td width="50px"><a href="index.php?m=mod_b2b&c=Ykt&by=1&cardok={$item['cardok']}&inrecycle={$vd['inrecycle']}" title="点击查看对应状态卡密">{#YktCardState($item['cardok'])}</a></td>
+<td width="70px"><!--if($item['money']==0){--><font color="#6c6c6c">{$item['money']} {$vd['lang']['moneyunit']}</font><!--}else{--><font color="#008800">{$item['money']} {$vd['lang']['moneyunit']}</font><!--}--></td>
+<td width="22px"><a href="index.php?m=mod_b2b&c=Ykt&a=AddFunds&ubzid={$item['id']}"><img src="{$vd['sc']}images/money.gif" border="0"/></a></td>
+<td width="60px"><span onclick="toInput(this,'{$item['id']}','bindaid')">{$item['bindaid']}</span></td>
+<!--//endtbody-->
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=card&a=detail&ubzid={$item['id']}" title="编辑一卡通卡密"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <!--if($vd['inrecycle']==0){-->
+      <img src="{$vd['sc']}images/icon_trash.gif" onclick="delSubmit({$item['id']},'delitems')" alt="删除一卡通卡密,可以从回收箱恢复" style="cursor:pointer"/>
+      <!--}else{-->
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁一卡通卡密,无法恢复" style="cursor:pointer"/>
+      <!--}-->
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['inrecycle']==0){-->
+<input type="hidden" value="{$vd['recycle_num']}" id="recycle_num"/>
+<!--}-->
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=Card&a=deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=ykt&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=ykt&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(2,58);
+totleRows = {$vd['totlerow']};
+<!--if($vd['inrecycle']){-->
+deltxt  = "销毁一卡通卡密将无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+<!--}else{-->
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除用户,用户相关信息也会被删除(包括一卡通卡密信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+<!--}-->
+thisdel = 0;
+onedel  = 0;
+sc = "{$vd['sc']}";
+statistics = 0;
+var resizeidx = 1;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('pname','pid','cardgroup','cprice','cardnumber','cardpwd','view','ordno','hassold','tcardok','money','addfunds','bindaid');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

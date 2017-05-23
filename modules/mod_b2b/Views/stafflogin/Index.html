@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>员工用户登陆入口</title>
+<meta name="Keywords" content="员工用户登陆入库">
+<meta name="Description" content="员工用户登陆入库">
+<link rel="stylesheet" type="text/css" href="http://www.umebiz.com/content/mod_article/css/ubcms.css">
+<link rel="stylesheet" type="text/css" href="http://www.umebiz.com/content/mod_article/css/art.css">
+</head>
+ 	<form name="loginForm" action="{$vd['root']}index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
+<body>
+<div id="main"></div>
+ 
+<div style="width:430px;margin:80px auto;min-height:600px;_height:600px"> <b class="rtop" id="actrt"><b class="r4"></b></b>
+    <div class="titleBg" style="padding:0px;height:38px;">
+      <div class="loginB">员工登录入口</div>
+    </div>
+  <div class="logincnt">
+    <form action="http://user.umebiz.com/member/tologin.asp?action=login" method="post" name="login" id="login">
+        <table border="0px" width="100%">
+          <tbody>
+            <tr>
+              <td width="28%" align="right">商户名：</td>
+              <td><input name="staffname" type="text" id="staffname" tabindex="1" value="" size="32" maxlength="32" /></td>
+            </tr>
+            <tr>
+              <td width="28%" align="right">密　码：</td>
+              <td><input name="pwd" type="password" id="pwd" tabindex="2" size="32" maxlength="20" />
+                <a href="#">忘记密码？</a></td>
+            </tr>
+            <tr>
+              <td width="28%" align="right">验证码：</td>
+              <td><input name="verifycode" type="text" id="verifycode" style="width:70px" tabindex="2" size="32" maxlength="20" />
+              <b style="font-size:20px"><img src="{$vd['root']}index.php?m=mod_b2b&c=Cust&a=RandCode&t=1" alt="看不清楚?请点击刷新" name="src" align="absmiddle" id="src" onclick="this.src=this.src+'&'+Math.random();"/></b></td>
+            </tr>
+            <tr>
+              <td width="28%"></td>
+              <td><input name="image" type="image" style="border:0px;height:40px;width:154px;padding-left:0px" src="../content/mod_b2b/images/loginbtn_eka.gif" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+  </div>
+  </div>
+
+</body></html>

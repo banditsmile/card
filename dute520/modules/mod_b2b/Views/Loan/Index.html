@@ -1,0 +1,374 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Loan"><font color="#000">赊账列表</font></a> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    赊账列表:<br/>
+    只显示前台用户和系统的赊账记录，用户和用户之前的赊账记录，请登录用户前台查看<br/>如果您点击”同意“，则会把款打入用户的帐号，状态会变成”追债“，点击”追债“后，则会给用户发送站内追债信息。如果你只是想修改状态，不想有任何的动作产生，您点击编辑图片编辑即可
+    <br/>
+    新增欠款：<br/>
+    如果没有什么特殊要求，请尽量选用状态"已借款"来新增欠款记录。<br/>
+  </p>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div style="float:right"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_catalog_index" onFocus="this.blur()" title="查看赊账相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()" style="margin-right:3px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:10px;">刷新</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="window.location.href='index.php?m=mod_b2b&c=Credit'" style="margin-right:3px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:10px;">设置</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('owndiv')" style="margin-right:3px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:10px;">新增欠款</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=Loan" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value="搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;width:430px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">状态修改</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Loan" id="tform" style="clear:both" onsubmit="return confirm('确认提交么？')">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr id="statetr">
+        <td width="35%" height="35px" align="left">修改状态为</td>
+        <td width="65%">
+          <select name="state" id="state"  onchange="setownstate(this)">
+            <option value="5">款项全部还清</option>
+            <option value="1">只还了部分款</option>
+          </select> 
+        </td>
+      </tr>
+      <tr id="paybacktr">
+        <td width="35%" height="35px" align="left">本次还款金额</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="payback" id="payback" size="20" />
+        </td>
+      </tr>
+      <tr id="createdatetr">
+        <td width="35%" height="35px" align="left">本次还款时间</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="paybackdate" id="t0" size="20" value="<!--echo date("Y-m-d H:i:s");-->"/><img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('t0')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">后台充值密码</td>
+        <td width="65%"><input type="password" class="myinput" style="font-weight:normal" name="tradepwd" size="20"/></td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">说明</td>
+        <td width="65%"><span id="ownmarks" style="font-size:12px;color:#ff0000">本次还款后，当前欠款已经全部归还</span></td>
+      </tr>
+      <tr>
+        <td width="35%"></td>
+        <td width="65%">
+          <input type="hidden" name="ordno" id="ordno" value="" />
+          <input type="hidden" name="a"  id="a" value=""/>
+          <input type="submit" value="提 交" class="button"/>
+          <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+  </div>
+</div>
+<div id="owndiv" style="position:absolute;top:100px;left:230px;width:430px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">新增欠款</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('owndiv')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Loan&a=CreateSave" id="tform" style="clear:both" onsubmit="return confirm('确认新增欠款记录？')">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="35%" height="35px" align="left">欠款状态</td>
+        <td width="65%">
+          <select name="state">
+            <option value="1">已借款</option>
+            <option value="5">已还款</option>
+          </select> 
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">借款人编号</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="aid" size="20"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">借款金额</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="dollars" size="20"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">借款时间</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="createdate" id="t1" size="20" value="<!--echo date("Y-m-d H:i:s");-->"/><img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('t1')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">约定还款</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="deadline" id="t2" size="20" value="<!--echo date("Y-m-d H:i:s" , strtotime("30 days"));-->"/><img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('t2')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">备注说明</td>
+        <td width="65%">
+          <input type="text" class="myinput" style="font-weight:normal" name="reason" size="20" value=""/>
+        </td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">后台充值密码</td>
+        <td width="65%"><input type="password" class="myinput" style="font-weight:normal" name="tradepwd" size="20"/></td>
+      </tr>
+      <tr>
+        <td width="35%" height="35px" align="left">说明</td>
+        <td width="65%"><span id="marks" style="font-size:12px;color:#ff0000">同时给用户加款，请谨慎使用</span></td>
+      </tr>
+      <tr>
+        <td width="35%"></td>
+        <td width="65%">
+          <input type="submit" value="提 交" class="button"/>
+          <input type="button" value="取 消" onclick="disp('owndiv')" class="button"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+  </div>
+</div>
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=Tpl&tpl=loan" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="tordno" id="tordno" onFocus='this.blur()'/>借据<br/>
+  <input type="checkbox" name="id[]" value="tthisaction" id="tthisaction" onFocus='this.blur()'/>类型<br/>
+  <input type="checkbox" name="id[]" value="tdollars" id="tdollars" onFocus='this.blur()'/>金额({$vd['lang']['moneyunit']})<br/>
+  <input type="checkbox" name="id[]" value="treason" id="treason" onFocus='this.blur()'/>原因<br/>
+  <input type="checkbox" name="id[]" value="totherside" id="totherside" onFocus='this.blur()'/>对方<br/>
+  <input type="checkbox" name="id[]" value="tcreatedate" id="tcreatedate" onFocus='this.blur()'/>借款时间<br/>
+  <input type="checkbox" name="id[]" value="tdeadline" id="tdeadline" onFocus='this.blur()'/>约定还款时间<br/>
+  <input type="checkbox" name="id[]" value="tpayback" id="tpayback" onFocus='this.blur()'/>已经还的钱<br/>
+  <input type="checkbox" name="id[]" value="tnopayback" id="tnopayback" onFocus='this.blur()'/>未经还的钱<br/>
+  <input type="checkbox" name="id[]" value="tpaybackdate" id="tpaybackdate" onFocus='this.blur()'/>最后还款时间<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()' disabled /></td>
+<!--//thead-->
+<td width="135px">借据</td>
+<td width="80px">类型</td>
+<td width="80px">金额({$vd['lang']['moneyunit']})</td>
+<td width="150px">原因</td>
+<td width="60px">对方</td>
+<td width="140px">借款时间</td>
+<td width="140px">约定还款</td>
+<td width="80px">已还</td>
+<td width="80px">未还</td>
+<td width="140px">还款时间</td>
+<!--//endthead-->
+    <td width="63px">操作</td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif"/>
+    </td>
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Loan&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" disabled onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="135px">{$item['ordno']}</td>
+<td width="80px">{#TradeType($item['thisaction'])}</td>
+<td width="80px">{$item['dollars']}</td>
+<td width="150px">{$item['reason']}</td>
+<td width="60px">{$item['otherside']}</td>
+<td width="140px">{$item['createdate']}</td>
+<td width="140px">{$item['deadline']}</td>
+<td width="80px">{$item['payback']}</td>
+<td width="80px"><!--echo $item['dollars'] - $item['payback'];--></td>
+<td width="140px">{$item['paybackdate']}</td>
+<!--//endtbody-->
+    
+    <td width="63px">
+      <nobr>
+      <!--if($item['thisaction'] == 21){-->
+        <!--if($item['state'] == 0){-->
+        <span onclick="setaction('{$item['ordno']}', 'CheckIn', '{$item['state']}', '{$item['dollars']}')" style="cursor:pointer"><font color="#ff00ff">同意</font></span>/<span onclick="setaction('{$item['ordno']}', 'Refuse', '{$item['state']}', '{$item['dollars']}')" style="cursor:pointer"><font color="#ff0000">拒绝</font></span>
+        <!--}else if($item['state'] == 1){-->
+        <a href="index.php?m=mod_b2b&c=Loan&a=Urge&ordno={$item['ordno']}"><font color="#ff00ff">追债</font></a>
+        <!--}else if($item['state'] == -1){-->
+        <font color="#cccccc">已拒绝</font>
+        <!--}else{-->
+        <font color="#0000ff">已还款</font>
+        <!--}-->
+      <!--}else{-->
+        无
+      <!--}-->
+      </nobr>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif" onclick="setaction('{$item['ordno']}', 'UpdateState', '{$item['state']}', '<!--$pb=intval($item['payback']); echo $item['dollars']-$pb;-->')"  style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=Loan&a=Deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Loan&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Loan&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(2,99);
+totleRows = {$vd['totlerow']};
+deltxt  = "销毁赊账后,是无法恢复的,只能重新添加,您确定进行销毁操作吗？";
+thisaction = "销毁";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 4;
+sc = "{$vd['sc']}";
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('tordno','tthisaction','tdollars','treason','totherside','tcreatedate','tdeadline','tpayback','tnopayback','tpaybackdate');
+<!--//endtinfo-->
+function pickcolor(id) 
+{
+  var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");
+  if (color != null) 
+  {
+    $("colorexample"+id).style.backgroundColor = color;
+    $("textcolor"+id).value = color;
+  }
+}
+
+function setaction(ordno,act,s, spayback)
+{
+  
+  if('CheckIn' == act)
+  {
+    $("statetr").style.display = "none";
+    $("paybacktr").style.display = "none";
+    $("createdatetr").style.display = "none";
+    $("ownmarks").innerHTML = "你确认同意这次借款么？";
+  }
+  else if('Refuse' == act)
+  {
+    $("statetr").style.display = "none";
+    $("paybacktr").style.display = "none";
+    $("createdatetr").style.display = "none";
+    $("ownmarks").innerHTML = "<b>拒绝</b>这次借款么？";
+  }
+  else
+  {
+    /*
+    obj = $('state');
+    if(s == '0')
+    {
+      obj.options[0].selected = true;
+    }
+    else if(s == '1')
+    {
+      obj.options[1].selected = true;
+    }
+    else
+    {
+      obj.options[2].selected = true;
+    }
+    */
+    $("statetr").style.display = "";
+    $("paybacktr").style.display = "";
+    $("createdatetr").style.display = "";
+    $("ownmarks").innerHTML = "本次还款后，当前欠款已经全部归还";
+  }
+  $("ordno").value = ordno;
+  $("a").value = act;
+  $("payback").value = spayback;
+  disp('adddiv');
+}
+
+function setownstate(obj)
+{
+  v = obj.options[obj.selectedIndex].value;
+  if(v == "1")
+  {
+    $("ownmarks").innerHTML = "本次还款后，当前欠款只是归还了一部分";
+  }
+  else
+  {
+    $("ownmarks").innerHTML = "本次还款后，当前欠款已经全部归还";
+  }
+}
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

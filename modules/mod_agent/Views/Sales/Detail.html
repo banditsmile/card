@@ -1,0 +1,72 @@
+{load(fhead)}
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 业务员账户管理</h2>
+  </div>
+  <ul>
+    <li><a href="" class="on">业务员账户管理</a></li>
+    <li><a href="index.php?m=mod_agent&c=Sales&a=Add">业务员账户添加</a></li>
+  </ul>
+</div>
+		<FORM name="salesman" method="post" action="index.php?m=mod_agent&c=Sales&a=Save">
+<!--$item=$vd['item'];-->
+	
+	    <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+ 		<tr>
+ 		  <td width="15%" class="td_left"> 账号：</td>
+		  <td width="78%" align="left" class="tableright1"><div align="left">
+		    <input type="text" size="20" name="name" class="input0"  value="{$item['name']}" />
+	      </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 业务员姓名：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="realname" class="input0" value="{$item['realname']}" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 业绩比例：</td>
+		<td align="left" class="tableright1"><div align="left">
+	      <input type="text" size="10" maxlength="10" name="sellscale" value="<!--echo $item['sellscale']*100;-->" class="input0"/>
+	      %</div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 绑定下级：</td>
+		<td align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20"  name="underlingid" class="input0" value="{$item['underlingid']}" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 联系QQ：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="qq" class="input0" value="{$item['qq']}" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 手机：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="mobile" class="input0" value="{$item['mobile']}" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 地址：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="35" name="addr" class="input0" value="{$item['addr']}" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left">&nbsp;</td>
+		<td align="left" class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="id" value="{$item['id']}" />
+			  <input type="submit" name="Submit" value="确认提交" class="tijiao_input">
+		      <input type="reset" name="reset" value="重新填写" class="fanhui_input">
+		  </div></td>
+		</tr>
+		</table>
+		</FORM>
+	</body>
+</html>

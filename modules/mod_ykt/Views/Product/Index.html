@@ -1,0 +1,51 @@
+{load(head)}
+<style type="text/css">
+  .btxt{font-size:13px;padding-left:2px;}
+</style>
+<div><b>关键词 <font color="#ff6c00">{$vd['keywords']}</font> 搜索结果：</b></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="prolist1">
+    <table width="100%" border="0" cellpadding="2" cellspacing="0" class="prolist" style="color:#3c3c3c">
+      <tbody>
+        <tr>
+          <td width="20%" class="hearder1" align=center>游戏类型</td>
+          <td width="46%" class="hearder1">卡名称</td>
+          <td width="10%" class="hearder1">面值</td>
+          <td width="10%" class="hearder1">售价</td>
+          <td width="14%" class="hearder1" align=center>充值方式</td>
+        </tr>
+        <!--if(count($vd['items']) == 0) {-->
+        <tr>
+          <td align="right" height="35" colspan="20">没有任何商品</td>
+        </tr>
+        <!--}-->
+        <!--$oldname='';foreach($vd['items'] as $item){-->
+        <!--if($item['ptype'] < 99) {-->
+        <tr class="nd">
+          <td width="20%" class="pboard"><!--if($oldname != $item['name']){-->{$item['name']}<!--}else{ echo '&nbsp;';}$oldname=$item['name'];--></td>
+          <td width="44%" align="left"><font color="<!--echo $item['namecolor']==''?'#5c5c5c':$item['namecolor'];-->"><!--echo $item['ykttag'] == '' ? $item['pname'] : $item['ykttag'];--></font></td>
+          <td width="10%" class="mz">{$vd['lang']['moneysymbol']}{$item['listprice']}</td>
+          <td width="10%" class="sj"><!--echo $item['yktpoints']=='' ? $item['yktpoints'] : $item['listprice'] * 100;--> 点</td>
+          <td width="16%" align="center">
+          <!--if($item['ptype'] == 0) {-->
+          <a href="{#YktProductLink($item['yktpid'], 0, $item['pid'])}" target="_blank"><img src="{$vd['content']}images/icon_mi.gif" border="0"></a>
+          <!--}-->
+          <!--if($item['ptype'] == 1) {-->
+          <a href="{#YktProductLink($item['yktpid'], 1, $item['pid'])}"  target="_blank"><img src="{$vd['content']}images/icon_zc.gif" border="0"></a>
+          <!--}-->
+          <!--if($item['ptype'] == 2 || $item['ptype'] == 4 || $item['ptype'] == 5) {-->
+          <a href="{#YktProductLink($item['yktpid'], 1, $item['pid'])}"  target="_blank"><img src="{$vd['content']}images/icon_sc.gif" border="0"></a>
+          <!--}-->
+          <!--if($item['ptype'] == 3) {-->
+          <a href="{#YktProductLink($item['yktpid'], 1, $item['pid'])}"  target="_blank"><img src="{$vd['content']}images/icon_xh.gif" border="0"></a>
+          <!--}-->
+          </td>
+        </tr>
+        <!--}}-->
+      </tbody>
+    </table>
+  </td>
+  </tr>
+</table>
+{load(foot)}

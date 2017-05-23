@@ -1,0 +1,165 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Price&{$vd['op']}" title="点击重新获取商品列表资料" onclick="loadDisp(1)"><font color="#000">商品价格/密价</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个) <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Price&a=PrivatePriceAgent">按客户密价</a></span> <span style="font-size:7px;">>></span> <span style="color:#ff0000">(当前用户：{$vd['underling']['aname']} 编号：{$vd['underling']['aid']} 级别：{#TxtByOption($vd['rank'], $vd['underling']['alv'], 'name', 'id')})</span></div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('ClearPP')"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:3px;">清除密价</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="toSubmit('cform')"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:7px;padding-left:9px;"><img src="{$vd['sc']}images/save.gif" style="vertical-align:middle"/> 保存</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=Price&a=PrivatePriceProductSet&aid={$vd['underling']['aid']}" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <input type="hidden" name="stype" value="pname"/>
+    <select name="ptype" style="vertical-align:middle;font-size:14px;">
+      <option value="-1">所有类型</option>
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value="商品搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=product&v=PP" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="aid" id="aid" class="checkbox" onFocus='this.blur()'/> 编号<br/>
+  <input type="checkbox" name="id[]" value="aname" id="aname" class="checkbox" onFocus='this.blur()'/> 商家名称<br/>
+  <input type="checkbox" name="id[]" value="company" id="company" class="checkbox" onFocus='this.blur()'/> 公司名<br/>
+  <input type="checkbox" name="id[]" value="rank" id="rank" class="checkbox" onFocus='this.blur()'/> 商家级别<br/>
+  <input type="checkbox" name="id[]" value="aremain" id="aremain" class="checkbox" onFocus='this.blur()'/> 余额<br/>
+  <input type="checkbox" name="id[]" value="prvcity" id="prvcity" class="checkbox" onFocus='this.blur()'/> 所在区域<br/>
+  <input type="checkbox" name="id[]" value="acsmp" id="acsmp" class="checkbox" onFocus='this.blur()'/> 消费<br/>
+  <input type="checkbox" name="id[]" value="lvprice" id="lvprice" class="checkbox" onFocus='this.blur()'/> 级别价钱<br/>
+  <input type="checkbox" name="id[]" value="setpp" id="setpp" class="checkbox" onFocus='this.blur()'/> 密价<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()' disabled/></td>
+<!--//thead-->
+<td width="35px"><b>编号</b></td>
+<td width="150px"><b>商品名称</b></td>
+<td width="65px"><b>类型</b></td>
+<td width="65px"><b>面值({$vd['lang']['moneyunit']})</b></td>
+<td width="70px"><b>进货价</b></td>
+<td width="70px"><b>用户进价</b></td>
+<td width="70px"><b>设定价格</b></td>
+<td width="60px"><b>差价</b></td>
+<td width="35px"><b>操作</b></td>
+<!--//endthead-->
+    <td class="endtd">
+      <div class="infoicon" style="color:#cccccc"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Price&a=PrivatePriceProductSave" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['pid']}" class="checkbox" value="{$item['pid']}" onclick="CheckThis(this)" onFocus='this.blur()' disabled></input>
+    </td>
+<!--//tbody-->
+<td width="35px">{$item['pid']}</td>
+<td width="15px"><nobr><samp title="{$item['pname']}">{$item['pname']}</samp></nobr></td>
+<td width="65px">{#ProductType($item['ptype'])}</td>
+<td width="65px">{$item['listprice']}</td>
+<td width="70px">{$item['price']}</td>
+<td width="70px">{$item['underlingprice']}</td>
+<td width="70px">
+  <input type="hidden" name="oldprice_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+  <input type="hidden" name="pid[]" value="{$item['pid']}"/>
+  <input type="hidden" name="myprice_{$item['pid']}" value="{$item['price']}"/>
+  <input type="text" size="5" name="price_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+</td>
+<td width="60px"><!--if(isset($vd['parray'][$item['pid']])){echo round(($vd['parray'][$item['pid']]-$item['price']), 3);}else{echo '--';}--></td>
+<td width="35px"><a href="index.php?m=mod_b2b&c=price&a=PrivatePriceAgentDel&pid={$item['pid']}&aid={$vd['aid']}">清除</a></td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+<input type="hidden" name="aid" value="{$vd['aid']}"/>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=product&a=Deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Price&a=PrivatePriceProductSet&aid={$vd['underling']['aid']}&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Price&a=PrivatePriceProductSet&aid={$vd['underling']['aid']}&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(0,0);
+totleRows = {$vd['totlerow']};
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除商品,商品相关信息也会被删除(包括订单信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 2;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('aid','aname','company','rank','aremain','prvcity','acsmp','lvprice','setpp');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
+<style type="text/css">
+td{height:30px}
+</style>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
+  <tr>
+    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">积分管理</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=ScoredProduct&a=Create')" value="添加积分商品" class="button" style="width:180px"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      添加供用户兑换的积分商品
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=ScoredProduct')" value="管理积分商品" class="button" style="width:180px"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      查看系统添加的各个积分商品，您可以选择对应商品进行编辑
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Scored&a=AddScored')" value="积分赠送" class="button" style="width:180px"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      查看系统添加的各个积分商品，您可以选择对应商品进行编辑
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Scored&a=Recored')" value="用户积分累积记录" class="button" style="width:180px"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      查看用户积分的累积记录
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center" style="border-bottom:1px #ccc solid">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Scored')" value="用户积分兑换记录" class="button" style="width:180px"/>
+    </td>
+    <td width="75%" align="left" style="border-bottom:1px #ccc solid;border-right:1px #ccc solid">
+      查看用户积分兑换商品的记录
+    </td>
+  </tr>
+
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">
+  <tr>
+    <td style="border:1px #ccc solid;"><div id="result" style="font-size:15px;color:#ff0000;font-weight:bold"></div><div id="tmp"></div></td>
+  </tr>
+</table>
+<div id="load" style="display:none">
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+var $ = function(id){
+  return document.getElementById(id);
+}
+function loadDisp(flag)
+{
+  $("load").style.display = flag ? "" : "none";
+}
+function winopen(url)
+{  
+  loadDisp(1);
+  window.location.href = url;
+}
+</script>
+</body>
+</html>

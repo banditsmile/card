@@ -1,0 +1,60 @@
+{load(fhead)}
+<style type="text/css">
+.hs{
+BACKGROUND:#F8F8F8;
+}
+.iborder{
+background:url({$vd['root']}{$vd['sc']}picture/image/nopic.gif) no-repeat center;width:150px;height:150px;margin:5px;border:1px #ff6c00 solid
+}
+.jn{font-size:12px;font-weight:bold}
+</style>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统 >> 积分管理 >> 兑换商品</span></div>
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		  <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored';" class="hover"><span class="type">兑换商品</span></li>
+      <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored&a=OrderList';"><span class="letters">兑换记录</span></li>
+      <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored&a=ScoredList';"><span class="letters">累积记录</span></li>
+    </ul>
+	</div>
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+
+    <!--$n=0;$i=0;foreach($vd['items'] as $item) {-->
+    <!--if($i == 0){-->
+    <tr>
+    <!--}$i++;-->
+      <td width="33%" align="center" height="30" style="padding:8px 0">
+        <p class="jn">{$item['pname']}</p>
+        <div class="iborder" style="background:url(../{$vd['sc']}picture/{$item['thumb']}) no-repeat center">
+        </div>
+        <p><b><font color="#0000ff">{$item['scored']} 积分</font></b></p>
+        <p><input type="button" class="button" value="马上兑换" style="cursor:pointer" onclick="openScript({$item['pid']})"></p>
+      </td>
+    <!--if($i == 3){-->
+    </tr>
+    <!--$i=0;}-->
+    <!--}-->
+    
+    <!--if($i > 0){-->
+    <!--for($j=0; $j < 3 - $i; $j++){-->
+    <td width="33%"></td>
+    <!--}-->
+    </tr>
+    <!--}-->
+    
+  </table>
+  </td>
+  </tr>
+  </table>
+</body>
+</html>
+<script type="text/javascript">
+  function openScript(pid)
+  {
+    var Win = window.open('index.php?m=mod_b2b&c=Scored&a=Detail&pid=' + pid, '', 'width=780,height=580,resizable=0,scrollbars=yes,menubar=no,status=no');
+  }
+</script>
+

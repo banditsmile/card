@@ -1,0 +1,7 @@
+  <!--if($vd['islogin'] == 1) {-->
+  欢迎，<FONT color="#ff0000">{$vd['data']['aname']}&nbsp;&nbsp;
+  <img src="{$vd['content']}images/mc.gif" alt="用户中心" /> <a href="{$vd['root']}index.php?m=mod_user&c=home">用户中心</a> <font color="#cccccc">|</font> <a href="{$vd['root']}index.php?m=mod_user&c=order&keywords=3&stype=comefrom">购卡记录</a> <font color="#cccccc">|</font> <a href="{$vd['root']}index.php?m=mod_user&c=login&a=logout&vfromsite=3" >退出</a>
+  <!--} else {-->
+  您好，欢迎您的到来！[<a href="#" onclick="disp('logindiv')">请登陆</a>]
+  &nbsp;[<a href='#' onclick="javascript:alert('请联系管理员取回密码')">忘记密码</a>]&nbsp;<font color="#cccccc"></font>[&nbsp;<a href='{$vd['root']}index.php?m=mod_ykt&a=reg'>注册会员</a>]
+  <!--}-->  

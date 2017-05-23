@@ -1,0 +1,399 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">供货商管理系统</a> >> 自供货商品管理 >> 商品发布与管理</span></div>
+	
+	<div id="type">
+		<ul><li><a href="index.php?m=mod_agent&c=Product&a=Create"><span class=type>发布新商品</span></a></li><li><a href="index.php?m=mod_agent&c=Product"><span class=type>商品管理</span></a></li></ul>
+	</div>
+	<div id="hearder"><span>修改商品</span></div>
+	<table width="98%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+    <!--$item = $vd['item'];--> 
+    <form id="cform" method="post" action="index.php?m=mod_agent&c=Product&a=Save" onSubmit="return checkaddproduct()">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1" id="ubTable">
+    	<tr> 
+        <td class="tableleft1">商品分类：</td>
+        <td align="left" class="tableright1">
+        	<div id="sdiv" style="display:none">
+        	<select id="cat1" name="cat1" size="1" style="width:150px"  onchange="loadCat(this.value,1)">
+            <option select="selected" value="0">请选择一级分类</option>
+            {#Option($vd['cat'], 0, 'name', 'id')}
+          </select>
+          (<a href="#" onClick="showAndHide('stext','sdiv');resetCat();">取消</a>)
+        	</div>
+        	<div id="stext">{$vd['catcol']} <span  style="display:none">(<a href="#" onClick="showAndHide('sdiv','stext')">修改</a>)</span></div></td>
+      </tr>
+      <tr>
+        <td class="tableleft1">商品名称：</td>
+        <td align="left" class="tableright1">
+        	<input type="text" name="ubzpname" size="28" value="{$item['pname']}"/><font color="#FF0000"> *</font>  <input type="checkbox" value="1" name="isbold"  class="checkbox" {#ToggleCheck($item['isbold'])} onFocus="this.blur()"/> 粗体
+        </td>
+      </tr>
+      <tr>
+       <td class="tableleft1">标题颜色：</td>
+       <td align="left" class="tableright1">
+         <input type="text" id="namecolor" name="namecolor" value="{$item['namecolor']}" style="width:100px" onKeyUp="setcolor(this)"/> 
+         <input id="colorexample" type="text" size="1" readonly  style="background:<!--if($item['namecolor']==''){-->#222222<!--}else{-->{$item['namecolor']}<!--}-->;cursor:pointer;width:20px;border:1px #cccccc solid;height:18px" onClick="pickcolor()">
+       </td>
+     </tr>
+
+      <tr> 
+        <td class="tableleft1"><span class="name">基本价钱：</span></td>
+        <td align="left" class="tableright1">
+        	<input type="hidden" name="oldprice" value="{$item['price']}"/>
+        	<input type="hidden" name="oldlistprice" value="{$item['listprice']}"/>
+          <input type="text" name="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font>市场价(商品的面值)<br/> 
+          <input type="text" name="ubzprice" size="10" class="priceinput" value="{$item['price']}"/><font color="#FF0000"> * </font>进价(商品的进货价)<br/>
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">&nbsp;</td>
+        <td align="left" class="tableright1">
+          注：如果商品的进货价或者面值有所修改，其它用户针对这个商品所做的密价或者相关定价都会被删除。
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">商品类型：</td>
+        <td align="left" class="tableright1">
+        	<!--if($item['ptype'] == 100){-->
+    	    <select size="1" id="ubzptype" name="ubzptype" onChange="showtpl(this)">
+            <option value="{$item['ptype']}" selected>一卡通兑换专用卡</option>
+          </select><font color="#FF0000"> *</font>
+          <!--}else{-->
+          <select size="1" id="ubzptype" name="ubzptype" onChange="showtpl(this)">
+            <option value="0" <!--if($item['ptype']==0){-->selected<!--}-->>卡密商品</option>
+            <option value="2" <!--if($item['ptype']==2){-->selected<!--}-->>代充商品</option>
+            <option value="3" <!--if($item['ptype']==3){-->selected<!--}-->>号码商品</option>
+          </select><font color="#FF0000"> *</font>
+          <!--}-->
+        </td>
+      </tr>
+      <tr id="tpl" style="display:none"> 
+        <td class="tableleft1">充值模板：</td>
+        <td align="left" class="tableright1">
+          <span id="tpllist"></span><font color="#FF0000"> *</font>
+        </td>
+      </tr>
+      <tr>
+        <td class="tableleft1">
+        	自定义充值模板：
+        <td align="left" class="tableright1">
+        <select size="1" id="ubzsyscztpl" name="ubzsyscztpl" style="width:130px;">
+        	<option value="0" selected>无自定义充值模板</option>
+        	{#Option($vd['customtpl'], intval($item['syscztpl']), 'name', 'id')}
+        </select>
+        </td>
+      </tr>
+      <tr id="czidname" style="display:none">
+        <td class="tableleft1">
+        	<span class="tip" id="tipidlable" style="display:none">玩家用户名的叫法,比如充Q币时叫QQ号,充游戏时叫帐号,如果是金币类或者装备,可以写角色名</span>
+        	<span class="name" id="spanidlable">充值ID名称：</span>
+        </td>
+        <td align="left" class="tableright1">
+        <input type="text" id="ubzidlable" name="ubzidlable" size="10" value="帐号"/>
+        </td>
+      </tr>
+      <tr id="areaserv" style="display:none">
+        <td class="tableleft1"><span class="name" id="spanareaserv" >区服显示：</span></td>
+        <td align="left" class="tableright1">
+        	<span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>显示区域
+        	<input type="checkbox" value="1" name="ubzdispserv" class="checkbox"/>显示服务器</span>
+        	<span id="spanareaserv2" style="display:none">
+        		<input type='radio' value='1' name='ubzdisparea' class='checkbox' checked onFocus="this.blur()"/>允许选号购买(购买时显示号码，允许选择购买) <br/>
+        		<input type='radio' value='0' name='ubzdisparea' class='checkbox' onFocus="this.blur()"/>随机号码(购买时不显示号码，随机提取库存号码)
+        	</span>
+        </td>
+      </tr>
+      <tr id="tradeterm" style="display:none">
+        <td class="tableleft1">
+        	<span id="spanareaserv" >交易方式：</span>
+        </td>
+        <td align="left" class="tableright1">
+        	<textarea name="ubztradeterm" cols="28" style="width:208px;" rows="3"></textarea>
+        </td>
+      </tr>
+      <tr id="disponshow" style="display:none">
+        <td class="tableleft1"><span class="name" id="spanareaserv" >交易方式显示时间：</span></td>
+        <td align="left" class="tableright1">
+        	<input type="radio" value="0" name="ubzdisponshow" class="checkbox"/>成功购买后显示
+        	<input type="radio" value="1" name="ubzdisponshow" class="checkbox"/>购买前显示
+        </td>
+      </tr>
+      <tr id="stocks" style="display:none">
+        <td class="tableleft1"><span class="name">库存：</span></td>
+        <td align="left" class="tableright1">
+        	<input type="text" value="1" name="ubzstocks" size="10" /> (暂未开放功能，无须填写)
+        </td>
+      </tr>
+      <tr id="unit" style="display:none">
+        <td class="tableleft1"><span class="name">库存单位：</span></td>
+        <td align="left" class="tableright1">
+        	<input type="text" size="10" name="ubzunit" /> (暂未开放功能，无须填写)
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">
+        	购买数量控制(方式一)：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="ubzqtymin" size="5" value="{$item['qtymin']}"/> 起购量(个)<br/>  
+          <input type="text" name="ubzqtymax" size="5" value="{$item['qtymax']}"/> 截止量(个)
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">
+        	购买数量控制(方式二)：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="ubzqtylist" size="22" value="{$item['qtylist']}"/> <span class="spantip"><br/>自定义方式,请使用使用半角逗号隔开相应数量，方式一/二任选，二优先于一</span>
+        </td>
+      </tr>
+	<tr>
+        <td class="buylt">商品排序：</td>
+        <td class="buyrt">
+          <input type="text" name="ordering" size="10" value="{$item['ordering']}"/>
+        </td>
+      </tr>
+    <tr>
+        <td class="tableleft1">商品上架：</td>
+        <td align="left" class="tableright1">
+          <input type="checkbox" value="1" name="ubzsell"  class="checkbox" {#ToggleCheck($item['sell'])} onFocus="this.blur()"/> 上架
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">面向对象：</td>
+        <td align="left" class="tableright1">
+          <input type="radio" value="1" name="tosys"  class="checkbox" onFocus="this.blur()" disabled <!--if($item['tosys']==1){-->checked<!--}--> onclick="javascript:alert('面向全体用户需要系统审核方可')"/> 系统全体用户
+          <input type="radio" value="-1" name="tosys"  class="checkbox" onFocus="this.blur()" disabled <!--if($item['tosys']==-1){-->checked<!--}-->/> 下级用户
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">给系统提成：</td>
+        <td align="left" class="tableright1">
+          <input type="text" name="pfee" size="10" value="{$item['pfee']}" readonly style="background:#f0f0f0"/> 购买成功后，给系统的提成比例，最低 <b>{$vd['fee']}</b>，格式0.01(相当于1%)
+        </td>
+      </tr>
+      <tr id="quickusetr">
+        <td class="tableleft1">是否即提即用：</td>
+        <td align="left" class="tableright1">
+          <input type="checkbox" name="quickuse" value="1" class="checkbox" <!--if($item['quickuse'] == 1){-->checked<!--}--> onFocus="this.blur()"/> 
+        </td>
+      </tr>
+      <tr id="quickusetimetr">
+        <td class="tableleft1">
+          购买后时间段内须使用：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="quickusetime" value="{$item['quickusetime']}" size="10" /> 小时 
+        </td>
+      </tr>
+      <tr id="buylitstardate">
+        <td class="tableleft1">启用可购买时间段：</td>
+        <td align="left" class="tableright1">
+          <input type="checkbox" name="buylit" value="1" class="checkbox" <!--if($item['buylit'] == 1){-->checked<!--}--> onFocus="this.blur()"/> 
+        </td>
+      </tr>
+      <tr id="buylitenddate">
+        <td class="tableleft1">
+          可购买起始时间：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="buylitstardate" value="{$item['buylitstardate']}" size="10" /> 格式:08:15
+        </td>
+      </tr>
+      <tr>
+        <td class="tableleft1">
+          可购买结束时间：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="buylitenddate" value="{$item['buylitenddate']}" size="10" /> 格式:23:30 
+        </td>
+      </tr>
+      <tr id="buyadaytr">
+        <td class="tableleft1">
+          每天限制购买：
+        </td>
+        <td align="left" class="tableright1">
+          <input type="text" name="buyaday" value="<!--echo isset($item['buyaday']) ? $item['buyaday'] : 0;-->" size="10" /> 0或者空表示不限制 
+        </td>
+      </tr>
+      <tr> 
+        <td class="tableleft1">
+        	商品简介：
+        </td>
+        <td align="left" class="tableright1">
+          <textarea name="ubzpdesc" cols="67" rows="5">{$item['pdesc']}</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="tableleft1">
+        	购卡弹出提示：
+        </td>
+        <td align="left" class="tableright1">
+          <textarea name="palert" cols="67" rows="3">{$item['palert']}</textarea> <br/>留空的话不弹出
+        </td>
+      </tr>
+      <tr>
+        <td class="buylt">官方网址：</td>
+        <td class="buyrt">
+          <input type="text" name="ubzweb" size="50" value="{$item['web']}"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="buylt">充值地址：</td>
+        <td class="buyrt">
+          <input type="text" name="ubzczweb" size="50" value="{$item['czweb']}"/>
+        </td>
+      </tr>
+      <tr>
+      	<td class="tableleft1">&nbsp;</td>
+        <td align="left" class="tableright1">
+        	<input type="hidden" value="{$item['pid']}" name="ubzpid"/>
+          <input type="hidden" value="0" name="umebizpid"/>
+          <input type="hidden" value="{$item['cztpl']}" name="ubzocztpl"/>
+          <input type="hidden" id="oldcatid" name="oldcatid"  value="{$item['catid']}"/>
+        	<input type="hidden" id="catid" name="catid"  value="{$item['catid']}"/>
+        	<input type="submit" name="Submit" value="确认修改" class="button"> <input type="reset" name="reset" value="重新填写" class="button">
+        </td>
+      </tr>
+    </table>
+    </form>
+    </td>
+	</tr>
+	</table>
+  <script type="text/javascript" src="http://www.yingxkg.tk/cztpl/allcztpl.js"></script>
+  <script type="text/javascript">
+  	var $=function(id){
+  		return document.getElementById(id);
+  	}
+  	
+  	function disp(idx)
+  	{
+  		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+  	}
+  	
+  	function showAndHide(idx1, idx2)
+  	{
+  		$(idx1).style.display = "";
+  		$(idx2).style.display = "none";
+  	}
+  	
+  	function resetCat()
+  	{
+  		$("catid").value = $("oldcatid").value;
+  		for(i = 0; i < addnum; i++)
+  		{
+  			$("ubTable").deleteRow(i + 1);
+  		}
+  		
+  		$("cat1").options[0].selected = true;
+  	}
+  	
+  	addnum = 0;
+  	
+  	function AddElement(val, row) {
+  		  if(val == 0)
+  		  {
+  		  	return;
+  		  }
+  		  if($("ubTable").rows[row].id == row)
+  		  {
+  		  	//表示已经存在，那么返回即可
+  		  	return;
+  		  }
+  		  
+        var newRow = $("ubTable").insertRow(row); 
+        newRow.id = row;
+        c1 = newRow.insertCell();
+        c1.className = "lt";
+        c1.innerHTML = (row+1) + '级分类：'
+        c2 = newRow.insertCell();
+        c2.className = "rt";
+        c2.innerHTML = '<select id="cat_' + (row+1) + '" size="1" style="width:150px"  onchange="loadCat(this.value,' + ((row+1) + 1) + ')"><option select="selected" value="0">请选择'+row+'级分类</option></select>';
+        addnum++;
+    }
+    
+    
+    function loadCat(id, row)
+    {
+      xmlhttp=null;
+    
+      // 针对 Mozilla等浏览器的代码：
+      if (window.XMLHttpRequest)
+      {
+        xmlhttp=new XMLHttpRequest();
+      }
+      // 针对 IE 的代码：
+      else if (window.ActiveXObject)
+      {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      
+      if (xmlhttp!=null)
+      {
+        xmlhttp.onreadystatechange=function(){
+        	if (xmlhttp.readyState==4)
+          {
+            if (xmlhttp.status==200)
+            {
+              var ackdata=xmlhttp.responseText;
+              if(ackdata == '')
+              {
+              	$("catid").value = id;
+              	return;
+              }
+              
+              AddElement(id, row)
+              
+              tmp = ackdata.split("||");
+              
+              len = tmp.length;
+              idx = "cat_" + (row+1);
+  
+              obj = $(idx);
+              obj.length = 1;
+              
+              for(i = 0; i < len; i++)
+              {
+              	tmp2 = tmp[i].split(",");
+              	obj.options[obj.length] = new Option(tmp2[1], tmp2[0]);
+              }
+            }
+          }
+        };
+        xmlhttp.open("post", "index.php?m=mod_agent&c=Category&a=Child", true);
+        xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xmlhttp.send('id=' + id);
+      }
+      else
+      {
+        alert("您的浏览器不支持XMLHTTP")
+      }
+    }
+      
+    function checkaddproduct()
+    {
+    	var vsyscztpl = $("ubzsyscztpl").options[$("ubzsyscztpl").selectedIndex].value;
+    	var vcztpl = $("cat").options[$("cat").selectedIndex].value;
+    	
+    	if(vsyscztpl > 0 && vcztpl > 0)
+    	{
+    		alert("系统自带充值模板和自定义充值模版只能选择其中一个，请重新选择");
+    		return false;
+    	}
+    }
+    
+    function pickcolor() 
+    {
+      var color = showModalDialog("{$vd['sc']}tools/colorselect.htm", "", "font-family:Verdana; font-size:12; status:no; dialogWidth:21em; dialogHeight:21em");
+      if (color != null) 
+      {
+        $("colorexample").style.backgroundColor = color;
+        $("namecolor").value = color;
+      }
+    }
+
+  </script>
+</body>
+</html>

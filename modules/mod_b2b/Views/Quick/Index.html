@@ -1,0 +1,252 @@
+{load(fhead)}
+<body class="mainbg">
+	 <div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 我要进货 >> 便民中心</span></div>
+	 <div id="tabs5">
+	 	<ul class="menu5" id="menu5">
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick';" class="hover"><span class="type">话费直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick&a=QB';"><span class="letters">QQ币直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Quick&a=Yw'"><span class="oftens">QQ服务直充</span></li>
+       <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Category'"><span class="oftens">其他游戏</span></li>
+     </ul>
+   </div>
+  
+	 <div id="buycard">
+		<div id="buycardmain">
+      <form action="index.php?m=mod_b2b&c=Quick&a=Pay" method="post" target="_blank" onsubmit="return checksubmit()">
+      <table class="contentTable" border="1">
+        <tr>
+          <td colspan="2" class="tabletitle"> <b>话费直充</b></td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">手机号</div>
+          </td>
+          <td class="buyrt"> 
+            <input type="text" id="account" name="account" class="input" value="" maxlength="11" onblur="checkmobile();" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" onkeyup="value=value.replace(/[^\d]/g,'')" />
+            <span id="mobiletip" style="color:#ff0000"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">再输入一次</div>
+          </td>
+          <td class="buyrt"> 
+            <input type="text" id="reaccount" name="reaccount" class="input" value="" maxlength="11" onblur="recheckmobile()" onpaste="return false" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" onkeyup="value=value.replace(/[^\d]/g,'')" />
+            <span id="remobiletip"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"> 
+            <div align="center" style="font-weight:bold">充值金额</div>
+          </td>
+          <td class="buyrt" id="qtytext"> 
+            <input type="radio" name="listprice" value="10">30{$vd['lang']['moneyunit']}
+            <input type="radio" name="listprice" value="50">50{$vd['lang']['moneyunit']}
+            <input type="radio" name="listprice" value="100">100{$vd['lang']['moneyunit']}
+            <input type="radio" name="listprice" value="200">200{$vd['lang']['moneyunit']}
+            <input type="radio" name="listprice" value="300">300{$vd['lang']['moneyunit']}
+            <input type="radio" name="listprice" value="500">500{$vd['lang']['moneyunit']}
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">进货价</div></td>
+          <td class="buyrt"><font color="#ff0000" onmouseover="showcprice(1)" onmouseout="showcprice(0)" style="padding-left:5px">鼠标移此</font> <span id="cprice" class="cprice" style="display:none">读取中..</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">售玩家单价</div></td>
+          <td class="buyrt"><input type="text" id="priceforplayer" class="input" name="priceforplayer" value="" style="width:100px;<!--if($vd['modifyright'] == 0){-->background:#f0f0f0<!--}-->" onkeyup="ChangeNum()" class="input" <!--if($vd['modifyright'] == 0){-->readOnly<!--}--> /> {$vd['lang']['moneyunit']}</td>
+        </tr>
+        <tr>
+          <td class="buylt"><div align="center" style="font-weight:bold">应收玩家金额</div></td>
+          <td class="buyrt"><input type="text" id="dollarsforplayer" class="input" name="dollarsforplayer" value="" style="width:100px;background:#f0f0f0" class="input" readOnly /> {$vd['lang']['moneyunit']}</td>
+        </tr>
+        <tr> 
+          <td class="buylt"></td>
+          <td class="buyrt" height="50px" style="padding-left:9px">
+          <input type="hidden" id="tlistprice" name="tlistprice" value="0"/>
+          <input type="hidden" id="ubzqty" name="ubzqty" value="1"/>
+          <input type="hidden" id="ubzpid" name="ubzpid" value="0"/>
+          <input type="hidden" id="pname" name="pname" value="话费直充"/>
+          <input type="hidden" id="lbname" name="lbname" value="充值金额"/>
+          <input type="hidden" id="lbaccname" name="lbaccname" value="手机号"/>
+          <input type="hidden" id="unit" name="unit" value="{$vd['lang']['moneyunit']}"/>
+          <input id="ubzmaxqty" name="ubzmaxqty" type="hidden" value="0"/>
+          <input type="submit" value="确认提交 &gt; &gt;" style="font-weight:bold;font-size:14px" class="button" tabindex="21" />
+          </td>
+        </tr>
+      </table>
+      </form>
+			
+		</div>
+	 </div>
+</body>
+</html>
+<script type="text/javascript">
+	
+	function checksubmit()
+	{
+		vaccount   = $("account").value;
+		vreaccount = $("reaccount").value;
+		vlistprice = $("tlistprice").value; 
+    vubzmaxqty = $("ubzmaxqty").value; 
+
+ 	  if(vaccount.length==11){
+ 	  	if(!/^1[3-9][0-9]\d{8}$/g.test(vaccount)){
+ 	  		$("mobiletip").innerHTML='<font color="red">&emsp;您填写的不是移动手机号</font>';
+ 	  		return false;
+ 	  	}
+ 	  }else{
+ 	  	$("mobiletip").innerHTML = '<font color="red">&emsp;请输入要充值的手机号</font>';
+ 	  	return false;
+ 	  }
+ 	  
+		if(vaccount != vreaccount)
+		{
+			$("remobiletip").innerHTML='<font color="red">&emsp;输入的手机号不一致</font>';
+			return false;
+		}
+		
+		if(vlistprice == 0)
+		{
+			alert("请先选择充值面值");
+			return false;
+		}
+		
+		return true;
+	}
+	
+	function getprice(mobile)
+	{
+		$("tlistprice").value = 0;
+		
+		var xmlg;
+    var obj = $("qtytext");
+    try{
+      xmlg=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlg=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlg.onreadystatechange=function(){
+      if (xmlg.readyState==4){
+      	
+        if (xmlg.status==200){
+          var data=xmlg.responseText;
+
+          if(data != "" ){
+          	tmp = data.split('/');
+          	$("mobiletip").innerHTML = "&emsp;" + tmp[0];
+          	if(tmp[1] == "")
+          	{
+          		str = '<font color="#ff0000">&nbsp;无可充面值</font>';
+          	}
+            else
+          	{
+          	  temp = tmp[1].split("|");
+          	  len = temp.length;
+          	  str = "";
+          	  for(i = 0; i < len; i++)
+          	  {
+          	  	tmp1 = temp[i].split(",");
+          	  	str = str + '<input type="radio" name="listprice" value="' + tmp1[1] + '" onclick="getcprice(this,' + tmp1[2] + ')">' + tmp1[0] + '{$vd['lang']['moneyunit']}';
+          	  }
+            }
+          	
+            obj.innerHTML = str;
+          }
+        }
+      }
+    }
+    xmlg.open("post", "index.php?m=mod_b2b&c=Quick&a=GetPrice", true);
+    xmlg.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlg.send('mobile=' + mobile);
+	}
+	
+	function getcprice(obj, pid)
+	{
+		$("tlistprice").value = obj.value;
+		$("ubzpid").value = pid;
+		
+		$("priceforplayer").value = obj.value;
+		$("dollarsforplayer").value = obj.value;
+		
+		var xmlg;
+    var obj = document.getElementById("cprice");
+    
+    try{
+      xmlg=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlg=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlg.onreadystatechange=function(){
+      if (xmlg.readyState==4){
+        if (xmlg.status==200){
+          var data=xmlg.responseText;
+
+          if(data != "" ){
+           	 tmp = data.split("|");
+             obj.innerHTML = "<b>" + tmp[0] + "</b>{$vd['lang']['moneyunit']}";
+          }
+        }
+      }
+    }
+    xmlg.open("post", "index.php?m=mod_b2b&c=Quick&a=GetCPrice", true);
+    xmlg.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlg.send('pid=' + pid);
+	}
+	
+	function showcprice(flag){
+    $("cprice").style.display = (flag == 1)? "" : "none";
+  }
+  
+  function checkmobile()
+  {
+  	var mobile = $("account").value;
+ 	  if(mobile.length==11){
+ 	  	if(!/^1[3-9][0-9]\d{8}$/g.test(mobile)){
+ 	  		$("mobiletip").innerHTML='<font color="red">&emsp;您填写的不是移动手机号</font>'
+ 	  	}else{
+ 	  		getprice(mobile);	
+ 	  	}
+ 	  }else{
+ 	  	$("mobiletip").innerHTML = '<font color="red">&emsp;请输入要充值的手机号</font>';
+ 	  }
+  }
+  
+  function recheckmobile()
+  {
+  	mobile1 = $("account").value;
+  	mobile2 = $("reaccount").value;
+  	
+  	if(mobile1 != mobile2)
+  	{
+  		$("remobiletip").innerHTML='<font color="red">&emsp;输入的手机号不一致</font>'
+  	}
+    else
+  	{
+  		$("remobiletip").innerHTML='';
+  	}
+  }
+  
+  function openScript(url,name,width,height,id)
+  {
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+  }
+  
+  function ChangeNum()
+  {
+  	if($("priceforplayer").value < 0)
+  	{
+  		alert('价格不能小于0');
+  		$("priceforplayer").focus();
+  	}
+  	
+  	if($("priceforplayer").value != '')
+  	{
+  	  $("dollarsforplayer").value = $("priceforplayer").value;
+  	}
+  }
+  
+</script>

@@ -1,0 +1,83 @@
+<div class="coltitle loginttitle">用户信息</div>
+<div class="col">
+  <table width="100%">
+    <tr>
+      <td class="loginlt">用户编号：</td>
+      <td class="loginrt">{$vd['data']['aid']}</td>
+    </tr>
+    <tr>
+      <td class="loginlt">用户账户：</td>
+      <td class="loginrt">{$vd['data']['aname']}</td>
+    </tr>
+    <tr>
+      <td class="loginlt">用户级别：</td>
+      <td class="loginrt">{$vd['data']['rankname']}</td>
+    </tr>
+    <tr>
+      <td class="loginlt">用户余额：</td>
+      <td class="loginrt">{$vd['data']['aremain']} {$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">【<a href="index.php?m=mod_user&c=Login&a=logout&ret={$vd['root']}<!--if(UB_DEFAULT=='b2c'||UB_DEFAULT=='ykt'){--><!--}else if(UB_DEFAULT=='b2c'){-->b2c<!--}else{-->ykt<!--}-->">退出登陆</a>】</td>
+    </tr>
+  </table>
+</div>
+<div class="agenttitle">账户管理</div>
+<div class="box agentlist">
+  <ul>
+    <li><a href="index.php?m=mod_user&c=home&a=index"><font color="#ff6c00">资料信息查看编辑</font></a></li>
+    <!--if(UB_B2C){-->
+    <li><a href="index.php?m=mod_user&c=funds&a=addFunds">账户充值</a></li>
+    <!--}-->
+    <li><a href="index.php?m=mod_user&a=modifyPass">修改密码</a></li>
+  </ul>
+</div>
+<div class="agenttitle">订单管理</div>
+<div class="box agentlist">
+  <ul>
+    <li><a href="index.php?m=mod_user&c=order"><font color="#ff6c00">购卡记录</font></a></li>
+    <!--if(UB_YKT){-->
+    <li><a href="index.php?m=mod_user&c=order&keywords=3&stype=comefrom">一卡通兑换列表</a></li>
+    <!--}-->
+    <!--if(0){-->
+    <li><a href="index.php?m=mod_user&c=order&keywords=4&stype=comefrom">换卡列表</a></li>
+    <!--}-->
+    <!--if(UB_B2C){-->
+    <li><a href="index.php?m=mod_user&c=funds">账户充值记录</a></li>
+    <li><a href="index.php?m=mod_user&c=Trade&tpl=history">帐务报表</a></li>
+    <!--}-->
+  </ul>
+</div>
+<!--if(0){-->
+<div class="agenttitle">支付管理</div>
+<div class="box agentlist">
+  <ul>
+    <li><a href="index.php?m=mod_user&c=category&a=coupon"><font color="#ff6c00">支付方式设置</font></a></li>
+    <li><a href="index.php?m=mod_user&c=home&a=Bank">结算设置</a></li>
+    <li><a href="index.php?m=mod_user&c=funds&a=Balance&keywords=97&stype=payment">结算列表</a></li>
+  </ul>
+</div>
+<div class="agenttitle">我是供货商</div>
+<div class="box agentlist">
+  <ul>
+    <li><a href="index.php?m=mod_user&c=Product">商品列表/编辑</a></li>
+    <li><a href="index.php?m=mod_user&c=Category"><font color="#ff6c00">分类管理</font></a></li>
+    <li><a href="index.php?m=mod_user&c=Product&a=Create">添加商品</a></li>
+    <li><a href="index.php?m=mod_user&c=Card&by=1">卡密管理</a></li>
+    <li><a href="index.php?m=mod_user&c=AOrder&by=1">订单列表</a></li>
+    <li><a href="index.php?m=mod_user&c=AOrder&optype=w&by=1">待处理订单</a></li>
+  </ul>
+</div>
+<!--}-->
+<div class="agenttitle">系统服务</div>
+<div class="box agentlist">
+  <ul>
+    <li><a href="index.php?m=mod_user&c=Home&a=hourKf"><font color="#ff6c00">联系客服</font></a></li>
+    <li><a href="{$vd['root']}index.php?m=mod_user&c=msg&a=add&msgtype=3">我要投诉</a></li>
+    <li><a href="{$vd['root']}index.php?m=mod_user&c=msg&msgto=1&nrows=25">查看回复</a></li>
+    <li><a href="{$vd['root']}index.php?m=mod_user&c=msg&msgfrom=1&nrows=25">投诉跟踪</a></li>
+    <!--if(0){-->
+    <li><a href="{$vd['root']}index.php?m=mod_user&c=msg&a=remittance">汇款通知书</a></li>
+    <!--}-->
+  </ul>
+</div>

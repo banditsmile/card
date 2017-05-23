@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="{$vd['sc']}css/main.css" type="text/css">
+<title>后台管理</title>
+</head>
+<body>
+<form name="addNEWS" method="post" action="index.php?m=mod_b2b&c=article&a=save">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td align="center" colspan="2" class="listhead texttle">文章添加</td>
+  </tr>
+  <tr> 
+    <td height="40" width="80" align="right">
+      文章主题：
+    </td>
+    <td height="40" align="left">
+      <input name="title" type="text" class="input" size="50" value="">
+    </td>
+  </tr>
+  <tr> 
+    <td height="40" width="80" align="right">
+      对应商品：
+    </td>
+    <td height="40" align="left">
+      <input name="pid" type="text" class="input" size="10" value=""> 关联的商品编号(前台打开商品可查看编号 如: /product/109909.html 其编号则为109909),没有的话写0即可
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="40" width="80" align="right">
+      选择类型：
+    </td>
+    <td height="40" align="left">
+      <select name="boardid">
+        {#Option($vd['boards'], 0, 'name', 'id')}
+      </select>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="25" valign="top" colspan="2" bgcolor="#F5FBFF"> 
+      <textarea name="nr" cols="67" rows="2" style="display:none"></textarea>
+      <iframe ID="Editor" name="Editor" src="{$vd['sc']}ubb/edit.htm?id=nr" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:312px;width:100%; background-color:#D9EEF9"></iframe>
+　  </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30" align="center" colspan="2" bgcolor="#F5FBFF"> 
+      <input type="submit" name="Submit" value=" 提 交 " class="input">　 
+      <input type="reset" name="Submit2" value=" 重 置 " class="input"> 
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+<script language="JavaScript">
+function CheckForm()
+{
+  if (document.addNEWS.bt.value.length == 0) {
+    alert("留言主题没有填写.");
+    document.addNEWS.title.focus();
+    return false;
+  }
+
+  return true;
+}
+</script>

@@ -1,0 +1,12 @@
+<!--$item=$vd['err'];-->
+<table border="0" id="ctable1" class="ctable" bordercolor="#86B9D6" style="width:100%;margin:0px;border:0px;">
+  <span style="font-size: 9pt">尊敬的客户您好,由于以下原因造成<font color="#ff0000"><b>交易失败</b></font></span><br/>
+  <tr>
+    <td class="tablelt">原因</td>
+    <td class="tablert">{$item['content']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">订单号</td>
+    <td class="tablert"><a href="index.php?m=mod_b2b&c=Order&a=Detail&ubzordno={$item['ordno']}" title="点击查看详细">{$item['ordno']}</a></td>
+  </tr>
+</table>

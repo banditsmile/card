@@ -1,0 +1,113 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<form name="form" method="post" action="index.php?m=mod_user&c=home&a=savepassword">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td align="center" colspan="2" height="32">
+    <font size="2"><b>修改登录密码</b></font></td>
+  </tr>
+  <tr> 
+    <td class="lt"> 
+      <div align="center">旧密码：</div>
+    </td>
+    <td class="rt"> 
+      <input type="password" class="myinput" id="oldpass" name="oldpass" msg="旧密码必须输入，且必须小于50个字符"/>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"> 
+      <div align="center">新密码：</div>
+    </td>
+    <td class="rt"> 
+      <input type="password" class="myinput" id="newpass" name="newpass" onblur="check_password(this.value)"  msg="新密码必须输入，且必须小于50个字符" />
+      <span id="snewpass"></span>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"> 
+      <div align="center">再次输入新密码：</div>
+    </td>
+    <td class="rt"> 
+      <input type="password" class="myinput" id="renewpass" name="renewpass" onblur="check_pw()"/>
+      <span id="srenewpass"></span>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"></td>
+    <td class="rt" height="50px">
+    <input type="submit" value="确认提交 &gt; &gt;" style="font-weight:bold;font-size:14px" class="button" tabindex="21"/>
+    <input type="reset" value="&lt; &lt; 重新填写" style="font-weight:bold;font-size:14px" class="button" name="reset" tabindex="22"/>
+  </td>
+  </tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+{load(foot)}
+
+<script type="text/javascript">
+var $=function(id){
+  return document.getElementById(id);
+}
+//----------密码检测
+function check_password(pwd){
+  var pwd=$("newpass").value;
+  var reChinese=/[\u0391-\uFFE5]+/;
+  var b_chinese=reChinese.test(pwd);
+  var reSpace=/\s+/;
+  var b_space=reSpace.test(pwd);
+  //-------长度测试
+  if(pwd.length<6){
+    $("snewpass").innerHTML="<img src='{$vd['content']}images/reg_yesno.gif'/> 密码长度不能小于6";
+  }
+  //-------合法性检测:不能包含汉字
+  else if(b_chinese){
+    $("snewpass").innerHTML="<img src='{$vd['content']}images/reg_yesno.gif'/> 密码不能包含中文";
+  }
+  //-------合法性检测:不能包含空格
+  else if(b_space){
+    $("snewpass").innerHTML="<img src='{$vd['content']}images/reg_yesno.gif'/> 密码不能包含空格";
+  }
+  //-------合法时显示密码强度
+  else{
+    //定义对应的消息提示
+    var num=getResult(pwd);
+    var msg=new Array("<img src='{$vd['content']}images/reg_bad.gif'/> 密码强度差","<img src='{$vd['content']}images/reg_comm.gif'/> 密码强度一般","<img src='{$vd['content']}images/reg_good.gif'/> 密码强度强壮");
+    $("snewpass").innerHTML=msg[num];
+    if($("renewpass").value!=""){
+      check_pw();
+    }
+  }
+}
+//定义检测函数,返回0/1/2分别代表差/一般/强
+function getResult(s){
+  var ls =-1;
+  if (s.match(/[a-z]/ig)){
+    ls++;
+  }
+  if (s.match(/[0-9]/ig)){
+    ls++;
+  }
+  if (s.match(/(.[^a-z0-9])/ig)){
+    ls++;
+  }
+  return ls;
+}
+//---------密码一致性检测  
+function check_pw(){
+  var pwd=$("newpass").value.toString();
+  var check_pwd=$("renewpass").value.toString();
+  if(pwd==check_pwd){
+    $("srenewpass").innerHTML="<img src='{$vd['content']}images/reg_yesok.gif'/> 密码可以使用";
+  }
+  else{
+    $("srenewpass").innerHTML="<img src='{$vd['content']}images/reg_yesno.gif'/> 两次密码不相同";
+  }
+}
+</script>

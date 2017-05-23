@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+    <title>员工账号管理</title>
+
+    <link href="/index/css/common.css" type="text/css" rel="stylesheet" />
+
+    <link href="/index/css/page.css" type="text/css" rel="stylesheet" />
+
+    
+
+
+
+<script language="javascript" type="text/javascript" src="js/ifrauto1.js?isposkback=False"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+	<form name="form1" method="post" action="">
+
+      <div class="new_qie">
+
+            <div class="new_qie2">
+
+                <h2>
+
+                    员工账户管理</h2>
+
+            </div>
+
+      </div>
+
+        <div class="input_div">
+
+            <a href="index.php?m=mod_agent&c=Staff&a=Add" class="input_add">添加员工</a></div>
+
+        <table cellspacing="1" cellpadding="1" class="table1" style="margin: 0">
+
+          <tr>
+
+            <th width="3%">选择</th>
+
+            <th width="6%">员工编号</th>
+
+            <th width="16%">账户名</th>
+
+            <th width="8%">姓名</th>
+
+            <th width="4%">状态</th>
+
+            <th width="28%">安全设置</th>
+
+            <th width="5%">交易密码</th>
+
+            <th width="6%">日限额</th>
+
+            <th width="5%">购价</th>
+
+            <th width="7%">售价</th>
+
+            <th width="8%">添加时间</th>
+
+            <th width="4%">修改</th>
+
+          </tr>
+
+          <!--foreach($vd['items'] as $item) {-->
+
+          <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+
+            <td><input type="checkbox" name="staffid[]" value="{$item['staffid']}" /></td>
+
+            <td>{$item['staffid']}</td>
+
+            <td>{$item['staffname']}</td>
+
+            <td>{$item['realname']}&nbsp;</td>
+
+            <td><font color=#ff0000>
+
+              <!--if($item['frozen'] == 1){-->
+
+              <font color="#ff0000">冻结</font>
+
+              <!--}else{-->
+
+              <font color="#008800">启动</font>
+
+              <!--}-->
+
+            </font></td>
+
+            <td align=left> 密保卡：
+
+                <!--if($item['mibaokacheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              令牌：
+
+              <!--if($item['mobilecheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              <!--if(0){-->
+
+              所在地：
+
+              <!--if($item['addrcheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              <!--}-->
+
+              随机密码：
+
+              <!--if($item['randcheck'] == 1){-->
+
+              <font color=#0000ff>启用</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未用</font>
+
+              <!--}-->
+
+              <br/>
+
+              IP：
+
+              <!--if($item['ipcheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              网卡：
+
+              <!--if($item['maccheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              硬盘：
+
+              <!--if($item['hdecheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}-->
+
+              CPU：
+
+              <!--if($item['cpucheck'] == 1){-->
+
+              <font color=#0000ff>已绑</font>
+
+              <!--}else{-->
+
+              <font color=#cccccc>未绑</font>
+
+              <!--}--></td>
+
+            <td><!--if($item['checktradepwd'] == 0){-->
+
+                <font color="#ff0000">未启用</font>
+
+                <!--}else{-->
+
+                <font color="#0000ff">启用</font>
+
+                <!--}--></td>
+
+            <td><!--if($item['dayconsum'] > 0){-->
+
+                <font color="#ff0000">限制</font>
+
+                <!--}else{-->
+
+                <font color="#0000ff">不限</font>
+
+                <!--}--></td>
+
+            <td><!--if($item['canseeprice'] == 0){-->
+
+                <font color="#ff0000">不显示</font>
+
+                <!--}else{-->
+
+                <font color="#0000ff">显示</font>
+
+                <!--}--></td>
+
+            <td><!--$tmp=explode('|',$item['ini']);if(isset($tmp[0])&&$tmp[0]==1){-->
+
+                <font color="#0000ff">能修改</font>
+
+                <!--}else{-->
+
+                <font color="#ff0000">不能修改</font>
+
+                <!--}--></td>
+
+            <td>{$item['createdate']}</td>
+
+            <td><a href="index.php?m=mod_agent&c=staff&a=detail&staffid={$item['staffid']}"><img src="{$vd['content']}images/icon_xg.gif" width="16" height="16" border="0" /></a></td>
+
+          </tr>
+
+          <!--}-->
+
+</table>
+
+	    <p>&nbsp;</p>
+
+	    <div id="page">
+
+		<div id="add">
+
+		  <input name="button2" type="button" class="xuanze_input" value="  全选" onClick="CheckAll(this.form);">
+
+			<input name="button2" type="button" class="xuanze_input" value="  反选" onClick="CheckOthers(this.form)">
+
+			<input name="button4" type="button" class="input_gb" value=" 删除" onClick="set('Del')">
+
+			<input name="button4" type="button" class="input_jc" value="解绑" onClick="set('NoBind')">
+
+		</div>
+
+	</div>
+
+	<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:380px;display:none">
+
+  	<div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+
+  	<div style="font-size:14px;font-weight:bold;padding:5px;float:left">输入密码确认</div>
+
+  	<div style="float:right;"><img src="{$vd['content']}images/icon_del.gif" onClick="disp('adddiv')" style="cursor:pointer"/></div>
+
+  	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+
+      <tr>
+
+        <td width="25%" height="35px" align="center">超级密码</td>
+
+        <td width="75%"><input type="password" class="input" style="font-weight:normal" name="superpwd" size="24"/></td>
+
+      </tr>
+
+      <tr>
+
+      	<td width="25%"></td>
+
+        <td width="75%">
+
+        	<input type="hidden" name="a"  id="a" value=""/>
+
+        	<input type="submit" class="tijiao_input" value="提 交" class="button"/>
+
+        	<input type="button" class="fanhui_input" value="取 消" onClick="disp('adddiv')" class="button"/>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+    <script type="text/javascript">
+
+	var $=function(id){
+
+		return document.getElementById(id);
+
+	}
+
+function CheckOthers(form)
+
+{
+
+	for (var i=0;i<form.elements.length;i++)
+
+	{
+
+		var e = form.elements[i];
+
+			if (e.checked==false)
+
+			{
+
+				e.checked = true;
+
+			}
+
+			else
+
+			{
+
+				e.checked = false;
+
+			}
+
+	}
+
+}
+
+
+
+function set(act)
+
+{
+
+	$("a").value = act;
+
+	disp("adddiv");
+
+}
+
+
+
+function CheckAll(form)
+
+{
+
+	for (var i=0;i<form.elements.length;i++)
+
+	{
+
+		var e = form.elements[i];
+
+			e.checked = true
+
+	}
+
+}
+
+
+
+function disp(idx)
+
+{
+
+	$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+
+}
+
+    </script>
+
+  	</div>
+
+  </div>
+
+</body>
+
+</html>

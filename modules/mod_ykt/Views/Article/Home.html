@@ -1,0 +1,52 @@
+{load(head)}
+<div class="artLeft">
+<b class="rtop" id="articlert" style="margin-top:5px"><b class="r3"></b><b class="r4"></b></b>
+<div id="articleTitle"><span class="flright"></span><b>{$vd['web']['webname']} > <a href="index.php?m=mod_ykt&c=article&a=home&boardid={$vd['board']['id']}"><font color="#000">{$vd['board']['name']}</font></a> > 列表 </b></div>
+<div id="articleCol">
+<div id="articleCnt" class="box list faq">
+  <ul>
+    <!--foreach($vd['items'] as $a) {-->
+    <li><span class="fr">{$this->DateFormat($a['ndate'],'Y/m/d')}</span>
+      <a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->{$vd['root']}article/<!--if($vd['vip'] > 0){-->?<!--}-->{$a['id']}.html" target="_blank"<!--}-->> <font color="{$a['titlecolor']}"  title="{$a['title']}">{$a['title']}</font></a></li>
+    <!--}-->
+    <li class="endli">
+    <form method="post" action="index.php?m=mod_article&a=home&{$vd['op']}">
+      <strong>共有记录<font color="#ff0000">{$vd['totlerow']}</font>条 / 第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页
+      <a href="?m=mod_ykt&c=article&a=home&{$vd['op']}&page={$vd['prepage']}">上一页</a>
+      <a href="?m=mod_ykt&c=article&a=home&{$vd['op']}&page={$vd['nextpage']}">上一页</a>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </li>
+  </ul>
+</div>
+</div>
+<div id="articleBottom"></div>
+<b class="rbottom" id="articlerb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div class='artRight'>
+  <div id="artrimg">
+    <!--foreach($vd['ad'] as $aditem) {-->
+    <!--if($aditem['ispic']==1 && $aditem['pos']==52){-->
+    <div style="margin-bottom:8px;"><a href="{$aditem['url']}" target="_blank">
+    <img src="{$vd['root']}{$vd['sc']}upload/{$aditem['pic']}" border='0'  width="100%" alt='{$aditem['text']}'></a><!--if($aditem['text'] != ''){--><br/><a href="{$aditem['url']}" target="_blank"><b><font color="{$aditem['textcolor']}">{$aditem['text']}</font></b></a><!--}-->
+    </div>
+    <!--}--><!--}-->
+  </div>
+  <b class="rtop" id="artrrt" style="margin-top:5px"><b class="r3"></b><b class="r4"></b></b>
+  <div id="artrTitle"><span class="flright"></span><b>推荐文章</b></div>
+  <div id="artrCol">
+  <div id="artrCnt" class="box list faq">
+    <ul>
+      <!--foreach($vd['stick'] as $a) {-->
+      <li>
+        <a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->{$vd['root']}article/<!--if($vd['vip'] > 0){-->?<!--}-->{$a['id']}.html" target="_blank"<!--}-->"> <font color="{$a['titlecolor']}" title="{$a['title']}">{#SubText($a['title'],22)}</font></a></li>
+      <!--}-->
+      <li class="endli"></li>
+    </ul>
+  </div>
+  </div>
+  <div id="articleBottom"></div>
+  <b class="rbottom" id="artrrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div style="clear:both"></div>
+{load(foot)}

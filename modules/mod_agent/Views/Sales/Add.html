@@ -1,0 +1,72 @@
+{load(fhead)}
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 业务员账户管理</h2>
+  </div>
+  <ul>
+  		<FORM name="salesman" method="post" action="index.php?m=mod_agent&c=Sales&a=Save">
+      <li><a href="index.php?m=mod_agent&c=Sales">业务员账户管理</a></li>
+     <li><a href="" class="on">业务员账户添加</a></li>
+  </ul>
+</div>
+ <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+ 		<tr>
+ 		  <td width="15%" class="td_left"> 账号：</td>
+		  <td width="78%" align="left" class="tableright1"><div align="left">
+		    <input type="text" size="20" name="name" class="input0"/>
+	      </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 业务员姓名：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="realname" class="input0"/>
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 业绩比例设定</td>
+		  <td align="left" class="tableright1"><div align="left">
+	        <input type="text" size="10" maxlength="10" name="sellscale" value="10" class="input0" />
+          %</div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> <p>绑定下级：</p>	      </td>
+		<td align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" class="input0" name="underlingid" >
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> QQ账号：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="qq" class="input0" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 手机：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="20" name="mobile" class="input0" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"> 地址：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="35" name="addr" class="input0" />
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left"></td>
+		<td align="left" class="tableright1"><div align="left">
+		  <input type="submit" name="Submit" value="确认添加" class="tijiao_input">
+		  <input type="reset" name="reset" value="重新填写" class="fanhui_input">
+		  </div></td>
+		</tr>
+		</table>
+		</FORM>
+	</td>
+	</tr>
+</table>
+	
+</body>
+</html>

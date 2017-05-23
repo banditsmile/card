@@ -1,0 +1,12 @@
+<span style="float:right">
+{$vd['thispage']}/{$vd['totlepage']} 
+<input type="button" value="上组" {$vd['prestate']} onclick="loadSupProduct({$vd['prepage']})" class="botton"/>
+<input type="button" value="下组" {$vd['nextstate']} onclick="loadSupProduct({$vd['nextpage']})" class="botton"/>
+</span>
+<select id="ubzsupinfo" name="ubzsupinfo" onchange="ShowSupInfo(this)" style="width:440px;">
+  <!--foreach($vd['items'] as $item) {-->
+  <option value="{$item['ubzpid']}|{$item['ubzptype']},{$item['ubzsupid']},<!--echo $item['ubzsupcheck']==0 ? '不需审核': '需要审核';-->,{$item['ubzsupprice']},{$item['ubzstocks']}" >
+    {$item['ubzpname']}
+  </option>
+  <!--}-->
+</select>

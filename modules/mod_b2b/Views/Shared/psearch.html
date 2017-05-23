@@ -1,0 +1,24 @@
+  <form name="sellhistory" method="get" action="index.php">
+  <table class="contentTable" border="1" style="border-top:0px;margin-bottom:5px;">
+  <tr>
+    <td>
+      搜索：<input type="text" name="keywords" id="keywords" class="search_input1" maxlength="34" value="<!--echo request('keywords');-->"/>
+          <select name="typesearch" id="typesearch" class="search_select">
+    	      <option value="product">搜索商品</option>
+    	      <option value="category"<!--if(request('typesearch')=='category'){--> selected<!--}-->>搜索分类</option>
+    	    </select>
+          <input type="submit" name="Submit222" value="确认搜索" class="button buttonfix">
+          <input type="checkbox" onclick="showprice(this);" onFocus="this.blur()" style="cursor:pointer" id="priceshow"/><label for="priceshow" style="cursor:pointer">显示进货价</label>
+          <input type="hidden" name="stype" value="pname"/>
+          <input type="hidden" name="m" value="mod_b2b"/>
+          <input type="hidden" name="c" value="product"/>
+    </td>
+  </tr>
+  </table>
+  </form>
+  <!--$pinyin = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","09");-->
+  <div class="listaz">
+    <!--foreach($pinyin as $pitem){-->
+    <a href='{$vd['root']}index.php?m=mod_b2b&c=Product&pinyin={$pitem}'><!--echo $pitem=='09' ? '0-9' : $pitem;--></a>
+    <!--}-->
+  </div>

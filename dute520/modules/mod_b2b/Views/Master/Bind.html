@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$s = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">管理员安全设置</span>
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    在IP，硬盘，网卡，CPU绑定中，如果您在绑定中去掉勾选，那么对应的序列号也会自动消除<br/><br/>
+    绑定说明：<br/>
+    本功能需要使用系统安全控件才可以，请不要阻止页面弹出的安全控件，否则，您点击获取按钮的时候，都会取得错误的信息，一般框里边会显示undefined<br/> 
+    <font color="#ff0000">提示：</font><br/>
+    如果您的浏览器阻止了控件，请按下边步骤操作<br/>
+    1.打开浏览器上边的工具<br/>
+    2.选择internet选项<br/>
+    3.安全 -> 自定义级别<br/>
+    4.把 “下载未签名的 ActiveX 控件”的选择项改成提示<br/>
+    5.应用<br/>
+    6.重新刷新页面安装系统弹出的ActiveX控件<br/><br/>
+    <font color="#ff0000">手机令牌说明：</font><br/>
+    需要您的空间支持openssl，而且您的手机申请了飞信，同时在后台您已经填写好手机对应的飞信密码才可以<br/>
+    在使用前，请先确认可以正常发送<br/>
+    测试方法如下：<br/>
+    1.开设一个管理员测试号<br/>
+    2.给测试管理员绑定手机(不要使用后台设置发送飞信的手机号)<br/>
+    3.使用这个管理员登陆<br/>
+    4.先输入管理员帐号<br/>
+    5.鼠标点击框的外部(或者点击密码框，令牌就会发出)<br/>
+    6.如果2-5分钟未见收到并且重复4，5步骤也没有收到，则您的空间配置有问题，发送令牌不正常<br/>
+    注意:有些主机商不支持openssl，您可以和空间商确认，如果空间是放在您的服务器上，您可以自行安装openssl
+  </p>
+</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看员工相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Master&a=BindSave">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">管理员基本信息</div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
+  <tr>
+    <td class="tablelt">管理员帐号 </td>
+    <td class="tablert"><b>{$s['adminName']}</b></td>
+  </tr>
+</table>
+<input type="hidden" value="{$s['adminName']}" name="adminname" id="adminname"/>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">密保绑定</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
+  <tr>
+    <td class="tablelt">密保序列号 </td>
+    <td class="tablert">
+      <input type="text" size="25" name="mibaoka" value="{$s['mibaoka']}"/>
+      <input type="checkbox" value="1" class="checkbox" name="mibaokacheck" style="vertical-align:middle" {#ToggleCheck($s['mibaokacheck'])}/> 绑定
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">
+  手机令牌
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    <font color="#ff0000">手机令牌说明：</font><br/>
+    需要您的空间支持openssl，而且您的手机申请了飞信，同时在后台您已经填写好手机对应的飞信密码才可以<br/>
+    在使用前，请先确认可以正常发送<br/>
+    测试方法如下：<br/>
+    1.开设一个管理员测试号<br/>
+    2.给测试管理员绑定手机(不要使用后台设置发送飞信的手机号)<br/>
+    3.使用这个管理员登陆<br/>
+    4.先输入管理员帐号<br/>
+    5.鼠标点击框的外部(或者点击密码框，令牌就会发出)<br/>
+    6.如果2-5分钟未见收到并且重复4，5步骤也没有收到，则您的空间配置有问题，发送令牌不正常<br/>
+    注意:有些主机商不支持openssl，您可以和空间商确认，如果空间是放在您的服务器上，您可以自行安装openssl
+  </p>
+</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
+  <tr>
+    <td class="tablelt">手机号 </td>
+    <td class="tablert">
+      <input type="text" size="25" name="mobile" value="{$s['mobile']}"/>
+      <input type="checkbox" value="1"  class="checkbox" name="mobilecheck" style="vertical-align:middle" {#ToggleCheck($s['mobilecheck'])}/> 绑定
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+<?php
+  $bindata = array(
+    array(
+      'title' => 'IP地址',
+      'tag'   => 'IP',
+      'name'  => 'ip',
+    ),
+    array(
+      'title' => '网卡MAC地址',
+      'tag'   => '网卡',
+      'name'  => 'mac',
+    ),
+    array(
+      'title' => '硬盘编码',
+      'tag'   => '硬盘',
+      'name'  => 'hde',
+    ),
+    array(
+      'title' => 'CPU编码',
+      'tag'   => 'CPU',
+      'name'  => 'cpu',
+    )
+  );
+  
+  $pc      = array('一','二','三','四','五');
+?>
+
+<!--foreach($bindata as $item){-->
+<div class="cwarpper1">
+<div class="ctitle">{$item['title']}</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
+  <!--for($i=0; $i<5; $i++){-->
+  <tr>
+    <td class="tablelt">{$item['tag']}(机器{$pc[$i]}) </td>
+    <td class="tablert">
+      <input type="text" size="25" name="{$item['name']}[]" id="{$item['name']}_{$i}" value="{$s[$item['name']][$i]}"/>
+      <input type="checkbox" class="checkbox"  value="{$i}" name="{$item['name']}check[]" style="vertical-align:middle" <!--if($s[$item['name']][$i] != '' && $s[$item['name'].'check'] == 1){-->checked<!--}-->/> 绑定
+      <input type="button" value="获取本机{$item['title']}" onclick="get{$item['name']}({$i})" class="button" style="cursor:pointer;width:150px;"> 
+    </td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+<!--}-->
+
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="submit" value="设 置 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+  </div>
+</div>
+</form>
+<object id="t1" codeBase="{$vd['sc']}tools/umebiz.cab" classid="CLSID:B8748B60-E34D-42AA-9309-8012CA4964AC" height=0 width=0 ></object>
+<script type="text/javascript">
+  var ctablenum = 1;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+var $ = function(id){
+  return document.getElementById(id);
+}
+function getip(i){
+  $("ip_"+i).value = "{$vd['ip']}";  
+}
+
+function getmac(i)
+{
+  $("mac_"+i).value = document.all.t1.GetMacAddr;
+}
+
+function getcpu(i)
+{
+  $("cpu_"+i).value = document.all.t1.GetCpuId;
+}
+
+function gethde(i)
+{
+  $("hde_"+i).value = document.all.t1.GetHDE;
+}
+</script>
+</body>
+</html>
+

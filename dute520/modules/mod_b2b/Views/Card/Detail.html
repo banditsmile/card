@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=card&by=1" title="卡密列表"><font color="#000">卡密列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">卡密信息修改</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form method="post" action="index.php?m=mod_b2b&c=card&a=update" name="cform" id="cform">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">编辑卡密</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">卡号</td>
+    <td class="tablert"><input type="text" size="25" name="ubzcardnumber" value="{$vd['item']['cardnumber']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">修改密码</td>
+    <td class="tablert">
+    <input type="text" size="25" name="ubzcardpwd"/>
+      (留空的话表示不更改密码)</td>
+  </tr>
+  <tr>
+    <td class="tablelt">卡状态</td>
+    <td class="tablert">
+      <select name="cardok">
+        {#Option($vd['cardstate'], $vd['item']['cardok'])}
+      </select>
+    </td>
+  </tr>
+  <tr>
+      <td class="tablelt">后台充值密码</td>
+      <td class="tablert"><input type="password" id="mytradepwd" name="mytradepwd" value="" style="width:100px"/></td>
+    </tr>
+  <tr>
+    <td class="tablelt"></td>
+    <td class="tablert" style="height:80px">
+      <input type="hidden" value="{$vd['item']['id']}" name="ubzid"/>
+      <input type="hidden" value="{$vd['item']['pid']}" name="ubzpid"/>
+      <input type="submit" value="修 改 &gt;&gt;" class="bigbtn"/>
+      <input type="reset" value="&lt;&lt; 重 置" class="bigbtn"/>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+    
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  var ctablenum = 1;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setTableInput();
+</script>
+</body>
+</html>

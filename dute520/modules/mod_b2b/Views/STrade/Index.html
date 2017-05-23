@@ -1,0 +1,157 @@
+<!--if($vd['table'] == 0){-->
+{load(head)}
+<body>
+
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=STrade&{$vd['op']}" title="点击重新获取交易列表资料" onclick="loadDisp(1)"><font color="#000">交易列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个) <span style="font-size:7px;">>></span> 颖先卡购商户余额 <font color="#ff0000"><b>{$vd['remain']}</b></font> 元</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看交易相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div style="float:left;padding-top:1px;padding-left:10px;">
+    <a href="http://user.umebiz.com/member" target="_blank"><u><font color="#ff6c00">颖先卡购商户余额</font></u></a> <span style="font-size:21px;color:#ff0000;font-weight:bold">{$vd['remain']}</span> 元   <a href="http://user.umebiz.com/member/login.asp" target="_blank"><u><font color="#ff6c00">充值</font></u></a>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=STrade" method="post" style="margin:0px 0px 0px 0px;">
+    <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    到 <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    <input type="submit" value="搜索" style="vertical-align:middle;" class="button"/><input disabled type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="dateDialog('startdate')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px"/>
+    </form>
+  </div>
+</div>
+
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=STrade" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="ordno" id="ordno" class="checkbox" onFocus='this.blur()'/> 订单号<br/>
+  <input type="checkbox" name="id[]" value="orddate" id="orddate" class="checkbox" onFocus='this.blur()'/> 交易时间<br/>
+  <input type="checkbox" name="id[]" value="expend" id="expend" class="checkbox" onFocus='this.blur()'/> 支出<br/>
+  <input type="checkbox" name="id[]" value="income" id="income" class="checkbox" onFocus='this.blur()'/> 收入<br/>
+  <input type="checkbox" name="id[]" value="remain" id="remain" class="checkbox" onFocus='this.blur()'/> 帐户余额<br/>
+  <input type="checkbox" name="id[]" value="view" id="view" class="checkbox" onFocus='this.blur()'/> 查看交易<br/>
+  <input type="checkbox" name="id[]" value="remarks" id="remarks" class="checkbox" onFocus='this.blur()'/> 说明<br/>
+  <input type="checkbox" name="id[]" value="uidb" id="uidb" class="checkbox" onFocus='this.blur()'/> 供货商<br/>
+  <input type="checkbox" name="id[]" value="uida" id="uida" class="checkbox" onFocus='this.blur()'/> 进货商<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" disabled id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/>
+    </td>
+<!--//thead-->
+<td width="150px"><b>订单号</b></td>
+<td width="140px"><b>交易时间</b></td>
+<td width="65px"><b>支出</b></td>
+<td width="65px"><b>收入</b></td>
+<td width="70px"><b>帐户余额</b></td>
+<td width="22px"><img src="{$vd['sc']}images/icon_view.gif"/></td>
+<td width="250px"><b>说明</b></td>
+<td width="60px"><b>供货商</b></td>
+<td width="60px"><b>进货商</b></td>
+<!--//endthead-->
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=STrade&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" disabled name="id[]" id="idchk_{$item['ubzordno']}" class="checkbox" value="{$item['ubzordno']}" onclick="CheckThis(this)" onFocus='this.blur()'/>
+    </td>
+<!--//tbody-->
+<td width="150px"><!--if($item['ubzuida']==$item['ubzuidb']){-->{$item['ubzordno']}<!--}else{--><a href="javascript:openScript('index.php?m=mod_b2b&c=SOrder&a=detail&ordno={$item['ubzordno']}','',692,500)" title="查看订单" onFocus="this.blur()">{$item['ubzordno']}</a><!--}--></td>
+<td width="140px">{$item['ubztrddate']}</td>
+<td width="65px"><!--if($item['ubzincome'] != $item['ubzexpend'] && $item['ubzexpend'] != 0){-->- {$item['ubzexpend']}<!--}else if($item['ubzexpend'] == 0 && $item['ubzincome'] == 0){-->- {$item['ubzexpend']}<!--}--></td>
+<td width="65px"><!--if($item['ubzincome'] != $item['ubzexpend'] && $item['ubzincome'] != 0){-->+ {$item['ubzincome']}<!--}else if($item['ubzexpend'] == 0 && $item['ubzincome'] == 0){-->+ {$item['ubzincome']}<!--}--></td>
+<td width="70px">{$item['ubzremain']}</td>
+<td width="22px"><!--if($item['ubzuida']==$item['ubzuidb']){--><font color="#cccccc">无</font><!--}else{--><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ubzordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a><!--}--></td>
+<td width="250px"><nobr><samp title="{$item['ubztrddcrp']}">{$item['ubztrddcrp']}</samp></nobr></td>
+<td width="60px"><a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzuuid={$item['ubzuidb']}&ubzordno={$item['ubzordno']}','',692,390);">{$item['ubzuidb']}</a></td>
+<td width="60px"><a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzuuid={$item['ubzuida']}&ubzordno={$item['ubzordno']}','',692,390);">{$item['ubzuida']}</a></td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table'] == 0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=STrade&a=deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=STrade&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=STrade&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(0,0);
+totleRows = {$vd['totlerow']};
+thisdel = 0;
+onedel  = 0;
+sc = "{$vd['sc']}";
+statistics = 0;
+var resizeidx = 7;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('ordno','orddate','expend','income','remain','view','remarks','uidb','uida');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

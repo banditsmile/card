@@ -1,0 +1,84 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 业务员管理 >> 业务员业绩查询 </span></div>
+	<div id="hearder"><span>业务员业绩查询</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="history" method="get" action="index.php">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">选择业务员：</td>
+		<td width="78%" align="left" class="tableright1">
+		<select name="saleid">
+		<option value="">所有业务员</option>
+		<!--foreach($vd['sales'] as $item){-->
+		<option value="{$item['id']}" <!--if($vd['saleid'] == $item['id']){--> selected<!--}-->>{$item['realname']}({#DisplayCode($item['id'],3)})</option>
+		<!--}-->
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询时间段：</td>
+		<td align="left" class="tableright1">
+    <input type="text" name="startdate" value="{$vd['startdate']}" class="input" id="startdate"/> 
+    <strong>至</strong>&nbsp;<input type="text" name="enddate" value="{$vd['enddate']}" class="input" id="enddate"/>
+    </td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1">
+			<input type="hidden" name="m" value="mod_agent"/> 
+			<input type="hidden" name="c" value="sales"/> 
+			<input type="hidden" name="a" value="Achievement"/> 
+			<input type="submit" name="Submit" value="确认查询" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</td>
+		</tr>
+		</table>
+		</form>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr>
+		<td width="10%" class="heardertop1">订单时间</td>
+		<td width="26%" class="heardertop1">购买商品</td>
+		<td width="10%" class="heardertop1">下属客户</td>
+		<td width="8%" class="heardertop1">购买单价</td>
+		<td width="8%" class="heardertop1">数量</td>
+		<td width="8%" class="heardertop1">我的进价</td>
+		<td width="8%" class="heardertop1">销售金额</td>
+		<td width="8%" class="heardertop1">业务员</td>
+		<td width="6%" class="heardertop1">比例</td>
+		<td width="8%" class="heardertop1">业绩金额</td>
+		</tr>
+		<!--$cprice_sum = 0;$dollars_sum = 0;$qty_sum = 0;$selldollars_sum = 0;foreach($vd['items'] as $item) {-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td>{$item['orddate']}</td>
+		<td align=left>{$item['pname']}</td>
+		<td>{#DisplayCode($item['cid'])}</td>
+		<td><!--if($vd['canseeprice']){-->{$item['cprice']}<!--}else{-->--<!--}--></td>
+		<td><strong>{$item['qty']}</strong>个</td>
+		<td><!--if($vd['canseeprice']){-->{$item['bossprice']}<!--}else{-->--<!--}-->&nbsp;</td>
+		<td>{$item['dollars']}</td>
+		<td>{#DisplayCode($item['saleid'], 3)}</td>
+		<td><!--echo $item['sellscale']* 100;-->%</td>
+		<td>{$item['selldollars']}</td>
+		</tr>
+		<!--$cprice_sum=$cprice_sum+$item['cprice']*$item['qty'];$dollars_sum=$dollars_sum+$item['dollars'];$qty_sum=$qty_sum+$item['qty'];$selldollars_sum=$selldollars_sum+$item['selldollars'];}-->
+		
+		<tr class="thr"><td colspan=4>本页合计：</td><td>{$qty_sum}</td><td>&nbsp;</td><td><!--if($vd['canseeprice']){echo round($dollars_sum,3);}else{-->--<!--}--></td><td colspan=2>&nbsp;</td><td><!--echo round($selldollars_sum,3);--></td></tr>
+		<tr class="thr"><td colspan=4>查询合计：</td><td>{$vd['tradedata']['qty_sum']}&nbsp;</td><td>&nbsp;</td><td><!--if($vd['canseeprice']){echo round($vd['tradedata']['dollars_sum'],3);}else{-->--<!--}--></td><td colspan=2>&nbsp;</td><td><!--echo round($vd['tradedata']['selldollars_sum'],3);--></td></tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

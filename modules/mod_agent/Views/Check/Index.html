@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>员工结账记录</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<script language="javascript">
+function openScript(url,name,width,height)
+{
+var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+</script>
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> 员工结账记录</h2>
+  </div>
+  <ul>
+      <li><a href="index.php?m=mod_agent&c=check&a=Add">员工结帐登记</a></li>
+    <li><a href="" class="on">员工结帐记录</a></li>
+  </ul>
+</div>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="checkouthistory" method="get" action="index.php">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr style="display:none">
+		  <td class="table1_left">关键字： </td>
+		<td width="78%" class="tableright1"><div align="left">
+		  <input type="text" name="keywords" size="20" class="input" value="">
+		  </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">查询调价： </td>
+		<td class="tableright1">
+		  <div align="left">
+		    <select name="stype">
+		      
+        {#Option($vd['tradetypes'], $vd['tradetype'])}
+      
+		      </select>
+          </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">选择员工：</td>
+		<td class="tableright1">
+			<div align="left">
+			  <select name="keywords">
+			    <option value="" selected>所有员工(含总帐号)</option>
+			    <!--foreach($vd['staff'] as $item){-->
+		          <option value="{$item['staffid']}" 
+			    <!--if(intval(request('keywords'))==$item['staffid']){-->
+			     selected 
+			    <!--}-->
+			    >{$item['realname']}({#DisplayCode($item['staffid'],2,0)})
+			    </option>
+		          <!--}-->
+		        </select>
+            </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">查询时间段： </td>
+		<td class="tableright1">
+          <div align="left">
+            <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+            
+                  <strong>至</strong>&nbsp;
+            <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>    
+          </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left"></td>
+		<td class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="m" value="mod_agent" />
+			  <input type="hidden" name="c" value="Check" />
+			  <input type="submit" name="submit" value="确认查询" class="tijiao_input" tabindex="16">
+              <input type="reset" name="reset" value="重置查询" class="fanhui_input" tabindex="17">
+</div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+</table>
+    <p>&nbsp;</p>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+      <tr>
+        <th width="10%" class="heardertop1">结帐时间</td>
+        <th width="10%" class="heardertop1">交班对像</td>
+        <th width="10%" class="heardertop1">接班对像</td>
+        <th width="8%" class="heardertop1">帐面金额</td>
+        <th width="8%" class="heardertop1">交款金额</td>
+        <th width="12%" class="heardertop1">开始时间</td>
+        <th width="12%" class="heardertop1">结束时间</td>
+        <th width="15%" class="heardertop1">结帐备注</td>
+        <th width="8%" class="heardertop1">当时余额</td>
+        <th width="7%" class="heardertop1">操作</td>
+      <!--if(count($vd['items']) > 0){-->
+      <!--$ar_sum=0;$ap_sum=0;foreach($vd['items'] as $item) {-->
+	  	  	    <tr class="trd">
+        <td>{$item['createdate']}</td>
+        <td><!--if($item['staffid']>0){-->
+          {$item['staffname']}(员工)
+            <!--}else{-->
+          总账号
+          <!--}--></td>
+        <td><!--if($item['otherid']>0){-->
+          {$item['otherstaff']}(员工)
+            <!--}else{-->
+          总账号
+          <!--}--></td>
+        <td>{$item['ar']}</td>
+        <td>{$item['ap']}</td>
+        <td>{$item['startdate']}</td>
+        <td>{$item['enddate']}</td>
+        <td align="left">{$item['remarks']}&nbsp;</td>
+        <td><!--if($item['remain']===null){-->
+          --
+            <!--}else{-->
+          {$item['remain']}
+          <!--}--></td>
+        <td><!--if(0){-->
+            <a href="javascript:openScript('#','',690,500)"> <font color="#0000ff">打印</font> </a>
+            <!--}else{-->
+            <!--if(isset($vd['agent'][9]) && $vd['agent'][9] > 0){-->
+            <!--}else{-->
+            <a href="index.php?m=mod_agent&amp;c=check&amp;a=del&amp;id={$item['id']}"> <font color="#0000ff">删除</font> </a>
+            <!--}-->
+            <!--}-->
+        </td>
+      </tr>
+      <!--$ar_sum=$ar_sum+$item['ar'];$ap_sum=$ap_sum+$item['ap'];}-->
+      <tr class="thr">
+        <td colspan="2" align="center">本页合计：</td>
+        <td align="center">{$ar_sum}</td>
+        <td align="center">{$ap_sum}</td>
+        <td colspan="6">&nbsp;</td>
+      </tr>
+      <tr class="thr">
+        <td colspan="2" align="center">查询合计：</td>
+        <td align="center">{$vd['checkdata']['ar']}</td>
+        <td align="center">{$vd['checkdata']['ap']}</td>
+        <td colspan="6">&nbsp;</td>
+      </tr>
+      <!--}else{-->
+      <tr class="stline">
+        <td colspan="10" align="center">对不起，没有任何记录！</td>
+      </tr>
+      <!--}-->
+    </table>
+	 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+	<div id="page" align="right"> {load(fpage)} </div>
+</body>
+</html>

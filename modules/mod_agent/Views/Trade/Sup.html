@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<head>
+<title>自有商品收入报表查询</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../index/css/common.css" type="text/css" rel="stylesheet">
+<link href="../index/css/page.css" type="text/css" rel="stylesheet">
+		<form name="sellhistory" method="post" action="index.php?m=mod_agent&c=trade&tpl=sup&tradetype=12&{$vd['op']}">
+		  <div class="new_qie">
+            <div class="new_qie2">
+              <h2>自有商品收入报表查询</h2>
+            </div>
+		    <ul><li><a href="" class="on">自有商品收入报表查询</a></li>
+	        </ul>
+	      </div>
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%" class="table1_left">查询类型：</td>
+		<td width="78%" align="left" class="tableright1">
+			<div align="left">
+			  <select name="tradetype" id="tradetype" class="search_selectlong">
+			    
+    	{#Option($vd['tradetypes'], $vd['tradetype'])}
+    	
+		      </select>
+	      </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">查询时间段：</td>
+		<td align="left" class="tableright1">
+          <div align="left">
+          <input type="text" name="startdate" value="{$vd['startdate']}" class="input" id="startdate"/>
+          <strong>至</strong>&nbsp;
+          <input type="text" name="enddate" value="{$vd['enddate']}" class="input" id="enddate"/>
+          </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">&nbsp;</td>
+		<td align="left" class="tableright1"><div align="left">
+		  <input type="submit" name="Submit222" value="确认查询" class="tijiao_input"> 
+		  <input type="reset" name="reset" value="重置查询" class="fanhui_input">
+		  </div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+		<tr class="tabletitle">
+      <th width="15%" class="heardertop1">交易类型</td>
+      <th width="15%" class="heardertop1">收入({$vd['lang']['moneyunit']})</td>
+      <th width="15%" class="heardertop1">支出({$vd['lang']['moneyunit']})</td>
+      <th width="15%" class="heardertop1">变化后({$vd['lang']['moneyunit']})</td> 
+      <th width="10%" class="heardertop1">操作员</td>
+      <th width="15%" class="heardertop1">交易日期</td>
+      <th width="15%" class="heardertop1">交易详细</td>
+    <!--$income=0;$outcome=0;foreach($vd['items'] as $item) {-->
+      <tr class="trd">
+      <td>{#TradeType($item['tradetype'])}</td>
+      <td><!--if($item['income'] != ''){ echo '+ '.round($item['income'], 3);}--></td>
+      <td><!--if($item['outcome'] != ''){ echo '- '.round($item['outcome'], 3);}--></td>
+      <td><font color="#ff0000">{$item['fat']}</font></td> 
+      <td>{#Operator($vd['agent'][7], $item['operator'], $vd['agent'][9], $item['otherside'])}</td>
+      <td>{$item['createdate']}</td>
+      <td>
+      	<!--if($item['outcome']>0){-->
+      	{$item['content']}
+      	<!--}else{-->
+        <a href="index.php?m=mod_agent&c=AOrder&a=detail&ordno={$item['ordno']}">
+        <font color="#0000ff">查看</font>
+        </a>
+        <!--}-->
+      </td>
+    </tr>
+    <!--$income=$income+$item['income'];$outcome=$outcome+$item['outcome'];}-->
+    <tr class="thr">
+      <td align="center">
+        本页统计</td>
+      <td align="center">
+        <!--if($income != ''){ echo round($income, 3);}-->&nbsp;</td>
+      <td align="center">
+        <!--if($outcome != ''){ echo round($outcome, 3);}-->&nbsp;</td>
+      <td colspan="5">&nbsp;</td>
+    </tr>
+    <tr class="thr">
+      <td align="center">
+        查询统计</td>
+      <td align="center">
+        <!--if($vd['record']['income'] != ''){ echo round($vd['record']['income'], 3);}-->&nbsp;</td>
+      <td align="center">
+        <!--if($vd['record']['outcome'] != ''){ echo round($vd['record']['outcome'], 3);}-->&nbsp;</td>
+      <td colspan="6">&nbsp;</td>
+    </tr>
+		</table>
+		 <div align="right">
+		   <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+		 {load(fpage)}
+         <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+         </div>
+	    <script type="text/javascript">
+<div align="right"></html>
+</div>

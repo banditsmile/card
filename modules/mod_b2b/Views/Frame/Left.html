@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>直销商_头部</title>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Script Language="JavaScript">
+function $(id){return document.getElementById(id);}
+	function Div(ID,num){ 
+		if(num==1){
+			$(ID).style.display="";
+		}else{
+			$(ID).style.display="none";
+		}
+	}
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+</Script>
+		</div>
+		<div class="csright"></div>
+	</div>
+<div id="top">
+		<div id="topleft"><span><img src="{$vd['content']}images/mylogo.gif" width="220" height="68"></span></div>
+<div id="topright">
+		<div id="mebinfo">
+          <div style="margin-top:20"><br />
+            
+            欢迎您，{$vd['agent'][1]}：
+            <a href="index.php?m=mod_agent&amp;c=Home" target="main"> 我的账户 </a><a href="index.php?m=mod_agent&amp;c=Home" target="main"></a><em>| </em><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main">员工账户</a><a href="index.php?m=mod_agent&amp;c=staff&amp;nrows=500" target="main"></a><em> | </em><a a href="index.php?m=mod_agent&c=security&a=check" target="main">安全设置 </a><em>|</em><a a href="index.php?m=mod_agent&amp;c=trade&amp;tpl=history" target="main"> 资金明细 </a><em>|</em><a href="index.php?m=mod_agent&amp;c=loan&amp;a=Create" target="main"> 借款申请 </a><em>| </em><a href="index.php?m=mod_agent&c=Messenger" target="main"><b>站内短信（<span class="ye1" id="msgn">0</span>）条</b></a><em>|</em><a href="index.php?m=mod_agent&amp;c=Complaint" target="main"> 投诉反馈</a><em> |</em><a href="{$vd['root']}index.php?m=mod_b2b&amp;a=logout" target="_top"><span class="exit"> 退出</span></a><br />
+            <br />
+            <br />
+			
+          </div>
+		<p></p></div>
+			
+		</div>
+</div>
+			</div><div style="float:right" ><div id="mebinfo">当前系统：
+		  <select name="select" size="1" id="select" onchange="MM_jumpMenu('parent',this,0)">
+            <option value="index.php?m=mod_b2b&amp;c=Frame" selected="selected">直销商系统</option>
+            <option value="index.php?m=mod_b2b&amp;c=Dealer">经销商系统</option>
+            <option value="index.php?m=mod_b2b&amp;c=Dealergong">供货商系统</option>
+          </select>　
+			  
+		  </a></font></span></font>
+			    <a href="{$vd['root']}index.php?m=mod_b2b&a=logout" target="_top"></a>　<a href="#" onMouseOver="Div('id',1)" onMouseOut="Div('id',0)"><img src="{$vd['content']}images/icon_cs.jpg" vspace="3" border="0"></a></div>
+			</div></div>
+	
+	<script type="text/javascript">
+		function MsgAlert(){
+      var xmlhttptop;
+      var obj = $("msgn");
+      var content = "错误！"
+      try{
+        xmlhttptop=new XMLHttpRequest();
+      }
+      catch(e){
+        xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttptop.onreadystatechange=function(){
+        if (xmlhttptop.readyState==4){
+          if (xmlhttptop.status==200){
+            var data=xmlhttptop.responseText;
+            obj.innerHTML = data;
+            if(data > 0)
+            {
+            	alert("您有" + data + "条未读短信息？");
+            	mainobj  = document.all ? window.parent.frames["main"] : window.parent.document.getElementById("main").contentWindow;
+              mainobj.location.href="index.php?m=mod_agent&c=Messenger";
+            }
+          }
+        }
+      }
+      xmlhttptop.open("post", "{$vd['root']}index.php?m=mod_b2b&c=Frame&a=Msg", true);
+      xmlhttptop.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttptop.send('');
+    }
+    MsgAlert();
+    setInterval(MsgAlert, 60000);
+	</script>
+</body>
+</html>

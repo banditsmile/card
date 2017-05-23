@@ -1,0 +1,151 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 下级客户价格管理 >> 模板价格设定</span></div>
+  
+	<div id="hearder"><span>当前模板：{$vd['name']}</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="sellhistory" method="get" action="index.php">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">商品名称</td>
+		<td width="78%" align="left" class="tableright1">
+			<input type="hidden" name="pricetpl" value="{$vd['pricetpl']}"/>
+      <input type="hidden" name="name" value="{$vd['name']}"/>
+      <input type="hidden" name="m" value="mod_b2b"/>
+      <input type="hidden" name="c" value="product"/>
+      <input type="hidden" name="a" value="RankTplPrice"/>
+			<input type="hidden" name="stype" value="pname"/>
+			<input type="text" name="keywords" size="30" maxlength="10" class="input" dataType="Integer" msg="请选择客户" value=""></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1"><input type="submit" name="Submit222" value="确认查询" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+ </td>
+ </tr>
+ </table>
+ <br/>
+ <div id="hearder"><span>按公式设置全部：</span></div>
+ <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="sellhistory" method="post" action="index.php?m=mod_b2b&c=Price&&a=TplPriceQuickSave&pricetpl={$vd['pricetpl']}">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+   		<td width="22%" class="tableleft1">按公式设置全部：</td>
+   		<td width="78%" align="left" class="tableright1">
+   		  <select name="priceplan"  onchange="set(this)">
+        	<option value="1"selected>方案一(利润折扣)</option>
+        	<option value="2">方案二(直接累加)</option>
+        	<option value="3">方案三(面值折扣)</option>
+        </select>
+         价格 = 
+        <input name="discout" type="text" size="5" value="3" class="input" style="width:50px;"/>
+        <span id="std">% x (面值 - 我的进货价) + 我的进货价</span>
+        <input type="hidden" name="name" value="{$vd['name']}"/>
+      </td>
+    </tr>
+    <tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1"><input type="submit" name="Submit222" value="确认设置" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br/>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form method="post" action="index.php?m=mod_b2b&c=Price&a=TplPriceSave" >
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr class="tabletitle">
+      <td width="40%" class="heardertop1">
+        商品名称</td>
+      <td width="10%" class="heardertop1">
+        商品类型</td>
+      <td width="12%" class="heardertop1">
+        面值({$vd['lang']['moneyunit']})</td>
+      <td width="13%" class="heardertop1">
+        进货价({$vd['lang']['moneyunit']})</td>
+      <td width="15%" class="heardertop1">
+        设定价格</td> 
+      <td width="10%" class="heardertop1">
+        差价</td> 
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td align="left">{$item['pname']}</td>
+      <td>{#ProductType($item['ptype'])}</td>
+      <td>{$item['listprice']}</td>
+      <td>{$item['cprice']}</td>
+      <td><input type="hidden" name="pid[]" value="{$item['pid']}"/><input type="hidden" name="cprice_{$item['pid']}" value="{$item['cprice']}"/><input type="text" size="8" name="price_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/></td> 
+      <td><!--if(isset($vd['parray'][$item['pid']])){echo round(($vd['parray'][$item['pid']]-$item['cprice']),3);}else{echo '--';}--></td>
+    </tr>
+    <!--}-->
+    </table>
+    </td>
+	</tr>
+	</table>
+	<div id="page">{load(fpage)}</div>
+	<input type="hidden" name="pricetpl" value="{$vd['pricetpl']}"/>
+  <input type="hidden" name="name" value="{$vd['name']}"/>
+	<input type="submit" name="Submit" value="保存设定" class="button"> <input type="reset" name="reset" value="重新填写" class="button">
+	</form>
+<script type="text/javascript">
+function showprice(obj)
+{
+	val = obj.checked ? 1 : 0;
+	setCookie('priceshow', val, 1);
+	to = document.getElementById("productTable");
+	len = to.rows.length - 2;
+  for(var i=0;i < len; i++)
+  to.rows[i].cells[3].style.display = obj.checked ? "" : "none";
+}
+
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+
+if(getCookie('priceshow') == 1)
+{
+	//obj = $("priceshow");
+	//obj.checked = true;
+	//showprice(obj)
+}
+
+var $ = function(id){
+	return document.getElementById(id);
+}
+
+function set(obj)
+{
+	val = obj.options[obj.selectedIndex].value;
+	str = "";
+	if(val == "1")
+	{
+		str = "% x (面值 - 我的进货价) + 我的进货价";
+	}
+  else if(val == "2")
+  {
+  	str = "{$vd['lang']['moneyunit']} + 我的进货价";
+  }
+  else
+	{
+		str = "% x 面值 + 我的进货价";
+	}
+	
+	$("std").innerHTML = str;
+}
+</script>
+</body>
+</html>

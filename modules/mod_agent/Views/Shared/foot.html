@@ -1,0 +1,44 @@
+<script type="text/javascript">
+  window.onload = window.onresize = function(){
+    docWidOrg = document.documentElement.clientWidth;  
+
+    if(docWidOrg < 1003)
+    {
+      document.body.style.width = 1003 + "px";
+      docWidOrg = 1003;
+    }
+    else
+    {
+      document.body.style.width = "100%";
+    }
+
+    if(document.getElementById("ubMid"))
+    {
+      docWid = docWidOrg * 0.93 - 258 - 180 - 18;
+      document.getElementById("ubMid").style.width = docWid + "px";
+    }
+    
+    if(document.getElementById("ubtwoRight") && navigator.appVersion.indexOf("MSIE 6.0") < 0)
+    {
+      docWid = docWidOrg * 0.93 - 180 - 10;
+      document.getElementById("ubtwoRight").style.width = docWid + "px";
+    }
+  };
+</script>
+</div>
+</div>
+<div class="foot">
+		<div class="gs">
+			<a href=http://www.xybss.com.cn/ target=_bank><img src={$vd['content']}images/gongshang.gif border=0 width=35 height=42></a>
+      <a href=http://www.xybss.com.cn// target=_bank><img src={$vd['content']}images/wangjing.gif border=0 width=42 height=42></a>
+		</div>
+	<div class="webinfo">
+		版权所有  2004-2011 {$vd['web']['webname']}<br/>地址：{$vd['web']['address']}<br/>ICP备案号：<a href="http://www.miibeian.gov.cn" target="_blank"">{$vd['web']['beian']}</a><br/>{$vd['sips']}
+	</div>
+	<input type="hidden" id="platform" value="b2b"/>
+  <script src="{$vd['root']}{$vd['sc']}js/web.js" type="text/javascript"></script>
+	</div>
+</div>
+
+</body>
+</html>

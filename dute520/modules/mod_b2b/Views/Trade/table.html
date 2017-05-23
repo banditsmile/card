@@ -1,0 +1,53 @@
+<!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=trade&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--$profit = 0;$sum_income=0;$sum_outcome=0;foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['tid']}" class="checkbox" value="{$item['tid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+    <td width="140px">{$item['createdate']}</td>
+    <td width="65px">+ {$item['outcome']}</td>
+    <td width="65px">- {$item['income']}</td>
+    <td width="65px">{$item['income']}</td>
+<!--//tbody-->
+<td width="50px"><a href="index.php?m=mod_b2b&c=trade&tpl=agent&aid={$item['aid']}"><font color="#ff0000">{#DisplayCode($item['aid'])}</font></a></td>
+<td width="60px">{$item['fbt']}</td>
+<td width="60px">{$item['fat']}</td>
+<td width="35px"><!--if($item['state'] > 0){--><font color="#0000ff">有效</font><!--}else{--><font color="#cccccc">无效</font><!--}--></td>
+<td width="60px">{$item['qty']}</td>
+<td width="22px"><!--if($item['tradetype'] == 99){--><font color="#2e2e2e">无</font><!--}else{--><a href="index.php?m=mod_b2b&c=order&a=detail&ordno={$item['ordno']}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a><!--}--></td>
+<td width="250px"><nobr><samp title="{$item['content']}">{$item['content']}</samp></nobr></td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--if($item['state'] > 0){-->
+  <!--$profit=$profit+$item['income'];$sum_income=$sum_income+$item['income'];$sum_outcome=$sum_outcome+$item['outcome'];}-->
+  <!--}-->
+  <!--if($vd['totlerow'] > 0) {-->
+  <tr>
+    <td colspan="2" align="center">本页统计</td>
+    <td width="65px"><!--echo round($sum_outcome,2);--></td>
+    <td width="65px"><!--echo round($sum_income,2);--></td>
+    <td width="65px"><!--echo round($profit,2);--></td>
+    <td class="endtd"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">查询统计</td>
+    <td width="65px">{$vd['record']['outcome']}</td>
+    <td width="65px">{$vd['record']['income']}</td>
+    <td width="65px">{$vd['record']['income']}</td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>

@@ -1,0 +1,86 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class='ubtwoRight'>
+  <div id="result" align="center">
+    <div class="col"><br/><img src="{$vd['content']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等正在<b>提卡</b>中(如果是充值商品，系统则正在为您<b>充值</b>中)...</font></div>
+  </div>
+</div>
+{load(foot)}
+<script type="text/javascript">
+var xmlhttp;
+
+loadXMLDoc();
+
+function loadXMLDoc()
+{
+  xmlhttp=null;
+  var url=null;
+  
+  url="BillNo="+escape("{$vd['url']['BillNo']}");
+  url=url+"&PayWay="+escape("{$vd['url']['PayWay']}");
+  url=url+"&Amount="+escape("{$vd['url']['Amount']}");
+  url=url+"&Signature="+escape("{$vd['url']['Signature']}");
+  url=url+"&Succ="+escape("{$vd['url']['Succ']}");
+  url=url+"&BuyerIP="+escape("{$vd['url']['BuyerIP']}");
+
+  // 针对 Mozilla等浏览器的代码：
+  if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+  if (xmlhttp!=null)
+  {
+    xmlhttp.onreadystatechange=state_Change;
+    xmlhttp.open("post", "index.php?m=mod_b2b&c=order&a=respond", true);
+    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.send(url);
+  }
+  else
+  {
+    alert("您的浏览器不支持XMLHTTP")
+  }
+}
+
+function state_Change()
+{
+  // 如果 xmlhttp 显示为 "loaded"
+  if (xmlhttp.readyState==4)
+  {
+    // 如果为 "OK"
+    if (xmlhttp.status==200)
+    {
+      // 其他代码..
+      var ackdata=xmlhttp.responseText;
+      ackparase(ackdata);
+    }
+    else
+    {
+      window.location.reload();
+      document.getElementById("result").innerHTML="<div class='col'>处理失败,您可以刷新本页继续等待结果或者直接联系管理员</div>";
+    }
+  }
+}
+
+function ackparase(ackdata)
+{
+  //解析服务器返回的数据
+  if (ackdata == 18)
+  {
+    setTimeout("loadXMLDoc()",1500);
+  }
+  else
+  {
+    document.getElementById("result").innerHTML=ackdata;
+  }
+}  
+</script>
+</body>
+</html>

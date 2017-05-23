@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<title>联系信息</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+body{padding:5px;}
+td{height:22px;}
+</style>
+</head>
+<body>
+<!--$item=$vd['item'];-->
+<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6;border:1px #EAEAEA solid">
+  <tr>
+    <td height="35"  colspan="2" class="listhead texttle">供货商品详细信息</td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商户编号：</td>
+    <td width="68%" style="padding: 5px">{$item['ubzuid']}
+    <font color="#ff0000"></font>
+    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom={$item['ubzuid']}"><font color="#00875A">给商户留言</font></a> /
+    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">查看是否属实</font></a> /
+    <a href="index.php?m=mod_b2b&c=msg&a=create&ubzmfrom=10086&ubzmtitle=投诉供货商{$item['ubzuid']}的{$item['ubzpname']}"><font color="#00875A">向系统举报</font></a> /
+    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">如何认证</font></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商户总供货保证金：</td>
+    <td width="68%" style="padding: 5px">
+    <span class="dollars">{$item['ubzsupmoney']} 元 </span> 
+    保证金级别：<span class="dollars">{$item['ubzsuplv']}</span>级
+    <a href="http://www.exikameng.com" target="_blank"><font color="#00875A">什么是供货保证金?</font></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商品编号：</td>
+    <td width="68%" style="padding: 5px">{$item['ubzpid']}</td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商品名称：</td>
+    <td width="68%" style="padding: 5px">{$item['ubzpname']}</td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商品类型：</td>
+    <td width="68%" style="padding: 5px"><font color='#ff6c00'>{#ProductType($item['ubzptype'])}</font></td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">商品说明：</td>
+    <td width="68%" style="padding: 5px">
+    <textarea rows="6" name="ubzdcrp" cols="60">{$item['ubzdcrp']}</textarea>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">供货信息：</td>
+    <td width="68%" style="padding: 5px">
+    供货价格：<span class="dollars">{$item['ubzsupprice']} 元 </span>
+    {#SupCheck($item['ubzsupcheck'])}
+    最低售价：{$item['ubzctrlprice']}
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">官方网址：</td>
+    <td width="68%" style="padding: 5px">
+    <a href="{$item['ubzweb']}" target="_blank">{$item['ubzweb']}</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%" align="right" style="padding: 5px">充值网址：</td>
+    <td width="68%" style="padding: 5px">
+    <a href="{$item['ubzczweb']}" target="_blank">{$item['ubzczweb']}</a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

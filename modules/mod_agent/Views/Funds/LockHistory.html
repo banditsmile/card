@@ -1,0 +1,52 @@
+{load(fhead)}
+</head>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 自有商品管理 >> 商品发布与管理</span></div>
+	<!--$act=request('thisaction');-->
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=lock';"><span class="xg">资金锁定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory';"<!--if($act==0){--> class="hover"<!--}-->><span class="jl">全部记录</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory&thisaction=2';"<!--if($act==2){--> class="hover"<!--}-->><span class="jl">冻结记录</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=funds&a=LockHistory&thisaction=1';"<!--if($act==1){--> class="hover"<!--}-->><span class="jl">解冻记录</span></li>
+	</ul>
+	</div>
+	<table width="98%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="form1" method="post" action="?Action=ToUpDisplay">
+		<table class="table" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr class="tabletitle">
+      <td width="10%" class="heardertop1">
+        操作类型</td>
+      <td width="10%" class="heardertop1">
+        操作金额</td>
+      <td width="45%" class="heardertop1">
+        操作原因</td>
+      <td width="25%" class="heardertop1">
+        操作时间</td>
+      <td width="10%" class="heardertop1">
+        操作</td> 
+    </tr>
+		<!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td><!--if($item['thisaction'] == 2) {--> 冻结 <!--}else{--> 解冻 <!--}--></td>
+      <td>{$item['dollars']}</td>
+      <td>{$item['reason']}&nbsp;</td>
+      <td>{$item['createdate']}</td>
+      <td><font color="#cccccc">查看</font></td>
+    </tr>
+    <!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	</form>
+	
+	<br>
+	<br>
+</body>
+</html>

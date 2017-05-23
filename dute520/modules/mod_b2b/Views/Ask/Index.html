@@ -1,0 +1,66 @@
+{load(head)}
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead texttle">用户留言管理</td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <form action="" method="post">
+  <tr>
+    <td width="50" height="35" class="listhead">
+    <p align="center"><input name="chkall" type=checkbox onclick=CheckAll(this.form) class="checkbox"></td>
+    <td width="300" height="35" class="listhead">
+    <p align="center">标题</td>
+    <td width="50" height="35" class="listhead">
+    <p align="center">用户</td>
+    <td width="150" height="35" class="listhead">
+    <p align="center">时间</td>
+    <td height="35" class="listhead">
+    <p align="center">管理</td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">还没有任何用户给您留言</td>
+  </tr>
+  <!--}-->
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="50" align="center" height="35">
+      <input name="checkboxid" type="checkbox" value="{$item['id']}" class="checkbox">
+    </td>
+    <td width="300" align="left" height="35">
+      {$item['title']}
+    </td>
+    <td width="50"  align="center" height="35">{$item['author']}</td>
+    <td width="150" align="center" height="35">{$item['cdate']}</td>
+    <td align="center" height="35"><a href="index.php?m=mod_b2b&c=ask&a=del&id={$item['id']}">删除</a>&nbsp;<a href="index.php?m=mod_b2b&c=ask&a=detail&id={$item['id']}">详细</a></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  </form>
+  <tr>
+    <td align="right" height="35" colspan="19">
+    <form method="post" action="index.php?m=mod_b2b&c=ask&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=ask&a=index&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=ask&a=index&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+<script language="JavaScript">
+function CheckAll(form) {
+  for (var i=0;i<form.elements.length;i++) {
+    var e = form.elements[i];
+    if (e.name != 'chkall') e.checked = form.chkall.checked; 
+  }
+}
+</script>

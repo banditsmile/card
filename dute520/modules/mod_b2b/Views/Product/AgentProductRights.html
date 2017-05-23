@@ -1,0 +1,151 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<form action="index.php?m=mod_b2b&c=product" method="post" style="margin:5px 0px;">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right">
+      <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
+      <input type="submit" value="商品搜索 &gt;&gt;" style="vertical-align:middle;"/>
+      </span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >
+        请选择您要的操作
+        <select id="righttype" onchange="inititem(this)">
+          {#Option($vd['righttype'], $vd['limititem'])}
+        </select>
+        <input type="text" size="10" id="item" value="{$vd['limittext']}"/>
+        <input type="hidden" id="itemval" onkeydown=""/>
+        <input type="button" id="btnselect" value="选择商家姓名" onclick="setlimit()" align="absmiddle" style="cursor:pointer;"/>
+        <input type="button" value="执行" onclick="go()" align="absmiddle" style="cursor:pointer;"/>
+      </span>
+    </td>
+  </tr>
+</table>
+</form>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="12%" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品所有</font></td>
+    <td width="40%" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品名称</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品类型</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品面值</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">进货价</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">供货商</font></td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">上架</font>
+    </td>
+    <td width="8%" align="center" height="35" class="listhead">
+      <font color="#ff0000">限制购买</font></td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">没有您要找的商品，请重新操作</td>
+  </tr>
+  <!--}-->
+  <form name="form" method="post" action="index.php?m=mod_b2b&c=product&a=RightsSave&itemtext={$vd['limittext']}&limititem={$vd['limititem']}">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="12%" align="center" height="35">{$item['company']}</td>
+    <td width="40%" align="center" height="35">{$item['pname']}</td>
+    <td width="8%" align="center" height="35">{#ProductType($item['ptype'])}</td>
+    <td width="8%" align="center" height="35">0</td>
+    <td width="8%" align="center" height="35">{$item['listprice']}</td>
+    <td width="8%" align="center" height="35">{$item['listprice']}</td>
+    <td width="8%" align="center" height="35">
+      <img src="{$vd['sc']}{#ToggleImgSrc($item['sell'])}"/>
+    </td>
+    <td width="8%" align="center" height="35">
+      <input type="hidden" name="id[]" value="{$item['id']}"}/>
+      <input type="hidden" name="pid[]" value="{$item['pid']}"}/>
+      <input type="hidden" id="lmt_{$item['pid']}" name="islimit[]" value="{$item[$vd['limititem']]}"}/>
+      <input type="checkbox" value="1" {#ToggleCheck($item[$vd['limititem']])} class="checkbox" onclick="set(this,'lmt_{$item['pid']}')"/>
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="left" height="35" colspan="2">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+    <td align="right" height="35" colspan="7">
+      <input type="hidden" name="limititem" value="{$vd['limititem']}"/>
+      <input type="hidden" name="limitvalue" value="{$vd['limitvalue']}"/>
+      <input type="hidden" name="agent" value="1"/>
+      <input type="submit" value=" 修改权限 &gt;&gt;"/>
+      <input type="reset" value=" 重设 &gt;&gt;"/>
+    </td>
+  </tr>
+  </form>
+  <tr>
+    <td align="left" height="35" colspan="9">
+    <form method="post" action="index.php?m=mod_b2b&c=product&a=AgentProductRights&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=product&a=AgentProductRights&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+  var $ = function(id) {
+    return document.getElementById(id);
+  }
+  
+  function set(obj, id)
+  {
+    $(id).value = obj.checked ? 1 : 0;
+  }
+  
+  var selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
+  
+  function inititem(obj)
+  {
+    //righttype = $('righttype').options[$('righttype').selectedIndex].value;
+    val = obj.value;
+    switch(val)
+    {
+      case "aid":
+        selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
+        $("btnselect").value = "选择经销商名称";
+        break;
+      case "gid":
+        selectpage = "index.php?m=mod_b2b&c=rank&isselect=1";
+        $("btnselect").value = "选择经销商级别";
+        break;
+      case "zoneid":
+        selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
+        $("btnselect").value = "选择商家所在地";
+        break;
+      default:
+        selectpage = "index.php?m=mod_b2b&c=agent&isselect=1";
+        $("btnselect").value = "选择商家名称";
+        break;
+    }
+  }
+  
+  function go()
+  {
+    //选择的类型
+    righttype = $('righttype').options[$('righttype').selectedIndex].value;
+    val       = $("itemval").value;
+    window.location.href = "index.php?m=mod_b2b&c=product&a=AgentProductRights&" + righttype + '=' + val + "&itemtext=" + $("item").value;
+  }
+  
+  function setlimit() 
+  {
+    var val = showModalDialog(selectpage, "", "font-family:Verdana; font-size:12; status:no; dialogWidth:880px; dialogHeight:500px");
+    tmp = val.split("|");
+    $("item").value    = tmp[1];
+    $("itemval").value = tmp[0];
+  }
+</script>

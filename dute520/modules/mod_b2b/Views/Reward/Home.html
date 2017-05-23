@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
+<style type="text/css">
+td{height:30px}
+</style>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#cccccc">
+  <tr>
+    <td class="listhead" colspan="2" style="border-right:1px #ccc solid">一卡通返点管理</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Reward')" value="一卡通返点设置" class="button" style="color:#ff0000"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      设置代理商的返点率
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=RewardTpl&a=RankTpl')" value="一卡通返点模板" class="button" style="color:#ff0000"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      设置一卡通返点模版,然后套用客户(优先级较低,如果同时设了返点率,也给代理商套用了模板,则以前者(单独设置的返点率)为主)
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Reward&a=Trade')" value="一卡通返点明细" class="button"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      每一笔订单的返点明细表
+    </td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Reward&a=Check')" value="一卡通返点结算" class="button"/>
+    </td>
+    <td width="75%" align="left" style="border-right:1px #ccc solid">
+      手动结算返点
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="25%" align="center" style="border-bottom:1px #ccc solid">
+      <input type="button" onclick="winopen('?m=mod_b2b&c=Reward&a=CheckOutTrade')" value="一卡通返点历史" class="button"/>
+    </td>
+    <td width="75%" align="left" style="border-bottom:1px #ccc solid;border-right:1px #ccc solid">
+      查看一卡通返点的结算帐务
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#cccccc">
+  <tr>
+    <td style="border:1px #ccc solid;"><div id="result" style="font-size:15px;color:#ff0000;font-weight:bold"></div><div id="tmp"></div></td>
+  </tr>
+</table>
+<div id="load" style="display:none">
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+var $ = function(id){
+  return document.getElementById(id);
+}
+function loadDisp(flag)
+{
+  $("load").style.display = flag ? "" : "none";
+}
+function winopen(url)
+{  
+  loadDisp(1);
+  window.location.href = url;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+    <title id="AgentSiteName">直销商菜单</title>
+    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
+    <link href="http://www.elingka.com/css/h_skin1/index.css" type="text/css" rel="stylesheet" />
+    <link href="http://www.elingka.com/css/h_skin1/dialog.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://www.elingka.com/js/dialog.js"></script>
+<script type="text/javascript" src="/content/mod_b2b/js/utils.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+function toggle(targetid){
+	if (document.getElementById){
+		target=document.getElementById(targetid);
+			if (target.style.display==""){
+				target.style.display = "none";
+			} else {
+				target.style.display = "";
+			}
+	}
+}
+</script>
+</head>
+<body>
+
+        <table cellpadding="0" cellspacing="0" class="all_table">
+            
+            <tr>
+                <td class="td_left" valign="top">
+                    <div class="nr_left">
+                        <div class="login_top">
+                        </div>
+                        <div class="login">
+                          <h2> <span class="yh">用户信息</span></h2>
+                          <h3 class="menutitle" onclick="toggle('div666')"> <span>用户信息</span></h3>
+                          <ul id="div666">
+                            <li>编 号：{$vd['agent'][7]}</li>					
+    <li id="staffid" style="display:none">员 工：<span id="mchstaffid"><font color="0">系统</font></span></li><li>级 别：{$vd['agent'][2]}</li>					
+    <li>余 额：<span class="yue">{$vd['agent'][6]}</span></li>										
+  <li id="mchparentidid">上 级：<span class="jifen">{$vd['agent'][4]}</span></li>				 
+            <li>区 域：{$vd['agent'][3]}</span></li>
+            <li style="padding: 5px 0 4px 9px"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=AddFunds" class="pay1" target="ifrpage">
+                                    充值</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=tran" class="pay1" target="ifrpage">转账</a><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail"
+                                        class="pay1" target="ifrpage" style="margin-right: 0">提现</a></li>
+                          </ul>
+                          <script type="text/javascript">					$("mchremainid").style.display = getCookie('umebiz_com_1') == "0" ? "none" : "";          $("mchparentidid").style.display = getCookie('umebiz_com_2') == "0" ? "none" : "";          $("mcharrearsid").style.display = getCookie('umebiz_com_9') == "0" ? "none" : "";          $("mchcreditid").style.display = getCookie('umebiz_com_10') == "0" ? "none" : "";				</script>
+                        </div>
+                        <div class="login_bottom">
+                        </div>
+                        <div class="main_top">
+                        </div>
+                      <div class="main" id="menua">
+                        <h3 class="menutitle" id="menu1" onclick="toggle('div1')"><span>商品发布管理</span></h3>
+                          <ul id="div1">
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Create" target="ifrpage">发布供货商品</a></li>
+                            <li class="li"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock"  target="ifrpage">供货商品管理</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Underling&amp;a=Consump" target="ifrpage">下级客户消费分析</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Product&amp;a=Stock" target="ifrpage">所有商品库存管理</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">供货收入转至余额</a></li>
+                          </ul>
+                          <h3 class="menutitle" id="menu2" onclick="toggle('div2')"><span>供货商品管理</span></h3>
+                          <ul id="div2">
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrder&amp;ptype=sd&amp;ordstate=1&amp;by=1" target="ifrpage">手工订单列表</a></li>
+                            <li class="li1"><a href="http://kmcc.exikameng.com/admin/bs_dat.html" target="ifrpage">可疑订单列表</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=funds&amp;a=detail" target="ifrpage">充值中的列表</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=Complaint&amp;msgdirect=1" target="ifrpage">订单投诉处理</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">供货交易明细</a></li>
+                            <li class="li1"><a href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd" target="ifrpage">销售入账明细</a></li>
+                        </ul>
+                          </div>
+                        <div class="main_bottom">
+                        </div>
+                    </div>
+
+
+                </td>
+                
+            </tr>
+
+        </table>
+<script type="text/javascript">
+	function RemainAlert(){
+    var xmlhttptop;
+    
+    var obj = document.getElementById("mcharemain");
+    
+    try{
+      xmlhttptop=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttptop.onreadystatechange=function(){
+      if (xmlhttptop.readyState==4){
+        if (xmlhttptop.status==200){
+          var data=xmlhttptop.responseText;
+          tmp = data.split(",");
+
+          if(data == "-1")
+          {
+          	alert("系统已经退出，请重新登陆");
+          	window.top.location.href = "/index.php?m=mod_b2b&a=logout";
+          }
+          else
+          {
+            obj.innerHTML = "￥" + tmp[0];
+            document.getElementById("mchincome").innerHTML = "￥" + tmp[1];
+            document.getElementById("mchfunds").innerHTML = "￥" + tmp[2];
+          }
+        }
+      }
+    }
+    \
+  }
+  RemainAlert();
+  setInterval(RemainAlert, 10000);
+
+  if (screen.width<=1024)
+  {
+  document.getElementById("div3").style.display="none";
+  document.getElementById("div4").style.display="none";
+  }
+</script>
+<style>  html { overflow-y:hidden; } </style>
+<style>  html { overflow-x:hidden; } </style>
+</body>
+</html>

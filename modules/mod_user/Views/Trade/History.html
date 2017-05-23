@@ -1,0 +1,148 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+  <form id="searchform" name="searchform" method="post" action="index.php?m=mod_user&c=trade&tpl=history">
+  <table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td colspan="2" align="left" height="35">
+        搜索条件</td>
+    </tr>
+    <tr>
+      <td class="lt">
+        类型
+      </td>
+      <td class="rt">
+        <select name="tradetype" id="tradetype" class="search_selectlong">
+        {#Option($vd['tradetypes'], $vd['tradetype'])}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="lt">
+        起始时间
+      </td>
+      <td class="rt">
+        <input type="text" name="startdate" value="{$vd['startdate']}" class="search_inputdate" id="startdate"/>
+        <img src="{$vd['content']}images/calender.gif" onclick="dateDialog('startdate')" height="22" style="vertical-align:middle;cursor:pointer;"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="lt">
+        终始时间
+      </td>
+      <td class="rt">
+        <input type="text" name="enddate" value="{$vd['enddate']}" class="search_inputdate" id="enddate"/>
+        <img src="{$vd['content']}images/calender.gif" onclick="dateDialog('enddate')" height="22" style="vertical-align:middle;cursor:pointer;"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="lt">
+        
+      </td>
+      <td class="rt">
+        <input value=" 开始搜索 " type="submit" class="button"/>
+      </td>
+    </tr>  
+
+  </table>
+  </form>
+  <br/>
+  <!--if($vd['tradetype'] > 1){-->
+  <div class="rstitle">总交易金额：总支出 <!--if($vd['record']['outcome'] != ''){ echo round($vd['record']['outcome'], 3);}else{echo 0;}--> {$vd['lang']['moneyunit']}   总收入 <!--if($vd['record']['income'] != ''){ echo round($vd['record']['income'], 3);}else{echo 0;}--> {$vd['lang']['moneyunit']}</div>
+  <!--}else{-->
+  <br/>
+  <!--}-->
+  <table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td width="15%" align="center" height="35">
+        交易类型</td>
+      <td width="26%" align="center" height="35">
+        相关内容</td>
+      <td width="8%" align="center" height="35">
+        收入({$vd['lang']['moneyunit']})</td>
+      <td width="8%" align="center" height="35">
+        支出({$vd['lang']['moneyunit']})</td>
+      <td width="10%" align="center" height="35">
+        变化后({$vd['lang']['moneyunit']})</td> 
+      <td width="8%" align="center" height="35">
+        操作员</td>
+      <td width="8%" align="center" height="35">
+        交易方</td>
+      <td width="12%" align="center" height="35">
+        交易日期</td>
+      <td width="5%" align="center" height="35">
+        详细</td>
+    </tr>
+    <!--$profit = 0;$sum_income=0;$sum_outcome=0;foreach($vd['items'] as $item) {-->
+    <tr>
+      <td width="15%" align="center" height="35">{#TradeType($item['tradetype'])}</td>
+      <td width="26%" align="center" height="35">{$item['content']}</td>
+      <td width="8%" align="center" height="35"><!--if($item['income'] != ''){echo '+'.round($item['income'],3);}--></td>
+      <td width="8%" align="center" height="35"><!--if($item['outcome'] != ''){echo '-'.round($item['outcome'],3);}--></td>
+      <td width="10%" align="center" height="35"><font color="#ff0000">{$item['fat']}</font></td> 
+      <td width="8%" align="center" height="35">总帐号</td>
+      <td width="8%" align="center" height="35"><!--if($item['otherside'] != ''){-->{#DisplayCode($item['otherside'])}<!--}else{-->无<!--}--></td>
+      <td width="12%" align="center" height="35">{$item['createdate']}</td>
+      <td width="5%" align="center" height="35">
+        <!--if($item['tradetype'] == 1 || $item['tradetype'] == 12){-->
+        <a href="index.php?m=mod_b2c&c=ack&ordno={$item['ordno']}" target="_blank">
+        <font color="#0000ff">查看</font>
+        </a>
+        <!--}else{-->
+        无
+        <!--}-->
+      </td>
+    </tr>
+    <!--if($item['state'] > 0){-->
+    <!--$profit=$profit+$item['income'];$sum_income=$sum_income+$item['income'];$sum_outcome=$sum_outcome+$item['outcome'];}-->
+    <!--}-->
+    <!--if($vd['totlerow'] > 0) {-->
+    <tr>
+      <td colspan="2" align="center">本页统计</td>
+      <td width="8%" align="center"><!--echo round($sum_income,3);--></td>
+      <td width="8%" align="center"><!--echo round($sum_outcome,3);--></td>
+      <td  colspan="21" ></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">查询统计</td>
+      <td width="8%" align="center"><!--echo round($vd['record']['income'],3);--></td>
+      <td width="8%" align="center"><!--echo round($vd['record']['outcome'],3);--></td>
+      <td  colspan="21" ></td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td align="right" height="35" colspan="12">
+      <form method="post" action="index.php?m=mod_user&c=trade&tpl=history&{$vd['op']}">
+        <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+        <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_user&c=trade&tpl=history&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+        <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_user&c=trade&tpl=history&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+        每页显示<input type="text" id="nrows" name="nrows" size="2" value="{$vd['nrows']}" class="txt"/>个  到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+      </form>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <div class="cbox">
+    注:如果订单在付款后，出现失败，系统自动退款，订单就会置为无效，默认不显示。有时候由于各种原因，自动退款的时间和下单时间相差过长，导致记录中的余额无法对号，您可以选择"所有类型(含自动退款记录)"查询即可
+  </div> 
+</td>
+</tr>
+</table>
+{load(foot)}
+<script type="text/javascript">
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+</script>

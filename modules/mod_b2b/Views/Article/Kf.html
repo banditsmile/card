@@ -1,0 +1,103 @@
+{load(head)}
+<div class="artLeft">
+<b class="rtop" id="articlert" style="margin-top:5px"><b class="r3"></b><b class="r4"></b></b>
+<div id="articleTitle"><span class="flright"></span><b>{$vd['web']['webname']} > 联系方式</b></div>
+<div id="articleCol">
+<div id="articleCnt">
+<table border="0" cellspacing="0" cellpadding="0" width="98%" align="center"  style="border-collapse: collapse;line-height:25px;" bordercolor="#f0f0f0">
+  <!--if(isset($vd['qq'][0][0]) && $vd['qq'][0][0] != ''){-->
+  <tr>
+  <td class="buylt" style="text-align:center"><img src="{$vd['content']}images/icon_qq.gif"></td>
+  <td class="buyrt"><br/>
+  <!--for($j=0;$j<count($vd['qqtype']);$j++){-->
+  <!--if(isset($vd['qq'][$j])&&count($vd['qq'][$j]) > 0){-->
+  <p style="padding:5px 0px"><strong>{$vd['qqtype'][$j]}QQ：</strong></p>
+  <!--for($i=0;$i<count($vd['qq'][$j]);$i++){-->
+    <a href="tencent://message/?uin={$vd['qq'][$j][$i]}&Site={$vd['web']['webname']}&Menu=yes" target="_blank">
+    <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:<!--if(isset($vd['config'][8])){echo $vd['config'][8]+1;}else{echo 15;}-->" alt="点击这里给我发消息" />
+    </a>
+  <!--}-->
+  <!--}-->
+  <!--}-->
+  </td>
+  </tr>
+  <!--}-->
+  <!--if(isset($vd['hi'][0][0]) && $vd['hi'][0][0] != ''){-->
+  <td class="buylt" style="text-align:center"><img src="{$vd['content']}images/icon_hi.gif" ></td>
+  <td class="buyrt"><br/>
+  <!--for($j=0;$j<count($vd['hitype']);$j++){-->
+  <!--if(isset($vd['hi'][$j])&&count($vd['hi'][$j]) > 0){-->
+  <p style="padding:5px 0px"><strong>{$vd['emailtype'][$j]} Hi：</strong></p>
+  <!--for($i=0;$i<count($vd['hi'][$j]);$i++){-->
+    <a href="baidu://message/?id={$vd['hi'][$j][$i]}"><img border="0" src="http://tieba.baidu.com/tb/img/hi/hiOnline.gif"></a> 
+  <!--}-->
+  <!--}-->
+  <!--}-->
+  </td>
+  </tr>
+  <!--}-->
+  <!--if(isset($vd['wangwang'][0][0]) && $vd['wangwang'][0][0] != ''){-->
+  <tr>
+  <td class="buylt" style="text-align:center"><img src="{$vd['content']}images/icon_wangwang.gif" ></td>
+  <td class="buyrt"><br/>
+  <!--for($j=0;$j<count($vd['wangwangtype']);$j++){-->
+  <!--if(isset($vd['wangwang'][$j])&&count($vd['wangwang'][$j]) > 0){-->
+  <p style="padding:5px 0px"><strong>{$vd['emailtype'][$j]}旺旺：</strong></p>
+  <!--for($i=0;$i<count($vd['wangwang'][$j]);$i++){-->
+    <a target="_blank" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1"><img border="0" src="http://amos.im.alisoft.com/online.aw?v=2&uid=<!--echo urlencode($vd['wangwang'][$j][$i]);-->&site=cntaobao&s=1" alt="点击这里给我发消息" /></a>
+  <!--}-->
+  <!--}-->
+  <!--}-->
+  </td>
+  </tr>
+  <!--}-->
+  <!--if(isset($vd['tel'][0][0]) && $vd['tel'][0][0] != ''){-->
+  <tr>
+  <td class="buylt" style="text-align:center"><img src="{$vd['content']}images/icon_dh.gif" width="22" height="32"></td>
+  <td class="buyrt"><br/>
+    <!--for($j=0;$j<count($vd['teltype']);$j++){-->
+    <!--if(isset($vd['tel'][$j])&&count($vd['tel'][$j]) > 0){-->
+    <p style="padding:5px 0px"><strong>{$vd['qqtype'][$j]}热线：</strong></p>
+    <!--for($i=0;$i<count($vd['tel'][$j]);$i++){-->
+      {$vd['tel'][$j][$i]}
+    <!--}-->
+    <!--}-->
+    <!--}-->
+  </td>
+  </tr>
+  <!--}-->
+  <!--if(isset($vd['email'][0][0]) && $vd['email'][0][0] != ''){-->
+  <tr>
+  <td class="buylt" style="text-align:center"><img src="{$vd['content']}images/icon_mail.gif"></td>
+  <td class="buyrt"><br/>
+    <!--for($j=0;$j<count($vd['emailtype']);$j++){-->
+    <!--if(isset($vd['email'][$j])&&count($vd['email'][$j]) > 0){-->
+    <p style="padding:5px 0px"><strong>{$vd['emailtype'][$j]}邮箱：</strong></p>
+    <!--for($i=0;$i<count($vd['email'][$j]);$i++){-->
+      <a href="mailto:{$vd['email'][$j][$i]}">{$vd['email'][$j][$i]}</a>
+    <!--}-->
+    <!--}-->
+    <!--}-->
+  </td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+<div id="articleBottom"></div>
+<b class="rbottom" id="articlerb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div class='artRight'>
+  <div id="artrimg">
+    <!--foreach($vd['ad'] as $aditem) {-->
+    <!--if($aditem['ispic']==1 && $aditem['pos']==152){-->
+    <div style="margin-bottom:8px;"><a href="{$aditem['url']}" target="_blank">
+    <img src="{$vd['root']}{$vd['sc']}upload/{$aditem['pic']}" border='0'  width="100%" alt='{$aditem['text']}'></a><!--if($aditem['text'] != ''){--><br/><a href="{$aditem['url']}" target="_blank"><b><font color="{$aditem['textcolor']}">{$aditem['text']}</font></b></a><!--}-->
+    </div>
+    <!--}--><!--}-->
+  </div>
+</div>
+<div style="clear:both"></div>
+{load(foot)}
+ 
+

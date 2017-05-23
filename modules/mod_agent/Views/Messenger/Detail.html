@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>订单投诉处理</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+	<!--$msg = $vd['msg'];-->
+	
+	<!--$pop=intval(request('pop'));$msgdirect=intval(request('msgdirect'));$reply=intval(request('reply'));-->
+	
+	<!--if($vd['str'] != '投诉'){--><?php
+	$id = intval(request('id'));
+	if($msg['id'] != $id)
+	{
+		foreach($vd['items'] as $item) 
+		{
+			if($item['id'] == $id)
+			{
+				$msg = $item;
+				break;
+			}
+		}
+	}
+	?>
+	
+	<!--if($reply == 0){-->
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+            <tbody><tr>
+                <td class="table1_left">
+                    发 信 人：</td>
+                <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>
+            </tr>
+            <tr>
+                <td class="table1_left">
+                    短信标题：</td>
+                <td class="tdleft">
+                    {$msg['title']}</td>
+            </tr>
+            <tr>
+                <td class="table1_left">
+                    短信内容：</td>
+                <td class="tdleft"><span class="tableright1">
+                  <textarea name="MessengerContent" cols="65" rows="7" class='tdleft' readonly="readonly"><!--echo $msg['content'];-->
+                  </textarea>
+                </span></td>
+            </tr>
+            <tr>
+                <td class="table1_left">
+                    收到时间：</td>
+                <td class="tdleft">
+                    2013-11-11 18:06:36
+                </td>
+            </tr>
+            
+                <tr>
+                    <td class="table1_left">&nbsp;
+                        
+                    </td>
+                  <td class="tdleft">
+                    <input type="submit" name="Reply" value="已读" id="Reply" class="tijiao_input" style="margin-right: 5px;">
+                </tr>
+            
+            
+</tbody></table>
+	</td>
+	</tr>
+</table>
+	<!--}else{-->
+	<form name="messenger" method="post" action="index.php?m=mod_agent&c=Messenger&a=MessengerSave&parentid=0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+      <tbody>
+        <tr>
+          <td class="table1_left"> 收 信 人：</td>
+          <td class="tdleft"><strong>{#DisplayCode($msg['msgfrom'], 4)}</strong></td>
+        </tr>
+        <tr>
+          <td class="table1_left"> 短信标题：</td>
+          <td class="tdleft"> 回复:{$msg['title']}</td>
+        </tr>
+        <tr>
+          <td class="table1_left"> 短信内容：</td>
+          <td class="tdleft"><span class="tableright1">
+            <textarea name="content" cols="65" rows="7" class='tdleft' datatype="LimitB" min="1" max="450" msg="短信内容未填写或过长"><!--echo $msg['content'];-->
+<!--echo "\n\n";-->
+==========回复内容如下==========
+</textarea>
+          </span></td>
+        </tr>
+        <tr>
+          <td class="table1_left"> 收到时间：</td>
+          <td class="tdleft"> 2013-11-11 18:06:36 </td>
+        </tr>
+        <tr>
+          <td class="table1_left">&nbsp;</td>
+            <td class="tableright1"><div align="left">
+              <input type="hidden" name="underlingid" value="{$vd['msgto']}" />
+              <input type="hidden" name="msgto" value="3"/>
+              <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />
+              <input type="hidden" name="msgcc_1" />
+              <input type="hidden" name="msgcc_2" />
+              <input type="hidden" name="msgstate" value="1" />
+              <input name="submit2" type="submit" class="tijiao_input" value="确认回复" />
+              <input name="reset" type="reset" class="fanhui_input" value="重新填写" />
+            </div></td>
+        </tr>
+      </tbody>
+	  </table></td>
+	</tr>
+</table>
+	
+	<!--}-->
+	
+	<!--}else{-->
+	
+	
+	<?php
+  $mstate = array('','<font color="#ff0000">未处理</font>','<font color="#ff00ff">处理中</font>','<font color="#0000ff">已处理</font>');
+  ?>
+  
+  <!--if($msgdirect == 0){-->
+  <!--if($pop==0){-->
+  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		  <td class="table1_left">订单号</td>
+		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">投诉接收人</td>
+		<td class="tableright1"><div align="left"><strong>
+		  <!--if($vd['aid'] > 0){-->
+		  供货商({#DisplayCode($msg['msgto'])})
+		  <!--}else{-->
+		  平台管理员
+		  <!--}-->
+		  </strong></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">投诉问题类型</td>
+		<td class="tableright1">
+		  
+		    <div align="left">
+		      <select name="QuestionTitle">
+		        <option value="{$msg['title']}" selected>{$msg['title']}</option>
+	          </select>
+            </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">希望处理措施</td>
+		<td class="tableright1"><label for="treat0">
+          <div align="left">
+            <input type="radio" name="TreatType" value="{$msg['hope']}" id="radio" checked>
+            {$msg['hope']}</div>
+          </label></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">投诉类容</td>
+		<td class="tableright1">
+			
+		    <div align="left">
+			    <textarea name="QuestionContent" cols="80" rows="5" class='tdleft' readonly>
+时间:{$msg['createdate']}投诉内容：
+<!--echo $msg['content'];-->
+<!--echo "\n\n";-->
+<!--foreach($vd['items'] as $item) {-->
+<!--if($item['msgfrom'] == $msg['msgfrom']){-->
+时间:{$item['createdate']} 补充投诉内容{$msg['msgfrom']}：
+<!--echo $item['content'];-->
+<!--echo "\n\n";-->
+<!--}-->
+<!--}-->
+			  </textarea>
+            </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">处理状态</td>
+		<td class="tableright1"><div align="left"><b>
+		  <!--echo $mstate[$msg['msgstate']]-->
+		  </b></div></td>
+		</tr>
+		<!--if($msg['msgstate'] > 0 ){-->
+		<tr>
+		  <td class="table1_left">回复内容</td>
+		<td class="tableright1">
+          
+            <div align="left">
+              <textarea name="AnswerContent" cols="80" rows="5" class='tdleft' readonly>
+<!--foreach($vd['items'] as $item) {-->
+<!--if($item['msgfrom'] != $msg['msgfrom']){-->
+时间:{$item['createdate']}回复的内容：
+<!--echo $item['content'];-->
+<!--echo "\n\n";-->
+<!--$date=$item['createdate'];}}-->
+            </textarea>
+            </div></td>
+		</tr>
+		<!--}-->
+		<tr>
+		  <td class="table1_left">回复时间</td>
+		<td class="tableright1"><!--if(isset($date)){echo $date;}-->
+		  <div align="left">
+		    <input name="button2" type="button" class="tijiao_input" value="返回上页" onClick="javascript:history.go(-1);">
+	      </div></td>
+		</tr>
+	  </table>
+	</td>
+	</tr>
+</table>
+	<br>
+	<div align=center></div>
+	<br>
+	<br>
+	
+	<!--}else{-->
+      </div>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+<form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		  <td class="table1_left">订单号</td>
+		<td width="78%" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">投诉接收人</td>
+		<td class="tableright1"><div align="left"><strong>
+		  <!--if($vd['aid'] > 0){-->
+		  供货商({#DisplayCode($msg['msgto'])})
+		  <!--}else{-->
+		  平台管理员
+		  <!--}-->
+		  </strong></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">投诉问题类型</td>
+		<td class="tableright1">
+		  <div align="left">
+		    <select name="QuestionTitle">
+		        <option value="{$msg['title']}" selected>{$msg['title']}</option>
+            </select>
+          </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">希望处理措施</td>
+		<td class="tableright1"><label for="treat0">
+		  <div align="left">
+		    <input type="radio" name="hope" value="{$msg['hope']}" id="radio2" checked>
+	      {$msg['hope']}</div>
+		  </label></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">原投诉类容</td>
+		<td class="tableright1">
+			<div align="left">
+			  <textarea name="QuestionContent" cols="70" rows="5" class='tdleft' readonly>
+时间:{$msg['createdate']}投诉内容：
+<!--echo $msg['content'];-->
+<!--echo "\n\n";-->
+<!--foreach($vd['items'] as $item) {-->
+<!--if($item['msgfrom'] == $msg['msgfrom']){-->
+时间:{$item['createdate']} 补充投诉内容{$msg['msgfrom']}：
+<!--echo $item['content'];-->
+<!--echo "\n\n";-->
+<!--}-->
+<!--}-->
+			</textarea>
+		  </div></td>
+		</tr>
+
+		<tr>
+		  <td class="table1_left">补充的类容</td>
+		<td class="tableright1">
+          <div align="left">
+            <textarea name="content" cols="70" rows="5" class='tdleft' onFocus="javascript:this.value='';">请填写需要补充的内容</textarea>
+          </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">&nbsp;</td>
+		<td class="tableright1">
+		  <div align="left">
+		    <input type="hidden" name="underlingid" value="{$vd['msgto']}" />
+		    <input type="hidden" name="msgto" value="3"/>
+		    <input type="hidden" size='57' maxlength='100' name="title" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}">
+		    <input type="hidden" name="msgcc_1" />
+	        <input type="hidden" name="msgcc_2" /> 
+		    <input type="hidden" name="msgstate" value="1" />
+		    <input name="submit" type="submit" class="tijiao_input" value="确认补充">
+		    <input name="reset2" type="reset" class="fanhui_input" value="重新填写">
+	      </div></td>
+		</tr>
+  </table>
+</form>
+	</td>
+	</tr>
+	</table>
+	<!--}-->
+	
+	<!--}else{-->
+		<form name="messenger" method="post" action="index.php?m=mod_agent&c=Complaint&a=ComplaintSave&parentid={$vd['parentid']}">
+		  <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">
+            <tr>
+              <td width="22%" class="table1_left">投诉客户：</td>
+              <td width="78%" align="left" class="tableright1"><div align="left">{#DisplayCode($msg['msgfrom'], 4)}</div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">投诉时间：</td>
+              <td align="left" class="tableright1"><div align="left">{$msg['createdate']}</div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">问题类型：</td>
+              <td align="left" class="tableright1"><div align="left">
+                <select name="select">
+                  <option value="{$msg['title']}">{$msg['title']}</option>
+                </select>
+              </div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">订 单 号：</td>
+              <td align="left" class="tableright1"><div align="left"><a href="index.php?m=mod_agent&c=<!--if($msg['msgto'] == $vd['aid']){-->A<!--}-->Order&a=detail&ordno={$msg['ordno']}"><u><b>{$msg['ordno']}</b></u></a></div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">投诉内容：</td>
+              <td align="left" class="tableright1"><div align="left">
+                <textarea name="textarea" rows="5" cols="70" class="input1" readonly>
+<!--echo $msg['content'];-->
+<!--echo "\n\n";-->
+<!--foreach($vd['items'] as $item) {-->
+<!--if($item['msgfrom'] == $msg['msgfrom']){-->
+时间:{$item['createdate']} 补充投诉内容{$msg['msgfrom']}：
+<!--echo $item['content'];-->
+<!--echo "\n\n";-->
+<!--}-->
+<!--}-->
+			  </textarea>
+              </div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">希望处理方式：</td>
+              <td align="left" class="tableright1"><div align="left"><strong><font color=#ff0000>{$msg['hope']}</font></strong>&nbsp;</div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">目前状态：</td>
+              <td align="left" class="tableright1"><div align="left"><strong>
+                <!--echo $mstate[$msg['msgstate']]-->
+              </strong></div></td>
+            </tr>
+            <!--if($msg['msgstate'] > 1){-->
+            <tr style="display:none">
+              <td class="table1_left"></td>
+              <td class="tableright1"><div align="left">
+                <!--foreach($vd['items'] as $item) {-->
+                <!--if($item['msgfrom'] != $msg['msgfrom']){-->
+                <!--$date=$item['createdate'];$staffid=$item['staffid'];$aid=$item['aid'];$admnick=$item['admnick'];}}-->
+              </div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">上次处理时间：</td>
+              <td align="left" class="tableright1"><div align="left">{$date}</div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">上次处理员工：</td>
+              <td align="left" class="tableright1"><div align="left">
+                <!--if($staffid==0){-->
+                总帐号
+                  <!--}else{-->
+                {$admnick}({#DisplayCode($staffid, 3)})
+                <!--}-->
+              </div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">上次回复内容：</td>
+              <td class="tableright1"><div align="left">
+                <textarea name="textarea" cols="70" rows="5" class='input' readonly>
+<!--foreach($vd['items'] as $item) {-->
+<!--if($item['msgfrom'] != $msg['msgfrom']){-->
+时间:{$item['createdate']}回复的内容：
+<!--echo $item['content'];-->
+<!--echo "\n\n";-->
+<!--$date=$item['createdate'];}}-->
+              </textarea>
+              </div></td>
+            </tr>
+            <!--}-->
+            <tr>
+              <td class="table1_left">本次回复：</td>
+              <td align="left" class="tableright1"><div align="left">
+                <textarea name="textarea" rows="5" cols="70" class="input"></textarea>
+              </div></td>
+            </tr>
+            <tr>
+              <td class="table1_left">处理状态：</td>
+              <td align="left" class="tableright1"><div align="left">
+                <input type="hidden" name="msgdirect" value="1" />
+                <input type="radio" name="msgstate" value="2" id="treatwith1" checked />
+                <font color="#0000ff"><u>受理投诉</u></font></div>
+              <label for="treatwith1"></label>
+                  <div align="left">
+                    <input type="radio" name="msgstate" value="3" id="treatwith2" />
+                    <font color="#ff0000"><u>最终回复投诉</u></font></div>
+                <label for="treatwith2"></label></td>
+            </tr>
+            <tr>
+              <td class="table1_left">&nbsp;</td>
+              <td align="left" class="tableright1"><div align="left">
+                <input type="hidden" name="underlingid2" value="{$vd['msgto']}" />
+                <input type="hidden" name="msgto2" value="3"/>
+                <input type="hidden" size='57' maxlength='100' name="title2" class='input' datatype="LimitB" min="1" max="90" value="Re:{$msg['title']}" />
+                <input type="hidden" name="msgcc_12" />
+                <input type="hidden" name="msgcc_22" />
+                <input type="hidden" name="Id" value="1" />
+                <input type="hidden" name="SearchString" value="" />
+                <input type="submit" name="Submit" value="确认处理" class="tijiao_input" />
+                <input type="reset" name="reset3" value="重新填写" class="fanhui_input" />
+              </div></td>
+            </tr>
+          </table>
+		</form>
+	
+	<!--}-->
+	
+	
+	<!--}-->
+	
+</body>
+</html>

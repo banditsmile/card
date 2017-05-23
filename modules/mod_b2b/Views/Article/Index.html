@@ -1,0 +1,44 @@
+{load(head)} 
+
+ <div class="aysw-body mt20">
+    <div class="page-home">
+              
+<div class="bulletin">
+    <h3>平台公告</h3>
+    <div style="padding:10px;">
+	
+	<!--$i=1;foreach($vd['items'] as $item) {-->
+        <div class="newmodel"><div class="left"><img src="/lib/images/li_orange.gif" style=" padding:0 5px 3px 2px;" /><a href="<!--if($item['titlelink'] != ''){-->{$item['titlelink']}" target="_blank"<!--}else{-->article/{$item['id']}.html"<!--}--> title="{$item['title']}"><font color={$item['titlecolor']} >{#SubText($item['title'], 26)}</font></a></div><div class="right" style="color:#C8C8D0;">{$item['ndate']}</div><div class="clearfix"></div></div>
+
+  <!--$i++;}-->
+    </div>
+</div>
+
+    </div>
+  </div>
+  
+<table border="1" width="100%" cellpadding="0" id="table5" height="57" style="border-collapse: collapse" bordercolor="#86B9D6" cellspacing="0">
+  <tr>
+    <td width="350" height="25" bgcolor="#F5FBFF">
+    <p align="center">主题</td>
+    <td width="201" height="25" bgcolor="#F5FBFF">
+    <p align="center">时间</td>
+  </tr>
+  <!--$i=1;foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="560" height="30" align="left">&nbsp;&nbsp;[<!--if($i<10){-->0<!--}-->{$i}]<a href="<!--if($item['titlelink'] != ''){-->{$item['titlelink']}" target="_blank"<!--}else{-->article/{$item['id']}.html"<!--}--> title="{$item['title']}"> <font color="{$item['titlecolor']}">{#SubText($item['title'], 26)}</font></a>『{$item['tick']}次』</td>
+    <td width="200" height="30" align="center">{$item['ndate']}</td>
+  </tr>
+  <!--$i++;}-->
+  <tr>
+    <td align="right" height="35" bgcolor="#ccf1aa" colspan="2">
+    <form method="post" action="index.php?m=mod_article&c=home&{$vd['op']}">
+      <strong>共有记录<font color="#ff0000">{$vd['totlerow']}</font>条 / 第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_article&c=home&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_article&c=home&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+</table>
+{load(foot)}

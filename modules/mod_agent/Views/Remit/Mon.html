@@ -1,0 +1,90 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 财务管理 >> 下级汇款通知书</span></div>
+	<div id="hearder"><span class="white_12px_weight">下级汇款通知书</span></div>
+	
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="history" method="get" action="index.php">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">关 键 字：</td>
+		<td width="78%" class="tableright1"><input type="text" size="30" name="keywords" class='input' value=""></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询条件：</td>
+		<td class="tableright1">
+		<input type="hidden" name="m" value="mod_agent">
+		<input type="hidden" name="c" value="Remit">
+		<input type="hidden" name="a" value="Mon">
+		<select name="stype">
+		<option value="ordno" >汇款金额</option>
+		</select>
+		<select name="msgstate">
+		<option value="0" >全部状态</option>
+		<option value="1" >未处理</option>
+		<option value="3" >已处理</option>
+		</select></td>
+		</tr>
+		<td height="35" class="tableleft1">查询时间段：</td>
+		<td class="tableright1">
+    &nbsp;<input type="text" name="startdate" value="{$vd['startdate']}" class="search_inputdate" id="startdate"/>
+    
+    <strong>至</strong>&nbsp;<input type="text" name="enddate" value="{$vd['enddate']}" class="search_inputdate" id="enddate"/>
+    </td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">&nbsp;</td>
+		<td class="tableright1">
+		<input type="submit" name="Submit" value="确认查询" class="button">
+		<input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr>
+		<td width="16%" class="heardertop1">汇款时间</td>
+		<td width="30%" class="heardertop1">接收方</td>
+		<td width="10%" class="heardertop1">汇款金额</td>
+		<td width="10%" class="heardertop1">汇入银行</td>
+		<td width="20%" class="heardertop1">汇入帐号</td>
+		<td width="8%" class="heardertop1">帐户名</td>
+		<td width="6%" class="heardertop1">状态</td>
+		</tr>
+		<!--$dollar_sum = 0;foreach($vd['items'] as $item) {-->
+		<!--$tmp=explode('|',$item['other']);$bank=isset($tmp[0])?$tmp[0]:'&nbsp;';$account=isset($tmp[1])?$tmp[1]:'&nbsp;';$accountname=isset($tmp[2])?$tmp[2]:'&nbsp;';-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td>{$item['otherdate']}&nbsp;</td>
+		<td>{$item['hope']}({#DisplayCode($item['msgfrom'])})</td>
+		<td>{$item['ordno']}&nbsp;</td>
+		<td>{$bank}&nbsp;</td>
+		<td>{$account}&nbsp;</td>
+		<td>{$accountname}&nbsp;</td>
+		<td>
+			<!--if($item['msgstate']==1){-->
+      <font color="#ff0000">未处理</font>
+      <!--}else{-->
+      <font color="#0000ff">已处理</font>
+      <!--}-->
+		</td>
+		</tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>详细结果</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+      <h3>添加商品(先添加商品再寻找供货商)</h3>
+      『<a href="cat.asp?optype=1">商品一级分类</a> / <a href="cat.asp?optype=2">商品二级分类</a> / <a href="prdlist.asp">所有商品列表</a>』
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+      已经成功添加<font color="#ff0000"><b>{$vd['succ']}</b></font>个<b>{$vd['pname']}</b><br/>
+      <font color="#ff0000">{$vd['fail']}</font>个卡号因为已经存在而入库失败
+    </td>
+  </tr>
+</table>
+</body>
+</html>

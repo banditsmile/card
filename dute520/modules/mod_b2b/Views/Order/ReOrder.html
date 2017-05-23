@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="订单列表"><font color="#000">订单列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">订单补单</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<!--$item = $vd['item'];-->
+<!--if(isset($item['ptype'])){-->
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">订单补单</div>
+<div>
+<!--if($item['ptype'] > 0 && $item['ptype'] != 3 && $item['ptype'] < 99){-->
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">商品名称：</td>
+    <td class="tablert">{$item['pname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">商品类型：</td>
+    <td class="tablert">{#ProductType($item['ptype'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">充值数量：</td>
+    <td class="tablert">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">充值帐号：</td>
+    <td class="tablert">{$item['czaccount']}</td>
+  </tr>
+  <!--if($item['czarea1'] != ''){-->
+  <tr>
+    <td class="tablelt">充值区域：</td>
+    <td class="tablert">{#CzText($item['czarea1'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czarea2'] != ''){-->
+  <tr>
+    <td class="tablelt">充值服务器：</td>
+    <td class="tablert">{#CzText($item['czarea2'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['cztype'] != ''){-->
+  <tr>
+    <td class="tablelt">计费方式：</td>
+    <td class="tablert">{#CzText($item['cztype'])}</td>
+  </tr>
+  <!--}-->
+  <!--if($item['czother'] != ''){-->
+  <tr>
+    <td class="tablelt">帐户类型：</td>
+    <td class="tablert">{$item['czother']}</td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td class="tablelt" height="30px;">充值反馈信息：</td>
+    <td class="tablert">
+    </td>
+  </tr>
+</table>
+<table border="0" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td style="padding:0px">
+      <div id="result" align="center">
+      <br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等！系统则正在为您<b>充值</b>中)...</font>
+      </div>
+    </td>
+  </tr>
+</table>
+<!--}else{-->
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">商品名称：</td>
+    <td class="tablert">{$item['pname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">商品类型：</td>
+    <td class="tablert">{#ProductType($item['ptype'])}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">换购数量：</td>
+    <td class="tablert">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" colspan="2" align="center" >
+      <div style="border-bottom:1px #ccc dashed;height:20px;"></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt" colspan="2">
+      <div id="result" align="center">
+      <div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等！系统则正在为您<b>提卡</b>中)...</font></div>
+      </div>
+    </td>
+  </tr>
+</table>
+<!--}-->
+<!--}else{-->
+<div id="result" align="center">
+<div class="col"><br/><img src="{$vd['sc']}images/load.gif" align="absMiddle"/><font color="#ff0000"> 请稍等正在<b>提卡</b>中(如果是充值商品，系统则正在为您<b>充值</b>中)...</font></div>
+</div>
+<!--}-->
+
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent" style="display:none">
+  
+  <div class="optxt">
+  </div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 4;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var xmlhttp;
+
+loadXMLDoc();
+
+function loadXMLDoc()
+{
+  xmlhttp=null;
+  var url=null;
+  
+  url="ordno="+escape("{$item['ordno']}");
+
+  // 针对 Mozilla等浏览器的代码：
+  if (window.XMLHttpRequest)
+  {
+    xmlhttp=new XMLHttpRequest();
+  }
+  // 针对 IE 的代码：
+  else if (window.ActiveXObject)
+  {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  
+  if (xmlhttp!=null)
+  {
+    xmlhttp.onreadystatechange=state_Change;
+    xmlhttp.open("post", "index.php?m=mod_b2b&c=order&a=respond", true);
+    xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttp.send(url);
+  }
+  else
+  {
+    alert("您的浏览器不支持XMLHTTP")
+  }
+}
+
+function state_Change()
+{
+  // 如果 xmlhttp 显示为 "loaded"
+  if (xmlhttp.readyState==4)
+  {
+    // 如果为 "OK"
+    if (xmlhttp.status==200)
+    {
+      // 其他代码..
+      var ackdata=xmlhttp.responseText;
+      ackparase(ackdata);
+    }
+    else
+    {
+      document.getElementById("result").innerHTML="<div class='col'>取卡失败,请联系管理员</div>";
+    }
+  }
+}
+
+function ackparase(ackdata)
+{
+  //解析服务器返回的数据
+  if (ackdata == 18)
+  {
+    setTimeout("loadXMLDoc()",1500);
+  }
+  else
+  {
+    document.getElementById("result").innerHTML=ackdata;
+  }
+}  
+
+var isview = 0;
+function view()
+{
+  if(isview == 0)
+  {
+    document.getElementById("complainttable").style.display = "";
+    isview = 1;
+  }
+  else
+  {
+    document.getElementById("complainttable").style.display = "none";
+    isview = 0;
+  }
+}
+
+</script>
+</body>
+</html>

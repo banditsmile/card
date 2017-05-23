@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+body{background:#fff;padding:0px;margin:0px;}
+td{font-size:12px;}
+</style>
+</head>
+<body class="frmbody">
+<table border="1" width="100%" style="border-collapse: collapse;background:#f6f6f6" bordercolor="#EAEAEA">
+  <tr>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品编号</font></td>
+    <td width="150" align="center" height="35" class="listhead">
+      <font color="#ff0000">商品名称</font></td>
+    <td width="80" align="center" height="35" class="listhead">
+      <font color="#ff0000">供货商</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">进货审核</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">优先级</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">进货价</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">最低售价</font></td>
+    <td width="80" align="center" height="35" class="listhead">
+      <font color="#ff0000">最近修改</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">是否删除</font></td>
+    <td width="70" align="center" height="35" class="listhead">
+      <font color="#ff0000">编辑</font></td>
+  </tr>
+  <!--if($vd['totlerow'] == 0) {-->
+  <tr>
+    <td align="right" height="35" colspan="20">没有搜到商品！请重新输入关键词</td>
+  </tr>
+  <!--}-->
+  <!--foreach($vd['items'] as $item) {-->
+  <form name="form1" method="post" action="<!--if($vd['noack'] == 0){-->index.php?m=mod_b2b&c=sup&a=save&frm=1<!--}else{-->#<!--}-->">
+  <tr>
+    <td width="70" align="center" height="35">
+    <input type="text" name="ubzspid" size="5" value="{$item['ubzspid']}" />
+    </td>
+    <td width="150" align="center" height="35">{$item['ubzspname']} </td>
+    <td width="80" align="center" height="35">{$item['ubzsuid']}
+          (<a href="javascript:openScript('index.php?m=mod_b2b&c=sup&a=GetSupplier&ubzpid={$vd['ubzpid']}&ubzuuid={$item['ubzsuid']}','',692,390);"><font color="#00875A">查看</font></a>)</td>
+    <td width="70" align="center" height="35">{$item['ubzspok']}</td>
+    <td width="70" align="center" height="35">
+    <input type="text" name="ubzspri" size="5" value="{$item['ubzspri']}" />
+    </td>
+    <td width="70" align="center" height="35">{$item['ubzsupprice']}</td>
+    <td width="70" align="center" height="35">{$item['ubzctrlprice']}</td>
+    <td width="80" align="center" height="35">{$item['ubzspdate']}</td>
+    <td width="70" align="center" height="35">
+      <!--if($vd['noack'] == 0){-->
+    <a href="index.php?m=mod_b2b&c=sup&a=del&ubzepid={$item['ubzepid']}&ubzpid={$vd['ubzpid']}&frm=1">
+          删除此供货
+          </a>
+      <!--}else{-->
+      --
+      <!--}-->
+    
+    </td>
+    <td width="70" align="center" height="35">
+    <input type="hidden" name="ubzepid" value="{$item['ubzepid']}" />
+    <input type="hidden" name="ubzpid" value="{$vd['ubzpid']}" />
+    <input value=" 修改 &gt;&gt;" type="submit" class="button" <!--if($vd['noack'] == 0){--><!--}else{-->disabled<!--}-->/>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+</table>
+<script type="text/javascript">
+  var resizeidx = 1;
+  function openScript(url,name,width,height)
+  {
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=no');
+  }
+  <!--if($vd['noack'] > 0){-->alert('您在供货系统中有订单正在交易处理中，交易结束后方可操作对接');<!--}-->
+</script>
+</body>
+</html>

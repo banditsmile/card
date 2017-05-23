@@ -1,0 +1,72 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 帐户管理 >> 员工零售价设定</span></div>
+	<div id="hearder"><span>员工销售价格设定</span></div>
+	<div id="buycard">
+	<div id="buycardmain">
+		<div id="search">
+			<div id="searchlist" style="DISPLAY:none;">
+			<table id="listtb" border="0" cellpadding="0" cellspacing="0" width="100%">
+			</table>
+			</div>
+			<form name="form1" method="get" action="{$vd['root']}index.php">
+			<input name="keywords" id="gametype" type="text" class="input" size="33" value="" onkeyup="vkeyup()">
+			<input type="hidden" name="stype" value="pname"/>
+			<input type="hidden" name="m" value="mod_b2b"/>
+			<input type="hidden" name="c" value="Product"/>
+      <input type="hidden" name="a" value="PriceMy"/>
+			<input type="image" src="{$vd['content']}images/icon_search.gif" border="0" align="absmiddle">　　　　　　<input onclick="showExchgMoney(this.checked);" id="IsDisplayPrice" type="checkbox" name="IsDisplayPrice"><label for="IsDisplayPrice"><strong style="color:#FF0000">显示购价</strong></label>
+			</form>
+		</div>
+		<script>
+		function showExchgMoney(checkedIn)
+		{
+		for(var i=0;i<productTable.rows.length;i++)
+		productTable.rows[i].cells[3].style.display=checkedIn?"":"none";
+		}
+		</script>
+	<form name="setupprice" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=PriceMySave">
+	<div id="tableleft1">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table" id="productTable">
+		<tr>
+		<td width="40%" class="heardertop1">商品名称</td>
+		<td width="10%" class="heardertop1">商品类型</td>
+		<td width="12%" class="heardertop1">面值</td>
+		<td width="13%" class="heardertop1" style="display:none">进价</td>
+		<td width="15%" class="heardertop1">设定售价</td>
+		<td width="10%" class="heardertop1">差价利润</td>
+		</tr>
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+		<td align="left">{$item['pname']}</td>
+		<td>{#ProductType($item['ptype'])}</td>
+		<td>{$item['listprice']}</td>
+		<td style="display:none">{$item['cprice']}</td>
+		<td>
+			  <input type="hidden" name="oldprice_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+      	<input type="hidden" name="pid[]" value="{$item['pid']}"/>
+      	<input type="hidden" name="myprice_{$item['pid']}" value="{$item['cprice']}"/>
+        <input type="text" size="8" name="price_{$item['pid']}" value="<!--if(isset($vd['parray'][$item['pid']])){echo $vd['parray'][$item['pid']];}-->"/>
+    </td>
+		<td><!--if(isset($vd['parray'][$item['pid']])){echo round(($vd['parray'][$item['pid']]-$item['cprice']), 3);}else{echo '--';}--></td>
+		</tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	</div>
+	<div id="page">
+		{load(fpage)}
+	</div>
+	
+	<input type="submit" name="Submit" value="保存设定" class="button"> <input type="reset" name="reset" value="重新填写" class="button">
+	</form>
+	</div>
+	</div>
+	<br>
+</body>
+</html>

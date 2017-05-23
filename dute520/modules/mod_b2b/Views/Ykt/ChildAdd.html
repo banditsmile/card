@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right;font-size:13px;font-weight:bold;">卡种生成</span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >当前产品：{$vd['yktpname']}</span>
+    </td>
+  </tr>
+</table>
+<form method="post" action="index.php?m=mod_b2b&c=ykt&yktpid={$vd['yktpid']}&a=childsave" >
+<table id="priceTable" border="0" width="100%" style="border-collapse: collapse;line-height:25px;border:1px #CFDCF2 solid;background:#ffffe5" bordercolor="#CFDCF2">
+  <tr>
+    <td class="buylt">卡种名称：</td>
+    <td class="buyrt">
+      <input type="hidden" id="pid" name="pid" class="myinput"/>
+      <input type="text" name="ykttag" class="myinput"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">所需点数：</td>
+    <td class="buyrt">
+      <input type="text" name="yktpoints" class="myinput"/> 比例：1{$vd['lang']['moneyunit']} = 100点
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">绑定一卡通卡号特征码：</td>
+    <td class="buyrt">
+      <input type="text" name="yktcard" class="myinput"/> <br/>请写入绑定的一卡通卡号特征码，比如卡号是sd3开头，可以写成sd3，多个特征码半角逗号区分，如sd3,MY200
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">绑定商品：</td>
+    <td class="buyrt">
+      <select id="pname" style="width:250px;" onchange="set(this)">
+      <!--foreach($vd['items'] as $item){-->
+      <option value="{$item['pid']}|{$item['listprice']}|{$item['ptype']}|{$item['yktpid']}">{$item['pname']}</option>
+      <!--}-->
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt">绑定商品面值：</td>
+    <td class="buyrt"><span id="listprice">--</span>{$vd['lang']['moneyunit']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">绑定商品类型：</td>
+    <td class="buyrt"><span id="ptype">--</span></td>
+  </tr>
+  <tr>
+    <td class="buylt">是否已经被绑定：</td>
+    <td class="buyrt"><span id="isbind">--</span></td>
+  </tr>
+  <tr>
+    <td class="buylt" height="50px"></td>
+    <td class="buyrt"><input type="submit" value="确认添加" class="mysubmit"/> <input type="reset" value="重置" class="myreset"/></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  <!--if(isset($vd['items'][0]['pid'])){-->
+    $("listprice").innerHTML = {$vd['items'][0]['listprice']};
+    $("ptype").innerHTML = ProductType("{$vd['items'][0]['ptype']}");
+    $("pid").value = {$vd['items'][0]['pid']};
+    <!--if($vd['items'][0]['yktpid'] > 0){-->
+    $("isbind").innerHTML = "是";
+    <!--}else{-->
+    $("isbind").innerHTML = "否";
+    <!--}-->
+  <!--}-->
+  
+  function set(obj)
+  {
+    var val = obj.options[obj.selectedIndex].value;
+    var tmp = val.split("|");
+    //获取价格
+    $("listprice").innerHTML = tmp[1];
+    $("ptype").innerHTML = ProductType(tmp[2]);
+    $("pid").value = tmp[0];
+    $("isbind").innerHTML = tmp[3] > 0 ? "是" : "否";
+  }
+
+  function ProductType(val)
+  {
+    switch(val)
+    {
+      case "0":
+        return "卡密商品";
+      case "1":
+        return "自动充值";
+      case "2":
+        return "代充商品";
+      case "3":
+        return "QQ商品";
+      default:
+        return "卡密商品";
+    }
+  }
+</script>
+
+

@@ -1,0 +1,462 @@
+{load(head)}
+
+<div class="clear_div2 center_bj">
+
+        <div class="clear_div2 h_one">
+
+            <script type="text/javascript" src="../js/jquery.js"></script>
+
+                <script type="text/javascript" src="../js/h_flash.js"></script>
+
+                <div class="tab h_flash">
+
+                    <script type="text/javascript">
+
+var slideradv_jsdatas = [<!--$i=0;foreach($vd['ad'] as $aditem) {--><!--if($aditem['ispic']==1 && $aditem['pos']==101){-->
+
+
+
+<!--if($i>0){-->
+
+
+
+			 ,
+
+
+
+			 <!--}-->
+
+			 {IsOtherUrl: 1, AdLinkUrl: "{$aditem['url']}", AdLinkPicture: "{$vd['root']}{$vd['sc']}upload/{$aditem['pic']}", AdLinkName: ""}
+
+
+
+<!--$i++;}}-->
+
+];</script>
+
+                    <script type="text/javascript" src="../js/webjs/slideradv.js"></script>
+
+            </div>
+
+            <!--end_jquery图片播放-->
+
+            <div class="h_login">
+
+                <div class="tab_c_box h_login_box">
+
+                    <div>
+
+                        <dl class="clear_div h_login">
+
+                            <dt class="login_box1">
+
+                            <form name="loginForm" action="{$vd['root']}index.php?m=mod_b2b&a=login" autocomplete="off" method="post"  onSubmit="return formCheck()">
+
+                                <label>
+
+                                    <input type=text size=40 maxlength=50 name="aname" id="aname" class="login_text1" tabindex="1"  value="登录"></label></dt>
+
+                            <dt class="login_box2">
+
+                              <label>
+
+                                    <input id="pwd" name="pwd" class="login_text1" value="密码" onfocus="this.value='';" onblur="if(this.value==''){this.value='密码'}" />
+
+                                    
+
+                                </label>
+
+                                   
+
+                            </dt> <dt class="login_box2">
+
+                              <label> <input type=text size="5" maxlength="6" name="verifycode" id="verifycode" class="input" tabindex="4">
+
+<img src="{$vd['root']}index.php?m=mod_b2b&c=Cust&a=RandCode&t=0" id="src" align="absmiddle" height="20" width="60" alt="看不清楚?请点击刷新" onClick="this.src=this.src+'&'+Math.random();"/></label> </dt>
+
+                        </dl>
+
+                        <dl class="clear_div h_login_safe">
+
+                            <table>
+
+                                <tr>
+
+                                    <td width="20">
+
+                                        <input type="checkbox" id="chkSafe" name="chkSafe" value="" onClick="chkChange()" />
+
+                                    </td>
+
+                                    <td width="105">
+
+                                        安全控件登录
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="/">找回密码？</a>
+
+                                    </td>
+
+                                    <td>
+
+                                        <a href="/">解除绑定</a>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </dl>
+
+                        <dl class="h_login_kj">
+
+                            <dd>
+
+                                <a href="/">
+
+                                    登陆器</a></dd>
+
+                            <dd>
+
+                                <a href="/">安全控件</a></dd>
+
+                        </dl>
+
+                        <dl class="clear_div h_login_btn">
+
+                            <span class="l">
+
+                                <div id="logImg" class="loading" style="display: none">
+
+                                    <img style="margin-left: 10px;" src="../images/loading1.gif" /><span>正在登录中...</span>
+
+                                </div>
+
+                                <div id="myLog">
+
+                                    
+
+<input type="submit" class="login_btn1" name="Submit" value="登陆" /></div>
+
+                            </span><span class="r">
+
+                                 <input type="button" value="新用户注册" class="reg_btn1" onclick="javascript:location.href='/index.php?m=mod_b2b&a=reg';" /></span>
+
+                        </dl>
+
+                        <dl class="login_other">
+
+                           
+
+                            <dd>
+
+                                <a class="login_qq" href="/" target="_blank">
+
+                                    QQ</a></dd>
+
+                            <dd>
+
+                                <a class="login_sina" href="#" title="正在开发中">新浪</a></dd>
+
+                            <dd>
+
+                                <a class="login_taobao" href="#" title="正在开发中">淘宝</a></dd>
+
+                        </dl>
+
+                    </div>
+
+                </div>
+
+                <!--end标签内容-->
+
+            </div>
+
+            <!--end登录-->
+
+
+
+
+
+
+
+                    <!--end一行-->
+
+        <div class="clear_div h_one">
+
+            <!-- 左 -->
+
+            <div class="h_left">
+
+                <div class="h_left h_ann">
+
+                    <dl class="h_th">
+
+                        <dd class="th">
+
+                            系统公告</dd><dt><a href="/">更多+</a></dt></dl>
+
+                    <div class="gray_border">
+
+                        <ul id="newsList" class="clear_div h_ann">
+
+<!--foreach($vd['ann'] as $a) {-->     
+
+    
+
+      <li><span style="float:right">{$this->DateFormat($a['ndate'],'m/d')}</span><a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->{$vd['root']}article/<!--if($vd['vip'] > 0){--><!--}-->{$a['id']}.html" target="_blank" <!--}--> title="{$a['title']}"><font color="{$a['titlecolor']}">{#SubText($a['title'], 19)}</font></a></li> 
+
+<!--}--> 
+
+                           
+
+                        </ul>
+
+                    </div>
+
+                    <!--end边框-->
+
+                </div>
+
+                <!--end一行的左-->
+
+                <!--end一行-->
+
+                <div class="h_left">
+
+                    <div class="clear_div h_brank">
+
+                        <dl class="h_th">
+
+                            <dd class="th">
+
+                                银行信息</dd><dt><a href="/">更多+</a></dt></dl>
+
+                        <div class="gray_border">
+
+                            <ul class="clear_div h_brank">
+
+                            
+
+<!--foreach($vd['banks'] as $item){-->
+
+					<!--if($item['AccountNO'] != ''){-->
+
+          <li><dl>
+
+  		    	<dt><img src="{$vd['root']}{$vd['sc']}upload/{$item['bankicon']}" width="30" height="36"/></dt>
+
+  		    	<a href="<!--echo $item['banksite'] == '' ? $vd['root'].'index.php?m=mod_b2b&c=Article&a=more' : $item['banksite'];-->" target="_blank"><b><u>{$item['AccountBranch']}</u></b></a>（{$item['Address']}）<br/>
+
+            {$item['AccountNO']}<br/>
+
+            账户名：{$item['AccountName']}<br/>
+
+  		    </li>
+
+  		    <!--}-->
+
+          <!--}-->
+
+                              
+
+                            </ul>
+
+                      </div>
+
+                        <!--end边框-->
+
+                    </div>
+
+                    <!--end银行信息-->
+
+                    <div class="clear_div h_contact">
+
+                        <dl class="h_th">
+
+                            <dd class="th">
+
+                                联系我们</dd><dt><a href="/">更多+</a></dt></dl>
+
+                        <div class="gray_border">
+
+                            <ul class="clear_div th h_contact">
+
+                            
+
+          <li><dl><dt><img src='images/time.png' alt='在线咨询时间' width='31' height='31'/></dt><dd>在线咨询时间:<span class='tel'>9:00-23:00</span></dd></dl>   <em><span class="r"><input type="button" class="yan_qq" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&c=qqyz'"></span><span class="l"><input type="button" class="qq_contact" value="" onclick="javascript:window.location.href='/index.php?m=mod_b2b&a=Dkf'"></em></li>  
+
+          
+  <li><dl><dt><img src='images/tel.png' alt='电话' width='31' height='31' /></dt>
+
+        <!--for($j=0;$j<count($vd['teltype']);$j++){-->  
+
+        <!--if(isset($vd['tel'][$j])&&count($vd['tel'][$j]) > 0){--><dd>{$vd['qqtype'][$j]}电话: <span class='tel'><!--for($i=0;$i<count($vd['tel'][$j]);$i++){-->
+
+          {$vd['tel'][$j][$i]}</span><p></dd><!--}--> <!--}--> <!--}--> 
+
+          </dl></li>             
+
+                            
+
+                   </ul>
+
+                        </div>
+
+                        <!--end边框-->
+
+                    </div>
+
+                    <!--end银行信息-->
+
+                </div>
+
+            </div>
+
+            <!--end一行的左-->
+
+            <!-- 右 -->
+
+            <div class="h_right">
+
+                <div class="h_right">
+
+
+
+                           
+
+<!--foreach($vd['ad'] as $aditem) {-->
+
+    <!--if($aditem['ispic']==1 && $aditem['pos']==103){-->
+
+   
+
+
+
+<a href="{$aditem['url']}" target="_blank"><img src="{$vd['root']}{$vd['sc']}upload/{$aditem['pic']}" alt='新云数卡' width='269' height='64'/></a>
+
+
+
+
+
+
+
+    
+
+    <!--}--><!--}-->
+
+                   
+
+                </div>
+
+                <!--end一行的右-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <dl class="r_th">
+
+                        <dd class="th">
+
+                            帮助信息</dd></dl>
+
+                    <div class="gray_bj">
+
+                        <ul id="helpList" class="clear_div h_help">
+
+ <!--foreach($vd['faq'] as $a) {-->
+
+      <li>
+
+        <a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->{$vd['root']}article/<!--if($vd['vip'] > 0){-->?<!--}-->{$a['id']}.html" target="_blank"<!--}--> title="{$a['title']}"> <font color="{$a['titlecolor']}">{#SubText($a['title'],14)}</font></a></li>
+
+      <!--}-->
+
+                       
+
+                        </ul>
+
+                    </div>
+
+                    <!--end边框-->
+
+                </div>
+
+                <!--end帮助信息-->
+
+            </div>
+
+            <!--end一行-->
+
+        </div>
+
+    </div>
+
+    <!--end中间背景-->
+
+        <div class="clear_div2 h_link">
+
+        <div class="clear_div2 h_link_bj">
+
+            <dl class="h_link_th">
+
+                <dd class="th">
+
+                    友情链接</dd></dl>
+
+            <ul class="clear_div h_link">
+
+            
+
+            
+
+            
+
+            <!--foreach($vd['ad'] as $a) {-->
+
+    <!--if($a['ispic']==1 && $a['pos']==109){-->
+
+    <li><a href="{$a['url']}" target="_blank"><img src="{$vd['root']}{$vd['sc']}upload/{$a['pic']}" width="80" height="31"/></a></li>
+
+    <!--}-->
+
+    <!--}-->
+
+    <!--foreach($vd['ad'] as $a) {-->
+
+    <!--if($a['ispic']==0 && $a['pos']==109){-->
+
+    <li><a href="{$a['url']}" target="_blank"> <font color="{$a['textcolor']}">{#SubText($a['text'], 8)}</font></a></li>
+
+    <!--}-->
+
+    <!--}-->
+ <script language="javascript" type="text/javascript" src="../images2/www_xybss_com_cn/js/friendlink.js"></script>
+
+                <script type="text/javascript" src="../js/webjs/friendlink.js"></script>
+
+            </ul>
+
+        </div>
+
+        <!--end链接背景-->
+
+    </div>
+
+    <!--end友情链接-->
+{load(foot)}

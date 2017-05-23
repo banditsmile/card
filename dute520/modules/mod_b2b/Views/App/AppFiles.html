@@ -1,0 +1,24 @@
+<table border="0" width="95%" style="border-collapse: collapse;margin-top:5px;border:1px #cccccc solid;background:#fff" align="center">
+  <tr style="background:#f0f0f0">
+    <td width="20%" >名称</td>
+    <td width="55%">说明</td>
+    <td width="10%">版本</td>
+    <td width="10%">适用</td>
+    <td width="5%">安装</td>
+  <tr>
+  <!--if(count($vd['items'])==0){-->
+  <tr>
+    <td colspan="5">当前无可下载应用</td>
+  <tr>
+  <!--}else{-->
+  <!--foreach($vd['items'] as $item){-->
+  <tr>
+    <td width="20%"><b>{$item['name']}</b></td>
+    <td width="55%">{$item['desc']}</td>
+    <td width="10%">{$item['ver']}</td>
+    <td width="10%">{$item['version']}</td>
+    <td width="5%" style="cursor:pointer" onclick="down({$item['id']})"><img src="{$vd['sc']}images/setup.gif" /></td>
+  <tr>
+  <!--}-->
+  <!--}-->
+</table>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=customer&a=index" title="客户列表"><font color="#000">客户列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">客户信息修改</span>(<a href="index.php?m=mod_b2b&c=customer&a=detail&ubzcid={$item['cid']}">刷新</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看客户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Agent&a=BatchSave&{$vd['op']}">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">客户信息修改</div>
+<table border="1" id="ctable" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">真实姓名:</td>
+    <td class="tablert">
+    <input type="checkbox" id="arealname_chk" name="id[]" class="checkbox" value="arealname" onFocus="this.blur()"/>
+    <input type="text" name="arealname" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">住址:</td>
+    <td class="tablert">
+    <input type="checkbox" id="aaddr_chk" name="id[]" class="checkbox" value="aaddr" onFocus="this.blur()"/>
+    <input type="text" name="aaddr" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">邮编:</td>
+    <td class="tablert">
+    <input type="checkbox" id="zip_chk" name="id[]" class="checkbox" value="zip" onFocus="this.blur()"/>
+    <input type="text" name="zip" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">邮箱:</td>
+    <td class="tablert">
+    <input type="checkbox" id="amail_chk" name="id[]" class="checkbox" value="amail" onFocus="this.blur()"/>
+    <input type="text" name="amail" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">电话:</td>
+    <td class="tablert">
+    <input type="checkbox" id="atel_chk" name="id[]" class="checkbox" value="atel" onFocus="this.blur()"/>
+    <input type="text" name="atel" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">QQ:</td>
+    <td class="tablert">
+    <input type="checkbox" id="aqq_chk" name="id[]" class="checkbox" value="aqq" onFocus="this.blur()"/>
+    <input type="text" name="aqq" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">省:</td>
+    <td class="tablert">
+    <input type="checkbox" id="prv_chk" name="id[]" class="checkbox" value="prv" onFocus="this.blur()"/>
+    <input type="text" name="prv" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">市:</td>
+    <td class="tablert">
+    <input type="checkbox" id="city_chk" name="id[]" class="checkbox" value="city" onFocus="this.blur()"/>
+    <input type="text" name="city" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">备注:</td>
+    <td class="tablert">
+    <input type="checkbox" id="remarks_chk" name="id[]" class="checkbox" value="remarks" onFocus="this.blur()"/>
+    <input type="text" name="remarks" size="24" style="vertical-align:middle" onkeyup="keyevent(this);"/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">会员级别:</td>
+    <td class="tablert">
+    <input type="checkbox" id="alv_chk" name="id[]" class="checkbox" value="alv" onFocus="this.blur()"/>
+    <select name="alv"  size="1" onchange="keyevent(this)" style="vertical-align:middle" >
+      <option value="-1">请选择级别</option>
+      {#option($vd['rank'], 0 , 'name', 'id')}
+    </select>
+    </td>
+  </tr>
+</table>
+<input type="hidden" value="{$vd['tablecheckall']}" name="tablecheckall" id="tablecheckall"/>
+<input type="hidden" value="{$vd['chkexclude']}" name="chkexclude" id="chkexclude"/>
+<input type="hidden" value="{$vd['chkinclude']}" name="chkinclude" id="chkinclude"/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="submit" value="修 改 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+  </div>
+</div>
+</form>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function trim(val) 
+  { 
+    return val.replace(/(^\s*)|(\s*$)/g, "");
+  }
+  
+  function keyevent(obj)
+  {
+    $(obj.name + "_chk").checked = (trim(obj.value) == '' || obj.value == '-1') ? false : true;
+  }
+  
+</script>
+</body>
+</html>

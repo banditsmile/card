@@ -1,0 +1,120 @@
+{load(fhead)}
+    <link href="http://www.elingka.com/css/h_skin1/common.css" type="text/css" rel="stylesheet" />
+    <link href="http://www.elingka.com/css/h_skin1/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+		<form id="cform" method="post" action="index.php?m=mod_agent&c=Right&a=Save">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft" style="border:0px;background:#FFFFFF">
+		<form id="cform" method="post" action="index.php?m=mod_agent&c=Right&a=Save">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+			<td style="padding:15px">
+        <table border="0" bordercolor="#86B9D6">
+        	<tr>
+            <td style="width:40%" align="right"><div style="padding-right:110px;font-weight:bold">商 品</div></td>
+            <td style="width:20%" align="center"></td>
+            <td style="width:40%" align="left">
+            	<div style="padding-left:50px;font-weight:bold">
+            	<!--if($vd['br']['isok']==1){-->允许<!--}else{-->不允许<!--}-->购买的商品
+            	</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:40%" align="right">
+            	<select id="products" name="products" size="20" style="width:250px;height:350px">
+            		{#Option($vd['products'],0,'pname','pid')}
+            	</select>
+
+        <td style="width:20%" align="center"><p>
+          <input name="button" type="button" class="xuanze_input" onClick="delrights()" value="  删除"/>
+        </p>
+          <p>&nbsp; </p>
+          <input name="button2" type="button" class="xuanze_input" onClick="addrights()" value="  添加"/>
+            </p>
+        <td style="width:40%" align="left"><select id="rights" name="rights" size="20" style="width:250px;height:350px">
+          
+            		{#Option($vd['rights'],0,'pname','pid')}
+            	
+        </select>        </td>
+      </tr>
+</table>
+       	      </p>
+          	</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  </form>
+</td>
+</tr>
+</table>
+<table width="100%" border="0">
+  <tr>
+    <td width="214">&nbsp;</td>
+    <td width="1130"><label>
+      <div align="left">
+	  <input type="hidden" value="{$vd['br']['pids']}" name="pids" id="pids"/>
+        <div id="opcontent">
+          <div class="optxt">
+          	<input type="hidden" value="{$vd['data']['param']}" name="param"/>
+          	<input type="hidden" value="{$vd['data']['idx']}" name="idx"/>
+          	<input type="hidden" value="{$vd['br']['id']}" name="id"/>
+          	<input type="hidden" value="{$vd['br']['isok']}" name="isok"/>
+        <input type="submit" value="保 存" class="tijiao_input"/>
+        <input type="reset" value="重 置" class="fanhui_input"/>
+      </div>
+    </label></td>
+  </tr>
+</table>
+<script type="text/javascript">function addrights() 
+  {
+  	obj = $("products").options[$("products").options.selectedIndex];
+    val = obj.value;
+    txt = obj.text;
+    
+    
+    
+    org = "," + val + ",";
+	  if($("pids").value.indexOf(org) > -1)
+	  {
+	  	alert('此商品已经在右侧列表中！');
+	  	return;
+	  }
+    else
+	  {
+	  	$("pids").value += val + ",";
+	  }
+	 
+    $("rights").options[$("rights").length] = new Option(txt, val);
+  }
+  
+  function delrights()
+  {
+  	obj = $("rights").options[$("rights").options.selectedIndex];
+  	val = obj.value;
+  	
+  	org = "," + val + ",";
+	  $("pids").value = $("pids").value.replace(org, ",");
+	
+  	DelOptionByVal(val);
+  }
+  
+  function DelOptionByVal(val)
+  {
+  	obj = $("rights");
+  	len = $("rights").length;
+  	
+  	for(i = 0; i < len; i++)
+  	{
+  		if(obj.options[i].value == val)
+  		{
+  			obj.remove(i);
+  			break;
+  		}
+  	}
+  }
+</script>
+</body>
+</html>

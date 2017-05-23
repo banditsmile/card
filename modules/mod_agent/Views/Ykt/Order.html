@@ -1,0 +1,101 @@
+{load(fhead)}
+</head>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 一卡通经销管理 >> 代理一卡通换购记录</span></div>
+	<div id="hearder"><span>代理一卡通换购记录</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form id="searchform" name="searchform" method="get" action="index.php">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		
+		<tr>
+		<td width="22%" height="30" class="tableleft1">关 键 字：</td>
+		<td width="78%" class="tableright1"><input type="text" name="keywords" size="20" value="{$vd['keywords']}" class="input" />
+		<select name="stype" id="stype" >
+    {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+		</td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">查询时间段：</td>
+		<td class="tableright1">
+			<input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+      <img src="{$vd['content']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+      <b>到 -></b>
+      <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>
+      <img src="{$vd['content']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+		</td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">&nbsp;</td>
+		<td class="tableright1">
+			<input type="hidden" name="m" value="mod_agent">
+      <input type="hidden" name="c" value="ykt">
+      <input type="hidden" name="a" value="Order">
+			<input type="submit" name="Submit" value="确认查询" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td>
+		<form name="form1" method="post">
+		<table class="table" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+      <td width="15%" class="heardertop1">
+        一卡通卡号</td>
+      <td width="26%" class="heardertop1">
+        相关内容</td>
+      <td width="8%" class="heardertop1">
+        支出({$vd['lang']['moneyunit']})</td>
+      <td width="10%" class="heardertop1">
+        变化后({$vd['lang']['moneyunit']})</td> 
+      <td width="12%" class="heardertop1">
+        交易日期</td>
+      <td width="5%" class="heardertop1">
+        详细</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td>{$item['yktnumber']}</td>
+      <td>{$item['content']}</td>
+      <td><!--if($item['outcome'] !== ''&& $item['outcome'] != 0){echo '-'.round($item['outcome'],3);}--></td>
+      <td><font color="#ff0000">{$item['fat']}</font></td> 
+      <td>{$item['createdate']}</td>
+      <td>
+        无
+      </td>
+    </tr>
+    <!--}-->
+    <!--if(count($vd['items'])==0 ){-->
+    <tr class=stline><td colspan=6 align=center>对不起，没有任何记录！</td></tr>
+    <!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	</form>
+	
+</body>
+</html>
+<script type="text/javascript">
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+</script>

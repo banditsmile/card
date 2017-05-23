@@ -1,0 +1,53 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="hearder"><span>复制粘贴方式导卡</span></div>
+	
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="importcard" method="post" action="index.php?m=mod_agent&c=card&a=save">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" class="tableleft1">注意事项：</td>
+		<td width="78%" align="left" class="tableright1">
+		1、</font>请在表单中输入点卡的卡号和密码，点卡和密码之间用空格隔开，最多20个空格，类似如下：<br/>
+    111111 222222<br/>
+    333333 444444<br/>
+    其中左边为卡号,右边的为密码，回车后表示另外一组<br/>
+    
+    <font color="#ff0000">2、</font>如果是卡密组合，格式如：卡号+空格(一个或者多个都可以)+密码<br/>
+    
+    <font color="#ff0000">3、</font>不能输入任何除字母、数字或“-”之外的任何字符。<br/>
+    
+    <font color="#ff0000">4、</font>卡号和密码的长度建议都不超过30位，输入完成后请仔细核对，以免重复或输错。<br/>
+    
+    <font color="#ff0000">5、</font>可从文本文档或Excel中复制卡号和密码。<br/>
+    
+    <font color="#ff0000">6、</font>每次最好不要超过200张点卡，以免因为web表单传递限制导致出错。<br/> 
+    <font color="#ff0000">7、</font>导入卡密后注意备份卡密文件，以防止误删除或者不时之需；<br>
+		<font color="#ff0000">8、</font>不同管理员请勿同一时间导同种类型的点卡，以防止导入重复。<br/>
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">商品名称：</td>
+		<td align="left" class="tableright1">
+			<select name="ubzpid" style="width:422px;">
+      	{#Option($vd['item'], $vd['pid'], 'pname', 'pid')}
+      </select>
+		</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">卡密内容：</td>
+		<td align="left" class="tableright1"><textarea name="ubzcards" cols="80" rows="15" class="input" dataType="Limit" min="1" max="100000000" msg="请填写导卡的卡密内容"></textarea></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td align="left" class="tableright1"><input type="hidden" name="Id" value="1749"><input type="submit" name="Submit" value="导入卡密" class="button3"> <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+</body>
+</html>

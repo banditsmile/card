@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>下级客户消费记录及分析</title><meta http-equiv="Content-Type" content="text/html; charset=gb2312" />    
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+
+
+</head>
+		<form name="history" method="get" action="index.php">
+<body>
+    <div class="new_qie">
+        <div class="new_qie2">
+            <h2>
+                下级客户消费记录及分析</h2>
+        </div>
+    </div>
+<div></div>
+
+<div></div>
+        <div class="xuan2">
+            <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+                <tr>
+                    <td width="15%" class="td_left">
+                        下级客户：</td>
+                    <td class="tdleft">
+                        <input type="hidden" name="aid" value="{$vd['underling']['aid']}" />
+			<input type="hidden" name="m" value="mod_agent" />
+			<input type="hidden" name="c" value="order" />
+			<input type="hidden" name="a" value="underling" />
+			{$vd['underling']['company']}({#DisplayCode($vd['underling']['aid'])})		</td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        商品类型</td>
+                    <td class="tdleft"><span class="tableright1">
+                      <select name="ptype">
+                        <option value="-1">全部类型</option>
+                        <option value="km">虚拟卡密</option>
+                        <option value="cz">自动充值</option>
+                        <option value="cz">手动充值</option>
+                      </select>
+                    </span></td>
+                </tr>
+                <tr>
+                    <td class="td_left">订单状态</td>
+                    <td class="tdleft"><span class="tableright1">
+                      <select name="ordstate">
+                        <option value="2" >成功订单</option>
+                        <option value="-1">失败订单</option>
+                        <option value="1" >处理中订单</option>
+                        <option value="" selected="selected">所有</option>
+                      </select>
+                    </span></td>
+                </tr>
+                <tr>
+                    <td class="td_left">查询时间段                    </td>
+                    <td class="tdleft">
+                        <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+    <strong>至</strong><input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/></td>
+                </tr>
+                <tr>
+                  <td class="td_left">&nbsp;</td>
+                  <td class="tdleft"><label>
+                    <input type="submit" name="Submit" value=" " class="input_s"  />
+                  </label></td>
+                </tr>
+          </table>
+        </div>
+        <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
+          <tr>
+            <th width="10%"> 购买时间 </th>
+            <th width="20%"> 购买商品 </th>
+            <th width="8%"> 商品类型 </th>
+            <th width="4%"> 数量 </th>
+            <th width="4%"> 购价 </th>
+            <th width="4%"> 金额</th>
+            <th width="7%"> 状态</th>
+            <th width="9%"> 订单号</th>
+            <!--$cprice_sum = 0;$dollars_sum = 0;$qty_sum = 0;$profit_sum = 0;foreach($vd['items'] as $item) {-->
+	  	  	    <tr class="trd">
+		<td width="10%">{$item['orddate']}</td>
+		<td width="20%">{$item['pname']}</td>
+		<td width="8%">{#ProductType($item['ptype'])}</font></td>
+		<td width="4%">{$item['qty']}个</td>
+		<td width="4%"><!--if($vd['canseeprice']){-->{$item['cprice']}<!--}else{-->--<!--}--></td>
+		<td width="4%"><!--if($vd['canseeprice']){-->{$item['dollars']}<!--}else{-->--<!--}--></td>
+		<td width="7%"><span class="eff">{#OrderState($item['ordstate'],$item['ptype'])}</span></td>
+		<td width="9%">{$item['ordno']}</td>
+		</tr>
+		<!--$cprice_sum=$cprice_sum+$item['cprice']*$item['qty'];$dollars_sum=$dollars_sum+$item['dollars'];$qty_sum=$qty_sum+$item['qty'];$profit_sum=$profit_sum+$item['staffprofit'];}-->
+		
+		<tr class="thr"><td colspan=3>本页合计：</td><td>{$qty_sum}</td><td>
+		</td><td><!--if($vd['canseeprice']){echo round($dollars_sum,3);}else{-->--<!--}--></td><td colspan=3></td></tr>
+		<tr class="thr"><td colspan=3>查询合计：</td>
+		<td> {$vd['tradedata']['qty_sum']}</td>
+		<td></td><td><!--if($vd['canseeprice']){echo round($vd['tradedata']['dollars_sum'],3);}else{-->--<!--}--></td><td colspan=3></td></tr>
+		</table>
+		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+</style>
+</head>
+<body>
+<form method="post" action="index.php?m=mod_b2b&c=Sys&a=EMailSave" name="cform" id="cform"> 
+<div id="content" class="cwarpper" style="position:relative">
+<div class="cbodyHead"></div>
+<div id="tab">
+<input type="button" value="填写基本信息"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys'" class="tab_normal" onFocus="this.blur()"/>
+<!--if(UB_B2C){--><input type="button" value="邮箱发送设置" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=EMail'" class="tab_active" onFocus="this.blur()"/><!--}-->
+<input type="button" value="关闭信息设置"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Close'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="前台相关设置" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Config'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="后台交易设置"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Pwd'" class="tab_normal" onFocus="this.blur()"/>
+<input type="button" value="IP屏蔽设置"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=IpLock'" class="tab_normal" onFocus="this.blur()"/>
+<!--if($vd['adminrank']==1){--><input type="button" value="相关脚本设置"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=Sys&a=Jc'" class="tab_normal" onFocus="this.blur()"/><!--}-->
+</div>
+<div class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle">邮箱配置</div>
+<div>
+  <table border="0" class="ctable" bordercolor="#ededed">
+    <tr>
+      <td class="tablelt">邮箱服务器</td>
+      <td class="tablert"><input type="text" name="mailserver" size="35" value="{$vd['sys']['mailserver']}"/>  <span class="spantip">邮箱smtp服务器，如smtp.126.com</span></td>
+    </tr>
+    <tr>
+      <td class="tablelt">邮箱用户名</td>
+      <td class="tablert"><input type="text" name="mailuser" size="35" value="{$vd['sys']['mailuser']}"/>  <span class="spantip">您的邮箱，如xxx@126.com</span></td>
+    </tr>
+    <tr>
+      <td class="tablelt">邮箱密码</td>
+      <td class="tablert"><input type="password" name="mailpass" size="39" value="{$vd['sys']['mailpass']}" style="width:202px;"/>  <span class="spantip">您的邮箱密码</span></td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<!--$temp = explode('|', $vd['sys']['postsetting']);-->
+<!--if(UB_B2C|UB_YKT){-->
+<div class="cwarpper1">
+<div class="ctitle">
+  用户购卡后发送邮件发送设置<!--if(UB_B2B){-->(只对零售系统有效)<!--}-->
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    支持的标记如下：<br/> 
+    {username} ：当前购卡的用户名<br/> 
+    {webname}  ：平台名称<br/>
+    {pname}    ：当前购买的商品<br/>
+    {result}   ：购卡结果，只有成功后才会发送<br/>
+    {website}  ：平台网址<br/>
+    {date}     ：购卡时间<br/>
+    在需要输入这些信息的地方，您只要插入这些标记即可<br/>
+    <font color="#ff0000">注：标记是包含大扩号在内的</font><br/>
+    你也可以使用编辑框插入图片或者对字体段落进行处理<br/>
+  </p>
+</div>
+<div>
+  <table border="0" class="ctable" bordercolor="#ededed">
+    <tr>
+    <td class="tablelt">邮件自动发送设置</td>
+    <td class="tablert">
+        <input type="checkbox" name="postaftercbuy" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[1])}> 用户购卡后发送
+    </td>
+    </tr>
+    <tr>
+      <td class="tablelt">邮件标题</td>
+      <td class="tablert"><input type="text" name="mailtitle" size="35" value="{$vd['sys']['mailtitle']}"/>  <span class="spantip">购买商品后发送的邮件标题</span></td>
+    </tr>
+  </table>
+  <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">
+    <tr>
+      <td style="padding:0px;overflow-y:hidden" colspan="2">
+        <textarea name="mailcontent" cols="67" rows="2" style="display:none">{$vd['sys']['mailcontent']}</textarea>
+        <iframe ID="Editor" name="Editor" src="{$vd['sc']}ubb/edit.htm?id=mailcontent" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:433px;width:100%; background-color:#D9EEF9"></iframe>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+<!--}-->
+
+<div class="cwarpper1">
+<div class="ctitle">
+  用户注册后邮件发送设置(只对零售系统有效)
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    支持的标记如下：<br/> 
+    {username} ：注册的用户<br/> 
+    {userpass} ：用户密码<br/>
+    {website}  ：平台地址<br/>
+    {date}     ：注册时间<br/>
+    在需要输入这些信息的地方，您只要插入这些标记即可<br/>
+    <font color="#ff0000">注：标记是包含大扩号在内的</font><br/>
+    你也可以使用编辑框插入图片或者对字体段落进行处理<br/>
+  </p>
+</div>
+<div>
+  <table border="0" class="ctable" bordercolor="#ededed">
+    <tr>
+    <td class="tablelt">邮件自动发送设置</td>
+    <td class="tablert"><input type="checkbox" name="postafterareg" value="1" class="checkbox" onFocus="this.blur()" {#ToggleCheck($temp[2])}> 用户注册后发送</td>
+    </tr>
+    <tr>
+      <td class="tablelt">邮件标题</td>
+      <td class="tablert"><input type="text" name="aregmailtitle" size="35" value="{$vd['sys']['aregmailtitle']}"/>  <span class="spantip"></span></td>
+    </tr>
+  </table>
+  <table border="0" class="ctable" bordercolor="#ededed" style="border:0px">
+    <tr>
+      <td style="padding:0px;overflow-y:hidden;" colspan="2">
+        <textarea name="aregmailbody" cols="67" rows="2" style="display:none">{$vd['sys']['aregmailbody']}</textarea>
+        <iframe ID="Editor" name="Editor" src="{$vd['sc']}ubb/edit.htm?id=aregmailbody" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:433px;width:100%; background-color:#D9EEF9"></iframe>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="submit" value=" 修 改 " class="btn"/>
+    <input type="reset" value=" 重 置 " class="btn"/>
+  </div>
+</div>
+</form>
+<input type="hidden" id="webdir" value="{$vd['webdir']}"/>
+<input type="hidden" id="website" value="{$vd['website']}"/>
+<input type="hidden" id="connecter" value="{$vd['connecter']}"/>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=sys&a=index" title="系统基本设置"><font color="#000">系统基本设置</font></a></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_sys_email" onFocus="this.blur()" title="查看邮箱发送设置相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+</body>
+</html>

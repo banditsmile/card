@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gallery cellDimension="800" columns="4" zoomOutPerc="15" zoomInPerc="100" frameWidth="20" frameColor="0xFFFFFF" captionColor="0xFFFFFF" enableRightClickOpen="true" >
+<image>
+   <url>/2009/content/mod_shared/skins/upload/tall.jpg</url>
+    <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/tall.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/tall.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>  
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+<image>
+   <url>/2009/content/mod_shared/skins/upload/wide.jpg</url>
+   <caption></caption>
+</image>
+</gallery>

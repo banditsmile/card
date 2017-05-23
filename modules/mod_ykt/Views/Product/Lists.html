@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>点卡列表</title>
+<body marginheight="0" marginwidth="0">
+<style type="text/css">
+BODY {
+  BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px
+}
+TD {
+  FONT-SIZE: 12px
+}
+
+clear {
+  CLEAR: both
+}
+A {
+  COLOR: #000; TEXT-DECORATION: none
+}
+A:hover {
+  COLOR: #ff6600; TEXT-DECORATION: none
+}
+.prolist TD {
+  BORDER-RIGHT: #ffe5bf 1px solid; BORDER-BOTTOM: #ffe5bf 1px solid; HEIGHT: 30px; padding-left:5px;
+}
+.prolist1 {
+  BORDER-TOP: #ffe5bf 1px solid; BORDER-LEFT: #ffe5bf 1px solid; HEIGHT: 25px
+}
+
+.nd {
+  HEIGHT: 25px; BACKGROUND-COLOR: #fefaf5
+}
+.ndov {
+  HEIGHT: 25px; BACKGROUND-COLOR: #E4F8F6
+}
+</style>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="prolist1">
+    <table width="100%" border="0" cellpadding="2" cellspacing="0" class="prolist">
+      <tbody>
+        <!--foreach($vd['items'] as $item){-->
+        <tr class="nd" onmouseover="this.className='ndov'" onmouseout="this.className='nd'">
+          <td width="20%" align="middle">{$item['yktpname']}</td>
+          <td width="44%" align="left"><a href="#">{$item['ykttag']}</a></td>
+          <td width="10%" class="mz">{$vd['lang']['moneysymbol']}{$item['listprice']}</td>
+          <td width="10%" class="sj">{$item['yktpoints']} 点</td>
+          <td width="16%" align="center">
+          <!--if($item['ptype'] == 0) {-->
+          <img align=absMiddle src={$vd['content']}images/icon_mi.gif> <a href="{#YktProductLink($item['yktpid'], 0, $item['pid'])}" target="_blank">提取卡密</a>
+          <!--}-->
+          <!--if($item['ptype'] == 1) {-->
+          <img align=absMiddle src={$vd['content']}images/icon_zc.gif> <a href="{#YktProductLink($item['yktpid'], 1, $item['pid'])}" target="_blank">自动充值</a>
+          <!--}-->
+          <!--if($item['ptype'] == 2) {-->
+          <img align=absMiddle src={$vd['content']}images/icon_sc.gif> <a href="{#YktProductLink($item['yktpid'], 1, $item['pid'])}" target="_blank">手动充值</a>
+          <!--}-->
+          </td>
+        </tr>
+        <!--}-->
+      </tbody>
+    </table>
+  </td>
+  </tr>
+</table>
+</body>
+</html>

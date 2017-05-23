@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$temp = explode('|', $vd['sys']['pwdconfig']);-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&a=home" title=""><font color="#000">积分系统</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">赠送积分</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看用户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Scored&a=ScoredSave">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">积分赠送</div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#ededed">
+  <tr>
+    <td class="tablelt">选择用户：</td>
+    <td class="tablert">
+      <select name="aidmethod" onchange="settr(this)">
+        <option value="1">指定用户</option>
+        <option value="2">指定级别</option>
+        <option value="3">全体用户</option>
+      </select>
+    </td>
+  </tr>
+  <tr id="tr_1_0">
+    <td class="tablelt">用户编号：</td>
+    <td class="tablert"><input type="text" name="aid" size="20" value=""/></td>
+  </tr>
+  <tr id="tr_2_0" style="display:none">
+    <td class="tablelt">指定级别：</td>
+    <td class="tablert">
+      <select name="rank" >
+        <!--foreach($vd['rank'] as $item){-->
+        <option value="{$item['id']}">{$item['name']}</option>
+        <!--}-->
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">数量：</td>
+    <td class="tablert">
+      <input type="text" name="ubzczvalue" size="20"/> <span class="spantip">扣积分的话话，这里填上对应负数即可，如 -10 表示扣款 10 {$vd['lang']['moneyunit']}</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">赠送备注：</td>
+    <td class="tablert">
+      <div id="reason" style="padding:10px 0px;line-height:20px">
+        <input type="radio" name="remarks" value="普通赠送" class="checkbox" style="vertical-align:top" onclick="setCustom(0)" checked/> 普通赠送<br/>
+        <input type="radio" name="remarks" value="订单失败手工退还" class="checkbox" style="vertical-align:top" onclick="setCustom(0)"/> 订单失败手工退还<br/>
+        <input type="radio" name="remarks" value="custom" class="checkbox" style="vertical-align:top" onclick="setCustom(1)"/> 自行输入<br/>
+        <textarea rows="3" name="remarks_custom" cols="28" id="remarks_custom" style="width:208px;display:none;color:#5c5c5c" onblur="setBlur(this)" onclick="setArea(this)">请输入原因</textarea>
+      </div>
+    </td>
+  </tr>
+  <!--if($temp[0] == 1){-->
+  <tr>
+    <td class="tablelt">后台充值密码：</td>
+    <td class="tablert">
+      <input type="password" name="tradepwd" value=""> <span class="spantip">如果您不需要这些安全措施，您可以在常规管理中把他去掉</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">确认后台充值密码：</td>
+    <td class="tablert">
+      <input type="password" name="retradepwd" value=""> <span class="spantip"></span>
+    </td>
+  </tr>
+  <!--}-->
+</table>
+<input type="hidden" value="0" name="bindchange" id="bindchange"/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="submit" value="提 交 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+  </div>
+</div>
+</form>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 1;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function enable(obj)
+  {
+    state   = obj.checked ? false : true;
+    bck     = obj.checked ? "#ffffff" : "#EAEAEA";
+    
+    $("staffpwd").readOnly   = state;
+    $("restaffpwd").readOnly = state;
+    
+    $("staffpwd").style.background = bck;
+    $("restaffpwd").style.background = bck;
+    
+    $("staffpwd").value = "";
+    $("restaffpwd").value = "";
+  }
+  
+  function settr(obj)
+  {
+    v = obj.options[obj.selectedIndex].value;
+    if(v == 1)
+    {
+      $("tr_1_0").style.display = "";
+      $("tr_2_0").style.display = "none";
+    }
+    else if(v == 2)
+    {
+      $("tr_1_0").style.display = "none";
+      $("tr_2_0").style.display = "";
+    }
+    else if(v == 3)
+    {
+      $("tr_1_0").style.display = "none";
+      $("tr_2_0").style.display = "none";
+    }
+  }
+  
+  function setbind(val)
+  {
+    $("bindchange").value = val;
+  }
+  
+  function reasondisp(obj)
+  {
+    $("reason").style.display = obj.value==0 ? "none" : "";
+  }
+  setTableInput();
+  
+  function setCustom(val)
+  {
+    $("remarks_custom").style.display = val == 1 ? "" : "none";
+  }
+  
+  function setArea(obj)
+  {
+    if(obj.innerHTML == "请输入原因")
+    {
+      obj.innerHTML = "";
+    }
+  }
+  
+  function setBlur(obj)
+  {
+    if(obj.innerHTML == "")
+    {
+      obj.innerHTML = "请输入原因";
+    }
+  }
+</script>
+</body>
+</html>

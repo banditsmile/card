@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>网站配置信息</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+      <h3>静态页面生成程序</h3>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td colSpan="2" height="23" class="listhead">
+    <div class="style3" align="center">
+      马上生成静态页面</div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><input type="button" onclick="setdata(1, 'product')" value="编号{$vd['pid']}商品静态页面生成" style="width:250px;cursor:pointer"/></td>
+    <td align="center" width="50%"><input type="button" onclick="setdata(1, 'plist')" value="编号{$vd['pid']}商品对应列表静态页面生成" style="width:250px;cursor:pointer"/></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><input type="button" onclick="setdata(1, 'index')" value="首页静态页面生成" style="width:250px;cursor:pointer"/></td>
+    <td align="center" width="50%"><input type="button" onclick="setdata(1, 'cat')" value="商品总类静态页面生成" style="width:250px;cursor:pointer"/></td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td><div id="result" style="font-size:15px;color:#ff0000;font-weight:bold"></div><div id="tmp"></div></td>
+  </tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+  var cat = new Array();
+  var pid = new Array();
+  var art = new Array();
+  cat[0] = {$vd['catid']};
+  catcount = 1;
+  
+  pid[0] = {$vd['pid']};
+  pidcount = 1;
+  
+  var thismod="b2c"
+  var m  = "mod_b2b";
+  var c  = "html";
+  var a  = 'index';
+  var id = 0;
+  
+  var thisid = 0;
+  
+  var single = 1; // 如果单项则为1
+  var thiscount = 0;
+  
+  // 顺序 首页->类目->商品->列表->文章
+  
+  function loadXMLDoc()
+  {
+    xmlhttp=null;
+    var url=null;
+    
+    url = "m=" + m + "&c=" + c + "&a=" + a + "&id=" + thisid;
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    if (xmlhttp!=null)
+    {
+      xmlhttp.onreadystatechange=state_Change;
+      xmlhttp.open("post", "index.php", true);
+      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp.send(url);
+    }
+    else
+    {
+      alert("您的浏览器不支持XMLHTTP")
+    }
+  }
+  
+  function state_Change()
+  {
+    var result = document.getElementById("result");
+    // 如果 xmlhttp 显示为 "loaded"
+    if (xmlhttp.readyState==4)
+    {
+      // 如果为 "OK"
+      if (xmlhttp.status==200)
+      {
+        if(a == "index")
+        {
+          result.innerHTML = "首页生成完毕  => index.html";
+          if(single == 1)
+          {
+            return;
+          }
+          
+          a = "cat";
+          loadXMLDoc();
+          return;
+        }
+        
+        if(a == "cat")
+        {
+          result.innerHTML = "类目生成完毕  => cat.html";
+          if(single == 1)
+          {
+            return;
+          }
+          
+          a = "product";
+          thisid = pid[0];
+          thiscount = 1;
+          loadXMLDoc();
+          return;
+        }
+        
+        if(a == "product")
+        {
+          result.innerHTML = "编号为" + thisid + "商品生成完毕  => product/" + thisid + ".html";
+          
+          if((single == 1) &&(thiscount == pidcount))
+          {
+            result.innerHTML = "所有商品静态页面生成完毕";
+            return;
+          }
+
+          if(thiscount == pidcount)
+          {
+            a = "plist";
+            thisid = cat[0];
+            thiscount = 1;
+            result.innerHTML = "所有商品静态页面生成完毕";
+            if(single == 1)
+            {
+              return;
+            }
+          }
+          thisid = pid[thiscount];
+          thiscount++;
+          loadXMLDoc();
+          return;
+        }
+        
+        if(a == "plist")
+        {
+          result.innerHTML = "编号为" + thisid + "的商品分类生成完毕  => list/" + thisid + ".html";
+          
+          if((single == 1) &&(thiscount == catcount))
+          {
+            result.innerHTML = "所有商品分类静态页面生成完毕";
+            return;
+          }
+
+          if(thiscount == catcount)
+          {
+            a = "article";
+            thisid = art[0];
+            thiscount = 1;
+            result.innerHTML = "所有商品分类静态页面生成完毕";
+            if(single == 1)
+            {
+              return;
+            }
+          }
+          thisid = cat[thiscount];
+          thiscount++;
+          loadXMLDoc();
+          return;
+        }
+        
+        if(a == "article")
+        {
+          result.innerHTML = "编号为" + thisid + "的文章生成完毕  => article/" + thisid + ".html";
+          
+          if((single == 1) &&(thiscount == artcount))
+          {
+            result.innerHTML = "所有文章静态页面生成完毕";
+            return;
+          }
+          
+          if(thiscount == artcount)
+          {
+            result.innerHTML = "所有文章静态页面生成完毕";
+            if(single == 1)
+            {
+              return;
+            }
+          }
+          thisid = art[thiscount];
+          thiscount++;
+          loadXMLDoc();
+          return;
+        }
+      }
+      else
+      {
+        result.innerHTML = "首页生成失败";
+      }
+    }
+  }
+  
+  function setdata(sgl, act)
+  {
+    if(act == "product")
+    {
+      thisid = pid[0];
+      
+    }
+    if(act == "cat")
+    {
+      thisid = cat[0];
+      
+    }
+    if(act == "article")
+    {
+      thisid = art[0];
+      
+    }
+    thiscount = 1;
+    a = act;
+    single = sgl;
+    loadXMLDoc();
+  }
+</script>

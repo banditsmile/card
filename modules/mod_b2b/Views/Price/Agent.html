@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>价格模板套用</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>单级别价格模板</h2>
+  </div>
+  <ul>
+			<li><a href="index.php?m=mod_b2b&c=Price&a=AddRankTpl">添加价格模板</span></a></li>
+			<li><a href="index.php?m=mod_b2b&c=Price&a=RankTpl">价格模板列表</span></a></li>
+			<li><a href="" class="on">单级别价格模板</a></li>
+  </ul>
+</div>
+		<FORM name="query" METHOD=POST ACTION="{$vd['root']}index.php?m=mod_b2b&c=price&a=Agent">
+      <table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%" class="table1_left">关键字：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="30" name="keywords" class='input' value="">
+		  </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">查询类型：</td>
+		<td align="left" class="tableright1">
+		  <div align="left">
+		    <select name="stype" id="stype" class="search_select">
+		          <option value="aname" selected>用户名</option>
+		          <option value="aid">用户编号</option>
+		          <option value="company">商户名称</option>
+		          <option value="arealname">联系人</option>
+	            </select>
+	            </div></td>
+		</tr>
+		<tr>
+		<td width="20%" class="table1_left"></td>
+		<td width="80%" align="left" class="tableright1">
+		  <div align="left">
+		    <input type="submit" name="Submit" value="确认查询" class="tijiao_input">
+		    <input type="reset" name="reset3" value="重置查询" class="fanhui_input">
+	      </div></td>
+		</tr>
+		</table>
+		</FORM>
+	</td>
+	</tr>
+	</table>
+	<br>
+		<form name="template" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=AgentTplSave">
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+		<tr>
+		<th width="6%" class="heardertop1">编号</td>
+		<th width="11%" class="heardertop1">用户名</td>
+		<th width="20%" class="heardertop1">商户名称</td>
+		<th width="8%" class="heardertop1">用户级别</td>
+		<th width="8%" class="heardertop1">联系人</td>
+		<th width="6%" class="heardertop1">状态</td>
+		<th width="9%" class="heardertop1">余额</td>
+		<th width="10%" class="heardertop1">消费</td>
+		<th width="22%" class="heardertop1">模板套用</td>
+		<!--foreach($vd['items'] as $item) {-->
+      <tr class="trd">
+		<td>{$item['aid']}</td>
+		<td>{$item['aname']}</td>
+		<td align=left>{$item['company']}</td>
+		<td>{$item['rank']}</td>
+		<td>{$item['arealname']}</td>
+		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+		<td>{$item['aremain']}</td>
+		<td>{$item['acsmp']}</td>
+		<td>
+		    <input type="hidden" name="oldpricetpl_{$item['aid']}" value="{$item['pricetpl']}"/>
+      	<input type="hidden" name="aid[]" value="{$item['aid']}"/>
+        <select name="pricetpl_{$item['aid']}">
+        	<option value="0">不套用价格模板</option>
+        	{#option($vd['tpls'], $item['pricetpl'], 'name', 'id')}
+        </select>
+		</td>
+	  </tr>
+		<!--}-->
+		</table>
+		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+	
+	  <div align="left">
+	    <input type="hidden" name="SearchString" value="">
+	    <input type="submit" name="Submit" value="确认设置" class="tijiao_input">
+	    <input type="reset" name="reset" value="重新选择" class="fanhui_input">
+	    </div>
+		</form>
+</body>
+</html>

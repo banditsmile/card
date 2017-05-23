@@ -1,0 +1,108 @@
+{load(fhead)}
+<script language="JavaScript">
+function CheckOthers(form)
+{
+	for (var i=0;i<form.elements.length;i++)
+	{
+		var e = form.elements[i];
+			if (e.checked==false)
+			{
+				e.checked = true;
+			}
+			else
+			{
+				e.checked = false;
+			}
+	}
+}
+
+function CheckAll(form)
+{
+	for (var i=0;i<form.elements.length;i++)
+	{
+		var e = form.elements[i];
+			e.checked = true
+	}
+}
+
+function submit_to(url){
+var url;
+document.form1.action=url
+document.form1.submit();
+}
+
+</script>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统</a> >> 安全管理 >> IP及所在地绑定</span></div>
+	<div id="tabs5">
+		
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='?';" ><span class="mm">IP地址绑定</span></li><li onclick="location.href='?Action=City';" ><span class="mm">所在地绑定</span></li>
+		<li onclick="location.href='?Action=IpAddressList';" class=hover><span class="mm">多线IP设置</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	
+	<div id="hearder"><span>IP验证开关</span></div>
+	<form name="bindsessionip" method="post" action="?Action=BindSessionIp">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">验证状态：</td>
+		<td width="78%" class="tableright1"><strong><font color=#0000ff>验证登录与操作IP是否匹配</font></strong></td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">验证操作：</td>
+		<td class="tableright1"><input type="radio" name="BindSessionIpType" value="1" checked id="yesbind"><label for="yesbind"><strong><font color=#0000ff>验证IP</font></strong></label> <input type="radio" name="BindSessionIpType" value="0"  id="nobind" ><label for="nobind"><strong><font color=#ff0000>不验证IP</font></strong></label></td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">功能说明：</td>
+		<td class="tableright1">该功能作用是防止客户被局域网抓包导致cookies被盗用，强烈建议开启验证IP的功能。如果是多线路或多IP的，请在以下IP列表中添加相应的IP地址。如果的确因浮动IP无法使用的，才建议关闭IP验证功能，但我们绝对不提倡这么做，因为这样存在的巨大的安全隐患。</td>
+		</tr>
+		<tr>
+		<td class="tableleft1">帐户交易密码：</td>
+		<td class="tableright1"></td>
+		</tr>
+		
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input type="hidden" name="Login_my" value="38127895"><input type="submit" name="submit" value="确认设置" class="button" onclick="javascript:document.bindsessionip.TradePassword.value=document.bindsessionip.EGEDIT.mytext;"> <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+	<br>
+	<br>
+	<div id="hearder"><span>多线路IP列表</span></div>
+	<form name="form1" method="post">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr>
+		<td width="10%" class="heardertop1">&nbsp;</td>
+		<td width="80%" class="heardertop1">IP地址</td>
+		<td width="10%" class="heardertop1">修改</td>
+		</tr>
+		<tr class=stline><td colspan=3 align=center>没有添加多线路IP！</td></tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+		<div id="add">
+			<input name="button1" type="button" class="buttonadd" value="新增" onclick="location.href='?Action=IpAddressList&Action1=Add';">
+			<input name="button2" type="button" class="buttonnor" value="全选" onClick="CheckAll(this.form);">
+			<input name="button2" type="button" class="buttonnor" value="反选" onClick="CheckOthers(this.form)">
+			<input name="button4" type="button" class="buttondel" value="删除" onClick="submit_to('?Action=IpAddressListDelSave');">
+		</div>
+	</div>
+	</form>
+	
+</body>
+</html>

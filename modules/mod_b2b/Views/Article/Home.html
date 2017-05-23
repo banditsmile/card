@@ -1,0 +1,83 @@
+{load(head)}
+
+    <div class="clear_div2 center_bj i_center_bj">
+
+        <div class="clear_div i_center">
+
+            <dl class="h_th">
+
+                <dd class="th">
+
+                    公告信息</dd></dl>
+
+            <!--end位置标题-->
+
+            
+
+            <ul class="clear_div i_news">
+
+                
+
+                        
+
+                       
+
+                        
+
+                       
+
+   <!--foreach($vd['items'] as $a) {-->
+
+    <li>
+
+
+
+<span style="float:right;" style="color:red;">{$this->DateFormat($a['ndate'],'Y/m/d')}</span>
+
+      <a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->{$vd['root']}article/<!--if($vd['vip'] > 0){-->?<!--}-->{$a['id']}.html" target="_blank"<!--}-->> <font color="{$a['titlecolor']}"  title="{$a['title']}">{$a['title']}</font></a>  </li>
+
+    <!--}-->
+
+    <li class="endli">
+
+<span style="float:right;">
+
+    <form method="post" action="index.php?m=mod_article&a=home&{$vd['op']}">
+
+      <strong>共有记录<font color="#ff0000">{$vd['totlerow']}</font>条 / 第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页
+
+      <a href="?m=mod_b2b&c=article&a=home&{$vd['op']}&page={$vd['prepage']}">上一页</a>
+
+      <a href="?m=mod_b2b&c=article&a=home&{$vd['op']}&page={$vd['nextpage']}">下一页</a>
+
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="赶紧跳过去吧" type="submit" class="register_btn""/>
+
+    </form>
+
+</span>
+
+    </li>
+
+  </ul>
+
+
+
+                
+
+</div>
+
+                <!--end页码-->
+
+            </div>
+
+            <!--end中间边框-->
+
+        </div>
+
+        <!--end中间宽度-->
+
+    </div>
+
+    <!--end中间背景-->
+
+    {load(foot)}

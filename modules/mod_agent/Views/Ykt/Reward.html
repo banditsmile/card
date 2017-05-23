@@ -1,0 +1,83 @@
+{load(fhead)}
+</head>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 一卡通经销管理 >> 换购商品返点费率</span></div>
+	<div id="hearder"><span>换购商品返点费率</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="sellhistory" method="get" action="index.php">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">关键字：</td>
+		<td width="78%" class="tableright1"><input type="text" name="keywords" id="keywords" class="input" maxlength="34" value=""/></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">查询类型：</td>
+		<td class="tableright1">
+		<select name="stype">
+		<option value="pname" >商品名称</option>
+		</select></td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">&nbsp;</td>
+		<td class="tableright1">
+      <input type="hidden" name="m" value="mod_agent"/>
+      <input type="hidden" name="c" value="ykt"/>
+      <input type="hidden" name="a" value="reward"/>
+			<input type="submit" name="Submit" value="确认查询" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table class="table" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr>
+			<td width="10%" class="heardertop1">
+        商品编号</td>
+      <td width="40%" class="heardertop1">
+        商品名称</td>
+      <td width="10%" class="heardertop1">
+        客户服务</td>
+      <td width="10%" class="heardertop1">
+        面值({$vd['lang']['moneyunit']})</td>
+      <td width="10%" class="heardertop1">
+      	一卡通售价({$vd['lang']['moneyunit']})</td>
+      <td width="15%" class="heardertop1">
+        返点比例</td> 
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+    	<td>{$item['pid']}</td>
+      <td style="padding-left:3px;text-align:left">{$item['pname']}</td>
+      <td>系统</td>
+      <td>{$item['listprice']}</td>
+      <td>{$item['listprice']}</td>
+      <td>
+      	<!--if( !isset($item['id']) ){-->
+      	<!--if(intval($item['rewardfromtpl']==0)){-->
+      	<font color="#cccccc">未设置</font>
+      	<!--}else{-->
+      	{$item['rewardfromtpl']} %
+      	<!--}-->
+      	<!--}else{-->
+      	{$item['reward']} %
+      	<!--}-->
+      </td> 
+    </tr>
+		<!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

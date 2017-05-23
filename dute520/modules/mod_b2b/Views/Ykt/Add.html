@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+td p{display:none}
+td P.show {
+  DISPLAY: block
+}
+td STRONG {
+CURSOR:pointer;
+COLOR:#0197c9;
+PADDING:0 3px;
+}
+</style> 
+</head>
+<body>
+<form method="post" action="index.php?m=mod_b2b&c=card&a=save" name="cform" id="cform" onsubmit="return checkform()"> 
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=order&a=index" title="订单列表"><font color="#000">订单列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">订单详细信息</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+
+
+<div class="cwarpper1">
+<div class="ctitle">添加卡密</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr>
+      <td class="tablelt2">选择一卡通</td>
+      <td class="tablert2">
+        <select name="ubzpid" style="width:500px;">
+          {#Option($vd['yktitems'], $vd['pid'], 'pname', 'pid')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt2">
+        </select><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>如果您希望这次生成的一卡通只能充值此商品，您可以选择绑定，如果是平台充值卡无须绑定</p>
+        绑定商品
+      </td>
+      <td class="tablert2">
+        <select name="bindpid" style="width:500px;">
+          <option value="0">不绑定商品</option>
+          {#Option($vd['items'], 0, 'pname', 'pid')}
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt2">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
+          <font color="#ff0000">录入须知！</font>
+          <font color="#ff0000">1、</font>请在表单中输入点卡的卡号和密码，点卡和密码之间用空格隔开，最多20个空格； 类似如下：<br/>
+          111111 222222<br/>
+          333333 444444<br/>
+          其中左边为卡号,右边的为密码，回车后表示另外一组<br/>
+          
+          <font color="#ff0000">2、</font>如果是卡密组合，格式如：卡号+空格(一个或者多个都可以)+密码<br/>
+          
+          <font color="#ff0000">3、</font>不能输入任何除字母、数字或“-”之外的任何字符。<br/>
+          
+          <font color="#ff0000">4、</font>卡号和密码的长度建议都不超过30位，输入完成后请仔细核对，以免重复或输错。<br/>
+          
+          <font color="#ff0000">5、</font>可从文本文档或Excel中复制卡号和密码。<br/>
+          
+          <font color="#ff0000">6、</font>每次最好不要超过200张点卡，以免因为web表单传递限制导致出错。<br/></p>
+        录入卡密
+      </td>
+      <td class="tablert2">
+         <div style="display:none">
+         <textarea id="txt_ln" name="content" rows="19" cols="4" style="overflow:hidden;border-right:0px;text-align:right;background-color:#f0f0f0;color:#5c5c5c;cursor:default;" readonly UNSELECTABLE="on"></textarea><textarea id="txt_main" name="content" rows="19" cols="70 " onkeyup="TextCounter()" onkeydown="editTab()"  onscroll="Show_Ln()" wrap="virtual" style="overflow:auto;padding-left:5px;border-left:0px"></textarea>
+         <script language="JavaScript">document.getElementById("txt_ln").value += 1 +"\n";</script>
+         </div>
+         <textarea name="ubzcards" rows="16" cols="75" style="width:492px"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt2">输入格式</td>
+      <td class="tablert2">
+        <select name="kmtype" style="width:150px;">
+          <option value="0">卡号＋密码</option>
+          <option value="1">只有卡号</option>
+        </select>
+        <font color="#FF0000">*</font>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt2">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>如果您的一卡通是按照非面值价格销售出去，或者一卡通代理商前台生效的时候，系统将按照这个价格进行扣款，请务必填写一下零售价，方便系统利润统计。留空的话则等于面值</p>
+        零售价
+      </td>
+      <td class="tablert2"><input type="text" name="cprice" class="myinput" value="" style="width:100px"/></td>
+    </tr>
+    <tr>
+      <td class="tablelt2">
+      	<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>代理商可以在生效的时候才扣款, 当别人购买使用这个一卡通，绑定的代理商可以查询对应的充值记录或者获得到相应的返点,如果您绑定了代理商并且是代理商前台付费, 那么只能通过前台生效</p>
+      	绑定代理商编号
+      </td>
+      <td class="tablert2">
+        <input type="text" name="bindaid" id="bindaid" class="myinput" value="" style="width:100px" style="font-weight:normal;background:#EAEAEA;" disabled /> <input type="checkbox" id="ckcardok" name="ckcardok" value="1" onclick="setcardok(this)" style="vertical-align:middle;" class="checkbox" onFocus="this.blur()"/> 
+      </td>
+    </tr>
+    <tr id="tr_okbyaid"  style="display:none">
+      <td class="tablelt">线下付款</td>
+      <td class="tablert">
+        <input type="checkbox" value="1" name="okbyaid" class="checkbox" id="okbyaid"/> <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
+        不打勾表示, 此类卡密只能由一卡通经销通过前台生效<br/>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt2">马上生效</td>
+      <td class="tablert2">
+        <input type="checkbox" value="1" name="cardok" class="checkbox"  checked id="cardok"/> <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>
+        一卡通生效后：<br/>
+        <!--if(UB_YKT){-->一卡通平台用户才可以用来充值或者兑换点卡卡密<br/><!--}-->
+        <!--if(UB_B2B){-->批发平台用户才可以用来给余额充值或者从系统中购买对应的平台卡<br/><!--}-->
+        <!--if(UB_B2C){-->零售平台用户才可以用来给余额充值<br/><!--}-->
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt2">后台充值密码</td>
+      <td class="tablert2"><input type="password" id="mytradepwd" name="mytradepwd" value="" style="width:100px"/></td>
+    </tr>
+    <tr>
+      <td class="tablelt2"></td>
+      <td class="tablert2" style="height:80px">
+        <input type="submit" value="添加一卡通卡密 &gt;&gt" class="bigbtn"/>
+        <input type="reset" value="&lt; &lt; 重新填写" class="bigbtn"/>
+      </td>
+    </tr>
+  </table>
+  <table border="0" class="ctable" style="display:none">
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+  </table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+var EmptyLine = 0;
+var j = 0;
+function Show_Ln(){
+  var txt_ln  = document.getElementById("txt_ln");
+  var txt_main  = document.getElementById("txt_main");
+  txt_ln.scrollTop = txt_main.scrollTop;
+  while(txt_ln.scrollTop != txt_main.scrollTop)
+  {
+    txt_ln.value += (j++) + "\n";
+    txt_ln.scrollTop = txt_main.scrollTop;
+  }
+  
+  return;
+}
+function EditTab()
+{
+  var code, sel, tmp, r;
+  var tabs="";
+  event.returnValue = false;
+  sel =event.srcElement.document.selection.createRange();
+  r = event.srcElement.createTextRange();
+
+  switch (event.keyCode)
+  {
+    case (8):
+      if (!(sel.getClientRects().length > 1))
+      {
+        event.returnValue = true;
+        return;
+      }
+      code = sel.text;
+      tmp = sel.duplicate();
+      tmp.moveToPoint(r.getBoundingClientRect().left, sel.getClientRects()[0].top);
+      sel.setEndPoint("startToStart", tmp);
+      sel.text = sel.text.replace(/^\t/gm, "");
+      code = code.replace(/^\t/gm, "").replace(/\r\n/g, "\r");
+      r.findText(code);
+      r.select();
+      break;
+    case (9):
+      if (sel.getClientRects().length > 1)
+      {
+        code = sel.text;
+        tmp = sel.duplicate();
+        tmp.moveToPoint(r.getBoundingClientRect().left, sel.getClientRects()[0].top);
+        sel.setEndPoint("startToStart", tmp);
+        sel.text = "\t"+sel.text.replace(/\r\n/g, "\r\t");
+        code = code.replace(/\r\n/g, "\r\t");
+        r.findText(code);
+        r.select();
+      }
+      else
+      {
+        sel.text = "\t";
+        sel.select();
+      }
+      break;
+    case (13)  :
+      tmp = sel.duplicate();
+      tmp.moveToPoint(r.getBoundingClientRect().left, sel.getClientRects()[0].top);
+      tmp.setEndPoint("endToEnd", sel);
+
+      for (var i=0; tmp.text.match(/^[\t]+/g) && i<tmp.text.match(/^[\t]+/g)[0].length; i++)  tabs += "\t";
+      sel.text = "\r\n"+tabs;
+      sel.select();
+      break
+    default:
+      event.returnValue = true;
+      break;
+  }
+}
+function TextCounter()
+{
+  return;
+  var strLineCounter = 0;
+  var strCharCounter = 0;  
+  document.getElementById("txt_ln").value = "1\n";
+  EmptyLine = 0;
+
+  for (var i = 0; i < document.getElementById("txt_main").value.length; i++)
+  {
+    var strChar = document.getElementById("txt_main").value.substring(i, i + 1);  
+    if (strChar == '\n')
+    {
+      strCharCounter = 1;
+      strLineCounter += 1;
+      document.getElementById("txt_ln").value += (strLineCounter + 1 - EmptyLine) +"\n";
+    }
+    else if (strCharCounter == document.getElementById("txt_main").cols)
+    {
+      strCharCounter = 1;
+      strLineCounter += 1;
+      var s = document.getElementById("txt_ln").value.match(/\n/g);
+      if (s)
+      {
+        if (s.length <= strLineCounter)
+        {
+          document.getElementById("txt_ln").value += "\n";
+          EmptyLine++;
+        }
+      }
+    }
+    else
+    {
+      strCharCounter ++;
+    }
+  }
+}
+function setcardok(obj)
+{
+	alert("一卡通兑换专用卡有效,如果您绑定了代理商,并且没有勾选线下付款的话,系统只允许代理商通过前台生效");
+	state   = obj.checked ? false : true;
+  bck     = obj.checked ? "#ffffff" : "#EAEAEA";
+
+  $("bindaid").disabled = state;
+  
+  $("tr_okbyaid").style.display = obj.checked ? "" : "none";
+  
+  $("okbyaid").checked = state;
+  
+  $("bindaid").readOnly   = state;
+  
+  $("bindaid").style.background = bck;
+  
+  $("bindaid").value = "";
+  
+  $("cardok").checked = state;
+  $("cardok").disabled = obj.checked ? true : false;
+	if(obj.checked)
+	{
+		$("cardok").checked = false
+	}
+
+}
+
+function checkform()
+{
+	if( $("ckcardok").checked && $("bindaid").value == "")
+	{
+		alert("您好,您勾选了绑定代理商,请输入代理商的编号");
+		return false;
+	}
+  else
+	{
+		return true;
+	}
+}
+</script>
+
+</body>
+</html>

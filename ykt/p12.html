@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="分站" />
+<meta http-equiv="Description" content=" Powered by 易卡网" />
+<link rel="stylesheet" type="text/css" href="/content/mod_ykt/css/ub-buy.css" />
+<title>vip网站购买</title>
+<style type="text/css">
+  .buylt{font-size:14px;}
+  td{height:25px}
+</style>
+</head>
+
+<body>
+<input type="hidden" id="webdir" name="webdir" value="/">
+<input type="hidden" id="platform" value="ykt"/>
+<script src="/content/mod_shared/skins/js/web.js" type="text/javascript"></script>
+<form method="post" action="/index.php?m=mod_ykt&c=Pay" onsubmit="return checksubmit()">
+<div id="append_parent"></div>
+<div id="topheader">
+  <div id="headertab">
+    <span style="float:right">
+      <script src="/content/mod_ykt/js/cust.js"></script>
+      <img src="/content/mod_ykt/images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=check">卡状态查询</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_dz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=Tran">卡余额互转</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_kt.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=Show" target="_blank">卡图展示</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_bz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&a=hourkf">客户服务</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_jxs.gif" align="absmiddle"> <a href="/" target="_blank">经销商</a>
+    </span>
+    <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('');" class="top"> 
+      设为首页</a> |
+      <a href=javascript:window.external.AddFavorite('','易卡网，点卡销售系统，网吧平台、多源化平台服务、致力于优质平台提供、源码美化、开发、修复等') class="top">添加到收藏</a>
+  </div>
+</div>
+<div id="ubtop">
+  <div style="float:left;width:230px;">
+    <img src="/content/mod_ykt/images/mylogo.gif" alt="" border="0" height="60"/>
+  </div>
+  <div class="righttext">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;height:60px;">
+        <tr>
+            <td align="right" class="black">
+                <a href="/" target="_blank">返回首页</a> |
+                <a href="/" target="_blank">重新选卡</a> |
+                <a href="javascript:window.location.reload();">刷新本页</a>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
+<div class="warper">
+<div class="headbg" style="position:relative">
+  <div class="titlefont" align="center">vip网站购买</div>
+  </div>
+<table id="orderTable" class="tbody">
+  <tr>
+    <td class="buylt">点卡类型：</td>
+    <td class="buyrt">
+     <select id="pname" onchange="setpoints(this)" style="VERTICAL-ALIGN: middle;font-size:12px;width:185px;">
+          <option value="55500|12" selected>vip网站购买</option>          </select>
+     需 <span id="pointneed" class="redbold">--</span> 元  </tr>
+  
+  <tr>
+    <td class="buylt">库存状态：</td>
+    <td class="buyrt"><span id="thisstock">读取中..</span></td>
+  </tr>
+  <tr>
+    <td class="buylt">商品类型：</td>
+    <td class="buyrt"><font color='#7200C3'>代充商品</font> &nbsp;</td>
+  </tr>
+    <tr>
+    <td class="buylt">一卡通卡号：</td>
+    <td class="buyrt"><input type="text" name="yktcard[]" class="input"/> <span style="color:#996600;cursor:pointer" onclick="moreykt(this);">[ + ]多个一卡通</span></td>
+  </tr>
+  <tr>
+    <td class="buylt">一卡通密码：</td>
+    <td class="buyrt"><input type="password" name="yktpwd[]"  class="input"/></td>
+  </tr>
+  
+  
+    <tr>
+  <td class="buylt">充值平台网址：</td>
+  <td class="buyrt"><input id="ubzczacount" name="ubzczacount" type="text"  class="input"/> *</td>
+  </tr>
+  <tr>
+  <td class="buylt">重复平台网址：</td>
+  <td class="buyrt"><input id="ubzreczacount" name="ubzreczacount" type="text"  class="input" /> *</td>
+  </tr>
+    <input type="hidden" id="ubztpl" value="0" />
+        <tr><td colspan="2"><span id="cztpl"></span></td></tr><script type="text/javascript">TplHtml="";</script><script type="text/javascript" src="/content/mod_shared/skins/cztpl/39.js"></script>        <tr>
+    <td class="buylt">购买数量：</td>
+    <td class="buyrt">
+      <select name="ubzqty" id="ubzqty" onchange="ChangeNum()">
+        <option value="0">请选择</option>
+                <option value="1">1张</option><option value="2">2张</option><option value="3">3张</option><option value="4">4张</option><option value="5">5张</option><option value="6">6张</option><option value="7">7张</option><option value="8">8张</option><option value="9">9张</option><option value="10">10张</option>              </select>
+    </td>
+  </tr>
+      
+  <tr>
+    <td class="buylt" valign="top" style="padding-top:8px;">验证码：</td>
+    <td class="buyrt">
+      <input type="text" name="randcode" id="randcode" class="input"  style="width:80px"/>
+      <div style="padding-top:3px;">
+      <img src="/index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="看不清楚?请点击刷新" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/> <span style="color:#996600;cursor:pointer" onclick="document.getElementById('src').src=document.getElementById('src').src+'&'+Math.random();"><u>看不清</u></span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="buylt"></td>
+    <td class="buyrt"><input type="image" src="/content/mod_ykt/images/buycz.gif" style="border:none;padding:0px;"/></td>
+  </tr>
+    <tr>
+    <td colspan="2" style="background:#E8E8E8;height:25px;font-weight:bold;text-align:center">产品介绍</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:5px 5px 20px 5px;"></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:" style="border-top:1px #ccc dashed">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tbody>
+              <tr>
+                  <td width="5%" height="25" align="middle">
+                      <img height="18" src="/content/mod_ykt/images/jt.gif" width="18"></td>
+                  <td>
+                      <a href="" target="_blank">官网首页</a></td>
+                  <td width="5%">
+                      <img height="18" src="/content/mod_ykt/images/jt.gif" width="18"></td>
+                  <td>
+                      <a target="_blank">账户管理</a></td>
+                  <td width="6%">
+                      <img height="18" src="/content/mod_ykt/images/jt.gif" width="18" /></td>
+                  <td>
+                      <a target="_blank">计费说明</a></td>
+                  <td width="5%">
+                      <img height="18" src="/content/mod_ykt/images/jt.gif" width="18" /></td>
+                  <td>
+                      <a href="/" target="_blank">回网站首页</a></td>
+              </tr>
+          </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+<table style="width:540px;margin:0 auto;" border="0" cellpadding="0" cellspacing="0" id="foot">
+  <tr>
+    <td style="padding:10px;text-align:left;line-height:20px;float:left" valign="top">
+      Powered by <a href="http://www.ekakm.com" target="_blank" title="易卡网点卡系统6.0">易卡网点卡系统6.0</a>    </td>
+    <td style="padding:10px;text-align:right;line-height:20px;">
+      版权所有 &copy; 2004-2011 易卡网，点卡销售系统，网吧平台、多源化平台服务、致力于优质平台提供、源码美化、开发、修复等<br>ICP备案号：<a href="http://www.miibeian.gov.cn" target="_blank"">易卡网络 因为专注 所以堪称专业！</a>
+    </td>
+  </tr>
+</table>
+<input id="ubzcprice" name="oneprice" type="hidden" value="555"/>
+  <input id="ubzdollars" name="ubzdollars" type="hidden" value="555"/>
+  <input type="hidden" id="tprice" name="tprice" value="555"/>
+  <input id="ubzptype" name="ubzptype" type="hidden" value="2"/>
+  <input id="ubzpid" name="ubzpid" type="hidden" value="12"/>
+  <input id="ubzqtylist" name="ubzqtylist" type="hidden" value=""/>
+  <input id="ubzqtymin" name="ubzqtymin" type="hidden" value="1"/>
+  <input id="ubzqtymax" name="ubzqtymax" type="hidden" value="10"/>
+  <input id="ubzidlable" name="ubzidlable" type="hidden" value="平台网址"/>
+  <input id="ubzdisparea" name="ubzdisparea" type="hidden" value="1"/>
+  <input id="ubzdispserv" name="ubzdispserv" type="hidden" value="0"/>
+  <input id="ubzcname" name="ubzcname" type="hidden" value=""/>
+  <input id="ubzunit" name="ubzunit" type="hidden" value="张"/>
+</form>
+
+<script type="text/javascript">
+var $ = function(id){
+  return document.getElementById(id);
+}
+function disp(id)
+{
+  ste = $(id).style.display;
+  $(id).style.display = ste == "" ? "none" : ""; 
+}
+function offdisp(id)
+{
+  ste = $(id).style.display;
+  $(id).style.display = "none"; 
+}
+
+
+var ishtml = "1"
+
+var ykt = 6;
+var no  = 2;
+var inityktrow = 0;
+
+function moreykt(obj)
+{
+    if(no > 5)
+  {
+    alert('您好，本商品设置为一次最多5张');
+    return;
+  }
+    if(inityktrow == 0)
+  {
+    ykt = obj.parentNode.parentNode.rowIndex;
+    inityktrow = 1;
+  }
+  ykt = ykt + 2;
+  AddElement(ykt, no);
+  no  = no  + 1;
+}
+
+function AddElement(row,index) {
+    var i = index;
+    obj = $("orderTable");
+    var newRow = obj.insertRow(row); 
+    c1 = newRow.insertCell(-1);
+    c1.className = "buylt";
+    c1.innerHTML = "卡号"+i+"：";
+    c2 = newRow.insertCell(-1);
+    c2.className = "buyrt";
+    c2.innerHTML = "<input type='text' name='yktcard[]' class='input'/>";
+    
+    newRow = obj.insertRow(row+1); 
+    c1 = newRow.insertCell(-1);
+    c1.className = "buylt";
+    c1.innerHTML = "密码"+i+"：";
+    c2 = newRow.insertCell(-1);
+    c2.className = "buyrt";
+    c2.innerHTML = "<input type='text' name='yktpwd[]'  class='input'/>";
+    
+}
+
+function setqty(obj)
+{
+  var tmp = (obj.options[obj.selectedIndex].value).split("|");
+
+  var qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+  var points = tmp[0] * qty;
+
+  $("pointneed").innerHTML = points;
+}
+
+function setpoints(obj)
+{
+  var tmp = (obj.options[obj.selectedIndex].value).split("|");
+  /*
+  if(tmp[2] == 0)
+  {
+    var qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+    var points = tmp[0] * qty;
+
+    $("pointneed").innerHTML = points;
+    $("ubzpid").value = tmp[1];
+  }
+  else*/
+  {
+    if(ishtml == "1")
+    {
+      window.location.href = "/ykt/p" + tmp[1] + ".html";
+    }
+    else
+    {
+      window.location.href = "/ykt/i.php?"+tmp[1];
+    }
+  }
+}
+
+  var IMGDIR = "/content/mod_ykt/images";
+  
+  FadeObjects = new Object();
+  FadeTimers = new Object();
+
+  function Fade(object, destOp, rate, delta)
+  {
+    if (!document.all) return;
+    if (object != "[object]")
+    {  
+       setTimeout("Fade("+object+","+destOp+","+rate+","+delta+")",0);
+       return;
+    }
+        
+    clearTimeout(FadeTimers[object.sourceIndex]);
+    
+    diff = destOp-object.filters.alpha.opacity;
+    direction = 1;
+    if (object.filters.alpha.opacity > destOp)
+    {
+      direction = -1;
+    }
+    delta=Math.min(direction*diff,delta);
+    object.filters.alpha.opacity+=direction*delta;
+
+    if (object.filters.alpha.opacity != destOp)
+    {
+      FadeObjects[object.sourceIndex]=object;
+      FadeTimers[object.sourceIndex]=setTimeout("Fade(FadeObjects["+object.sourceIndex+"],"+destOp+","+rate+","+delta+")",rate);
+    }
+  }
+
+  function MM_displayStatusMsg(msgStr) 
+  { 
+    status=msgStr;
+    document.MM_returnValue = true;
+  }
+  
+  function checksubmit()
+  {
+  	if($("ubzqty"))
+  	{}
+    else
+  	{
+  		alert("请先选择充值游戏！");
+      return false;
+  	}
+    qty = $("ubzqty").options[$("ubzqty").selectedIndex].value;
+    if(qty <= 0)
+    {
+    	alert("请先选择数量！");
+      return false;
+    }
+    
+    
+        tt1 = $("ubzczacount").value;
+    tt2 = $("ubzreczacount").value;
+    if(tt1 == "")
+    {
+      $("ubzczacount").focus();
+      alert("充值帐号不能为空！");
+      return false;
+    }
+    
+    if(tt1 !== tt2)
+    {
+      $("ubzreczacount").focus();
+      alert("两次帐号输入不一致，请重新输入");
+      return false;
+    }
+    
+    //看看是不是有需要自动检查的东西
+    if( $("needinput") )
+    {
+      nv = $("needinput").value;
+      nlabel = $("needinputlabel").value;
+      ntype = $("needinputtype").value;
+      if(nv != "" && nlabel != "" && ntype != "")
+      {
+        nvarr = nv.split(",");
+        nlabelarr = nlabel.split(",");
+        ntypearr = ntype.split(",");
+        nvlen = nvarr.length;
+        for(i = 0; i < nvlen; i++)
+        {
+          if($(nvarr[i]) && $(nvarr[i]).value == "")
+          {
+            altstr = ntypearr[i] == "radio" || ntypearr[i] == "select" ? "选择"  : "输入";
+            altstr = "请您" + altstr + nlabelarr[i];
+            alert(altstr);
+            return false;
+          }
+        }
+      }
+    }
+        
+    if($("randcode").value == "")
+    {
+      $("randcode").focus();
+      alert("请您输入验证码！");
+      return false;
+    }
+
+    if (qty>0)
+    {
+      var str = "确认购买 vip网站购买 "+ qty +" 个吗？并请注意以下购买注意事项：\n\n\n1、本商品一经购买无法退换货，请注意不要选择错误；";
+      
+      if(confirm(str))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    else
+    {
+      alert("请先选择数量！");
+      return false;
+    }
+  }
+  
+</script>
+<script src="/content/mod_ykt/js/buy.js"></script>
+<script src="/content/mod_ykt/js/prdzone.js"></script>
+</body>
+</html>

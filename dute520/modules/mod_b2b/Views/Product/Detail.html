@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+td p{display:none}
+td P.show {
+  DISPLAY: block
+}
+td STRONG {
+CURSOR:pointer;
+COLOR:#0197c9;
+PADDING:0 3px;
+}
+
+
+</style>
+</head>
+<body>
+<!--$item = $vd['item'];--> 
+<form method="post" action="index.php?m=mod_b2b&c=PS&a=save" name="cform" id="cform">
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=product&a=index" title="商品列表"><font color="#000">商品列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">商品详细信息</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">填写基本信息 </div>
+<div>
+<table border="0" id="ctable1" class="ctable" style="border:0px;background:none">
+  <tr>
+    <td width="235px" valign="top">
+      <input type="hidden" id="ubzimage" name="ubzimage" value="{$item['imagefull']}"/>
+      <div id="Pic" class="ctablePic">
+        
+      </div>
+      <div id="ctableThumb" class="ctableThumb">
+      </div>
+      <div class="ctableUpload">
+      <iframe name="uploader" src="index.php?m=com_fs&c=fs&a=vu&imgid=image&fun=imginfo&inputid=ubzimage" frameBorder="0" marginHeight="1" marginWidth="1" scrolling="no" style="height:30px;width:100%; background-color:#EEF7FD"></iframe>
+      </div>
+    </td>
+    <td valign="top">
+      <table border="1" width="100%" class="ctable2" bordercolor="#ededed">
+        <tr>
+          <td class="tablelt2">一级分类：</td>
+          <td class="tablert2">
+            <select name="ubzdid1" size="1" onChange="changelocation(this.options[this.selectedIndex].value)" class="wenbenkuang">
+              <option select="selected" value="0">请选择一级分类</option>
+              {#Option($vd['cat'], $vd['parentid'], 'catname', 'catid')}
+            </select>
+            <font color="#FF0000">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2">二级分类：</td>
+          <td class="tablert2">
+            <select name="catid" class="wenbenkuang">
+              {#Option($vd['subcat'], $item['catid'], 'catname', 'catid')}
+            </select>
+            <font color="#FF0000">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2">商品名称：</td>
+          <td class="tablert2">
+            <input type="text" name="ubzpname" size="28" value="{$item['pname']}"/><font color="#FF0000"> *</font>
+            <input type="text" id="namecolor" name="namecolor" value="{$item['namecolor']}" size="10" onkeyup="setcolor(this)"/> 
+            <input id="colorexample" type="text" size="1" readonly style="background:<!--echo $item['namecolor']==''?'#6c6c6c' : $item['namecolor']-->"/>
+            <img src="{$vd['sc']}images/16.gif" onclick="pickcolor()" align="absmiddle" style="cursor:pointer;"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>相对商品名称要短，主要用于首页显示，迅速让买家看到</p>商品标签：</td>
+          <td class="tablert2"><input type="text" name="ubzptagname" size="20" value="{$item['ptagname']}"/></td>
+        </tr>
+        <tr>
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>设置进货关键词，方便系统帮您寻找合适的货源</p>进货关键词：</td>
+          <td class="tablert2"><input type="text" name="sup_keywords" size="20" value="{$item['sup_keywords']}"/></td>
+        </tr>
+      </table>
+      <table border="0" width="100%" class="ctable2" style="margin-top:10px">
+        <tr> 
+          <td class="tablelt2"><span class="name">基本价钱：</span></td>
+          <td class="tablelr2">
+            <input type="text" name="ubzlistprice" size="10" class="priceinput" value="{$item['listprice']}"/><font color="#FF0000"> * </font><span class="tip">市场价(商品的面值)</span><br/> 
+            <input type="text" name="ubzprice" size="10" class="priceinput" value="{$item['price']}"/><font color="#FF0000"> * </font><span class="tip">进价(商品的进货价)</span><br/>
+          </td>
+        </tr>
+      </table>
+      <table border="0" width="100%" class="ctable2" style="margin-top:10px">
+        <tr> 
+          <td class="tablelt2"><strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>卡密商品指有卡号和密码的商品,选号商品指如QQ号码、手机号码之类选号销售的商品</p>商品类型：</td>
+          <td class="tablert2">
+            <select size="1" id="ubzptype" name="ubzptype" onChange="showtpl(this)">
+              {#Option(ProductTypeList(), $item['ptype'])}
+            </select><font color="#FF0000"> *</font>
+          </td>
+        </tr>
+        <tr id="tpl" style="display:none"> 
+          <td class="tablelt2">充值模板：</td>
+          <td class="tablert2">
+            <span id="tpllist"></span><font color="#FF0000">*</font>
+          </td>
+        </tr>
+        <tr>
+          <td class="tablelt2">
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>非卡密类有效，如果同时选择颖先卡购充值模板,则以颖先卡购模板为主</p>
+            自定义充值模板：
+            </td>
+          <td class="tablert2">
+          <select size="1" id="ubzsyscztpl" name="ubzsyscztpl" style="width:130px;">
+            <option value="0" selected>无自定义充值模板</option>
+            {#Option($vd['customtpl'], $item['syscztpl'], 'name', 'id')}
+          </select>[<a href="index.php?m=mod_b2b&c=game&a=tpladd"><font color="#ff0000">添加</font></a>]
+          </td>
+        </tr>
+        <tr id="czidname" style="display:none">
+          <td class="tablelt2">
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p><span class="tip" id="tipidlable">玩家用户名的叫法,比如充Q币时叫QQ号,充游戏时叫帐号,如果是金币类或者装备,可以写角色名</span></p>
+            <span class="name" id="spanidlable">充值ID名称：</span>
+          </td>
+          <td class="tablert2">
+          <input type="text" id="ubzidlable" name="ubzidlable" size="10" value="{$item['idlable']}"/>
+          </td>
+        </tr>
+        <tr id="areaserv" style="display:none">
+          <td class="tablelt2"><span class="name" id="spanareaserv" >区服显示：</span></td>
+          <td class="tablert2">
+            <span id="spanareaserv1"><input type="checkbox" value="1" name="ubzdisparea" class="checkbox"/>显示区域
+            <input type="checkbox" value="1" name="ubzdispserv" class="checkbox" {#ToggleCheck($item['dispserv'])}/>显示服务器</span>
+            <span id="spanareaserv2" style="display:none">
+              <input type='radio' value='1' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==1){-->checked<!--}--> onFocus="this.blur()"/>允许选号购买(购买时显示号码，允许选择购买) <br/>
+              <input type='radio' value='0' name='ubzdisparea' class='checkbox'  <!--if($item['disparea']==0){-->checked<!--}--> onFocus="this.blur()"/>随机号码(购买时不显示号码，随机提取库存号码)
+            </span>
+          </td>
+        </tr>
+        <tr id="tradeterm" style="display:none">
+          <td class="tablelt2">
+            <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>提示买家如何交易此类商品(如游戏装备在何处交易，金币和何处交易)</p>
+            <span id="spanareaserv" >交易方式：</span>
+          </td>
+          <td class="tablert2">
+            <textarea name="ubztradeterm" cols="28" style="width:208px;" rows="3">{$item['tradeterm']}</textarea>
+          </td>
+        </tr>
+        <tr id="disponshow" style="display:none">
+          <td class="tablelt2"><span class="name" id="spanareaserv" >交易方式显示时间：</span></td>
+          <td class="tablert2">
+            <input type="radio" value="0" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==1){-->checked<!--}-->/>成功购买后显示
+            <input type="radio" value="1" name="ubzdisponshow" class="checkbox" <!--if($item['disponshow']==0){-->checked<!--}-->/>购买前显示
+          </td>
+        </tr>
+        <tr id="stocks" style="display:none">
+          <td class="tablelt2"><span class="name">库存：</span></td>
+          <td class="tablert2">
+            <input type="text" value="1" name="ubzstocks" size="10" value="{$item['stocks']}"/> (暂未开放功能，无须填写) ）
+          </td>
+        </tr>
+        <tr id="unit" style="display:none">
+          <td class="tablelt2"><span class="name">库存单位：</span></td>
+          <td class="tablert2">
+            <input type="text" size="10" name="ubzunit"  value="{$item['unit']}"/> (暂未开放功能，无须填写)
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">对有卡购系统供货</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("打勾"表示允许联售系统的其他商户选择您的商品作为自己的货源,而您可以从中获取利润)</p>
+        对外供货：
+      </td>
+      <td class="tablert">
+        <input type="checkbox" value="1" name="ubzsup"  {#ToggleCheck($item['ubzsup'])} class="checkbox" onclick="showsupinfo(this.checked)" onFocus="this.blur()"/>
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">详细</a>]
+      </td>
+    </tr>
+    <tr id="ubzsupprice" style="<!--if($item['ubzsup']==0){-->display:none<!--}-->"> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>对外供货的价格(如果商品有对外供货功能，请仔细填写对应的供货价钱，建议不要低于您的进货价)</p>
+        对外供货价：
+      </td>
+      <td class="tablert">
+        <input type="text" name="ubzsupprice" value="{$item['ubzsupprice']}" size="10"/>
+      </td>
+    </tr>
+    <tr id="ubzsupcheck" style="<!--if($item['ubzsup']==0){-->display:none<!--}-->"> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>"打勾"表示需要审核才可以对接您的商品,否则不需要</p>
+        对接审核：
+      </td>
+      <td class="tablert">
+        <input type="checkbox" value="1" name="ubzsupcheck" {#ToggleCheck($item['ubzsupcheck'])} class="checkbox" onFocus="this.blur()"/>
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">详细</a>]
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>("打勾"表示控制此商品各进货商的零售价，如果低于最低零售价出售商品，系统会自动停止对其供货)</p>
+        是否控制零售价：
+      </td>
+      <td class="tablert">
+        <input type="checkbox" value="1" name="ubzctrl" {#ToggleCheck($item['ubzctrl'])} class="checkbox" onclick="showctrlinfo(this.checked)" onFocus="this.blur()"/>
+        [<a href="http://www.yingxkg.tk/article/98.html" target="_blank">详细</a>]
+      </td>
+    </tr>
+    <tr id="ubzctrlprice" style="<!--if($item['ubzctrl']==0){-->display:none<!--}-->"> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>对外供货的最低零售价格(如果供应商需要对商品控制最低零售价，请仔细填写)</p>
+        最低零售价：
+      </td>
+      <td class="tablert">
+        <input type="text" name="ubzctrlprice" size="10" value="{$item['ubzctrlprice']}"/>
+      </td>
+    </tr> 
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">搜索优化</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">
+        商品页面标题：
+      </td> 
+      <td class="tablert"><input type="text" name="webtitle" value="{$item['webtitle']}" size="34"/> <span class="spantip">(留空则默认显示商品名称)</span></td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        META_KEYWORDS(页面关键词)
+      </td>
+      <td class="tablert">
+        <textarea rows="3" name="meta_keywords" cols="28" style="width:208px;">{$item['meta_keywords']}</textarea>
+        <span class="spantip">(留空则默认继承基本设置中的KEYWORDS内容)</span></td>
+    </tr>
+    <tr> 
+      <td class="tablelt">META_DESCRIPTION(页面描述)
+      </td>
+      <td class="tablert">
+        <textarea rows="3" name="meta_description" cols="28" style="width:208px;">{$item['meta_description']}</textarea>
+        <span class="spantip">(留空则默认继承基本设置中的DESCRIPTION内容)</span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">购买相关设置</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">
+        购买数量控制(方式一)：
+      </td>
+      <td class="tablert">
+        <input type="text" name="ubzqtymin" size="5" value="{$item['qtymin']}"/> <span class="tip">起购量(个)</span><br/>  
+        <input type="text" name="ubzqtymax" size="5" value="{$item['qtymax']}"/> <span class="tip">截止量(个)</span> 
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>两种方式任选一种，如果需要使用方式二，即设置方式二即可，方式一自动失效</p>
+        购买数量控制(方式二)：
+      </td>
+      <td class="tablert">
+        <input type="text" name="ubzqtylist" size="22" value="{$item['qtylist']}"/> <span class="spantip">自定义方式,请使用使用半角逗号隔开相应数量</span>
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>如果可以使用一卡通兑换，且和某种一卡通绑定，可以写上其特征码，否则留空即可<br/>比如一卡统卡号是sd3开头，可以写成sd3，多个特征码半角逗号区分，如sd3,MY200</p>
+        绑定一卡通特征码：
+      </td>
+      <td class="tablert">
+        <input type="text" name="yktcard" size="22" value="{$item['yktcard']}"/> 
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt"><span class="name">进货优先顺序：</span></td>
+      <td class="tablert">
+        <input type="radio" name="supfirst" value="0" class="checkbox" <!--if($item['supfirst'] == 0){-->checked<!--}--> onFocus="this.blur()"/>本地优先 
+        <input type="radio" name="supfirst" value="1" class="checkbox" <!--if($item['supfirst'] == 1){-->checked<!--}--> onFocus="this.blur()"/>联售供货系统优先 
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>上架选项勾选后，对应平台也需要勾选，此商品方可被在对应的前台看到</p>
+        购买权限：</td>
+      <td class="tablert">
+        <input type="checkbox" name="forshop" value="1" class="checkbox"  {#ToggleCheck($item['forshop'])} onFocus="this.blur()"/>零售系统可购买 
+        <input type="checkbox" name="forb2b" value="1" class="checkbox"   {#ToggleCheck($item['forb2b'])} onFocus="this.blur()"/>批发系统可购买 
+        <input type="checkbox" name="forykt" value="1" class="checkbox"   {#ToggleCheck($item['forykt'])} onFocus="this.blur()"/>一卡通系统可购买
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>目前的版本，除上架对所有平台有效外，其它选项只针对零售平台生效</p>
+        商品操作：
+      </td> 
+      <td class="tablert">
+        <input type="checkbox" value="1" name="ubznew"  class="checkbox" {#ToggleCheck($item['new'])} onFocus="this.blur()"/>新品
+        <input type="checkbox" value="1" name="ubzsell"  class="checkbox" {#ToggleCheck($item['sell'])} onFocus="this.blur()"/>上架<strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>上架选项勾选后，对应平台也需要勾选，此商品方可被在对应的前台看到</p>
+        <input type="checkbox" value="1" name="ubztag"  class="checkbox" {#ToggleCheck($item['tag'])} onFocus="this.blur()"/>新手
+        <input type="checkbox" value="1" name="ubzremd"  class="checkbox" {#ToggleCheck($item['remd'])} onFocus="this.blur()"/>推荐
+        <input type="checkbox" value="1" name="ubzhot" class="checkbox" {#ToggleCheck($item['hot'])} onFocus="this.blur()"/>热卖
+        <input type="checkbox" value="1" name="ubzsale" class="checkbox" {#ToggleCheck($item['sale'])} onFocus="this.blur()"/>促销
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>数字越小，越靠前排序，如果没有特殊要求，填0即可，默认按添加时间倒序排列</p>
+        商品排列顺序：
+      </td>
+      <td class="tablert">
+        <input type="text" name="ordering" size="10" value="{$item['ordering']}"/>
+      </td>
+    </tr> 
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>方便按拼音首字母进行搜索，比如魔兽世界，您可以写成m或者或者ms或者mssj，大小写区分，请统一所有商品的大小写，如果您设的小写，那么请在所有商品中都写成小写</p>
+        商品首字母串：
+      </td>
+      <td class="tablert">
+        <input type="text" name="initial_letter" size="10" value="{$item['initial_letter']}"/>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1" id="ykt" style="<!--if($item['forykt']){-->display:none<!--}-->">
+<div class="ctitle">
+  一卡通相关设置
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">如果您要本地上传图片，请保证光标放置于插入位置，再点击上传按钮</p>
+</div>
+<div>
+  <table btrong onmouseover="showhide(this);" onmouseorder="0" class="ctable" bordercolor="#ededed" style="border:0px">
+    <tr>
+      <td class="tablelt">
+        <sout="showhide(this);">[?]</strong><p>如果留空的话，一卡通平台将显示完整的商品名称</p>
+        一卡通平台显示的名称：</td>
+      <td class="tablert">
+        <input type="text" name="ykttag" size="34" value="{$item['ykttag']}"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>1{$vd['lang']['moneyunit']} = 100点</p>
+        所需的一卡通兑换点数：</td>
+      <td class="tablert">
+        <input type="text" name="yktpoints" size="34" value="{$item['yktpoints']}"/> 1{$vd['lang']['moneyunit']} = 100点
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>如果可以使用一卡通兑换，且和某种一卡通绑定，可以写上其特征码，否则留空即可<br/>比如一卡统卡号是sd3开头，可以写成sd3，多个特征码半角逗号区分，如sd3,MY200</p>
+        绑定一卡通特征码：
+      </td>
+      <td class="tablert">
+        <input type="text" name="yktcard" size="34" value="{$item['yktcard']}"/> 
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">
+  商品介绍
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">如果您要本地上传图片，请保证光标放置于插入位置，再点击上传按钮</p>
+</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed" style="border:0px">
+    <tr> 
+      <td style="padding:0px">
+        <textarea name="ubzpdesc" cols="67" rows="2" style="display:none">{$item['pdesc']}</textarea>
+        <iframe ID="Editor" name="Editor" src="{$vd['sc']}ubb/edit.htm?id=ubzpdesc" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" style="height:418px;width:100%; background-color:#D9EEF9"></iframe>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+
+<div class="cwarpper1">
+<div class="ctitle">相关网址</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>注：网址前面加&quot;http://&quot;</p>
+        官方网址：
+      </td> 
+      <td class="tablert"><input type="text" name="ubzweb" value="{$item['web']}" size="34"/></td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>注：网址前面加&quot;http://&quot;</p>
+        充值网址：
+      </td>
+      <td class="tablert"><input type="text" name="ubzczweb" value="{$item['czweb']}" size="34"/></td>
+    </tr>
+    <tr> 
+      <td class="tablelt">
+        <strong onmouseover="showhide(this);" onmouseout="showhide(this);">[?]</strong><p>格式：显示的名称+半角逗号+网址，多对网址，请以"|"分组，如："名称1,网址1|名称2,网址2"，网址前面加&quot;http://&quot;</p>
+        其他网址：
+      </td>
+      <td class="tablert"><input type="text" name="ubzotherweb" value="{$item['otherweb']}" size="34"/> 
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="cwarpper1">
+<div class="ctitle">商品操作者相关信息</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt">创建时间：</td>
+      <td class="tablert"><input type="text" name="ubzaddeddate" value="{$item['addeddate']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">创建人：</td>
+      <td class="tablert"><input type="text" name="ubzaddedby" value="{$item['addedby']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">创建人IP：</td>
+      <td class="tablert"><input type="text" name="ubzaddedip" value="{$item['addedip']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">上次编辑：</td>
+      <td class="tablert"><input type="text" name="ubzmdydate" value="{$item['mdydate']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">编辑人：</td>
+      <td class="tablert"><input type="text" name="ubzmdyby" value="{$item['mdyby']}" size="34"/> </td>
+    </tr>
+    <tr> 
+      <td class="tablelt">编辑人IP：</td>
+      <td class="tablert"><input type="text" name="ubzmdyip" value="{$item['mdyip']}" size="34"/> </td>
+    </tr>
+  </table>
+</div>
+</div>
+    
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="hidden" value="{$item['did1']}" name="ubzodid1"/>
+    <input type="hidden" value="{$item['did2']}" name="ubzodid2"/>
+    <input type="hidden" value="{$item['pid']}" name="ubzpid"/>
+    <input type="hidden" value="{$vd['umebizpid']}" name="umebizpid"/>
+    <input type="hidden" value="{$item['cztpl']}" name="ubzocztpl"/>
+    <input type="hidden" value="{$item['listprice']}" name="oldlistprice"/>
+    <input type="hidden" value="{$item['price']}" name="oldprice"/>
+    <input type="submit" value="编辑商品" class="btn"/>
+    <input type="reset" value="重置" class="btn"/>
+  </div>
+</div>
+</form>
+<input type="hidden" id="webdir" value="{$vd['webdir']}"/>
+<input type="hidden" id="website" value="{$vd['website']}"/>
+<input type="hidden" id="connecter" value="{$vd['connecter']}"/>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var oneCount = 0;
+  var subCat = new Array();
+  var nodes;
+  <!--$i = 0;-->
+  <!--foreach($vd['category'] as $cat) {-->
+    subCat[{$i}] = new Array("{$cat['catname']}","{$cat['catid']}","{$cat['parentid']}");
+  <!--$i++;}-->
+  oneCount = {$i};
+  var sc = "{$vd['sc']}";
+</script>
+<script type="text/javascript" src="{$vd['sc']}js/product.js"></script>
+<script type="text/javascript">
+  function initPic()
+  {
+    var allpic = $("ubzimage").value;
+    if(allpic == "")
+    {
+      return;
+    }
+    var iarray = allpic.split(",");
+    var ilen   = iarray.length;
+    
+    for(i = 0; i < ilen; i++)
+    {
+      var imgpath  = "{$vd['root']}content/mod_shared/skins/picture/" + iarray[i];
+      var newimgid = creatDiv();
+      
+      if(i == 0)
+      {
+        $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='imginfo(this)'/>";
+      }
+      else
+      {
+        $(newimgid).innerHTML = "<img src='" + imgpath + "' onload='resizeImg(this,40,40)'/>";
+      }
+    }
+  }
+  initPic();
+</script>
+<input type="hidden" value="0" name="ubzocztpl"/>
+<script type="text/javascript" src="http://127.0.0.1/cztpl/allcztpl-0401.js"></script>
+</body>
+</html>

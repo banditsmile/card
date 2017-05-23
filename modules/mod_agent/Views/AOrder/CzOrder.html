@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>手工订单列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{$vd['content']}js/utils.js"></script>
+</head>
+<body class="mainbg">
+	<bgsound id="snd" loop="2" src="">
+	<!--$ptype=request('ptype');$ordstate=request('ordstate');-->
+	<form name="query" method="get" action="index.php" id="advsearch">
+	  <div class="new_qie">
+        <div class="new_qie2">
+          <h2>商品库存管理</h2>
+          <span class="setup_index">
+          <input type="checkbox" name="hasorderalert" id="hasorderalert" onClick="OAlert(this)" />          
+		  <label for="lbtnLogin">新订单提醒</label>
+        </span> </div>
+	    <ul>
+	      <li> <a id="lbtn22" href="index.php?m=mod_agent&c=AOrder&a=CzOrder&ptype=sd&ordstate=1&by=1">未充值</a></li>
+	      <li> <a id="lbtn21" href="index.php?m=mod_agent&c=AOrder&a=CzOrder&ptype=sd&ordstate=3&by=1">未代充</a></li>
+		  <li> <a id="lbtn21" href="index.php?m=mod_agent&amp;c=AOrder&amp;a=CzOrderList&amp;ptype=sd">所有记录</a></li>
+        </ul>
+      </div>
+	</form>
+  </td>
+	</tr>
+</table>
+ <table width="100%" cellpadding="0" cellspacing="1" class="table1">
+ 		<tr>
+            <th width="10%"><span class="heardertop1">时间</span></th>
+		    <th width="33%"><span class="heardertop1">名称</span></th>
+		<th width="3%"><span class="heardertop1">数量</span></th>
+		<th width="8%"><span class="heardertop1">充值账号</span></th>
+		<th width="7%"><span class="heardertop1">服务器</span></th>
+		<th width="5%"><span class="heardertop1">区域</span></th>
+		<th width="8%"><span class="heardertop1">计费方式</span></th>
+		<th width="7%"><span class="heardertop1">用户类型</span></th>
+		<th width="10%"><span class="heardertop1">购买客户</span></th>
+		<th width="8%"><span class="heardertop1">代充</span></th>
+    <!--$dollars_sum = 0;$moneyfee_sum = 0;$qty_sum = 0;$agentprofit_sum = 0;$ownermoney_sum = 0;foreach($vd['items'] as $item) {-->
+   <tr class="trd">
+    <td>{$item['orddate']}</td>
+    <td style="text-align:left;padding-left:3px"><div align="center">{$item['pname']}</div></td>
+    <td>{$item['qty']}个</td>
+    <td>{$item['czaccount']}</td>
+    <td><!--if($item['namehide']=='czarea1'){--><!--}-->{#CzText($item['czarea1'])}</td>
+    <td>{#CzText($item['czarea2'])}</td>
+    <td>{#CzText($item['cztype'])}</td>
+    <td>{#CzText($item['czother'])}</td>
+    <td >{$item['company']}({#DisplayCode($item['cid'])})</td>
+    <td><!--if($item['ordstate'] == 1){-->
+    	<input type="button" name="detail" class="buttonadd" value="代充" onClick="javascript:location.href='index.php?m=mod_agent&c=AOrder&a=cetail&ordno={$item['ordno']}&isc=1';">
+    	<!--}else{-->
+    	<input type="button" name="detail" class="buttonnor" value="充值" onClick="javascript:location.href='index.php?m=mod_agent&c=AOrder&a=detail&ordno={$item['ordno']}&isc=3';">
+      <!--}--></td>
+   </tr>
+    <!--$dollars_sum=$dollars_sum+$item['dollars'];$moneyfee_sum=$moneyfee_sum+$item['moneyfee'];$qty_sum=$qty_sum+$item['qty'];$agentprofit_sum=$agentprofit_sum+$item['agentprofit'];$ownermoney_sum=$ownermoney_sum+$item['ownermoney']; }-->
+    <tr class=thr><td align=center>本页合计：</td><td colspan=1>&nbsp;</td><td align=center>{$qty_sum}</td><td colspan=8>&nbsp;</td></tr><tr class=thr><td align=center>查询总计：</td><td colspan=1>&nbsp;</td><td align=center>{$vd['tradedata']['qty_sum']}</td><td colspan=8>&nbsp;</td></tr>
+</table>
+ <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+  <div id="page">
+		<div align="right">{load(fpage)}
+        </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+function openScript(url,name,width,height)
+{
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+
+
+function setk(obj)
+{
+  v = obj.options[obj.selectedIndex].value;
+  $("tkeywords").value = "";
+  if(v == "")
+  {
+    $("stypetr").style.display = "none";
+    $("stype").value = "pname";
+  }
+  else if(v == "km")
+  {
+    $("stypetr").style.display = "";
+    $("stype").value = "cardnumber";
+    $("stypelabel").innerHTML = "卡号密码：";
+    $("stypetip").innerHTML = "&nbsp;格式：卡号|密码";
+  }
+  else if(v == "cz")
+  {
+    $("stypetr").style.display = "";
+    $("stype").value = "czaccount";
+    $("stypelabel").innerHTML = "充值帐号：";
+    $("stypetip").innerHTML = "";
+  }
+}
+var alertorder;
+function OAlert(obj)
+{
+	if(obj.checked)
+	{
+		setCookie('ordersalert', 1, 1);
+    alertorder = setInterval(ReloadHtml, 30000);
+	}
+  else
+	{
+		setCookie('ordersalert', 0, 0);
+		clearInterval(alertorder);
+	}
+}
+
+function ReloadHtml()
+{
+	window.location.reload();
+}
+
+if(getCookie("ordersalert")=="1")
+{
+	$("hasorderalert").checked = true;
+	OAlert($("hasorderalert"));
+	<!--if(count($vd['items']) > 0){-->
+		playSound("{$vd['sc']}upload/ring.wav");
+	<!--}-->	
+}
+
+function playSound(src) { 
+    var _s = $("snd"); 
+    if(src!='' && typeof src!=undefined) { 
+      _s.src = src; 
+    } 
+  } 
+  
+function setAct(v)
+{
+	$("export").value = v;
+	if(v > 0)
+	{
+	  $("advsearch").submit();
+	}
+}
+
+
+</script>

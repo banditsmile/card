@@ -1,0 +1,252 @@
+<!--$ishistory=intval(request('ishistory'));-->
+<!--if($vd['table']==0){-->
+{load(head)}
+<style type="text/css">
+td p{display:none}
+td P.show {
+  DISPLAY: block
+}
+td STRONG {
+CURSOR:pointer;
+COLOR:#0197c9;
+}
+</style>
+
+<body>
+
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><font color="#000">利润报表</font></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)
+    <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none">
+    <!--if($vd['allaid']==1){-->
+    总提成 = 平台提成 + 代理商提成<br/>
+    商品售价 = 总体成 + 供货商所得<br/>
+    平台提成 = 商品售价 x 平台提成率<br/><br/>
+    商品销售后，首先按照供货商设定的平台提成率提成给平台，然后按照各代理价格给买家的上级代理提成，剩下的就是供货商应得的钱<br/><br/>
+    <!--if(UB_YKT){-->
+    如果是平台一卡通购卡：<br/>
+    平台利润 = 一卡通面值 x 平台提成率 <br/>
+    一卡通售价 = 平台利润 + 供货商所得 <br/>
+    <!--}-->
+    <!--}else{-->
+    <!--if($vd['s'] == 0){-->
+    总利润 = 平台利润 + 代理商利润<br/>
+    <!--}-->
+    <!--if(UB_YKT){-->
+    如果是平台一卡通购卡，平台利润 = 一卡通售价 - 商品进货价<br/>
+    <!--}-->
+    <!--}-->
+    <!--if(UB_YKT){-->
+    注意：一卡通平台的订单中，列表中显示的售价是指一卡通面值，并非一卡通售价，其售价需要进入一卡通卡密列表查看
+    <!--}-->
+    </p>
+    总销售额：<span class="dollars"><!--echo round($vd['allprofit']['dollars'],3);--> {$vd['lang']['moneyunit']} </span>
+    平台共<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}-->金额： <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
+    卡密类<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}-->：<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
+    非卡密类<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}-->：<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
+</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:9px;">刷新</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=profit&allaid={$vd['allaid']}&aid={$vd['aid']}&s={$vd['s']}&ishistory={$ishistory}" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('startdate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    到 <input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;"  id="enddate" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <img src="{$vd['sc']}images/calender.gif" onclick="dateDialog('enddate')" style="vertical-align:middle;cursor:pointer;margin-left:0px;"/>
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <select name="comefrom" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['cfarray'], $vd['comefrom'])}
+    </select>
+    <input type="submit" value="搜索" style="vertical-align:middle;" class="button"/><input type="button" value="&gt;&gt;" onFocus="this.blur()" onclick="dateDialog('startdate')" class="button" style="vertical-align:middle;border-left:0px;padding-left:1px" disabled/>
+    </form>
+  </div>
+</div>
+<div id="menuMask" class="menuMask" style="display:none">
+  <form action="?m=mod_b2b&c=tpl&tpl=profit&ishistory={$ishistory}" method="post" style="margin:0px">
+  <div class="menuContent">
+  <input type="checkbox" name="id[]" value="pname" id="pname" onFocus='this.blur()'/>下单时间<br/>
+  <input type="checkbox" name="id[]" value="view" id="view" onFocus='this.blur()'/>查看订单<br/>
+  <input type="checkbox" name="id[]" value="aid" id="aid" onFocus='this.blur()'/>所属供货商<br/>
+  <input type="checkbox" name="id[]" value="ordno" id="ordno" onFocus='this.blur()'/>订单号<br/>
+  <input type="checkbox" name="id[]" value="cprice" id="cprice" onFocus='this.blur()'/>零售价<br/>
+  <input type="checkbox" name="id[]" value="price" id="price" onFocus='this.blur()'/>进价<br/>
+  <input type="checkbox" name="id[]" value="qty" id="qty" onFocus='this.blur()'/>订购数量<br/>
+  <input type="checkbox" name="id[]" value="aname" id="aname" onFocus='this.blur()'/>下单者<br/>
+  </div>
+  <div class="menuOp">
+  <input type="submit" value="保存" class="button"/>
+  <input type="button" value="重置" class="button" onclick="tInfoReset()"/>
+  <input type="button" value="取消" class="button" onclick="setMenuMask()"/>
+  </div>
+  </form>
+</div>
+
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" disabled type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+    <td width="140px"><b>商品</b></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center"><b>总<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}--></b></td>
+    <!--}-->
+    <td width="80px"><b>平台<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}--></b></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px"><b>代理商<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}--></b></td>
+    <!--}-->
+    <!--if($vd['allaid']==1){-->
+    <td width="80px"><b>供货商所得</b></td>
+    <td width="80px"><b>供货商利润</b></td>
+    <td width="75px"><b>平台提成率</b></td>
+    <!--}-->
+<!--//thead-->
+<td width="140px"><b>下单时间</b></td>
+<td width="22px"><img src="{$vd['sc']}images/icon_view.gif"/></td>
+<td width="65px"><b>所属</b></td>
+<td width="45px"><b>售价</b></td>
+<td width="50px"><b>进价</b></td>
+<!--//endthead-->
+    <td class="endtd">
+      <div class="infoicon" onclick="setMenuMask()"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=profit&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--$sum_dollars=0;$sum_profit=0;$sum_agentprofit=0;$sum_ownermoney=0;$sum_ownerprofit=0;foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" disabled id="idchk_{$item['ordid']}" class="checkbox" value="{$item['ordid']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+    <td width="140px"><nobr><samp title="{$item['pname']}">{$item['pname']}</samp></nobr></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center">{$item['profit']}</td>
+    <!--}-->
+    <td width="80px" align="center"><!--echo round(($item['profit'] - $item['agentprofit']), 3)--></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center">{$item['agentprofit']}</td>
+    <!--}-->
+    <!--if($vd['allaid']==1){-->
+    <td width="80px" align="center">{$item['ownermoney']}</td>
+    <td width="80px" align="center">{$item['ownerprofit']}</td>
+    <td width="75px" align="center"><!--echo $item['fee']*100;-->%</td>
+    <!--}-->
+<!--//tbody-->
+<td width="140px">{$item['orddate']}</td>
+<td width="22px"><a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}&ishistory={$ishistory}" title="查看订单" onFocus="this.blur()" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_view.gif"/></a></td>
+<td width="65px"><a href="index.php?m=mod_b2b&c=Profit&stype=aid&keywords={$item['aid']}&by=1&allaid=1" onclick="loadDisp(1)" title="点击查看这个用户的订单">{#DisplayCode($item['aid'])}</a></td>
+<td width="45px">{$item['cprice']}</td>
+<td width="50px">{$item['price']}</td>
+<!--//endtbody-->
+    <td class="endtd"></td>
+  </tr>
+  <!--$sum_profit+=$item['profit'];$sum_agentprofit+=$item['agentprofit'];$sum_dollars+=$item['dollars'];$sum_ownermoney+=$item['ownermoney'];$sum_ownerprofit+=$item['ownerprofit'];}-->
+  <!--if($vd['totlerow'] > 0) {-->
+  <tr>
+    <td></td>
+    <td>本页统计</td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center"><strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="padding-left:0px"><!--echo round($sum_profit,3);--></strong><p>本页总销售额为 <font color="#ff0000">{$sum_dollars}</font> {$vd['lang']['moneyunit']} 平台<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}-->比例：<!--$t = $sum_dollars==0?1:$sum_dollars;echo (round($sum_profit/$t, 6)*100).'%';--></p></td>
+    <!--}-->
+    <td width="80px" align="center"><!--echo round($sum_profit-$sum_agentprofit,3);--></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center"><!--echo round($sum_agentprofit,3);--></td>
+    <!--}-->
+    <!--if($vd['allaid']==1){-->
+    <td width="80px" align="center"><!--echo round($sum_ownermoney,3);--></td>
+    <td width="80px" align="center"><!--echo round($sum_ownerprofit,3);--></td>
+    <!--}-->
+    <td class="endtd"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>查询统计</td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center"><strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="padding-left:0px"><!--echo round($vd['allprofit']['profit'],3);--></strong><p>本页总销售额为 <font color="#ff0000">{$vd['allprofit']['dollars']}</font> {$vd['lang']['moneyunit']} 平台<!--if($vd['allaid']==1){-->提成<!--}else{-->利润<!--}-->比例：<!--$t = $vd['allprofit']['dollars']==0?1:$vd['allprofit']['dollars'];echo (round($vd['allprofit']['profit']/$t, 6)*100).'%';--></p></td>
+    <!--}-->
+    <td width="80px" align="center"><!--echo round($vd['allprofit']['profit']-$vd['allprofit']['agentprofit'],3);--></td>
+    <!--if($vd['s'] == 0){-->
+    <td width="80px" align="center"><!--echo round($vd['allprofit']['agentprofit'],3);--></td>
+    <!--}-->
+    <!--if($vd['allaid']==1){-->
+    <td width="80px" align="center"><!--echo round($vd['allprofit']['ownermoney'],3);--></td>
+    <td width="80px" align="center"><!--echo round($vd['allprofit']['ownerprofit'],3);--></td>
+    <!--}-->
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=profit&a=deals&{$vd['op']}&ishistory={$ishistory}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=profit&istable=1&{$vd['op']}&ishistory={$ishistory}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=profit&{$vd['op']}&ishistory={$ishistory}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(0,0);
+totleRows = {$vd['totlerow']};
+deltxt  = "销毁订单将无法恢复,您确定进行销毁操作吗？";
+thisaction = "销毁";
+thisdel = 0;
+onedel  = 0;
+sc = "{$vd['sc']}";
+statistics = 2;
+var resizeidx = 1;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array('pname','view','aid','cprice','price');
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->

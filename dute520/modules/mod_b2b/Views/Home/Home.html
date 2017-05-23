@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="content/skins/css/main.css">
+</head>
+
+<body>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="40%" height="28" class="listhead">
+    <span>→欢迎后台管理系统</span></td>
+    <td width="35%" class="listhead" >
+    <div align="center">
+      <span>当前登录管理员：{$vd['admin']}</span></div>
+    </td>
+    <td width="25%" class="listhead" >
+    <div align="right">
+      <a target="_top" href="../index.asp">
+      <span class="style11">返回网站首页</span>&nbsp;</a></div>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td class="listhead" style="padding-top: 15px;">
+    <form action="custlist.asp"  method="post" name="form" >
+    <input type="text" id="keywords" name="keywords" size="30" value="请输入会员名进行搜索" class="txt"/>
+    <input type="submit" value="会员搜索 &gt;&gt;"/>
+    </form>
+    <br/>
+    <form action="importlist.asp?optype=pidsearch" method="post" name="form" >
+    <input type="text" id="keywords" name="keywords" size="30" value="请输入想要进货的商品名称关键词" class="txt"/>
+    <input type="submit" value="我要进货 &gt;&gt;"/>
+    </form>
+    </td>
+    <td class="listhead" style="padding-top: 15px;">
+    <form action="orderlist.asp"  method="post" name="form" >
+    <input type="text" id="keywords" name="keywords" size="30" value="请输入商品订单进行搜索" class="txt"/>
+    <input type="submit" value="订单搜索 &gt;&gt;"/>
+    </form>
+    <br/>
+    <form action="prdlist.asp"  method="post" name="form" >
+    <input type="text" id="keywords" name="keywords" size="30" value="请输入商品名称关键词进行搜索" class="txt"/>
+    <input type="submit" value="商品搜索 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td colSpan="3" height="23" class="listhead">
+    <div class="style3" align="center">
+      快速链接</div>
+    </td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td width="33%" height="25">
+    <div align="center">
+      <a href="orderlist.asp">最新订单列表</a></div>
+    </td>
+    <td width="33%" height="25">
+    <div align="center">
+      <a href="czlist.asp?optype=s">汇款列表</a></div>
+    </td>
+    <td width="33%" height="25">
+    <div align="center">
+      <a href="ask.asp">用户留言列表</a></div>
+    </td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td width="33%" height="25">
+    <p align="center"><a href="custlist.asp">最新注册会员列表</a></td>
+    <td width="33%" height="25">
+    <div align="center">
+      <a href="prdlist.asp">产品列表</a></div>
+    </td>
+    <td width="33%" height="25">
+    <div align="center">
+      <a href="profit.asp">商城盈利统计</a></div>
+    </td>
+  </tr>
+</table>
+<br/>
+</body>
+
+</html>

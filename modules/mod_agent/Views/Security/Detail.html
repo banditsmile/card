@@ -1,0 +1,154 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+
+<div class="ubtwoRight" id="ubtwoRight">
+	<div class="welcometext">{$vd['security']} </div>
+  <div class="cbox">
+    <ul>
+      <li>推荐一：IP绑定</li>
+      <li>推荐二：IP绑定 + 网卡绑定</li>
+      <li>推荐三：IP绑定 + 网卡绑定 + 硬件绑定</li>
+    </ul>
+    <ul>
+    	<li><font color="#ff0000">注：如果是动态IP，请勿绑定IP，一般家用网络都是动态网络多一点，如果您不太了解，可以和我们客服咨询</font></li>
+      <li>如果您点击获取硬件信息的时候，获取到"undefined"，则说明安全控件没有安装好</li>
+      <li>您可以点击 <a href="#" onclick="document.all.gethard.src='{$vd['root']}index.php?m=mod_b2b&a=bindhard';"><u>在线安装安全控件</u></a> 进行安装，请务必选择”是“进行安装，安装好后，刷新一下，浏览器上方会弹出一个active x的控件提示，请点击并安装即可。安全控件只需要安装一次，以后就无需安装就可以使用了，如果您每次进入这个页面都提示您安装，说明控件没有安装成功了。您可以重复我们的安装提示重新安装，如果有什么疑问，可以和我们客服咨询</li>
+    </ul>
+  </div>
+  <form name="form" method="post" action="index.php?m=mod_agent&c=security&a=save">
+  <?php
+    $bindata = array(
+      array(
+        'title' => 'IP地址',
+        'tag'   => 'IP',
+        'name'  => 'ip',
+      ),
+      array(
+        'title' => '网卡MAC地址',
+        'tag'   => '网卡',
+        'name'  => 'mac',
+      ),
+      array(
+        'title' => '硬盘编码',
+        'tag'   => '硬盘',
+        'name'  => 'hde',
+      ),
+      array(
+        'title' => 'CPU编码',
+        'tag'   => 'CPU',
+        'name'  => 'cpu',
+      )
+    );
+    
+    $pc      = array('一','二','三','四','五');
+  ?>
+  
+  <!--foreach($bindata as $item){-->
+  <table class="contentTable">
+  	<tr>
+      <td colspan="2" class="tabletitle"> <b>{$item['title']}</b></td>
+    </tr>
+  	<!--for($i=0; $i<5; $i++){-->
+    <tr>
+      <td class="lt">{$item['tag']}(机器{$pc[$i]}) </td>
+      <td class="rt">
+      	<input type="text" size="25" name="{$item['name']}[]" id="{$item['name']}_{$i}" value="{$s[$item['name']][$i]}"/>
+      	<input type="checkbox" class="checkbox"  value="{$i}" name="{$item['name']}check[]" style="vertical-align:middle" <!--if($s[$item['name']][$i] != '' && $s[$item['name'].'check'] == 1){-->checked<!--}-->/> 绑定
+      </td>
+    </tr>
+    <!--}-->
+  </table>
+  <!--}-->
+
+  <table class="contentTable">
+    <tr>
+      <td class="buylt" height="50px"></td>
+      <td class="buyrt">
+      	<input type="hidden" name="id" value="{$item['id']}"/>
+      	<input type="submit" value="确认提交" class="button mysubmit"/> 
+      	<input type="reset" value="重新填写" class="button myreset"/>
+      	</td>
+    </tr>
+    </tr>
+  </table>
+  </form>
+  <iframe name="gethard" id="gethard" width="0" height="0" style="border:0" src=""></iframe>
+</div>
+<object id="t1" codeBase="{$vd['sc']}tools/umebiz.cab" classid="CLSID:B8748B60-E34D-42AA-9309-8012CA4964AC" height=0 width=0 ></object>
+<input type="hidden" id="tmac" name="tmac"  value=""/>
+<script type="text/JavaScript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+function getip(){
+  $("ip").value = "{$vd['ip']}";	
+}
+
+function getmac()
+{
+	$("mac").value = document.all.t1.GetMacAddr;
+}
+
+function getcpuid()
+{
+	$("cpu").value = document.all.t1.GetCpuId;
+}
+
+function gethde()
+{
+	$("hde").value = document.all.t1.GetHDE;
+}
+</script>
+<?php
+   $fp = fopen($vd['sc']."tools/root.cer", "r");
+   $cert = fread($fp, 8192);
+   fclose($fp);
+?>
+<script type="text/JavaScript">
+$("tmac").value = document.all.t1.GetMacAddr;
+if($("tmac").value == "" || $("tmac").value == "undefined")
+{
+  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');
+}
+
+</script>
+<script language="vbscript">
+ON ERROR resume next
+sPKCS7=""
+sPKCS7=sPKCS7 & "-----BEGIN CERTIFICATE-----" & vbcrlf
+sPKCS7=sPKCS7 & "MIIDszCCApugAwIBAgIIJOG9OEqVKfgwDQYJKoZIhvcNAQEFBQAwZzELMAkGA1UE" & vbcrlf
+sPKCS7=sPKCS7 & "BhMCQ04xEDAOBgNVBAgTB0JlaWppbmcxEDAOBgNVBAcTB0JlaWppbmcxDjAMBgNV" & vbcrlf
+sPKCS7=sPKCS7 & "BAoTBUNBMzY1MSQwIgYDVQQDExtDQTM2NSBGcmVlIFJvb3QgQ2VydGlmaWNhdGUw" & vbcrlf
+sPKCS7=sPKCS7 & "HhcNMDEwNTEyMDg0MDQxWhcNMzEwNTA1MDg0MDQxWjBnMQswCQYDVQQGEwJDTjEQ" & vbcrlf
+sPKCS7=sPKCS7 & "MA4GA1UECBMHQmVpamluZzEQMA4GA1UEBxMHQmVpamluZzEOMAwGA1UEChMFQ0Ez" & vbcrlf
+sPKCS7=sPKCS7 & "NjUxJDAiBgNVBAMTG0NBMzY1IEZyZWUgUm9vdCBDZXJ0aWZpY2F0ZTCCASIwDQYJ" & vbcrlf
+sPKCS7=sPKCS7 & "KoZIhvcNAQEBBQADggEPADCCAQoCggEBAOUJiqnKIVBDD5tPkx7i4vZh/mB3j+es" & vbcrlf
+sPKCS7=sPKCS7 & "yP5py6xw7f2wD2FKWEx/LU0HmcZOUEkZR+e0d72gF135rB5fs4R/vW47vkFP70yW" & vbcrlf
+sPKCS7=sPKCS7 & "duk3Q98qeEBiCWj1oIqu63insQL2qJJ9+5xD3S38AWqxTpXzGLTrpvuJMNwAKJWq" & vbcrlf
+sPKCS7=sPKCS7 & "5RSMIbFl/yoCpgfVz+iIGP9gjf/+PJOF08ii6BOZFygRGkWY0c2PiuyBOXnyZccS" & vbcrlf
+sPKCS7=sPKCS7 & "NWFIVoWkRT4RyUU1ojjdbVj5zer0roHaCpkTRREf7+ZC3gUXEJOu2V7Mqp7oKPq/" & vbcrlf
+sPKCS7=sPKCS7 & "ZaslorsB1sKMyXWBWwIL9MsdHKlGYRdFDwW7FSbK/ifRFErOnk+6xzECAwEAAaNj" & vbcrlf
+sPKCS7=sPKCS7 & "MGEwHQYDVR0OBBYEFP5hdKPBS60rwHHDpaJMAAPZIMMcMA4GA1UdDwEB/wQEAwIB" & vbcrlf
+sPKCS7=sPKCS7 & "BjAfBgNVHREEGDAWhhRodHRwOi8vd3d3LmNhMzY1LmNvbTAPBgNVHRMBAf8EBTAD" & vbcrlf
+sPKCS7=sPKCS7 & "AQH/MA0GCSqGSIb3DQEBBQUAA4IBAQDMipz61e91bQhVeGXC9CdnG+DBoHWw2Lxs" & vbcrlf
+sPKCS7=sPKCS7 & "pbRLq3BXKh05uhJ2fvP50aqLOJV4iw5qb6YITW8LvSYf6tfgXPj+axwP84ukBgYg" & vbcrlf
+sPKCS7=sPKCS7 & "29FcfWbVKW6PxQllGTi2LgvExTp6Aq8HTDDri5ElUItvGtDRAjKNgTASemzDtpuf" & vbcrlf
+sPKCS7=sPKCS7 & "OIFhom9Y6JPkxUfOSOWHfV18Tx2X5OJLcD/hqp5cb6f5C9YN6kl4Jz7/kZO1aiP0" & vbcrlf
+sPKCS7=sPKCS7 & "0Vmdf5wqLLavqEozhg0ZNbdgzvVJnleGpFYnj2ZbKLcdm7wUl0/JfC4/wIfRaSTB" & vbcrlf
+sPKCS7=sPKCS7 & "6k0u/zp4yTkexhb1rOVHKdHUIyC3/uq4afQcSwGTA1Hb47+jtdOd" & vbcrlf
+sPKCS7=sPKCS7 & "-----END CERTIFICATE-----" & vbcrlf
+<?php
+    $newcert = "sPKCS7=\"\"\r\n";
+    $line=strtok($cert,"\r\n");
+    while($line)
+    {
+     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";
+     $line=strtok("\r\n");
+    }
+    echo $newcert;
+?> 
+XEnroll.InstallPKCS7 sPKCS7 
+</script>
+{load(foot)}

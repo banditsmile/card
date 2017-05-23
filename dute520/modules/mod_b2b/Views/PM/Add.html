@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+</style>
+</head>
+<body>
+<form method="post" action="index.php?m=mod_b2b&c=PM&a=Save" name="cform" id="cform">
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">发送站内短信</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_pm_add" onFocus="this.blur()" title="查看站内短信添加相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">发送站内短信息</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr>
+      <td class="tablelt">主题：</td>
+      <td class="tablert"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title"/></td>
+    </tr>
+    <tr id="tr_1">
+      <td class="tablelt">收信人：</td>
+      <td class="tablert">
+        <input type="radio" value="0" id="msgto0" name="msgto" onclick="setval(this)" class="checkbox"/>所有人
+        <input type="radio" value="1" id="msgto1" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']>0){-->checked<!--}--> />指定用户
+        <input type="radio" value="2" id="msgto2" name="msgto" onclick="setval(this)" class="checkbox" <!--if($vd['aid']==0){-->checked<!--}-->/>系统直属下级
+      </td>
+    </tr>
+    <tr id="tr_2" style="display:none">
+      <td class="tablelt">收信人：</td>
+      <td class="tablert">
+        <input type="radio" value="4" id="msgto4" name="msgto" onclick="setval(this)" class="checkbox"/>所有人
+        <input type="radio" value="5" id="msgto5" name="msgto" onclick="setval(this)" class="checkbox"/>指定用户
+      </td>
+    </tr>
+    <tr id="tr_3" style="display:none">
+      <td class="tablelt">用户编号：</td>
+      <td class="tablert">
+        <input type="text" class="myinput" style="font-weight:normal" id="cid" name="cid"/>
+      </td>
+    </tr>
+    <tr id="underling" style="display:none">
+      <td class="tablelt">下级编号：</td>
+      <td class="tablert">
+        <select name="underlingid">
+        <option value="0">请选择您的下级编号</option>
+        </select>
+      </td>
+    </tr>
+    <tr id="specialunderling"<!--if($vd['aid']==0){--> style="display:none"<!--}-->>
+      <td class="tablelt">用户编号：</td>
+      <td class="tablert">
+        <input type="text" class="myinput" style="font-weight:normal" id="msgto" name="specialunderling" <!--if($vd['aid']>0){-->value="{$vd['aid']}"<!--}-->/>
+      </td>
+    </tr>
+    <tr>
+      <td class="tablelt">消息内容：</td>
+      <td class="tablert">
+      <textarea name="content" wrap="VIRTUAL" cols="80" rows="8" scrolling="yes" class="mytextarea"></textarea>
+      <span id="spanstaffpwd"></span></td>
+    </tr>
+    
+  </table>
+</div>
+</div>
+    
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="hidden" value="1" name="comefrom"/>
+    <input type="submit" value="发送短信息" class="btn"/>
+    <input type="reset" value="重置" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+function setval(obj){
+    if(obj.value == 1)
+    {
+      $("underling").style.display = "none";
+      $("specialunderling").style.display = "";
+    }
+    else if(obj.value == 3)
+    {
+      $("underling").style.display = "";
+      $("specialunderling").style.display = "none";
+    }
+    else if(obj.value == 2)
+    {
+      $("underling").style.display = "none";
+      $("specialunderling").style.display = "none";
+    }
+    else if(obj.value == 0)
+    {
+      $("underling").style.display = "none";
+      $("specialunderling").style.display = "none";
+    }
+    else if(obj.value == 5)
+    {
+      $("tr_3").style.display = "";
+    }
+    else if(obj.value == 4)
+    {
+      $("tr_3").style.display = "none";
+    }
+  }
+
+function setplatform(obj)
+{
+  if(obj.value == 1)
+  {
+    $("tr_1").style.display = "";
+    $("tr_2").style.display = "none";
+    $("tr_3").style.display = "none";
+  }
+  else
+  {
+    $("tr_1").style.display = "none";
+    $("tr_2").style.display = "";
+    $("underling").style.display = "none";
+    $("specialunderling").style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

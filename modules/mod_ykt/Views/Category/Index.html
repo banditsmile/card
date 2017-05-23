@@ -1,0 +1,49 @@
+{load(head)}
+<div class='dleft'>
+  <!--foreach($vd['cat'] as $cat) {-->
+  <div class='col2 dlefts'>
+    <h3>{$cat['catname']}</h3>
+    <ul class='depart_class_body'>
+    <!--foreach($vd['subcat'] as $subcat) {-->
+    <!--if($subcat['parentid'] == $cat['catid']) {-->
+      <li><a href="{#ListLink($subcat['catid'])}">{$subcat['catname']}</a></li>
+    <!--}-->
+    <!--}-->
+    </ul>
+  </div>
+  <!--}-->
+</div>
+<div class="BLSideRight fix whitebg">
+  <div class="col">
+    <ul id='BLArticles'>
+    <h3>新闻公告</h3>
+    <!--foreach($vd['ann'] as $ann) {-->
+    <li><strong><font color='#cc6600'>[{$this->DateFormat($ann['ndate'],'m/d')}]</font></strong>
+    <a href="article/{$ann['id']}.html">{$ann['title']}</a></li>
+    <!--}-->
+    </ul>
+    <p>由于外挂是官方不许可的，万一出现外挂被封或者开发商跑人本站一律不付任何责任，请买前考虑，希望理解.</p> 
+  </div>
+</div>
+
+<div class="BLSideRight fix">
+  <div class="col">
+    <h3>促销</h3>
+    <table>
+    <!--foreach($vd['products']['sale'] as $p) {-->
+      <tr height='100'>
+        <td width='90'>
+        <a href="product/{$p['pid']}.html"><img src="{$vd['content']}picture/{$p['imagesmall']}" border="0" width="120" /></a>
+        </td>
+        <td>
+          <a href="product/{$p['pid']}.html"><b>{$p['ptagname']}</b></a><br/>
+          <a href="product/{$p['pid']}.html"><u>查看更多>></u></a>
+        </td>
+      </tr>
+    <!--}-->
+    </table>
+    <p>本站在国家法律与行政范围内，只提供网络虚拟物品,数字卡第三方信用保障服务.</p>
+    <p>合理使用时间，文明使用外挂，外挂和游戏之间的问题，本站不负任何责任. </p>
+  </div>
+</div>
+{load(foot)}

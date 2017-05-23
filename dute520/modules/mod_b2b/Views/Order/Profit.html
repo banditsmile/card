@@ -1,0 +1,119 @@
+<!--$ishistory=intval(request('ishistory'));-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;">
+    <h3>系统从{$vd['data']['yearfrom']}-{$vd['data']['monthfrom']}-{$vd['data']['dayfrom']}到 {$vd['data']['yearto']}-{$vd['data']['monthto']}-{$vd['data']['dayto']} 订单明细表</h3>
+    共盈利金额： <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
+    卡密类盈利：<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
+    非卡密类盈利：<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
+    </td>
+  </tr>
+</table> 
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 15px;">
+    <form action="index.php?m=mod_b2b&c=order&a=profit&ishistory={$ishistory}"  method="post" name="form" >
+    日期从
+    <select name="yearfrom">
+      {#Option($vd['y'], $vd['data']['yearfrom'])}
+    </select>年
+    <select name="monthfrom">
+      {#Option($vd['m'], $vd['data']['monthfrom'])}
+    </select>月
+    <select name="dayfrom">
+      {#Option($vd['d'], $vd['data']['dayfrom'])}
+    </select>日 到 <select name="yearto">
+      {#Option($vd['y'], $vd['data']['yearto'])}
+    </select>年
+    <select name="monthto">
+      {#Option($vd['m'], $vd['data']['monthto'])}
+    </select>月
+    <select name="dayto">
+      {#Option($vd['d'], $vd['data']['dayto'])}
+    </select>日
+    <input type="submit" value="马上查询 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="15%" align="center" height="35" class="listhead"><b>时间</b></td>
+    <td width="15%" align="center" height="35" class="listhead"><b>订单号</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>零售价</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>进价</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>订购数量</b></td>
+    <td width="8%" align="center" height="35" class="listhead"><b>总利润</b></td>
+    <td width="10%" align="center" height="35" class="listhead"><b>系统利润</b></td>
+    <td width="10%" align="center" height="35" class="listhead"><b>代理商利润</b></td>
+    <td align="center" height="35" class="listhead"><b>商品</b></td>
+  </tr>
+  <!--$sum_profit=0;$sum_agentprofit=0;foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="15%" align="center" height="35">{$item['orddate']}</td>
+    <td width="15%" align="center" height="35">
+      <a href="index.php?m=mod_b2b&c=order&a=detail&ubzordno={$item['ordno']}">
+      <font color="#00875A">{$item['ordno']}</font>
+    </a>
+    </td>
+    <td width="8%"  align="center" height="35">{$item['cprice']}</td>
+    <td width="8%" align="center" height="35">{$item['price']}</td>
+    <td width="8%" align="center" height="35">{$item['qty']}</td>
+    <td width="8%" align="center" height="35">{$item['profit']}</td>
+    <td width="10%" align="center" height="35"><!--echo round(($item['profit'] - $item['agentprofit']), 3)--> </td>
+    <td width="10%" align="center" height="35">{$item['agentprofit']}</td>
+    <td align="center" height="35">{$item['pname']}</td>
+  </tr>
+  <!--$sum_profit+=$item['profit'];$sum_agentprofit+=$item['agentprofit'];}-->
+  <tr>
+    <td  align="center" colspan="5"  style="color:#ff0000">本页统计</td>
+    <td align="center" height="35"><!--echo round($sum_profit,3);--></td>
+    <td align="center" height="35"><!--echo round($sum_profit-$sum_agentprofit,3);--></td>
+    <td align="center" height="35"><!--echo round($sum_agentprofit,3);--></td>
+    <td align="center" colspan="1">
+    </td>
+  </tr>
+  <tr>
+    <td  align="center" colspan="5" style="color:#ff0000">查询统计</td>
+    <td align="center" height="35">{$vd['allprofit']['profit']}</td>
+    <td align="center" height="35"><!--echo round($vd['allprofit']['profit']-$vd['allprofit']['agentprofit'],3);--></td>
+    <td align="center" height="35">{$vd['allprofit']['agentprofit']}</td>
+    <td align="center" colspan="1">
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="20">
+    <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" height="35" colspan="19">
+    <form method="post" action="index.php?m=mod_b2b&c=order&a=profit&{$vd['op']}">
+      <input type="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['prepage']}&{$vd['op']}'"/>
+      <input type="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_b2b&c=order&a=profit&page={$vd['nextpage']}&{$vd['op']}'"/>
+      到第<input type="text" name="page" size="2" value="" class="txt"/>页<input type="submit" value=" 确 定 &gt;&gt;"/>
+    </form>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" style="padding-top: 10px;">
+    共盈利金额： <span class="dollars">{$vd['profit']} {$vd['lang']['moneyunit']}</span>
+    其中非在线充值卡盈利：<span class="dollars">{$vd['kmprofit']} {$vd['lang']['moneyunit']}</span>
+    在线充值卡类盈利：<span class="dollars">{$vd['czprofit']} {$vd['lang']['moneyunit']} </span>
+    </td>
+  </tr>
+</table> 
+</body>
+</html>

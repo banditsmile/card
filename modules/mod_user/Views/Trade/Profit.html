@@ -1,0 +1,96 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+  <div id="TopSearch">
+    <div id="search">
+      <ul class="search_left"></ul>
+      <form id="searchform" name="searchform" method="post" action="index.php?m=mod_agent&c=trade&tpl=profit&tradetype=11&{$vd['op']}">
+      <ul class="search_mid">
+          <li class="search_slong">
+          <p class="search_s1long">
+            <select name="tradetype" id="tradetype" class="search_selectlong">
+            {#Option($vd['tradetypes'], $vd['tradetype'])}
+            </select>
+          </p>
+          </li>
+          <li class="search_i1">
+          <div style="float:left"><input type="text" name="startdate" value="{$vd['startdate']}" class="search_inputdate" id="startdate"/></div>
+          <div style="float:left"><img src="{$vd['content']}images/calender.gif" onclick="dateDialog('startdate')" height="22" style="margin-top:2px;cursor:pointer;margin-left:0px;"/></div>
+          </li>
+          <li class="search_t">
+          <b>到 </b>
+          </li>
+          <li class="search_i1">
+          <div style="float:left"><input type="text" name="enddate" value="{$vd['enddate']}" class="search_inputdate" id="enddate"/></div>
+          <div style="float:left"><img src="{$vd['content']}images/calender.gif" onclick="dateDialog('enddate')" height="22" style="margin-top:2px;cursor:pointer;margin-left:0px;"/></div>
+          </li>
+          <li class="search_b">
+          <input type="image" value="" src="{$vd['content']}images/search.gif"/>
+          </li>
+      </ul>
+      </form>
+      <ul class="search_right"></ul>
+    </div>
+  </div>
+  <br/>
+  <div class="rstitle">总交易金额：总支出 <!--if($vd['record']['outcome'] != ''){ echo round($vd['record']['outcome'], 3);}else{echo 0;}--> {$vd['lang']['moneyunit']}   总收入 <!--if($vd['record']['income'] != ''){ echo round($vd['record']['income'], 3);}else{echo 0;}--> {$vd['lang']['moneyunit']} </div>
+  <div style="padding:0 0 10px 0;color:#ff0000"><b>[注]</b>点卡交易产生的经销商利润不会直接转入余额，需要后台管理员操作才可以</div>
+  <table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td width="25%" align="center" height="35">
+        交易类型</td>
+      <td width="15%" align="center" height="35">
+        收入({$vd['lang']['moneyunit']})</td>
+      <td width="20%" align="center" height="35">
+        变化后({$vd['lang']['moneyunit']})</td> 
+      <td width="10%" align="center" height="35">
+        操作员</td>
+      <td width="20%" align="center" height="35">
+        交易日期</td>
+    </tr>
+    <!--$income=0;$outcome=0;foreach($vd['items'] as $item) {-->
+    <tr>
+      <td width="25%" align="center" height="35">{#TradeType($item['tradetype'])}</td>
+      <td width="15%" align="center" height="35"><!--if($item['income'] != ''){ echo '+ '.round($item['income'], 3);}--></td>
+      <td width="20%" align="center" height="35"><font color="#ff0000">{$item['fat']}</font></td> 
+      <td width="20%" align="center" height="35">{#UnderlingOperator($vd['agent'][0], $item['operator'], $vd['agent'][9])}</td>
+      <td width="20%" align="center" height="35">{$item['createdate']}</td>
+    </tr>
+    <!--$income=$income+$item['income'];$outcome=$outcome+$item['outcome'];}-->
+    <tr>
+      <td width="25%" align="center" height="35">
+        本页统计</td>
+      <td width="15%" align="center" height="35">
+        <!--if($income != ''){ echo round($income, 3);}--></td>
+      <td align="center" height="35" colspan="6"></td>
+    </tr>
+    <tr>
+      <td width="25%" align="center" height="35">
+        查询统计</td>
+      <td width="15%" align="center" height="35">
+        <!--if($income != ''){ echo round($income, 3);}--></td>
+      <td align="center" height="35" colspan="6"></td>
+    </tr>
+    <tr>
+      <td align="right" height="35" colspan="12">
+      <form method="post" action="index.php?m=mod_agent&c=order&{$vd['op']}">
+        <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+        <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_agent&c=order&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+        <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_agent&c=order&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+        到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+      </form>
+      </td>
+    </tr>
+  </table>
+</div>
+{load(foot)}
+<script type="text/javascript">
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+</script>

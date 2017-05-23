@@ -1,0 +1,49 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+  <!--$item = $vd['item'];-->
+  <form method="post" action="index.php?m=mod_agent&c=msg&a=save">
+  <table class="contentTable">
+  	<tr>
+      <td colspan="2" class="tabletitle"> <b>回复短消息</b></td>
+    </tr>
+    <tr>
+      <td class="buylt">主题：</td>
+      <td class="buyrt"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title" value="Re:{$item['title']}"/></td>
+    </tr>
+    <tr>
+      <td class="buylt">收信人：</td>
+      <td class="buyrt">
+      	<input type="text" class="myinput" style="font-weight:normal" id="msgto" name="msgto" value="{$item['msgfrom']}"/>
+      	<input type="checkbox" value="all" name="msgcc_1" /> 所有人
+      	<input type="checkbox" value="allunderling" name="msgcc_2" /> 所有下家
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">消息内容：</td>
+      <td class="buyrt">
+      <textarea name="thiscontent" wrap="VIRTUAL" cols="50" rows="5" scrolling="yes" class="mytextarea">{$item['content']}</textarea>
+      <span id="spanstaffpwd"></span></td>
+    </tr>
+    <tr>
+      <td class="buylt">回复内容：</td>
+      <td class="buyrt">
+      <textarea name="content" wrap="VIRTUAL" cols="50" rows="5" scrolling="yes" class="mytextarea"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt">是否弹出：</td>
+      <td class="buyrt">
+      	<input type="checkbox" value="1" name="checktradepwd" checked /> 收件人浏览器弹出信息
+      </td>
+    </tr>
+    <tr>
+      <td class="buylt" height="50px"></td>
+      <td class="buyrt"><input type="submit" id="mysubmit" value="马上回复" class="button mysubmit"/> <input type="reset" value="重新填写" class="button myreset"/></td>
+    </tr>
+  </table
+  </form>>
+</div>
+{load(foot)}

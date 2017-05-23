@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$vd['web']['title']}-一卡通平台</title>
+<meta name="keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="description" content="{$vd['web']['description']}" />
+<link rel="stylesheet" type="text/css" href="{$vd['content']}css/ub-list-20080119.css" />
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="topheader">
+  <div id="headertab">
+    <span style="float:right">
+      <script src="{$vd['content']}js/cust.js"></script>
+      <img src="{$vd['content']}images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check">卡状态查询</a> &nbsp;
+      <img src="{$vd['content']}images/icon_dz.gif" align="absmiddle"> <a href="{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran">卡余额互转</a> &nbsp;
+      <img src="{$vd['content']}images/icon_kt.gif" align="absmiddle"> <a href="/2009/index.php?m=mod_ykt&c=Show">卡图展示</a> &nbsp;
+      <img src="{$vd['content']}images/icon_bz.gif" align="absmiddle"> <a href="/2009/index.php?m=mod_ykt&a=hourkf">客户服务</a> &nbsp;
+      <img src="{$vd['content']}images/icon_jxs.gif" align="absmiddle"> <a href="{$vd['root']}<!--if(UB_DEFAULT != 'b2b'){-->b2b<!--}-->" target="_blank">经销商</a>
+    </span>
+    <span id="userzone"></span>
+  </div>
+</div>
+<div id="ubmain">
+<input type="hidden" id="webdir" name="webdir" value="{$vd['root']}">
+<script src="{$vd['content']}js/userzone.js"></script>
+<script type="text/javascript" src="{$vd['sc']}flash/swfobject.js"></script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tclass">
+  <tr>
+    <td width="1%" height="40"><img src="{$vd['content']}images/addr.gif" width="52" height="32" /></td>
+    <td width="99%">卡图展示  
+      
+    </td>
+  </tr>
+</table>
+<style type="text/css">
+  #flashcontent{font-size:40;}
+  .pmlist td{height:800px}
+</style>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" class="pmlist">
+  <tr>
+    <td height="800px">
+      <div id="flashcontent">PostcardViewer requires JavaScript and the Flash Player. <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash here.</a> </div>  
+      <script type="text/javascript">
+        var fo = new SWFObject("{$vd['sc']}flash/viewer.swf", "viewer", "100%", "100%", "8", "#ffffff");    
+        
+        fo.addVariable("langOpenImage", "在新窗口中打开图像" );
+        fo.addVariable("langAbout", "关于");  
+        fo.addVariable("langNoImages", "无图像");  
+        fo.addVariable("xmlURL", "{$vd['content']}xml/gallery.xml");
+              
+        
+        fo.write("flashcontent");  
+        
+      </script>  
+    </td>
+  </tr>
+</table>
+<br/>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="pmtip">
+  <tr>
+    <td width="2%" rowspan="2" valign="top" style="padding:5px"><img src="{$vd['content']}images/icon_tip.gif" /></td>
+    <td width="98%"  style="padding:5px"><strong>提示</strong></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:5px">
+      ·当点击图片显示大图后，您可以点击旁边任何空白的地方回到所有图片<br />
+    </td>
+  </tr>
+</table>
+<script type="text/javascript">
+  var $=function(id){
+    return document.getElementById(id);
+  }
+</script>
+{load(foot)}        

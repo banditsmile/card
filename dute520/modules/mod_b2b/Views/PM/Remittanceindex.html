@@ -1,0 +1,65 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class='ubtwoRight'>
+  <div id="TopSearch">
+    <h3><a href="" target="_blank">硬件检测</a></h3>
+    <ul>
+      <li>
+        <form name="search" action="{$vd['root']}index.php?m=mod_b2b&c=product" method="post">
+        <span>搜索点卡：</span>
+        <input type="text" name="keywords" class="myinput" />
+        <select class="myselect" name="typesearch"><option value="product">搜索商品</option><option value="category">搜索目录</option></select>
+        <input type="submit" value="查询" class="button"/>
+        </form>
+      </li>
+    </ul>
+  </div>
+  <table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+    <tr class="tabletitle">
+      <td width="50%" align="center" height="35">
+        标题</td>
+      <td width="10%" align="center" height="35">
+        <!--if($vd['msgtype'] == 'send'){-->
+        收信人
+        <!--}else{-->
+        发信人
+        <!--}-->
+      </td>
+      <td width="30%" align="center" height="35">
+        加入时间</td>
+      <td width="10%" align="center" height="35">
+        操作</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr>
+      <td width="50%" align="left" height="35" style="padding-left:3px;">{$item['title']}</td>
+      <td width="10%" align="center" height="35">
+        <!--if($vd['msgtype'] == 'send'){-->
+        {#DisplayCode($item['msgto'],4)}
+        <!--}else{-->
+        {#DisplayCode($item['msgfrom'],4)}
+        <!--}-->
+      </td>
+      <td width="30%" align="center" height="35">{$item['createdate']}</td>
+      <td width="10%" align="center" height="35">
+        <a href="index.php?m=mod_agent&c=msg&a=RemittanceDetail&id={$item['id']}" >
+        <font color="#0000ff">查看</font>
+        </a>
+      </td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td align="right" height="35" colspan="12">
+      <form method="post" action="index.php?m=mod_agent&c=PM&{$vd['op']}">
+        <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+        <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_agent&c=PM&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+        <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_agent&c=PM&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+        到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+      </form>
+      </td>
+    </tr>
+  </table>
+</div>
+{load(foot)}

@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+    <title>商品收藏夹</title>
+
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+
+	<script language="JavaScript" src="/content/mod_b2b/js/loadgameindex.js"></script>
+
+<form name="form1" method="get" action="/index.php">      
+
+<div class="new_qie">
+
+  <div class="new_qie2">
+
+                <h2>
+
+                    商品收藏夹</h2>
+
+            </div>
+
+            </div>
+
+			<script>
+
+		function showExchgMoney(checkedIn)
+
+		{
+
+		val = checkedIn ? 1 : 0;
+
+	  setCookie('priceshow', val, 1);
+
+	  setCookie('umebiz_com_0', val, 1);
+
+		for(var i=0;i<productTable.rows.length;i++)
+
+		productTable.rows[i].cells[5].style.display=checkedIn?"":"none";
+
+		}
+
+		</script>
+
+		<script language="JavaScript" src="/content/mod_b2b/js/loadgameindex.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function ShowSearchType(obj)
+
+        {
+
+            var pos = getElementPos(obj);
+
+            var div = document.getElementById("SearchType");
+
+            div.style.display = "";
+
+            div.style.left = pos.x;
+
+            div.style.top = pos.y + obj.offsetHeight;
+
+        }
+
+        function SelcetSearchType(obj)
+
+        {
+
+            document.getElementById("spanSearchType").innerHTML = obj.innerHTML;
+
+            document.getElementById("hfldSearchType").value = obj.key;
+
+            document.getElementById("SearchType").style.display = "none";
+
+        }
+
+        function CheckQuery()
+
+        {
+
+            if (document.getElementById("hfldSearchType").value == "")
+
+            {
+
+                alert("请选择搜索类型！");
+
+                return false;
+
+            }
+
+            if (document.getElementById("keywords").value == "" || document.getElementById("keywords").value == "输入游戏名或游戏公司名")
+
+            {
+
+                alert("请输入查询关键字！");
+
+                return false;
+
+            } 
+
+            return true;
+
+        }
+
+    </script>
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+var theForm = document.forms['form1'];
+
+if (!theForm) {
+
+    theForm = document.form1;
+
+}
+
+function __doPostBack(eventTarget, eventArgument) {
+
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+
+        theForm.__EVENTTARGET.value = eventTarget;
+
+        theForm.__EVENTARGUMENT.value = eventArgument;
+
+        theForm.submit();
+
+    }
+
+}
+
+//]]>
+
+</script>
+
+<script type="text/javascript">
+
+
+
+    function searchgoto() {
+
+
+
+        document.searchform.method = "get";
+
+
+
+        if (document.getElementById("SearchType").value == '2') {
+
+
+
+            document.searchform.action = '/index.php'
+
+
+
+            document.searchform.submit();
+
+
+
+        }
+
+
+
+        else {
+
+
+
+            document.searchform.action = '/index.php?';
+
+
+
+            document.searchform.submit();
+
+
+
+        }
+
+
+
+    }
+
+
+
+    function CheckOthers(form) {
+
+
+
+        for (var i = 0; i < form.elements.length; i++) {
+
+
+
+            var e = form.elements[i];
+
+
+
+            if (e.checked == false) {
+
+
+
+                e.checked = true;
+
+
+
+            }
+
+
+
+            else {
+
+
+
+                e.checked = false;
+
+
+
+            }
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+    function CheckAll(form) {
+
+
+
+        for (var i = 0; i < form.elements.length; i++) {
+
+
+
+            var e = form.elements[i];
+
+
+
+            e.checked = true
+
+
+
+        }
+
+
+
+    }
+
+
+
+    function toggle(id, allid, name) {
+
+
+
+        if (document.getElementById) {
+
+
+
+            target = document.getElementById(name + id);
+
+
+
+            if (target.style.display == "block") {
+
+
+
+                target.style.display = "none";
+
+
+
+            }
+
+
+
+            else {
+
+
+
+                target.style.display = "block";
+
+
+
+                for (var i = 1; i <= allid; i++) {
+
+
+
+                    if (id != i) {
+
+
+
+                        target = document.getElementById(name + i);
+
+
+
+                        if (target.style.display == "block") {
+
+
+
+                            target.style.display = "none";
+
+
+
+                        }
+
+
+
+                    }
+
+
+
+                }
+
+
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        parent.SetWinHeight();
+
+
+
+
+
+
+
+    }
+
+
+
+    function showExchgMoney(checkedOut) {
+
+
+
+        for (var i = 0; i < productTable.rows.length; i++)
+
+
+
+            productTable.rows[i].cells[3].style.display = checkedOut ? "none" : "";
+
+
+
+    }
+
+
+
+</script>
+
+        <table class="ss_table" cellspacing="0" cellpadding="0">
+
+            <tr>
+
+                <td class="td1">
+
+                </td>
+
+                <td class="td2">
+
+                    <div class="input1">
+
+                        <input name="keywords" type="text" value="输入游戏名或游戏公司名" maxlength="30" id="keywords" class="ss1" onblur="if(value=='') {value='输入游戏名或游戏公司名'}" onfocus="if(value=='输入游戏名或游戏公司名') {value=''}" onkeyup="gamekeyup()" autocomplete="off" size="14" />
+
+                        <div style="display: none" id="searchlist">
+
+                            <ul>
+
+                            </ul>
+
+                        </div>
+
+                    /div>
+
+                    <div class="input11">
+
+                        <a id="spanSearchType" onclick="ShowSearchType(this)" class="ss2">搜索商品</a>
+
+<form name="form1" method="get" action="/index.php">
+
+                        <input type="hidden" name="hfldSearchType" id="hfldSearchType" value="Product" />
+
+			<input type="hidden" name="stype" value="pname"/>
+
+			<input type="hidden" name="m" value="mod_b2b"/>
+
+			<input type="hidden" name="c" value="product"/>
+
+			<input type="hidden" name="nrows" value="4000"/>
+
+                        <div id="typesearch" style="position: absolute; display: none;">
+
+                            <ul>
+
+                                <li onclick="SelcetSearchType(this)" key="product" onmouseover="this.className='ParvalueOn';"
+
+                                    onmouseout="this.className='';">搜索商品</li>
+
+                                <li onclick="SelcetSearchType(this)" key="category" onmouseover="this.className='ParvalueOn';"
+
+                                    onmouseout="this.className='';">搜索目录</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input2">
+
+                        <input type="submit" name="btnQuery" value="搜索" onclick="return CheckQuery();" id="btnQuery" class="input_ss" onmouseover="this.className='input_ss_on';" onmouseout="this.className='input_ss';" />
+
+						    	
+                    </div>
+
+                    <div class="input22">
+
+                        <b>热门搜索：</b><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=QQ">QQ</a><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=%D5%F7%CD%BE">征途</a><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=%CC%EC%C1%FA%B0%CB%B2%BF">天龙八部</a><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=%CA%A2%B4%F3">盛大</a><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=%CD%F8%D2%D7">网易</a><a href="/index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=%C4%A7%CA%DE%CA%C0%BD%E7">魔兽世界</a>
+                    </div>
+
+					                <div class="input3">
+
+                   
+
+                </td>
+
+                <td class="td3">
+
+                </td>
+
+            </tr>
+
+        </table>
+
+				<form name="form2" method="post" action="index.php?m=mod_b2b&c=Fav&a=Del">
+
+        <table width="100%" id="productTable" cellpadding="0" cellspacing="1" class="table1">
+
+      <tr>
+
+        <th width="41%">商品名称</th>
+
+        <th width="3%">介绍</th>
+
+        <th width="3%">客服</th>
+
+        <th width="16%">购买价格</th>
+
+        <th width="10%">面值</th>
+
+        <th width="14%">库存状态</th>
+
+		<th width="10%">购买</th><tr style="display:none;">
+
+
+            <td colspan="7" style="color: Red;">
+
+
+                无数据！
+
+
+            </td>
+
+
+        </tr>
+
+
+            <tr style="">
+
+
+                <td colspan="8">
+
+
+			                    <table cellspacing="0" cellpadding="0" width="100%">
+
+
+                        <tr>
+
+
+                            <td>
+
+
+                                <div>
+
+
+                                  <div align="left">
+
+
+								  <div id="command" align="left" style="padding: 3px;">
+
+
+								    <div id="page">
+
+
+                                      <div id="add">
+
+
+                                        <input name="button2" type="button" class="input_jc" value="全选" onclick="CheckAll(this.form);" />
+
+
+                                        <input name="button2" type="button" class="input_jc" value="反选" onclick="CheckOthers(this.form)" />
+
+
+                                        <input name="Submit" type="submit" class="input_jc" value="删除" />
+
+
+                                      </div>
+
+
+							        </div>
+
+
+								  </div>
+
+
+                                </div>                            </td>
+
+
+                            <td>
+
+
+                                <div style="line-height: 30px; float: right;">
+
+
+                                    
+
+
+<div id="AspNetPager1">
+
+
+<div style="float:left;">
+
+			
+</table>
+
+  	        <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+
+	
+
+    <p align="right"><span class="page">
+		<Script Language="JavaScript" type="text/JavaScript" src="/content/mod_b2b/js/jsPage.js"></Script>
+		<Script Language="JavaScript" type="text/JavaScript">
+				var s= new Cls_jsPage(,,3,"s");		s.setPageSE("page=","");		s.setPageInput("page");		s.setUrl("");		s.setPageFrist("首页","首页");		s.setPagePrev("上一页","上一页");		s.setPageNext("下一页","下一页");		s.setPageLast("末页","末页");		s.setPageText("{%PageNum}","{%PageNum}");		s.setPageTextF(" {%PageTextF} "," {%PageTextF} ");		s.setPageSelect("{%PageNum}","{%PageNum}");		s.setHtml("共 {%RecCount} 记录 页次{%Page}/{%PageCount} 每页{%PageSize}条 {%PageFrist} {%PagePrev} {%PageText} {%PageNext} {%PageLast} {%PageInput} {%PageSelect}");		s.setPageCss("","","");		s.Write();		</Script></span>
+
+<script src="/content/mod_b2b/js/pinfo.js"></script>
+
+<script type="text/javascript">
+
+
+
+function openScript(url,name,width,height,id)
+
+{
+
+	if($("stock_" + id).innerText == "库存不足")
+
+	{
+
+		alert('您好，商品库存不足，请联系管理员上货');
+
+	}
+
+  else
+
+	{
+
+    var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=yes,menubar=no,status=no');
+
+  }
+
+}
+
+
+
+if(getCookie('umebiz_com_0') == "1")
+
+{
+
+	obj = $("IsDisplayPrice");
+
+	obj.checked = true;
+
+	setCookie('priceshow', 1, 1);
+
+}
+
+
+
+obj = $("IsDisplayPrice");
+
+if(getCookie('priceshow') == 1)
+
+{
+
+	obj.checked = true;
+
+	showExchgMoney(obj.checked)
+
+}
+
+
+
+</script>
+
+<script language="JavaScript" src="/content/mod_b2b/js/loadgameindex.js"></script>
+
+</html>

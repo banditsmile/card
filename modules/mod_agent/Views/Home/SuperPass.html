@@ -1,0 +1,48 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统</a> >> 安全管理 >> 帐户密码设定</span></div>
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&a=ModifyPass';"><span class="mm">登陆密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=SuperPass';" class=hover><span class="mm">超级密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=TradePass';"><span class="mm">交易密码修改</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&a=RandPass';" ><span class="mm">随机登录密码设定</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	
+	<form name="modify" method="post" action="index.php?m=mod_agent&c=home&a=SaveSuperPwd">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1">如果您以前未设置过超级密码，超级密码与登录密码相同。</td>
+		</tr>
+		<tr> 
+		<td class="tableleft1"><strong>原超级密码：</strong></td>
+		<td class="tableright1"><input type="password" class="input" id="apwd" name="apwd"/></td>
+		</tr>
+		<tr>
+		<td class="tableleft1"><strong>新超级密码：</strong></td>
+		<td class="tableright1"><input type="password" class="input" id="superpwd" name="superpwd"/></td>
+		</tr>
+		<tr>
+		<td class="tableleft1"><strong>重复新密码：</strong></td>
+		<td class="tableright1"><input type="password" class="input" id="resuperpwd" name="resuperpwd" /></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input name="submit" type="submit" class="button" tabindex="8" value="确认修改"> <input type="reset" tabindex="9" value="重新填写" class="button" name="reset"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	
+	</div>
+</form>
+</body>
+</html>

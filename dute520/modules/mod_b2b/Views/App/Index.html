@@ -1,0 +1,262 @@
+<!--if($vd['show']==0){-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css">
+<style type="text/css">
+td{height:30px}
+#dig td{padding-left:0px}
+#dig1 td{padding-left:0px}
+
+.cursor{cursor:pointer;text-align:center}
+.headcur{background:#fff;border-bottom:0px #cccccc solid;border-right:1px #cccccc solid;};
+</style>
+</head>
+
+<body>
+<table border="0" width="100%" style="border-collapse: collapse;margin-top:5px;border:1px #cccccc solid;background:#fff">
+  <tr>
+    <td height="23" class="listhead headcur" onclick="TabGo(0)" id="td0" width="25%">
+    <div class="cursor">已下载程序</div>
+    </td>
+    <td height="23" class="listhead" onclick="TabGo(1)" id="td1" width="25%">
+    <div class="cursor">可下载程序</div>
+    </td>
+    <td height="23" class="listhead" width="50%">
+    <div id="ccinfo"></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="3" style="padding-left:0px;border-right:1px #cccccc solid;border-bottom:1px #cccccc solid;font-size:12px" valign="top">
+      <div style="height:500px;overflow-y:auto;" id="tplcontent">
+      <!--foreach($vd['items'] as $item){-->
+      <div style="width:55px;border:0px #cccccc solid;float:left;margin:5px;text-align:center;cursor:pointer" onclick="wingo('{$item['main']}','{$item['newwin']}')">
+        <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="版本 {$item['ver']}">
+        <div style="text-align:center">{$item['name']}</div>
+      </div>
+      <!--}-->
+      </div>
+    </td>
+  </tr>
+</table>
+<div id="downed" style="display:none">
+  <!--foreach($vd['items'] as $item){-->
+  <div style="width:55px;border:0px #cccccc solid;float:left;margin:5px;text-align:center;cursor:pointer" onclick="wingo('{$item['main']}','{$item['newwin']}')">
+    <img src="{$vd['sc']}images/{$item['icon']}" border="0" width="33" height="33" alt="版本 {$item['ver']}">
+    <div style="text-align:center">{$item['name']}</div>
+  </div>
+  <!--}-->
+</div>
+<div id="b2bdown" style="display:none"></div>
+<div id="b2cdown" style="display:none"></div>
+<div id="yktdown" style="display:none"></div>
+<div id="indexdown" style="display:none"></div>
+<input type="hidden" name="path" value='<!--echo urlencode("update/update.zip");-->'/>
+<div id="load" style="display:none">
+  <div id="loadcontent" ><div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>正在加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">  
+  var pageact  = 0;
+  var flash = 0;
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  
+  function loadDisp(flag)
+  {
+    $("load").style.display = flag ? "" : "none";
+  }
+  
+  function setText(txt)
+  {
+    $("loadcontent").innerHTML = '<div style="padding-bottom:8px"><img src="content/mod_shared/skins/images/js_loader.gif"></div>' + txt;
+  }
+  
+  function wingo(url,flag)
+  {
+    if(flag == "1")
+    {
+      window.open(url);
+    }
+    else
+    {
+      loadDisp(1);
+      window.location.href = url;
+    }
+  }
+
+  var tabarray  = new Array('downed','b2bdown');
+  var typearray = new Array(0,1);
+  var pagearray = new Array(1,1);
+  
+  function TabGo(idx)
+  {
+    $("ccinfo").innerHTML = "";
+    pageact = idx;
+    for(i = 0; i < 2; i++)
+    {
+      $("td"+i).className = "listhead";
+    }
+    
+    $("td"+idx).className = "listhead headcur";
+    
+    
+    if(pageact == 0)
+    {
+      if(flash)
+      {
+        window.location.reload();
+        return;
+      }
+      $("tplcontent").innerHTML = $("downed").innerHTML;
+      return;
+    }
+    
+    if($(tabarray[pageact]).innerHTML == "")
+    {
+      loadXMLDoc("index.php?m=mod_b2b&c=App&a=AppFiles&type=" + typearray[pageact] + "&show=1", "tplcontent", "", "", "", tabarray[pageact]);
+    }
+    else
+    {
+      $("tplcontent").innerHTML = $(tabarray[pageact]).innerHTML;
+    }
+  }
+
+  function checkversion()
+  {
+    return need=="1" ? true : false;
+  }
+  
+  function getXMLHander()
+  {
+    // 针对 Mozilla等浏览器的代码：
+    if (window.XMLHttpRequest)
+    {
+      xmlhttp=new XMLHttpRequest();
+    }
+    // 针对 IE 的代码：
+    else if (window.ActiveXObject)
+    {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    return xmlhttp;
+  }
+
+  function loadXMLDoc(url, id, txt_succ, txt_fail, txt_err, step)
+  {
+    loadDisp(1);
+    xmlhttp = getXMLHander();
+    
+    if (xmlhttp!=null)
+    {
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState==4)
+        {
+          if (xmlhttp.status==200)
+          {
+            var ackdata=xmlhttp.responseText;
+            loadDisp(0);
+            if(id == "tplcontent")
+            {
+              loadDisp(0);
+              $(id).innerHTML = ackdata;
+              $(step).innerHTML = ackdata;
+            }
+            else
+            {
+              if(ackdata == 0 || ackdata == "0")
+              {
+                $(id).innerHTML = txt_succ + "！";
+                loadDisp(0);
+                nextstep(step);
+              }
+              else
+              {
+                loadDisp(0);
+                $(id).innerHTML = txt_fail + "！";
+              }
+            }
+          }
+          else
+          {
+            loadDisp(0);
+            $(id).innerHTML = txt_err + "！";
+          }
+        }
+      }
+      xmlhttp.open("post", url, true);
+      xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xmlhttp.send('');
+    }
+    else
+    {
+      alert("您的浏览器不支持XMLHTTP，无法完成本次操作")
+    }
+  }
+  
+  function down(id)
+  {
+    $("ccinfo").innerHTML = "正在下载安装包...！";
+    setText("正在下载安装包...！");
+    loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=DownApp&id="+id, "ccinfo", '安装包下载完成..！', '安装包下载失败..！', '由于某种原因导致安装包下载失败..！', 1);
+  }
+  
+  function nextstep(step)
+  {
+    switch(step)
+    {
+      case 1:
+        //unzip
+        $("ccinfo").innerHTML = "应用开始安装...！";
+        setText("应用开始安装...！");
+        loadXMLDoc("index.php?m=mod_b2b&c=Fs&a=UnZip&issys=1&path="+$("path").value, "ccinfo", '升级包安装完成..！', '升级包安装失败..！', '由于某种原因导致升级包安装失败..！', 2);
+        break;
+      case 2:
+        //更新数据库
+        $("ccinfo").innerHTML = "正在升级数据库...！";
+        setText("正在升级数据库...！");
+        loadXMLDoc("update/upgrade.php", "ccinfo", '数据库升级完成..！', '数据库升级失败..！', '由于某种原因导致数据库升级失败..！', 3);
+        break;
+      case 3:
+        //deletefile
+        $("ccinfo").innerHTML = "开始删除安装包...！";
+        setText("开始删除安装包...！");
+        loadXMLDoc("index.php?m=mod_b2b&c=fs&a=DelUpdateFile", "ccinfo", '安装包删除完成..！', '安装包删除失败..！', '由于某种原因导致升级包安装失败..！', 4);
+        break;
+      default:
+        $("ccinfo").innerHTML = "程序安装完成！<a href='update/update.txt' target='_blank'>查看相关内容...</a>";
+        flash = 1;
+        break;
+    }
+  }
+</script>
+</html>
+
+<!--}else{-->
+  <!--if($vd['type'] == 0){-->
+  
+    <!--foreach($vd['localitems'] as $item){-->
+    <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
+      <img src="{$vd['root']}themes/thumb/{$item['thumb']}" border="0" width="100%">
+      <div style="margin:5px 2px;float:left;">{$item['name']} [<a href="#" onclick='setup("{$item['file']}")'>安装</a>]</div>
+    </div>
+    <!--}-->
+    <input type="hidden" id="totlepage" value="1"/>
+  <!--}else{-->
+  
+    <!--foreach($vd['items'] as $item){-->
+    <div style="width:150px;border:1px #cccccc solid;float:left;margin:5px;">
+      <img src="{$item['thumb']}" border="0" width="100%">
+      <div style="margin:10px 2px 3px;float:left;width:95%">
+        {$item['name']} [<a href="#" onclick='down("{$item['id']}")'>下载</a>][<a href="{$item['demo']}" target="_blank">演示</a>]
+      </div>
+      <div style="margin:3px 2px;float:left;width:95%">适用：{$item['version']}</div>
+      <div style="margin:3px 2px;float:left;width:95%">作者：{$item['author']}</div>
+    </div>
+    <!--}-->
+    <input type="hidden" id="totlepage" value="{$vd['totlepage']}"/>
+  <!--}-->
+<!--}-->

@@ -1,0 +1,17 @@
+body {
+
+	        font:14px/1.5 microsoft yahei, sans-serif,\5b8b\4f53;
+
+	        color: #333;
+
+	        background:url(images/login_bg2.gif) #f8ffff repeat-x top;
+
+            white-space: nowrap;white-space:nowrap£¬display:inline-block£¬
+
+        }
+
+        a:link {color:#999; text-decoration: none; }
+
+        a:visited {color:#666;text-decoration: none; } 
+
+        a:hover {text-decoration :underline;}

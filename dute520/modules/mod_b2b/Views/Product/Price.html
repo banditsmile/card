@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$p = $vd['product']; -->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Price" title="商品价格制定"><font color="#000">商品价格制定</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">{$p['pname']}</span></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_product_price" onFocus="this.blur()" title="设置商品价格"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=product&a=PriceSave">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">设置商品价格</div>
+<table border="1" id="priceTable" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">商品名称：</td>
+    <td class="tablert"><b>{$p['pname']}</b></td>
+  </tr>
+  <tr>
+    <td class="tablelt">商品面值：</td>
+    <td class="tablert"><span id="listprice">{$p['listprice']}</span>{$vd['lang']['moneyunit']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">进货价：</td>
+    <td class="tablert"><span id="cprice">{$p['price']}</span>{$vd['lang']['moneyunit']}</td>
+  </tr>
+  <!--$i = 3; foreach($vd['items'] as $item) {-->
+  <tr>
+    <td class="tablelt">{$item['name']}：</td>
+    <td class="tablert">
+      <div style="width:50%;float:left">
+      <input name="id[]" type="hidden" value="{$item['id']}"/>
+      <input id="price_{$i}" name="price_{$item['id']}" type="text" size="25" value="{$item['price']}" class="myinput" onkeyup="set({$i})"/>{$vd['lang']['moneyunit']}
+      </div>
+      <div style="width:25%;float:left" id="discount_{$i}">--</div>
+      <div style="width:25%;float:right" id="save_{$i}">--</div>
+      </td>
+  </tr>
+  <!--$i++;}-->
+</table>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input name="priceid" type="hidden" value="{$vd['priceid']}"/>
+    <input name="pid" type="hidden" value="{$p['pid']}"/>  
+    <input type="submit" value="修 改" class="btn"/>
+    <input type="reset" value="重 置" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function set(id)
+  {
+    //获取价格
+    var listprice = $('listprice').innerHTML;
+    var thisprice = $('price_' + id).value;
+    var save = listprice - thisprice;
+    var discount = (1 - (save / listprice)) * 100;
+    
+    $('save_' + id).innerHTML = "节省：<font color='#ff0000'>" + save.toFixed(2) + "</font>{$vd['lang']['moneyunit']}";
+    $('discount_' + id).innerHTML = "折扣：<font color='#ff0000'>" + discount.toFixed(2) + "%</font>";
+  }
+  len  = $("priceTable").rows.length;
+  for(var i=3;i < len;i++)
+  {
+    set(i);
+  }
+</script>
+</body>
+</html>

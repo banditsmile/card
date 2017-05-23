@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>VIP商务-一卡通平台</title>
+<meta name="keywords" content="" />
+<meta http-equiv="description" content=" Powered by 新云卡" />
+<link rel="stylesheet" type="text/css" href="/content/mod_ykt/css/ub-list-20080119.css" />
+<link rel="shortcut icon" href="/content/mod_ykt/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="topheader">
+  <div id="headertab" style="position:relative;">
+    <span style="float:right">
+      <script src="/content/mod_ykt/js/cust.js"></script>
+      <img src="/content/mod_ykt/images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=check">卡状态查询</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_dz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=Tran">卡余额互转</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_kt.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=Show" target="_blank">卡图展示</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_bz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&a=hourkf">客户服务</a> &nbsp;
+      <img src="/content/mod_ykt/images/icon_jxs.gif" align="absmiddle"> <a href="/" target="_blank">经销商</a>
+    </span>
+    <span id="userzone"></span>
+    <div id="logindiv" style="position:absolute;top:25px;left:125px;;width:260px;display:none;z-index:999;">
+  <div style="padding:0px;background:#f4f4f4;border:1px #ccc solid">
+  <div style="font-size:14px;font-weight:bold;padding:0px;float:left"></div>
+  <form name="form1" method="post" action="/index.php?m=mod_user&c=login&a=login"  style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="30%" style="font-size:14px;height:30px;padding-right:8px" align="right">账　号</td>
+      <td width="70%"><input type="text" name="aname" class="logininput" /></td>
+    </tr>
+    <tr>
+      <td width="30%" style="font-size:14px;height:30px;padding-right:8px" align="right">密　码</td>
+      <td width="70%"><input type="password" name="pwd" class="logininput" style="width:149px;"/></td>
+    </tr>
+        <tr>
+      <td width="30%" height="45px"></td>
+      <td width="70%">
+      	<input type="hidden" id="vfromsite" name="vfromsite" value="3"/>
+        <input type="submit" value=" 登 陆 " class="button" style="height:25px;width:50px"/>
+        <input type="button" value=" 关 闭 " onclick="disp('logindiv')" class="button" style="height:25px;width:50px"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+  </div>
+</div>
+
+<div id="ubtop">
+<div id="topsearch">
+  <div style="float:left;width:230px;">
+    <img src="/content/mod_ykt/images/mylogo.gif" alt="" border="0" height="60"/>
+  </div>
+  <div style="FLOAT:left;width:500px;height:60px">
+    <a href=""><img src="/content/mod_shared/skins/upload/b2bbanner.gif" border="0" width="100%"/></a>  </div>
+  <div style="float:right;width:210px;BACKGROUND:#fff;padding:5px 2px;border:1px #f0f0f0 solid;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;">
+        <tr>
+            <td height="48" align="center" class="black">
+                <a href="/article/22.html" target="_blank">产品加盟</a> |
+                <a href="/article/59.html" target="_blank">广告招商</a>
+                | <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://52yma.taobao.com');" class="top"> 设为首页</a><br />
+                <a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">常见问题</a>
+                | <a href="/article/20.html" target="_blank">充值演示</a>
+                | <a href=javascript:window.external.AddFavorite('http://52yma.taobao.com','旗下淘宝') class="top">添加收藏</a>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div id="ubmain">
+  <div id="ChannelMenu">
+    <div class="Shell">
+      <div class="Tab">
+        <ul class="clearfix">
+        <li><a href="/ykt" target="_top"><span>首页</span></a></li>
+        <li><a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%D0%C2%CE%C5%B9%AB%B8%E6"><span>系统公告</span></a></li>
+        <li><a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%D0%C2%CA%D6%B0%EF%D6%FA"><span>新手帮助</span></a></li>
+        
+        <li class="Current MyUmebiz" class="Current"><a href="#" target="_top"><span>面值</span></a></li>
+        <li style="width:405px;padding-top:7px;float:right">
+          <form name="yktform" action="/index.php"  method="post">
+            <input type="hidden" name="stype" value="pname"/>
+            <input type="hidden" name="m" value="mod_ykt"/>
+            <input type="hidden" name="c" value="product"/>
+            <input type="hidden" name="ptype" value="-1"/>
+            <input type="text" name="keywords" size="25" class="topinput"/><input type="image"  src="/content/mod_ykt/images/search-top1.gif" style="vertical-align:middle;border-width:0px;padding-left:0px;"/>
+          </form>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="ProductMenu">
+    <div class="Shell">
+      <div class="Tab">
+        <ul>
+          <li class="Current"><a href="/index.php?m=mod_ykt&c=product"><span>全部</span></a></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+<input type="hidden" id="webdir" name="webdir" value="/">
+<script src="/content/mod_ykt/js/userzone.js"></script>
+<div class="artLeft">
+<input type="hidden" id="id" name="id" value="68"/>
+<b class="rtop" id="articlert" style="margin-top:5px"><b class="r3"></b><b class="r4"></b></b>
+<div id="articleTitle"><span class="flright"></span><b> 旗下淘宝 > <a href="/index.php?m=mod_ykt&c=article&a=home&boardid=11"><font color="#000">一卡通系统新手帮助</font></a> > 正文 </b></div>
+<div id="articleCol">
+<table width="100%" border="0" cellpadding="10" cellspacing="0" height="95" style="border-collapse: collapse;">    
+  <tr>
+    <td bgcolor="#ffffff" style="padding:15px;" >
+    <div class="heading">VIP商务</div>
+    <div style="border-bottom:1px #cccccc solid;text-align:center;padding-bottom:5px;">发表于：2009-03-14 00:50:19 【点击：<span id="tick">4</span>次】 【找点卡】 【纠错】 【返回首页】 【发表/查看评论】</div>
+    <div id="news">VIP商务</div>
+    <div style="margin:30px 0px; padding-bottom:20px;height:180px;border-top:1px #cccccc dashed;border-bottom:1px #cccccc dashed;"> 
+      <table border="0" width="100%">
+        <tr>
+          <td colspan="12" style="padding:10px;text-align:left;color:#6c6c6c">看完这篇新闻有何感觉？ 已有<span id="rank1000">50</span>人表态</td>
+        </tr>
+        <tr>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank0">0</span><br/><div id="rpic0" class="commentcol"></div><img src="/content/mod_ykt/images/145.gif" /><br/>囧<br/><input type="radio" name="rank" onclick="SetRank(0)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank1">0</span><br/><div id="rpic1" class="commentcol"></div><img src="/content/mod_ykt/images/117.gif" /><br/>恶心<br/><input type="radio" name="rank" onclick="SetRank(1)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank2">0</span><br/><div id="rpic2" class="commentcol"></div><img src="/content/mod_ykt/images/113.gif" /><br/>期待<br/><input type="radio" name="rank" onclick="SetRank(2)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank3">0</span><br/><div id="rpic3" class="commentcol"></div><img src="/content/mod_ykt/images/133.gif" /><br/>难过<br/><input type="radio" name="rank" onclick="SetRank(3)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank4">0</span><br/><div id="rpic4" class="commentcol"></div><img src="/content/mod_ykt/images/115.gif" /><br/>不错<br/><input type="radio" name="rank" onclick="SetRank(4)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank5">0</span><br/><div id="rpic5" class="commentcol"></div><img src="/content/mod_ykt/images/138.gif" /><br/>关注<br/><input type="radio" name="rank" onclick="SetRank(5)" style="cursor:pointer"/></td>
+          <td width="10%" height="180" align="center" valign="bottom"><span id="rank6">0</span><br/><div id="rpic6" class="commentcol"></div><img src="/content/mod_ykt/images/123.gif" /><br/>有帮助<br/><input type="radio" name="rank" onclick="SetRank(6)" style="cursor:pointer"/></td>
+          <td width="30%" height="180" align="center" valign="bottom"><div style="height:100px;BACKGROUND:url(/content/mod_ykt/images/up_bg.gif) no-repeat 50% 0px;"><div id="rank20" style="font-size:2.2em;font-weight:bold;padding:8px 0 12px 0">0</div><img src="/content/mod_ykt/images/up.gif" style="cursor:pointer" onclick="SetRank(20)"/></div><div style="padding-bottom:20px">【<a href="#">查看别人的评论</a>】</div></td>
+        </tr>
+      </table>
+    </div>
+    </td>
+  </tr>
+</table>
+</div>
+<div id="articleBottom"></div>
+<b class="rbottom" id="articlerb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div class='artRight'>
+  <div id="artrimg">
+                                                                      </div>
+  <b class="rtop" id="artrrt" style="margin-top:5px"><b class="r3"></b><b class="r4"></b></b>
+  <div id="artrTitle"><span class="flright"></span><b>相关文章</b></div>
+  <div id="artrCol">
+  <div id="artrCnt" class="box list faq">
+    <ul>
+            <li>
+        <a href="/article/72.html" target="_blank""> <font color="" title="更多游戏官方卡查询地址">更多游戏官方卡查询地址</font></a></li>
+            <li>
+        <a href="/article/71.html" target="_blank""> <font color="" title="更多游戏官方查卡地址">更多游戏官方查卡地址</font></a></li>
+            <li>
+        <a href="/article/70.html" target="_blank""> <font color="" title="各银行网址">各银行网址</font></a></li>
+            <li>
+        <a href="/article/69.html" target="_blank""> <font color="" title="加盟我们">加盟我们</font></a></li>
+            <li>
+        <a href="/article/68.html" target="_blank""> <font color="" title="VIP商务">VIP商务</font></a></li>
+            <li>
+        <a href="/article/67.html" target="_blank""> <font color="" title="平台卡充值网址">平台卡充值网址</font></a></li>
+            <li>
+        <a href="/article/66.html" target="_blank""> <font color="" title="注意事项">注意事项</font></a></li>
+            <li>
+        <a href="/article/65.html" target="_blank""> <font color="" title="账户充值帮助">账户充值帮助</font></a></li>
+            <li class="endli"></li>
+    </ul>
+  </div>
+  </div>
+  <div id="articleBottom"></div>
+  <b class="rbottom" id="artrrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<script src="/content/mod_ykt/js/detail.js"></script>
+<div style="clear:both"></div>
+<div class="clearboth"></div>
+<div style="height:8px;"></div>
+<div class="copyright_v2">
+  <em style="float:right"><a href="#" target="_blank"><img src="/content/mod_ykt/images/ruixing.gif" align="absmiddle" /></a></em>
+  <em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="/content/mod_ykt/images/cyberpolice.gif" align="absmiddle" /></a></em>
+  <em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="/content/mod_ykt/images/footer_img1.gif" align="absmiddle" /></a></em>
+  <a href="/article/25.html">关于旗下淘宝</a>
+     <font color="#cccccc">|</font> <a href="/article/55.html">欢迎合作</a>
+     <font color="#cccccc">|</font> <a href="/article/24.html">诚信与安全</a>
+     <font color="#cccccc">|</font> <a href="/article/54.html">法律声明</a>
+     <font color="#cccccc">|</font> <a href="/article/56.html">服务条款</a>
+     <font color="#cccccc">|</font> <a href="/article/57.html">隐私声明</a>
+     <font color="#cccccc">|</font> <a href="/article/62.html">联系我们</a>
+  <br/>
+  版权所有 &copy; 2004-2011 旗下淘宝 <a href="http://www.miibeian.gov.cn" target="_blank"">官网购买</a> 地址：  <br>
+  技术支持：<a href="http://wly520.com">凤翔商务网络</a></div>
+
+</div>
+</div>
+<div id="ubbottom"></div>
+<input type="hidden" id="platform" value="ykt"/>
+<script src="/content/mod_shared/skins/js/web.js" type="text/javascript"></script>
+</body>
+</html>

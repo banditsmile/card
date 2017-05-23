@@ -1,0 +1,38 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<!--$item=$vd['item'];-->
+<div class="ubtwoRight" id="ubtwoRight">
+	<div class="welcometext" style="">
+		密保卡：<!--if($item['mibaokacheck']==1){-->已绑定
+		<div style="padding-top:10px"><input type="button" value="申请解绑" onclick="javascript:window.location.href='index.php?m=mod_agent&c=msg&a=add&msgtitle=<!--echo urlencode('申请解绑');-->'" class="button" style="cursor:pointer"> </div>
+	  <!--}else{-->
+	  未绑定
+	  <div style="padding-top:10px"><input type="button" value="申请密保卡" onclick="javascript:window.location.href='index.php?m=mod_agent&c=msg&a=add&msgtitle=<!--echo urlencode('申请密保卡');-->'" class="button" style="cursor:pointer"> </div>
+	  <!--}-->
+	</div>
+  <div class="cbox">
+    <ul>
+      <li>
+      	（1）<b>什么是密保卡？密保卡可以做什么？</b>
+				<p>密保卡是账号安全的一个密保手段，是一张记录着7行7列数字的卡片，需要和管理员申请绑定。绑定成功后用户可以通过验证密保卡坐标检查登录信息，保证账号安全，还可以通过密保卡验证付款等安全服务。</p> 
+			</li>
+    </ul>
+    <ul>
+      <li>
+      	（2）<b>电子密保卡收费吗？如何获取电子密保卡？</b>
+				 <p>电子密保卡是免费的，可以通过以下方式获取：<br />
+         1、点击本页面申请按钮，可以免费申请图片形式的密保卡(简称“电子密保卡”)。如果是员工申请，请附上员工编号<br />
+			</li>
+    </ul>
+  </div>
+</div>
+<input type="hidden" id="tmac" name="tmac"  value=""/>
+<script type="text/JavaScript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+</script>
+
+{load(foot)}

@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<title>添加库存</title>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead" style="padding-top: 10px;"><h3>录入卡号和密码</h3>『<a href="?m=mod_shop&c=category">一级分类</a> / <a href="?m=mod_shop&c=category">二级分类</a> / <a href="?m=mod_shop&c=catalog">首页类目</a> / <a href="?m=mod_shop&c=product">所有商品</a>』
+    </td>
+  </tr>
+</table> 
+
+<table border="0" width="100%" cellspacing="1" style="BORDER:solid 1px #86B9D6;">
+<form method="post" action="index.php?m=mod_b2b&c=scard&a=save" name="myform">
+  <tr>
+    <td colspan="2">提示：卡号密码输入框，示例abcdefg 123456,每行一个卡号+空格(分隔符)+密码。</td>
+  </tr>
+  <tr>
+    <td colspan="2">选择当前游戏卡:
+      <select name="ubzpid">
+        {#Option($vd['item'], $vd['ubzpid'], 'ubzpname', 'ubzpid')}
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <textarea rows="30" name="ubzcards" cols="55"></textarea>
+    </td>
+    <td valign="top">
+      <h3><font color="#ff0000">录入须知！</font></h3>
+      <font color="#ff0000">1、</font>请在表单中输入点卡的卡号和密码，点卡和密码之间用空格隔开，最多20个空格； 类似如下：<br/>
+      111111 222222<br/>
+      333333 444444<br/>
+      其中左边为卡号,右边的为密码<br/><br/>
+      
+      <font color="#ff0000">2、</font>每行只能是一个卡号+空格+密码，否则只取第一个！<br/><br/>
+      
+      <font color="#ff0000">3、</font>不能输入任何除字母、数字或“-”之外的任何字符。<br/><br/>
+      
+      <font color="#ff0000">4、</font>卡号和密码的长度建议都不超过30位，输入完成后请仔细核对，以免重复或输错。<br/><br/>
+      
+      <font color="#ff0000">5、</font>可从文本文档或Excel中复制卡号和密码。<br/><br/>
+      
+      <font color="#ff0000">6、</font>密码为空的也必须输入字符，如“无密码”，否则无法录入<br/><br/>
+      
+      <font color="#ff0000">7、</font>每次最好不要超过200张点卡，以免因为web表单传递限制导致出错。<br/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="submit" value="提 交 &gt;&gt;"/>  <input type="reset" value="&lt;&lt; 重 填"/></td>
+  </tr>
+</form>
+</table>
+</body>
+</html>

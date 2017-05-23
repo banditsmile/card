@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td height="35"  colspan="12" class="listhead texttle">卡种列表(购买页面会显示卡种选择)</td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse;" bordercolor="#86B9D6">
+  <tr>
+    <td width="20%" height="35" class="listhead">
+    <p align="center">卡种名称</td>
+    <td width="10%" height="35" class="listhead">
+    <p align="center">所需点数</td>
+    <td width="20%" height="35" class="listhead">
+    <p align="center">绑定一卡通卡号特征码</td>
+    <td width="20%" height="35" class="listhead">
+    <p align="center">绑定商品</td>
+    <td width="10%" height="35" class="listhead">
+    <p align="center">卡种类型</td>
+    <td width="10%" height="35" class="listhead">
+    <p align="center">编辑</td>
+    <td width="10%" height="35" class="listhead">
+    <p align="center">操作</td>
+  </tr>
+  <!--foreach($vd['items'] as $item) {-->
+  <form action="index.php?m=mod_b2b&c=ykt&a=ChildSave&pid={$item['pid']}&yktpid={$vd['yktpid']}" method="post" >
+  <tr>
+    <td width="20%" align="center" height="35"><input type="text" name="ykttag" value="{$item['ykttag']}"/></td>
+    <td width="10%" align="center" height="35"><input type="text" size="8" name="yktpoints" value="{$item['yktpoints']}"/></td>
+    <td width="20%" align="center" height="35"><input type="text" name="yktcard" value="{$item['yktcard']}"/></td>
+    <td width="20%" align="center" height="35">{$item['pname']}</td>
+    <td width="10%" align="center" height="35">{#ProductType($item['ptype'])}</td>
+    <td width="10%"  align="center" height="35"><input type="submit" value="编辑"/></td>
+    <td width="10%" align="center" height="35">
+      <a href="index.php?m=mod_b2b&c=ykt&a=ChildSave&yktpid=0&pid={$item['pid']}&oldyktpid={$vd['yktpid']}">删除</a>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+</table>
+</body>
+</html>
+<script language="JavaScript">
+function CheckAll(form) {
+  for (var i=0;i<form.elements.length;i++) {
+    var e = form.elements[i];
+    if (e.name != 'chkall') e.checked = form.chkall.checked; 
+  }
+}
+</script>

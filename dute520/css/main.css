@@ -1,0 +1,16 @@
+﻿*  {
+	margin:0;
+	padding:0;}
+
+img {border: 0;}
+body {margin:5px;margin-bottom:20px;}
+
+body,td {font-family: Arial,sans-serif,Verdana,宋体;color:#333;font-size:12px;}
+
+a:link,a:visited{color:#006ab8;text-decoration:none;}
+a:hover,a:active {color:#f60;}
+
+.clear {clear:both;height:0;line-height:0;font-size:0}
+
+body.body1{padding-bottom:25px; background-image:url(about:blank);background-attachment:fixed;}
+body.body1 #btn{position:fixed;right:0;bottom:0;background-color:#feffea;border:2px solid #ffde6a;padding:5px;_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);}

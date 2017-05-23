@@ -1,0 +1,44 @@
+{load(fhead)}
+</head>
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 自有商品管理 >> 商品发布与管理</span></div>
+	<div id="hearder"><span>操作日志</span></div>
+	<table width="98%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="form1" method="post" action="?Action=ToUpDisplay">
+		<table class="table" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tr class="tabletitle">
+      <td width="5%" class="heardertop1">
+        编号</td>
+      <td width="45%" class="heardertop1">
+        内容</td>
+      <td width="10%" class="heardertop1">
+        操作人</td>
+      <td width="25%" class="heardertop1">
+        时间</td>
+      <td width="15%" class="heardertop1">
+        IP</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td>{$item['id']}</td>
+      <td>{$item['content']}</td>
+      <td>{#Operator($vd['agent'][0], $item['operator'], $vd['agent'][9])}</td>
+      <td>{$item['createdate']}</td>
+      <td>{$item['ip']}</td>
+    </tr>
+    <!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	</form>
+	
+	<br>
+	<br>
+</body>
+</html>

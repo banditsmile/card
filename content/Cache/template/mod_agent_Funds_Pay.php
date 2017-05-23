@@ -1,0 +1,2 @@
+<?php (com('payment', 0, 'Index', $vd['item'])); ?>
+

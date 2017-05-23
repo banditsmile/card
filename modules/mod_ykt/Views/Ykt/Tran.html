@@ -1,0 +1,53 @@
+{load(head)}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tclass">
+  <tr>
+    <td width="1%" height="40"><img src="{$vd['content']}images/cx.gif" width="52" height="32" /></td>
+    <td width="99%">{$vd['web']['webname']}一卡通状态查询</td>
+  </tr>
+</table>
+
+<form method="post" action="index.php?m=mod_ykt&c=ykt&a=TranSave">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
+  <tr>
+    <td class="evenlt">转出的一卡通卡号：</td>
+    <td class="evenrt"><input type="text" name="outyktnumber"  style="width:200px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt">转出的一卡通密码：</td>
+    <td class="evenrt"><input type="password" name="outyktpwd" style="width:200px;padding-top:2px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt"></td>
+    <td class="evenrt" style="padding-left:85px;"><img src="{$vd['content']}images/icon_tran.gif"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt"><font color="#ff0000">转入的一卡通卡号：</font></td>
+    <td class="evenrt"><input type="text" name="inyktnumber"  style="width:200px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt"><font color="#ff0000">转入的一卡通密码：</font></td>
+    <td class="evenrt"><input type="password" name="inyktpwd" style="width:200px;padding-top:2px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt"><font color="#ff0000">转入点数：</font></td>
+    <td class="evenrt"><input type="text" name="tranpoints" style="width:200px"/> (1{$vd['lang']['moneyunit']} = 100点)</td>
+  </tr>
+  <tr>
+    <td class="evenlt" valign="top" style="padding-top:5px">验证码：</td>
+    <td class="evenrt">
+      <input type="text" name="randcode" size="20"  style="vertical-align:middle;"/>
+      <div style="padding-top:3px">
+      <img src="index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="看不清楚?请点击刷新" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="evenlt"></td>
+    <td class="evenrt" style="height:80px">
+      <input name="pmsubmit" type="submit" class="button" value=" 提交 ">
+      <input name="pmsavesubmit" type="reset" class="button" value=" 重写 "/>
+    </td>
+  </tr>
+  </table>
+</form>
+{load(foot)}        

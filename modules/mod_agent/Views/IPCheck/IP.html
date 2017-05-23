@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>IP地址绑定</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{$vd['content']}js/utils.js"></script>
+	  <!--$s = $vd['security'];$sitem='ipcheck';$sitem1='IP';$sitem2='ip';$sitem3='IP'-->
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2> IP地址绑定</h2>
+  </div>
+  </div>
+  	<form name="bindip" method="post" action="index.php?m=mod_agent&c=IPCheck&a={$sitem1}Save">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%" height="30" class="table1_left">绑定状态：</td>
+		<td width="78%" class="tableright1"><div align="left"><strong>
+	    <!--if($s[$sitem]==1){-->
+		  <font color=#0000ff>已绑定</font>
+	    <!--}else{-->
+		  <font color=#cccccc>未绑定</font>
+	    <!--}-->
+		  </strong></div></td>
+		</tr>
+		<tr>
+		<td width="22%" height="30" class="table1_left">{$sitem3}地址绑定操作：</td>
+		<td width="78%" class="tableright1"><div align="left"><input type="radio" name="{$sitem}" value="1"  id="yesbind" checked><label for="yesbind"><strong><font color=#0000ff>绑定{$sitem3}地址</font></strong></label> <input type="radio" name="{$sitem}" value="0" id="nobind" ><label for="nobind"><strong><font color=#ff0000>取消绑定{$sitem3}地址</font></strong></label></td>
+		</tr>
+		<!--for($i=0; $i<5; $i++){-->
+		<tr>
+		<td width="22%" height="30" class="table1_left">{$sitem3}地址<!--echo $i+1;-->：</td>
+		<td width="78%" class="tableright1">
+		  <div align="left">
+		    <input type="text" class="input" size="25" name="{$sitem2}[]" id="{$sitem2}_{$i}" value="{$s[$sitem2][$i]}"/>
+		  </div></td>
+		</tr>
+		<!--}-->
+		<tr>
+		<td class="table1_left">帐户交易密码：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="password" name="tradepwd" size="25" class='input'/>
+		  </div></td>
+		</tr>
+		
+		<tr>
+		<td class="table1_left">&nbsp;</td>
+		<td class="tableright1"><div align="left">
+		  <input type="hidden" name="Login_my" value="15904562">
+		  <input type="submit" name="submit" value="确认设置" class="tijiao_input" > 
+		  <input type="reset" name="reset" value="重新填写" class="fanhui_input">
+		 </td>
+		</tr>
+</table>
+</body>
+</html>

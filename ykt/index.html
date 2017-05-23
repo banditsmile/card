@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>淘宝-一卡通平台</title>
+<meta name="keywords" content="/index.php?m=mod_b2b&c=Product&a=Detail&pid=13" />
+<meta http-equiv="description" content=" Powered by 新云卡" />
+<link rel="stylesheet" type="text/css" href="/content/mod_ykt/css/ub-list-20080119.css" />
+<link rel="shortcut icon" href="/content/mod_ykt/images/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div id="append_parent"></div>
+<div id="topheader">
+  <div id="headertab" style="position:relative;">
+    <span style="float:right">
+      <script src="/content/mod_ykt/js/cust.js"></script>
+      <img src="/content/mod_ykt/images/icon_cx.gif" width="16" height="16" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=check">卡状态查询</a> 
+      <img src="/content/mod_ykt/images/icon_dz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=ykt&a=Tran">卡余额互转</a> 
+      <img src="/content/mod_ykt/images/icon_kt.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&c=Show" target="_blank">卡图展示</a> 
+      <img src="/content/mod_ykt/images/icon_bz.gif" align="absmiddle"> <a href="/index.php?m=mod_ykt&a=hourkf">客户服务</a> 
+      <img src="/content/mod_ykt/images/icon_jxs.gif" align="absmiddle"> <a href="/" target="_blank">经销商</a>
+    </span>
+    <span id="userzone"></span>
+    <div id="logindiv" style="position:absolute;top:25px;left:125px;;width:260px;display:none;z-index:999;">
+  <div style="padding:0px;background:#f4f4f4;border:1px #ccc solid">
+  <div style="font-size:14px;font-weight:bold;padding:0px;float:left"></div>
+  <form name="form1" method="post" action="/index.php?m=mod_user&c=login&a=login"  style="clear:both">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="30%" style="font-size:14px;height:30px;padding-right:8px" align="right">账　号</td>
+      <td width="70%"><input type="text" name="aname" class="logininput" /></td>
+    </tr>
+    <tr>
+      <td width="30%" style="font-size:14px;height:30px;padding-right:8px" align="right">密　码</td>
+      <td width="70%"><input type="password" name="pwd" class="logininput" style="width:149px;"/></td>
+    </tr>
+        <tr>
+      <td width="30%" height="45px"></td>
+      <td width="70%">
+      	<input type="hidden" id="vfromsite" name="vfromsite" value="3"/>
+        <input type="submit" value=" 登 陆 " class="button" style="height:25px;width:50px"/>
+        <input type="button" value=" 关 闭 " onclick="disp('logindiv')" class="button" style="height:25px;width:50px"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+  </div>
+</div>
+
+<div id="ubtop">
+<div id="topsearch">
+  <div style="float:left;width:230px;">
+    <img src="/content/mod_ykt/images/mylogo.gif" alt="" border="0" height="60"/>
+  </div>
+  <div style="FLOAT:left;width:500px;height:60px">
+      </div>
+  <div style="float:right;width:210px;BACKGROUND:#fff;padding:5px 2px;border:1px #f0f0f0 solid;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;">
+        <tr>
+            <td height="48" align="center" class="black">
+                <a href="/article/22.html" target="_blank">产品加盟</a> |
+                <a href="/article/59.html" target="_blank">广告招商</a>
+                | <a href="#" Onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('');" class="top"> 设为首页</a><br />
+                <a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">常见问题</a>
+                | <a href="/article/20.html" target="_blank">充值演示</a>
+                | <a href=javascript:window.external.AddFavorite('','新云数卡销售系统，网吧平台、多源化平台服务、致力于优质平台提供、源码美化、开发、修复等') class="top">添加收藏</a>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div id="ubmain">
+  <div id="ChannelMenu">
+    <div class="Shell">
+      <div class="Tab">
+        <ul class="clearfix">
+        <li><a href="/ykt" target="_top"><span>首页</span></a></li>
+        <li><a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%D0%C2%CE%C5%B9%AB%B8%E6"><span>系统公告</span></a></li>
+        <li><a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%D0%C2%CA%D6%B0%EF%D6%FA"><span>新手帮助</span></a></li>
+        
+        <li class="Current MyUmebiz" class="Current"><a href="#" target="_top"><span>面值</span></a></li>
+        <li style="width:405px;padding-top:7px;float:right">
+          <form name="yktform" action="/index.php"  method="post">
+            <input type="hidden" name="stype" value="pname"/>
+            <input type="hidden" name="m" value="mod_ykt"/>
+            <input type="hidden" name="c" value="product"/>
+            <input type="hidden" name="ptype" value="-1"/>
+            <input type="text" name="keywords" size="25" class="topinput"/><input type="image"  src="/content/mod_ykt/images/search-top1.gif" style="vertical-align:middle;border-width:0px;padding-left:0px;"/>
+          </form>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="ProductMenu">
+    <div class="Shell">
+      <div class="Tab">
+        <ul>
+          <li class="Current"><a href="/index.php?m=mod_ykt&c=product"><span>全部</span></a></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+<input type="hidden" id="webdir" name="webdir" value="/">
+<script src="/content/mod_ykt/js/userzone.js"></script>
+<div class="BLSideLeft fix">
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="newsbg"></div>
+  <div class="coltwo box boxbg1" style="height:143px;padding-top:3px">
+    <ul>
+        </ul>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+  <div class="cxcls" style="cursor:pointer;" onclick="javascript:window.location.href='/index.php?m=mod_ykt&c=ykt&a=check'">
+  </div>
+  <div class="dzcls" style="cursor:pointer;" onclick="javascript:window.location.href='/index.php?m=mod_ykt&c=ykt&a=Tran'">
+  </div>
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="coltwo" style="padding-left:8px">
+    <a href="/index.php?m=mod_ykt&a=hourkf">
+      <img alt="" src="/content/mod_ykt/images/icon_kf.gif" width="201" height="85" border="0"/>
+    </a>
+    <div class="line"></div>
+    <a  href="/index.php?m=mod_ykt&a=hourkf">
+      <img alt="" src="/content/mod_ykt/images/icon_rx.gif" width="201" height="85" border="0"/>
+    </a>
+    <div class="line"></div>
+    <a href="/index.php?m=mod_ykt&a=hourkf" target="_blank">
+      <img alt="" src="/content/mod_ykt/images/icon_ts.gif" width="201" height="85"
+          border="0" /></a>
+    <div class="line"></div>
+    <a href="/index.php?m=mod_ykt&c=Article&a=Home&name=%D2%BB%BF%A8%CD%A8%CF%B5%CD%B3%B3%A3%BC%FB%CE%CA%CC%E2">
+      <img alt="" src="/content/mod_ykt/images/icon_help.gif" width="201" height="85"
+          border="0"/></a>
+    <div class="line"></div>     
+    <a href="/index.php?m=mod_ykt&c=Addr">
+      <img alt="" src="/content/mod_ykt/images/icon_listjxs.gif" width="201" height="85"
+          border="0" /></a>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+
+<div class="BLSideMiddle fix">
+<div class="slider" style="height:180px; overflow:hidden">
+  <ul class="num" id="homePushName">
+        <li id="homeAd0"  class="current">1</li>
+      </ul>
+  <ul class="bg" id="homePushBg">
+        <li></li>
+      </ul>
+  <ul class="pic" id="homePushShow">
+        <li id="homePushShow0" style="height:180px; overflow:hidden;">
+      <a href="" target="_blank">
+        <img src="/content/mod_shared/skins/upload/"/>
+      </a>
+    </li>
+      </ul>
+</div>
+<script type="text/javascript">
+  var listItem=document.getElementById("homePushShow");
+  var tList=document.getElementById("homePushName").childNodes;
+  var controlItem=[];
+  for(var i=0;i<tList.length;i++){
+    if(tList[i].nodeName.toLowerCase()=="li"){
+      controlItem.push(tList[i]);
+    }
+  }
+  var picCount=controlItem.length;
+  var cid=0;
+  var tid=Math.floor(Math.random()*picCount);
+  window.cTop=0
+  window.gTop=0;
+  window.speed=0;
+  window.controlAction="";
+  window.timeCount=0;
+  setInterval(function(){
+    if(cid!=tid){
+      gTop=tid*180;
+      speed=(gTop-cTop)/10;
+      cid=tid;
+      for(var i=0;i<picCount;i++){
+        controlItem[i].className=((i==cid)?"current":"");
+      }
+    }
+    if(window.cTop!=window.gTop){
+      window.cTop+= parseInt(speed);
+      listItem.style.marginTop="-"+ parseInt(window.cTop)+"px"; 
+    }
+    document.getElementById("homePushBg").style.display="block";
+    document.getElementById("homePushName").style.display="block";
+  },20);
+  
+  for(var i=0;i<picCount;i++){
+    controlItem[i].onmouseover=function(){
+      var goId=parseInt(this.innerHTML)-1;
+      clearTimeout(window.controlAction);
+      window.controlAction=setTimeout(function(){
+        tid=goId;
+        timeCount=0;
+      },300);
+    }
+    controlItem[i].onmouseout=function(){
+      clearTimeout(window.controlAction);
+    }
+  }
+   
+  setInterval(function(){
+    timeCount+=1
+    if(timeCount>=1){
+      window.controlAction=setTimeout(function(){
+        tid=tid+1;
+        if(tid>=picCount){tid=0;}
+      },20);
+      timeCount=0;
+    }
+  },1000);
+</script>
+
+</div>
+
+<div class="BLSideRight">
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="adnewsbg"></div>
+  <div class="coltwo box boxbg1" style="height:143px;overflow:hidden">
+    <ul>
+                </ul>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+
+<div style="width:722px;float:right;">
+<b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/content/mod_ykt/images/tbg.gif" class="coltwo">
+  <tr>
+    <td width="46%" class="orange" style="height:30px;padding-top: 8px;padding-left:5px;"><strong>推荐充值以下游戏，更多游戏请在本页顶部进行搜索</strong></td>
+    <td width="43%"><img src="/content/mod_ykt/images/title_m_up.gif" width="29" height="31" /></td>
+    <td width="11%" style="padding-top: 8px;"><a href="/index.php?m=mod_ykt&c=product">所有产品..</a></td>
+  </tr>
+</table>
+<style tyle="text/css">
+  #cgame td a{font-size:14px;line-height:19px}
+</style>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="coltwo" id="cgame">
+        <tr>
+      <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/tx.gif' border='0'  width='100' height='32' alt='腾讯游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=Q%B1%D2"><font style="color:red">Q币直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=Q%B5%E3"><font style="color:default">Q点直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=dnf%BA%DA%D7%EA"><font style="color:default">DNF黑钻</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=Q%B5%E3"><font style="color:default">会员</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%DA%D1%B6"><font style="color:default">黄钻</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%DA%D1%B6"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/wy.gif' border='0'  width='100' height='32' alt='网易游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%EC%CF%C2"><font style="color:default">天下贰</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%F8%D2%D7"><font style="color:default">网易直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%F8%D2%D7"><font style="color:default">大话</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C4%A7%CA%DE"><font style="color:default">魔兽世界</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%F8%D2%D7"><font style="color:default">梦幻西游</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%F8%D2%D7"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/sh.gif' border='0'  width='100' height='32' alt='搜狐游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CB%D1%BA%FC"><font style="color:default">刀剑英雄</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CB%D1%BA%FC"><font style="color:default">刀剑2</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CB%D1%BA%FC"><font style="color:default">天龙八部</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CB%D1%BA%FC"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+    <tr>
+  <tr><td colspan="3" class="line"></td>
+        <tr>
+      <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/wl.gif' border='0'  width='100' height='32' alt='网龙游戏(91卡)'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C4%A7%D3%F2"><font style="color:default">魔域</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BB%FA%D5%BD"><font style="color:default">机战</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%B7%FE"><font style="color:default">征服</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%B6%C3%FB%D7%B4"><font style="color:default">投名状</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C4%A7%CA%AF"><font style="color:default">魔石卡</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=91"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/wm.gif' border='0'  width='100' height='32' alt='完美游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C9%F1%B9%ED"><font style="color:default">神鬼传奇</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%EA%C3%C0"><font style="color:default">完美国际</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CE%E4%C1%D6%CD%E2%B4%AB"><font style="color:default">武林外传</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B3%E0%B1%DA"><font style="color:default">赤壁</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D6%EF%CF%C9"><font style="color:default">诛仙</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%EA%C3%C0"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/sj.gif' border='0'  width='100' height='32' alt='世纪天成'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CA%C0%BC%CD%CC%EC%B3%C9"><font style="color:default">哼哼哈嘿</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CA%C0%BC%CD%CC%EC%B3%C9"><font style="color:default">冲锋岛</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords="><font style="color:default">反恐精英</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C2%E5%C6%E6"><font style="color:default">洛奇直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C5%DC%C5%DC"><font style="color:default">跑跑卡丁</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CA%C0%BC%CD"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+    <tr>
+  <tr><td colspan="3" class="line"></td>
+        <tr>
+      <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/jr.gif' border='0'  width='100' height='32' alt='巨人游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%CD%BE"><font style="color:default">征途怀旧</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%CD%BE"><font style="color:default">征途直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%CD%BE"><font style="color:default">巨人直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%CD%BE"><font style="color:default">征途时间</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F7%CD%BE"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/gy.gif' border='0'  width='100' height='32' alt='光宇华夏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CF%A3%CD%FB"><font style="color:default">希望直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CE%CA%B5%C0"><font style="color:default">问道直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B9%E2%D3%EE"><font style="color:default">西游Q记</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B9%E2%D3%EE"><font style="color:default">幻想之翼</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C9%F1%BD%E7"><font style="color:default">神界直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B9%E2%D3%EE"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/jc.gif' border='0'  width='100' height='32' alt='九城游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CD%F5%D5%DF"><font style="color:default">王者世界</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C6%E6%BC%A3"><font style="color:default">奇迹世界</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C6%E6%BC%A3"><font style="color:default">奇迹MU</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C5%B3%C7"><font style="color:default">快乐西游</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C5%B3%C7"><font style="color:default">卓越之剑</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C5%B3%C7"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+    <tr>
+  <tr><td colspan="3" class="line"></td>
+        <tr>
+      <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/yy.gif' border='0'  width='100' height='32' alt='悠游游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D3%C6%D3%CE"><font style="color:default">悠游卡</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BB%C6%D2%D7"><font style="color:default">黄易群侠</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%EC%CA%B9"><font style="color:default">天使之恋</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CA%AE%B6%FE%D6%AE%CC%EC"><font style="color:default">十二之天</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C8%FD%B9%FA"><font style="color:default">三国群英</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D3%C6%D3%CE"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/sd.gif' border='0'  width='100' height='32' alt='盛大游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C8%C8%D1%AA%B4%AB%C6%E6"><font style="color:default">热血传奇</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B3%AC%BC%B6%C5%DC%C5%DC"><font style="color:default">超级跑跑</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B4%AB%C6%E6%CA%C0%BD%E7"><font style="color:default">传奇世界</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C3%B0%CF%D5%B5%BA"><font style="color:default">冒险岛</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D3%C0%BA%E3%D6%AE%CB%FE"><font style="color:default">永恒之塔</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CA%A2%B4%F3"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/js.gif' border='0'  width='100' height='32' alt='金山游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BD%A3%CF%C0"><font style="color:default">剑侠直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CB%AE%E4%B0Q%B4%AB"><font style="color:default">水浒Q传</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CF%C9%C2%C22"><font style="color:default">仙侣2</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%B7%E2%C9%F1%B0%F1"><font style="color:default">封神榜</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BD%A3%CF%C0"><font style="color:default">剑侠世界</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BD%F0%C9%BD"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+    <tr>
+  <tr><td colspan="3" class="line"></td>
+        <tr>
+      <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/wn.gif' border='0'  width='100' height='32' alt='蜗牛游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BB%FA%BC%D7"><font style="color:default">机甲II</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BB%FA%BC%D7"><font style="color:default">机甲世纪</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%EC%D7%D3"><font style="color:default">天子直充</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CE%CF%C5%A3"><font style="color:default">航海世纪</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CE%CF%C5%A3"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/ty.gif' border='0'  width='100' height='32' alt='天游游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%EC%C1%AA"><font style="color:default">天联卡</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BD%D6%CD%B7%C0%BA%C7%F2"><font style="color:default">街头篮球</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%C5%C4%C5%C4%B2%BF%C2%E4"><font style="color:default">拍拍部落</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%D5%F4%C6%FB%BB%C3%CF%EB"><font style="color:default">蒸汽幻想</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%CC%EC%C1%AA"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+          <td width="236" style="padding-left:5px;padding-top:8px;">
+                        <img src='/content/mod_shared/skins/upload/jy.gif' border='0'  width='100' height='32' alt='久游游戏'>
+      <div class="cp_col">
+        <ul>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C3%D3%CE"><font style="color:default">劲舞团</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C3%D3%CE"><font style="color:default">光线飞车</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C3%D3%CE"><font style="color:default">风火之旅</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C3%D3%CE"><font style="color:default">超级舞者</font></a>
+          </li>
+                              <li>
+            <a href="/index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=%BE%C3%D3%CE"><font style="color:default">更多..</font></a>
+          </li>
+                  </ul>
+      </div>
+    </td>
+    <tr>
+  <tr><td colspan="3" class="line"></td>
+    </table>
+<b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div class="clearboth"></div>
+<b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+<div class="coltwo box mlist" style="height:100%;padding-top:5px;overflow:hidden; ">
+    <ul>
+    <li style="padding-left:0px;width:35px"><img src="/content/mod_ykt/images/friendslink.jpg" /></li>
+                            </ul>
+</div>
+<b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+<div class="clearboth"></div>
+<div style="height:8px;"></div>
+<div class="copyright_v2">
+  <em style="float:right"><a href="#" target="_blank"><img src="/content/mod_ykt/images/ruixing.gif" align="absmiddle" /></a></em>
+  <em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="/content/mod_ykt/images/cyberpolice.gif" align="absmiddle" /></a></em>
+  <em style="float:right"><a href="http://sh.cyberpolice.cn/" target="_blank"><img src="/content/mod_ykt/images/footer_img1.gif" align="absmiddle" /></a></em>
+  <a href="/article/25.html">关于易卡网，点卡销售系统，网吧平台、多源化平台服务、致力于优质平台提供、源码美化、开发、修复等</a>
+     <font color="#cccccc">|</font> <a href="/article/55.html">欢迎合作</a>
+     <font color="#cccccc">|</font> <a href="/article/24.html">诚信与安全</a>
+     <font color="#cccccc">|</font> <a href="/article/54.html">法律声明</a>
+     <font color="#cccccc">|</font> <a href="/article/56.html">服务条款</a>
+     <font color="#cccccc">|</font> <a href="/article/57.html">隐私声明</a>
+     <font color="#cccccc">|</font> <a href="/article/62.html">联系我们</a>
+  <br/>
+  版权所有  2004-2011 新云卡，点卡销售系统，网吧平台、多源化平台服务、致力于优质平台提供、源码美化、开发、修复等 <a href="http://www.miibeian.gov.cn" target="_blank"">新云数卡 因为专注 所以堪称专业！</a> 地址：  <br>
+  技术支持：<a href="http://www.xybss.com.cn">新云数卡</a></div>
+
+</div>
+</div>
+<div id="ubbottom"></div>
+<input type="hidden" id="platform" value="ykt"/>
+<script src="/content/mod_shared/skins/js/web.js" type="text/javascript"></script>
+</body>
+</html>

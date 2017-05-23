@@ -1,0 +1,69 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 我要进货 >> 购卡售用户</span></div>
+	<div id="type">
+	  <ul>
+			<li><span class="type">按目录分类</span></li>
+			<li><a href="{$vd['root']}index.php?m=mod_b2b&c=Category&a=PinYin"><span class="letters">按字母分类</span></a></li>
+			<li><a href="{$vd['root']}index.php?m=mod_b2b&c=product&a=most&nrows=5000"><span class="oftens">常购买商品</span></a></li>
+		</ul>
+	</div>
+	<div id="buycard">
+		<div id="buycardmain">
+		<div id="search">
+			<div id="searchlist" style="DISPLAY:none;">
+			<table id="listtb" border="0" cellpadding="0" cellspacing="0" width="100%">
+			</table>
+			</div>
+			<form name="form1" method="get" action="{$vd['root']}index.php">
+			<input name="keywords" id="gametype" type="text" class="input" size="33" value="" onkeyup="vkeyup()">
+			<input type="hidden" name="stype" value="pname"/>
+			<input type="hidden" name="m" value="mod_b2b"/>
+			<input type="hidden" name="c" value="product"/>
+			<input type="hidden" name="nrows" value="4000"/>
+			<select name="typesearch" id="typesearch" class="search_select">
+    	  <option value="product" selected>搜索商品</option>
+    	  <option value="category">搜索分类</option>
+    	</select>
+    	<!--$k=array('征途','热血传奇','魔兽世界','网易','永恒之塔' );-->
+			<input type="image" src="{$vd['content']}images/icon_search.gif" border="0" align="absmiddle">　　<strong>热门搜索：</strong><!--foreach($k as $item) {--><a href="{$vd['root']}index.php?m=mod_b2b&c=product&stype=pname&typesearch=product&keywords=<!--echo urlencode($item);-->">{$item}</a>、<!--}-->
+			</form>
+		</div>
+		
+		<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+		  <tr>
+			<td class="tableleft">
+			  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table">
+				<tr>
+				<td colspan="5" class="heardertop">　搜索到的目录</td>
+				</tr>
+				<!--$i=0;foreach($vd['items'] as $subcat) {-->
+        <!--if($i == 0){-->
+        <tr>
+        <!--}$i++;-->
+  	    	<td width="20%" class=stline>
+  	    		<a class='tip' href='{#ListLink($subcat['id'])}'><font color={$subcat['color']}>{$subcat['name']}</font><SPAN class=tip_info>{$subcat['abst']}</SPAN></a>
+  	    	</td>
+  	    <!--if($i == 5){-->
+  	    </tr>
+  	    <!--$i=0;}-->
+  	    <!--}-->
+  	    
+  	    <!--if($i > 0){-->
+  	    <!--for($j=0; $j < 5 - $i; $j++){-->
+  	    <td width="20%" class=stline>&nbsp;</td>
+  	    <!--}-->
+        </tr>
+  	    <!--}-->
+  	    </table>
+			</td>
+		  </tr>
+		</table>
+		
+		<br>
+		<br>
+	</div>
+	</div>
+<br>
+</body>
+</html>

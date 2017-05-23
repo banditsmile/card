@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商品定价</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../index/css/common.css" type="text/css" rel="stylesheet">
+<link href="../index/css/page.css" type="text/css" rel="stylesheet">
+</head>
+<div class="ubtwoRight" id="ubtwoRight">
+<!--$p = $vd['product']; -->
+<form id="cform" method="post" action="index.php?m=mod_agent&c=Product&a=PriceSave">
+  <div class="new_qie">
+    <div class="new_qie2">
+      <h2> 商品定价</h2>
+      </div>
+    </div>
+      <table width="100%" cellpadding="3" cellspacing="1" class="table1" style="margin: 0">
+  <tr>
+    <td width="10%" class="table1_left">商品名称：</td>
+    <td class="buyrt"><div align="left"><b>{$p['pname']}</b></div></td>
+  </tr>
+  <tr>
+    <td class="table1_left">商品面值：</td>
+    <td class="buyrt"><div align="left"><span id="listprice">{$p['listprice']}</span>{$vd['lang']['moneyunit']}</div></td>
+  </tr>
+  <tr>
+    <td class="table1_left">进货价：</td>
+    <td class="buyrt"><div align="left"><span id="cprice">{$p['price']}</span>{$vd['lang']['moneyunit']}</div></td>
+  </tr>
+  <!--$i = 3; foreach($vd['items'] as $item) {-->
+  <tr>
+    <td class="table1_left">{$item['name']}：</td>
+    <td class="buyrt">
+      <div style="width:50%;float:left">
+        <div align="left">
+          <input name="id[]" type="hidden" class="input0" value="{$item['id']}"/>
+          <input id="price_{$i}" name="price_{$item['id']}" class="input0" type="text" size="25" value="{$item['price']}" class="myinput" onkeyup="set({$i})"  
+          <!--if($i-2==count($vd['items'])){-->
+          onchange="lj()" 
+          <!--}-->
+          />{$vd['lang']['moneyunit']} </div>
+      </div>
+      
+      <div style="width:25%;float:left" id="discount_{$i}">
+        <div align="left">--</div>
+      </div>
+      <div style="width:20%;float:right" id="save_{$i}">
+        <div align="left">--</div>
+      </div>      </td>
+  </tr>
+  <!--$i++;}-->
+  <tr>
+    <td class="table1_left" height="50px">级别差价</td>
+    <td class="buyrt"><div align="left"> <input style="width:30px;" value="0.3" class="input0" id='ljje'/>
+      元
+      <input type="button" value="一键定价" onclick='lj();' class="input_jc"/>
+    </div></td>
+  </tr>
+  <tr>
+    <td class="table1_left" height="50px"><!--$i--></td>
+    <td class="buyrt"><div align="left">
+        <!--$zzzz=count($vd['items'])+1-->
+        <script>
+	function accAdd(arg1,arg2){
+    var r1,r2,m;
+    try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+    try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+    m=Math.pow(10,Math.max(r1,r2))
+    return (arg1*m+arg2*m)/m
+    }
+	function lj(){
+		start={$zzzz};
+		end=3;
+		while(start >= end){
+			q=start+1;
+			news=accAdd($('price_'+q).value,$('ljje').value);
+			news=news.toFixed(2);
+			$('price_'+start).value=news;
+			set(start);
+			start--;
+		}
+	}
+      </script>
+        <input name="priceid" type="hidden" value="{$vd['priceid']}"/>
+        <input name="pid" type="hidden" value="{$p['pid']}"/>
+        <input type="submit" value="修 改" class="tijiao_input"/>
+        <input type="reset" value="重 置" class="fanhui_input"/>
+    </div></td>
+  </tr>
+</table>
+</form>
+
+<script type="text/javascript">
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  
+  function set(id)
+  {
+    //获取价格
+    var listprice = $('listprice').innerHTML;
+    var thisprice = $('price_' + id).value;
+    var save = listprice - thisprice;
+    var discount = (1 - (save / listprice)) * 100;
+    
+    $('save_' + id).innerHTML = "节省：<font color='#ff0000'>" + save.toFixed(2) + "</font>{$vd['lang']['moneyunit']}";
+    $('discount_' + id).innerHTML = "折扣：<font color='#ff0000'>" + discount.toFixed(2) + "%</font>";
+  }
+  len  = $("priceTable").rows.length - 2;
+  for(var i=3;i < len;i++)
+  {
+    set(i);
+  }
+</script>
+</div>

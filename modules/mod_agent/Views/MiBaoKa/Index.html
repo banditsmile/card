@@ -1,0 +1,96 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 安全管理 >> 安全产品绑定</span></div>
+	
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='?';" ><span class="mm"></span></li><li onclick="location.href='" class=hover><span class="mm">密保卡绑定</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	
+	<form name="bindmbk" action="" method="post">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">用户编号：</td>
+		<td width="78%" class="tableright1"><input type='text' size='30' maxlength='10' name='CustomerId' class='input1' value="25068" disabled></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">绑定用户名：</td>
+		<td class="tableright1"><input type='text' size='30' maxlength='30' name='LoginName' class='input1' value="lxb0605" disabled></td>
+		</tr>
+		
+		<tr>
+		<td height="35" class="tableleft1">密保卡序列号：</td>
+		<td class="tableright1"></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">组合密码：</td>
+		<td class="tableright1"><input type='text' size='10' maxlength='6' name='MBKPassword' class='input' datatype="Integer" msg="请输入密保卡的组合密码"> </td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">密保卡绑定状态：</td>
+		<td class="tableright1"><strong><font color=#000000>未绑定</font></strong></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">绑定操作：</td>
+		<td class="tableright1"><input type="radio" name="BindMBKType" value="1" id="yesbind" checked><label for="yesbind"><strong><font color=#0000ff>绑定密保卡</font><strong></label></td>
+		</tr>
+		
+		<tr>
+		<td class="tableleft1">购卡/转款时验证：</td>
+		<td class="tableright1"><input type="radio" name="BuyCardIsUse" value="1" id="yesuse" onclick="javascript:mbkchecktype.style.display='block';" checked><label for="yesuse"><strong><font color=#0000ff>验证</font><strong></label> <input type="radio" name="BuyCardIsUse" value="0" id="nouse" onclick="javascript:mbkchecktype.style.display='none';" ><label for="nouse"><strong><font color=#ff0000>不验证</font><strong></label></td>
+		</tr>
+		<tr id="mbkchecktype" style="display:block;">
+		<td class="tableleft1">使用方式：</td>
+		<td class="tableright1"><input type="radio" name="CheckType" value="1" id="check1" checked><label for="check1">一直使用，每次购卡/转款都出现；</label><br><input type="radio" name="CheckType" value="1" id="check2"><label for="check2">随机使用，出现概率为：<select name="Number1">
+		<option value="30">30%</option>
+		<option value="40">40%</option>
+		<option value="50">50%</option>
+		<option value="60">60%</option>
+		<option value="70">70%</option>
+		<option value="80" selected>80%</option>
+		<option value="90">90%</option>
+		</select>；</label><br><input type="radio" name="CheckType" value="1" id="check3"><label for="check3">根据订单金额使用，订单金额大于<select name="Number2">
+		<option value="5">5{$vd['lang']['moneyunit']}</option>
+		<option value="10">10{$vd['lang']['moneyunit']}</option>
+		<option value="15">15{$vd['lang']['moneyunit']}</option>
+		<option value="20">20{$vd['lang']['moneyunit']}</option>
+		<option value="30" selected>30{$vd['lang']['moneyunit']}</option>
+		<option value="40">40{$vd['lang']['moneyunit']}</option>
+		<option value="50">50{$vd['lang']['moneyunit']}</option>
+		<option value="60">60{$vd['lang']['moneyunit']}</option>
+		<option value="70">70{$vd['lang']['moneyunit']}</option>
+		<option value="80">80{$vd['lang']['moneyunit']}</option>
+		<option value="90">90{$vd['lang']['moneyunit']}</option>
+		<option value="100">100{$vd['lang']['moneyunit']}</option>
+		</select>时出现；</label></td>
+		</tr>
+		
+		<tr>
+		<td class="tableleft1">帐户交易密码：</td>
+		<td class="tableright1"></td>
+		</tr>
+		
+		<tr>
+		<td height="30" class="tableleft1">&nbsp;</td>
+		<td colspan="3" class="tableright1"><input type="hidden" name="Login_my" value="59348006"><input type="submit" name="submit" value="确认设置" class="button" onclick="javascript:document.bindmbk.TradePassword.value=document.bindmbk.EGEDIT.mytext;"> <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	<script language="javascript">
+function openScript(url,name,width, height)
+{
+var Win = window.open(url,name,'width=' + width + ',height=' + height + ',resizable=0,scrollbars=no,menubar=no,status=yes' );
+}
+</script>
+	</div>
+</body>
+</html>

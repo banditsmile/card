@@ -1,0 +1,164 @@
+  <!-- $rs = $vd['rs'];-->
+  <table border="0" id="ctable1" class="ctable" bordercolor="#86B9D6" style="width:100%;margin:0px;border:0px;">
+    <!--if($rs['err']['isCz'] == 0) {-->
+    <!--if($rs['err']['ptype'] == 0 || $rs['err']['ptype'] == 3 || $rs['err']['ptype'] > 99) {-->
+    <tr>
+      <td class="tablelt">买家所订购的卡号如下：</td>
+      <td class="tablert"></td>
+    </tr>
+    <tr bgcolor="#ccf1aa">
+      <td width="50%" style="padding: 5px" align="center">卡号</td>
+      <td width="50%" style="padding: 5px" align="center">密码</td>
+    </tr>
+    <!--foreach($rs['item'] as $item) {-->
+    <tr bgcolor="#FFFFFF">
+      <td width="50%" style="padding: 5px" align="center">{$item['cardnumber']}</td>
+      <td width="50%" style="padding: 5px" align="center">{$item['cardpwd']}</td>
+    </tr>
+    <!--}-->
+    <!--}-->
+
+    <!--}-->
+    <!--if($rs['err']['isCz'] == 1) {-->
+    <font color="#087335"><b>当前操作：{$rs['err']['pname']}</b></font><br/>
+    <span style="font-size: 9pt">充值之后您的余额变化如下：(需要重新登陆,系统页面才会更新您的余额)</span><br/>
+    <tr bgcolor="#ccf1aa">
+      <td width="33%" style="padding: 5px" align="center">充值前金额(单位{$vd['lang']['moneyunit']})</td>
+      <td width="33%" style="padding: 5px" align="center">充值金额(单位{$vd['lang']['moneyunit']})</td>
+      <td width="33%" style="padding: 5px" align="center">充值后金额(单位{$vd['lang']['moneyunit']})</td>
+    </tr>
+    <!--$item=$rs['item'];-->
+    <tr bgcolor="#FFFFFF">
+      <td width="33%" style="padding: 5px" align="center">{$item['mbefore']}</td>
+      <td width="33%" style="padding: 5px" align="center">{$item['dollars']}</td>
+      <td width="33%" style="padding: 5px" align="center">{$item['mafter']}</td>
+    </tr>
+    <!--}-->
+  </table>
+  <!--$order = $rs['order'];-->
+  <!--if($rs['err']['isCz'] == 0) {-->
+  <table border="0" class="ctable" bordercolor="#86B9D6" style="width:100%;margin:0px;border:0px;">
+    <tr>
+      <td class="tablelt">订单号：</td>
+      <td class="tablert"><font color="#ff0000">{$order['ordno']}</font></td>
+    </tr>
+    <tr>
+      <td class="tablelt">购买日期：</td>
+      <td class="tablert">{$order['orddate']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">购买商品：</td>
+      <td class="tablert"><b>{$order['pname']}</b></td>
+    </tr>
+    <tr>
+      <td class="tablelt">购买数量：</td>
+      <td class="tablert">{$order['qty']}</td>
+    </tr>
+    <!--if($order['ptype'] == 0){-->
+    <tr>
+      <td class="tablelt">充值网址：</td>
+      <td class="tablert"><a href="{$order['czweb']}" target="_blank">{$order['czweb']}</a></td>
+    </tr>
+    <!--}-->
+    <!--if($order['ptype'] == 4 || $order['ptype'] == 5){-->
+    <tr>
+      <td class="tablelt">交易方式：</td>
+      <td class="tablert"><textarea name="ubzabst" wrap="VIRTUAL" cols="30" rows="3" scrolling="yes" style="padding:5px">{$order['tradeterm']}</textarea></td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td class="tablelt">购买IP：</td>
+      <td class="tablert">{$order['cip']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">操作对象：</td>
+      <td class="tablert">{$order['cname']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">购卡备注：</td>
+      <td class="tablert"><textarea name="ubzabst" wrap="VIRTUAL" cols="30" rows="3" scrolling="yes" style="padding:5px">{$order['others']}</textarea></td>
+    </tr>
+    <tr>
+      <td class="tablelt">订单状态：</td>
+      <td class="tablert">{#OrderState($order['ordstate'],$order['ptype'])}</td>
+    </tr>
+    <!--if($rs['err']['ptype'] == 2 || $rs['err']['ptype'] == 1) {-->
+    <tr>
+      <td class="tablelt">充值结果：</td>
+      <td class="tablert"><font color="#ff0000"><b>
+        <!--if($rs['order']['ordstate'] == -1) {-->
+        充值失败，<!--if($rs['order']['rollback'] == 1) {-->已经退还余额，<!--}-->请重新下订单
+        <!--}-->
+        <!--if($rs['order']['ordstate'] == 1) {-->
+        已经提交系统充值，请随时刷新本页查看充值结果
+        <!--}-->
+        <!--if($rs['order']['ordstate'] == 2) {-->
+        已经充值成功，请玩家查询游戏时间，处理成功
+        <!--}-->
+        </b></font></td>
+    </tr>
+    <!--}-->
+    <!--if($rs['err']['ptype'] > 0 && $rs['err']['ptype'] < 99 && $order['ptype'] != 3) {-->
+    <tr>
+      <td class="tablelt">充值时间：</td>
+      <td class="tablert">{$rs['order']['dealdate']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">充值说明：</td>
+      <td class="tablert"><!--if($rs['order']['ordstate'] == -1) {-->{$rs['order']['failreason']}<!--}else{-->{$rs['order']['factoryreturn']}<!--}--></td>
+    </tr>
+    <!--}-->
+    <tr>
+      <td class="tablelt">处理时间：</td>
+      <td class="tablert">{$order['dealdate']}</td>
+    </tr>
+    <!--if($order['ptype'] > 0 && $order['ptype'] < 99 && $order['ptype'] != 3 && $order['ptype'] != 6) {-->
+    <tr>
+      <td class="tablelt">游戏用户名：</td>
+      <td class="tablert">{$order['czaccount']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">充值区域：</td>
+      <td class="tablert">{#CzText($order['czarea1'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">充值服务器：</td>
+      <td class="tablert">{#CzText($order['czarea2'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">计费方式：</td>
+      <td class="tablert">{#CzText($order['cztype'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">帐号类型：</td>
+      <td class="tablert">{#CzText($order['czother'])}</td>
+    </tr>
+    <!--}-->
+    <!--if($order['ptype'] == 6){-->
+    <tr>
+      <td class="tablelt">代练帐号：</td>
+      <td class="tablert">{$order['czaccount']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">代练角色：</td>
+      <td class="tablert">{$order['rolename']}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">所在区域：</td>
+      <td class="tablert">{#CzText($order['czarea1'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">所在服务器：</td>
+      <td class="tablert">{#CzText($order['czarea2'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">计费方式：</td>
+      <td class="tablert">{#CzText($order['cztype'])}</td>
+    </tr>
+    <tr>
+      <td class="tablelt">帐号类型：</td>
+      <td class="tablert">{#CzText($order['czother'])}</td>
+    </tr>
+    <!--}-->
+    <!--}-->
+  </table>

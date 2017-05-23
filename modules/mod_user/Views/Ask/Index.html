@@ -1,0 +1,73 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;margin-bottom:5px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td colspan="2" height="35" style="padding-left:15px;"><b>我的留言列表</b></td>
+  </tr>
+  <!--foreach($vd['items'] as $item) {-->
+  <tr bgcolor="#ccf1aa">
+  <td height="25" width="90%" style="padding:5px;"><b><font color="#FF6600">[{$item['id']}] {$item['title']}</font></b>（{$item['cdate']}）</td>
+  <td height="25" width="10%" align="right" style="padding:5px;">
+    <a href="#" onClick="return confirm('您确定进行删除操作吗？')">
+      <font color="#00875A">删除</font>
+    </a>
+  </td>
+  </tr>
+  <tr bgcolor="#ffffff">
+  <td height="25" colspan="2" style="padding:5px;"><b><font color="#FF6600">内容：</font></b>{$item['content']}</td>
+  </tr>
+  <tr bgcolor="#ffffff">
+  <td height="25" colspan="2" style="padding:5px;"><font color="#07679F"><b>回复：</b><!--if($item['reply']==0){-->正在处理中...<!--}else{-->{$item['reply']}<!--}--></font></td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="2" style="padding:5px;">
+    <form method="post" action="index.php?m=mod_user&c=ask&{$vd['op']}">
+      <strong>共有记录<font color="#ff0000">{$vd['totlerow']}</font>条 / 第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_user&c=ask&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_user&c=ask&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+</table>
+
+<form name="form" method="post" action="index.php?m=mod_user&c=ask&a=save" onsubmit="return validform()">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td colspan="2" height="35" style="padding-left:15px;"><b>填写留言</b></td>
+  </tr>
+  <tr> 
+    <td width="20%" height="30" bgcolor="#f9fff6"> 
+      <div align="center">留言主题：</div>
+    </td>
+    <td width="80%" height="30" bgcolor="#FFFFFF"> 
+      <input type="text" size="50" maxlength="50" name="title" class="input1" dataType="LimitB" min="1" max="100" msg="投诉主题必须输入，且必须小于50个汉字" value=""/>
+    </td>
+  </tr>
+  <tr> 
+    <td width="20%" bgcolor="#f9fff6"> 
+      <div align="center">留言内容：</div>
+    </td>
+    <td width="80%" bgcolor="#FFFFFF"> 
+      <textarea name="content" cols="70" rows="10" class="input1" require="false" dataType="LimitB" max="1000" msg="投诉内容必须小于500个汉字"></textarea>
+    </td>
+  </tr>
+  <tr> 
+    <td width="20%" height="50" bgcolor="#f9fff6"></td>
+    <td width="80%" height="50" bgcolor="#FFFFFF">
+    <input type="submit" value="确认提交 &gt; &gt;" style="font-weight:bold;font-size:14px" class="button" tabindex="21"/>
+    <input type="reset" value="&lt; &lt; 重新填写" style="font-weight:bold;font-size:14px" class="button" name="reset" tabindex="22"/>
+  </td>
+  </tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+{load(foot)}

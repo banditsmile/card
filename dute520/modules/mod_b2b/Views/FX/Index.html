@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Catalog" title="汇率列表"><font color="#000">汇率设置</font></a>
+  <strong onmouseover="showhide(this);" onmouseout="showhide(this);" style="cursor:pointer">[?]</strong><p style="display:none;">
+    汇率用途:<br/>
+    如果您的商品是从一个国家进货，然后销售到另外一个国家，并且前台标注的是另外一个国家的货币单位。由于国家之间的汇率大部分时间都在变动，而您需要根据汇率实时修改前台的价格。这个汇率设置功能主要是为方便操作而设置的。<br/>
+    <br/>需要注意的一些地方：<br/>
+    <b>1.</b>如果当前商品价格是以人民币为货币单位，但是需要把他转化成其它货币在前台标注。则旧汇率处请填写1 ，新汇率处填写新货币对人民币的最新汇率<br/>
+    <b>2.</b>如果商品价格已经经过汇率转好了，但是汇率发生了变化，旧汇率处填写您上次修改价格使用的汇率(如果您的上次转化也是通过系统来完成的，则无需修改)，新汇率处填写货币间的最新汇率<br/>
+    <b>3.</b>如果您的商品对接了联售系统，当您点击“按供货商价格自动调价”功能的时候，系统会自动根据您的设置调整为新汇率后(对人民币)的进货价<br/>
+    <b>4.</b>如果您的价格已经都经过汇率转好了，当您添加商品的时候，商品进货价和面值请填入汇率后的价格<br/>
+    <b>5.</b>设好汇率后，如果曾经单独对商品定价或者密价或者模板设价的话，请重新设置<br/>
+  </p>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="查看汇率相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=FX&a=Save">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">汇率设置</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">旧汇率</td>
+    <td class="tablert"><input type="text" name="curfx" size="25" value="{$item['curfx']}" style="background:#f0f0f0"/> <span class="spantip">如无必要，请务修改</span></td>
+  </tr>
+  <tr>
+    <td class="tablelt">新汇率</td>
+    <td class="tablert"><input type="text" name="newfx" size="25" value="{$item['curfx']}"/ </td>
+  </tr>
+  <tr>
+    <td class="tablelt">小数点保留位数</td>
+    <td class="tablert"><input type="text" name="dec" size="25" value="{$vd['dec']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt""></td>
+    <td class="tablert">
+      <input type="submit" value="设 置" class="button"/>
+      <input type="reset" value="重 置" class="button"/>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent" style="display:none">
+  <div class="optxt">
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+
+</body>
+</html>

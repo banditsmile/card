@@ -1,0 +1,129 @@
+{load(head)}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tclass">
+  <tr>
+    <td width="1%" height="40"><img src="{$vd['content']}images/cx.gif" width="52" height="32" /></td>
+    <td width="99%">{$vd['web']['webname']}一卡通状态查询结果 当前卡号：{$vd['cardnumber']}  当前卡余额：<font color="#ff0000">{$vd['points']}</font> {$vd['lang']['moneyunit']}</td>
+  </tr>
+</table>
+<div id="adddiv" style="position:absolute;top:100px;left:530px;;width:380px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">撤销订单(下单后30分钟方可撤单)</div>
+  <div style="float:right;"><img src="{$vd['content']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_ykt&c=Ykt&a=Cancel" id="tform" style="clear:both" target="_blank">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%" height="35px">撤销订单</td>
+      <td width="75%"><input type="text" class="myinput" style="font-weight:normal" id="ordno" name="ordno" size="20"/></td>
+    </tr>
+    <tr>
+      <td width="25%" height="35px">撤销原因</td>
+      <td width="75%"><input type="text" class="myinput" style="font-weight:normal" name="reason" size="20"/></td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%" height="80px">
+        <input type="submit" value="提 交" class="button"/>
+        <input type="button" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" class="pmlist">
+  <tr style="background:#f8f8f8">
+    <td width="35%" height="30px" style="padding-left:8px"><b>说明</b></td>
+    <td width="10%" align="center"><b>支出({$vd['lang']['moneyunit']})</b></td>
+    <td width="10%" align="center"><b>收入({$vd['lang']['moneyunit']})</b></td>
+    <td width="10%" align="center"><b>交易后({$vd['lang']['moneyunit']})</b></td>
+    <td width="15%" align="center"><b>时间</b></td>
+    <td width="10%" align="center"><b>状态</b></td>
+    <td width="10%" align="center"><b>操作</b></td>
+  </tr>
+  <!--foreach($vd['items'] as $item){-->
+  <tr>
+    <td width="35%" height="30px" style="padding-left:8px">
+      {$item['content']}
+      <!--if($item['state']==-1 &&($item['failreason'] != '' || $item['factoryreturn'] != '')){-->
+      <p style="color:#ff0000"><!--if($item['failreason'] != ''){-->失败原因：{$item['failreason']}<br/><!--}--><!--if($item['factoryreturn'] != ''){-->厂家反馈：{$item['factoryreturn']}<!--}--></p>
+      <!--}-->
+    </td>
+    <td width="10%" align="center"> - {$item['outcome']}</td>
+    <td width="10%" align="center"> + {$item['income']}</td>
+    <td width="10%" align="center">{$item['fat']}</td>
+    <td width="15%" align="center">{$item['createdate']}</td>
+    <td width="10%" align="center">
+      <!--if($item['state']==-1){--><font color="#cccccc">无效</font><!--}else{-->有效<!--}-->
+    </td>
+    <td width="10%" align="center">
+      <!--if($item['tradetype']==100){--><a href="{$vd['root']}index.php?m=mod_ykt&c=ack&ordno={$item['ordno']}" target="_blank"><font color="#0000ff">详细</font></a> <!--if($vd['cancancel']==1){--><a href="#" onclick="setaction('{$item['ordno']}')"><font color="#5c5c5c">撤单</font></a><!--}}else{--><font color="#cccccc">无</font><!--}-->
+    </td>
+  </tr>
+  <!--}-->
+</table>
+<br/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tclass">
+  <tr>
+    <td width="1%" height="40"><img src="{$vd['content']}images/cx.gif" width="52" height="32" /></td>
+    <td width="99%">继续{$vd['web']['webname']}一卡通状态查询</td>
+  </tr>
+</table>
+<form method="post" action="index.php?m=mod_ykt&c=ykt&a=valid">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pmlist">
+  <tr>
+    <td class="evenlt">一卡通卡号：</td>
+    <td class="evenrt"><input type="text" name="yktnumber" style="width:200px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt">一卡通密码：</td>
+    <td class="evenrt"><input type="password" name="yktpwd"  style="width:200px"/></td>
+  </tr>
+  <tr>
+    <td class="evenlt" valign="top" style="padding-top:5px">验证码：</td>
+    <td class="evenrt">
+      <input type="text" name="randcode" size="20"  style="vertical-align:middle;"/>
+      <div style="padding-top:3px">
+      <img src="index.php?m=mod_ykt&a=randcode" id="src" height="38" alt="看不清楚?请点击刷新" onclick="this.src=this.src+'&'+Math.random();" style="vertical-align:middle;"/>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="evenlt"></td>
+    <td class="evenrt" style="height:80px">
+      <input name="pmsubmit" type="submit" class="button" value=" 提交 ">
+      <input name="pmsavesubmit" type="reset" class="button" value=" 重写 "/>
+    </td>
+  </tr>
+  </table>
+</form>
+<br/>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="pmtip">
+  <tr>
+    <td width="2%" rowspan="2" valign="top" style="padding:5px"><img src="{$vd['content']}images/icon_tip.gif" /></td>
+    <td width="98%"  style="padding:5px"><strong>重要提示</strong></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:5px">
+      ·您可以通过此功能查询您购买的{$vd['web']['webname']}一卡通充值卡状态及使用情况<br />
+      ·如果您使用{$vd['web']['webname']}一卡通换取的卡密产品，可通过此处查询换取卡的卡号和密码。对于直充产品，只提供查询充值时间、充值IP、充值账户等信息，不提供其它查询。
+      <br />
+    </td>
+  </tr>
+</table>
+<script type="text/javascript">
+  var $=function(id){
+    return document.getElementById(id);
+  }
+  
+  function setaction(ordno, act)
+  {
+    $("ordno").value = ordno;
+    disp('adddiv');
+  }
+  
+  function disp(idx)
+  {
+    $(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+  }
+</script>
+{load(foot)}        

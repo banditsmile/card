@@ -1,0 +1,104 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统</a> >> 安全管理 >> IP及所在地绑定</span></div>
+	<!--$s = $vd['security'];$sitem='cpucheck';$sitem1='CPU';$sitem2='cpu';$sitem3='CPU编码'-->
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&c=PCCheck&a=CPU'" class=hover><span class="mm">CPU绑定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=PCCheck&a=HDE';"><span class="mm">硬盘绑定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=PCCheck&a=MAC';" ><span class="mm">网卡绑定</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	<form name="bindip" method="post" action="index.php?m=mod_agent&c=PCCheck&a={$sitem1}Save">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">绑定状态：</td>
+		<td width="78%" class="tableright1"><strong><!--if($s[$sitem]==1){--><font color=#0000ff>已绑定</font><!--}else{--><font color=#cccccc>未绑定</font><!--}--></strong></td>
+		</tr>
+		<tr>
+		<td width="22%" height="30" class="tableleft1">{$sitem3}绑定操作：</td>
+		<td width="78%" class="tableright1"><input type="radio" name="{$sitem}" value="1"  id="yesbind" checked><label for="yesbind"><strong><font color=#0000ff>绑定{$sitem3}</font></strong></label> <input type="radio" name="{$sitem}" value="0" id="nobind" ><label for="nobind"><strong><font color=#ff0000>取消绑定{$sitem3}</font></strong></label></td>
+		</tr>
+		<!--for($i=0; $i<5; $i++){-->
+		<tr>
+		<td width="22%" height="30" class="tableleft1">{$sitem3}<!--echo $i+1;-->：</td>
+		<td width="78%" class="tableright1">
+			<input type="text" class="input" size="25" name="{$sitem2}[]" id="{$sitem2}_{$i}" value="{$s[$sitem2][$i]}"/>
+			<input type="button" name="button" value="取本机{$sitem3}" class="button" onclick="get{$sitem2}({$i});">
+		</td>
+		</tr>
+		<!--}-->
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><a href="index.php" target="_bank"><u>非本机操作请点击此处读取硬件信息</u></a></td>
+		</tr>
+		<tr>
+		<td class="tableleft1">帐户交易密码：</td>
+		<td class="tableright1"><input type="password" name="tradepwd" size="25" class='input'/></td>
+		</tr>
+		
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input type="submit" name="submit" value="确认设置" class="button" > <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+<object id="t1" codeBase="{$vd['sc']}tools/umebiz.cab" classid="CLSID:B8748B60-E34D-42AA-9309-8012CA4964AC" height=0 width=0 ></object>
+<input type="hidden" id="tmac" name="tmac"  value=""/>
+<script type="text/JavaScript">
+var $ = function(id){
+	return document.getElementById(id);
+}
+function getmac(i)
+{
+	$("mac_"+i).value = document.all.t1.GetMacAddr;
+}
+
+function getcpu(i)
+{
+	$("cpu_"+i).value = document.all.t1.GetCpuId;
+}
+
+function gethde(i)
+{
+	$("hde_"+i).value = document.all.t1.GetHDE;
+}
+
+</script>
+<?php
+   $fp = fopen($vd['sc']."tools/root.cer", "r");
+   $cert = fread($fp, 8192);
+   fclose($fp);
+?>
+<script type="text/JavaScript">
+$("tmac").value = document.all.t1.GetMacAddr;
+if($("tmac").value == "" || $("tmac").value == "undefined")
+{
+  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');
+}
+
+</script>
+<script language="vbscript">
+ON ERROR resume next
+<?php
+    $newcert = "sPKCS7=\"\"\r\n";
+    $line=strtok($cert,"\r\n");
+    while($line)
+    {
+     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";
+     $line=strtok("\r\n");
+    }
+    echo $newcert;
+?> 
+XEnroll.InstallPKCS7 sPKCS7 
+</script>
+</body>
+</html>

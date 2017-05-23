@@ -1,0 +1,51 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统</a> >> 安全管理 >> IP及所在地绑定</span></div>
+	<!--$s = $vd['security'];$sitem='addrcheck';$sitem1='Addr';$sitem2='addr';$sitem3='所在地'-->
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		<li onclick="location.href='index.php?m=mod_agent&c=IPCheck&a=Index'"><span class="mm">IP地址绑定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=IPCheck&a=Addr';"  class=hover><span class="mm">所在地绑定</span></li>
+		<li onclick="location.href='index.php?m=mod_agent&c=IPCheck&a=IPList';" ><span class="mm">多线IP设置</span></li>
+		</ul>
+	</div>
+	<div class="main5" id="main5">
+	<form name="bindip" method="post" action="index.php?m=mod_agent&c=IPCheck&a={$sitem1}Save">
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td width="22%" height="30" class="tableleft1">绑定状态：</td>
+		<td width="78%" class="tableright1"><strong><!--if($s[$sitem]==1){--><font color=#0000ff>已绑定</font><!--}else{--><font color=#cccccc>未绑定</font><!--}--></strong></td>
+		</tr>
+		<tr>
+		<td width="22%" height="30" class="tableleft1">{$sitem3}地址绑定操作：</td>
+		<td width="78%" class="tableright1"><input type="radio" name="{$sitem}" value="1"  id="yesbind" checked><label for="yesbind"><strong><font color=#0000ff>绑定{$sitem3}</font></strong></label> <input type="radio" name="{$sitem}" value="0" id="nobind" ><label for="nobind"><strong><font color=#ff0000>取消绑定{$sitem3}</font></strong></label></td>
+		</tr>
+		<!--for($i=0; $i<1; $i++){-->
+		<tr>
+		<td width="22%" height="30" class="tableleft1">{$sitem3}<!--echo $i+1;-->：</td>
+		<td width="78%" class="tableright1">
+			<input type="text" class="input" size="25" name="{$sitem2}[]" id="{$sitem2}_{$i}" value="{$s[$sitem2][$i]}"/>
+			<input type="button" name="button" value="取{$sitem3}" class="button" onclick="javascript:document.bindip.{$sitem2}_{$i}.value='{$vd[$sitem2]}';">
+		</td>
+		</tr>
+		<!--}-->
+		<tr>
+		<td class="tableleft1">帐户交易密码：</td>
+		<td class="tableright1"><input type="password" name="tradepwd" size="25" class='input'/></td>
+		</tr>
+		
+		<tr>
+		<td class="tableleft1">&nbsp;</td>
+		<td class="tableright1"><input type="hidden" name="Login_my" value="15904562"><input type="submit" name="submit" value="确认设置" class="button" > <input type="reset" name="reset" value="重新填写" class="button"></td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+</body>
+</html>

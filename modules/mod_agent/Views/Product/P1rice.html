@@ -1,0 +1,77 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&c=Dealer&a=home">经销商管理系统</a> >> 业务员管理 >> 业务员帐户管理</span></div>
+	<div id="hearder"><span>设定商品价格</span></div>
+  <!--$p = $vd['product']; -->
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+  <form method="post" action="index.php?m=mod_agent&c=product&a=PriceSave" >
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+    <tr>
+      <td width="22%" class="tableleft1">商品名称：</td>
+      <td width="78%" align="left" class="tableright1"><b>{$p['pname']}</b></td>
+    </tr>
+    <tr>
+      <td class="tableleft1">商品面值：</td>
+      <td class="tableright1"><span id="listprice">{$p['listprice']}</span>{$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr>
+      <td class="tableleft1">进货价：</td>
+      <td class="tableright1"><span id="cprice">{$p['price']}</span>{$vd['lang']['moneyunit']}</td>
+    </tr>
+    <!--$i = 3; foreach($vd['items'] as $item) {-->
+    <tr>
+      <td class="tableleft1">{$item['name']}：</td>
+      <td class="tableright1">
+      	<div style="width:50%;float:left">
+      	<input name="id[]" type="hidden" value="{$item['id']}"/>
+      	<input id="priceid_{$i}" name="price_{$item['id']}" type="text" size="25" value="{$item['price']}" class="myinput" onkeyup="set({$i})"/>{$vd['lang']['moneyunit']}
+        </div>
+        <div style="width:25%;float:left" id="discount_{$i}">--</div>
+        <div style="width:20%;float:right" id="save_{$i}">--</div>
+      	</td>
+    </tr>
+    <!--$i++;}-->
+    <tr>
+      <td class="tableleft1">&nbsp;</td>
+      <td class="tableright1"><input type="submit" value="确认修改" class="button"/> <input type="reset" value="重置价格" class="button"/></td>
+    </tr>
+  </table>
+  <input name="priceid" type="hidden" value="{$vd['priceid']}"/>
+  <input name="pid" type="hidden" value="{$p['pid']}"/>
+  </form>
+	</td>
+	</tr>
+	</table>
+	
+<script type="text/javascript">
+	var $ = function(id){
+		return document.getElementById(id);
+	}
+	
+	function set(id)
+	{
+		//获取价格
+		var listprice = $('listprice').innerHTML;
+		var thisprice = $('priceid_' + id).value;
+		var save = listprice - thisprice;
+		if(listprice <= 0)
+		{
+			listprice = 1;
+		}
+		var discount = (1 - (save / listprice)) * 100;
+		
+		$('save_' + id).innerHTML = "节省：<font color='#ff0000'>" + save.toFixed(2) + "</font>{$vd['lang']['moneyunit']}";
+		$('discount_' + id).innerHTML = "折扣：<font color='#ff0000'>" + discount.toFixed(2) + "%</font>";
+	}
+	
+	for(var i=3;i<(priceTable.rows.length - 1);i++)
+	{
+		set(i);
+  }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,11 @@
+<div id="cpinfo">
+<div class="cp"><span><a href="javascript:disp('psupinfo{$vd['item']['pid']}');"><img src="{$vd['content']}images/close.gif" border="0" align="absmiddle"/></a></span><img src="{$vd['content']}images/icon_khfw.gif" align="absmiddle"> 客户服务</div>
+<!--if($vd['cansee'] == 1){-->
+<p><b>供 货 商：</b>{$vd['item']['company']}<br>
+<b>联系电话：</b><!--echo implode(',', $vd['item']['atel']);--><br>
+
+<b>Q Q 联系：</b> <!--foreach($vd['item']['aqq'] as $item){--><a href=tencent://message/?uin={$item}&Site=客服&Menu=yes><u>{$item}</u></a> <!--}--><br></p>
+<!--}else{-->
+<p>无权查看此供货商联系方式，购卡问题请站内订单投诉至此供货商</p>
+<!--}-->
+</div>

@@ -1,0 +1,108 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：直销商管理系统 >> 积分管理 >> 兑换记录</span></div>
+	<div id="tabs5">
+		<ul class="menu5" id="menu5">
+		  <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored';"><span class="type">兑换商品</span></li>
+      <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored&a=OrderList';" class="hover"><span class="letters">兑换记录</span></li>
+      <li onclick="location.href='{$vd['root']}index.php?m=mod_b2b&c=Scored&a=ScoredList';"><span class="letters">累积记录</span></li>
+    </ul>
+	</div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form action="index.php"  method="get" name="form" >
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+    <!--$ptype=request('ptype');$ordstate=request('ordstate');-->
+    <tr>
+      <td width="22%" height="30" class="tableleft1">
+        时间段：
+      </td>
+      <td width="78%" class="tableright1">
+      <input type="text" name="startdate" size="18" value="{$vd['startdate']}" class="input" style="vertical-align:middle;" id="startdate"/>
+      <b>到 -></b>
+      <input type="text" name="enddate" size="18" value="{$vd['enddate']}" class="input" style="vertical-align:middle;" id="enddate"/>
+      </td>
+    </tr>
+    <tr>
+      <td width="22%" height="30" class="tableleft1">&nbsp;
+      </td>
+      <td width="78%" class="tableright1">
+        <input type="hidden" name="m" value="mod_b2b">
+        <input type="hidden" name="c" value="Scored">
+        <input type="hidden" name="a" value="OrderList">
+        <input type="submit" value="马上查询 &gt;&gt;" class="button"/>
+      </td>
+    </tr>
+    </table>
+    </form>
+  </td>
+  </tr>
+  </table>
+  <br/>
+  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+  <table class="table" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr class="tabletitle">
+      <td width="8%" class="heardertop1">
+        操作员</td>
+      <td width="30%" class="heardertop1" style="text-align:left;padding-left:3px">
+        积分商品</td>
+      <td width="6%" class="heardertop1">
+        数量</td>
+      <td width="9%" class="heardertop1">
+        消耗积分</td>
+      <td width="10%" class="heardertop1">
+        订单状态</td>
+      <td width="10%" class="heardertop1">
+        日期</td>
+      <td width="10%" class="heardertop1">
+        详细</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td><!--if($item['staffid'] > 0){-->员工({#DisplayCode($item['staffid'])})<!--}else{-->总帐号<!--}--></td>
+      <td style="text-align:left;padding-left:3px">{$item['pname']}</td>
+      <td>{$item['qty']}</td>
+      <td>{$item['scored']}</td>
+      <td><!--if($item['ordstate']==1 || $item['ordstate']==3 ){--><font color="#ff0000">处理中<!--}else if($item['ordstate']==-1){--><font color="#cccccc">无效<!--}else{--><font color="#008800">已处理<!--}--></font></td>
+      <td>{$item['createdate']}</td>
+      <td>
+        <!--if($item['method']==1 || $item['method']==2){-->
+        <a href="javascript:openScript('{$item['ordno']}')">
+        <font color="#0000ff">查看</font>
+        </a>
+        <!--}else if($item['method']==3){-->
+        <a href="index.php?m=mod_agent&c=Order&a=netail&ordno={$item['ordno']}">
+        <font color="#0000ff">查看</font>
+        </a>
+        <!--}else{-->
+        --
+        <!--}-->
+      </td>
+    </tr>
+    <!--}-->
+  </table>
+  </td>
+  </tr>
+  </table>
+	<div id="page">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>
+<script type="text/javascript">
+function openScript(ordno,name,width,height)
+{
+    var Win = window.open("index.php?m=mod_b2b&c=scored&a=Oetail&ordno=" + ordno, name,'width=780,height=580,resizable=0,scrollbars=yes,menubar=no,status=no');
+}
+
+function dateDialog(idx)
+{
+  obj = document.getElementById(idx)
+  dv=window.showModalDialog("{$vd['sc']}tools/datedialog.html?date="+obj.value,"44","center:1;help:no;status:no;dialogHeight:240px;dialogWidth:185px;scroll:no")
+  if (dv) {if (dv=="null") obj.value='';else obj.value=dv;}
+}
+</script>

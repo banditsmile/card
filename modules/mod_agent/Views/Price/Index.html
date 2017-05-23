@@ -1,0 +1,66 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+<table id="orderTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+	<tr class="tabletitle">
+    <td width="10%" align="center" height="35">
+      编号</td>
+    <td width="30%" align="left" height="35">
+      <div style="padding-left:5px;">商品名称</div></td>
+    <td width="10%" align="center" height="35">
+      商品类型</td>
+    <td width="10%" align="center" height="35">
+      面值</td>
+    <td width="10%" align="center" height="35">
+      进货价</td>
+    <td width="10%" align="center" height="35">
+      是否已定价</td>
+    <td width="10%" align="center" height="35">
+      定价</td>
+    <td width="5%" align="center" height="35">
+      <img src="{$vd['content']}images/icon_edit.gif"/></td>
+    <td width="5%" align="center" height="35">
+      <img src="{$vd['content']}images/destroy.gif"/></td>
+  </tr>
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="10%" align="center" height="35" bgcolor="#FFFFFF">{$item['pid']}</td>
+    <td width="30%" align="left" height="35" bgcolor="#FFFFFF"><div style="padding-left:5px;">{$item['pname']}</div></td>
+    <td width="10%" align="center">{#ProductType($item['ptype'])}</td>
+    <td width="10%" align="center">{$item['listprice']}</td>
+    <td width="10%" align="center">{$item['price']}</td>
+    <td width="10%" align="center"><!--if($item['priceset'] > 0){--> 已定价 <!--}else{--> <font color="#cccccc">未定价</font> <!--}--></td>
+    <td width="10%" align="center">[<a href="?m=mod_agent&c=product&a=price&pid={$item['pid']}"><font color="#00875A">定价</font></a>]</td>
+    <td width="5%" align="center">
+    	<a href="index.php?m=mod_agent&c=Product&a=Detail&pid={$item['pid']}" title="编辑商品"><img src="{$vd['content']}images/icon_edit.gif"  border="0"/>
+    </td>
+    <td width="5%" align="center">
+    	<a href="index.php?m=mod_agent&c=Product&a=DestroyItems&id={$item['pid']}" title="删除商品"><img src="{$vd['content']}images/destroy.gif" border="0" style="cursor:pointer"/></a>
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="12">
+    <form method="post" action="index.php?m=mod_agent&c=Product&{$vd['op']}">
+      <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_agent&c=Product&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_agent&c=Product&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</div>
+{load(foot)}
+<script type="text/javascript">
+	var $=function(id){
+		return document.getElementById(id);
+	}
+	
+	function disp(idx)
+	{
+		$(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+	}
+</script>

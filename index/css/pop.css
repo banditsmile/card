@@ -1,0 +1,221 @@
+* { word-wrap: break-word; overflow-x:hidden;overflow-y:auto;}
+body { background: #FFF; color: #000; font:12px Tahoma, Helvetica, Arial, Simsun }
+body, h1,h3, form, fieldset,p,dd,dl,dt{ margin: 0; padding: 0; }
+
+h1 { height: 32px; line-height: 32px; background: url(../../images/h_skin1/headerbg.gif) repeat-x 50%; border-bottom: 1px solid #CAD9EA; color: #005C89; font-size: 1.13em; padding-left: 0.5em; }
+li {list-style-type: none; }
+h2 {font-size:12px;border-bottom:1px solid #ccc;margin:0;margin-bottom:2px;}
+
+#TradePasswordObj {border:2px solid #eee;height:22px;width:150px}
+
+a:link,a:visited {color:#555;}
+a:hover,a:active {color:red;}
+
+.tijiao_input,.fanhui_input {width:92px;height:36px;border:0;color:#368004;background:url(../../images/h_skin1/icon_tijiao.gif) no-repeat;font-weight:bold}
+.fanhui_input {color:#915d18;background:url(../../images/h_skin1/icon_fanhui.gif) no-repeat;}
+
+#lblPrice {color:red;}
+#lblPriceSum,.producttype2 {color:red;} 
+#GameNum,.producttype1 {color:blue}
+.producttype3{color:#f0f}
+.producttype4{color:#00a000}
+#lprice {padding-left:10px;}
+
+.LTMCLUB {color:red;}
+.XXJZGW {color:#fb0;}
+.XXQGAME {color:#08f;}
+.XXQQF,.XXLOVE {color:#f00;}
+.PETVIP {color:#f08}
+.XXQQT,.QQR2BY,.QQFCZZ {color:#a0f;}
+.XXZXYY {color:#139e00;}
+
+#TotalMoney {color:red;font-weight:bold;font-size:14px}
+#lblProcessNote,#ProcessNote {font-weight:bold;color:blue}
+.input0,.input01 {border-top:1px solid #738fad;border-left:1px solid #738fad;border-right:1px solid #adbfd1;border-bottom:1px solid #adbfd1;padding:2px;vertical-align:middle;color:#000;width:150px;height:19px;line-height:19px;}
+.input01 {background:#ffffe8}
+.producttype-km {color:blue}
+.producttype-zc {color:red}
+.producttype-sd {color:#7457f9}
+.producttype-zhzd {color:red}
+.producttype-kmzd {color:#ff00ff}
+.producttype-xh {color:#0bf}
+.producttype-jkzd {color:#f60}
+
+.stemplate {background:#ffe6f4;}
+.ctemplate {background:#e6f5ff;}
+.template {font-style:italic;}
+
+.status1{color:#090}
+.status2{color:red}
+.status3{color:#aaa}
+.status4{color:#007cfd}
+.ddh {font-weight:bold;}
+.tousu {background:url(../../images/h_skin1/icon_tousu.gif) no-repeat;border:0;width:106px;padding-left:22px;height:21px;font-size:12px;margin:0 5px;cursor:pointer}
+
+.clear {clear:both;height:0;line-height:0;font-size:0}
+.neirong,.chong {padding:5px;}
+
+#msgdiv {	position:absolute;width:674px; 
+	height:510px;margin:-255px 0px 0px -337px; 
+top: 50%; 
+left: 50%;
+	background:#F1F1F1;text-align:center;font-size:14px;line-height:1.7}
+#msgdiv h3{ font-size:14px;height:22px;line-height:22px;}
+#msgdiv ul{  padding:10px;text-align:left;color:red;border:5px dotted #f30;width:90%;margin:10px auto;}
+#msgdiv #Button1 {height:30px}
+
+/* ----------数据展示表单---------- */
+.table1 {background:#a4c2dc;width:100%;margin:0 auto}
+.table1 th {padding:3px;color:#39789a;background:#e0f3fc;border-left:1px solid #fff;border-top:1px solid #fff;}
+.table1 td {padding:3px;padding-left:5px;text-align:center;}
+.table1 tr {background:#fff}
+.table1 .tr1 {background-color:#f6fcff;}
+.table1 .tr2 {background-color:#fff;}
+.table1 .tdleft {text-align:left;}
+.table1 .table1_left {width:25%;text-align:right;padding-right:5px;color:#39789a;background:#f1faff;border-left:1px solid #fff;border-top:1px solid #fff;}
+.table1 .table1_left span {color:red}
+.table1 .table1_left span.lblCustomerLevel {color:#39789a}
+.table1 .zs {color:#aaa}
+
+/* ----------提交类表单---------- */
+.page_table2 {border:0;width:100%;font-size:14px;background:#f6dfb0;}
+.page_table2 table td{padding:0;margin:0;}
+.page_table2 th{padding:4px;background:#fff8c6;text-align:left;font-size:12px;border-left:1px solid #fff;border-top:1px solid #fff}
+.page_table2 td{padding:5px;background:#fffef7;}
+.page_table2 .td_left{text-align:right;width:28%;color:#5e3d00;}
+.page_table2 .zs {color:#bbb;padding-left:5px;font-size:12px}
+.page_table2 .red {color:red}
+.page_table2 .blue {color:#6241ff}
+.page_table2 .mibao {color:#f52554;font-size:14px;padding-left:5px;font-weight:bold}
+
+
+#txtAccountName,#txtAccountName1,#DrCount,#txtComment,#SellPrice,#DrGame,#DrGameZoon,#DrGameType,#txtGameID,#txtGameID1,#area,#garea,#sell_type,#DrCountDian,#cfserver,#gserver,#txtChargeWay,.page_table2 select{background:#fff;border:1px solid #ccc;border-top:1px solid #888;border-left:1px solid #888;padding:4px;background:#fff;}
+
+#txtAccountName,#txtAccountName1,#txtGameID,#txtGameID1,#txtChargeWay {width:160px;font-size:18px;font-weight:bold}
+#spanSeeMoney {cursor:pointer}
+#TemplatesConfirm_lblAccount,#TemplatesConfirm_lblChargeWay,#TemplatesConfirm_lblNum {color:blue;font-weight:bold}
+#TemplatesConfirm_lblTotalMoney {color:red;font-weight:bold}
+
+
+
+/* ----------统一背景图片---------- */
+.input_lishi,.input_lishi1,.accountcss li .lishi_right INPUT,.input_error,.button_buy,.button_mouseover1,.button_close,.button_mouseover2,.button_other,.button_other_on,.tishi{background:url(../../images/pop_di.png) no-repeat;}
+
+/* ----------历史账号按钮---------- */
+.input_lishi,.input_lishi1 {background-position: 0 -87px;height:20px;line-height:20px;width:80px;border:none;font-size:12px;padding:0;margin:0;cursor:pointer;text-align:left;padding-left:10px;}
+.input_lishi1{background-position: 0 -107px;}
+
+
+
+.accountcss {background:#fff;border:1px solid #ccc;overflow: hidden;width:180px;position: absolute; overflow-x: hidden;overflow:auto;height: expression( this.scrollHeight > 220 ? "220px" : "auto" );max-height: 220px;}
+.accountcss h3 {padding-left:5px;font-size:12px;height:22px;line-height:22px;background:#e9e9e9;}
+.accountcss h3 span{color:#808080;padding-left:8px;font-weight : normal}
+.accountcss ul {padding:5px;overflow: hidden;margin:0}
+.accountcss .lishi_on {background:#f5f5f5;}
+.accountcss li {overflow: hidden;background:#fff;height:22px;line-height:22px;border-bottom:1px dotted #ddd;}
+
+.accountcss li .lishi_left {float:left;text-overflow:ellipsis;width:130px;text-decoration:none}
+.accountcss li .lishi_right {float:left;}
+.accountcss li .lishi_right INPUT {border:0;margin:0;cursor:pointer;background-position: 0 -207px;height:22px;width:22px;}
+
+
+.input_error {display:inline-block;margin-left:5px;background-color:#fceee8;background-position: -1px -171px;border:1px solid #f6c8b5;padding:3px;padding-left:20px}
+
+
+/* ----------直冲后状态---------- */
+.page_table3 {border:0;width:100%;background:#f1d18e;margin-bottom:10px;}
+.page_table3 td{padding:10px;background:#fffef7}
+.page_table3 .td_left{text-align:right;width:25%;color:#704900}
+
+
+.tijiao {margin:10px 5px 20px 3px;padding-left:28%;}
+.tijiao span{background:url(../../images/loading1.gif) no-repeat 0 50%;padding-left:20px;color:#43ab00;display:block;height:36px;line-height:36px;}
+
+
+.button_buy,.button_mouseover1,.button_close,.button_mouseover2,.button_other,.button_other_on{background-color: #ffb043 ;background-position: 0 0;border:0;margin:0;padding:0;font-size:14px;font-weight:bold;cursor:pointer}
+.button_buy,.button_mouseover1{color:#5a0d00;width:108px;height:36px;margin-right:8px;}
+.button_mouseover1{background-position: 0 -40px;}
+.button_close,.button_mouseover2 {background-position: -112px 0;width:70px;height:36px;color:#666}
+.button_mouseover2{background-position: -112px -40px;}
+.button_other,.button_other_on {background-position: -112px 0;width:70px;height:36px;color:#666;margin-right:8px;}
+.button_other_on{background-position: -112px -40px;}
+
+.jieguo {margin-bottom:10px;overflow: hidden;}
+.jieguo .zt {font-weight:bold;font-size:14px;display:block;}
+.jieguo .ko,.jieguo .cz,.jieguo .tj1,.jieguo .tj2 {border:1px solid #52ca00;padding:15px;color:#06ae00;background:url(../../images/h_skin1/icon_ko.gif) #f4ffea no-repeat 25% 50%;padding-left:30%;font-size:16px }
+.jieguo .sb {border:1px solid #ff4e00;padding:15px;color:red;background:url(../../images/h_skin1/icon_sb.gif) #ffede8 no-repeat 25% 50%;padding-left:30%;font-size:16px  }
+.jieguo .ky {border:1px solid #f89e00;padding:15px;color:#f60;background:url(../../images/h_skin1/icon_ky.gif) #fffcea no-repeat 25% 50%;padding-left:30%;font-size:16px  }
+
+.tishi {padding:5px;background-color:#ffffce;background-position: 2px -136px;padding-left:25px;color:#090;border:1px solid #ffba42;margin-bottom:10px;}
+.tishi span {color:#f60;font-weight:bold}
+
+.otherPassword {border:1px solid #ffb171;border-top:1px solid #ff5208;border-left:1px solid #ff5208;background:#fff9f5;width:180px;height:20px;line-height:20px;font-size:12px;padding:3px;}
+
+/* ----------取卡密列表---------- */
+.page_table4 {border:0;width:100%;background:#fff;text-align:center}
+.page_table4 th{text-align:center;background:#fff4c9;color:#a15300;}
+.page_table4 td{background:#fffef4;
+	font-style:normal;
+	font-size:12px;
+	font-weight:bold;
+	font-family:verdana,宋体;border-bottom:1px dotted #ddd;}
+#card td {padding:3px}
+
+.g_an {float:right}
+.g_an input {font-size:12px;background:#fde6e2;padding:0px;width:70px;height:22px;line-height:22px;color:#7b3a2d;margin-right:3px;border:1px solid #d6a49a;border-top:1px solid #fff;border-left:1px solid #fff;}
+.g_an .input2 {background:#d9e5fc;color:#37559e;border:1px solid #7c9ee4;border-top:1px solid #fff;border-left:1px solid #fff;}
+
+.table5 {background:#bcd8ec;width:100%;margin:0 auto;}
+.table5 tr {background:#fff}
+.table5 td {height:24px;text-align:center;}
+.table5 .tdleft {text-align:left;padding-left:5px;}
+.table5 th {height:28px;color:#006ab8;background:#f1faff;}
+
+
+.xuanze_input {background:url(../../images/h_skin1/icon_xuanze.gif) no-repeat;border:0;width:41px;height:22px;color:#9c5100;font-size:12px;margin-right:4px;}
+
+.saveingok {background:url(../../images/h_skin1/tb_ico.gif) no-repeat 20px 50%;height:55px;padding:30px 0 0 80px}
+.saveingok2 {text-align:right}
+
+
+.table_card {border:0;background:#fff;text-align:center;width:100%}
+.table_card th {text-align:center;background:#fff4c9;color:#a15300;width:25%;}
+.table_card td
+{   background:#fffef4;width:25%;
+    font-style:normal;
+    font-size:12px;
+    font-weight:bold;
+    font-family:verdana,宋体;border-bottom:1px dotted #ddd;}
+
+
+
+.biaoge {margin:5px;border-left:1px solid #a4c2dc;}
+.biaoge h2{background:url(../../images/h_skin1/th_di.gif) repeat-x;text-align:left;border-bottom:1px solid #a4c2dc;height:28px;line-height:28px;padding:0px;padding-left:7px;font-size:12px;margin:0;border-right:1px solid #a4c2dc;border-top:1px solid #a4c2dc;width:858px;}
+.biaoge ul {overflow: hidden;padding:0;margin:0;clear:both;}
+.biaoge li{border:1px solid #a4c2dc;width:432px;float:left;list-style:none;border-top:none;border-left:none;}
+.biaoge span {display:block;float:left;height:24px;line-height:24px;}
+.biaoge .bt {background:#f1faff;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #a4c2dc;text-align:right;font-weight:bold;color:#256181;width:135px}
+.biaoge .nr {padding-left:5px;}
+.biaoge .kuan,.biaoge .kami_li {width:865px;}
+.biaoge  .url {color:#0d57ff}
+.biaoge  .gao {height:30px;line-height:30px}
+
+
+.xx_button1,.xx_button2,.xx_button3 {width:102px;height:27px;background:url(../../images/h_skin1/anniu.gif) no-repeat;border:none;color:#fff;font-weight:bold;font-size:14px;margin:0;padding:0;}
+.xx_button2 {background-position: 0 -54px;}
+.xx_button3 {background-position: 0 -27px;color:#853e00}
+
+.input_jc2 {cursor:pointer;background:url(../../images/h_skin1/input_di5.png) no-repeat 0 -27px;width:62px;height:27px;line-height:25px;color:#000;font-size:12px;border:0;margin-left:5px}
+.input_jc2 {background-position:0 -81px;width:88px;}
+
+
+.new_qie {margin-bottom:10px;background:url(../../images/h_skin1/qie_new_di.png) #f6f8fa repeat-x bottom;padding:0 10px;height:35px;line-height:35px;}
+.new_qie2 {height:35px;line-height:35px;float:left;overflow:hidden;}
+.new_qie2 h2 {font-size:14px;height:35px;line-height:35px;float:left;margin-right:15px;display:inline-block;}
+
+.new_qie ul {float:right;overflow:hidden;}
+.new_qie li {float:left;height:32px;line-height:32px;padding-top:3px;text-align:center;margin-right:2px;overflow:hidden;}
+.new_qie li a{text-decoration:none; color:#07f;}
+.new_qie li a:link,.new_qie li a:visited {display:block;padding:0 20px;}
+.new_qie .on,.new_qie .on:hover,.new_qie .on:active {background:#fff;border:1px solid #d1d9df;border-bottom:1px solid #fff;color:#222}
+.new_qie li a:hover,.new_qie li a:active {}

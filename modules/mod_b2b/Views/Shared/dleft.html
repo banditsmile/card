@@ -1,0 +1,389 @@
+<div class="loginwaper">
+<div class="login">
+      <p><label>商家编号：</label><span id="mchaid">{#DisplayCode($vd['agent'][7],4,0)}</span></p>
+      <p><label>商家名称：</label><span id="mchcompany">{$vd['agent'][1]}</span></p>
+      <p><label>经销级别：</label><span id="mchalv">{$vd['agent'][2]}</span></p>
+      <p id="mchremainid"><label>商家余额：</label><span id="mcharemain">{$vd['ainfo']['aremain']}</span></p>
+      <p><label>负责区域：</label><span id="mchaddr">{$vd['agent'][3]}</span></p>
+      <p id="mchparentidid"><label>商家上级：</label><span id="mchparentid">{#DisplayCode($vd['agent'][4])}</span></p>
+      <p id="mchparentidid"><label>未转提成：</label><span id="mchparentid">{$vd['ainfo']['income']}</span></p>
+      <!--if($vd['ainfo']['custom'] == 1){-->
+      <p id="mchparentidid"><label>未转收入：</label><span id="mchparentid">{$vd['ainfo']['funds']}</span></p>
+      <!--}-->
+      <p class="loginBt"><a href="{$vd['root']}index.php?m=mod_b2b&a=logout" class="btn_4gray_link">退出系统</a></p>
+</div>
+<div style="clear:both;"></div>
+</div>
+<?php
+  $tmp = array();
+  if(isset($vd['agent'][9]) && $vd['agent'][9] > 0)
+  {
+    $staffrights = $vd['agent'][11];
+    $tmp = explode(',',$staffrights);
+  }
+  else
+  {
+    $staffrights = $vd['agent'][11];
+    $tmp = explode(',',$staffrights);
+    $len = count($tmp);
+    if($len < 20)
+    {
+      for($i = 0; $i < 80; $i++)
+      {
+        $tmp[$i] = '0';
+      }
+    }
+  }
+  
+  $ctemp = $vd['config'];
+?>
+<div class="iconzone"><div class="icondiv" id="icondiv" <!--if($vd['msgn'] == 0){-->style="display:none"<!--}-->><img src="{$vd['content']}images/msgnoread.gif" style="vertical-align:middle"/> <a href="index.php?m=mod_agent&c=Messenger"><span id="msgn" class="msgn">{$vd['msgn']}</span></a> 条</div></div>
+<!--if( $tmp[18]==1 && isset($ctemp['19']) && $ctemp['19'] > 0){-->
+<div id="rbbox" style="display:none">
+  <a class="tipbutton" onclick="closeBox()">关闭</a>
+  <iframe id="tipframe" src="index.php?m=mod_agent&c=Messenger&a=MsgNotRead" frameborder="0" height="200" width="300" scrolling="no"></iframe>
+</div>
+
+<script type="text/javascript">
+  function showBox(o)
+  {
+    if (o == undefined) o = $("rbbox");
+    if (o.clientHeight<230)
+    {
+      o.style.height=o.clientHeight+2+"px";
+      setTimeout(function(){showBox(o)},5); 
+    } 
+  }
+  function closeBox()
+  {
+    $("rbbox").style.display="none"; 
+  }  
+
+	function LeftMsgAlert(){
+    var xmlhttptop;
+    var obj = $("msgn");
+    var content = "错误！"
+    try{
+      xmlhttptop=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlhttptop=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttptop.onreadystatechange=function(){
+      if (xmlhttptop.readyState==4){
+        if (xmlhttptop.status==200){
+          var data=xmlhttptop.responseText;
+          obj.innerHTML = data;
+          if(data != "" && data.length < 4 && data > 0)
+          {
+            if(data > 0)
+            {
+            	<!--if( isset($ctemp['18']) && $ctemp['18'] == 1){-->
+            	tipobj  = document.all ? window.frames["tipframe"] : window.document.getElementById("tipframe").contentWindow;
+            	tipobj.location.reload();
+            	$("rbbox").style.display = "";
+          	  showBox();
+          	  <!--}-->
+          	  $("icondiv").style.display = "";
+            }
+            else
+          	{
+          		closeBox();
+          		$("icondiv").style.display = "none";
+          	}
+          }
+          else
+        	{
+        		closeBox();
+          	$("icondiv").style.display = "none";
+        	}
+        }
+      }
+    }
+    xmlhttptop.open("post", "{$vd['root']}index.php?m=mod_b2b&c=Frame&a=Msg", true);
+    xmlhttptop.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttptop.send('');
+  }
+  setInterval(LeftMsgAlert, <!--echo $ctemp['19']*1000;-->);
+  <!--if($vd['msgn'] > 0 && isset($ctemp['18']) && $ctemp['18'] == 1){-->
+  	$("rbbox").style.display = "";
+    showBox();
+  <!--}-->
+</script>
+<!--}-->
+<div style="clear:both;"></div>
+<div class="turnzxs" onclick="javascript:window.location.href='index.php?m=mod_b2b&c=Home&a=Home'" ><div class="">转入直销商系统</div></div>
+<div id="main">
+<?php
+  $leftinfo = array(
+  array(
+    'name' => '下级客户管理',
+    'cls'  => 'khgl',
+    'id'   => array(13,14,30,46,47),
+    'val'  => array(
+        array(
+        'id'   => 13,
+        'txt' => '代注册下级帐号',
+        'url'  => 'index.php?m=mod_agent&c=Underling&a=Add'
+        ),
+        
+        array(
+        'id'   => 14,
+        'txt'  => '下级客户档案管理',
+        'url'  => 'index.php?m=mod_agent&c=Underling'
+        ),
+        
+        array(
+        'id'   => 30,
+        'txt' => '下级客户价格管理',
+        'url'  => 'index.php?m=mod_b2b&c=price'
+        ),
+        
+        array(
+        'id'   => 46,
+        'txt'  => '下级客户购卡权限',
+        'url'  => 'index.php?m=mod_agent&c=Underling&a=right'
+        ),
+        
+        array(
+        'id'   => 47,
+        'txt'  => '下级客户消费记录',
+        'url'  => 'index.php?m=mod_agent&c=Underling&a=Consump'
+        )
+      ),
+    ),
+  array(
+    'name' => '财务管理',
+    'cls'  => 'cwgl',
+    'id'   => array(9,35,10,4),
+    'val'  => array(
+        array(
+        'id'   => 4,
+        'txt' => '帐户余额详细',
+        'url'  => 'index.php?m=mod_agent&c=funds&a=detail',
+        ),
+        array(
+        'id'   => 9,
+        'txt' => '划款给下级客户',
+        'url'  => 'index.php?m=mod_agent&c=funds&a=tran'
+        ),
+        array(
+        'id'   => 35,
+        'txt' => '下级汇款通知书',
+        'url'  => 'index.php?m=mod_agent&c=Remit'
+        ),
+        array(
+        'id'   => 10,
+        'txt' => '销售提成报表查询',
+        'url'  => 'index.php?m=mod_agent&c=trade&tpl=profit&tradetype=11'
+        ),
+        array(
+        'id'   => 4,
+        'txt' => '提成或收入转余额',
+        'url'  => 'index.php?m=mod_agent&c=funds&a=detail'
+        )
+      ),
+    ),
+    array(
+    'name' => '自有商品管理',
+    'cls'  => 'spgl',
+    'id'   => array(28,31,44,32,56,56,44,10,16),
+    'val'  => array(
+        array(
+        'id'   => 28,
+        'txt' => '商品发布与管理',
+        'url'  => 'index.php?m=mod_agent&c=Product'
+        ),
+        array(
+        'id'   => 31,
+        'txt' => '商品库存管理',
+        'url'  => 'index.php?m=mod_agent&c=Product&a=Stock'
+        ),
+        array(
+        'id'   => 44,
+        'txt' => '商品销售报表查询',
+        'url'  => 'index.php?m=mod_agent&c=AOrder&a=Simple'
+        ),
+        array(
+        'id'   => 32,
+        'txt' => '销售收入入帐记录',
+        'url'  => 'index.php?m=mod_agent&c=AOrder'
+        ),
+        array(
+        'id'   => 56,
+        'txt' => '手工商品代充',
+        'url'  => 'index.php?m=mod_agent&c=AOrder&a=CzOrder&ptype=sd&ordstate=1&by=1',
+        'nobr' => 1
+        ),
+        array(
+        'id'   => 56,
+        'txt' => '记录',
+        'url'  => 'index.php?m=mod_agent&c=AOrder&a=CzOrderList&ptype=sd'
+        ),
+        array(
+        'id'   => 44,
+        'txt' => '虚拟卡密交易记录',
+        'url'  => 'index.php?m=mod_agent&c=AOrder&&a=Simple&ptype=km'
+        ),
+        array(
+        'id'   => 10,
+        'txt' => '自有商品收入报表',
+        'url'  => 'index.php?m=mod_agent&c=trade&tpl=Sup&tradetype=12'
+        ),
+        array(
+        'id'   => 16,
+        'txt' => '订单投诉处理',
+        'url'  => 'index.php?m=mod_agent&c=Complaint&msgdirect=1'
+        )
+      ),
+    ),
+    array(
+    'name' => '业务员管理',
+    'cls'  => 'ywy',
+    'id'   => array(49,50),
+    'val'  => array(
+        array(
+        'id'   => 49,
+        'txt' => '业务员帐户管理',
+        'url'  => 'index.php?m=mod_agent&c=Sales'
+        ),
+        array(
+        'id'   => 50,
+        'txt' => '业务员业绩查询',
+        'url'  => 'index.php?m=mod_agent&c=Sales&a=Achievement'
+        )
+      ),
+    ),
+    
+    array(
+    'name' => 'VIP平台管理',
+    'cls'  => 'vip',
+    'id'   => array(53,62,63,55,54,53),
+    'val'  => array(
+        array(
+        'id'   => 53,
+        'txt' => 'VIP平台设置',
+        'url'  => 'index.php?m=mod_agent&c=Vip'
+        ),
+        array(
+        'id'   => 62,
+        'txt' => 'VIP风格选择',
+        'url'  => 'index.php?m=mod_agent&c=VipTheme'
+        ),
+        array(
+        'id'   => 63,
+        'txt' => 'VIP风格自定义',
+        'url'  => 'index.php?m=mod_agent&c=VipTheme&a=Diy'
+        ),
+        array(
+        'id'   => 55,
+        'txt' => 'VIP平台公告',
+        'url'  => 'index.php?m=mod_agent&c=VipArticle'
+        ),
+        array(
+        'id'   => 54,
+        'txt' => 'VIP平台广告',
+        'url'  => 'index.php?m=mod_agent&c=VipAd'
+        ),
+        array(
+        'id'   => 53,
+        'txt' => 'VIP平台LOGO',
+        'url'  => 'index.php?m=mod_agent&c=VipLogo'
+        )
+      ),
+    ),
+    array(
+    'name' => '一卡通经销管理',
+    'cls'  => 'cwgl',
+    'id'   => array(57,58,59,60),
+    'val'  => array(
+        array(
+        'id'   => 57,
+        'txt' => '代理一卡通列表',
+        'url'  => 'index.php?m=mod_agent&c=Ykt&nrows=100'
+        ),
+        array(
+        'id'   => 58,
+        'txt' => '代理一卡通换购记录',
+        'url'  => 'index.php?m=mod_agent&c=Ykt&a=Order'
+        ),
+        array(
+        'id'   => 59,
+        'txt' => '换购商品返点费率',
+        'url'  => 'index.php?m=mod_agent&c=Ykt&a=Reward&nrows=40'
+        ),
+        array(
+        'id'   => 60,
+        'txt' => '一卡通返点明细',
+        'url'  => 'index.php?m=mod_agent&c=Ykt&a=RewardTrade'
+        )
+      ),
+    )
+  );
+  foreach($leftinfo as $item)
+  {
+    if($item['name'] == 'VIP平台管理' && $vd['ainfo']['vipshop'] != 1)
+    {
+      
+      continue;
+    }
+    
+    if($item['name'] == '自有商品管理' && $vd['ainfo']['custom'] != 1)
+    {
+      continue;
+    }
+    
+    if($item['name'] == '一卡通经销管理' && $vd['ainfo']['forykt'] != 1)
+    {
+      continue;
+    }
+    
+    $totle = 0;
+    foreach($item['id'] as $item2)
+    {
+      if($item2 == 1002 || ($item2 != 1001 && $tmp[$item2] == '1'))
+      {
+        $totle = 1;
+      }
+      else if($item2 == 1001 && isset($vd['agent'][9]) && $vd['agent'][9]==0)
+      {
+        $totle = 1;
+      }
+    }
+    
+    if($totle == 1)
+    {
+      $go = 1;
+      echo '<div class="agenttitle"><div class="'.$item['cls'].'">'.$item['name'].'</div></div><div class="box agentlist"><ul>';
+      foreach($item['val'] as $item1)
+      {
+        if($item1['id'] == 1002 || ( $item1['id'] != 1001 && $tmp[$item1['id']]=='1') || ($item1['id'] == 1001 && isset($vd['agent'][9]) && $vd['agent'][9]==0))
+        {
+          if($go)
+          {
+            echo '<li><a href="'.$vd['root'].$item1['url'].'">'.$item1['txt'].'</a>';
+          } 
+          
+          if($go == 0)
+          { 
+            echo ' / <a href="'.$vd['root'].$item1['url'].'">'.$item1['txt'].'</a>';
+            $go = 1;
+          }
+          
+          if(isset($item1['nobr']))
+          {
+            $go = 0;
+          }
+            
+          if($go)
+          {  
+            echo '</li>';
+          }
+        }
+      }
+      echo '</ul></div>';
+    }
+  }
+?>
+</div>
+<br/>

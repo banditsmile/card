@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>模板价格设置</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2>模板价格设置</h2>
+  </div>
+  <ul>
+    <li><a href="index.php?m=mod_b2b&c=price"><span>模板价格管理</span></a></li>
+    <li><a href="index.php?m=mod_b2b&c=price&a=AddRankTpl"><span >单级别价格模板</span></a></li>
+	<li><a href="" class="on">商品价格设置</a></li>
+    <li><a href="index.php?m=mod_b2b&amp;c=product&amp;a=PrivatePriceProduct"><span>商品价格密价</span></a></li>
+  </ul>
+</div>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="sellhistory" method="get" action="index.php">
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		  <td class="table1_left"> 商品名称</td>
+		<td width="78%" align="left" class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="stype" value="pname"/>
+			  <input type="hidden" name="m" value="mod_b2b"/>
+			  <input type="hidden" name="c" value="product"/>
+			  <input type="hidden" name="a" value="AgentPrice"/>
+			  <input type="text" name="keywords" size="30" class="input0" dataType="Integer" msg="请输入关键词" value="">		
+		    </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left">&nbsp;</td>
+		<td align="left" class="tableright1"><div align="left">
+		  <input type="submit" name="Submit222" value="确认查询" class="tijiao_input"> 
+		  <input type="reset" name="reset" value="重置查询" class="fanhui_input">
+		  </div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+</table>
+	<br>
+    <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
+      <tr>
+        <th width="50%" class="heardertop1"> 商品名称</td>
+        <th width="10%" class="heardertop1"> 客户服务</td>
+        <th width="12%" class="heardertop1"> 面值({$vd['lang']['moneyunit']})</td>
+        <th width="13%" class="heardertop1"> 进货价({$vd['lang']['moneyunit']})</td>
+        <th width="15%" class="heardertop1"> 设定价格</td>
+      <!--foreach($vd['items'] as $item) {-->
+	  	<tr class="trd">
+        <td width="50%" align="left">{$item['pname']}
+            <!--if($item['owner']>0 && $item['owner'] != $vd['vip']){-->
+          <img src="{$vd['content']}images/own.gif" alt="易卡网" title="自有商品"/>
+          <!--}--></td>
+        <td width="10%">系统</td>
+        <td width="12%">{$item['listprice']}</td>
+        <td width="13%">{$item['cprice']}</td>
+        <td width="15%">[<a href="index.php?m=mod_b2b&amp;c=product&amp;a=ViewAgentPrice&amp;pid={$item['pid']}"><font color="#ff0000">设定价格</font></a>]</td>
+      </tr>
+      <!--}-->
+</table>
+  	        <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+	</td>
+	</tr>
+	</table>
+	<div id="page">
+	  <div align="right">{load(fpage)}</div>
+	</div>
+</body>
+</html>

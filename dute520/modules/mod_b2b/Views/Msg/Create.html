@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+<style type="text/css">
+td{white-space:normal;overflow:auto;text-overflow:none;}
+td p{display:none}
+td P.show {
+  DISPLAY: block
+}
+td STRONG {
+CURSOR:pointer;
+COLOR:#0197c9;
+PADDING:0 3px;
+}
+
+
+</style>
+</head>
+<body>
+<form name="addnews" method="post" action="index.php?m=mod_b2b&c=msg&a=save" id="cform" onSubmit="return form1_onsubmit()">
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Msg&a=Index&optype=r&ubzisreaded=2" title="凤翔商家短信列表" onclick="loadDisp(1)"><font color="#000">凤翔商家短信列表</font></a> <span style="font-size:7px;">>></span> 发送凤翔短信息</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_msg_create" onFocus="this.blur()" title="查看凤翔商家信息相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">发送颖先卡购短信息</div>
+<div>
+  <table border="0" id="ctable2" class="ctable" bordercolor="#ededed">
+    <tr> 
+      <td class="tablelt"> 消息标题：</td>
+      <td class="tablert"><input type="text" size="25" id="ubzmtitle" name="ubzmtitle" value="{$vd['ubzmtitle']}"/></td>
+    </tr>
+    <tr> 
+      <td class="tablelt"> 收信人：</td>
+      <td class="tablert">
+      <input type="text" size="25" id="ubzmto" name="ubzmto" value="{$vd['ubzmto']}" onclick="settext(3);" style="color:#6c6c6c"/>
+      <input type="radio" name="ubzmsgtype" checked="checked" value="1" class="checkbox" onclick="settext(1);"/>给其他商户发信 <input type="radio" name="ubzmsgtype" value="2" class="checkbox" onclick="settext(2);" />给凤翔发信
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt"> 消息类型：</td>
+      <td class="tablert">
+        <select name="mtype" onchange="setts(this)">
+        {#Option($vd['tarray'], $vd['msgtype'])}
+        </select>
+      </td>
+    </tr>
+    <tr id="tr_1" style="display:none"> 
+      <td class="tablelt"> 订单号：</td>
+      <td class="tablert">
+        <input type="text" size="25" id="ordno" name="ordno" value="{$vd['ordno']}"/> <input type="button" value="详细" onclick="GetOrder()" class="button"/>
+      </td>
+    </tr>
+    <tr id="tr_2" style="display:none"> 
+      <td class="tablelt"> 投诉类型：</td>
+      <td class="tablert">
+        <select name="other">
+        <!--foreach($vd['carray'] as $item){-->
+        <option value="{$item}">{$item}</option>
+        <!--}-->
+        </select>
+      </td>
+    </tr>
+    <tr id="tr_3" style="display:none"> 
+      <td class="tablelt"> 希望处理方式：</td>
+      <td class="tablert">
+        <!--$i=0;foreach($vd['hope'] as $item){-->
+        <input type="radio" name="hope" <!--echo $i==0?'checked':''--> value="{$item}" class="checkbox"/> {$item}
+        <!--$i++;}-->
+      </td>
+    </tr>
+    <tr> 
+      <td class="tablelt"> 消息内容：</td>
+      <td class="tablert"> 
+        <textarea name="ubzmcontent" id="ubzmcontent" value="aaa" cols="<!--if($vd['frm']==1){-->50<!--}else{-->70<!--}-->" rows="10" class='input1' require="false" dataType="LimitB" max="1000" msg="投诉内容必须小于100个汉字"></textarea><br/>最多支持200个字
+      </td>
+    </tr>
+    <tr > 
+      <td class="tablelt" style="height:50px"> 注意事项：</td>
+      <td class="tablert" style="color:#ff0000;font-size:12px;font-weight:bold">
+        短信息中不允许留下任何私人联系方式，包括平台地址，手机，QQ，电话，邮件，MSN等，如果发现将按照联售系统的规则对违规者进行严惩
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+    
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="submit" value="发送短信息" class="btn"/>
+    <input type="reset" value="重置" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+function isNum(num) 
+{ 
+  if(num.match(/[^0-9]/)) return false;//找到数字以外的字符就返回假， 
+  return true; 
+}
+
+function setts(obj)
+{
+  if(obj.value == "1")
+  {
+    $("tr_1").style.display = "none";
+    $("tr_2").style.display = "none";
+    $("tr_3").style.display = "none";
+  }
+  else
+  {
+    $("tr_1").style.display = "";
+    $("tr_2").style.display = "";
+    $("tr_3").style.display = "";
+  }
+}
+
+<!--if($vd['msgtype'] == 3){-->
+  $("tr_1").style.display = "";
+  $("tr_2").style.display = "";
+  $("tr_3").style.display = "";
+<!--}-->
+
+function settext(msgtype)
+{
+  if(msgtype == 1)
+  {
+    document.addnews.ubzmto.value = "请输入接收商户的编号"
+  }
+  else if(msgtype == 2)
+  {
+    document.addnews.ubzmto.value = "10086"
+  }
+  else if(msgtype == 3)
+  {
+    if(document.addnews.ubzmto.value != "10086")
+    {
+      document.addnews.ubzmto.value = ""
+    }
+  }
+}
+
+function form1_onsubmit()
+{
+  var qrid=/(^[1-9]{1}[0-9]{1,8}$)/
+  
+  if (document.addnews.ubzmtitle.value=="")
+  {
+    alert("消息标题未填")
+    document.addnews.ubzmtitle.focus()
+    return false
+  }  
+  else if(!qrid.test(document.addnews.ubzmto.value))
+  { 
+    alert("接收商户未填或者填写的不是数字")
+    document.addnews.ubzmto.focus()
+    return false
+  }   
+  else if(document.addnews.ubzmcontent.value=="")
+  { 
+    alert("消息内容不能为空")
+    document.addnews.ubzmcontent.focus()
+    return false
+  }
+}
+
+function GetOrder()
+{
+  o = $("ordno").value;
+  if(o == "")
+  {
+    alert('请先输入订单号');
+  }
+  else
+  {
+    window.open("index.php?m=mod_b2b&c=SOrder&a=detail&ordno=" + o, "", "width=692,height=500,resizable=0,scrollbars=no,menubar=no,status=no");
+  }
+}
+</script>
+</body>
+</html>

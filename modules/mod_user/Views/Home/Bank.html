@@ -1,0 +1,143 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td align="center" colspan="2" height="32">
+    <font size="2"><b>交易链接</b></font></td>
+  </tr>
+  <tr bgcolor="#ffffff">
+    <td class="lt">交易链接：</td>
+    <td class="rt"><a href="{$vd['web']['website']}/?m=mod_k2k&aid={$vd['data']['aid']}" target="_blank"><u>{$vd['web']['website']}/?m=mod_k2k&id={$vd['data']['aid']}</u></a></td>
+  </tr>
+</table>
+
+<table border="1" width="100%" style="border-collapse: collapse;line-height:25px;margin-top:10px" bordercolor="#CFDCF2">
+  <tr>
+    <td colspan="2" class="tabletitle"><b>银行结算信息</b></td>
+  </tr>
+  <tr>
+    <td class="buylt">开户银行：</td>
+    <td class="buyrt">{$vd['data']['AccountBranch']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">银行帐号/卡号：</td>
+    <td class="buyrt">{$vd['data']['AccountNo']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">开户姓名：</td>
+    <td class="buyrt">{$vd['data']['AccountName']}</td>
+  </tr>
+  <tr>
+    <td class="buylt">开户所在地：</td>
+    <td class="buyrt">{$vd['data']['BankAddress']}</td>
+  </tr>
+</table>
+
+<table border="1" width="100%" style="border-collapse: collapse;line-height:25px;margin-top:10px" bordercolor="#CFDCF2">
+  <tr>
+    <td colspan="2" class="tabletitle"><b>结算方式</b></td>
+  </tr>
+  <tr>
+    <td class="buylt">结算周期：</td>
+    <td class="buyrt">{$vd['balance']['name']}</td>
+  </tr>
+</table>
+
+<table border="1" width="100%" style="border-collapse: collapse;line-height:25px;margin-top:10px" bordercolor="#CFDCF2">
+  <tr>
+    <td colspan="2" class="tabletitle"><b>未结算金额</b></td>
+  </tr>
+  <tr>
+    <td class="buylt">目前未结算金额：</td>
+    <td class="buyrt"><span class="dollars">{$vd['data']['income']}</span> {$vd['lang']['moneyunit']} [<a href="#"><font color="#0000ff">提现</font></a>]</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+{load(foot)}
+<script type="text/javascript">
+var $=function(id){
+  return document.getElementById(id);
+}
+//----------长度判断
+function getStrActualLen(sChars){  
+  return sChars.replace(/[^\x00-\xff]/g,"xx").length;  
+} 
+
+//***************************************
+//检查中文输入
+function isChinese(str){ 
+  var badChar ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  badChar += "abcdefghijklmnopqrstuvwxyz"; 
+  badChar += "0123456789"; 
+  badChar += " "+"　";//半角与全角空格 
+  badChar += "`~!@#$%^&()-_=+]\\\\|:;\\\\\<,>?/";//不包含*或.的英文符号
+  if(""==str){ 
+    return false; 
+    } 
+  for(var i=0;i<str.length;i++){ 
+    var c = str.charAt(i);//字符串str中的字符 
+    if(badChar.indexOf(c) > -1){ 
+      return false; 
+      } 
+  } 
+  return true; 
+} 
+//----------姓名检测
+function check_ubzcname(UserName){
+  if(UserName!="" && isChinese(UserName) && getStrActualLen(UserName)<9 && getStrActualLen(UserName)>2){
+    $("subzcrealname").innerHTML="<img src='../images/reg_yesok.gif'/> 您的姓名正常!";
+  }
+  else{
+    $("subzcrealname").innerHTML="<img src='../images/reg_yesno.gif'/> 您的姓名错误，请输入中文名字!";
+  }
+}
+//----------邮箱检测
+function check_email(email){
+  var reEmail=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  var b_email=reEmail.test(email);
+  if(b_email){
+    $("subzcmail").innerHTML="<img src='../images/reg_yesok.gif'/> 邮箱可用";
+  }
+  else{
+    $("subzcmail").innerHTML="<img src='../images/reg_yesno.gif'/> 邮箱错误";
+  }
+}
+//----------电话检测
+function check_Telephone(Telephone){
+  var Tel=/(^[\d]{3,4}-[\d]{7,8}$)|(^[\d]{7,8}$)|(^[\d]{10,12}$)|(^0{0,1}13[0-9]{9}$)/ 
+  var b_Tel=Tel.test(Telephone)
+  if(b_Tel){
+    $("subzctel").innerHTML="<img src='../images/reg_yesok.gif'/> 电话正常!";
+  }
+  else{
+    $("subzctel").innerHTML="<img src='../images/reg_yesno.gif'/> 电话格式错误(010-88888888)!";
+  }
+}
+//----------QQ检测
+function check_qq(qq){
+  var Tqq=/^[0-9]{1,20}$/
+  var b_qq=Tqq.test(qq)
+  if(b_qq){
+    $("subzcqq").innerHTML="<img src='../images/reg_yesok.gif'/> QQ有效!";
+  }
+  else{
+    $("subzcqq").innerHTML="<img src='../images/reg_yesno.gif'/> QQ输入错误(必须全数字)!";
+  }
+}
+//----------家庭住址检测
+function check_address(address){
+  if(getStrActualLen(address)>16){
+    $("subzcaddr").innerHTML="<img src='../images/reg_yesok.gif'/> 家庭住址正常!";
+  }
+  else{
+    $("subzcaddr").innerHTML="<img src='../images/reg_yesno.gif'/> 家庭住址错误(不可小于16字节)!";
+  }
+}
+</script>

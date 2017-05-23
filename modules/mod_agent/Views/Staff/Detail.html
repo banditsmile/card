@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>账户编辑</title>
+    <link href="../../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../../index/css/page.css" type="text/css" rel="stylesheet" />
+<body class="mainbg">
+	<!--$item = $vd['item'];-->
+    <div class="new_qie">
+      <div class="new_qie2">
+        <h2> <a href="index.php?m=mod_agent&c=staff&nrows=500" class="goback">返回员工列表</a> <em>-</em> 编辑<span class="cert2">{$item['realname']}</span>账号</h2>
+      </div>
+    </div>
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+	<tr>
+	<td class="tableleft">
+		<form method="post" action="index.php?m=mod_agent&c=staff&a=save">
+		<!--$item = $vd['item'];-->
+<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+    <tr>
+      <td class="table1_left" style="width: 25%">员工编号：</td>
+      <td width="78%" class="tableright1"><div align="left">{$item['staffid']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">员工账户：</td>
+      <td class="tableright1"><div align="left">{$item['staffname']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">登录密码：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="password" class="input0" style="font-weight:normal;background:#EAEAEA" id="staffpwd" name="staffpwd" readonly/>
+          <span id="spanstaffpwd"></span>
+          <input type="checkbox" onClick="enable(this)" style="vertical-align:middle;"/> 
+          修改登陆密码(谨慎使用)</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">确认登录密码：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="password" class="input0" style="font-weight:normal;background:#EAEAEA" id="restaffpwd" name="restaffpwd" readonly/>
+          <span id="spanrestaffpwd"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">交易密码：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="password" class="input0" style="font-weight:normal;background:#EAEAEA" id="tradepwd" name="tradepwd" readonly/>
+          <span id="spanstaffpwd"></span>
+          <input type="checkbox" onClick="enable1(this)" style="vertical-align:middle;"/> 
+          修改交易密码(谨慎使用)</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">确认交易密码：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="password" class="input0" style="font-weight:normal;background:#EAEAEA" id="retradepwd" name="tradepwd" readonly/>
+          <span id="spanrestaffpwd"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">是否启用交易密码：</td>
+		  <td class="tableright1"><div align="left">
+		    <input type="radio" name="checktradepwd" value="1" id="usetradepass">
+		    <!--if($item['checktradepwd']==1){--> 
+		    
+		    <!--}-->
+		    <u><font color=#0000ff>启用</font></u>
+		    </div>
+		    </div>
+		  <label for="usetradepass" tabindex="7">
+		    </label>
+<div align="left"><input type="radio" name="checktradepwd" value="0" id="nousetradepass"> 
+		        <!--if($item['checktradepwd']==0){--> 
+		      
+		      <!--}-->
+		      <u><font color=#ff0000>不启用</font></u></div>		    <label for="nousetradepass"></label></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">姓名：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="realname" name="realname" value="{$item['realname']}"/>
+          <span id="spanrealname"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">邮箱：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="email" name="email" value="{$item['email']}"/>
+          <span id="spanemail"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">手机：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="mobile" name="mobile" value="{$item['mobile']}"/>
+          <span id="spanmobile"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">电话：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="tel" name="tel" value="{$item['tel']}"/>
+          <span id="spantel"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">地址：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="addr" name="addr" value="{$item['addr']}"/>
+          <span id="spanaddr"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">其它：</td>
+      <td class="tableright1">
+        <div align="left">
+          <input type="text" class="input0" style="font-weight:normal" id="other" name="other" value="{$item['other']}"/>
+          <span id="spanother"></span></div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">账户状态：</td>
+		  <td class="tableright1"><div align="left">
+		    <input type="radio" name="frozen" value="0" id="nofrozen">
+		    <u><font color=#0000ff>启动</font></u>
+		    </div>
+		  <div align="left">
+		      <!--if($item['frozen']==0){--><!--}-->
+		      </div>
+		    <label for="nofrozen" tabindex="7">
+		    </label>
+<div align="left"><input type="radio" name="frozen" value="1" id="frozen">
+  <u><font color=#ff0000>冻结</font></u>
+		        <!--if($item['frozen']==1){--><!--}-->
+		        </label>
+</div>		    
+</td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">每日销售限额：</td>
+      <td class="tableright1">
+      	<div align="left">
+      	  <input type="text" class="input0" style="font-weight:normal" id="dayconsum" name="dayconsum" value="{$item['dayconsum']}"/> 
+      	  0表示不限制</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">显示进价：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="radio" name="canseeprice" value="1" id="canseeprice">
+		  <font color=#0000ff><u>显示</u></font>
+		  </div>
+		  <div align="left">
+		    <!--if($item['canseeprice']==1){--><!--}-->
+		  </div>
+		  <label for="canseeprice">
+		  </label>
+<div align="left"><input type="radio" name="canseeprice" value="0" id="nodisprice" tabindex="20">
+  <font color=#cccccc><u>不显示</u></font> 
+		      <!--if($item['canseeprice']==0){--><!--}-->
+		      </label>
+</div>		  
+		  </td>
+    </tr>
+		<!--$temp=explode('|', $item['ini']);-->
+		<tr>
+		  <td class="table1_left" style="width: 25%">修改售价：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="radio" name="caneditbuyerprice" value="1" id="caneditbuyerprice">
+		  <font color=#0000ff><u>能修改</u></font>
+		  </div>
+		  <div align="left">
+		    <!--if($temp[0]==1){--> 
+		    
+		    <!--}-->
+		    </div>
+		  <label for="caneditbuyerprice">
+		  </label>
+<div align="left"><input type="radio" name="caneditbuyerprice" value="0" id="noeditprice">
+  <font color=#cccccc><u>不能修改</u></font> 
+		      <!--if($temp[0]==0){--><!--}-->
+		      </label>
+</div>		  
+</td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">能否查询其它员工激励：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="radio" name="canseeothers" value="1" id="canseeothers">
+		  <font color=#0000ff><u>能查看</u></font>
+		  </div>
+		  <div align="left">
+		    <!--if($temp[1]==1){--><!--}-->
+		  </div>
+		  <label for="canseeothers">
+		  </label>
+<div align="left"><input type="radio" name="canseeothers" value="0" id="noqueryotherdata"> 
+		      <!--if($temp[1]==0){--><!--}-->
+              <font color=#cccccc><u>不能查看</u></font>
+              </label>
+</div>		  
+</td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">员工权限：</td>
+		<td class="tableright1">
+		<!--$item1 = $item;-->
+		<?php
+		$auright1 = array(
+		array(0,'购卡售用户',1),
+		array(1,'进货记录查询',1),
+		array(34,'销售记录查询',0),
+		array(3,'给账户充值',0),
+		array(5,'查看账户资金变动',0),
+		array(6,'资金锁定',0),
+		array(26,'借款管理',0),
+		array(12,'操作日志',0),
+		array(16,'在线投诉系统',1),
+		array(18,'平台内部短信',1),
+		array(19,'汇款通知书',0),
+		array(23,'员工帐户管理',0),
+		array(11,'员工零售利润报表',0),
+		array(35,'员工零售价设定',0),
+		array(38,'员工结帐管理',1),
+		array(20,'帐户密码设定',1),
+		array(15,'账户安全检查',1),
+		array(39,'IP及所在地安全绑定',1),
+		array(40,'硬件信息安全绑定',1),
+		array(41,'手机令牌安全绑定',1),
+    array(42,'密保产品安全绑定',1),
+    array(52,'积分管理',0)
+		);
+		
+		if($vd['ainfo']['tbcz'] == 1)
+    {
+    	$auright1[] = array(64,'淘宝小店列表/挂机',0);
+    	$auright1[] = array(65,'淘宝小店添加',0);
+    	$auright1[] = array(66,'淘宝订单记录',0);
+    }
+		
+		$auright2 = array(
+		array(51,'管理经销商系统',0),
+		array(4,'账户余额详细',0),
+		array(2,'修改下家进价',0),
+		array(9,'划款给下级客户',0),
+		array(13,'代注册下级帐号',0),
+		array(14,'下级客户档案管理',0),
+		array(28,'自有商品发布与管理',0),
+		array(29,'自有商品添加',0),
+		array(45,'自有商品定价',0),
+		array(31,'自有商品库存',0),
+    array(56,'自有商品充值管理',0),
+		array(44,'商品销售报表查询',0),
+		array(32,'销售收入入帐记录',0),
+		array(30,'下级客户价格管理',0),
+		array(46,'下级客户购卡权限',0),
+		array(47,'下级客户消费记录',0),
+		array(48,'下级汇款通知书',0),
+		array(49,'业务员帐户管理',0),
+    array(50,'业务员业绩查询',0),
+    array(57,'代理一卡通列表',0),
+    array(58,'代理一卡通换购记录',0),
+    array(59,'换购商品返点费率',0),
+    array(60,'一卡通返点明细',0)
+		);
+		
+		if($vd['ainfo']['vipshop'] == 1)
+    {
+    	$auright2[] = array(53,'VIP平台设置',0);
+      $auright2[] = array(62,'VIP风格选择',0);
+      $auright2[] = array(63,'VIP风格自定义',0);
+      $auright2[] = array(54,'VIP平台广告',0);
+      $auright2[] = array(55,'VIP平台公告',0);
+    }
+
+		?>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr><td colspan="4"><b><div align="left">直销商功能：</b></td></tr>
+			<!--$i=0;foreach($auright1 as $item){-->
+			
+			<!--if($vd['leftrights'][$item[0]] == 1){-->
+			
+      <!--if($i == 0){-->
+      <tr>
+      <!--}$i++;-->
+        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" /><label for="rights_{$item[0]}">{$item[1]}</label></td>
+    	<!--if($i == 4){-->
+    	</tr>
+    	<!--$i=0;}-->
+    	
+    	<!--}-->
+    	
+    	<!--}-->
+    	<!--if($i > 0){-->
+    	<!--for($j=0; $j < 4 - $i; $j++){-->
+    	<td width="25%" class=stline>&nbsp;</td>
+    	<!--}-->
+      </tr>
+    	<!--}-->
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr><td colspan="4"><b><div align="left">经销商功能：</b></td></tr>
+			<!--$i=0;foreach($auright2 as $item){-->
+			
+			<!--if($vd['leftrights'][$item[0]] == 1){-->
+			
+      <!--if($i == 0){-->
+      <tr>
+      <!--}$i++;-->
+        <td width="25%"><div align="left"><input type="checkbox" value="1" id="rights_{$item[0]}" name="rights_{$item[0]}" <!--if($item[2]){--> checked<!--}--> /><label for="rights_{$item[0]}">{$item[1]}</label></td>
+    	<!--if($i == 4){-->
+    	</tr>
+    	<!--$i=0;}-->
+    	
+    	<!--}-->
+    	
+    	<!--}-->
+    	<!--if($i > 0){-->
+    	<!--for($j=0; $j < 4 - $i; $j++){-->
+    	<td width="25%" class=stline>&nbsp;</td>
+    	<!--}-->
+      </tr>
+    	<!--}-->
+		</table>
+		<br/>		</td>
+		</tr>
+		<!--$item = $item1;-->
+		<!--if(!isset($vd['secitem']['ipcheck'])){;$vd['secitem']['ip']=',,,';$vd['secitem']['ipcheck']=0;}-->
+    <!--if(!isset($vd['secitem']['maccheck'])){;$vd['secitem']['mac']=',,,';$vd['secitem']['maccheck']=0;} -->
+    <!--if(!isset($vd['secitem']['hdecheck'])){;$vd['secitem']['hde']=',,,';$vd['secitem']['hdecheck']=0;} -->
+    <!--if(!isset($vd['secitem']['cpucheck'])){;$vd['secitem']['cpu']=',,,';$vd['secitem']['cpucheck']=0;} -->
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定IP：</td>
+      <td class="tableright1">
+      <div align="left">
+        <input type="radio" name="ipcheck" value="1" onClick="setdisp('ip',1)"  id="yesbind">
+        <font color=#0000ff>绑定IP地址</font> 
+      </div>
+      <div align="left">
+        <!--if($vd['secitem']['ipcheck']==1){--><!--}-->
+      </div>
+      <label for="yesbind">
+      </label>
+<div align="left"><input type="radio" name="ipcheck" value="0" onClick="setdisp('ip',0)" id="nobind">
+  <font color=#cccccc>未绑定IP地址</font> 
+          <!--if($vd['secitem']['ipcheck']==0){--><!--}-->
+          </label>
+      </div>      
+</td>
+		</tr>
+    <!--$ips=explode(',', $vd['secitem']['ip'].',,,,,');-->
+		<tr id="iptr"<!--if($vd['secitem']['ipcheck']==0){--> style="display:none"<!--}-->>
+		  <tr>
+		    <td class="table1_left" style="width: 25%">IP地址：</td>
+		    <td class="tableright1">
+		  	<div align="left">
+		  	  <!--for($i=0; $i<5; $i++){-->
+		  	  </div>
+		  	<div style="height:30px">
+		  	  <div align="left">
+		  	    <input type="text" class="input0" size="25" name="ip[]" id="ip_{$i}" value="{$ips[$i]}"/>
+		  	    <input type="button" name="button" value="取IP地址" class="tijiao_input" onClick="getip({$i})">
+		  	    </div>
+		  	</div>
+		  	<div align="left">
+		  	  <!--}-->		  
+	  	    </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定网卡：</td>
+      <td class="tableright1">
+      <div align="left">
+        <input type="radio" name="maccheck" value="1" onClick="setdisp('mac',1)"  id="yesbindmac">
+        <font color=#0000ff>绑定网卡地址</font>
+      </div>
+      <div align="left">
+        <!--if($vd['secitem']['maccheck']==1){--><!--}-->
+      </div>
+      <label for="yesbindmac">
+      </label>
+<div align="left"><input type="radio" name="maccheck" value="0" onClick="setdisp('mac',0)" id="nobindmac">
+  <font color=#cccccc>未绑定网卡地址</font> 
+          <!--if($vd['secitem']['ipcheck']==0){--><!--}-->
+          </label>
+      </div>      
+</td>
+		</tr>
+    <!--$macs=explode(',', $vd['secitem']['mac'].',,,,,');-->
+		<tr id="mactr"<!--if($vd['secitem']['maccheck']==0){--> style="display:none"<!--}-->>
+		  <tr>
+		    <td class="table1_left" style="width: 25%">网卡地址：</td>
+		    <td class="tableright1">
+		  	<div align="left">
+		  	  <!--for($i=0; $i<5; $i++){-->
+		  	  </div>
+		  	<div style="height:30px">
+		  	  <div align="left">
+		  	    <input type="text" class="input0" size="25" name="mac[]" id="mac_{$i}" value="{$macs[$i]}"/>
+		  	    <input type="button" name="button" value="取本机网卡" class="tijiao_input" onClick="getmac({$i})">
+		  	    </div>
+		  	</div>
+		  	<div align="left">
+		  	  <!--}-->		  
+	  	    </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定硬盘</td>
+      <td class="tableright1">
+      <div align="left">
+        <input type="radio" name="hdecheck" value="1" onClick="setdisp('hde',1)"  id="yesbindhde">
+        <font color=#0000ff>绑定硬盘编码</font> 
+      </div>
+      <div align="left">
+        <!--if($vd['secitem']['hdecheck']==1){--><!--}-->
+      </div>
+      <label for="yesbindhde">
+      </label>
+<div align="left"><input type="radio" name="hdecheck" value="0" onClick="setdisp('hde',0)" id="nobindhde"> 
+          <!--if($vd['secitem']['hdecheck']==0){--><!--}-->
+          <font color=#cccccc>未绑定硬盘编码</font>
+          </label>
+</div>      
+</td>
+    </tr>
+    <!--$hdes=explode(',', $vd['secitem']['hde'].',,,,,');-->
+		<tr id="hdetr"<!--if($vd['secitem']['hdecheck']==0){--> style="display:none"<!--}-->>
+		  <tr>
+		    <td class="table1_left" style="width: 25%">硬盘编码：</td>
+		    <td class="tableright1">
+		  	<div align="left">
+		  	  <!--for($i=0; $i<5; $i++){-->
+		  	  </div>
+		  	<div style="height:30px">
+		  	  <div align="left">
+		  	    <input type="text" class="input0" size="25" name="hde[]" id="hde_{$i}" value="{$hdes[$i]}"/>
+		  	    <input type="button" name="button" value="取本机硬盘" class="tijiao_input" onClick="gethde({$i})">
+		  	    </div>
+		  	</div>
+		  	<div align="left">
+		  	  <!--}-->		  
+	  	    </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定CPU：</td>
+      <td class="tableright1">
+      <div align="left">
+        <input type="radio" name="cpucheck" value="1" onClick="setdisp('cpu',1)" id="yesbindcpu"> 
+        <font color=#0000ff>绑定CPU编码</font>
+      </div>
+      <div align="left">
+        <!--if($vd['secitem']['cpucheck']==1){--><!--}-->
+      </div>
+      <label for="yesbindcpu">
+      </label>
+<div align="left"><input type="radio" name="cpucheck" value="0" onClick="setdisp('cpu',0)" id="nobindcpu">
+  <font color=#cccccc>未绑定CPU编码</font> 
+          <!--if($vd['secitem']['cpucheck']==0){--><!--}-->
+          </label>      
+          </div>      
+</td>
+		</tr>
+    <!--$cpus=explode(',', $vd['secitem']['cpu'].',,,,,');-->
+		<tr id="cputr"<!--if($vd['secitem']['cpucheck']==0){--> style="display:none"<!--}-->>
+		  <tr>
+		    <td class="table1_left" style="width: 25%">CPU编码：</td>
+		    <td class="tableright1">
+		  	<div align="left">
+		  	  <!--for($i=0; $i<5; $i++){-->
+		  	  </div>
+		  	<div style="height:30px">
+		  	  <div align="left">
+		  	    <input type="text" class="input0" size="25" name="cpu[]" id="cpu_{$i}" value="{$cpus[$i]}"/>
+		  	    <input type="button" name="button" value="取本机CPU" class="tijiao_input" onClick="getcpu({$i})">
+		  	    </div>
+		  	</div>
+		  	<div align="left">
+		  	  <!--}-->		  
+	  	    </div></td>
+		</tr>
+		<!--if(isset($vd['secitem']['mibaokacheck']) && $vd['secitem']['mibaokacheck']==1){-->
+		<tr>
+		  <td class="table1_left" style="width: 25%">密保卡绑定状态：</td>
+		  <td class="tableright1"><div align="left"><b><font color="#0000ff">已绑定</font></b></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定操作：</td>
+		  <td class="tableright1">
+		     <div style="padding-top:10px">
+		       <div align="left">
+		         <input type="button" value="申请解绑" onClick="javascript:window.location.href='index.php?m=mod_agent&c=Messenger&a=add&msgtitle=<!--echo urlencode('给员工'.$item['staffid'].'申请密保卡解绑');-->'" class="fanhui_input" style="cursor:pointer"> 
+	            </div>
+		     </div>		  </td>
+		</tr>
+		<!--}else{-->
+		<tr>
+		  <td class="table1_left" style="width: 25%">密保卡绑定状态：</td>
+		  <td class="tableright1"><div align="left"><b><font color="#cccccc">未绑定</font></b> </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定操作：</td>
+		  <td class="tableright1">
+		     <div style="padding-top:10px">
+		       <div align="left">
+		         <input type="button" value="申请密保卡" onClick="javascript:window.location.href='index.php?m=mod_agent&c=Messenger&a=add&msgtitle=<!--echo urlencode('给员工'.$item['staffid'].'申请密保卡');-->'" class="fanhui_input" style="cursor:pointer"> 
+	            </div>
+		     </div>		  </td>
+		</tr>
+		<!--}-->
+		<!--if(isset($vd['secitem']['mobilecheck']) && $vd['secitem']['mobilecheck']==1){-->
+		<tr>
+		  <td class="table1_left" style="width: 25%">令牌绑定状态：</b></td>
+		  <td class="tableright1"><div align="left"><b><font color="#0000ff">已绑定</font></b></div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定操作：</b></td>
+		  <td class="tableright1">
+		     <div style="padding-top:10px">
+		       <div align="left">
+		         <input type="button" value="申请解绑" onClick="javascript:window.location.href='index.php?m=mod_agent&c=Messenger&a=add&msgtitle=<!--echo urlencode('给员工'.$item['staffid'].'申请令牌解绑');-->'" class="fanhui_input" style="cursor:pointer"> 
+	            </div>
+		     </div>		  </td>
+		</tr>
+		<!--}else{-->
+		<tr>
+		  <td class="table1_left" style="width: 25%">密保卡绑定状态：</b></td>
+		  <td class="tableright1"><div align="left"><b><font color="#cccccc">未绑定</font></b> </div></td>
+		</tr>
+		<tr>
+		  <td class="table1_left" style="width: 25%">绑定操作：</b></td>
+		  <td class="tableright1">
+		     <div style="padding-top:10px">
+		       <div align="left">
+		         <input type="button" value="申请令牌"  onclick="javascript:window.location.href='index.php?m=mod_agent&c=Messenger&a=add&msgtitle=<!--echo urlencode('给员工'.$item['staffid'].'申请令牌');-->'" class="fanhui_input" style="cursor:pointer"> 
+	            </div>
+		     </div>		  </td>
+		</tr>
+		<!--}-->
+    <tr>
+      <td class="table1_left" style="width: 25%">创建时间：</b></td>
+      <td class="tableright1"><div align="left">{$item['createdate']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">创建IP：</b></td>
+      <td class="tableright1"><div align="left">{$item['createip']}</div></td>
+    </tr>
+    <tr>
+     <td class="table1_left" style="width: 25%">最近访问时间：</b></td>
+      <td class="tableright1"><div align="left">{$item['thisdate']}</div></td>
+    </tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">访问IP：</td>
+      <td class="tableright1"><div align="left">{$item['thisip']}</div></td>
+    </tr>
+    <td class="table1_left" style="width: 25%">总帐号超级密码：</td>
+		<td class="tableright1"><div align="left">
+		  <input type="password" name="superpwd" size="30" class='input0'/>
+		  </div></td>
+		</tr>
+    <tr>
+      <td class="table1_left" style="width: 25%">最后操作：</td>
+      <td height="30" class="tableright1">
+		<div align="left">
+		  <input type="hidden" value="{$item['rights']}" id="thisright"/>
+		  <input type="hidden" value="{$item['staffid']}" name="staffid"/>	
+		  <input type="submit" name="submit" value="提交修改" class="tijiao_input" tabindex="24">
+		  <input type="reset" value="重新填写" class="fanhui_input" name="reset" tabindex="25">		
+		  </div></td>
+		</tr>
+  </table>
+  </form> 
+  </td>
+	</tr>
+</table>
+<object id="t1" codeBase="{$vd['sc']}tools/umebiz.cab" classid="CLSID:B8748B60-E34D-42AA-9309-8012CA4964AC" height=0 width=0 ></object>
+<input type="hidden" id="tmac" name="tmac"  value=""/>
+<script type="text/javascript">
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+	
+	var thisright = $("thisright").value;
+	var tmp = thisright.split(",");
+	for(var i = 0; i < tmp.length; i++)
+	{
+		if($("rights_" + i) != null)
+		{
+		  $("rights_" + i).checked = tmp[i]==1 ? true : false;
+		}
+	}
+	
+	function enable(obj)
+  {
+  	state   = obj.checked ? false : true;
+  	bck     = obj.checked ? "#ffffff" : "#EAEAEA";
+  	
+  	$("staffpwd").readOnly   = state;
+  	$("restaffpwd").readOnly = state;
+  	
+  	$("staffpwd").style.background = bck;
+  	$("restaffpwd").style.background = bck;
+  	
+  	$("staffpwd").value = "";
+  	$("restaffpwd").value = "";
+  }
+  
+  function enable1(obj)
+  {
+  	state   = obj.checked ? false : true;
+  	bck     = obj.checked ? "#ffffff" : "#EAEAEA";
+  	
+  	$("tradepwd").readOnly   = state;
+  	$("retradepwd").readOnly = state;
+  	
+  	$("tradepwd").style.background = bck;
+  	$("retradepwd").style.background = bck;
+  	
+  	$("tradepwd").value = "";
+  	$("retradepwd").value = "";
+  }
+  
+  function setdisp(tr, flag)
+  {
+  	$(tr+"tr").style.display = flag == 1 ? "" : "none"
+  }
+</script>
+<script type="text/JavaScript">
+	
+function getip(i)
+{
+	$("ip_"+i).value = "{$vd['ip']}";
+}
+
+function getmac(i)
+{
+	$("mac_"+i).value = document.all.t1.GetMacAddr;
+}
+
+function getcpu(i)
+{
+	$("cpu_"+i).value = document.all.t1.GetCpuId;
+}
+
+function gethde(i)
+{
+	$("hde_"+i).value = document.all.t1.GetHDE;
+}
+
+</script>
+<?php
+   $fp = fopen($vd['sc']."tools/root.cer", "r");
+   $cert = fread($fp, 8192);
+   fclose($fp);
+?>
+<script type="text/JavaScript">
+$("tmac").value = document.all.t1.GetMacAddr;
+if($("tmac").value == "" || $("tmac").value == "undefined")
+{
+  document.write('<object id="XEnroll" classid="clsid:127698e4-e730-4e5c-a2b1-21490a70c8a1" codebase="xenroll.dll"></object>');
+}
+
+</script>
+<script language="vbscript">
+ON ERROR resume next
+<?php
+    $newcert = "sPKCS7=\"\"\r\n";
+    $line=strtok($cert,"\r\n");
+    while($line)
+    {
+     $newcert=$newcert."     sPKCS7=sPKCS7 & \"".$line."\" & vbcrlf\r\n";
+     $line=strtok("\r\n");
+    }
+    echo $newcert;
+?> 
+XEnroll.InstallPKCS7 sPKCS7 
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<form method="post" action="index.php?m=mod_b2b&c=Price&a=PriceTplSave" >
+<div id="content" class="cwarpper" style="position:relative">
+<div class="cbodyHead"></div>
+<div id="tab">
+<input type="button" value="多级别价格模板"  onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=PriceTpl'" class="tab_active" onFocus="this.blur()"/>
+<input type="button" value="单级别价格模板" onclick="loadDisp(1);window.location.href='?m=mod_b2b&c=price&a=RankTpl'" class="tab_normal" onFocus="this.blur()"/>
+</div>
+<div class="cwarpper1" style="border-top:1px #ccc solid">
+<div class="ctitle">价格相关说明</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">价格使用</td>
+    <td class="tablert" style="line-height:25px;white-space:normal">系统会自动按照下边的模板计算用户对应的价格，无需您再单独为商品定价</td>
+  </tr>
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">价格优先级</td>
+    <td class="tablert" style="line-height:25px;white-space:normal">密价 > 上家设价(如果直属系统，上家就是系统) > 上家模板价格 > 系统模板价格 <a id="nodisp" href="#detail">详细请查看下边的备注</a></td>
+  </tr>
+</table>
+</div>
+</div>
+<div class="cwarpper1">
+<div class="ctitle">系统默认标准模板设置</div>
+<!--if(count($vd['items']) > 0){-->
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">{$item['name']}</td>
+    <td class="tablert" style="font-size:12px;">
+      <input name="id[]" type="hidden" value="{$item['id']}"/>
+      <select name="priceplan_{$item['id']}" style="font-size:12px;vertical-align:middle" onchange="set(this, {$item['id']})">
+        <option value="1"<!--if($item['priceplan']==1){--> selected<!--}-->>方案一(利润折扣)</option>
+        <option value="2"<!--if($item['priceplan']==2){--> selected<!--}-->>方案二(直接累加)</option>
+        <option value="3"<!--if($item['priceplan']==3){--> selected<!--}-->>方案三(面值折扣)</option>
+        <option value="4"<!--if($item['priceplan']==4){--> selected<!--}-->>方案四(固定折扣)</option>
+      </select>
+       价格 = 
+      <input name="discout_{$item['id']}" type="text" size="5" value="{$item['discout']}" class="myinput" style="padding-top:2px;height:18px;width:50px;"/>
+       <span id="std_{$item['id']}">{$item['char']} <!--if($item['priceplan']==1){-->x (面值 - 我的进货价) + 我的进货价<!--}-->
+       <!--if($item['priceplan']==2){-->+ 我的进货价<!--}-->
+       <!--if($item['priceplan']==3){-->x 面值 + 我的进货价<!--}--></span>
+       <!--if($item['priceplan']==4){-->x 面值<!--}--></span>
+      </td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+<!--}-->
+</div>
+<a name="detail"></a>
+<div class="cwarpper1">
+<div class="ctitle">备注</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">方案一(利润折扣)</td>
+    <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
+    对应级别价格 = 我的进货价 + (面值 - 我的进货价) x 比例<br/>
+    <font color="#ff0000">此方案主要先计算您可以获得的最大利润，然后计算您从中需要获取的比例，再加上您的进货价就是最终用户的价格</font>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">方案二(直接累加)</td>
+    <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
+    对应级别价格 = 我的进货价 + 比例<br/>
+    <font color="#ff0000">此方案好理解一点，比如你希望对应级别都获取0.1{$vd['lang']['moneyunit']}的利润，最终用户的价格就是进货价加上这个利润即可。缺点是有些商品利润分配不合理，比如Q币按{$vd['lang']['moneyunit']}充，按0.88进货价，如果加上0.1，那进货价就是0.98了，这种价格有可能就会偏高，如果是10000{$vd['lang']['moneyunit']}的商品，加上0.1，用户价格就是10000.1，价格有可能就偏低了</font>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">方案三(面值折扣)</td>
+    <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
+    对应级别价格 = 我的进货价 + 面值 x 比例<br/>
+    <font color="#ff0000">优点介于方案一和方案二之间。某些利润空间很低的商品，可能会造成价格不合理，比如移动卡100{$vd['lang']['moneyunit']}进货价98.8，如果给3%的利润，系统最终计算下来的价格是100{$vd['lang']['moneyunit']}(98.8 + 100 x 3% = 101.8，由于大于面值，按面值100{$vd['lang']['moneyunit']}算)，这种比例就不太合适了。但是如果给某款外挂设这个比例，比如外挂20{$vd['lang']['moneyunit']}卡，进货价15{$vd['lang']['moneyunit']}，加上3%后，是15.6{$vd['lang']['moneyunit']}，相对还是较合理</font>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">方案四(固定折扣)</td>
+    <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
+    对应级别价格 = 面值 x 比例<br/>
+    <font color="#ff0000">此方案主要用于一些合同价格，比如您跟某位客户达成协议，所有商品都给他百分之多少的折扣，缺点是部分商品的进货价相对较高，如移动卡</font>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt" style="font-size:14px;text-align:center">价格说明</td>
+    <td class="tablert" style="line-height:25px;white-space:normal;padding-top:10px;padding-bottom:10px">
+    <font color="#ff0000">新的价格方案不需要再单独为商品设定级别价格，也就是说，您添加商品的时候，只需要填写好面值和进货价就可以了，剩下的交给系统自己计算 </font><br/>
+    同时系统增加了多种价格机制满足您的不同需求：<br/>
+    [1] 密价：也就是单独为某一个用户设价，上家可以为自己的直属下家密价，系统可以为自己的直属用户密价<br/>
+    [2] 模板定价：模板分成两种，一个是多级别价格模板，另外一个是单级别价格模板。<br/>多级别价格模板只需要把对应的比例和使用方案选择好就可以了。<br/>单级别价格模板需要您在对应的模板中设置商品价格，如果不设置的话，就使用多级别模板的方案来计算价格，单级别模板需要给用户分配方可生效<br/><br/>
+    前台经销商和系统都可以使用上边的两种机制来设价，前台的经销商设价要优先于后台系统的设价，如果最终用户价格低于他的上家的价格，则他的价格等于他的上家的购买价格，如果发现价格低于商品的进货价，那么价格等于面值<br/>
+    <br/>
+    优先级顺序如下：首先查看是否有密价，如果没有，则查看上家是否对其使用了单级别模板设价，如果没有，查看上家是否设置多级别模板，如果没有，则使用系统多级别模板计算用户价格<br>
+    <br/>
+    <font color="#ff0000">
+      由于点卡的进货价经常发生变化，一般情况下只需要后台的管理员设置好多级别模板即可，也就是先设置好多级别模板，在添加商品的时候写上进货价和面值就可以了
+    </font>
+    <br/><br/>
+    <font color="#ff0000">如果您是外汇用户，添加商品的时候，进货价和面值记得一定要先换算好对应的汇率价格再写入</font>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="hidden" value="pricetpl" name="$vd['pricetpl']"/>
+    <input type="submit" value="确认设置 &gt; &gt;" class="btn"/>
+    <input type="reset" value="&lt; &lt; 重置" class="btn" name="reset" onclick="javascript:window.location.reload()" />
+  </div>
+</div>
+</form>
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <font color="#000">商品价格模板设置</font> </div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看客户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div id="contentTip" style="display:none;"></div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function set(obj, idx)
+  {
+    val = obj.options[obj.selectedIndex].value;
+    str = "";
+    if(val == "1")
+    {
+      str = "% x (面值 - 我的进货价) + 我的进货价";
+    }
+    else if(val == "2")
+    {
+      str = "{$vd['lang']['moneyunit']} + 我的进货价";
+    }
+    else if(val == "3")
+    {
+      str = "% x 面值 + 我的进货价";
+    }
+    else
+    {
+      str = "% x 面值";
+    }
+    
+    $("std_"+idx).innerHTML = str;
+  }
+  
+  $("nodisp").onclick = function(){};
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Catalog&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()'></input>
+    </td>
+<!--//tbody-->
+<td width="150px"><nobr><samp title="{$item['title']}"><span onclick="toInput(this,{$item['id']},'title')">{$item['title']}</span></samp></nobr></td>
+<td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['forb2b'])}" onclick="toToggle(this,{$item['id']},'forb2b')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td>
+<td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['forb2c'])}" onclick="toToggle(this,{$item['id']},'forb2c')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td>
+<td width="22px"><img src="{$vd['sc']}{#ToggleImgSrc($item['forykt'])}" onclick="toToggle(this,{$item['id']},'forykt')" alt="点击此图片即可修改状态" onFocus="this.blur()" class="mousehand"/></td>
+<td width="60px"><!--if($item['isradio']){-->单选<!--}else{-->多选<!--}--></td>
+<td width="35px"><nobr><span onclick="toInput(this,{$item['id']},'ordering')">{$item['ordering']}</span></nobr></td>
+<td width="50px"><nobr><span onclick="toInput(this,{$item['id']},'hits')">{$item['hits']}</span></nobr></td>
+<td width="140px"><nobr><span onclick="toInput(this,{$item['id']},'expiration')">{$item['expiration']}</span></nobr></td>
+<!--//endtbody-->
+    <td width="70px">
+      <a href="index.php?m=mod_b2b&c=PMenu&parentid={$item['id']}">管理选项</a>
+    </td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Poll&a=Detail&id={$item['id']}" title="编辑投票主题" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁类目记录后,是无法恢复的,只能重新添加" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>

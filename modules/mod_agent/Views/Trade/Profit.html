@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>余额转化</title>
+    <link href="../index/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="../index/css/page.css" type="text/css" rel="stylesheet" />
+		<div class="new_qie">
+          <div class="new_qie2">
+            <h2> 销售提成</h2>
+          </div>
+	    </div>
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="sellhistory" method="get" action="index.php">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table1">
+		<!--$vhistory=$vd['ishistory']==1?0:1;if($vd['hashistory'] == 1){-->
+  	<tr>
+    <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+ 		<tr>
+ 		  <td width="15%" class="td_left">&nbsp;</td>
+
+      <td width="78%" align="left" class="tableright1">
+      	<div align="left">
+      	  <input type="hidden" name="ishistory" value="{$vd['ishistory']}" />
+      	  <a href="index.php?m=mod_agent&c=trade&tpl=profit&tradetype=11&ishistory={$vhistory}"><font color="#ff0000"><u>
+      	    <!--if($vd['ishistory']==0){-->
+      	    历史数据查询
+      	    <!--}else{-->
+      	    回到当前数据查询
+      	    <!--}-->
+    	    </u></font></a> </div></td>
+    </tr>
+    <!--}-->
+
+		<tr>
+		  <td width="15%" class="td_left">关键字：</td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="30" name="keywords" class='input0' value="">
+		  </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left">查询条件：</td>
+		<td align="left" class="tableright1">
+		  <div align="left">
+		    <select name="stype">
+		        <option value="content">商品名称</option>
+		        <option value="otherside">下属编号</option>
+		        </select>
+          </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left">查询时间段：</td>
+		<td align="left" class="tableright1">
+          <div align="left">
+            <input type="text" name="startdate" value="{$vd['startdate']}" class="input0" id="startdate"/>
+                  <strong>至</strong>&nbsp;
+            <input type="text" name="enddate" value="{$vd['enddate']}" class="input0" id="enddate"/>    
+          </div></td>
+		</tr>
+		<tr>
+		  <td width="15%" class="td_left">&nbsp;</td>
+		<td align="left" class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="m" value="mod_agent"/>
+			  <input type="hidden" name="c" value="trade"/>
+			  <input type="hidden" name="tpl" value="profit"/>
+			  <input type="hidden" name="tradetype" value="11"/>
+			  <input type="submit" name="Submit222" value="确认查询" class="tijiao_input"> 
+			  <input type="reset" name="reset" value="重置查询" class="fanhui_input">
+			  </div></td>
+		</tr>
+		</table>
+		</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+ <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+ 		<tr>
+		<th width="10%"><span class="heardertop1">提成时间</th>
+		<th width="18%"><span class="heardertop1">购买商品</th>
+		<th width="8%"><span class="heardertop1">下属商户</th>
+		<th width="8%"><span class="heardertop1">变化后({$vd['lang']['moneyunit']})</th>
+		<th width="8%"><span class="heardertop1">下级价格</th>
+		<th width="6%"><span class="heardertop1">数量</th>
+		<th width="8%"><span class="heardertop1">我的进价</th>
+		<th width="8%"><span class="heardertop1">单价提成</th>
+		<th width="8%"><span class="heardertop1">订单提成</th>
+		<th width="18%"><span class="heardertop1">订单号</th>
+		</tr>
+		<!--$income=0;$outcome=0;foreach($vd['items'] as $item) {-->
+		<tr class="stline" onMouseOver="this.className='nd'" onMouseOut="this.className='stline'">
+		<td>{$item['createdate']}</td>
+		<td>{$item['content']}</td>
+		<td>{$item['otherside']}</td>
+		<td><font color="#ff0000">{$item['fat']}</font></td>
+		<td>{$item['listprice']}&nbsp;</td>
+		<td>{$item['qty']}&nbsp;</td>
+		<td>{$item['price']}&nbsp;</td>
+		<td><!--echo $item['listprice'] - $item['price'];--></td>
+		<td><!--echo round($item['income'], 3);--></td>
+		<td>{$item['ordno']}</td>
+		</tr>
+		<!--$income=$income+$item['income'];$outcome=$outcome+$item['outcome'];}-->
+		<tr class="thr">
+      <td align="center" colspan="3">本页统计</td>
+      <td align="center" colspan="7">提成金额 <font color="#ff0000"><!--echo round($income, 3);--></font> {$vd['lang']['moneyunit']}</td>
+    </tr>
+    <tr class="thr">
+      <td align="center" colspan="3">查询统计</td>
+      <td align="center" colspan="7">提成金额 <font color="#ff0000"><!--echo round($vd['record']['income'], 3);--></font> {$vd['lang']['moneyunit']}</td>
+    </tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

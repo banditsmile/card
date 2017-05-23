@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>未读短信列表</title>
+<meta name="keywords" content="{$vd['web']['keywords']}" />
+<meta http-equiv="description" content="{$vd['web']['description']}" />
+<style type="text/css"> 
+body {
+FONT-SIZE:12px;
+margin:0px;
+}
+a:link {
+FONT-FAMILY:Tahoma,SimSun,Arial;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#333333;
+}
+
+a:visited {
+FONT-FAMILY:Tahoma,SimSun,Arial;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#333333;
+}
+
+a:hover {
+FONT-FAMILY:Tahoma,SimSun,Arial;
+TEXT-DECORATION:underline;
+FONT-SIZE:9pt;
+COLOR:#ff6c00;
+}
+
+a:active {
+FONT-FAMILY:Tahoma,SimSun,Arial;
+TEXT-DECORATION:none;
+FONT-SIZE:9pt;
+COLOR:#F93;
+}
+.box ul{
+list-style:none;
+margin:0px;
+padding:0px 5px;
+}
+
+.box li{
+margin:0px;
+padding-left:18px;
+line-height:20px;
+background:url({$vd['content']}images/msg.gif) no-repeat 0px 3px;
+}
+tr{border-bottom:1px #ccc solid;line-height:20px}
+
+.mdiv{
+overflow-y:auto;
+height:200px;
+}
+</style>
+</head>
+<body>
+	<div class="mdiv">
+	<table>
+		<!--foreach($vd['items'] as $item) {-->
+		<tr>
+			<td width="5%" height="30px"><img src="{$vd['content']}images/msg.gif" /></td>
+			<td width="80%" onclick="readmsg('{$item['id']}')" style="cursor:pointer">{$item['title']}</td>
+			<td width="15%">{$this->DateFormat($item['createdate'],'m/d')}</td>
+		</tr>
+		<tr style="display:none" id="tr{$item['id']}">
+			<td colspan="3" style="border-top:1px #dddddd solid;padding:5px"><!--echo nl2br($item['content']);--></td>
+		</tr>
+		<!--}-->
+	</table>
+  </div>
+  <script type="text/javascript">
+  	function readmsg(id)
+  	{
+  		obj = document.getElementById("tr"+id);
+  		obj.style.display = obj.style.display == "none" ? "" : "none";
+  		setisread(id);
+  	}
+  	
+  	function setisread(id)
+  	{
+  	var xmlhttpm;
+    try{
+      xmlhttpm=new XMLHttpRequest();
+    }
+    catch(e){
+      xmlhttpm=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttpm.onreadystatechange=function(){}
+    xmlhttpm.open("post", "{$vd['root']}index.php?m=mod_agent&c=Messenger&a=Detail&isread=1&id=" + id, true);
+    xmlhttpm.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xmlhttpm.send('');
+  	}
+  </script>
+</body>
+</html>

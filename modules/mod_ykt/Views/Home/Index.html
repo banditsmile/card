@@ -1,0 +1,220 @@
+{load(head)}
+<!--$ad=$vd['ad'];-->
+<div class="BLSideLeft fix">
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="newsbg"></div>
+  <div class="coltwo box boxbg1" style="height:143px;padding-top:3px">
+    <ul>
+    <!--foreach($vd['ann'] as $ann) {-->
+    <li>
+    <a href="{$vd['root']}article/<!--if($vd['vip'] > 0){-->?<!--}-->{$ann['id']}.html" target="_blank"><font color="{$ann['titlecolor']}">{$ann['title']}</font></a></li>
+    <!--}-->
+    </ul>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+  <div class="cxcls" style="cursor:pointer;" onclick="javascript:window.location.href='{$vd['root']}index.php?m=mod_ykt&c=ykt&a=check'">
+  </div>
+  <div class="dzcls" style="cursor:pointer;" onclick="javascript:window.location.href='{$vd['root']}index.php?m=mod_ykt&c=ykt&a=Tran'">
+  </div>
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="coltwo" style="padding-left:8px">
+    <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">
+      <img alt="" src="{$vd['content']}images/icon_kf.gif" width="201" height="85" border="0"/>
+    </a>
+    <div class="line"></div>
+    <a  href="{$vd['root']}index.php?m=mod_ykt&a=hourkf">
+      <img alt="" src="{$vd['content']}images/icon_rx.gif" width="201" height="85" border="0"/>
+    </a>
+    <div class="line"></div>
+    <a href="{$vd['root']}index.php?m=mod_ykt&a=hourkf" target="_blank">
+      <img alt="" src="{$vd['content']}images/icon_ts.gif" width="201" height="85"
+          border="0" /></a>
+    <div class="line"></div>
+    <a href="{$vd['root']}index.php?m=mod_ykt&c=Article&a=Home&name=<!--echo urlencode('一卡通系统常见问题');-->">
+      <img alt="" src="{$vd['content']}images/icon_help.gif" width="201" height="85"
+          border="0"/></a>
+    <div class="line"></div>     
+    <a href="{$vd['root']}index.php?m=mod_ykt&c=Addr">
+      <img alt="" src="{$vd['content']}images/icon_listjxs.gif" width="201" height="85"
+          border="0" /></a>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+
+<div class="BLSideMiddle fix">
+<div class="slider" style="height:180px; overflow:hidden">
+  <ul class="num" id="homePushName">
+    <!--$i=0;foreach($vd['adrs'] as $item){-->
+    <li id="homeAd{$i}" <!--if($i==0){--> class="current"<!--}$i++;-->>{$i}</li>
+    <!--}-->
+  </ul>
+  <ul class="bg" id="homePushBg">
+    <!--$i=0;foreach($vd['adrs'] as $item){-->
+    <li>&nbsp;</li>
+    <!--$i++;}-->
+  </ul>
+  <ul class="pic" id="homePushShow">
+    <!--$i=0;foreach($vd['adrs'] as $item){-->
+    <li id="homePushShow{$i}" style="height:180px; overflow:hidden;">
+      <a href="{$item['url']}" target="_blank">
+        <img src="{$vd['root']}{$vd['sc']}upload/{$item['pic']}"/>
+      </a>
+    </li>
+    <!--$i++;}-->
+  </ul>
+</div>
+<script type="text/javascript">
+  var listItem=document.getElementById("homePushShow");
+  var tList=document.getElementById("homePushName").childNodes;
+  var controlItem=[];
+  for(var i=0;i<tList.length;i++){
+    if(tList[i].nodeName.toLowerCase()=="li"){
+      controlItem.push(tList[i]);
+    }
+  }
+  var picCount=controlItem.length;
+  var cid=0;
+  var tid=Math.floor(Math.random()*picCount);
+  window.cTop=0
+  window.gTop=0;
+  window.speed=0;
+  window.controlAction="";
+  window.timeCount=0;
+  setInterval(function(){
+    if(cid!=tid){
+      gTop=tid*180;
+      speed=(gTop-cTop)/10;
+      cid=tid;
+      for(var i=0;i<picCount;i++){
+        controlItem[i].className=((i==cid)?"current":"");
+      }
+    }
+    if(window.cTop!=window.gTop){
+      window.cTop+= parseInt(speed);
+      listItem.style.marginTop="-"+ parseInt(window.cTop)+"px"; 
+    }
+    document.getElementById("homePushBg").style.display="block";
+    document.getElementById("homePushName").style.display="block";
+  },20);
+  
+  for(var i=0;i<picCount;i++){
+    controlItem[i].onmouseover=function(){
+      var goId=parseInt(this.innerHTML)-1;
+      clearTimeout(window.controlAction);
+      window.controlAction=setTimeout(function(){
+        tid=goId;
+        timeCount=0;
+      },300);
+    }
+    controlItem[i].onmouseout=function(){
+      clearTimeout(window.controlAction);
+    }
+  }
+   
+  setInterval(function(){
+    timeCount+=1
+    if(timeCount>=<!--echo count($vd['adrs']);-->){
+      window.controlAction=setTimeout(function(){
+        tid=tid+1;
+        if(tid>=picCount){tid=0;}
+      },20);
+      timeCount=0;
+    }
+  },1000);
+</script>
+
+</div>
+
+<div class="BLSideRight">
+  <b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+  <div class="adnewsbg"></div>
+  <div class="coltwo box boxbg1" style="height:143px;overflow:hidden">
+    <ul>
+    <!--foreach($ad as $aditem) {-->
+    <!--if($aditem['ispic']==0 && $aditem['pos']==50){-->
+    <li>{#AdTextLink($aditem)}</li>
+    <!--}-->
+    <!--}-->
+    </ul>
+  </div>
+  <b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+
+<div style="width:722px;float:right;">
+<b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" background="{$vd['content']}images/tbg.gif" class="coltwo">
+  <tr>
+    <td width="46%" class="orange" style="height:30px;padding-top: 8px;padding-left:5px;"><strong>·推荐充值以下游戏，更多游戏请在本页顶部进行搜索</strong></td>
+    <td width="43%"><img src="{$vd['content']}images/title_m_up.gif" width="29" height="31" /></td>
+    <td width="11%" style="padding-top: 8px;"><a href="{$vd['root']}index.php?m=mod_ykt&c=product">所有产品..</a></td>
+  </tr>
+</table>
+<?php
+$htmlstr =  '腾讯游戏,tx.gif||Q币直充,Q币,1|Q点直充,Q点|DNF黑钻,dnf黑钻|会员,Q点|黄钻,腾讯|更多..,腾讯'.
+           '&网易游戏,wy.gif||天下贰,天下|网易直充,网易|大话,网易|魔兽世界,魔兽|梦幻西游,网易|更多..,网易'.
+           '&搜狐游戏,sh.gif||刀剑英雄,搜狐|刀剑2,搜狐|天龙八部,搜狐|更多..,搜狐'.
+           '&网龙游戏(91卡),wl.gif||魔域,魔域|机战,机战|征服,征服|投名状,投名状|魔石卡,魔石|更多..,91'.
+           '&完美游戏,wm.gif||神鬼传奇,神鬼|完美国际,完美|武林外传,武林外传|赤壁,赤壁|诛仙,诛仙|更多..,完美'.
+           '&世纪天成,sj.gif||哼哼哈嘿,世纪天成|冲锋岛,世纪天成|反恐精英,|洛奇直充,洛奇|跑跑卡丁,跑跑|更多..,世纪'.
+           '&巨人游戏,jr.gif||征途怀旧,征途|征途直充,征途|巨人直充,征途|征途时间,征途|更多..,征途'.
+           '&光宇华夏,gy.gif||希望直充,希望|问道直充,问道|西游Q记,光宇|幻想之翼,光宇|神界直充,神界|更多..,光宇'.
+           '&九城游戏,jc.gif||王者世界,王者|奇迹世界,奇迹|奇迹MU,奇迹|快乐西游,九城|卓越之剑,九城|更多..,九城'.
+           '&悠游游戏,yy.gif||悠游卡,悠游|黄易群侠,黄易|天使之恋,天使|十二之天,十二之天|三国群英,三国|更多..,悠游'.
+           '&盛大游戏,sd.gif||热血传奇,热血传奇|超级跑跑,超级跑跑|传奇世界,传奇世界|冒险岛,冒险岛|永恒之塔,永恒之塔|更多..,盛大'.
+           '&金山游戏,js.gif||剑侠直充,剑侠|水浒Q传,水浒Q传|仙侣2,仙侣2|封神榜,封神榜|剑侠世界,剑侠|更多..,金山'.
+           '&蜗牛游戏,wn.gif||机甲II,机甲|机甲世纪,机甲|天子直充,天子|航海世纪,蜗牛|更多..,蜗牛'.
+           '&天游游戏,ty.gif||天联卡,天联|街头篮球,街头篮球|拍拍部落,拍拍部落|蒸汽幻想,蒸汽幻想|更多..,天联'.
+           '&久游游戏,jy.gif||劲舞团,久游|光线飞车,久游|风火之旅,久游|超级舞者,久游|更多..,久游';
+?>
+<style tyle="text/css">
+  #cgame td a{font-size:14px;line-height:19px}
+</style>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="coltwo" id="cgame">
+  <!--$i=0;$tmp1=explode('&',$htmlstr);-->
+  <!--foreach($tmp1 as $key1=>$val1){-->
+  <!--if($i%3 == 0){-->
+  <tr>
+  <!--}-->
+    <td width="236" style="padding-left:5px;padding-top:8px;">
+      <!--$tmp2=explode('||',$tmp1[$key1]);-->
+      <!--$tmp3=explode(',',$tmp2[0]);-->
+      <!--$tmp4=explode('|',$tmp2[1]);-->
+      <img src='{$vd['root']}{$vd['sc']}upload/{$tmp3[1]}' border='0'  width='100' height='32' alt='{$tmp3[0]}'>
+      <div class="cp_col">
+        <ul>
+          <!--foreach($tmp4 as $val){-->
+          <!--$tmp5=explode(',',$val);-->
+          <li>
+            <a href="{$vd['root']}index.php?m=mod_ykt&c=product&stype=pname&ptype=-1&keywords=<!--echo urlencode($tmp5[1]);-->"><font style="color:<!--if(isset($tmp5[2])){echo 'red';} else{echo 'default';}-->">{$tmp5[0]}</font></a>
+          </li>
+          <!--}-->
+        </ul>
+      </div>
+    </td>
+  <!--if(($i+1)%3 == 0){-->
+  <tr>
+  <tr><td colspan="3" class="line"></td>
+  <!--}$i++;-->
+  <!--}-->
+</table>
+<b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+</div>
+<div class="clearboth"></div>
+<b class="rtop" id="actrt"><b class="r3"></b><b class="r4"></b></b>
+<div class="coltwo box mlist" style="height:100%;padding-top:5px;overflow:hidden; ">
+    <ul>
+    <li style="padding-left:0px;width:35px"><img src="{$vd['content']}images/friendslink.jpg" /></li>
+    <!--foreach($vd['ad'] as $a) {-->
+    <!--if($a['ispic']==1 && $a['pos']==9){-->
+    <li><a href="{$a['url']}" target="_blank"><img src="{$vd['root']}{$vd['sc']}upload/{$a['pic']}" width="80" height="31"/></a></li>
+    <!--}-->
+    <!--}-->
+    <!--foreach($vd['ad'] as $a) {-->
+    <!--if($a['ispic']==0 && $a['pos']==9){-->
+    <li><a href="{$a['url']}" target="_blank"> <font color="{$a['textcolor']}">{#SubText($a['text'], 8)}</font></a></li>
+    <!--}-->
+    <!--}-->
+    </ul>
+</div>
+<b class="rbottom" id="actrb"><b class="r4"></b><b class="r3"></b></b>
+{load(foot)}

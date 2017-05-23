@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Right" title="选择需要设置的权限对象"><font color="#000">商品购买权限设置</font></a> <span style="font-size:7px;">>></span> 
+  <span style="font-size:12px;">
+    详细设置
+  </span>
+</div>
+<div style="float:right;"><a href="index.php?m=mod_home&a=Help&t=admin_b2b_poll_index" onFocus="this.blur()" title="查看分类相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=Right&a=Save">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">
+  <!--if($vd['data']['param'] == 'aid'){-->
+  对 <a href="index.php?m=mod_b2b&c=Agent&a=Detail&aid={$vd['data']['agent']['aid']}"><font color="#ff6c00"><u>{$vd['data']['agent']['aname']}</u></font></a> 用户进行商品购买权限设置
+  <!--}else if($vd['data']['param'] == 'gid'){-->
+  对组级别 <font color="#ff6c00"><b>{$vd['data']['rank']['name']}</b></font> 全体用户进行购买权限设置
+  <!--}else if($vd['data']['param'] == 'yktprice'){-->
+  对面值为 <font color="#ff6c00"><b>{$vd['data']['idx']}</b></font> {$vd['lang']['moneyunit']}的一卡通进行购买权限设置
+  <!--}else if($vd['data']['param'] == 'yktgroup'){-->
+  对批次为 <font color="#ff6c00"><b>{$vd['data']['idx']}</b></font> 的一卡通进行购买权限设置
+  <!--}else if($vd['data']['param'] == 'yktid'){-->
+  对编号为 <font color="#ff6c00"><b>{$vd['data']['idx']}</b></font> 的一卡通进行购买权限设置
+  <!--}else if($vd['data']['param'] == 'yktcode'){-->
+  对特征码为 <font color="#ff6c00"><b>{$vd['data']['idx']}</b></font> 的一卡通进行购买权限设置
+  <!--}-->
+</div>
+<table border="0" id="ctable1" class="ctable" bordercolor="#86B9D6" style="border:0px;background:none">
+  <tr>
+    <td style="width:40%" align="right"><div style="padding-right:110px;font-weight:bold">商 品</div></td>
+    <td style="width:20%" align="center"></td>
+    <td style="width:40%" align="left">
+      <div style="padding-left:50px;font-weight:bold">
+      <!--if($vd['br']['isok']==1){-->允许<!--}else{-->不允许<!--}-->购买的商品
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:40%" align="right">
+      <select id="products" name="products" size="20" style="width:250px;height:350px">
+        {#Option($vd['products'],0,'pname','pid')}
+      </select>
+    </td>
+    <td style="width:20%" align="center">
+      <input type="button" value=" 删除&lt;&lt; " class="button" onclick="delrights()"/><br/><br/>
+      <input type="button" value=" 添加&gt;&gt; " class="button" onclick="addrights()"/>
+    </td>
+    <td style="width:40%" align="left">
+      <select id="rights" name="rights" size="20" style="width:250px;height:350px">
+        {#Option($vd['rights'],0,'pname','pid')}
+      </select>
+    </td>
+  </tr>
+</table>
+<input type="hidden" value="{$vd['br']['pids']}" name="pids" id="pids"/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="hidden" value="{$vd['data']['param']}" name="param"/>
+    <input type="hidden" value="{$vd['data']['idx']}" name="idx"/>
+    <input type="hidden" value="{$vd['br']['id']}" name="id"/>
+    <input type="hidden" value="{$vd['br']['isok']}" name="isok"/>
+    <input type="submit" value="保 存 &gt;&gt" class="btn"/>
+    <input type="reset" value="重 置" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  sc = "{$vd['sc']}";
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function addrights() 
+  {
+    obj = $("products").options[$("products").options.selectedIndex];
+    val = obj.value;
+    txt = obj.text;
+    
+    
+    
+    org = "," + val + ",";
+    if($("pids").value.indexOf(org) > -1)
+    {
+      alert('此商品已经在右侧列表中！');
+      return;
+    }
+    else
+    {
+      $("pids").value += val + ",";
+    }
+   
+    $("rights").options[$("rights").length] = new Option(txt, val);
+  }
+  
+  function delrights()
+  {
+    obj = $("rights").options[$("rights").options.selectedIndex];
+    val = obj.value;
+    
+    org = "," + val + ",";
+    $("pids").value = $("pids").value.replace(org, ",");
+  
+    DelOptionByVal(val);
+  }
+  
+  function DelOptionByVal(val)
+  {
+    obj = $("rights");
+    len = $("rights").length;
+    
+    for(i = 0; i < len; i++)
+    {
+      if(obj.options[i].value == val)
+      {
+        obj.remove(i);
+        break;
+      }
+    }
+  }
+</script>
+</body>
+</html>

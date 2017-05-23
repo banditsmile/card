@@ -1,0 +1,218 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=Home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=Home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Price&a=RankTpl&{$vd['op']}" title="点击重新获取商品列表资料" onclick="loadDisp(1)"><font color="#000">单级别模板列表</font></a></span> (共 <b><span id="tol1">{$vd['totlerow']}</span></b> 个)</div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看商品相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="javascript:window.location.href='?m=mod_b2b&c=Price&a=PriceTpl'"><samp title="先选择您要删除的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">标准模板</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv','',0,0,0,0)"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div class="addicon" style="padding-top:10px;padding-left:26px;">添加</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+    <form action="index.php?m=mod_b2b&c=Price&a=RankTpl" method="post" style="margin:0px 0px 0px 0px;" onsubmit="return searchSubmit()">
+    <input type="text" name="keywords" size="25" value="{$vd['keywords']}" style="vertical-align:middle;" class="custsearch" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />
+    <select name="stype" style="vertical-align:middle;font-size:14px;">
+      {#Option($vd['sarray'], $vd['stype'])}
+    </select>
+    <input type="submit" value="模板搜索 &gt;&gt;" style="vertical-align:middle;" class="button"/>
+    </form>
+  </div>
+</div>
+<div id="adddiv" style="position:absolute;top:100px;left:230px;;width:390px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">添加单级别价格模板</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp2('adddiv','',0,0,0,0)" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=Price&a=TplSave" id="tform" style="clear:both;">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="35%" height="30px">模板名称</td>
+      <td width="65%"><input type="text" name="name" id="name" style="width:143px;"/></td>
+    </tr>
+    <tr>
+      <td width="35%" height="30px">适用用户级别</td>
+      <td width="65%">
+        <select name="rankid" id="rankid" style="vertical-align:middle;font-size:14px;width:150px;">
+        {#option($vd['rank'], 0, 'name', 'id')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="35%" height="30px">复制原模板价格</td>
+      <td width="65%">
+        <select name="parentid" id="parentid" style="vertical-align:middle;font-size:14px;width:150px;">
+        <option value="0">不复制原模板价格</option>
+        {#option($vd['items'], 0, 'name', 'id')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="35%" height="50px"></td>
+      <td width="65%">
+        <input type="hidden" value="0" name="oldparentid" id="oldparentid"/>
+        <input type="hidden" value="0" name="id" id="id"/>
+        <input type="submit" value="设 置" class="button"/>
+        <input type="button" value="取 消" onclick="disp2('adddiv','',0,0,0,0)" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()' disabled/></td>
+<!--//thead-->
+<td width="35px"><b>编号</b></td>
+<td width="65px"><b>模板名称</b></td>
+<td width="150px"><b>适用级别</b></td>
+<td width="100px"><b>设定模板价格</b></td>
+<td width="85px"><b>套用客户</b></td>
+<!--//endthead-->
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif"/>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif"/>
+    </td>
+    <td class="endtd">
+      <div class="infoicon" style="color:#cccccc"><b><u>>></u></b></div>
+    </td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck"><!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']--></span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle({$vd['totlerow']},0)">点此选择当前列表中所有 <b>{$vd['totlerow']}</b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+  <!--if($vd['totlerow'] == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=Product&a=PrivatePriceSave" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  
+  <!--foreach($vd['items'] as $item) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)" onFocus='this.blur()' disabled ></input>
+    </td>
+    <!--//tbody-->
+    <td width="35px">{$item['id']}</td>
+    <td width="65px"><nobr><samp title="{$item['name']}">{$item['name']}</samp></nobr></td>
+    <td width="150px">{#TxtByOption($vd['rank'], $item['rankid'], 'name', 'id')}</td>
+    <td width="100px">
+      <a href="index.php?m=mod_b2b&c=price&a=RankTplPrice&pricetpl={$item['id']}&name=<!--echo urlencode($item['name']);-->">
+          [<font color="#ff0000">设定模板价格</font>]
+          </a>
+    </td>
+    <td width="85px">
+      <a href="index.php?m=mod_b2b&c=Price&a=Agent&pricetpl={$item['id']}">
+          [<font color="#0000ff">套用客户</font>]
+          </a>
+    </td>
+    <!--//endtbody-->
+    <td width="22px">
+      <a href="javascript:disp2('adddiv', '{$item['name']}', {$item['rankid']}, {$item['parentid']}, {$item['parentid']}, {$item['id']})" title="编辑模板" ><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=price&a=TplDel&id={$item['id']}"><img src="{$vd['sc']}images/destroy.gif"  alt="销毁后,对应的价格也会被删除" border="0"/></a>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}-->
+  
+</table>
+</form>
+<input type="hidden" value="{$vd['totlepage']}" id="totlePage"/>
+<input type="hidden" value="{$vd['thispage']}" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+
+<input type="hidden" value="index.php?m=mod_b2b&c=Price&a=Deals&{$vd['op']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Price&a=RankTpl&istable=1&{$vd['op']}" id="url"/>
+<input type="hidden" value="{$vd['op']}" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      <strong> 总计 <font color="#ff0000"><span id="tol2">{$vd['totlerow']}</span></font> 条</strong>
+    </div>
+    <div style="float:right;text-align:right;">
+    <form id="actionform" method="post" action="index.php?m=mod_b2b&c=Price&{$vd['op']}" style="margin:0px;" onsubmit="loadDisp(1)">
+    <div id="page"></div>
+    <div style="float:left;margin-top:3px">
+      每页显示<input type="text" name="nrows" size="2" value="{$vd['nrows']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" /> 个 
+      到第<input type="text" name="page" size="2" value="{$vd['thispage']}" class="pagetxt" onMouseOver="iEvent('mouseover',this)" onFocus="iEvent('focus',this)" onBlur="iEvent('blur',this)" onMouseOut="iEvent('mouseout',this)" />页<input type="submit" value=" 确 定 &gt;&gt;" class="pagesub" />
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+</body>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo $vd['nrows'] < $vd['totlerow'] ? $vd['nrows'] : $vd['totlerow']-->;
+tInfoA  = Array(0,0);
+totleRows = {$vd['totlerow']};
+deltxt  = "您确定进行删除操作吗？删除后您还可以从回收箱进行恢复";//"如果删除商品,商品相关信息也会被删除(包括订单信息，充值信息，留言信息等),您确定进行删除操作吗？";
+thisaction = "删除";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 2;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array();
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function disp2(idx,val1,val2,val3,val4,val5)
+  {
+    $("name").value = val1;
+    
+    len = $("rankid").length;
+
+    for(i=0; i<len; i++)
+    {
+      val = $("rankid").options[i].value;
+      if(val2 == val)
+      {
+        $("rankid").options[i].selected = true;
+      }
+    }
+    
+    len = $("parentid").length;
+    
+    for(i=0; i<len; i++)
+    {
+      val = $("parentid").options[i].value;
+      if(val3 == val)
+      {
+        $("parentid").options[i].selected = true;
+      }
+    }
+    
+    $("oldparentid").value = val4;
+    $("id").value = val5;
+    
+    $(idx).style.display = ($(idx).style.display == "") ? "none" : "";
+  }
+</script>
+</html>
+<!--}-->

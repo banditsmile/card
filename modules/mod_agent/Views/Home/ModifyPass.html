@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>修改登录密码</title>
+<link href="../index/css/pop.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="neirong">
+
+<div>
+
+	<form name="modify" method="post" action="index.php?m=mod_agent&c=home&a=SavePassword">
+        <table cellspacing="1" cellpadding="2" class="table1">
+            
+                <tbody><tr>
+                    <td class="table1_left" style="width: 25%">
+                       <span id="lab1">原登录密码</span> 
+                    </td>
+                    <td class="tdleft"><span class="tableright1">
+                      <input name="oldpass" type="password" id="oldpass" class="input0" onfocus="this.className=&#39;input01&#39;" onblur="this.className=&#39;input0&#39;">
+                    </span><span id="RequiredFieldValidator6" style="color:Red;display:none;">必填</span>                    </td>
+                </tr>
+            
+            <tr>
+                <td height="28" class="table1_left">
+                    <span id="newpwd">新登录密码:</span>                </td>
+                <td class="tdleft"><input name="newpass" type="password" id="newpass" class="input0" onfocus="this.className='input01'" onblur="this.className='input0'" />
+                  <span id="RequiredFieldValidator1" style="color:Red;display:none;">必填</span>
+                    <span id="RegularExpressionValidator2" style="color:Red;display:none;">数字、字母组合最少6个字符，最多30个字符</span><span class="zs">必须6位字符以上，建议数字+字母混合。</span>                </td>
+            </tr>
+            <tr>
+                <td class="table1_left">
+                     <span id="surenewpwd">确认新登录密码:</span>                </td>
+                <td class="tdleft"><input name="renewpass" type="password" id="renewpass" class="input0" onfocus="this.className='input01'" onblur="this.className='input0'" />
+                  <span id="RequiredFieldValidator2" style="color:Red;display:none;">必填</span>
+                    <span id="CompareValidator1" style="color:Red;display:none;">新登录密码和确认新登录密码必须一致</span>                </td>
+            </tr>
+            <tr>
+                <td class="table1_left">&nbsp;
+                    
+                </td>
+                <td class="tdleft"><label>
+                  <input name="Submit" type="submit" class="tijiao_input" value="提交" />
+                </label></td>
+            </tr>
+        </tbody></table>
+ 
+</body></html>

@@ -1,0 +1,23 @@
+{load(head)}
+<div class="ubLeftSide">
+{load(left)}
+</div>
+<div class="ubtwoRight" id="ubtwoRight">
+  <!--$item = $vd['item'];-->
+  <table class="contentTable">
+  	<tr>
+      <td colspan="2" class="tabletitle"> <b>查看我写的汇款通知书</b></td>
+    </tr>
+    <tr>
+      <td class="buylt">主题：</td>
+      <td class="buyrt"><input type="text" class="myinput" style="font-weight:normal" id="title" name="title" value="{$item['title']}"/></td>
+    </tr>
+    <tr>
+      <td class="buylt">汇款通知书内容</td>
+      <td class="buyrt">
+      <textarea name="thiscontent" wrap="VIRTUAL" cols="60" rows="15" scrolling="yes" class="mytextarea">{$item['content']}</textarea>
+      <span id="spanstaffpwd"></span></td>
+    </tr>
+  </table>
+</div>
+{load(foot)}

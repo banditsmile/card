@@ -1,0 +1,58 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;margin-bottom:5px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td height="30" colspan="2" bgcolor="#F2F8FE" align="center"> <b>客服中心</b></td>
+  </tr>
+  <td class="lt" style="text-align:center"><img src="{$vd['content']}images/icon_dh.gif"></td>
+  <td class="rt">
+    <!--for($j=0;$j<count($vd['teltype']);$j++){-->
+    <!--if(isset($vd['tel'][$j])&&count($vd['tel'][$j]) > 0){-->
+    <br/><strong><img src="{$vd['content']}images/point1.gif"/> {$vd['qqtype'][$j]}热线：</strong><br/>
+    <!--for($i=0;$i<count($vd['tel'][$j]);$i++){-->
+      &nbsp;&nbsp;{$vd['tel'][$j][$i]}
+    <!--}-->
+    <!--}-->
+    <!--}-->
+  </td>
+  </tr>
+  <tr>
+  <td class="lt" style="text-align:center"><img src="{$vd['content']}images/icon_qq.gif"></td>
+  <td class="rt">
+  <!--for($j=0;$j<count($vd['qqtype']);$j++){-->
+  <!--if(isset($vd['qq'][$j])&&count($vd['qq'][$j]) > 0){-->
+  <br/><strong><img src="{$vd['content']}images/point1.gif"/> {$vd['qqtype'][$j]}QQ：</strong><br/>
+  <!--for($i=0;$i<count($vd['qq'][$j]);$i++){-->
+    &nbsp;&nbsp;
+    <a href="http://wpa.qq.com/msgrd?V=1&Uin={$vd['qq'][$j][$i]}&Site={$vd['web']['webname']}&Menu=yes" target="_blank">
+    <img border="0" SRC="http://wpa.qq.com/pa?p=1:{$vd['qq'][$j][$i]}:15" alt="点击这里给我发消息" />
+    {$vd['qqtype'][$j]}<!--if($i<10) {-->0<!--}-->{$i+1}
+    </a>
+  <!--}-->
+  <!--}-->
+  <!--}-->
+  </td>
+  </tr>
+  <tr>
+  <td class="lt" style="text-align:center"><img src="{$vd['content']}images/icon_mail.gif"></td>
+  <td class="rt">
+  <!--for($j=0;$j<count($vd['emailtype']);$j++){-->
+  <!--if(isset($vd['email'][$j])&&count($vd['email'][$j]) > 0){-->
+  <br/><strong><img src="{$vd['content']}images/point1.gif"/> {$vd['emailtype'][$j]}邮箱：</strong><br/>
+  <!--for($i=0;$i<count($vd['email'][$j]);$i++){-->
+    &nbsp;<a href="mailto:{$vd['email'][$j][$i]}">{$vd['email'][$j][$i]}</a>
+  <!--}-->
+  <!--}-->
+  <!--}-->
+  </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+{load(foot)}

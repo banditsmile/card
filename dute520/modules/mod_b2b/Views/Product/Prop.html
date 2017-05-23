@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<form action="index.php?m=mod_b2b&c=product&a=simple" method="post" style="margin:5px 0px;">
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td width="50%" height="35">
+      <span style="float:right">
+      <input type="text" name="keywords" size="25" style="vertical-align:middle;"/>
+      <input type="submit" value="商品搜索 &gt;&gt;" style="vertical-align:middle;"/>
+      </span>
+      <span style="font-size:13px;font-weight:bold;padding-top:5px;padding-left:5px;" >商品属性管理</span>
+    </td>
+  </tr>
+</table>
+</form>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6">
+  <tr>
+    <td colspan="4" align="left">
+    选择分类：
+    <select id="cat" id="cat" class="ubselect">
+    <option value="">请选择商品分类</option>
+    {#option($vd['allcat'], $vd['catid'], 'catname', 'catid')}
+    </select>
+    商品类型：
+    <select id="ptype" class="ubselect" onchange="go(this)">
+    <option value="">请选择商品类型</option>
+    {#option($vd['allptype'], $vd['ptype'], 'name', 'id')}
+    </select>
+    </td>
+  </tr>
+</table>
+<br/>
+<table border="1" width="100%" style="border-collapse: collapse" bordercolor="#86B9D6"> 
+  <tr> 
+    <td width="15%" bgcolor="#f1f1f1" align="center" class="listhead">属性名</td>
+    <td width="6%" bgcolor="#f1f1f1" align="center" class="listhead">排序</td>
+    <td width="8%" bgcolor="#f1f1f1" align="center" class="listhead">字体大小</td>
+    <td width="8%" bgcolor="#f1f1f1" align="center" class="listhead">颜色</td>
+    <td width="6%" bgcolor="#f1f1f1" align="center" class="listhead">粗体</td>
+    <td width="10%" bgcolor="#f1f1f1" align="center" class="listhead">表单类型</td>
+    <td width="12%" bgcolor="#f1f1f1" align="center" class="listhead">默认值</td>
+    <td width="15%" bgcolor="#f1f1f1" align="center" class="listhead">所属组</td>
+    <td width="10%" bgcolor="#f1f1f1" align="center" class="listhead">操作</td>
+    <td width="10%" bgcolor="#f1f1f1" align="center" class="listhead"></td>
+  </tr>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=product&a=propsave">
+  <tr>
+    <td width="15%" bgcolor="#f1f1f1" align="center"><input type="text" name="name" size="15"/></td>
+    <td width="6%" bgcolor="#f1f1f1" align="center"><input type="text" name="ordering" size="5"/></td>
+    <td width="8%" bgcolor="#f1f1f1" align="center"><input type="text" name="fontsize" size="5"/></td>
+    <td width="8%" bgcolor="#f1f1f1" align="center"><input type="text" name="fontcolor" size="8"/></td>
+    <td width="6%" bgcolor="#f1f1f1" align="center"><input type="checkbox" name="fontweight" class="checkbox" value="1"/></td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+      <select name="proptype" class="ubselect">
+      <option value="">请选择表单类型</option>
+      {#option($vd['proptype'], 'text')}
+      </select>
+    </td>
+    <td width="12%" bgcolor="#f1f1f1" align="center"><input type="text" name="defaultvalue" size="10"/></td>
+    </td>
+    <td width="15%" bgcolor="#f1f1f1" align="center">
+      <select name="groupid" class="ubselect">
+      <option value="">请选择商品类型</option>
+      {#option($vd['propgroups'], 0, 'name', 'id')}
+      </select>
+    </td>
+    <td width="10%" bgcolor="#f1f1f1" align="center"><input type="hidden" name="catid" value="{$vd['catid']}" /><input type="hidden" name="ptype" size="16" value="{$vd['ptype']}"/><input type="submit" name="Submit" value="添 加"/></td>
+    <td width="10%" bgcolor="#f1f1f1" align="center"></td>
+  </tr>
+  </form>
+  <!--foreach($vd['prop'] as $item) {-->
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=product&a=propsave">
+  <tr>
+    <td width="15%" bgcolor="#f1f1f1" align="center"><input type="text" name="name" size="15" value="{$item['name']}"/></td>
+    <td width="6%" bgcolor="#f1f1f1" align="center"><input type="text" name="ordering" size="5" value="{$item['ordering']}"/></td>
+    <td width="8%" bgcolor="#f1f1f1" align="center"><input type="text" name="fontsize" size="5" value="{$item['fontsize']}"/></td>
+    <td width="8%" bgcolor="#f1f1f1" align="center"><input type="text" name="fontcolor" size="8" value="{$item['fontcolor']}"/></td>
+    <td width="6%" bgcolor="#f1f1f1" align="center"><input type="checkbox" name="fontweight" class="checkbox" value="1" {#ToggleCheck($item['fontweight'])}/></td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+      <select name="proptype" class="ubselect">
+      <option value="">请选择表单类型</option>
+      {#option($vd['proptype'], $item['proptype'])}
+      </select>
+    </td>
+    <td width="12%" bgcolor="#f1f1f1" align="center"><input type="text" name="defaultvalue" size="10" value="{$item['defaultvalue']}"/></td>
+    <td width="15%" bgcolor="#f1f1f1" align="center">
+      <select name="groupid" class="ubselect">
+      <option value="">请选择商品类型</option>
+      {#option($vd['propgroups'], $item['groupid'], 'name', 'id')}
+      </select>
+    </td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+    <input type="hidden" name="id" value="{$item['id']}" />
+    <input type="hidden" name="catid" value="{$vd['catid']}" />
+    <input type="hidden" name="ptype" value="{$item['ptype']}" />
+    <input type="submit" name="Submit" value="修 改" />
+    </td>
+    <td width="10%" bgcolor="#f1f1f1" align="center">
+      <a href="index.php?m=mod_b2b&c=category&a=del&optype=2&catid={$item['catid']}&parentid={$item['parentid']}" onclick="return confirm('如果删除了二级分类,和二级级分类关联的商品/商品进货信息也都会被删除,您确定进行删除操作吗？')">
+      删除
+      </a>
+    </td>
+  </tr>
+  </form>
+  <!--}-->
+</table>
+<br/>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center">
+  <tr> 
+    <td bgcolor="#f1f1f1">操作注意事项及说明</td>
+  </tr>
+  <tr> 
+    <td bgcolor="#f1f1f1"><font color="#ff0000">
+    ·如果是radio或者select或者checkbox表单，值的格式为：val1,text1|val2,text2 (每一组以"|"分开，各组的值和文本以","分开，<br/>
+    <font color="#ffffff">·</font>比如魔兽有联盟和部落，你就可以设成radio,表单默认值为 "联盟|部落" ,或者 "联盟,联盟|部落,部落")<br/>
+    </font></td>
+  </tr>
+</table>
+<script type="text/javascript">
+  var $ = function(id){
+    return document.getElementById(id);
+  }
+  
+  function go(obj)
+  {
+    catid = $("cat").options[$("cat").selectedIndex].value;
+    pptype = obj.options[obj.selectedIndex].value;
+    window.location.href = "index.php?m=mod_b2b&c=product&a=prop&catid="+catid+"&ptype="+pptype;
+  }
+</script>
+</body>
+</html>

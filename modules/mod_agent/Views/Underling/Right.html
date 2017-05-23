@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>设定下属客户购卡权限</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../index/css/common.css" type="text/css" rel="stylesheet">
+<link href="../index/css/page.css" type="text/css" rel="stylesheet">
+</head>
+		<form name="query" method="get" action="index.php">
+<body>
+    <div class="new_qie">
+        <div class="new_qie2">
+            <h2>
+                下属客户购卡权限(按指定客户)</h2>
+        </div>
+</div>
+    <table width="100%" cellpadding="2" cellspacing="1" class="table5">
+ 		<tr>
+ 		  <td width="15%" class="td_left"> 关键字： </td>
+		<td width="78%" align="left" class="tableright1"><div align="left">
+		  <input type="text" size="30" name="keywords" class='input0' value="">
+		  </div></td>
+		</tr>
+		<tr>
+		  <td class="td_left"> 查询类型： </td>
+		<td align="left" class="tableright1">
+		  <div align="left">
+		    <select name="stype">
+		        <option value="aid" >客户编号</option>
+		        <option value="aname" >用户名</option>
+		        <option value="company" >商户名称</option>
+		        <option value="arealname" >联系人</option>
+            </select>
+	      </div></td>
+		</tr>
+		<tr>
+		  <td class="td_left"></td>
+		<td align="left" class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="m" value="mod_agent">
+			  <input type="hidden" name="c" value="Underling">
+			  <input type="hidden" name="a" value="Right">
+			    <span class="tdleft">
+			      <input name="Submit" type="submit" class="input_s" value=" " />
+	        </span></div></td>
+		</tr>
+</table>
+    <table cellspacing="1" cellpadding="0" class="table1" style="margin: 0">
+        <tr>
+            <th width="8%"><span class="heardertop1">编号</span></th>
+		<th width="10%"><span class="heardertop1">用户名</span></th>
+		<th width="30%"><span class="heardertop1">商户名称</span></th>
+		<th width="10%"><span class="heardertop1">用户级别</span></th>
+		<th width="10%"><span class="heardertop1">联系人</span></th>
+		<th width="6%"><span class="heardertop1">状态</span></th>
+		<th width="10%"><span class="heardertop1">余额</span></th>
+		<th width="10%"><span class="heardertop1">消费</span></th>
+		<th width="6%"><span class="heardertop1">权限</span></th>
+		<!--foreach($vd['items'] as $item) {-->
+      <tr class="trd">
+		<td>{$item['aid']}</td>
+		<td>{$item['aname']}</td>
+		<td align=left>{$item['company']}</td>
+		<td>{$item['rank']}</td>
+		<td>{$item['arealname']}</td>
+		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+		<td>{$item['aremain']}</td>
+		<td>{$item['acsmp']}</td>
+		<td><a href="index.php?m=mod_agent&c=Right&a=Right&param=aid&idx={$item['aid']}&isok=-1"><u>管理</u></a></td>
+	  </tr>
+		<!--}-->
+</table>
+		 <script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../../index/js/select.js"></script>
+                <div align="right">{load(fpage)}
+                </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['item'];-->  
+
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=Scored&by=1" title="积分订单列表"><font color="#000">积分订单列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">积分订单详细信息</span></div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看积分订单相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+
+<div id="adddiv" style="position:absolute;top:30px;left:30px;;width:580px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">处理积分订单</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+    <form action="index.php?m=mod_b2b&c=Scored&a=check&ubzordno={$item['ordno']}" method="post">
+      <table id="checktable" width="100%" style="border-collapse: collapse;">
+        <tr>
+          <td width="25%"><input type="radio" value="2" name="ordstate" class="checkbox" checked />发货成功：</td>
+          <td width="75%" style="padding-left:10px">
+            表示积分所兑换的东西已经处理完毕
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><input type="radio" value="-1" name="ordstate" class="checkbox" onclick="setrollback()"/>取消兑换：</td>
+          <td width="75%" style="font-size:12px">
+            <div style="height:22px;"><input type="radio" value="没有库存了" name="failreason" class="checkbox" /> 没有库存了</div>
+            <div style="height:35px;"><input type="radio" value="" name="failreason" class="checkbox" id="custom" style="vertical-align:middle"/> 其他原因
+            <input type="text" value="" size="30" onkeyup="set(this)" onmouseup="set(this)" style="vertical-align:middle"/></div>
+            <div style="height:22px;"><input type="checkbox" id="rollback" value="1" name="rollback" class="checkbox" onclick="dispTrade()"/><font color="#ff0000">取消积分订单后时候恢复积分，同时选择取消兑换才生效</font></div>
+            <div style="height:22px;display:none" id="tradepwd">请输入后台充值密码：<input type="password" name="tradepwd" />
+          </td>
+        </tr>
+        <tr>
+          <td width="25%" style="height:50px;"></td>
+          <td width="75%"><input type="submit" value="提交结果" class="button" onclick="return confirm('确认更新积分订单状态么？如果取消兑换，请确认是否需要补回余额')"/> <input type="reset" value="重置" class="button"/> <input type="button" value="取消" class="button" onclick="disp('adddiv')"/></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">基本信息 积分订单号：{$item['ordno']} (<!--if($item['ordstate']==1){--><font color="#0000ff">处理中</font><!--}else if($item['ordstate']==-1){--><font color="#cccccc">无效</font><!--}else{--><font color="#008800">已处理</font><!--}-->)</div>
+<div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">兑换商品：</td>
+    <td class="tablert"><b>{$item['pname']}</b></td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">兑换数量：</td>
+    <td class="tablert">{$item['qty']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">消耗积分：</td>
+    <td class="tablert">{$item['scored']} 点</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">兑换日期：</td>
+    <td class="tablert">{$item['createdate']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">兑换策略：</td>
+    <td class="tablert">{$vd['method'][$item['method']]}</td>
+  </tr>
+  <!--if($item['failreason']!=''){-->
+  <tr>
+    <td class="tablelt">处理说明：</td>
+    <td class="tablert"><b><!--if($item['ordstate'] == -1) {-->{$item['failreason']}<!--}--></b></td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+
+<!--if($item['method']==1){-->
+<div class="cwarpper1">
+<div class="ctitle">兑换者收货信息</div>
+<div>
+<table border="1" id="ctable2" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">姓名：</td>
+    <td class="tablert">{$item['realname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">地址：</td>
+    <td class="tablert">{$item['addr']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">电话：</td>
+    <td class="tablert">{$item['tel']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">邮编：</td>
+    <td class="tablert">{$item['zip']}</td>
+  </tr>
+</table>
+</div>
+</div>
+<!--}-->
+<div class="cwarpper1">
+<div class="ctitle">买家信息：</div>
+<div>
+<table border="1" id="ctable3" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt" height="50px">来自平台：</td>
+    <td class="tablert"><b>{#ComeFrom($item['comefrom'])}平台</b></td>
+  </tr>
+  <tr>
+    <td class="tablelt" height="50px">来源IP：</td>
+    <td class="tablert">{$item['cip']}</td>
+  </tr>
+  <!--if($item['admname'] != ''){-->
+  <tr>
+    <td class="tablelt">发货管理员：</td>
+    <td class="tablert"><b>{$item['admname']}</b></td>
+  </tr>
+  <!--}-->
+</table>
+</div>
+</div>
+
+<div class="cbodyFoot"></div>
+</div>
+
+<div id="opcontent">
+  
+  <div class="optxt">
+    <input type="button" onclick="disp('adddiv')" value="处理此积分订单" class="btn"/>
+    <input type="button" onclick="window.location='index.php?m=mod_b2b&c=Scored&a=del&ubzordno={$item['ordno']}'" value="删除此积分订单" class="btn"/>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >正在处理中...</div>
+</div>
+<script type="text/javascript">
+  var ctablenum = 4;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  
+  function set(obj)
+  {
+    $("custom").value = obj.value;
+    $("custom").checked = true;
+  }
+  
+  function setrollback()
+  {
+    $("rollback").checked = true;
+    $("tradepwd").style.display = "";
+  }
+  
+  function dispTrade()
+  {
+    $("tradepwd").style.display = $("rollback").checked ? "" : "none";
+  }
+</script>
+</body>
+</html>

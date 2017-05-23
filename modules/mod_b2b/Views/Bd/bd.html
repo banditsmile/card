@@ -1,0 +1,251 @@
+{load(head)}
+<style type="text/css">
+  .lt{width:33%;background:#ffffff;text-align:right; padding-right:5px;height:35px;font-size:14px;}
+  .rt{width:67%;background:#ffffff;padding-left:5px;}
+  .button{height:50px;}
+  .reginput{padding-top:8px;height:22px;font-weight:bold;margin-bottom:5px}
+  span{padding:2px;color:#ff0000}
+</style>
+<form method="post" action="index.php?m=mod_b2b&c=Bd&a=BdSave" onsubmit="return checksubmit()">
+<b class="rtop"><b class="r3"></b><b class="r4"></b></b>
+<div class="bdtj" style="text-align:center;">
+<!--if($vd['bdtip'] != ''){-->
+<div id="orderalertdiv" class="palertdiv" style="display:none">
+  <div class="alertdivwaper">
+  <div class="alertdivinnerwaper">
+  <div class="alertclose"><img src="{$vd['content']}images/tipcls.gif" onclick="disp('orderalertdiv')" style="cursor:pointer"/></div>
+  <input type="checkbox" class="alertck" onclick="oDisp()" /><br/>
+  </div>
+  <div class="alertdivcnt">
+  <p class="alerttxt" >{#ubbcode($vd['bdtip'])}</p>
+  </div>
+  <div class="alertdivbottom"></div>
+  </div>
+</div>
+<!--}-->
+</div>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#ffffff" style="border-left:1px #E1E4E7 solid;border-right:1px #E1E4E7 solid">
+  <tr>
+    <td class="lt"><font color="B02A31">*</font> 号 码：</td>
+    <td class="rt"> 
+      <input type="text" size="25" id="qq" name="qq" class="reginput" /> <span id="spanqq"></span>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 密 码：</td>
+    <td class="rt"> 
+      <input type="password" size="25" id="qqpwd" name="qqpwd" class="reginput" style="padding-bottom:1px;"/>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 业务类型：</td>
+    <td class="rt"> 
+    	<!--if(count($vd['bd']) == 0){-->
+      系统尚未配置相关类别
+      <!--}else{-->
+      <select name="cztype" id="cztype">
+      <option value="">请选择业务类型</option>
+      <!--foreach($vd['bd'] as $item){-->
+      <!--if(trim($item) != ''){-->
+      <option value="{$item}">{$item}</option>
+      <!--}-->
+      <!--}-->
+      </select> <span id="spancztype"></span>
+      <!--}-->
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 图标是否亮：</td>
+    <td class="rt"> 
+      <select name="islight"><option value="0">不亮</option><option value="1">亮</option></select>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 补单的留言：</td>
+    <td class="rt"> 
+       <textarea name="liuyan" cols="27" rows="4"></textarea>
+    </td>
+  </tr>
+</table>
+<table width="100%" style="border-left:1px #E1E4E7 solid;border-right:1px #E1E4E7 solid">
+  <tr> 
+    <td class="lt" style="height:80px"> </td>
+    <td class="rt"> 
+      <input id="reg_submit" type="submit" value=" 提 交 " class="button" />
+      <input type="reset" value=" 重 置 " class="button"/>
+      <span id="spanresult"></span>
+    </td>
+  </tr>
+</table>
+<b class="rbottom"><b class="r4"></b><b class="r3"></b></b>
+</form>
+<br/>
+<form method="get" action="index.php" onsubmit="return checksubmit1()">
+<b class="rtop"><b class="r3"></b><b class="r4"></b></b>
+<div class="bdcx" style="text-align:center;"></div>
+<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#ffffff" style="border-left:1px #E1E4E7 solid;border-right:1px #E1E4E7 solid">
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 号 码：</td>
+    <td class="rt"> 
+      <input type="text" size="25" id="qq1" name="qq" class="reginput" />  <span id="spanqq1"></span>
+    </td>
+  </tr>
+  <tr> 
+    <td class="lt"><font color="B02A31">*</font> 业务类型：</td>
+    <td class="rt"> 
+    	<!--if(count($vd['bd']) == 0){-->
+      系统尚未配置相关类别
+      <!--}else{-->
+      <select name="cztype" id="cztype1">
+      <option value="">请选择业务类型</option>
+      <!--foreach($vd['bd'] as $item){-->
+      <!--if(trim($item) != ''){-->
+      <option value="{$item}">{$item}</option>
+      <!--}-->
+      <!--}-->
+      </select> <span id="spancztype1"></span>
+      <!--}-->
+    </td>
+  </tr>
+</table>
+<table width="100%" style="border-left:1px #E1E4E7 solid;border-right:1px #E1E4E7 solid">
+  <tr> 
+    <td class="lt" style="height:80px"> </td>
+    <td class="rt"> 
+    	<input type="hidden" name="m" value="mod_b2b"/>
+    	<input type="hidden" name="c" value="Bd"/>
+    	<input type="hidden" name="a" value="BdState"/>
+      <input type="submit" value=" 查 询 进 度 " class="button" />
+      <input type="reset" value=" 重 置 " class="button"/>
+      <span id="spanresult"></span>
+    </td>
+  </tr>
+</table>
+<b class="rbottom"><b class="r4"></b><b class="r3"></b></b>
+</form>
+{load(foot)}
+<script type="text/javascript">
+  function checksubmit()
+  {
+  	$("spanqq").innerHTML = "";
+  	$("spancztype").innerHTML = ""
+  	
+  	qqv = $("qq").value;
+  	if(qqv == "")
+  	{
+  		$("orderalertdiv").style.display = "none";
+  		$("spanqq").innerHTML = "QQ不能为空";
+  		return false;
+  	}
+  	
+  	
+  	var Tqq=/^[0-9]{1,20}$/
+  	var b_qq=Tqq.test(qqv)
+    if(!b_qq){
+    	$("orderalertdiv").style.display = "none";
+    	$("spanqq").innerHTML = "QQ输入错误(必须全数字)!";
+      return false;
+    }
+  	
+  	if($("cztype"))
+  	{
+  	  cztypev = $("cztype").options[$("cztype").selectedIndex].value;
+  	  
+  	  if(cztypev == "")
+  	  {
+  	  	$("spancztype").innerHTML = "请先选择业务类型";
+  	  	return false;
+  	  }
+    }
+    else
+  	{
+  		$("spancztype").innerHTML = "系统尚未配置好，请联系管理员";
+  	  return false;
+  	}
+  	
+  }
+  
+  function checksubmit1()
+  {
+  	$("spanqq1").innerHTML = "";
+  	$("spancztype1").innerHTML = ""
+  	
+  	qqv = $("qq1").value;
+  	if(qqv == "")
+  	{
+  		$("orderalertdiv").style.display = "none";
+  		$("spanqq1").innerHTML = "QQ不能为空";
+  		return false;
+  	}
+  	
+  	
+  	var Tqq=/^[0-9]{1,20}$/
+  	var b_qq=Tqq.test(qqv)
+    if(!b_qq){
+    	$("orderalertdiv").style.display = "none";
+    	$("spanqq1").innerHTML = "QQ输入错误(必须全数字)!";
+      return false;
+    }
+  	
+  	if($("cztype1"))
+  	{
+  	  cztypev = $("cztype1").options[$("cztype1").selectedIndex].value;
+  	  
+  	  if(cztypev == "")
+  	  {
+  	  	$("spancztype1").innerHTML = "请先选择业务类型";
+  	  	return false;
+  	  }
+    }
+    else
+  	{
+  		$("spancztype1").innerHTML = "系统尚未配置好，请联系管理员";
+  	  return false;
+  	}
+  	
+  }
+  
+
+  function disp(id)
+  {
+    ste = $(id).style.display;
+    $(id).style.display = ste == "" ? "none" : ""; 
+  }
+
+  <!--if($vd['bdtip'] != ''){-->
+  function oDisp()
+  {
+    setCookie("umebiz_bdtip",1,365);
+  }
+  
+  if(getCookie("umebiz_bdtip") == 0)
+  {
+    disp('orderalertdiv');
+  }
+
+  function getCookie(c_name)
+  {
+    if (document.cookie.length>0)
+    {
+      c_start=document.cookie.indexOf(c_name + "=");
+      if (c_start!=-1)
+      {
+        c_start=c_start + c_name.length+1;
+        c_end=document.cookie.indexOf(";",c_start);
+        if (c_end==-1) c_end=document.cookie.length;
+        return unescape(document.cookie.substring(c_start,c_end));
+      }
+    }
+    return "";
+  }
+  
+  function setCookie(c_name,value,expiredays)
+  {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+expiredays);
+    document.cookie=c_name+ "=" +escape(value)+
+    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+  }
+<!--}-->
+</script>

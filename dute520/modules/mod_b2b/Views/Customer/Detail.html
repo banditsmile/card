@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<link rel="stylesheet" type="text/css" href="{$vd['sc']}css/main.css"/>
+</head>
+<body>
+<!--$item = $vd['item'];-->
+<div id="titleDiv">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <a href="index.php?m=mod_b2b&c=customer&a=index" title="客户列表"><font color="#000">客户列表</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;">客户信息修改</span>(<a href="index.php?m=mod_b2b&c=customer&a=detail&ubzcid={$item['cid']}">刷新</a>)</div>
+<div style="float:right;"><a href="index.php" onFocus="this.blur()" title="查看客户相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<form id="cform" method="post" action="index.php?m=mod_b2b&c=customer&a=update">
+<div id="content" class="cwarpper">
+<div class="cbodyHead"></div>
+<div class="cwarpper1">
+<div class="ctitle">客户信息修改</div>
+<table border="1" id="ctable1" class="ctable" bordercolor="#86B9D6">
+  <tr>
+    <td class="tablelt">会员名:</td>
+    <td class="tablert">{$item['cname']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">修改密码:</td>
+    <td class="tablert">
+    <input type="password" style="font-weight:normal;background:#EAEAEA;width:150px;" id="cpwd" name="cpwd" readonly /> <input type="checkbox" onclick="enable(this)" style="vertical-align:middle;" class="checkbox"/> 修改密码(谨慎使用)</td>
+  </tr>
+  <tr>
+    <td class="tablelt">确认密码:</td>
+    <td class="tablert">
+    <input type="password" style="font-weight:normal;background:#EAEAEA;width:150px" id="recpwd" name="recpwd" readonly /><span id="spanrestaffpwd"></span></td>
+  </tr>
+  <tr>
+    <td class="tablelt">真实姓名:</td>
+    <td class="tablert">
+    <input type="hidden" name="ubzcname" size="24" value="{$item['cname']}"/>
+    <input type="text" name="ubzcrealname" size="24" value="{$item['crealname']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">地址:</td>
+    <td class="tablert">
+    <input type="text" name="ubzcaddr" size="24" value="{$item['caddr']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">邮编:</td>
+    <td class="tablert">
+    <input type="text" name="ubzzip" size="24" value="{$item['zip']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">邮箱:</td>
+    <td class="tablert">
+    <input type="text" name="ubzcmail" size="24" value="{$item['cmail']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">电话:</td>
+    <td class="tablert">
+    <input type="text" name="ubzctel" size="24" value="{$item['ctel']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">QQ:</td>
+    <td class="tablert">
+    <input type="text" name="ubzcqq" size="24" value="{$item['cqq']}"/></td>
+  </tr>
+  <tr>
+    <td class="tablelt">会员级别:</td>
+    <td class="tablert">
+    <select name="ubzclv"  size="1">
+      {#option($vd['rank'], $item['clv'], 'name', 'id')}
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">充值:</td>
+    <td class="tablert">
+      <input type="text" name="ubzczvalue" size="8"/>
+      是否充值：
+      <select name="ubzcz"  size="1">
+        <option value="1">是</option>
+        <option value="0" selected="selected">否</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="tablelt">当前帐上余额:</td>
+    <td class="tablert">{$item['cremain']}{$vd['lang']['moneyunit']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">最后登陆IP:</td>
+    <td class="tablert">{$item['lastip']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">最后登陆时间:</td>
+    <td class="tablert">{$item['lastdate']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">注册IP：</td>
+    <td class="tablert">{$item['regip']}</td>
+  </tr>
+  <tr>
+    <td class="tablelt">注册时间：</td>
+    <td class="tablert">{$item['regdate']}</td>
+  </tr>
+</table>
+<input type="hidden" value="{$item['cid']}" name="ubzcid" id="ubzcid"/>
+</div>
+<div class="cbodyFoot"></div>
+</div>
+<div id="opcontent">
+  <div class="optxt">
+    <input type="submit" value="修 改 &gt;&gt;" name="b1" class="btn"/>
+    <input type="reset" value="重 置 &gt;&gt;" name="b1" class="btn"/>
+  </div>
+</div>
+</form>
+<script type="text/javascript">
+  var ctablenum = 2;
+</script>
+<script src="{$vd['sc']}js/content.js" type="text/javascript"></script>
+<script type="text/javascript">
+  function enable(obj)
+  {
+    state   = obj.checked ? false : true;
+    bck     = obj.checked ? "#ffffff" : "#EAEAEA";
+    
+    $("cpwd").readOnly   = state;
+    $("recpwd").readOnly = state;
+    
+    $("cpwd").style.background = bck;
+    $("recpwd").style.background = bck;
+    
+    $("cpwd").value = "";
+    $("recpwd").value = "";
+  }
+</script>
+</body>
+</html>

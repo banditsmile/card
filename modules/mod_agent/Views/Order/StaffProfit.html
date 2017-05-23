@@ -1,0 +1,105 @@
+{load(fhead)}
+<body class="mainbg">
+	<div id="mainhearder"><span>您的位置：<a href="{$vd['root']}index.php?m=mod_b2b&a=Home">直销商管理系统</a> >> 销售记录 >> 销售记录查询</span></div>
+	<div id="hearder"><span>员工零售利润报表</span></div>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<form name="salecardhistory" method="get" action="index.php">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table1">
+		<tr>
+		<td class="tableleft1">选择员工：</td>
+		<td class="tableright1">
+			<select name="tradetype1" id="tradetype" class="search_select">
+    	<option value="">所有人</option>
+    	</select>
+		</td>
+		</tr>
+		<tr>
+		<td height="35" class="tableleft1">查询时间段：</td>
+		<td class="tableright1">
+    <input type="text" name="startdate" size="18" value="{$vd['startdate']}" style="vertical-align:middle;" id="startdate"/>
+    <strong>至</strong>&nbsp;<input type="text" name="enddate" size="18" value="{$vd['enddate']}" style="vertical-align:middle;" id="enddate"/>
+    </td>
+		</tr>
+		<tr>
+		<td height="30" class="tableleft1">&nbsp;</td>
+		<td class="tableright1">
+			<input type="hidden" name="m" value="mod_agent"/>
+			<input type="hidden" name="c" value="order"/>
+      <input type="hidden" name="a" value="StaffProfit"/>
+			<input type="submit" name="Submit" value="确认查询" class="button"> <input type="reset" name="reset" value="重置查询" class="button"></td>
+		</tr>
+	</table>
+	</form>
+	</td>
+	</tr>
+	</table>
+	<br>
+	<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="tableleft">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+		<tr class="tabletitle">
+      <td width="10%" class="heardertop1">
+        编号</td>
+      <td width="10%" class="heardertop1">
+        状态</td>
+      <td width="10%" class="heardertop1">
+        帐号</td>
+      <td width="25%" class="heardertop1">
+        加入时间</td>
+      <td width="15%" class="heardertop1">
+        总利润</td>
+      <td width="10%" class="heardertop1">
+        卡密利润</td>
+      <td width="10%" class="heardertop1">
+        充值利润</td>
+      <td width="10%" class="heardertop1">
+        操作</td>
+    </tr>
+    <!--foreach($vd['items'] as $item) {-->
+    <!--if($vd['agent'][9] > 0) {-->
+    <!--if($item['staffname'] == $vd['agent'][10]){-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td>{$item['staffid']}</td>
+      <td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+      <td>{$item['staffname']}</td>
+      <td>{$item['createdate']}</td>
+      <td>{$item['kmprofit']+$item['czprofit']}&nbsp;</td>
+      <td>{$item['kmprofit']}&nbsp;</td>
+      <td>{$item['czprofit']}&nbsp;</td>
+      <td>
+        <a href="index.php?m=mod_agent&c=VOrder&staffname={$item['staffname']}&ordstate=2&{$vd['op']}" >
+        <font color="#0000ff">详细</font>
+        </a>
+      </td>
+    </tr>
+    <!--}-->
+    <!--}else{-->
+    <tr class="stline" onmouseover="this.className='nd'" onmouseout="this.className='stline'">
+      <td>{$item['staffid']}</td>
+      <td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+      <td>{$item['staffname']}</td>
+      <td>{$item['createdate']}</td>
+      <td>{$item['kmprofit']+$item['czprofit']}&nbsp;</td>
+      <td>{$item['kmprofit']}&nbsp;</td>
+      <td>{$item['czprofit']}&nbsp;</td>
+      <td>
+        <a href="index.php?m=mod_agent&c=VOrder&staffname={$item['staffname']}&ordstate=2&{$vd['op']}" >
+        <font color="#0000ff">详细</font>
+        </a>
+      </td>
+    </tr>
+    <!--}-->
+    <!--}-->
+		</table>
+	</td>
+	</tr>
+	</table>
+	<div id="page" align="right">
+		{load(fpage)}
+	</div>
+	
+</body>
+</html>

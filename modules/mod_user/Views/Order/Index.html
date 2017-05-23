@@ -1,0 +1,61 @@
+{load(head)}
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" width="180px;" style="padding-right:10px;">
+{load(left)}
+</td>
+<td valign="top">
+<table id="ubTable" border="1" width="100%" style="border-collapse: collapse;line-height:25px;" bordercolor="#CFDCF2">
+  <tr class="tabletitle">
+    <td width="15%" align="center" height="35">
+      订单号</td>
+    <td width="8%" align="center" height="35">
+      姓名</td>
+    <td width="15%" align="center" height="35">
+      定购商品</td>
+    <td width="8%" align="center" height="35">
+      单价</td>
+    <td width="8%" align="center" height="35">
+      数量</td>
+    <td width="8%" align="center" height="35">
+      总额</td> 
+    <td width="8%" align="center" height="35">
+      支付方式</td>
+    <td width="10%" align="center" height="35">
+      订单状态</td>
+    <td width="15%" align="center" height="35">
+      日期</td>
+    <td width="5%" align="center" height="35">
+      详细</td>
+  </tr>
+  <!--foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="15%" align="center" height="35" bgcolor="#FFFFFF">{$item['ordno']}</td>
+    <td width="8%" align="center" height="35" bgcolor="#FFFFFF">{$item['cname']}</td>
+    <td width="15%" align="center" height="35" bgcolor="#FFFFFF">{$item['pname']}</td>
+    <td width="8%" align="center" height="35" bgcolor="#FFFFFF">{$item['cprice']}</td>
+    <td width="8%" align="center" height="35" bgcolor="#FFFFFF">{$item['qty']}</td>
+    <td width="8%" align="center" height="35" bgcolor="#FFFFFF">{$item['dollars']}</td> 
+    <td width="8%" align="center" height="35" bgcolor="#FFFFFF">{#GetPayment($item['payment'], '', 0)}</td>
+    <td width="10%" align="center" height="35" bgcolor="#FFFFFF">{#OrderState($item['ordstate'],$item['ptype'])}</td>
+    <td width="15%" align="center" height="35" bgcolor="#FFFFFF">{$item['orddate']}</td>
+    <td width="5%" align="center" height="35" bgcolor="#FFFFFF">
+      <a href="index.php?m=mod_<!--$c=$item['comefrom'];echo $c==2?'b2c':($c==3?'ykt':($c==4?'k2k':'b2b'));-->&c=ack&ordno={$item['ordno']}" target="_blank">查看</a>
+    </td>
+  </tr>
+  <!--}-->
+  <tr>
+    <td align="right" height="35" colspan="12">
+    <form method="post" action="index.php?m=mod_user&c=order&{$vd['op']}">
+      <strong>本记录总计 <font color="#ff0000">{$vd['totlerow']}</font> 条  第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页</strong>
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_user&c=order&a=index&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_user&c=order&a=index&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+{load(foot)}

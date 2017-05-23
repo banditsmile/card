@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>设定商品购买价格</title>
+<link href="../index/css/common.css" rel="stylesheet" type="text/css">
+<link href="../index/css/page.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.STYLE1 {color: #FF0000}
+</style>
+<body class="mainbg">
+<!--$p = $vd['product']; -->
+<div class="new_qie">
+  <div class="new_qie2">
+    <h2><span class="STYLE1">{$vd['productrs']['pname']}</span>商品的客户密价设定</h2>
+  </div>
+</div>		
+<form name="search" method="get" action="index.php">
+	<table width="100%" cellpadding="2" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<td width="22%" class="table1_left">关键字：</td>
+		<td width="78%" align="left" class="tableright1">
+			<div align="left">
+			  <input type="hidden" name="m" value="mod_b2b"/>
+			  <input type="hidden" name="c" value="price"/>
+			  <input type="hidden" name="a" value="PrivatePriceAgentSet"/>
+			  <input type="hidden" name="pid" value="{$vd['pid']}"/>
+			  <input type="text" size="30" name="keywords" class='input0' value="">
+		      </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">查询类型：</td>
+		<td align="left" class="tableright1">
+		        <div align="left">
+		          <select name="stype" id="stype" class="search_select">
+		            <option value="aname" selected>下家用户名</option>
+		            <option value="aid">下家编号</option>
+	              </select>
+                  </div></td>
+		</tr>
+		<tr>
+		<td class="table1_left">&nbsp;</td>
+		<td align="left" class="tableright1">
+		  <div align="left">
+		    <input type="submit" name="Submit" value="确认查询" class="tijiao_input">
+		    <input type="reset" name="reset" value="重置查询" class="fanhui_input">
+	      </div></td>
+		</tr>
+		</table>
+	<form name="setup" method="post" action="{$vd['root']}index.php?m=mod_b2b&c=price&a=PrivatePriceAgentSave">
+                <p>&nbsp;</p>
+                <table width="100%" cellpadding="0" cellspacing="1" class="table1" style="margin: 0">
+		<tr>
+		<th width="8%" class="heardertop1">编号</td>
+		<th width="12%" class="heardertop1">用户名</td>
+		<th width="20%" class="heardertop1">商户名称</td>
+		<th width="8%" class="heardertop1">用户级别</td>
+		<th width="8%" class="heardertop1">联系人</td>
+		<th width="6%" class="heardertop1">状态</td>
+		<th width="10%" class="heardertop1">当前购价</td>
+		<th width="15%" class="heardertop1">密价设定</td>
+		<th width="8%" class="heardertop1">差价</td>
+		<th width="5%" class="heardertop1">操作</td>
+		<!--foreach($vd['items'] as $item) {-->
+		<tr class="trd">
+		<td>{$item['aid']}</td>
+		<td>{$item['aname']}</td>
+		<td align=left>{$item['company']}</td>
+		<td>{#TxtByOption($vd['rank'], $item['alv'], 'name', 'id')}</td>
+		<td>{$item['arealname']}</td>
+		<td><!--if($item['frozen'] == 1){--> <font color="#ff0000">冻结</font> <!--}else{--> <font color="#008800">启动</font> <!--}--></td>
+		
+		<td>{$item['cprice']}</td>
+		<td>
+			<input type="hidden" name="oldpricetpl_{$item['aid']}" value="{$item['pricetpl']}"/>
+      <input type="hidden" name="aid[]" value="{$item['aid']}"/>
+      <input type="text" class="input1" size="8" name="price_{$item['aid']}" value="<!--if(isset($vd['parray'][$item['aid']])){echo $vd['parray'][$item['aid']];}-->"/>
+		</td>
+		<td><!--if(isset($vd['parray'][$item['aid']])){echo round(($vd['parray'][$item['aid']]-$vd['myprice']), 3);}else{echo '--';}--></td>
+		<td><a href="index.php?m=mod_b2b&c=price&a=PrivatePriceAgentDel&pid={$vd['pid']}&aid={$item['aid']}">清除</a></td>
+		</tr>
+		<!--}-->
+		</table>
+				<script language="javascript" type="text/javascript" src="../../index/js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../../index/js/select.js"></script> 
+	</td>
+	</table>
+	</br>
+	<table width="100%" cellpadding="３" cellspacing="1" class="table1" style="margin: 0">
+        <td width="8%"><div align="left">　　商品面值：<font color="#ff0000">{$vd['productrs']['listprice']}</font> 我的进价：<font color="#ff0000">{$vd['myprice']}</font>　<input type="hidden" name="myprice" value="{$vd['myprice']}"/>
+  <input type="hidden" name="pid" value="{$vd['pid']}"/>
+	　　　　　　　　　　　　　　　　　　　　　　　
+	<input type="submit" name="Submit" value="确认设置" class="tijiao_input">
+	<input type="reset" name="reset" value="重新填写" class="fanhui_input">
+	</div></td>
+</table>
+	<div id="page">
+	  <div align="right">{load(fpage)}	</div>
+	</div>
+
+</body>
+</html>

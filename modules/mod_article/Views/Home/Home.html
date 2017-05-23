@@ -1,0 +1,65 @@
+{load(head)}
+<div class="ubLeftSide">
+<table border="1" width="100%" cellpadding="0" id="table5" height="57" style="border-collapse: collapse" bordercolor="#cccccc" cellspacing="0">
+  <tr>
+    <td align="left" style="padding:10px" bgcolor="#ffffff" colspan="3">{$vd['web']['webname']} > <a href="index.php?m=mod_article"><font color="#000">文章中心</font></a> > <a href="index.php?m=mod_article&a=home&boardid={$vd['board']['id']}"><font color="#000">{$vd['board']['name']}</font></a> > 文章列表 </td>
+  </tr>  
+  <tr>
+    <td width="60%" height="25" bgcolor="#F5FBFF">
+    <p align="center">主题</td>
+    <td width="10%" height="25" bgcolor="#F5FBFF">
+    <p align="center">点击</td>
+    <td width="30%" height="25" bgcolor="#F5FBFF">
+    <p align="center">时间</td>
+  </tr>
+  <!--$i=1;foreach($vd['items'] as $item) {-->
+  <tr>
+    <td width="60%" height="35"  align="left">&nbsp;[<!--if($i<10){-->0<!--}-->{$i}]<a href="<!--if($item['titlelink'] != ''){-->{$item['titlelink']}" target="_blank"<!--}else{-->article/{$item['id']}.html"<!--}--> title="{$item['title']}"> <font color="{$item['titlecolor']}">{#SubText($item['title'], 26)}</font></a></td>
+    <td width="10%" height="35"  align="center">{$item['tick']}</td>
+    <td width="35%" height="35"  align="center">{$item['ndate']}</td>
+  </tr>
+  <!--$i++;}-->
+  <tr>
+    <td align="right" height="35" bgcolor="#ccf1aa" colspan="3">
+    <form method="post" action="index.php?m=mod_article&a=home&{$vd['op']}">
+      <strong>共有记录<font color="#ff0000">{$vd['totlerow']}</font>条 / 第 {$vd['thispage']} 页</strong>/ 共 {$vd['totlepage']} 页
+      <input type="button" class="button" value="上一页 &gt;&gt;" {$vd['prestate']} onclick="window.location='?m=mod_article&a=home&{$vd['op']}&page={$vd['prepage']}'"/>
+      <input type="button" class="button" value="下一页 &gt;&gt;" {$vd['nextstate']} onclick="window.location='?m=mod_article&a=home&{$vd['op']}&page={$vd['nextpage']}'"/>
+      到第<input type="text" id="page" name="page" size="2" value="" class="txt"/>页<input value="确定" type="submit" class="button"/>
+    </form>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" style="padding:10px" bgcolor="#ffffff" colspan="3">
+      <div class="coltitle"><span class="flright"><a href="qlist.html"></a></span>看看别人都买了什么</div>
+      <div class="col box twolist minheight">
+          <ul>
+          <!--foreach($vd['goods'] as $a) {-->
+          <li>
+            <a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->article/{$a['id']}.html"<!--}--> title="{$a['title']}"> <font color="{$a['titlecolor']}">{#SubText($a['title'], 20)}</font></a></li>
+          <!--}-->
+          </ul>
+      </div>
+    </td>
+  </tr> 
+</table>
+</div>
+<div class='ubtwoRight'>
+  <div>
+    <!--foreach($vd['ad'] as $aditem) {-->
+    <!--if($aditem['ispic']==1 && $aditem['pos']==552){-->
+    <div style="margin-bottom:8px;"><a href="{$aditem['url']}" target="_blank">
+    <img src="{$vd['root']}{$vd['sc']}upload/{$aditem['pic']}" border='0'  width="100%" alt='{$aditem['text']}'></a><!--if($aditem['text'] != ''){--><br/><a href="{$aditem['url']}" target="_blank"><b><font color="{$aditem['textcolor']}">{$aditem['text']}</font></b></a><!--}-->
+    </div>
+    <!--}--><!--}-->
+  </div>
+  <div class="coltitle"><span class="flright"><a href="qlist.html"></a></span>推荐文章</div>
+  <div class="col box minheight">
+      <ul>
+      <!--foreach($vd['stick'] as $a) {-->
+      <li><a href="<!--if($a['titlelink'] != ''){-->{$a['titlelink']}" target="_blank"<!--}else{-->article/{$a['id']}.html"<!--}--> title="{$a['title']}"> <font color="{$a['titlecolor']}">{#SubText($a['title'], 20)}</font></a></li>
+      <!--}-->
+      </ul>
+  </div>
+</div>
+{load(foot)}

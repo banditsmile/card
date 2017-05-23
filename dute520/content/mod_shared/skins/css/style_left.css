@@ -1,0 +1,101 @@
+/* Umebiz@CSSTidy 1.2: Sun, 11 May 2008 03:43:30 +0000 */
+body {
+OVERFLOW:hidden;
+BACKGROUND:url(../images/left_bg.gif);
+MARGIN:0;
+}
+
+img {
+FLOAT:none;
+VERTICAL-ALIGN:middle;
+}
+
+hr {
+WIDTH:90%;
+TEXT-ALIGN:left;
+SIZE:0;
+HEIGHT:0;
+BORDER-TOP:1px solid #46A0C8;
+}
+
+.alpha {
+BACKGROUND:#94D0EE;
+FILTER:alpha(opacity=40);
+}
+
+.menu {
+COLOR:#fff;
+POSITION:relative;
+FILTER:alpha(opacity=100);
+PADDING:10px 0;
+}
+
+.menu ul {
+LIST-STYLE:none;
+}
+
+.menu li {
+LIST-STYLE:none;
+FLOAT:left;
+line-height:18px;
+}
+
+.copyright {
+COLOR:#E1FEFF;
+FONT-SIZE:12px;
+LINE-HEIGHT:18px;
+PADDING-LEFT:10px;
+FONT-FAMILY:Arial;
+HEIGHT:24px;
+}
+
+.copyright2 {
+COLOR:#E1FEFF;
+FONT-SIZE:12px;
+LINE-HEIGHT:18px;
+FONT-FAMILY:Arial;
+HEIGHT:24px;
+PADDING-LEFT:30px;
+}
+
+.copyright a,.copyright2 a {
+COLOR:#E1FEFF;
+TEXT-DECORATION:none;
+}
+
+.copyright a:hover,.copyright2 a:hover {
+COLOR:#E1FEFF;
+TEXT-DECORATION:underline;
+}
+
+#menubar ul {
+MARGIN:0;
+}
+
+#menubar ul li {
+FLOAT:left;
+MARGIN-LEFT:-40px !important;
+}
+
+#menubar a {
+BACKGROUND:url("../images/menu_icon2.gif") no-repeat 0px 5px;
+COLOR:#fff;
+TEXT-DECORATION:none;
+FONT-SIZE:12px;
+DISPLAY:block;
+FLOAT:left;
+WIDTH:180px;
+HEIGHT:21px !important;
+PADDING-TOP:5px;
+TEXT-ALIGN:left;
+PADDING-LEFT:20px;
+MARGIN:0;
+}
+
+#menubar a:hover {
+BACKGROUND:url("../images/i3.gif") #EEF7FD no-repeat 9px 7px;
+FILTER:alpha(opacity=60);
+COLOR:#2C2C2C;
+TEXT-DECORATION:none;
+FONT-weight:bold;
+}

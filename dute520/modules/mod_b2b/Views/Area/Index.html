@@ -1,0 +1,183 @@
+<!--if($vd['table']==0){-->
+{load(head)}
+<body>
+<div class="titleDiv" id="titleList">
+<div style="float:left"><a href="index.php?a=home"><img src="{$vd['sc']}images/home.png" style="vertical-align:middle" border="0"/></a></div><div style="float:left;padding-top:8px;padding-left:3px;"><a href="index.php?a=home" title="回到后台首页"><font color="#000">桌面</font></a> <span style="font-size:7px;">>></span> <span style="font-size:12px;"><a href="index.php?m=mod_b2b&c=Game" title="点击重新获取区服列表" onclick="loadDisp(1)"><font color="#000">区服列表</font></a></span> <span style="font-size:7px;">>></span> {$vd['game']} </div>
+<div style="float:right"><a href="index.php" onFocus="this.blur()" title="查看卡密相关帮助"><img src="{$vd['sc']}images/help.gif" style="vertical-align:middle" border="0"/></a></div>
+</div>
+<div class="mytitle" id="mytitle">
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="delAllSubmit('destroyitems')"><samp title="先选择您要销毁的行,再点此按钮">
+    <div style="padding-top:10px;padding-left:9px;">批量销毁</div></samp>
+  </div>
+  <div class="titleOp4"  onmouseover="if(editRealtime) return;this.className='iconbg4'" onmouseout="if(editRealtime) return;this.className='titleOp4'" onclick="batchEdit(this)"><samp title="批量修改所选项的记录">
+    <div style="padding-top:10px;padding-left:10px;">实时修改</div></samp>
+  </div>
+  <div class="titleOp2" onmouseover="this.className='iconbg2'" onmouseout="this.className='titleOp2'" onclick="tableRefresh()" style="margin-right:3px"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div style="padding-top:10px;padding-left:10px;">刷新</div></samp>
+  </div>
+  <div class="titleOp4" onmouseover="this.className='iconbg4'" onmouseout="this.className='titleOp4'" onclick="disp('adddiv')"><samp title="点击刷新本页刷新数据,并保持原来勾选状态">
+    <div class="addicon" style="padding-top:10px;padding-left:26px;">添加</div></samp>
+  </div>
+  <div style="float:right;padding-top:4px;">
+  </div>
+</div>
+<div id="adddiv" style="position:absolute;top:120px;left:230px;;width:320px;display:none">
+  <div style="padding:20px;background:#F1F5FA;border:5px #75BCD7 solid">
+  <div style="font-size:14px;font-weight:bold;padding:5px;float:left">添加区服</div>
+  <div style="float:right;"><img src="{$vd['sc']}images/destroy.gif" onclick="disp('adddiv')" style="cursor:pointer"/></div>
+  <form name="form1" method="post" action="index.php?m=mod_b2b&c=area&a=save">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="25%">名称</td>
+      <td width="75%"><input type="text" name="name" size="25"/></td>
+    </tr>
+    <tr>
+      <td width="25%">所属区域</td>
+      <td width="75%">
+        <select name="parentid">
+        <option value="0">游戏区域</a>
+        {#Option($vd['area'], 0, 'name', 'id')}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%"></td>
+      <td width="75%">
+        <input type="hidden" name="game" value="{$vd['game']}"/>
+        <input type="hidden" name="gameid" value="{$vd['gameid']}"/>
+        <input type="submit" name="Submit" value="添 加" class="button" />
+        <input type="button" name="Submit" value="取 消" onclick="disp('adddiv')" class="button"/>
+      </td>
+    </tr>
+  </table>
+  </form>
+  </div>
+</div>
+<table id="thead" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30px">
+      <input name="chkall" id="chkall" type="checkbox" class="checkbox" onclick="CheckAll(this)" onFocus='this.blur()'/></td>
+    <td width="35px"><b>编号</b></td>
+    <td width="200px"><b>名称</b></td>
+    <td width="60px"><b>类别</b></td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/icon_edit.gif"/>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif"/>
+    </td>
+    <td class="endtd"><div class="infoicon" style="color:#ccc"><b><u>>></u></b></div></td>
+  </tr>
+</table>
+<div id="tip" style="display:none">
+  <span id="tiptable">此页中所有 <b><span id="ncheck">0</span></b> 条记录已选中 </span> 
+  <span id="tipspan">
+    <a href="javascript:CheckTotle(<!--echo count($vd['items']);-->,0)">点此选择当前列表中所有 <b><!--echo count($vd['items']);--></b> 条记录>></a>
+  </span>
+</div>
+<div id="content">
+<!--}-->
+
+  <!--if(count($vd['items']) == 0) {-->
+  <table  width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right" colspan="20">无任何记录</td>
+  </tr>
+  </table>
+  <!--}-->
+  <form id="cform" name="form" method="post" action="index.php?m=mod_b2b&c=agent&a=ItemDeal" onsubmit="return Check();">
+  <table id="tbody"  border="0" cellspacing="0" cellpadding="0">
+  <!--foreach($vd['area'] as $area) {-->
+  <tr>
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$area['id']}" class="checkbox" value="{$area['id']}" onclick="CheckThis(this)"/>
+    </td>
+    <td width="35px">{$area['id']}</td>
+    <td width="200px"><nobr><samp title="{$item['name']}"><span onclick="toInput(this,{$area['id']},'name')">{$area['name']}</span></samp></nobr></td>
+    <td width="60px">区域</td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Area&a=Detail&id={$area['id']}" title="编辑" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$area['id']},'destroyitems')" alt="销毁后,是无法恢复的,只能重新添加" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--foreach($vd['items'] as $item) { if($item['parentid'] == $area['id']) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item['id']}" class="checkbox" value="{$item['id']}" onclick="CheckThis(this)"/>
+    </td>
+    <td width="35px">{$item['id']}</td>
+    <td width="200px"> |------ <samp title="{$item['name']}"><span onclick="toInput(this,{$item['id']},'name')">{$item['name']}</span></samp></td>
+    <td width="60px">服务器</td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Area&a=Detail&id={$item['id']}" title="编辑" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item['id']},'destroyitems')" alt="销毁后,是无法恢复的,只能重新添加" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--foreach($vd['items'] as $item2) { if($item2['parentid'] == $item['id']) {-->
+  <tr onmouseover="setoverbg(this)" onmouseout="setoutbg(this)">
+    <td width="30px">
+      <input type="checkbox" name="id[]" id="idchk_{$item2['id']}" class="checkbox" value="{$item2['id']}" onclick="CheckThis(this)"/>
+    </td>
+    <td width="35px">{$item['id']}</td>
+    <td width="200px">&nbsp;&nbsp;&nbsp;|------ <samp title="{$item2['name']}"><span onclick="toInput(this,{$item2['id']},'name')">{$item2['name']}</span></samp></td>
+    <td width="60px">服务器</td>
+    <td width="22px">
+      <a href="index.php?m=mod_b2b&c=Area&a=Detail&id={$item2['id']}" title="编辑" onclick="loadDisp(1)"><img src="{$vd['sc']}images/icon_edit.gif"/></a>
+    </td>
+    <td width="22px">
+      <img src="{$vd['sc']}images/destroy.gif" onclick="delSubmit({$item2['id']},'destroyitems')" alt="销毁后,是无法恢复的,只能重新添加" style="cursor:pointer"/>
+    </td>
+    <td class="endtd"></td>
+  </tr>
+  <!--}}-->
+  <!--}}-->
+  <!--}-->
+</table>
+</form>
+<input type="hidden" value="1" id="totlePage"/>
+<input type="hidden" value="1" id="thisPage"/>
+<!--if($vd['table']==0){-->
+</div>
+<input type="hidden" value="index.php?m=mod_b2b&c=Area&a=Deals&gameid={$vd['gameid']}" id="op"/>
+<input type="hidden" value="index.php?m=mod_b2b&c=Area&istable=1&id={$vd['gameid']}" id="url"/>
+<input type="hidden" value="" id="params"/>
+<div style="position:absolute;bottom:0px">
+  <div class="tbBottom" id="tbBottom">
+    <div style="float:left;padding-top:8px;">
+      
+    </div>
+    <div style="float:right;text-align:right;">
+    <div id="page"></div>
+    </div>
+  </div>
+</div>
+<div id="load" style="display:none;">
+  <div id="loadcontent" >页面加载中请稍等...</div>
+</div>
+<script type="text/javascript">
+//第一参数，后边保留显示的列数
+//第二参数，除最后一个参数外的保留参数的总宽度
+tRows   = <!--echo count($vd['items']);-->;
+tInfoA  = Array(0,0);
+totleRows = <!--echo count($vd['items']);-->;
+deltxt  = "销毁后无法恢复，您确定进行销毁操作吗？";
+thisaction = "销毁";
+thisdel = 0;
+statistics = 0;
+var resizeidx = 2;
+</script>
+<script type="text/javascript">
+//当前表格配置
+<!--//tinfo-->
+ tInfo = Array();
+<!--//endtinfo-->
+</script>
+<script src="{$vd['sc']}js/tools.js" type="text/javascript"></script>
+</html>
+<!--}-->
